@@ -4,7 +4,7 @@ import { rankProfiles } from '../src/engine/matching'
 import { scoreAxes } from '../src/engine/scoring'
 import { drawQuestions } from '../src/engine/selection'
 import type { AxisScore, Profile, Response, TestDefinition, TestId } from '../src/types'
-import { normal, rng, simulate } from './helpers'
+import { expressedCoords, normal, rng, simulate } from './helpers'
 
 /** [eje, más hacia el polo B, menos hacia el polo B]: órdenes que no están en discusión. */
 const ORDER: Record<TestId, [string, string, string][]> = {
@@ -92,8 +92,10 @@ const byId = (test: TestDefinition, id: string): Profile => {
   if (!p) throw new Error(`no existe ${test.id}:${id}`)
   return p
 }
-const asScores = (test: TestDefinition, p: Profile): AxisScore[] =>
-  test.axes.map((a) => ({ axisId: a.id, score: p.coords[a.id], coverage: 1 }))
+const asScores = (test: TestDefinition, p: Profile): AxisScore[] => {
+  const c = expressedCoords(p, test.axes)
+  return test.axes.map((a) => ({ axisId: a.id, score: c[a.id], coverage: 1 }))
+}
 
 describe.each(Object.values(tests))('coherencia $name', (test) => {
   it('órdenes indiscutibles entre perfiles en cada tema', () => {
@@ -125,7 +127,7 @@ describe.each(Object.values(tests))('coherencia $name', (test) => {
     for (let i = 0; i < N; i++) {
       const base = test.profiles[Math.floor(next() * test.profiles.length)]
       const pos = Object.fromEntries(
-        test.axes.map((a) => [a.id, Math.max(-100, Math.min(100, (base.coords[a.id] ?? 0) + normal(next) * 35))]),
+        test.axes.map((a) => [a.id, Math.max(-100, Math.min(100, (expressedCoords(base, test.axes)[a.id] ?? 0) + normal(next) * 35))]),
       )
       const qs = drawQuestions(test, 'full', i + 1)
       const answers = Object.fromEntries(
@@ -152,7 +154,7 @@ describe.each(Object.values(tests))('coherencia $name', (test) => {
     for (let i = 0; i < 300; i++) {
       const base = test.profiles[Math.floor(next() * test.profiles.length)]
       const pos = Object.fromEntries(
-        test.axes.map((a) => [a.id, Math.max(-100, Math.min(100, (base.coords[a.id] ?? 0) + normal(next) * 35))]),
+        test.axes.map((a) => [a.id, Math.max(-100, Math.min(100, (expressedCoords(base, test.axes)[a.id] ?? 0) + normal(next) * 35))]),
       )
       const play = (seed: number) => {
         const qs = drawQuestions(test, 'full', seed)
@@ -187,7 +189,7 @@ describe.each(Object.values(tests))('coherencia $name', (test) => {
         const qs = drawQuestions(test, 'full', Math.floor(next() * 2 ** 31))
         const answers = Object.fromEntries(
           qs.map((q) => {
-            const v = profile.coords[q.primaryAxis]
+            const v = expressedCoords(profile, test.axes)[q.primaryAxis]
             if (v == null) return [q.id, null]
             const x = (0.6 * Math.sign(q.effects[q.primaryAxis]) * v) / 100 + normal(next) * 0.25
             return [q.id, L.reduce((b, l) => (Math.abs(l - x) < Math.abs(b - x) ? l : b), 0 as number) as Response]
@@ -211,7 +213,7 @@ describe.each(Object.values(tests))('coherencia $name', (test) => {
       let hits = 0
       for (let i = 0; i < RUNS; i++) {
         const qs = drawQuestions(test, 'short', Math.floor(next() * 2 ** 31))
-        const ranked = rankProfiles(scoreAxes(test.axes, qs, simulate(profile, qs, next)), test.axes, pool)
+        const ranked = rankProfiles(scoreAxes(test.axes, qs, simulate(profile, qs, next, 0.25, test.axes)), test.axes, pool)
         if (ranked.slice(0, 3).some((m) => m.profile.id === profile.id)) hits++
       }
       if (hits / RUNS < 0.7) wrong.push(`${profile.id} ${Math.round((100 * hits) / RUNS)}%`)

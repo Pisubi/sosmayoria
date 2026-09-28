@@ -81,8 +81,16 @@ export function Methodology({ onBack }: MethodologyProps) {
           pocos ejes no se parezca a cualquiera. Si el perfil tiene dato en menos del 60% de los ejes, la
           comparación se marca como parcial. Los catálogos (ideologías o tradiciones,
           figuras históricas, figuras actuales y partidos) se rankean por separado y nunca se
-          mezclan. En el test argentino, la identidad peronista o antiperonista se informa aparte
-          y no entra en la cercanía.
+          mezclan. En el test argentino, la identidad peronista o antiperonista se muestra aparte
+          y también cuenta en la cercanía: es lo que más distingue, por ejemplo, a un votante
+          kirchnerista de uno de la izquierda trotskista.
+        </p>
+        <p>
+          En algunos temas la gente no se expresa como actúan sus referentes: quien apoya a un
+          gobierno que gobierna por decreto o confronta con la Justicia rara vez está de acuerdo
+          con frases que lo digan explícitamente. En Instituciones y Estilo (test argentino) y en
+          Libertades, Democracia y Estilo (internacional), el valor de cada perfil hacia ese polo
+          se compara a la mitad, que es lo que sus votantes efectivamente expresan.
         </p>
       </Block>
 

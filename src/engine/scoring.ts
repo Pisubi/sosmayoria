@@ -63,3 +63,27 @@ export function acquiescence(answers: Record<string, Response>): number {
 }
 
 export const ACQUIESCENCE_THRESHOLD = 0.6
+
+/**
+ * Consistencia de las respuestas: en cada tema, |Σ r·s| / Σ |r|, con s el sentido de cada
+ * afirmación (neutrales y "No sé" no cuentan), promediada con el peso de las respuestas.
+ * 1 = todas las respuestas marcadas de un tema van en el mismo sentido; cerca de 0 = se
+ * anulan, como pasa al responder al azar o al estar de acuerdo con afirmaciones opuestas.
+ */
+export function consistency(questions: Question[], answers: Record<string, Response>): number {
+  const num: Record<string, number> = {}
+  const den: Record<string, number> = {}
+  for (const q of questions) {
+    const r = answers[q.id]
+    if (r == null || r === 0) continue
+    const s = Math.sign(q.effects[q.primaryAxis])
+    num[q.primaryAxis] = (num[q.primaryAxis] ?? 0) + r * s
+    den[q.primaryAxis] = (den[q.primaryAxis] ?? 0) + Math.abs(r)
+  }
+  const axes = Object.keys(den)
+  const total = axes.reduce((sum, a) => sum + den[a], 0)
+  return total ? axes.reduce((sum, a) => sum + Math.abs(num[a]), 0) / total : 1
+}
+
+/** Por debajo, el resultado se marca como poco claro (ninguna persona coherente simulada baja de acá). */
+export const CONSISTENCY_THRESHOLD = 0.4

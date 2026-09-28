@@ -30,7 +30,7 @@
   },
   {
    "id": "IN-ECO-04",
-   "text": "Los servicios esenciales como agua, energía y salud deberían ser públicos.",
+   "text": "Los servicios esenciales como el agua y la energía deberían estar en manos del Estado y no de empresas privadas.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
@@ -65,7 +65,7 @@
   },
   {
    "id": "IN-ECO-08",
-   "text": "Los sindicatos son fundamentales para defender a los trabajadores.",
+   "text": "Los sindicatos deberían tener más poder para negociar salarios y condiciones de trabajo.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
@@ -105,7 +105,7 @@
   },
   {
    "id": "IN-ECO-13",
-   "text": "El Estado debería entregar a las familias vales para que elijan escuela, pública o privada.",
+   "text": "El Estado debería darles a las familias vouchers educativos para que elijan escuela, pública o privada.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
@@ -209,7 +209,7 @@
   },
   {
    "id": "IN-COM-09",
-   "text": "Los subsidios a la exportación distorsionan el comercio y deberían eliminarse.",
+   "text": "Los subsidios a la exportación deberían eliminarse.",
    "primaryAxis": "COM",
    "effects": {
     "COM": 1
@@ -387,7 +387,7 @@
   },
   {
    "id": "IN-AUT-14",
-   "text": "Los adultos deberían poder decidir sobre su propio cuerpo aunque eso implique riesgos para su salud.",
+   "text": "Los adultos deberían poder hacer cosas riesgosas para su propia salud, como consumir ciertas sustancias o practicar deportes extremos, sin que el Estado se lo prohíba.",
    "primaryAxis": "AUT",
    "effects": {
     "AUT": -1
@@ -490,7 +490,7 @@
   },
   {
    "id": "IN-DEM-10",
-   "text": "Las elecciones libres son la única fuente legítima de poder.",
+   "text": "Un gobierno solo es legítimo si surge de elecciones libres y competitivas.",
    "primaryAxis": "DEM",
    "effects": {
     "DEM": -1
@@ -557,7 +557,7 @@
   },
   {
    "id": "IN-SOC-02",
-   "text": "La familia tradicional es la base de la sociedad y el Estado debería protegerla especialmente.",
+   "text": "El Estado debería dar un apoyo especial a la familia tradicional.",
    "primaryAxis": "SOC",
    "effects": {
     "SOC": 1
@@ -693,16 +693,17 @@
   },
   {
    "id": "IN-REL-02",
-   "text": "Un país con más fe religiosa es un país con mejores valores.",
+   "text": "Los gobiernos deberían promover activamente la fe religiosa en la sociedad.",
    "primaryAxis": "REL",
    "effects": {
-    "REL": 1
+    "REL": 1,
+    "SOC": 0.2
    },
    "core": true
   },
   {
    "id": "IN-REL-03",
-   "text": "La enseñanza religiosa debería estar presente en las escuelas públicas.",
+   "text": "Las escuelas públicas deberían dar clases de religión confesional dentro del horario escolar.",
    "primaryAxis": "REL",
    "effects": {
     "REL": 1
@@ -978,7 +979,8 @@
    "text": "El servicio militar obligatorio forma mejores ciudadanos.",
    "primaryAxis": "MIL",
    "effects": {
-    "MIL": 1
+    "MIL": 1,
+    "AUT": 0.2
    },
    "core": true
   },
@@ -1113,7 +1115,7 @@
   },
   {
    "id": "IN-MIG-03",
-   "text": "Los extranjeros no residentes deberían pagar por usar la salud y la educación públicas.",
+   "text": "Los inmigrantes sin residencia legal no deberían poder usar gratis la salud y la educación públicas.",
    "primaryAxis": "MIG",
    "effects": {
     "MIG": 1
@@ -1165,7 +1167,7 @@
   },
   {
    "id": "IN-MIG-09",
-   "text": "La inmigración masiva pone en riesgo la identidad nacional.",
+   "text": "La inmigración pone en riesgo la identidad nacional.",
    "primaryAxis": "MIG",
    "effects": {
     "MIG": 1,
@@ -1302,7 +1304,7 @@
   },
   {
    "id": "IN-ECOL-09",
-   "text": "Los combustibles fósiles seguirán siendo imprescindibles para el desarrollo.",
+   "text": "Los países en desarrollo deberían poder seguir usando combustibles fósiles para crecer, aunque eso aumente las emisiones.",
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": 1

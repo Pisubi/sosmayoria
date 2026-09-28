@@ -40,14 +40,25 @@ const SCALE = 100
  * d = sqrt(Σ (k·u − p)² / |A|) sobre los temas A con puntaje tuyo, contando
  * max(MISSING_DIFF, |k·u|) donde el perfil no tiene dato; cercanía = 100 · (1 − d / SCALE).
  */
-export function matchProfile(scores: AxisScore[], axes: Axis[], profile: Profile): Match {
-  const matchable = axes.filter((a) => a.includeInMatching)
+/** Valor de un perfil tal como lo expresaría en el test alguien que piensa como él (ver Axis.poleBExpressed). */
+export function expressed(axis: Axis, value: number | null | undefined): number | null {
+  if (value == null) return null
+  return value > 0 && axis.poleBExpressed ? value * axis.poleBExpressed : value
+}
+
+export function matchProfile(
+  scores: AxisScore[],
+  axes: Axis[],
+  profile: Profile,
+  skip: ReadonlySet<string> = new Set(),
+): Match {
+  const matchable = axes.filter((a) => a.includeInMatching && !skip.has(a.id))
   const byAxis = new Map(scores.map((s) => [s.axisId, s.score]))
   const pairs: { axisId: string; u: number; p: number | null }[] = []
   for (const axis of matchable) {
     const u = byAxis.get(axis.id)
     if (u == null) continue
-    pairs.push({ axisId: axis.id, u, p: profile.coords[axis.id] ?? null })
+    pairs.push({ axisId: axis.id, u, p: expressed(axis, profile.coords[axis.id]) })
   }
 
   const both = pairs.filter((x) => x.p != null)
@@ -87,8 +98,25 @@ export function closenessLabel(similarity: number): string {
   return 'Lejos'
 }
 
+/**
+ * Un catálogo se compara solo en los temas que tiene medidos en al menos esta proporción de
+ * sus perfiles. Así, en las figuras históricas argentinas no cuenta Memoria (no aplica antes
+ * de 1976) ni, en las internacionales, Ambiente: si contaran, cualquier figura moderna les
+ * ganaría a las históricas solo por tener dato.
+ */
+export const CATALOG_COVERAGE = 0.7
+
+export function uncoveredAxes(axes: Axis[], profiles: Profile[]): Set<string> {
+  return new Set(
+    axes
+      .filter((a) => profiles.filter((p) => p.coords[a.id] != null).length < CATALOG_COVERAGE * profiles.length)
+      .map((a) => a.id),
+  )
+}
+
 export function rankProfiles(scores: AxisScore[], axes: Axis[], profiles: Profile[]): Match[] {
+  const skip = uncoveredAxes(axes, profiles)
   return profiles
-    .map((p) => matchProfile(scores, axes, p))
+    .map((p) => matchProfile(scores, axes, p, skip))
     .sort((a, b) => b.similarity - a.similarity)
 }

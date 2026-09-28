@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { tests } from '../src/data/tests'
-import { acquiescence, intensity, scoreAxes } from '../src/engine/scoring'
+import { acquiescence, consistency, CONSISTENCY_THRESHOLD, intensity, scoreAxes } from '../src/engine/scoring'
 import { drawQuestions } from '../src/engine/selection'
 import type { Question, Response } from '../src/types'
 
@@ -37,6 +37,14 @@ describe.each(Object.values(tests))('puntaje $name', (test) => {
         qs.map((q) => [q.id, Math.sign(q.effects[q.primaryAxis]) as Response]),
       )
       for (const s of scoreAxes(test.axes, qs, answers)) expect(s.score, s.axisId).toBeGreaterThanOrEqual(80)
+    }
+  })
+
+  it('consistencia: responder en un solo sentido da 1 y estar de acuerdo con todo queda bajo el umbral', () => {
+    for (const qs of games) {
+      const coherent = Object.fromEntries(qs.map((q) => [q.id, Math.sign(q.effects[q.primaryAxis]) as Response]))
+      expect(consistency(qs, coherent)).toBe(1)
+      expect(consistency(qs, all(qs, 1))).toBeLessThan(CONSISTENCY_THRESHOLD)
     }
   })
 

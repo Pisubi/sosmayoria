@@ -22,7 +22,7 @@
   },
   {
    "id": "AR-ECO-03",
-   "text": "Las indemnizaciones por despido deberían reemplazarse por un fondo de cese laboral.",
+   "text": "Las indemnizaciones por despido deberían reemplazarse por completo por un fondo de cese laboral.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
@@ -53,8 +53,7 @@
    "text": "Los sindicatos son fundamentales para defender a los trabajadores.",
    "primaryAxis": "ECO",
    "effects": {
-    "ECO": -1,
-    "IDN": -0.2
+    "ECO": -1
    },
    "core": true
   },
@@ -85,7 +84,7 @@
   },
   {
    "id": "AR-ECO-10",
-   "text": "Los programas sociales como la AUH son una herramienta legítima para reducir la pobreza.",
+   "text": "Los programas sociales como la AUH deberían ampliarse aunque haya que subir impuestos.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
@@ -101,7 +100,7 @@
   },
   {
    "id": "AR-ECO-12",
-   "text": "Sin una industria fuerte, Argentina no puede ser un país desarrollado.",
+   "text": "El Estado debería promover activamente la industria nacional con créditos, subsidios y compras públicas.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
@@ -117,7 +116,7 @@
   },
   {
    "id": "AR-ECO-14",
-   "text": "Las huelgas en educación o transporte no deberían tener más restricciones que en otros sectores.",
+   "text": "Los docentes y los trabajadores del transporte deberían poder hacer huelga con las mismas reglas que cualquier otro trabajador.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1,
@@ -209,7 +208,7 @@
   },
   {
    "id": "AR-ECO-25",
-   "text": "Los planes sociales deberían reducirse y exigir una contraprestación laboral.",
+   "text": "Los planes sociales deberían reducirse.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
@@ -241,7 +240,7 @@
   },
   {
    "id": "AR-ECO-29",
-   "text": "Los dirigentes sindicales deberían tener límites a la reelección.",
+   "text": "Los sindicatos deberían tener menos poder en la negociación salarial.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
@@ -278,7 +277,8 @@
    "text": "El Estado no debería tener medios de comunicación propios.",
    "primaryAxis": "ECO",
    "effects": {
-    "ECO": 1
+    "ECO": 1,
+    "INS": -0.1
    }
   },
   {
@@ -307,7 +307,7 @@
   },
   {
    "id": "AR-ECO-37",
-   "text": "El período de prueba de los nuevos empleos debería ser más largo.",
+   "text": "Un período de prueba largo, de hasta un año, es razonable para los nuevos empleos.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
@@ -372,7 +372,7 @@
   },
   {
    "id": "AR-ECO-45",
-   "text": "Los trabajadores deberían poder llevar sus aportes a la prepaga que elijan en lugar de a la obra social de su gremio.",
+   "text": "Los trabajadores deberían poder derivar sus aportes de salud directamente a la prepaga que elijan.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
@@ -620,7 +620,7 @@
   },
   {
    "id": "AR-SOC-11",
-   "text": "Los tratamientos hormonales de cambio de género deberían estar reservados a mayores de edad.",
+   "text": "La prohibición de tratamientos hormonales de cambio de género en menores de edad debería mantenerse.",
    "primaryAxis": "SOC",
    "effects": {
     "SOC": 1
@@ -943,7 +943,7 @@
   },
   {
    "id": "AR-SEG-01",
-   "text": "Hay que bajar la edad de imputabilidad de los menores.",
+   "text": "La edad de imputabilidad de los menores debería ser de 14 años o menos.",
    "primaryAxis": "SEG",
    "effects": {
     "SEG": 1
@@ -955,8 +955,7 @@
    "text": "Un protocolo que impida cortar calles es necesario aunque limite la protesta.",
    "primaryAxis": "SEG",
    "effects": {
-    "SEG": 1,
-    "INS": 0.2
+    "SEG": 1
    },
    "core": true
   },
@@ -1150,7 +1149,7 @@
   },
   {
    "id": "AR-MEM-09",
-   "text": "Las Fuerzas Armadas deberían recuperar presupuesto y protagonismo público.",
+   "text": "Los militares que actuaron contra la guerrilla en los años 70 merecen un reconocimiento público.",
    "primaryAxis": "MEM",
    "effects": {
     "MEM": 1
@@ -1158,7 +1157,7 @@
   },
   {
    "id": "AR-MEM-10",
-   "text": "La última dictadura llevó adelante un plan sistemático de desaparición de personas que no admite relativizaciones.",
+   "text": "La última dictadura llevó adelante un plan sistemático de desaparición de personas.",
    "primaryAxis": "MEM",
    "effects": {
     "MEM": -1
@@ -1182,7 +1181,7 @@
   },
   {
    "id": "AR-MEM-13",
-   "text": "Las reparaciones económicas a víctimas de la dictadura deberían auditarse para detectar posibles abusos.",
+   "text": "Las reparaciones económicas a víctimas de la dictadura fueron excesivas.",
    "primaryAxis": "MEM",
    "effects": {
     "MEM": 1
@@ -1214,7 +1213,7 @@
   },
   {
    "id": "AR-EXT-01",
-   "text": "Argentina debería alinearse estratégicamente con Estados Unidos e Israel.",
+   "text": "Argentina debería alinearse estratégicamente con Estados Unidos.",
    "primaryAxis": "EXT",
    "effects": {
     "EXT": 1
@@ -1226,8 +1225,7 @@
    "text": "El reclamo por Malvinas debería pasar a segundo plano para mejorar la relación con el Reino Unido.",
    "primaryAxis": "EXT",
    "effects": {
-    "EXT": 1,
-    "POP": -0.2
+    "EXT": 1
    },
    "core": true
   },
@@ -1256,13 +1254,13 @@
    "primaryAxis": "EXT",
    "effects": {
     "EXT": -1,
-    "ECO": -0.3
+    "ECO": -0.1
    },
    "core": true
   },
   {
    "id": "AR-EXT-06",
-   "text": "China es un socio estratégico indispensable para Argentina.",
+   "text": "Argentina debería profundizar su relación estratégica con China aunque eso moleste a Estados Unidos.",
    "primaryAxis": "EXT",
    "effects": {
     "EXT": -1
@@ -1279,7 +1277,7 @@
   },
   {
    "id": "AR-EXT-08",
-   "text": "Argentina debe tener una política exterior independiente, sin alineamientos automáticos.",
+   "text": "Argentina debería tomar distancia de Estados Unidos aunque eso le cueste inversiones.",
    "primaryAxis": "EXT",
    "effects": {
     "EXT": -1
@@ -1329,7 +1327,7 @@
   },
   {
    "id": "AR-EXT-14",
-   "text": "Argentina debería mantenerse neutral en guerras como las de Ucrania o Medio Oriente.",
+   "text": "Argentina debería mantenerse neutral en las guerras entre otros países.",
    "primaryAxis": "EXT",
    "effects": {
     "EXT": -1
@@ -1338,7 +1336,7 @@
   },
   {
    "id": "AR-EXT-15",
-   "text": "Argentina debería firmar un acuerdo comercial bilateral con Estados Unidos.",
+   "text": "El acuerdo comercial firmado con Estados Unidos es beneficioso para el país.",
    "primaryAxis": "EXT",
    "effects": {
     "EXT": 1,
@@ -1394,7 +1392,7 @@
   },
   {
    "id": "AR-FED-05",
-   "text": "El interior financia con sus recursos privilegios del AMBA, como los subsidios al transporte.",
+   "text": "El AMBA recibe más recursos nacionales de los que le corresponden en comparación con el interior.",
    "primaryAxis": "FED",
    "effects": {
     "FED": -1
@@ -1403,7 +1401,7 @@
   },
   {
    "id": "AR-FED-06",
-   "text": "Los recursos naturales deben pertenecer a las provincias y no a la Nación.",
+   "text": "Las provincias deberían poder decidir solas sobre la explotación de sus recursos naturales, sin intervención de la Nación.",
    "primaryAxis": "FED",
    "effects": {
     "FED": -1
@@ -1412,10 +1410,11 @@
   },
   {
    "id": "AR-FED-07",
-   "text": "El Gobierno nacional debe redistribuir recursos de las provincias ricas a las pobres.",
+   "text": "El Gobierno nacional debería decidir por su cuenta cómo reparte fondos entre provincias, sin necesidad de acordarlo con ellas.",
    "primaryAxis": "FED",
    "effects": {
-    "FED": 1
+    "FED": 1,
+    "ECO": -0.2
    }
   },
   {
@@ -1539,7 +1538,7 @@
   },
   {
    "id": "AR-IDN-06",
-   "text": "Perón fue el líder político más importante de la historia argentina.",
+   "text": "Perón fue el mejor presidente de la historia argentina.",
    "primaryAxis": "IDN",
    "effects": {
     "IDN": -1

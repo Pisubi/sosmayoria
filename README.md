@@ -36,6 +36,14 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
   la dirección de sus posiciones. Donde el perfil no tiene dato se cuenta la distancia
   del usuario al centro (mínimo 40). 80% o más se muestra como "muy cerca"; menos de
   50%, "lejos".
+- Cada catálogo se compara solo en los temas que tienen dato al menos el 70% de sus
+  perfiles (en figuras históricas argentinas no cuenta Memoria; en las internacionales,
+  Ambiente). La identidad peronista cuenta en la cercanía aunque se muestre aparte.
+- En temas con un polo "poco declarable" (Instituciones y Estilo; Libertades, Democracia
+  y Estilo) el valor de los perfiles hacia ese polo se compara a la mitad, porque sus
+  votantes no se expresan como actúan sus referentes (`poleBExpressed` en `axes.json`).
+- Consistencia: si en varios temas la persona estuvo de acuerdo con afirmaciones
+  opuestas (menos de 0,4), el resultado se marca como mixto y orientativo.
 - Los catálogos se rankean por separado. Las figuras de dictaduras y
   totalitarismos se incluyen como cualquier otro perfil, con descripciones que
   mencionan sus crímenes documentados. Por decisión editorial quedan excluidos

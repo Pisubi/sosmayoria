@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { tests } from '../../data/tests'
 import { closenessLabel, rankProfiles, type Match } from '../../engine/matching'
-import { ACQUIESCENCE_THRESHOLD } from '../../engine/scoring'
+import { ACQUIESCENCE_THRESHOLD, CONSISTENCY_THRESHOLD } from '../../engine/scoring'
 import type { AxisScore, TestId } from '../../types'
 import { Avatar } from '../Avatar'
 import { Eyebrow } from '../Eyebrow'
@@ -15,6 +15,8 @@ export interface ResultData {
   testId: TestId
   scores: AxisScore[]
   acquiescence?: number
+  /** Consistencia de las respuestas (ver engine/scoring). */
+  consistency?: number
   answered?: number
   total?: number
   /** Resultado abierto desde un enlace compartido (sin respuestas individuales). */
@@ -30,8 +32,8 @@ interface ResultsProps {
 export function Results({ data, onRestart, onMethodology }: ResultsProps) {
   const test = tests[data.testId]
   const { scores } = data
-  const matchAxes = test.axes.filter((a) => a.includeInMatching)
-  const identityAxis = test.axes.find((a) => !a.includeInMatching)
+  const matchAxes = test.axes.filter((a) => a.includeInMatching && !a.reportSeparately)
+  const identityAxis = test.axes.find((a) => a.reportSeparately)
   const axisName = (id: string) => test.axes.find((a) => a.id === id)?.name ?? id
 
   const byCatalog = useMemo(
@@ -58,6 +60,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
     (s) => s.score == null && matchAxes.some((a) => a.id === s.axisId),
   )
   const acquiescent = Math.abs(data.acquiescence ?? 0) > ACQUIESCENCE_THRESHOLD
+  const mixed = (data.consistency ?? 1) < CONSISTENCY_THRESHOLD
 
   return (
     <main>
@@ -65,7 +68,11 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
           <Eyebrow>Tu resultado · Test {test.name}</Eyebrow>
           <h1 className="mt-6 max-w-3xl text-4xl leading-[1.1] font-normal tracking-[-0.015em] sm:text-6xl">
-            {top.similarity >= 50 ? 'Tu perfil se acerca a' : 'Ningún perfil está muy cerca; el más próximo es'}{' '}
+            {mixed
+              ? 'Tus respuestas son mixtas; lo más próximo es'
+              : top.similarity >= 50
+                ? 'Tu perfil se acerca a'
+                : 'Ningún perfil está muy cerca; el más próximo es'}{' '}
             <em className="font-light text-naranja">{top.profile.name}</em>
           </h1>
           <p className="mt-6 max-w-2xl leading-7 text-marfil/75 sm:text-lg sm:leading-8">
@@ -77,7 +84,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
           <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-marfil/20 bg-marfil/20 sm:grid-cols-2 lg:grid-cols-4">
             {byCatalog.map(({ catalog, matches }) =>
               matches[0] ? (
-                <Highlight key={catalog.id} testId={test.id} label={catalog.name} match={matches[0]} axisName={axisName} />
+                <Highlight key={catalog.id} testId={test.id} label={catalog.name} match={matches[0]} runnerUp={matches[1]} axisName={axisName} />
               ) : null,
             )}
           </div>
@@ -89,11 +96,18 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
         </div>
       </section>
 
-      {(acquiescent || undetermined.length > 0 || data.shared) && (
+      {(acquiescent || mixed || undetermined.length > 0 || data.shared) && (
         <section className="mx-auto max-w-5xl px-4 pt-10 sm:px-6">
           <div className="space-y-2 rounded-xl border border-naranja/40 bg-linea/50 p-5 text-sm leading-6">
             {data.shared && (
               <p>Estás viendo un resultado compartido: se recalculó a partir de los puntajes del enlace.</p>
+            )}
+            {mixed && (
+              <p>
+                En varios temas estuviste de acuerdo con afirmaciones que van en sentidos
+                opuestos. Puede que tengas posiciones mixtas, pero el resultado es menos preciso:
+                tomá las cercanías como orientativas.
+              </p>
             )}
             {acquiescent && (
               <p>
@@ -203,13 +217,16 @@ function Highlight({
   testId,
   label,
   match,
+  runnerUp,
   axisName,
 }: {
   testId: TestId
   label: string
   match: Match
+  runnerUp?: Match
   axisName: (id: string) => string
 }) {
+  const tied = runnerUp && match.similarity - runnerUp.similarity < 2
   return (
     <div className="bg-noche p-5 sm:p-6">
       <p className="text-xs font-medium tracking-[0.12em] text-marfil/60 uppercase">{label}</p>
@@ -223,7 +240,9 @@ function Highlight({
         <span className="ml-2 text-sm font-medium text-marfil/70">{closenessLabel(match.similarity)}</span>
       </p>
       <p className="mt-2 text-xs leading-5 text-marfil/60">
-        Más cerca en {listOf(match.agree.slice(0, 2).map(axisName))}
+        {tied
+          ? `Casi empatado con ${runnerUp.profile.name}`
+          : `Más cerca en ${listOf(match.agree.slice(0, 2).map(axisName))}`}
       </p>
     </div>
   )

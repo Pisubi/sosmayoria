@@ -35,7 +35,8 @@
    "poleB": {
     "label": "Movimientista"
    },
-   "includeInMatching": true
+   "includeInMatching": true,
+   "poleBExpressed": 0.5
   },
   {
    "id": "POP",
@@ -47,7 +48,8 @@
    "poleB": {
     "label": "Populista"
    },
-   "includeInMatching": true
+   "includeInMatching": true,
+   "poleBExpressed": 0.5
   },
   {
    "id": "SEG",
@@ -100,14 +102,15 @@
   {
    "id": "IDN",
    "name": "Identidad",
-   "description": "Identificación con el peronismo o con el antiperonismo. Se informa aparte y no entra en las comparaciones.",
+   "description": "Identificación con el peronismo o con el antiperonismo. Se muestra aparte y también cuenta en la cercanía.",
    "poleA": {
     "label": "Peronista"
    },
    "poleB": {
     "label": "Antiperonista"
    },
-   "includeInMatching": false
+   "includeInMatching": true,
+   "reportSeparately": true
   }
  ]
 }

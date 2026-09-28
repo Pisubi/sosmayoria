@@ -1547,18 +1547,18 @@
    "description": "Ministro de Economía desde diciembre de 2023; exministro de Finanzas (2017–2018) y expresidente del BCRA (2018).",
    "coords": {
     "ECO": 90,
-    "SOC": null,
+    "SOC": 30,
     "INS": 40,
     "POP": 30,
-    "SEG": null,
-    "MEM": null,
+    "SEG": 45,
+    "MEM": 40,
     "EXT": 90,
     "FED": 20,
     "IDN": 70
    },
-   "confidence": "media",
+   "confidence": "baja",
    "method": "seed-editorial",
-   "basis": "ECO: Déficit cero, acuerdo con el FMI (2025), salida parcial del cepo y baja de retenciones; superávit proyectado para 2027 — Ámbito (sep. 2026) · SOC: null: sin posiciones públicas relevantes sobre aborto, ESI o familia · INS: Ejecutor del DNU 70/2023 y firmante del veto a la ley de ATN (sep. 2025) — Boletín Oficial · POP: Perfil técnico-financiero, con estilo confrontativo en redes ('comunismo o esto', 2025) — Diario de Cuyo (sep. 2025) · SEG: null: sin posiciones públicas relevantes en seguridad · MEM: null: sin posiciones públicas relevantes sobre memoria · EXT: Negoció el apoyo del Tesoro de EE.UU. (2025) y el acuerdo con el FMI — Ministerio de Economía; Reuters · FED: Firmó el veto a la ley de ATN y negocia fondos gobernador por gobernador (2025–2026) — La Nación (sep. 2025) · IDN: Define al kirchnerismo como 'el infierno' y al industrialismo peronista como prebendario (2026) — El Intransigente (ago. 2026)"
+   "basis": "ECO: Déficit cero, acuerdo con el FMI (2025), salida parcial del cepo y baja de retenciones; superávit proyectado para 2027 — Ámbito (sep. 2026) · SOC: null: sin posiciones públicas relevantes sobre aborto, ESI o familia · INS: Ejecutor del DNU 70/2023 y firmante del veto a la ley de ATN (sep. 2025) — Boletín Oficial · POP: Perfil técnico-financiero, con estilo confrontativo en redes ('comunismo o esto', 2025) — Diario de Cuyo (sep. 2025) · SEG: null: sin posiciones públicas relevantes en seguridad · MEM: null: sin posiciones públicas relevantes sobre memoria · EXT: Negoció el apoyo del Tesoro de EE.UU. (2025) y el acuerdo con el FMI — Ministerio de Economía; Reuters · FED: Firmó el veto a la ley de ATN y negocia fondos gobernador por gobernador (2025–2026) — La Nación (sep. 2025) · IDN: Define al kirchnerismo como 'el infierno' y al industrialismo peronista como prebendario (2026) — El Intransigente (ago. 2026) · SOC, SEG y MEM: sin posiciones públicas propias; se toma la línea del gobierno de Milei que integra, moderada por su perfil técnico (confianza baja)."
   },
   {
    "id": "sturzenegger",
@@ -1568,18 +1568,18 @@
    "description": "Ministro de Desregulación y Transformación del Estado desde 2024; expresidente del BCRA (2015–2018).",
    "coords": {
     "ECO": 100,
-    "SOC": null,
+    "SOC": 25,
     "INS": 40,
     "POP": 10,
-    "SEG": null,
-    "MEM": null,
+    "SEG": 40,
+    "MEM": 35,
     "EXT": 90,
     "FED": 10,
     "IDN": 60
    },
-   "confidence": "media",
+   "confidence": "baja",
    "method": "seed-editorial",
-   "basis": "ECO: Redactó el DNU 70/2023 y gran parte de la Ley Bases; como ministro (2024–) impulsa desregulaciones y privatizaciones — Boletín Oficial; El Cronista 2026 · SOC: null: sin posiciones públicas sobre aborto, ESI, matrimonio igualitario o Iglesia; perfil exclusivamente económico — revisión de prensa 2024–2026 · INS: Diseñó el DNU 70/2023 y usa las facultades delegadas de la Ley Bases (2024–2025) para desregular sin pasar por el Congreso — Boletín Oficial; La Nación · POP: Perfil técnico (PhD MIT, BCRA 2015–2018) con discurso contra 'privilegios' y 'kiosquitos' sectoriales (2026) — Radio Sudamericana 2026 · SEG: null: sin agenda de seguridad propia; solo justificó por costo fiscal la disolución de la ANMaC (Decreto 445/2025) — Chequeado 2025 · MEM: null: sin declaraciones públicas relevantes sobre la dictadura, los juicios o la cifra de desaparecidos — revisión de prensa 2024–2026 · EXT: Apertura comercial y eliminación de trabas a importaciones dentro del alineamiento occidental de Milei (2024–2026) — El Cronista 2026 · FED: Pide a las provincias replicar el ajuste nacional y bajar Ingresos Brutos, con desregulación impulsada desde la Nación (2024–2025) — El Cronista; La Nación · IDN: Funcionario de Macri (BCRA 2015–2018) y de Milei, crítico del modelo económico peronista sin antiperonismo militante — La Nación"
+   "basis": "ECO: Redactó el DNU 70/2023 y gran parte de la Ley Bases; como ministro (2024–) impulsa desregulaciones y privatizaciones — Boletín Oficial; El Cronista 2026 · SOC: null: sin posiciones públicas sobre aborto, ESI, matrimonio igualitario o Iglesia; perfil exclusivamente económico — revisión de prensa 2024–2026 · INS: Diseñó el DNU 70/2023 y usa las facultades delegadas de la Ley Bases (2024–2025) para desregular sin pasar por el Congreso — Boletín Oficial; La Nación · POP: Perfil técnico (PhD MIT, BCRA 2015–2018) con discurso contra 'privilegios' y 'kiosquitos' sectoriales (2026) — Radio Sudamericana 2026 · SEG: null: sin agenda de seguridad propia; solo justificó por costo fiscal la disolución de la ANMaC (Decreto 445/2025) — Chequeado 2025 · MEM: null: sin declaraciones públicas relevantes sobre la dictadura, los juicios o la cifra de desaparecidos — revisión de prensa 2024–2026 · EXT: Apertura comercial y eliminación de trabas a importaciones dentro del alineamiento occidental de Milei (2024–2026) — El Cronista 2026 · FED: Pide a las provincias replicar el ajuste nacional y bajar Ingresos Brutos, con desregulación impulsada desde la Nación (2024–2025) — El Cronista; La Nación · IDN: Funcionario de Macri (BCRA 2015–2018) y de Milei, crítico del modelo económico peronista sin antiperonismo militante — La Nación · SOC, SEG y MEM: sin posiciones públicas propias; se toma la línea del gobierno de Milei que integra, moderada por su perfil técnico (confianza baja)."
   },
   {
    "id": "manes",

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { tests } from '../src/data/tests'
-import { rankProfiles } from '../src/engine/matching'
+import { expressed, rankProfiles, uncoveredAxes } from '../src/engine/matching'
 import { scoreAxes } from '../src/engine/scoring'
 import { drawQuestions } from '../src/engine/selection'
 import type { Axis, Profile } from '../src/types'
@@ -14,12 +14,13 @@ const RUNS = 30
  */
 export const TWIN_DISTANCE = 20
 
-function distance(a: Profile, b: Profile, axes: Axis[]): number {
+/** Distancia como la ve el motor: valores expresados y solo temas cubiertos por el catálogo. */
+function distance(a: Profile, b: Profile, axes: Axis[], skip: Set<string>): number {
   const diffs = axes
-    .filter((x) => x.includeInMatching)
+    .filter((x) => x.includeInMatching && !skip.has(x.id))
     .flatMap((x) => {
-      const u = a.coords[x.id]
-      const v = b.coords[x.id]
+      const u = expressed(x, a.coords[x.id])
+      const v = expressed(x, b.coords[x.id])
       return u == null || v == null ? [] : [u - v]
     })
   return Math.sqrt(diffs.reduce((s, d) => s + d * d, 0) / diffs.length)
@@ -33,14 +34,14 @@ describe.each(Object.values(tests))('recall $name', (test) => {
     for (const profile of test.profiles) {
       const pool = test.profiles.filter((p) => p.catalog === profile.catalog)
       const twins = pool.filter(
-        (p) => p.id !== profile.id && distance(p, profile, test.axes) < TWIN_DISTANCE,
+        (p) => p.id !== profile.id && distance(p, profile, test.axes, uncoveredAxes(test.axes, pool)) < TWIN_DISTANCE,
       ).length
       const topN = Math.min(3, 1 + twins)
       let hits = 0
       for (let i = 0; i < RUNS; i++) {
         // Cada simulación juega una partida distinta de la versión completa.
         const questions = drawQuestions(test, 'full', Math.floor(next() * 2 ** 31))
-        const scores = scoreAxes(test.axes, questions, simulate(profile, questions, next))
+        const scores = scoreAxes(test.axes, questions, simulate(profile, questions, next, 0.25, test.axes))
         const ranked = rankProfiles(scores, test.axes, pool)
         if (ranked.slice(0, topN).some((m) => m.profile.id === profile.id)) hits++
       }

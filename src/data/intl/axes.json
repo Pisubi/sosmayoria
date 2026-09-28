@@ -35,7 +35,8 @@
    "poleB": {
     "label": "Orden / autoridad"
    },
-   "includeInMatching": true
+   "includeInMatching": true,
+   "poleBExpressed": 0.5
   },
   {
    "id": "DEM",
@@ -47,7 +48,8 @@
    "poleB": {
     "label": "Autocracia"
    },
-   "includeInMatching": true
+   "includeInMatching": true,
+   "poleBExpressed": 0.5
   },
   {
    "id": "SOC",
@@ -131,7 +133,8 @@
    "poleB": {
     "label": "Populismo"
    },
-   "includeInMatching": true
+   "includeInMatching": true,
+   "poleBExpressed": 0.5
   }
  ]
 }

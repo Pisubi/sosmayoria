@@ -6,7 +6,7 @@ import { ParticipantForm } from './components/ParticipantForm'
 import { Quiz } from './components/Quiz'
 import { Results, type ResultData } from './components/results/Results'
 import { tests } from './data/tests'
-import { acquiescence, scoreAxes } from './engine/scoring'
+import { acquiescence, consistency, scoreAxes } from './engine/scoring'
 import { newSeed } from './engine/selection'
 import { decodeResult, encodeResult } from './engine/share'
 import type { Participant } from './lib/participant'
@@ -74,6 +74,7 @@ function App() {
       testId,
       scores: scoreAxes(test.axes, questions, answers),
       acquiescence: acquiescence(answers),
+      consistency: consistency(questions, answers),
       answered: Object.values(answers).filter((r) => r != null).length,
       total: questions.length,
     }

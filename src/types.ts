@@ -13,8 +13,16 @@ export interface Axis {
   description: string
   poleA: Pole
   poleB: Pole
-  /** false: se informa aparte (p. ej. identidad peronista) y no entra en las comparaciones */
+  /** false: no entra en las comparaciones */
   includeInMatching: boolean
+  /** Se muestra aparte en el resultado (identidad peronista), aunque cuente en la cercanía. */
+  reportSeparately?: boolean
+  /**
+   * Proporción del valor de un perfil hacia el polo B que expresan en el test quienes piensan
+   * como él. En temas con polo "poco declarable" (movimientismo, populismo, autoridad) los
+   * votantes no se expresan como actúan sus líderes; la comparación usa el valor escalado.
+   */
+  poleBExpressed?: number
 }
 
 export interface Question {

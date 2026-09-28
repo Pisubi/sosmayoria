@@ -1,4 +1,5 @@
-import type { Profile, Question, Response } from '../src/types'
+import { expressed } from '../src/engine/matching'
+import type { Axis, Profile, Question, Response } from '../src/types'
 
 /** RNG determinístico para que los tests sean reproducibles. */
 export function rng(seed: number): () => number {
@@ -23,16 +24,23 @@ function snap(x: number): Response {
   return LEVELS.reduce((best, l) => (Math.abs(l - x) < Math.abs(best - x) ? l : best), 0 as number) as Response
 }
 
-/** Respondente simulado "como" un perfil: signo del ítem · coordenada + ruido. */
+/** Coordenadas de un perfil tal como las expresaría alguien que piensa como él (ver Axis.poleBExpressed). */
+export function expressedCoords(profile: Profile, axes: Axis[]): Record<string, number | null> {
+  return Object.fromEntries(axes.map((a) => [a.id, expressed(a, profile.coords[a.id])]))
+}
+
+/** Respondente simulado "como" un perfil: signo del ítem · coordenada expresada + ruido. */
 export function simulate(
   profile: Profile,
   questions: Question[],
   next: () => number,
   sigma = 0.25,
+  axes?: Axis[],
 ): Record<string, Response> {
+  const coords = axes ? expressedCoords(profile, axes) : profile.coords
   const answers: Record<string, Response> = {}
   for (const q of questions) {
-    const p = profile.coords[q.primaryAxis]
+    const p = coords[q.primaryAxis]
     if (p == null) {
       answers[q.id] = null
       continue
