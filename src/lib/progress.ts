@@ -10,7 +10,7 @@ export interface SavedProgress {
 }
 
 // El progreso queda en este navegador; a Supabase solo se envía el test terminado.
-const KEY = 'brujula:progreso:v2'
+const KEY = 'brujula:progreso:v3'
 
 export function loadProgress(): SavedProgress | null {
   try {

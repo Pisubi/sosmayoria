@@ -1,9 +1,9 @@
 -- Brújula: tabla de respuestas anónimas.
 -- Pegar entero en Supabase → SQL Editor → Run. Se puede volver a correr sin romper nada.
 --
--- Una fila por test terminado, ~140 bytes con índice incluido:
+-- Una fila por test terminado, ~180 bytes con índice incluido:
 --   las columnas de códigos son smallint (2 bytes), la fecha es date (4 bytes, sin hora),
---   las respuestas van empaquetadas en medio byte por afirmación (50 bytes para 100),
+--   las respuestas van empaquetadas en medio byte por afirmación (91 bytes para el banco de 182),
 --   y los puntajes por eje no se guardan porque se recalculan desde las respuestas.
 -- Las columnas van de mayor a menor tamaño para no perder bytes en relleno de alineación.
 
@@ -20,7 +20,7 @@ create table if not exists public.respuestas (
 );
 
 comment on table public.respuestas is
-  'Una fila por test terminado. respuestas: medio byte por afirmación en el orden de src/data/<test>/questions.json; 0 no preguntada, 1 No sé, 2..6 = −1, −0,5, 0, 0,5, 1.';
+  'Una fila por test terminado. respuestas: medio byte por afirmación del banco, en el orden de src/data/<test>/questions.json; bits 0-2: 0 no preguntada, 1 No sé, 2..6 = −1, −0,5, 0, 0,5, 1; bit 3: núcleo.';
 
 -- Solo se puede insertar. Nadie con la clave pública puede leer, modificar ni borrar.
 alter table public.respuestas enable row level security;
@@ -35,6 +35,7 @@ create policy "insertar respuestas" on public.respuestas
 
 -- Lee la afirmación i (desde 0) de una fila: −1, −0.5, 0, 0.5, 1, o null si no se
 -- preguntó o respondió "No sé". Para consultas rápidas desde el SQL Editor.
+-- (El bit 3 de cada medio byte marca si la afirmación salió como núcleo en esa partida.)
 create or replace function public.respuesta(r bytea, i int)
 returns numeric
 language sql immutable strict
@@ -42,7 +43,7 @@ set search_path = ''
 as $$
   select case
     when i / 2 >= octet_length(r) then null
-    else nullif(nullif((get_byte(r, i / 2) >> (4 * (1 - i % 2))) & 15, 0), 1)
+    else nullif(nullif((get_byte(r, i / 2) >> (4 * (1 - i % 2))) & 7, 0), 1)
   end * 0.5 - 2
 $$;
 revoke execute on function public.respuesta(bytea, int) from public, anon, authenticated;

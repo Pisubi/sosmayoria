@@ -4,8 +4,10 @@ import type { Axis, AxisScore, Question, Response } from '../types'
 export const MIN_COVERAGE = 0.5
 
 /**
- * score_k = 100 · Σ r_i·e_ik / Σ |e_ik|, solo sobre ítems respondidos.
- * cobertura_k = Σ_respondidos |e_ik| / Σ_todos |e_ik|.
+ * score_k = 100 · Σ w_i·r_i·e_ik / Σ w_i·|e_ik|, solo sobre ítems respondidos.
+ * cobertura_k = Σ_respondidos w_i·|e_ik| / Σ_todos w_i·|e_ik|.
+ * w_i es el peso del ítem en la partida (núcleo o detalle) y solo se aplica a su eje
+ * principal: en los efectos secundarios sobre otros ejes pesa 1.
  */
 export function scoreAxes(
   axes: Axis[],
@@ -20,11 +22,12 @@ export function scoreAxes(
   for (const q of questions) {
     for (const [axisId, e] of Object.entries(q.effects)) {
       if (!(axisId in tot)) continue
-      tot[axisId] += Math.abs(e)
+      const w = axisId === q.primaryAxis ? (q.weight ?? 1) : 1
+      tot[axisId] += w * Math.abs(e)
       const r = answers[q.id]
       if (r == null) continue
-      num[axisId] += r * e
-      den[axisId] += Math.abs(e)
+      num[axisId] += w * r * e
+      den[axisId] += w * Math.abs(e)
     }
   }
 

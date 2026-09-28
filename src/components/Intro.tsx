@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { TEST_ORDER, tests } from '../data/tests'
-import { estimatedMinutes, questionsFor, VARIANTS, variantLabel } from '../engine/selection'
+import { estimatedMinutes, VARIANT_SIZE, VARIANTS, variantLabel } from '../engine/selection'
 import type { SavedProgress } from '../lib/progress'
 import type { TestDefinition, TestId, Variant } from '../types'
 import { Eyebrow, Index } from './Eyebrow'
@@ -122,7 +122,7 @@ function ResumeBanner({
   onResume: (progress: SavedProgress) => void
 }) {
   const test = tests[saved.testId]
-  const total = questionsFor(test, saved.variant).length
+  const total = VARIANT_SIZE[saved.variant]
   return (
     <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-azul/14 bg-linea/60 p-5">
       <p className="text-sm leading-6">
@@ -167,7 +167,7 @@ function TestCard({
       </p>
       <div className="mt-8 grid gap-2">
         {VARIANTS.map((variant) => {
-          const count = questionsFor(test, variant).length
+          const count = VARIANT_SIZE[variant]
           const primary = variant === 'full'
           return (
             <button

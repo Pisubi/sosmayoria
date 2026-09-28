@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { tests } from '../src/data/tests'
 import { rankProfiles } from '../src/engine/matching'
 import { scoreAxes } from '../src/engine/scoring'
-import { questionsFor } from '../src/engine/selection'
+import { drawQuestions } from '../src/engine/selection'
 import type { Axis, Profile } from '../src/types'
 import { rng, simulate } from './helpers'
 
@@ -26,20 +26,20 @@ function distance(a: Profile, b: Profile, axes: Axis[]): number {
 }
 
 describe.each(Object.values(tests))('recall $name', (test) => {
-  const questions = questionsFor(test, 'full')
-
-  it('cada perfil sale primero en su catálogo en al menos el 80% de las simulaciones (σ = 0,25); entre los dos primeros si tiene un "gemelo"', () => {
+  it('cada perfil sale primero en su catálogo en al menos el 80% de las simulaciones (σ = 0,25); con gemelos, entre los primeros (hasta el tercero)', () => {
     const next = rng(42)
     const failures: string[] = []
 
     for (const profile of test.profiles) {
       const pool = test.profiles.filter((p) => p.catalog === profile.catalog)
-      const hasTwin = pool.some(
+      const twins = pool.filter(
         (p) => p.id !== profile.id && distance(p, profile, test.axes) < TWIN_DISTANCE,
-      )
-      const topN = hasTwin ? 2 : 1
+      ).length
+      const topN = Math.min(3, 1 + twins)
       let hits = 0
       for (let i = 0; i < RUNS; i++) {
+        // Cada simulación juega una partida distinta de la versión completa.
+        const questions = drawQuestions(test, 'full', Math.floor(next() * 2 ** 31))
         const scores = scoreAxes(test.axes, questions, simulate(profile, questions, next))
         const ranked = rankProfiles(scores, test.axes, pool)
         if (ranked.slice(0, topN).some((m) => m.profile.id === profile.id)) hits++

@@ -14,14 +14,21 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
 | | Argentina | Internacional |
 |---|---|---|
 | Temas (ejes) | Economía (Estado, macroeconomía, trabajo y comercio), Valores, Instituciones, Estilo (pluralista/populista), Seguridad y memoria, Mundo, Territorio + Identidad (aparte) | Economía (incluye comercio), Libertades (incluye democracia), Valores (incluye religión), Nación, Guerra y paz, Migración, Ambiente, Estilo |
-| Afirmaciones | 25 corta · 50 completa · 100 a fondo | 25 corta · 50 completa · 100 a fondo |
+| Afirmaciones por partida | 25 corta · 50 completa · 100 a fondo | 25 corta · 50 completa · 100 a fondo |
+| Banco del que se sortean | 182 (48 elegibles para el núcleo) | 176 (48 elegibles para el núcleo) |
 | Catálogos | Tradiciones y espacios · Figuras históricas · Figuras actuales | Ideologías · Figuras históricas · Figuras actuales · Partidos |
 | Perfiles | 169 | 302 |
 
 ## Cómo se calcula
 
+- Cada partida sortea sus afirmaciones del banco y las muestra en orden aleatorio.
+  Las 25 de la corta son el **núcleo** (3 o 4 por tema, entre las elegibles) y pesan
+  el triple en su tema; la completa y la a fondo suman 25 y 75 de **detalle**.
+  En la corta un sentido queda 2 a 1 por tema, alternado entre temas; en las otras
+  el detalle compensa y cada tema queda equilibrado.
 - Respuestas de −1 a +1 (±0,5 intermedios); "No sé" se excluye.
-- `puntaje_eje = 100 · Σ(r·e) / Σ|e|` sobre ítems respondidos; con menos del 50% de
+- `puntaje_eje = 100 · Σ(w·r·e) / Σ w·|e|` sobre ítems respondidos, con `w = 3` para
+  el núcleo en su tema principal y 1 en el resto; con menos del 50% de
   cobertura el eje queda indeterminado.
 - Cercanía: `100 · (1 − d/200)`, con `d` la distancia media cuadrática en los ejes
   con dato en ambos. Menos del 60% de ejes comparados = comparación parcial.
@@ -76,14 +83,15 @@ entorno, la app no pide datos ni envía nada.
 
 ### Cómo se ahorra espacio
 
-El plan Free da 500 MB de base. Cada test terminado ocupa unos **140 bytes**
+El plan Free da 500 MB de base. Cada test terminado ocupa unos **180 bytes**
 con el índice incluido (medido con 100.000 filas en PostgreSQL 16): alcanza para
-unos **3 millones de tests**. La misma información guardada "a lo simple", con
-JSON de respuestas y puntajes, textos y timestamp, ocupa unos 840 bytes por
-fila, 6 veces más.
+unos **2,5 millones de tests**. La misma información guardada "a lo simple", con
+JSON de respuestas y puntajes, textos y timestamp, ocupa unos 1.000 bytes por
+fila, más de 5 veces.
 
 - **Respuestas en medio byte cada una**: el valor de cada afirmación ocupa 4 bits
-  en un `bytea`, en el orden de `questions.json`: 50 bytes para 100 afirmaciones.
+  en un `bytea`, en el orden del banco (`questions.json`): 91 bytes para 182. El
+  cuarto bit marca las que salieron como núcleo, para recalcular el puntaje.
   Como las filas guardadas dependen de ese orden, a `questions.json` solo se le
   agregan afirmaciones al final; lo controla un test contra
   `tests/answer-layout.json`, que hay que actualizar al agregarlas.

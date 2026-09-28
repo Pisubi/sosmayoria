@@ -1,5 +1,5 @@
 {
- "version": "intl-2.1.0",
+ "version": "intl-3.0.0",
  "questions": [
   {
    "id": "IN-ECO-01",
@@ -8,59 +8,45 @@
    "effects": {
     "ECO": 1
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
   },
   {
    "id": "IN-ECO-02",
-   "text": "Los servicios esenciales como agua, energía y salud deberían ser públicos.",
-   "primaryAxis": "ECO",
-   "effects": {
-    "ECO": -1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-ECO-03",
    "text": "El libre comercio global benefició a la mayoría de la humanidad.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1,
     "NAC": -0.3
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
+  },
+  {
+   "id": "IN-ECO-03",
+   "text": "Las empresas públicas que dan pérdida deberían privatizarse.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   },
+   "core": true
   },
   {
    "id": "IN-ECO-04",
+   "text": "Los servicios esenciales como agua, energía y salud deberían ser públicos.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-ECO-05",
    "text": "Los países deben proteger sus industrias estratégicas aunque cueste eficiencia.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1,
     "NAC": 0.3
    },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-ECO-05",
-   "text": "Las empresas públicas que dan pérdida deberían privatizarse.",
-   "primaryAxis": "ECO",
-   "effects": {
-    "ECO": 1
-   },
-   "variants": [
-    "full"
-   ]
+   "core": true
   },
   {
    "id": "IN-ECO-06",
@@ -69,9 +55,7 @@
    "effects": {
     "ECO": -1
    },
-   "variants": [
-    "full"
-   ]
+   "core": true
   },
   {
    "id": "IN-ECO-07",
@@ -79,10 +63,7 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
-   },
-   "variants": [
-    "full"
-   ]
+   }
   },
   {
    "id": "IN-ECO-08",
@@ -90,10 +71,7 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   },
-   "variants": [
-    "full"
-   ]
+   }
   },
   {
    "id": "IN-ECO-09",
@@ -101,10 +79,7 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-ECO-10",
@@ -112,10 +87,7 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-ECO-11",
@@ -123,10 +95,7 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-ECO-12",
@@ -134,10 +103,7 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-ECO-13",
@@ -145,10 +111,7 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-ECO-14",
@@ -156,168 +119,418 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
+  },
+  {
+   "id": "IN-ECO-15",
+   "text": "Los tratados de libre comercio son positivos para los países que los firman.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "IN-ECO-16",
+   "text": "La apertura comercial beneficia sobre todo a las grandes corporaciones.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "IN-ECO-17",
+   "text": "Las jubilaciones deberían depender principalmente del ahorro individual.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "IN-ECO-18",
+   "text": "El Estado debería garantizar un ingreso mínimo a todas las personas.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "IN-ECO-19",
+   "text": "Los subsidios a la exportación distorsionan el comercio y deberían eliminarse.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "IN-ECO-20",
+   "text": "Hay que desalentar que las empresas trasladen su producción a otros países.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "IN-ECO-21",
+   "text": "Un impuesto a la renta con una tasa única para todos es más justo que uno progresivo.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "IN-ECO-22",
+   "text": "Las herencias de gran valor deberían pagar un impuesto elevado.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "IN-ECO-23",
+   "text": "Las cadenas globales de producción hacen que los productos sean más baratos para todos.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "IN-ECO-24",
+   "text": "Los gobiernos deberían dar preferencia a los proveedores nacionales en sus compras.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "IN-ECO-25",
+   "text": "El Estado debería entregar a las familias vales para que elijan escuela, pública o privada.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "IN-ECO-26",
+   "text": "El Estado debería regular el precio de los alquileres donde la vivienda es muy cara.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "IN-ECO-27",
+   "text": "Un país debería especializarse en lo que produce mejor e importar el resto.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "IN-ECO-28",
+   "text": "La compra de empresas estratégicas por capitales extranjeros debería requerir aprobación del gobierno.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1,
+    "NAC": 0.2
+   }
+  },
+  {
+   "id": "IN-ECO-29",
+   "text": "Reducir las regulaciones a las empresas es la mejor forma de crear empleo.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "IN-ECO-30",
+   "text": "Los trabajadores deberían tener representantes en los directorios de las grandes empresas.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "IN-ECO-31",
+   "text": "Las reglas de la Organización Mundial del Comercio deberían respetarse aunque limiten la política comercial de cada país.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1,
+    "NAC": -0.2
+   }
+  },
+  {
+   "id": "IN-ECO-32",
+   "text": "Las importaciones de países con salarios muy bajos compiten de manera desleal con los trabajadores locales.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
   },
   {
    "id": "IN-AUT-01",
-   "text": "El Estado no debería vigilar comunicaciones privadas sin orden judicial.",
-   "primaryAxis": "AUT",
-   "effects": {
-    "AUT": -1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-AUT-02",
    "text": "En una crisis es aceptable restringir libertades individuales para mantener el orden.",
    "primaryAxis": "AUT",
    "effects": {
     "AUT": 1
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
   },
   {
-   "id": "IN-AUT-03",
-   "text": "La oposición política es imprescindible, aunque obstaculice al gobierno.",
-   "primaryAxis": "AUT",
-   "effects": {
-    "AUT": -1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-AUT-04",
+   "id": "IN-AUT-02",
    "text": "Un gobierno eficaz no necesita elecciones competitivas.",
    "primaryAxis": "AUT",
    "effects": {
     "AUT": 1
    },
-   "variants": [
-    "full"
-   ]
+   "core": true
   },
   {
-   "id": "IN-AUT-05",
-   "text": "La libertad de expresión debe proteger incluso discursos que me resultan ofensivos.",
-   "primaryAxis": "AUT",
-   "effects": {
-    "AUT": -1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-AUT-06",
+   "id": "IN-AUT-03",
    "text": "Las penas de prisión deberían ser más largas.",
    "primaryAxis": "AUT",
    "effects": {
     "AUT": 1
    },
-   "variants": [
-    "full"
-   ]
+   "core": true
   },
   {
-   "id": "IN-AUT-07",
-   "text": "Los tribunales deben poder anular decisiones de un gobierno electo.",
+   "id": "IN-AUT-04",
+   "text": "El Estado no debería vigilar comunicaciones privadas sin orden judicial.",
    "primaryAxis": "AUT",
    "effects": {
     "AUT": -1
    },
-   "variants": [
-    "deep"
-   ]
+   "core": true
   },
   {
-   "id": "IN-AUT-08",
+   "id": "IN-AUT-05",
+   "text": "La oposición política es imprescindible, aunque obstaculice al gobierno.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-AUT-06",
+   "text": "La libertad de expresión debe proteger incluso discursos que me resultan ofensivos.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-AUT-07",
    "text": "Un partido único puede representar mejor a la nación que muchos partidos en disputa.",
    "primaryAxis": "AUT",
    "effects": {
     "AUT": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
-   "id": "IN-AUT-09",
-   "text": "Garantizar el debido proceso es más importante que endurecer las penas.",
+   "id": "IN-AUT-08",
+   "text": "Los tribunales deben poder anular decisiones de un gobierno electo.",
    "primaryAxis": "AUT",
    "effects": {
     "AUT": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
-   "id": "IN-AUT-10",
+   "id": "IN-AUT-09",
    "text": "La pena de muerte es aceptable para los crímenes más graves.",
    "primaryAxis": "AUT",
    "effects": {
     "AUT": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
-   "id": "IN-AUT-11",
-   "text": "La independencia de la prensa importa más que la eficacia de un gobierno.",
+   "id": "IN-AUT-10",
+   "text": "Garantizar el debido proceso es más importante que endurecer las penas.",
    "primaryAxis": "AUT",
    "effects": {
     "AUT": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
-   "id": "IN-AUT-12",
+   "id": "IN-AUT-11",
    "text": "En situaciones de crisis se justifica gobernar por decreto.",
    "primaryAxis": "AUT",
    "effects": {
     "AUT": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
+  },
+  {
+   "id": "IN-AUT-12",
+   "text": "La independencia de la prensa importa más que la eficacia de un gobierno.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   }
   },
   {
    "id": "IN-AUT-13",
+   "text": "La policía debería tener más libertad de acción para enfrentar el delito.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": 1
+   }
+  },
+  {
+   "id": "IN-AUT-14",
    "text": "El consumo personal de drogas no debería ser delito.",
    "primaryAxis": "AUT",
    "effects": {
     "AUT": -1,
     "SOC": -0.2
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
-   "id": "IN-AUT-14",
-   "text": "La policía debería tener más libertad de acción para enfrentar el delito.",
+   "id": "IN-AUT-15",
+   "text": "Un país necesita un líder fuerte que pueda decidir sin demoras del parlamento o la justicia.",
    "primaryAxis": "AUT",
    "effects": {
     "AUT": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
+  },
+  {
+   "id": "IN-AUT-16",
+   "text": "Un presidente no debería poder ser reelegido indefinidamente.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   }
+  },
+  {
+   "id": "IN-AUT-17",
+   "text": "La obediencia a la autoridad es una virtud que la sociedad debe cultivar.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": 1
+   }
+  },
+  {
+   "id": "IN-AUT-18",
+   "text": "Las cárceles deberían orientarse a la reinserción antes que al castigo.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   }
+  },
+  {
+   "id": "IN-AUT-19",
+   "text": "El Estado debería poder controlar lo que difunden los medios para proteger a la sociedad.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": 1
+   }
+  },
+  {
+   "id": "IN-AUT-20",
+   "text": "Las elecciones libres son la única fuente legítima de poder.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   }
+  },
+  {
+   "id": "IN-AUT-21",
+   "text": "Las cámaras con reconocimiento facial en espacios públicos son una herramienta aceptable contra el delito.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": 1
+   }
+  },
+  {
+   "id": "IN-AUT-22",
+   "text": "Las personas deberían poder usar comunicaciones cifradas que ni siquiera el Estado pueda leer.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   }
+  },
+  {
+   "id": "IN-AUT-23",
+   "text": "Un gobierno debería poder postergar las elecciones si el país atraviesa una emergencia grave.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": 1
+   }
+  },
+  {
+   "id": "IN-AUT-24",
+   "text": "Los organismos que organizan las elecciones deben ser independientes del gobierno.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   }
+  },
+  {
+   "id": "IN-AUT-25",
+   "text": "Las manifestaciones que bloquean calles deberían dispersarse de inmediato.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": 1
+   }
+  },
+  {
+   "id": "IN-AUT-26",
+   "text": "Los adultos deberían poder decidir sobre su propio cuerpo aunque eso implique riesgos para su salud.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   }
+  },
+  {
+   "id": "IN-AUT-27",
+   "text": "Los jueces deberían acompañar las prioridades del gobierno que eligió la mayoría.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": 1,
+    "POP": 0.2
+   }
+  },
+  {
+   "id": "IN-AUT-28",
+   "text": "Los organismos de control y auditoría deben funcionar con independencia del gobierno de turno.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   }
+  },
+  {
+   "id": "IN-AUT-29",
+   "text": "Las redes sociales deberían estar obligadas a eliminar la desinformación, aunque eso limite lo que se puede publicar.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": 1
+   }
+  },
+  {
+   "id": "IN-AUT-30",
+   "text": "Quienes cumplieron su condena deberían recuperar todos sus derechos, incluido el voto.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   }
+  },
+  {
+   "id": "IN-AUT-31",
+   "text": "Las organizaciones civiles financiadas desde el exterior deberían tener fuertes restricciones.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": 1,
+    "NAC": 0.3
+   }
+  },
+  {
+   "id": "IN-AUT-32",
+   "text": "Las minorías deben tener derechos que ninguna mayoría pueda suprimir por votación.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   }
   },
   {
    "id": "IN-SOC-01",
@@ -326,56 +539,43 @@
    "effects": {
     "SOC": 1
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
   },
   {
    "id": "IN-SOC-02",
-   "text": "El matrimonio entre personas del mismo sexo debería ser legal.",
-   "primaryAxis": "SOC",
-   "effects": {
-    "SOC": -1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-SOC-03",
    "text": "Las leyes deberían reflejar valores religiosos.",
    "primaryAxis": "SOC",
    "effects": {
     "SOC": 1
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
   },
   {
-   "id": "IN-SOC-04",
-   "text": "La religión debe mantenerse fuera de las decisiones políticas.",
-   "primaryAxis": "SOC",
-   "effects": {
-    "SOC": -1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-SOC-05",
+   "id": "IN-SOC-03",
    "text": "La familia tradicional es la base de la sociedad y el Estado debería protegerla especialmente.",
    "primaryAxis": "SOC",
    "effects": {
     "SOC": 1
    },
-   "variants": [
-    "full"
-   ]
+   "core": true
+  },
+  {
+   "id": "IN-SOC-04",
+   "text": "El matrimonio entre personas del mismo sexo debería ser legal.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-SOC-05",
+   "text": "La religión debe mantenerse fuera de las decisiones políticas.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   },
+   "core": true
   },
   {
    "id": "IN-SOC-06",
@@ -384,9 +584,7 @@
    "effects": {
     "SOC": -1
    },
-   "variants": [
-    "full"
-   ]
+   "core": true
   },
   {
    "id": "IN-SOC-07",
@@ -394,10 +592,7 @@
    "primaryAxis": "SOC",
    "effects": {
     "SOC": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-SOC-08",
@@ -405,10 +600,7 @@
    "primaryAxis": "SOC",
    "effects": {
     "SOC": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-SOC-09",
@@ -416,10 +608,7 @@
    "primaryAxis": "SOC",
    "effects": {
     "SOC": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-SOC-10",
@@ -427,10 +616,7 @@
    "primaryAxis": "SOC",
    "effects": {
     "SOC": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-SOC-11",
@@ -438,10 +624,7 @@
    "primaryAxis": "SOC",
    "effects": {
     "SOC": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-SOC-12",
@@ -449,147 +632,305 @@
    "primaryAxis": "SOC",
    "effects": {
     "SOC": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
+  },
+  {
+   "id": "IN-SOC-13",
+   "text": "Las tradiciones de un país deben preservarse aunque choquen con valores modernos.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   }
+  },
+  {
+   "id": "IN-SOC-14",
+   "text": "La eutanasia debería ser legal.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   }
+  },
+  {
+   "id": "IN-SOC-15",
+   "text": "Es positivo que un gobernante exprese públicamente su fe.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   }
+  },
+  {
+   "id": "IN-SOC-16",
+   "text": "Las leyes deben basarse en la razón y la evidencia, no en creencias religiosas.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   }
+  },
+  {
+   "id": "IN-SOC-17",
+   "text": "La pornografía debería estar mucho más restringida.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   }
+  },
+  {
+   "id": "IN-SOC-18",
+   "text": "La educación sexual con perspectiva de género debería ser obligatoria en las escuelas.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   }
+  },
+  {
+   "id": "IN-SOC-19",
+   "text": "Las ofensas a los símbolos religiosos deberían tener algún tipo de sanción.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   }
+  },
+  {
+   "id": "IN-SOC-20",
+   "text": "Los líderes religiosos no deberían intervenir en los debates políticos.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   }
+  },
+  {
+   "id": "IN-SOC-21",
+   "text": "Los tratamientos de cambio de género deberían estar reservados a mayores de edad.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   }
+  },
+  {
+   "id": "IN-SOC-22",
+   "text": "Las parejas del mismo sexo deberían poder adoptar en igualdad de condiciones.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   }
+  },
+  {
+   "id": "IN-SOC-23",
+   "text": "Las escuelas religiosas deberían recibir financiamiento público.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   }
+  },
+  {
+   "id": "IN-SOC-24",
+   "text": "Las instituciones religiosas deberían pagar los mismos impuestos que cualquier otra organización.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   }
+  },
+  {
+   "id": "IN-SOC-25",
+   "text": "En las competencias deportivas femeninas deberían participar solo personas de sexo biológico femenino.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   }
+  },
+  {
+   "id": "IN-SOC-26",
+   "text": "Las leyes de paridad de género en cargos públicos son una medida justa.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   }
+  },
+  {
+   "id": "IN-SOC-27",
+   "text": "Los profesionales de la salud deberían poder negarse a prácticas que contradigan sus creencias religiosas.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   }
+  },
+  {
+   "id": "IN-SOC-28",
+   "text": "Los juramentos de los cargos públicos deberían ser siempre laicos.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   }
+  },
+  {
+   "id": "IN-SOC-29",
+   "text": "Los niños crecen mejor cuando tienen un padre y una madre.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   }
+  },
+  {
+   "id": "IN-SOC-30",
+   "text": "Las licencias por nacimiento deberían ser iguales para padres y madres.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   }
+  },
+  {
+   "id": "IN-SOC-31",
+   "text": "Las organizaciones religiosas deberían tener un papel importante en la gestión de la ayuda social.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   }
+  },
+  {
+   "id": "IN-SOC-32",
+   "text": "Las leyes deben aplicarse a todos por igual, sin excepciones por motivos religiosos.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   }
   },
   {
    "id": "IN-NAC-01",
-   "text": "Los organismos internacionales deberían tener más poder sobre los Estados.",
-   "primaryAxis": "NAC",
-   "effects": {
-    "NAC": -1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-NAC-02",
    "text": "Mi país debería priorizar sus intereses aunque rompa acuerdos internacionales.",
    "primaryAxis": "NAC",
    "effects": {
     "NAC": 1
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
+  },
+  {
+   "id": "IN-NAC-02",
+   "text": "El amor a la patria es uno de los valores más importantes de un ciudadano.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": 1
+   },
+   "core": true
   },
   {
    "id": "IN-NAC-03",
+   "text": "La cultura nacional debería protegerse frente a la influencia extranjera.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": 1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-NAC-04",
+   "text": "Los organismos internacionales deberían tener más poder sobre los Estados.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": -1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-NAC-05",
    "text": "Los grandes problemas, como el cambio climático o las pandemias, solo se resuelven con acuerdos entre países.",
    "primaryAxis": "NAC",
    "effects": {
     "NAC": -1,
     "ECOL": -0.2
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
   },
   {
-   "id": "IN-NAC-04",
-   "text": "El amor a la patria es uno de los valores más importantes de un ciudadano.",
-   "primaryAxis": "NAC",
-   "effects": {
-    "NAC": 1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-NAC-05",
+   "id": "IN-NAC-06",
    "text": "Los países deberían ceder parte de su soberanía para integrarse en bloques regionales, como la Unión Europea.",
    "primaryAxis": "NAC",
    "effects": {
     "NAC": -1
    },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-NAC-06",
-   "text": "La cultura nacional debería protegerse frente a la influencia extranjera.",
-   "primaryAxis": "NAC",
-   "effects": {
-    "NAC": 1
-   },
-   "variants": [
-    "full"
-   ]
+   "core": true
   },
   {
    "id": "IN-NAC-07",
-   "text": "Me siento más ciudadano del mundo que de un país en particular.",
-   "primaryAxis": "NAC",
-   "effects": {
-    "NAC": -1
-   },
-   "variants": [
-    "deep"
-   ]
-  },
-  {
-   "id": "IN-NAC-08",
    "text": "Organismos como la ONU o la OMS tienen demasiada influencia sobre cada país.",
    "primaryAxis": "NAC",
    "effects": {
     "NAC": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
+  },
+  {
+   "id": "IN-NAC-08",
+   "text": "Me siento más ciudadano del mundo que de un país en particular.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": -1
+   }
   },
   {
    "id": "IN-NAC-09",
+   "text": "Mi país es mejor que la mayoría de los demás.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": 1
+   }
+  },
+  {
+   "id": "IN-NAC-10",
    "text": "Los fallos de los tribunales internacionales de derechos humanos deberían ser obligatorios.",
    "primaryAxis": "NAC",
    "effects": {
     "NAC": -1,
     "AUT": -0.2
-   },
-   "variants": [
-    "deep"
-   ]
-  },
-  {
-   "id": "IN-NAC-10",
-   "text": "Mi país es mejor que la mayoría de los demás.",
-   "primaryAxis": "NAC",
-   "effects": {
-    "NAC": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-NAC-11",
-   "text": "Los países ricos deberían destinar una parte mayor de su presupuesto a la ayuda al desarrollo de otros países.",
-   "primaryAxis": "NAC",
-   "effects": {
-    "NAC": -1
-   },
-   "variants": [
-    "deep"
-   ]
-  },
-  {
-   "id": "IN-NAC-12",
    "text": "La enseñanza de los símbolos patrios y de la historia nacional debería reforzarse en las escuelas.",
    "primaryAxis": "NAC",
    "effects": {
     "NAC": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
+  },
+  {
+   "id": "IN-NAC-12",
+   "text": "Los países ricos deberían destinar una parte mayor de su presupuesto a la ayuda al desarrollo de otros países.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": -1
+   }
+  },
+  {
+   "id": "IN-NAC-13",
+   "text": "Los recursos naturales estratégicos deberían quedar en manos de empresas nacionales.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": 1,
+    "ECO": -0.3
+   }
+  },
+  {
+   "id": "IN-NAC-14",
+   "text": "Debería existir un impuesto mínimo global a las grandes empresas acordado entre países.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": -1,
+    "ECO": -0.2
+   }
+  },
+  {
+   "id": "IN-NAC-15",
+   "text": "Las leyes nacionales deberían prevalecer sobre los tratados internacionales.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": 1
+   }
+  },
+  {
+   "id": "IN-NAC-16",
+   "text": "La historia que se enseña en las escuelas debería mostrar también los errores del propio país.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": -1
+   }
   },
   {
    "id": "IN-MIL-01",
@@ -598,56 +939,43 @@
    "effects": {
     "MIL": 1
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
   },
   {
    "id": "IN-MIL-02",
-   "text": "Los conflictos deben resolverse negociando, aunque haya que hacer concesiones.",
-   "primaryAxis": "MIL",
-   "effects": {
-    "MIL": -1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-MIL-03",
    "text": "A veces una guerra es necesaria para defender los intereses nacionales.",
    "primaryAxis": "MIL",
    "effects": {
     "MIL": 1
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
   },
   {
-   "id": "IN-MIL-04",
-   "text": "Habría que reducir el gasto militar y destinarlo a salud o educación.",
-   "primaryAxis": "MIL",
-   "effects": {
-    "MIL": -1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-MIL-05",
+   "id": "IN-MIL-03",
    "text": "El servicio militar obligatorio forma mejores ciudadanos.",
    "primaryAxis": "MIL",
    "effects": {
     "MIL": 1
    },
-   "variants": [
-    "full"
-   ]
+   "core": true
+  },
+  {
+   "id": "IN-MIL-04",
+   "text": "Los conflictos deben resolverse negociando, aunque haya que hacer concesiones.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": -1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-MIL-05",
+   "text": "Habría que reducir el gasto militar y destinarlo a salud o educación.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": -1
+   },
+   "core": true
   },
   {
    "id": "IN-MIL-06",
@@ -657,9 +985,7 @@
     "MIL": -1,
     "NAC": -0.2
    },
-   "variants": [
-    "full"
-   ]
+   "core": true
   },
   {
    "id": "IN-MIL-07",
@@ -667,10 +993,7 @@
    "primaryAxis": "MIL",
    "effects": {
     "MIL": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-MIL-08",
@@ -678,10 +1001,7 @@
    "primaryAxis": "MIL",
    "effects": {
     "MIL": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-MIL-09",
@@ -689,10 +1009,7 @@
    "primaryAxis": "MIL",
    "effects": {
     "MIL": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-MIL-10",
@@ -700,10 +1017,7 @@
    "primaryAxis": "MIL",
    "effects": {
     "MIL": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-MIL-11",
@@ -712,10 +1026,7 @@
    "effects": {
     "MIL": 1,
     "NAC": -0.2
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-MIL-12",
@@ -723,148 +1034,178 @@
    "primaryAxis": "MIL",
    "effects": {
     "MIL": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
+  },
+  {
+   "id": "IN-MIL-13",
+   "text": "Las armas nucleares son una forma legítima de garantizar la paz mediante la disuasión.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": 1
+   }
+  },
+  {
+   "id": "IN-MIL-14",
+   "text": "Las sanciones económicas son preferibles al uso de la fuerza militar.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": -1
+   }
+  },
+  {
+   "id": "IN-MIL-15",
+   "text": "Es legítimo enviar armas a un país que fue invadido.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": 1
+   }
+  },
+  {
+   "id": "IN-MIL-16",
+   "text": "Toda persona debería tener derecho a la objeción de conciencia frente al servicio militar.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": -1,
+    "AUT": -0.2
+   }
   },
   {
    "id": "IN-MIG-01",
-   "text": "La inmigración enriquece culturalmente a un país.",
-   "primaryAxis": "MIG",
-   "effects": {
-    "MIG": -1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-MIG-02",
    "text": "Un país tiene derecho a limitar fuertemente la inmigración para preservar su identidad.",
    "primaryAxis": "MIG",
    "effects": {
     "MIG": 1,
     "NAC": 0.3
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
   },
   {
-   "id": "IN-MIG-03",
-   "text": "Los inmigrantes en situación irregular deberían poder regularizarse en lugar de ser deportados.",
-   "primaryAxis": "MIG",
-   "effects": {
-    "MIG": -1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-MIG-04",
+   "id": "IN-MIG-02",
    "text": "Los inmigrantes deberían adoptar la cultura del país que los recibe.",
    "primaryAxis": "MIG",
    "effects": {
     "MIG": 1
    },
-   "variants": [
-    "full"
-   ]
+   "core": true
   },
   {
-   "id": "IN-MIG-05",
-   "text": "Un país tiene el deber de recibir a quienes huyen de guerras o persecuciones.",
-   "primaryAxis": "MIG",
-   "effects": {
-    "MIG": -1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-MIG-06",
+   "id": "IN-MIG-03",
    "text": "Los extranjeros no residentes deberían pagar por usar la salud y la educación públicas.",
    "primaryAxis": "MIG",
    "effects": {
     "MIG": 1
    },
-   "variants": [
-    "full"
-   ]
+   "core": true
   },
   {
-   "id": "IN-MIG-07",
-   "text": "Los inmigrantes con residencia deberían poder votar en todas las elecciones.",
+   "id": "IN-MIG-04",
+   "text": "La inmigración enriquece culturalmente a un país.",
    "primaryAxis": "MIG",
    "effects": {
     "MIG": -1
    },
-   "variants": [
-    "deep"
-   ]
+   "core": true
   },
   {
-   "id": "IN-MIG-08",
+   "id": "IN-MIG-05",
+   "text": "Los inmigrantes en situación irregular deberían poder regularizarse en lugar de ser deportados.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": -1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-MIG-06",
+   "text": "Un país tiene el deber de recibir a quienes huyen de guerras o persecuciones.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": -1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-MIG-07",
    "text": "Habría que endurecer los requisitos para que los extranjeros se radiquen en el país.",
    "primaryAxis": "MIG",
    "effects": {
     "MIG": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
-   "id": "IN-MIG-09",
-   "text": "La inmigración es necesaria para sostener la economía de los países con población envejecida.",
+   "id": "IN-MIG-08",
+   "text": "Los inmigrantes con residencia deberían poder votar en todas las elecciones.",
    "primaryAxis": "MIG",
    "effects": {
     "MIG": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
-   "id": "IN-MIG-10",
+   "id": "IN-MIG-09",
    "text": "La inmigración masiva pone en riesgo la identidad nacional.",
    "primaryAxis": "MIG",
    "effects": {
     "MIG": 1,
     "NAC": 0.2
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
-   "id": "IN-MIG-11",
-   "text": "Los solicitantes de asilo deberían poder trabajar legalmente mientras se resuelve su pedido.",
+   "id": "IN-MIG-10",
+   "text": "La inmigración es necesaria para sostener la economía de los países con población envejecida.",
    "primaryAxis": "MIG",
    "effects": {
     "MIG": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
-   "id": "IN-MIG-12",
+   "id": "IN-MIG-11",
    "text": "Las fronteras deberían controlarse con barreras físicas y más vigilancia.",
    "primaryAxis": "MIG",
    "effects": {
     "MIG": 1,
     "AUT": 0.2
-   },
-   "variants": [
-    "deep"
-   ]
+   }
+  },
+  {
+   "id": "IN-MIG-12",
+   "text": "Los solicitantes de asilo deberían poder trabajar legalmente mientras se resuelve su pedido.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": -1
+   }
+  },
+  {
+   "id": "IN-MIG-13",
+   "text": "Los inmigrantes que cometan delitos deberían ser expulsados del país.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": 1,
+    "AUT": 0.2
+   }
+  },
+  {
+   "id": "IN-MIG-14",
+   "text": "Los hijos de inmigrantes nacidos en el país deberían tener automáticamente su ciudadanía.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": -1
+   }
+  },
+  {
+   "id": "IN-MIG-15",
+   "text": "La inmigración debería limitarse a las personas con las calificaciones que la economía necesita.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": 1
+   }
+  },
+  {
+   "id": "IN-MIG-16",
+   "text": "Debería facilitarse la reunificación familiar de los inmigrantes que ya viven en el país.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": -1
+   }
   },
   {
    "id": "IN-ECOL-01",
@@ -873,56 +1214,43 @@
    "effects": {
     "ECOL": 1
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
   },
   {
    "id": "IN-ECOL-02",
-   "text": "Proteger el ambiente debe priorizarse aunque frene el crecimiento.",
-   "primaryAxis": "ECOL",
-   "effects": {
-    "ECOL": -1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-ECOL-03",
    "text": "La explotación de petróleo, gas y minerales debe expandirse todo lo posible.",
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": 1
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
   },
   {
-   "id": "IN-ECOL-04",
-   "text": "Los países deberían dejar de usar combustibles fósiles lo antes posible.",
-   "primaryAxis": "ECOL",
-   "effects": {
-    "ECOL": -1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-ECOL-05",
+   "id": "IN-ECOL-03",
    "text": "Las regulaciones ambientales frenan el desarrollo de los países pobres.",
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": 1
    },
-   "variants": [
-    "full"
-   ]
+   "core": true
+  },
+  {
+   "id": "IN-ECOL-04",
+   "text": "Proteger el ambiente debe priorizarse aunque frene el crecimiento.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": -1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-ECOL-05",
+   "text": "Los países deberían dejar de usar combustibles fósiles lo antes posible.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": -1
+   },
+   "core": true
   },
   {
    "id": "IN-ECOL-06",
@@ -931,9 +1259,7 @@
    "effects": {
     "ECOL": -1
    },
-   "variants": [
-    "full"
-   ]
+   "core": true
   },
   {
    "id": "IN-ECOL-07",
@@ -941,10 +1267,7 @@
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-ECOL-08",
@@ -952,10 +1275,7 @@
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-ECOL-09",
@@ -963,10 +1283,7 @@
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-ECOL-10",
@@ -974,10 +1291,7 @@
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-ECOL-11",
@@ -986,10 +1300,7 @@
    "effects": {
     "ECOL": 1,
     "ECO": 0.2
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
    "id": "IN-ECOL-12",
@@ -997,146 +1308,175 @@
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
+  },
+  {
+   "id": "IN-ECOL-13",
+   "text": "La agricultura intensiva con agroquímicos es necesaria para producir alimentos a gran escala.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": 1
+   }
+  },
+  {
+   "id": "IN-ECOL-14",
+   "text": "Deberían prohibirse los plásticos de un solo uso.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": -1
+   }
+  },
+  {
+   "id": "IN-ECOL-15",
+   "text": "El precio de la energía para los hogares debería importar más que las metas de reducción de emisiones.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": 1
+   }
+  },
+  {
+   "id": "IN-ECOL-16",
+   "text": "Una parte grande del territorio de cada país debería protegerse por ley como área natural.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": -1
+   }
   },
   {
    "id": "IN-POP-01",
+   "text": "El pueblo, y no los políticos, debería tomar las decisiones más importantes.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": 1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-POP-02",
+   "text": "La política es, en el fondo, una lucha entre el pueblo común y una élite que lo perjudica.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": 1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-POP-03",
+   "text": "Los políticos de carrera, en su mayoría, defienden sus privilegios y no a la gente.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": 1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-POP-04",
    "text": "Los acuerdos entre partidos distintos son la esencia de la democracia.",
    "primaryAxis": "POP",
    "effects": {
     "POP": -1,
     "AUT": -0.2
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
   },
   {
-   "id": "IN-POP-02",
-   "text": "El pueblo, y no los políticos, debería tomar las decisiones más importantes.",
-   "primaryAxis": "POP",
-   "effects": {
-    "POP": 1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-POP-03",
+   "id": "IN-POP-05",
    "text": "En temas técnicos, la opinión de expertos debería pesar más que la de la mayoría.",
    "primaryAxis": "POP",
    "effects": {
     "POP": -1
    },
-   "variants": [
-    "short",
-    "full"
-   ]
+   "core": true
   },
   {
-   "id": "IN-POP-04",
-   "text": "La política es, en el fondo, una lucha entre el pueblo común y una élite que lo perjudica.",
-   "primaryAxis": "POP",
-   "effects": {
-    "POP": 1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-POP-05",
+   "id": "IN-POP-06",
    "text": "Quienes votan distinto que yo suelen tener buenas intenciones.",
    "primaryAxis": "POP",
    "effects": {
     "POP": -1
    },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-POP-06",
-   "text": "Los políticos de carrera, en su mayoría, defienden sus privilegios y no a la gente.",
-   "primaryAxis": "POP",
-   "effects": {
-    "POP": 1
-   },
-   "variants": [
-    "full"
-   ]
+   "core": true
   },
   {
    "id": "IN-POP-07",
-   "text": "En política hay más matices que buenos y malos.",
-   "primaryAxis": "POP",
-   "effects": {
-    "POP": -1
-   },
-   "variants": [
-    "deep"
-   ]
-  },
-  {
-   "id": "IN-POP-08",
    "text": "Prefiero un líder que hable como la gente común antes que uno de modales refinados.",
    "primaryAxis": "POP",
    "effects": {
     "POP": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
-   "id": "IN-POP-09",
-   "text": "Los partidos políticos son necesarios para que funcione la democracia.",
+   "id": "IN-POP-08",
+   "text": "En política hay más matices que buenos y malos.",
    "primaryAxis": "POP",
    "effects": {
     "POP": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
-   "id": "IN-POP-10",
+   "id": "IN-POP-09",
    "text": "Un líder que se enfrenta a los poderosos vale más que uno que negocia con ellos.",
    "primaryAxis": "POP",
    "effects": {
     "POP": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
-   "id": "IN-POP-11",
-   "text": "Un buen político reconoce públicamente cuando su adversario tiene razón.",
+   "id": "IN-POP-10",
+   "text": "Los partidos políticos son necesarios para que funcione la democracia.",
    "primaryAxis": "POP",
    "effects": {
     "POP": -1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
   },
   {
-   "id": "IN-POP-12",
+   "id": "IN-POP-11",
    "text": "Las decisiones más importantes deberían someterse a referéndum en lugar de decidirse solo en el parlamento.",
    "primaryAxis": "POP",
    "effects": {
     "POP": 1
-   },
-   "variants": [
-    "deep"
-   ]
+   }
+  },
+  {
+   "id": "IN-POP-12",
+   "text": "Un buen político reconoce públicamente cuando su adversario tiene razón.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1
+   }
+  },
+  {
+   "id": "IN-POP-13",
+   "text": "Los grandes medios de comunicación defienden los intereses de una élite, no los de la gente común.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": 1
+   }
+  },
+  {
+   "id": "IN-POP-14",
+   "text": "Los organismos técnicos, como los bancos centrales, deberían decidir con independencia de la opinión pública.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1,
+    "AUT": -0.2
+   }
+  },
+  {
+   "id": "IN-POP-15",
+   "text": "Los políticos deberían cobrar un sueldo similar al de un trabajador promedio.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": 1
+   }
+  },
+  {
+   "id": "IN-POP-16",
+   "text": "Las personas con formación profesional y académica aportan un conocimiento valioso para gobernar.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1
+   }
   }
  ]
 }

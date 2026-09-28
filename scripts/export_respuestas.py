@@ -23,7 +23,9 @@ EDUCATION = {0: '', 1: 'Sin estudios o primario incompleto', 2: 'Primario comple
              3: 'Secundario incompleto', 4: 'Secundario completo',
              5: 'Terciario o universitario incompleto', 6: 'Terciario o universitario completo',
              7: 'Posgrado'}
-VALUES = [None, -1, -0.5, 0, 0.5, 1]  # código 1..6; 0 = no preguntada
+VALUES = [None, -1, -0.5, 0, 0.5, 1]  # bits 0-2: código 1..6; 0 = no preguntada
+CORE_BIT = 8                         # bit 3: salió como núcleo en esa partida
+CORE_WEIGHT = 3                      # igual que CORE_WEIGHT en src/engine/selection.ts
 MIN_COVERAGE = 0.5
 
 
@@ -34,29 +36,33 @@ def load(test):
 
 
 def decode(hex_str, questions):
+    """Devuelve {id: respuesta} de las afirmaciones preguntadas y el conjunto de las del núcleo."""
     raw = bytes.fromhex(hex_str.removeprefix('\\x'))
-    asked = {}
+    asked, core = {}, set()
     for i, q in enumerate(questions):
         if i // 2 >= len(raw):
             break
         c = raw[i // 2] >> 4 if i % 2 == 0 else raw[i // 2] & 15
-        if c:
-            asked[q['id']] = VALUES[c - 1]
-    return asked
+        if c & 7:
+            asked[q['id']] = VALUES[(c & 7) - 1]
+            if c & CORE_BIT:
+                core.add(q['id'])
+    return asked, core
 
 
-def scores(axes, questions, asked):
-    """Igual que scoreAxes en src/engine/scoring.ts, sobre las afirmaciones preguntadas."""
+def scores(axes, questions, asked, core):
+    """Igual que scoreAxes en src/engine/scoring.ts: el núcleo pesa más solo en su eje principal."""
     num = dict.fromkeys(axes, 0.0); den = dict.fromkeys(axes, 0.0); tot = dict.fromkeys(axes, 0.0)
     for q in questions:
         if q['id'] not in asked:
             continue
         r = asked[q['id']]
         for axis, e in q['effects'].items():
-            tot[axis] += abs(e)
+            w = CORE_WEIGHT if q['id'] in core and axis == q['primaryAxis'] else 1
+            tot[axis] += w * abs(e)
             if r is not None:
-                num[axis] += r * e
-                den[axis] += abs(e)
+                num[axis] += w * r * e
+                den[axis] += w * abs(e)
     # math.floor(x + 0.5) redondea como Math.round de JavaScript (round de Python va al par).
     return {a: math.floor(100 * num[a] / den[a] + 0.5) if den[a] and den[a] / tot[a] >= MIN_COVERAGE else ''
             for a in axes}
@@ -94,10 +100,12 @@ def main():
             w.writerow(['id', 'fecha', 'variante', 'edad', 'genero', 'educacion', 'segundos',
                         *axes, *(q['id'] for q in questions)])
             for r in mine:
-                asked = decode(r['respuestas'], questions)
-                s = scores(axes, questions, asked)
-                answers = ['' if q['id'] not in asked else 'NS' if asked[q['id']] is None
-                           else asked[q['id']] for q in questions]
+                asked, core = decode(r['respuestas'], questions)
+                s = scores(axes, questions, asked, core)
+                # Celda vacía = no le tocó; NS = "No sé"; un * marca las del núcleo.
+                answers = ['' if q['id'] not in asked else
+                           ('NS' if asked[q['id']] is None else str(asked[q['id']])) + ('*' if q['id'] in core else '')
+                           for q in questions]
                 w.writerow([r['id'], r['fecha'], VARIANTS[int(r['variante'])], AGE[int(r['edad'])],
                             GENDER[int(r['genero'])], EDUCATION[int(r['educacion'])], r['segundos'],
                             *(s[a] for a in axes), *answers])

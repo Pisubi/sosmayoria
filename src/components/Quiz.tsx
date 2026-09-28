@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { tests } from '../data/tests'
-import { questionsFor, shuffled, variantLabel } from '../engine/selection'
+import { drawQuestions, variantLabel } from '../engine/selection'
 import { saveProgress, type SavedProgress } from '../lib/progress'
 import { collecting } from '../lib/submit'
 import type { Question, Response } from '../types'
@@ -17,7 +17,7 @@ export function Quiz({ progress, onComplete }: QuizProps) {
   const { testId, variant, seed } = progress
   const test = tests[testId]
   const questions = useMemo(
-    () => shuffled(questionsFor(test, variant), seed),
+    () => drawQuestions(test, variant, seed),
     [test, variant, seed],
   )
   const axisName = useMemo(

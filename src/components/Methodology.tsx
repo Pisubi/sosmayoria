@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { TEST_ORDER, tests } from '../data/tests'
-import { questionsFor } from '../engine/selection'
+import { CORE_WEIGHT, VARIANT_SIZE } from '../engine/selection'
 import type { TestId } from '../types'
 import { allImages } from '../lib/images'
 import { collecting } from '../lib/submit'
@@ -35,6 +35,21 @@ export function Methodology({ onBack }: MethodologyProps) {
         están publicados abajo para que se puedan revisar.
       </p>
 
+      <Block title="Qué afirmaciones te tocan">
+        <p>
+          Cada partida sortea sus afirmaciones de un banco más grande, así que no siempre salen
+          las mismas, y las muestra en orden aleatorio. Las {VARIANT_SIZE.short} de la versión corta
+          son el núcleo: salen de las afirmaciones centrales de cada tema y pesan el triple. La
+          completa suma {VARIANT_SIZE.full - VARIANT_SIZE.short} afirmaciones de detalle y la a
+          fondo, {VARIANT_SIZE.deep - VARIANT_SIZE.short}.
+        </p>
+        <p>
+          Cada tema tiene afirmaciones en los dos sentidos. En la corta, con tres por tema, un
+          sentido queda 2 a 1, alternado entre temas; en la completa y la a fondo, el detalle
+          compensa esa diferencia y cada tema queda equilibrado.
+        </p>
+      </Block>
+
       <Block title="Escala y puntaje">
         <p>
           Cada afirmación se responde de "muy en desacuerdo" (−1) a "muy de acuerdo" (+1), con
@@ -42,7 +57,7 @@ export function Methodology({ onBack }: MethodologyProps) {
           tiene un efecto principal (±1) sobre un eje y, a veces, efectos secundarios más chicos
           sobre otros.
         </p>
-        <Formula>puntaje_eje = 100 · Σ (respuesta · efecto) / Σ |efecto|   (solo ítems respondidos)</Formula>
+        <Formula>{`puntaje_eje = 100 · Σ (peso · respuesta · efecto) / Σ peso · |efecto|   (peso ${CORE_WEIGHT} para el núcleo en su tema principal, 1 en el resto)`}</Formula>
         <p>
           Si respondiste menos de la mitad del peso de un eje, queda indeterminado y no entra en
           las comparaciones. Cada eje tiene la misma cantidad de afirmaciones hacia cada polo, así
@@ -74,7 +89,7 @@ export function Methodology({ onBack }: MethodologyProps) {
           Máximo Kirchner): el test no puede distinguirlas y
           aparecen juntas en el ranking. Cada perfil se valida simulando respuestas "como" esa
           figura con ruido: tiene que salir primero en al menos el 80% de los casos, o entre los
-          dos primeros si tiene un gemelo.
+          primeros (hasta el tercero) si tiene perfiles gemelos.
         </p>
         <p>
           Las figuras de dictaduras y totalitarismos se incluyen como cualquier otro perfil, y sus
@@ -133,7 +148,7 @@ export function Methodology({ onBack }: MethodologyProps) {
 
       <details className="mt-8 rounded-xl border border-azul/14 p-5">
         <summary className="cursor-pointer font-semibold">
-          Afirmaciones ({test.questions.length}: {questionsFor(test, 'short').length} en la corta, {questionsFor(test, 'full').length} en la completa)
+          Banco de afirmaciones ({test.questions.length}; {test.questions.filter((q) => q.core).length} elegibles para el núcleo)
         </summary>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full min-w-[40rem] text-left text-sm">
@@ -142,7 +157,7 @@ export function Methodology({ onBack }: MethodologyProps) {
                 <th className="py-2 pr-3 font-medium">ID</th>
                 <th className="py-2 pr-3 font-medium">Afirmación</th>
                 <th className="py-2 pr-3 font-medium">Efectos</th>
-                <th className="py-2 font-medium">Versión</th>
+                <th className="py-2 font-medium">Rol</th>
               </tr>
             </thead>
             <tbody>
@@ -158,13 +173,7 @@ export function Methodology({ onBack }: MethodologyProps) {
                       .map(([a, e]) => `${a} ${e > 0 ? '+' : ''}${e}`)
                       .join(', ')}
                   </td>
-                  <td className="py-2 text-azul/60">
-                    {q.variants.includes('short')
-                      ? 'todas'
-                      : q.variants.includes('full')
-                        ? 'completa y a fondo'
-                        : 'a fondo'}
-                  </td>
+                  <td className="py-2 text-azul/60">{q.core ? 'núcleo' : 'detalle'}</td>
                 </tr>
               ))}
             </tbody>

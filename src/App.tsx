@@ -24,6 +24,7 @@ type Stage =
 /** Lo que se envía a Supabase una vez completados los datos demográficos. */
 interface PendingSubmission {
   variant: Variant
+  questions: Question[]
   answers: Record<string, Response>
   seconds: number
 }
@@ -81,12 +82,12 @@ function App() {
       return
     }
     const seconds = Math.round((Date.now() - (startedAt ?? Date.now())) / 1000)
-    setStage({ step: 'datos', data, pending: { variant, answers, seconds } })
+    setStage({ step: 'datos', data, pending: { variant, questions, answers, seconds } })
   }
 
   function showResults(data: ResultData, pending: PendingSubmission, participant: Participant | null) {
     if (participant) {
-      submitResult(tests[data.testId], pending.variant, participant, pending.answers, pending.seconds)
+      submitResult(tests[data.testId], pending.variant, participant, pending.questions, pending.answers, pending.seconds)
     }
     setStage({ step: 'results', data })
   }

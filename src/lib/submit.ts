@@ -1,5 +1,5 @@
 import { encodeAnswers } from '../engine/encoding'
-import type { Response, TestDefinition, Variant } from '../types'
+import type { Question, Response, TestDefinition, Variant } from '../types'
 import type { Participant } from './participant'
 
 const URL = import.meta.env.VITE_SUPABASE_URL as string | undefined
@@ -16,6 +16,7 @@ export function submitResult(
   test: TestDefinition,
   variant: Variant,
   participant: Participant,
+  questions: Question[],
   answers: Record<string, Response>,
   seconds: number,
 ): void {
@@ -27,7 +28,7 @@ export function submitResult(
     genero: participant.gender,
     educacion: participant.education,
     segundos: Math.min(MAX_SMALLINT, Math.max(0, seconds)),
-    respuestas: encodeAnswers(test, answers),
+    respuestas: encodeAnswers(test, questions, answers),
   }
   fetch(`${URL.replace(/\/$/, '')}/rest/v1/respuestas`, {
     method: 'POST',

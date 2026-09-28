@@ -23,7 +23,10 @@ export interface Question {
   primaryAxis: string
   /** Peso firmado por eje: el acuerdo empuja hacia el polo B si es positivo. */
   effects: Record<string, number>
-  variants: Variant[]
+  /** Elegible para el núcleo: las afirmaciones centrales de cada tema, que pesan más. */
+  core?: boolean
+  /** Peso en el puntaje, asignado al sortear (núcleo = CORE_WEIGHT, detalle = 1). */
+  weight?: number
   /** Ítem coyuntural que conviene revisar cada ciclo electoral. */
   volatile?: boolean
 }
@@ -62,6 +65,11 @@ export interface TestDefinition {
   profiles: Profile[]
   /** Pares de ejes para los planos 2D. */
   planes: [string, string][]
+  /** Afirmaciones que se sortean por eje: el núcleo va en todas las versiones y el detalle suma. */
+  draw: {
+    core: Record<string, number>
+    detail: Record<Exclude<Variant, 'short'>, Record<string, number>>
+  }
 }
 
 /** 1 = muy de acuerdo … −1 = muy en desacuerdo; null = "No sé" (se excluye). */
