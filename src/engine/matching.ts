@@ -43,6 +43,9 @@ const SCALE = 100
  * STRETCH_FULL_AT temas comparados.
  */
 const PRIOR_DIFF = 50
+
+/** Por debajo de esta distancia al centro, tu posición en un tema se considera equilibrada. */
+const NEUTRAL = 15
 const STRETCH_FULL_AT = 4
 
 /**
@@ -79,7 +82,7 @@ export function matchProfile(
   const k = 1 + (fit - 1) * Math.min(1, both.length / STRETCH_FULL_AT)
   const stretch = (u: number) => Math.max(-100, Math.min(100, k * u))
 
-  const diffs = both.map((x) => ({ axisId: x.axisId, diff: Math.abs(stretch(x.u) - (x.p as number)) }))
+  const diffs = both.map((x) => ({ axisId: x.axisId, u: x.u, diff: Math.abs(stretch(x.u) - (x.p as number)) }))
   const missingSq = pairs
     .filter((x) => x.p == null)
     .reduce((s, x) => s + Math.max(MISSING_DIFF, Math.abs(stretch(x.u))) ** 2, 0)
@@ -88,7 +91,12 @@ export function matchProfile(
     ? Math.sqrt((diffs.reduce((sum, x) => sum + x.diff * x.diff, 0) + missingSq + PRIOR_DIFF ** 2) / (pairs.length + 1))
     : SCALE
   const sorted = [...diffs].sort((a, b) => a.diff - b.diff)
-  const agree = sorted.slice(0, Math.min(3, Math.ceil(sorted.length / 2))).map((x) => x.axisId)
+  // "Coincidís en" prefiere temas donde tenés postura: coincidir en el centro dice poco.
+  const agreeKey = (x: (typeof diffs)[number]) => x.diff + (Math.abs(x.u) < NEUTRAL ? NEUTRAL : 0)
+  const agree = [...diffs]
+    .sort((a, b) => agreeKey(a) - agreeKey(b))
+    .slice(0, Math.min(3, Math.ceil(sorted.length / 2)))
+    .map((x) => x.axisId)
 
   return {
     profile,

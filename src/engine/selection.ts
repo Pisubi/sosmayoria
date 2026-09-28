@@ -77,7 +77,17 @@ export function drawQuestions(test: TestDefinition, variant: Variant, seed: numb
       ...pole(rest, -1).slice(0, nDetail - detailPos),
     )
   }
-  return shuffle(picked, next)
+  // Orden al azar, pero alternando afirmaciones hacia uno y otro polo: responder todo igual
+  // no arrastra el resultado y el test no se siente cargado hacia un lado.
+  const mixed = shuffle(picked, next)
+  const toward = (sign: number) => mixed.filter((q) => Math.sign(q.effects[q.primaryAxis]) === sign)
+  const [first, second] = next() < 0.5 ? [toward(1), toward(-1)] : [toward(-1), toward(1)]
+  const ordered: Question[] = []
+  for (let i = 0; i < Math.max(first.length, second.length); i++) {
+    if (i < first.length) ordered.push(first[i])
+    if (i < second.length) ordered.push(second[i])
+  }
+  return ordered
 }
 
 export function newSeed(): number {

@@ -162,7 +162,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
       >
         <div className="grid gap-14">
           {[lead, ...others].map(({ catalog, matches }) => (
-            <CatalogRanking key={catalog.id} testId={test.id} catalog={catalog} matches={matches} axes={test.axes} />
+            <CatalogRanking key={catalog.id} testId={test.id} catalog={catalog} matches={matches} axes={test.axes} scores={scores} />
           ))}
         </div>
       </Section>
@@ -220,7 +220,14 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
             test o la versión completa.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <ShareButton />
+            <ShareButton
+              text={`Hice el test ${test.name} de Brújula: ${byCatalog
+                .map(({ matches }) => matches[0])
+                .filter(Boolean)
+                .slice(0, 3)
+                .map((m) => `${m.profile.name} ${Math.round(m.similarity)}%`)
+                .join(' · ')}. ¿Y vos?`}
+            />
             <button
               type="button"
               onClick={onRestart}
@@ -278,24 +285,34 @@ function Highlight({
   )
 }
 
-function ShareButton() {
+function ShareButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false)
-  async function copy() {
+  async function share() {
+    const url = window.location.href
+    // En el celular abre el menú de compartir del sistema; en la compu copia texto y enlace.
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: 'Brújula', text, url })
+        return
+      } catch (e) {
+        if ((e as Error).name === 'AbortError') return
+      }
+    }
     try {
-      await navigator.clipboard.writeText(window.location.href)
+      await navigator.clipboard.writeText(`${text} ${url}`)
       setCopied(true)
       window.setTimeout(() => setCopied(false), 2500)
     } catch {
-      window.prompt('Copiá este enlace', window.location.href)
+      window.prompt('Copiá este texto', `${text} ${url}`)
     }
   }
   return (
     <button
       type="button"
-      onClick={copy}
+      onClick={share}
       className="rounded-md bg-azul px-8 py-3.5 text-sm font-semibold text-marfil transition-colors hover:bg-noche"
     >
-      {copied ? 'Enlace copiado' : 'Copiar enlace al resultado'}
+      {copied ? 'Copiado: pegalo donde quieras' : 'Compartir resultado'}
     </button>
   )
 }

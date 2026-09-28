@@ -215,7 +215,7 @@
    "catalog": "ar_tradiciones",
    "name": "La Libertad Avanza",
    "era": "2021–",
-   "description": "Fuerza fundada por Javier Milei: libertarismo económico, discurso contra la 'casta' y conservadurismo cultural.",
+   "description": "Fuerza fundada por Javier Milei en 2021: libertarismo económico, discurso contra la 'casta' y conservadurismo cultural. Ganó la Presidencia en 2023 y las legislativas de 2025, e incorporó dirigentes del PRO y del peronismo.",
    "coords": {
     "ECO": 95,
     "SOC": 70,
@@ -236,7 +236,7 @@
    "catalog": "ar_tradiciones",
    "name": "PRO / macrismo",
    "era": "2005–",
-   "description": "Partido fundado por Mauricio Macri en 2005: centroderecha de mercado, gestión y moderación institucional.",
+   "description": "Partido fundado por Mauricio Macri en 2005: centroderecha de mercado, gestión y moderación institucional. Gobierna la Ciudad desde 2007, integró Cambiemos y Juntos por el Cambio y desde 2025 compite aliado a LLA.",
    "coords": {
     "ECO": 50,
     "SOC": 10,
@@ -322,7 +322,7 @@
    "catalog": "ar_historicas",
    "name": "Domingo F. Sarmiento",
    "era": "1868–1874",
-   "description": "Presidente. Impulsó la educación pública y la inmigración; \"civilización o barbarie\".",
+   "description": "Presidente (1868–1874), gobernador de San Juan y autor de 'Facundo' (1845), con la antinomia 'civilización o barbarie'. Impulsó la educación pública y la inmigración.",
    "coords": {
     "ECO": 20,
     "SOC": -40,
@@ -344,7 +344,7 @@
    "catalog": "ar_historicas",
    "name": "Julio A. Roca",
    "era": "1880–1886, 1898–1904",
-   "description": "Presidente. Modelo agroexportador, Ley 1420 de educación laica y Ley de Residencia.",
+   "description": "Presidente (1880–1886 y 1898–1904) y jefe del PAN; antes condujo la Conquista del Desierto (1879). Modelo agroexportador, Ley 1420 de educación laica y Ley de Residencia (1902).",
    "coords": {
     "ECO": 60,
     "SOC": -60,
@@ -474,7 +474,7 @@
    "catalog": "ar_historicas",
    "name": "Juan Domingo Perón",
    "era": "1946–1955, 1973–1974",
-   "description": "Presidente. IAPI, nacionalizaciones, CGT, reforma constitucional de 1949 y tercera posición.",
+   "description": "Presidente (1946–1955 y 1973–1974) y fundador del justicialismo, que definía como doctrina de raíz cristiana. IAPI, nacionalizaciones, CGT, reforma constitucional de 1949 y tercera posición.",
    "coords": {
     "ECO": -80,
     "SOC": 45,
@@ -498,7 +498,7 @@
    "description": "Figura central del primer peronismo: Fundación Eva Perón, rama femenina y voto femenino.",
    "coords": {
     "ECO": -85,
-    "SOC": 15,
+    "SOC": 30,
     "INS": 80,
     "POP": 95,
     "SEG": 25,
@@ -509,7 +509,7 @@
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "ECO: Fundación Eva Perón (1948) y alianza con la CGT como puente con los trabajadores — Navarro, Evita (1981) · SOC: Voto femenino (1947) y 29 legisladoras peronistas (1951), pero en La razón de mi vida (1951) rechazó el feminismo y ubicó a la mujer en el hogar — El Dipló; Infobae (2019) · INS: Candidatura a la vicepresidencia impulsada por la CGT (1951) y lealtad personal a Perón por encima de las instituciones — Navarro, Evita (1981) · POP: Retórica contra la 'oligarquía' y los 'enemigos del pueblo' hasta su discurso del 1° de mayo de 1952 — Navarro (1981); Barry, Evita capitana (2009) · SEG: Compra de armas para milicias obreras (1951), aunque su prédica social atribuía el delito a la pobreza — Wikipedia es 'Eva Perón' · MEM: Murió en 1952: Actuó solo antes de 1976 (regla del test). · EXT: Gira europea de 1947 y difusión de la tercera posición — Wikipedia es 'Eva Perón' · FED: Fundación gestionada desde Buenos Aires con obra en todas las provincias, en línea con la planificación nacional — Wikipedia es · IDN: Figura fundacional del peronismo — definición del tema"
+   "basis": "ECO: Fundación Eva Perón (1948) y alianza con la CGT como puente con los trabajadores — Navarro, Evita (1981) · SOC: Voto femenino (1947) y 29 legisladoras peronistas (1951), pero en La razón de mi vida (1951) rechazó el feminismo y ubicó a la mujer en el hogar — El Dipló; Infobae (2019) · INS: Candidatura a la vicepresidencia impulsada por la CGT (1951) y lealtad personal a Perón por encima de las instituciones — Navarro, Evita (1981) · POP: Retórica contra la 'oligarquía' y los 'enemigos del pueblo' hasta su discurso del 1° de mayo de 1952 — Navarro (1981); Barry, Evita capitana (2009) · SEG: Compra de armas para milicias obreras (1951), aunque su prédica social atribuía el delito a la pobreza — Wikipedia es 'Eva Perón' · MEM: Murió en 1952: Actuó solo antes de 1976 (regla del test). · EXT: Gira europea de 1947 y difusión de la tercera posición — Wikipedia es 'Eva Perón' · FED: Fundación gestionada desde Buenos Aires con obra en todas las provincias, en línea con la planificación nacional — Wikipedia es · IDN: Figura fundacional del peronismo — definición del tema · SOC: En 'La razón de mi vida' (1951, cap. 'El paso de lo sublime a lo ridículo') rechazó el feminismo por 'masculinizar' a la mujer y la ubicó ante todo en el hogar; acompañó la doctrina social cristiana del primer peronismo y la enseñanza religiosa (Ley 12.978, 1947). El voto femenino (1947) no alcanza para ubicarla cerca del centro en un eje de aborto, ESI, familia e Iglesia — Infobae 26/07/2019 (texto completo); Caimari, Perón y la Iglesia católica (1995)"
   },
   {
    "id": "frondizi",
@@ -558,7 +558,7 @@
    "catalog": "ar_historicas",
    "name": "Álvaro Alsogaray",
    "era": "1913–2005",
-   "description": "Economista liberal, varias veces ministro y fundador de la UCeDé.",
+   "description": "Economista liberal: ministro de Economía de Frondizi y de Guido ('hay que pasar el invierno', 1959), fundador de la UCeDé (1982), candidato presidencial en 1989 y luego asesor de Menem para la deuda externa.",
    "coords": {
     "ECO": 95,
     "SOC": 30,
@@ -600,7 +600,7 @@
    "catalog": "ar_historicas",
    "name": "Carlos Menem",
    "era": "1989–1999",
-   "description": "Presidente. Privatizaciones, convertibilidad, indultos y \"relaciones carnales\" con EE.UU.",
+   "description": "Gobernador de La Rioja y presidente (1989–1999): privatizaciones, convertibilidad, indultos y 'relaciones carnales' con EE.UU. Luego fue senador nacional (2005–2021).",
    "coords": {
     "ECO": 80,
     "SOC": 60,
@@ -621,7 +621,7 @@
    "catalog": "ar_historicas",
    "name": "Fernando de la Rúa",
    "era": "1999–2001",
-   "description": "Presidente de la Alianza. Ajuste fiscal, reforma laboral y crisis de 2001.",
+   "description": "Senador, primer jefe de Gobierno porteño electo (1996–1999) y presidente por la Alianza UCR-Frepaso (1999–2001): ajuste fiscal, reforma laboral y crisis de 2001.",
    "coords": {
     "ECO": 50,
     "SOC": 20,
@@ -642,7 +642,7 @@
    "catalog": "ar_historicas",
    "name": "Eduardo Duhalde",
    "era": "2002–2003",
-   "description": "Presidente tras la crisis de 2001. Salida de la convertibilidad y pesificación.",
+   "description": "Vicepresidente de Menem (1989–1991), gobernador bonaerense (1991–1999) y presidente designado por la Asamblea Legislativa tras la crisis de 2001 (2002–2003): salida de la convertibilidad y pesificación.",
    "coords": {
     "ECO": -45,
     "SOC": 50,
@@ -663,7 +663,7 @@
    "catalog": "ar_historicas",
    "name": "Néstor Kirchner",
    "era": "2003–2007",
-   "description": "Presidente. Reapertura de los juicios de lesa humanidad, cancelación de la deuda con el FMI y \"No al ALCA\".",
+   "description": "Gobernador de Santa Cruz (1991–2003) y presidente (2003–2007): reapertura de los juicios de lesa humanidad, cancelación de la deuda con el FMI y 'No al ALCA'.",
    "coords": {
     "ECO": -55,
     "SOC": -40,
@@ -684,7 +684,7 @@
    "catalog": "ar_actuales",
    "name": "Cristina Fernández de Kirchner",
    "era": "2007–",
-   "description": "Expresidenta y líder del kirchnerismo: Estado activo, redistribución y ampliación de derechos.",
+   "description": "Presidenta de la Nación (2007–2015) y vicepresidenta (2019–2023); antes fue diputada y senadora por Santa Cruz y Buenos Aires. Preside el PJ nacional desde 2024 y conduce el kirchnerismo: Estado activo, redistribución y ampliación de derechos.",
    "coords": {
     "ECO": -75,
     "SOC": -55,
@@ -705,7 +705,7 @@
    "catalog": "ar_actuales",
    "name": "Mauricio Macri",
    "era": "2015–",
-   "description": "Expresidente y fundador del PRO: salida del cepo, gradualismo y acuerdo con el FMI en 2018.",
+   "description": "Presidente de la Nación (2015–2019), jefe de Gobierno porteño (2007–2015) y fundador y presidente del PRO; antes presidió Boca Juniors. Su gobierno salió del cepo, aplicó el gradualismo y firmó el acuerdo con el FMI de 2018.",
    "coords": {
     "ECO": 65,
     "SOC": 15,
@@ -726,7 +726,7 @@
    "catalog": "ar_actuales",
    "name": "Javier Milei",
    "era": "2023–",
-   "description": "Presidente desde 2023: DNU 70/2023, ajuste fiscal de shock, desregulación y alineamiento con EE.UU.",
+   "description": "Economista, diputado nacional (2021–2023) y presidente desde 2023: DNU 70/2023, ajuste fiscal de shock, desregulación y alineamiento con EE.UU. Su fuerza, La Libertad Avanza, ganó las legislativas de 2025.",
    "coords": {
     "ECO": 95,
     "SOC": 65,
@@ -747,7 +747,7 @@
    "catalog": "ar_actuales",
    "name": "Patricia Bullrich",
    "era": "2015–",
-   "description": "Referente de seguridad: protocolo antipiquetes y endurecimiento penal.",
+   "description": "Senadora por la Ciudad y jefa del bloque de LLA desde 2025. Militó en la JP en los 70, fue diputada por el PJ (1993–1997), ministra de De la Rúa, aliada de Carrió, presidenta del PRO (2020–2024), candidata presidencial de JxC (2023) y ministra de Seguridad de Macri y de Milei.",
    "coords": {
     "ECO": 80,
     "SOC": 15,
@@ -768,7 +768,7 @@
    "catalog": "ar_actuales",
    "name": "Sergio Massa",
    "era": "2013–",
-   "description": "Líder del Frente Renovador y exministro de Economía: peronismo de centro.",
+   "description": "Fundador del Frente Renovador (2013). Se inició en la UCeDé y pasó al PJ: director de la ANSES (2002–2007), intendente de Tigre, jefe de Gabinete de CFK (2008–2009), presidente de Diputados (2019–2022), ministro de Economía (2022–2023) y candidato presidencial en 2015 y 2023.",
    "coords": {
     "ECO": -45,
     "SOC": -35,
@@ -789,7 +789,7 @@
    "catalog": "ar_actuales",
    "name": "Axel Kicillof",
    "era": "2012–",
-   "description": "Gobernador bonaerense y exministro de Economía: heterodoxia y estatización de YPF.",
+   "description": "Gobernador de Buenos Aires desde 2019 (reelecto en 2023) y presidente del PJ bonaerense desde 2026. Fue viceministro a cargo de la estatización de YPF (2012) y ministro de Economía de CFK (2013–2015); economista heterodoxo.",
    "coords": {
     "ECO": -85,
     "SOC": -65,
@@ -810,7 +810,7 @@
    "catalog": "ar_actuales",
    "name": "Horacio Rodríguez Larreta",
    "era": "2015–",
-   "description": "Exjefe de Gobierno porteño: centroderecha de gestión y consensos.",
+   "description": "Jefe de Gobierno porteño (2015–2023) por el PRO, tras ser su jefe de Gabinete (2007–2015), y precandidato presidencial de JxC (2023). En 2025 dejó el PRO y fue electo legislador porteño por Volvamos Buenos Aires; apunta a volver a la Jefatura en 2027.",
    "coords": {
     "ECO": 40,
     "SOC": -10,
@@ -831,7 +831,7 @@
    "catalog": "ar_actuales",
    "name": "Myriam Bregman",
    "era": "2011–",
-   "description": "Referente del Frente de Izquierda: socialismo, derechos humanos y feminismo.",
+   "description": "Abogada de derechos humanos y dirigente del PTS. Candidata presidencial del Frente de Izquierda (2023) y diputada nacional por la Ciudad en varios períodos, el último desde 2025.",
    "coords": {
     "ECO": -95,
     "SOC": -90,
@@ -852,7 +852,7 @@
    "catalog": "ar_actuales",
    "name": "Victoria Villarruel",
    "era": "2023–",
-   "description": "Vicepresidenta: nacionalismo conservador y reivindicación de las víctimas de las organizaciones armadas.",
+   "description": "Vicepresidenta y presidenta del Senado desde 2023, electa en la fórmula de Milei y enfrentada con él desde 2024. Abogada, fundó en 2006 el CELTYV, que reivindica a las víctimas de las organizaciones armadas de los 70; nacionalismo conservador.",
    "coords": {
     "ECO": -10,
     "SOC": 90,
@@ -873,7 +873,7 @@
    "catalog": "ar_actuales",
    "name": "Juan Schiaretti",
    "era": "2007–",
-   "description": "Exgobernador de Córdoba: peronismo no kirchnerista, productivista y federal.",
+   "description": "Gobernador de Córdoba (2007–2011 y 2015–2023) y candidato presidencial en 2023; diputado nacional por Provincias Unidas desde 2026. Referente del peronismo cordobés no kirchnerista, productivista y federal.",
    "coords": {
     "ECO": 15,
     "SOC": 10,
@@ -894,7 +894,7 @@
    "catalog": "ar_actuales",
    "name": "Juan Grabois",
    "era": "2015–",
-   "description": "Dirigente de la economía popular: peronismo de izquierda de raíz católica.",
+   "description": "Fundador del MTE y cofundador de la UTEP, referente de la economía popular y del Frente Patria Grande; precandidato presidencial (2023) y diputado nacional por Fuerza Patria desde 2025. Peronismo de izquierda de raíz católica.",
    "coords": {
     "ECO": -80,
     "SOC": -5,
@@ -1311,7 +1311,7 @@
    "catalog": "ar_historicas",
    "name": "Domingo Cavallo",
    "era": "1982–2001",
-   "description": "Economista. Presidente del Banco Central (1982), canciller (1989–1991) y ministro de Economía (1991–1996 y 2001); diseñó la Ley de Convertibilidad y aplicó el 'corralito' en 2001.",
+   "description": "Economista. Presidente del Banco Central (1982), canciller (1989–1991) y ministro de Economía (1991–1996 y 2001); diseñó la Ley de Convertibilidad, fundó Acción por la República, fue candidato presidencial (1999) y aplicó el 'corralito' en 2001.",
    "coords": {
     "ECO": 85,
     "SOC": 20,
@@ -1355,7 +1355,7 @@
    "catalog": "ar_actuales",
    "name": "Elisa Carrió",
    "era": "1995–",
-   "description": "Fundadora y referente de la Coalición Cívica-ARI; exdiputada nacional y cofundadora de Cambiemos/Juntos por el Cambio.",
+   "description": "Convencional constituyente (1994) y diputada nacional por la UCR, el ARI y la Coalición Cívica, que fundó; candidata presidencial en 2003, 2007 y 2011 y cofundadora de Cambiemos (2015). Sin cargo público actual.",
    "coords": {
     "ECO": 15,
     "SOC": 40,
@@ -1376,7 +1376,7 @@
    "catalog": "ar_actuales",
    "name": "Martín Lousteau",
    "era": "2008–",
-   "description": "Economista, exministro de Economía (2007–2008), expresidente de la UCR (2023–2025) y diputado nacional por CABA desde 2025.",
+   "description": "Economista: ministro de Economía de CFK (2007–2008), embajador de Macri en EE.UU. (2016–2017), senador (2019–2025) y presidente de la UCR (2023–2025). Diputado nacional por la Ciudad (Provincias Unidas) desde 2025.",
    "coords": {
     "ECO": -10,
     "SOC": -60,
@@ -1393,32 +1393,11 @@
    "basis": "ECO: Autor de la Resolución 125 (2008); votó contra la Ley Bases (2024) y la reforma laboral (feb. 2026) — Senado; HCDN · SOC: Votó a favor de la IVE (2018) como diputado — HCDN · INS: Impulsó limitar los DNU (2025) y defendió la ley de financiamiento universitario frente a vetos — Senado; La Nación · POP: Perfil técnico y de acuerdos; presidió la UCR (2023–2025) con alianzas transversales — Senado; El Día (dic. 2025) · SEG: Votó el Régimen Penal Juvenil a 14 años (feb. 2026) con reparos — HCDN; Infobae · MEM: Defiende los juicios y las políticas de memoria desde el alfonsinismo — Senado · EXT: Apoya Mercosur–UE sin alineamiento automático — Senado · FED: null: sin posiciones públicas claras sobre coparticipación más allá de su integración en Provincias Unidas (2025) · IDN: Radical, aunque fue ministro de CFK (2007–2008) — La Nación"
   },
   {
-   "id": "espert",
-   "catalog": "ar_actuales",
-   "name": "José Luis Espert",
-   "era": "2019–",
-   "description": "Economista liberal y exdiputado nacional (2021–2025) aliado de La Libertad Avanza: apertura, baja de impuestos y mano dura.",
-   "coords": {
-    "ECO": 100,
-    "SOC": 20,
-    "INS": 30,
-    "POP": 50,
-    "SEG": 95,
-    "MEM": 45,
-    "EXT": 90,
-    "FED": null,
-    "IDN": 90
-   },
-   "confidence": "media",
-   "method": "seed-editorial",
-   "basis": "ECO: Apertura comercial total, baja de impuestos, déficit cero y reforma laboral; presidió la Comisión de Presupuesto (2024–2025) — HCDN · SOC: Se declaró 'provida desde una posición liberal' y a favor de despenalizar la marihuana — Perfil · INS: Acompañó el DNU 70/2023, las facultades delegadas y los vetos del Ejecutivo — HCDN · POP: Retórica confrontativa y antipolítica ('cárcel o bala') — Chequeado · SEG: Consigna 'cárcel o bala' y apoyo a toda la agenda penal de LLA — Chequeado; Infobae · MEM: Acompaña la 'memoria completa' del oficialismo, sin militancia propia en el tema — Infobae · EXT: Alineamiento con EE.UU. y apertura unilateral — Infobae · FED: null: propone eliminar Ingresos Brutos pero también correspondencia fiscal; señales contradictorias · IDN: Retórica fuertemente antiperonista desde su candidatura de 2019 — Perfil"
-  },
-  {
    "id": "pullaro",
    "catalog": "ar_actuales",
    "name": "Maximiliano Pullaro",
    "era": "2011–",
-   "description": "Gobernador de Santa Fe (UCR, Unidos para Cambiar Santa Fe) desde 2023 y uno de los fundadores de Provincias Unidas (2025).",
+   "description": "Gobernador de Santa Fe (UCR, Unidos para Cambiar Santa Fe) desde 2023; antes fue ministro de Seguridad provincial (2015–2019) y diputado provincial. Uno de los fundadores de Provincias Unidas (2025).",
    "coords": {
     "ECO": 40,
     "SOC": 10,
@@ -1439,7 +1418,7 @@
    "catalog": "ar_actuales",
    "name": "Martín Llaryora",
    "era": "2011–",
-   "description": "Gobernador de Córdoba (Hacemos Unidos por Córdoba) desde 2023; peronismo no kirchnerista y cofundador de Provincias Unidas.",
+   "description": "Gobernador de Córdoba (Hacemos Unidos por Córdoba) desde 2023, tras ser intendente de San Francisco, vicegobernador de Schiaretti (2015–2017), diputado nacional e intendente de la ciudad de Córdoba (2019–2023). Peronismo no kirchnerista; cofundador de Provincias Unidas.",
    "coords": {
     "ECO": 15,
     "SOC": 10,
@@ -1481,7 +1460,7 @@
    "catalog": "ar_actuales",
    "name": "Alberto Fernández",
    "era": "2019–2023",
-   "description": "Presidente de la Nación 2019–2023 por el Frente de Todos; exjefe de Gabinete (2003–2008).",
+   "description": "Presidente de la Nación (2019–2023) por el Frente de Todos. Fue superintendente de Seguros con Menem (1989–1995), legislador porteño en la lista de Cavallo (2000) y jefe de Gabinete de Néstor Kirchner y CFK (2003–2008).",
    "coords": {
     "ECO": -60,
     "SOC": -80,
@@ -1502,7 +1481,7 @@
    "catalog": "ar_actuales",
    "name": "Miguel Ángel Pichetto",
    "era": "1993–",
-   "description": "Diputado nacional (Encuentro Federal), exjefe del bloque peronista en el Senado y excandidato a vicepresidente de Macri (2019).",
+   "description": "Senador por Río Negro (2001–2019) y jefe del bloque peronista durante los gobiernos kirchneristas; en 2019 fue candidato a vicepresidente de Macri. Diputado nacional desde 2023 y jefe del bloque Encuentro Federal.",
    "coords": {
     "ECO": -5,
     "SOC": -30,
@@ -1544,7 +1523,7 @@
    "catalog": "ar_actuales",
    "name": "Luis Caputo",
    "era": "2015–",
-   "description": "Ministro de Economía desde diciembre de 2023; exministro de Finanzas (2017–2018) y expresidente del BCRA (2018).",
+   "description": "Ministro de Economía de Milei desde diciembre de 2023. Con Macri fue secretario y ministro de Finanzas (2015–2018) y presidente del BCRA (2018); antes, banquero en JP Morgan y Deutsche Bank.",
    "coords": {
     "ECO": 90,
     "SOC": 30,
@@ -1565,7 +1544,7 @@
    "catalog": "ar_actuales",
    "name": "Federico Sturzenegger",
    "era": "2015–",
-   "description": "Ministro de Desregulación y Transformación del Estado desde 2024; expresidente del BCRA (2015–2018).",
+   "description": "Ministro de Desregulación y Transformación del Estado desde 2024. Fue secretario de Política Económica de Cavallo (2001), presidente del Banco Ciudad (2008–2013), diputado del PRO (2013–2015) y presidente del BCRA (2015–2018).",
    "coords": {
     "ECO": 100,
     "SOC": 25,
@@ -1586,7 +1565,7 @@
    "catalog": "ar_actuales",
    "name": "Facundo Manes",
    "era": "2021–",
-   "description": "Neurocientífico; diputado nacional (2021–2025) por la UCR y el bloque Democracia para Siempre. En 2025 dejó la UCR y fundó Para Adelante.",
+   "description": "Neurocientífico; diputado nacional (2021–2025) por la UCR y el bloque Democracia para Siempre. En 2025 dejó la UCR, fundó Para Adelante y fue candidato a senador por la Ciudad; hoy sin cargo público.",
    "coords": {
     "ECO": -20,
     "SOC": -30,
@@ -1607,7 +1586,7 @@
    "catalog": "ar_actuales",
    "name": "Gerardo Morales",
    "era": "1999–",
-   "description": "Exgobernador de Jujuy (2015–2023) y expresidente de la UCR nacional.",
+   "description": "Senador por Jujuy (2001–2015), gobernador (2015–2023) y presidente de la UCR (2021–2023); fue precandidato a vicepresidente con Rodríguez Larreta en 2023. Radicalismo del norte, hoy sin cargo público.",
    "coords": {
     "ECO": 10,
     "SOC": 20,
@@ -1628,7 +1607,7 @@
    "catalog": "ar_actuales",
    "name": "Gildo Insfrán",
    "era": "1995–",
-   "description": "Gobernador de Formosa (PJ) desde 1995.",
+   "description": "Gobernador de Formosa (PJ) desde 1995, en su octavo mandato consecutivo (2023–2027), tras ser vicegobernador (1987–1995). Referente del peronismo del norte.",
    "coords": {
     "ECO": -60,
     "SOC": 20,
@@ -1691,7 +1670,7 @@
    "catalog": "ar_actuales",
    "name": "Eduardo Belliboni",
    "era": "2002–",
-   "description": "Dirigente del Polo Obrero y del Partido Obrero (FIT-Unidad).",
+   "description": "Dirigente del Partido Obrero (FIT-Unidad) y coordinador nacional del Polo Obrero, movimiento de desocupados; referente de las movilizaciones contra el protocolo antipiquetes (2023–2024).",
    "coords": {
     "ECO": -95,
     "SOC": -80,
@@ -1733,7 +1712,7 @@
    "catalog": "ar_tradiciones",
    "name": "Frente Renovador",
    "era": "2013–",
-   "description": "Espacio peronista fundado por Sergio Massa; integró el Frente de Todos y Unión por la Patria.",
+   "description": "Espacio peronista fundado por Sergio Massa en 2013 tras romper con el kirchnerismo; volvió a aliarse con él en el Frente de Todos, Unión por la Patria y Fuerza Patria.",
    "coords": {
     "ECO": -45,
     "SOC": -20,
@@ -1754,7 +1733,7 @@
    "catalog": "ar_tradiciones",
    "name": "Provincias Unidas",
    "era": "2025–",
-   "description": "Frente de gobernadores (Córdoba, Santa Fe, Chubut, Jujuy, Santa Cruz, Corrientes) lanzado en 2025 como alternativa al kirchnerismo y a LLA.",
+   "description": "Frente lanzado en 2025 por los gobernadores de Córdoba, Santa Fe, Chubut, Jujuy y Santa Cruz, luego con Corrientes, como alternativa al kirchnerismo y a LLA. Tras las legislativas de 2025 funciona sobre todo como bloque en Diputados.",
    "coords": {
     "ECO": 30,
     "SOC": 10,
@@ -2033,33 +2012,11 @@
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
-   "id": "hebe_de_bonafini",
-   "catalog": "ar_historicas",
-   "name": "Hebe de Bonafini",
-   "era": "1977–2022",
-   "description": "Presidenta de la Asociación Madres de Plaza de Mayo desde 1979 hasta su muerte en 2022. Desde 2003 respaldó a los gobiernos de Néstor Kirchner y Cristina Fernández.",
-   "coords": {
-    "ECO": -85,
-    "SOC": -60,
-    "INS": 40,
-    "POP": 90,
-    "SEG": -95,
-    "MEM": -100,
-    "EXT": -100,
-    "FED": null,
-    "IDN": -65
-   },
-   "confidence": "alta",
-   "method": "seed-editorial",
-   "basis": "ECO: Reivindicación de la militancia revolucionaria de los hijos y rechazo al ajuste y al FMI (1977–2022) — Gorini, 'La rebelión de las Madres' (2006) · SOC: Izquierda laica, crítica de la jerarquía eclesiástica hasta su acercamiento a Francisco (2016) — Diario de Cuyo (2016) · INS: Confrontación con jueces y medios; en 2017 llamó a 'tomar universidades y hospitales' contra el gobierno de Macri — Diario de Cuyo (2017) · POP: Retórica pueblo contra poderosos y descalificación de adversarios (2003–2022) — Infobae (2022); La Nación (2022) · SEG: Rechazo total a la represión y defensa de la protesta (1977–2022) — Wikipedia es 'Hebe de Bonafini' · MEM: Presidenta de la Asociación Madres de Plaza de Mayo (1979–2022) y contra las leyes de impunidad y los indultos — Wikipedia es 'Hebe de Bonafini' · EXT: Apoyo a Cuba y Venezuela y antiimperialismo radical (1990–2022) — Gorini (2006) · FED: null: sin posición codificable sobre provincias · IDN: Dijo que su partido era el kirchnerismo y reivindicó al peronismo ('nunca fue de limosnas', Marcha n.º 2306); antes criticó a todos los partidos — La Nación (2022); madres.org",
-   "contextNote": "Posiciones relativas al debate de su época."
-  },
-  {
    "id": "guillermo_francos",
    "catalog": "ar_actuales",
    "name": "Guillermo Francos",
    "era": "1990–",
-   "description": "Ministro del Interior y luego jefe de Gabinete de Javier Milei; condujo la negociación de la Ley Bases con gobernadores y bloques dialoguistas.",
+   "description": "Ministro del Interior (2023–2024) y jefe de Gabinete de Milei (2024–2025), negociador de la Ley Bases. Antes fue diputado por el partido de Cavallo (1997–2000), presidente del Banco Provincia con Scioli (2007–2011) y representante argentino en el BID con Alberto Fernández.",
    "coords": {
     "ECO": 70,
     "SOC": 20,
@@ -2121,7 +2078,7 @@
    "id": "julio_cobos",
    "catalog": "ar_actuales",
    "name": "Julio Cobos",
-   "era": "2003–",
+   "era": "2003–2025",
    "description": "Gobernador de Mendoza (2003–2007), vicepresidente de la Nación (2007–2011) por la Concertación con Cristina Fernández de Kirchner, senador y diputado nacional por la UCR. Su voto de desempate contra la Resolución 125 en 2008 definió el conflicto con el campo.",
    "coords": {
     "ECO": 25,
@@ -2143,12 +2100,12 @@
    "catalog": "ar_actuales",
    "name": "Luis Juez",
    "era": "1999–",
-   "description": "Senador nacional por Córdoba, exintendente de la ciudad de Córdoba (2003–2007) y fundador del Frente Cívico; desde 2026 integra el bloque de La Libertad Avanza.",
+   "description": "Senador por Córdoba (2009–2015 y desde 2021) y diputado (2019–2021). Surgido del PJ, fue fiscal anticorrupción de De la Sota, fundador del Frente Cívico, intendente de Córdoba (2003–2007), aliado de Carrió y Binner, embajador de Macri y jefe del bloque PRO; en LLA desde 2026.",
    "coords": {
-    "ECO": 50,
-    "SOC": 40,
-    "INS": 20,
-    "POP": 55,
+    "ECO": 35,
+    "SOC": 25,
+    "INS": 5,
+    "POP": 30,
     "SEG": 70,
     "MEM": 25,
     "EXT": 70,
@@ -2157,7 +2114,7 @@
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "ECO: Votó la Ley Bases y el paquete fiscal (2024) y se sumó al bloque oficialista antes de la votación de la reforma laboral (feb. 2026) — Senado; Perfil 2026 · SOC: Votó contra la legalización del aborto como diputado (2018) — HCDN · INS: Aliado del Ejecutivo de Milei que acompaña DNU y vetos, aunque viene de la tradición republicana de Cambiemos — Senado · POP: Estilo humorístico y confrontativo, con apelaciones al 'cordobés común'; pero construyó coaliciones (Cambiemos, JxC) — La Voz del Interior · SEG: Defendió en el Senado la baja de la imputabilidad a 14 años, sancionada el 27/02/2026 — Infobae 27/02/2026 · MEM: Alineado con el oficialismo en memoria, sin posiciones propias destacadas — Senado · EXT: Embajador de Macri en Ecuador (2016–2017); alineado hoy con la política exterior de Milei — Infobae 23/02/2026 · FED: Reclama por Córdoba frente a la Nación y aspira a gobernar la provincia en 2027 — La Voz del Interior; Infobae 2026 · IDN: Surgió del peronismo cordobés y luego fue antikirchnerista y aliado de Macri y Milei; en 2026 pasó al bloque LLA — Infobae 23/02/2026"
+   "basis": "ECO: Votó la Ley Bases y el paquete fiscal (2024) y se sumó al bloque oficialista antes de la votación de la reforma laboral (feb. 2026) — Senado; Perfil 2026 · SOC: Votó contra la legalización del aborto como diputado (2018) — HCDN · INS: Aliado del Ejecutivo de Milei que acompaña DNU y vetos, aunque viene de la tradición republicana de Cambiemos — Senado · POP: Estilo humorístico y confrontativo, con apelaciones al 'cordobés común'; pero construyó coaliciones (Cambiemos, JxC) — La Voz del Interior · SEG: Defendió en el Senado la baja de la imputabilidad a 14 años, sancionada el 27/02/2026 — Infobae 27/02/2026 · MEM: Alineado con el oficialismo en memoria, sin posiciones propias destacadas — Senado · EXT: Embajador de Macri en Ecuador (2016–2017); alineado hoy con la política exterior de Milei — Infobae 23/02/2026 · FED: Reclama por Córdoba frente a la Nación y aspira a gobernar la provincia en 2027 — La Voz del Interior; Infobae 2026 · IDN: Surgió del peronismo cordobés y luego fue antikirchnerista y aliado de Macri y Milei; en 2026 pasó al bloque LLA — Infobae 23/02/2026 · ECO: Votó la estatización de YPF en el Senado ('¿quién se puede oponer a nacionalizar el autoabastecimiento?', 2012) y luego la Ley Bases (2024) y la agenda económica de Milei — iProfesional; Cadena 3 (2025); Senado · SOC: Votó a favor del matrimonio igualitario (Senado, 15/07/2010: 'no encontré un pasaje de la Biblia donde Cristo se enoje con los homosexuales') y en contra de la IVE como diputado (11/12/2020); corrige el dato previo que ubicaba ese voto en 2018, cuando no era legislador — Perfil 15/07/2010; HCDN votación 11/12/2020; MDZ 11/12/2020 · INS: Surgió como fiscal anticorrupción (2000–2002) y fundó el Partido Nuevo 'contra la Corrupción', aliado a la Coalición Cívica (2009); votó con la oposición para rechazar el veto de Milei a la emergencia en discapacidad (04/09/2025) y dejó la jefatura del bloque PRO para 'votar con independencia' (ene. 2025); desde 2026 acompaña al Ejecutivo — Infobae 04/09/2025; Infobae 29/01/2025 · POP: Estilo campechano, pero 25 años de construcción de coaliciones: Coalición Cívica (2009), Frente Amplio Progresista con Binner (2011), Cambiemos (2015), jefe del bloque PRO elegido por Macri (dic. 2023–ene. 2025) e interbloque LLA (2026); en jul. 2026 aceptó bajarse de la candidatura a gobernador si el oficialismo elige a Bornoroni — Cadena 3 (dic. 2023); Infobae 23/02/2026; Ámbito 22/07/2026"
   },
   {
    "id": "anibal_fernandez",
@@ -2227,7 +2184,7 @@
    "catalog": "ar_actuales",
    "name": "Daniel Scioli",
    "era": "1997–",
-   "description": "Exvicepresidente, exgobernador de Buenos Aires y candidato presidencial del Frente para la Victoria en 2015; se sumó al gobierno de Milei.",
+   "description": "Diputado convocado por Menem (1997), vicepresidente de Néstor Kirchner (2003–2007), gobernador bonaerense (2007–2015), candidato presidencial del FpV (2015) y embajador en Brasil (2019–2023). Desde 2024 es secretario de Turismo, Ambiente y Deportes de Milei.",
    "coords": {
     "ECO": 30,
     "SOC": 20,
@@ -2284,27 +2241,6 @@
    "confidence": "media",
    "method": "seed-editorial",
    "basis": "ECO: MTA contra las reformas de los 90; defiende convenios por rama, obras sociales y cuota solidaria aunque en 2026 firma paritarias en la pauta oficial — Infobae 18/09/2026 · SOC: Sindicalismo peronista tradicional, socialmente conservador — La Nación · INS: Pragmático con distintos gobiernos (Kirchner, Macri, Milei), sin defensa de la hegemonía de ninguno — Infobae 13/03/2026 · POP: Liderazgo personal en Camioneros desde 1987; discurso de trabajadores contra los poderosos — La Nación · SEG: Defiende la movilización sindical, sin agenda penal propia — Infobae · MEM: Adhiere a la línea peronista en memoria sin protagonismo — La Nación · EXT: Nacionalismo sindical crítico del FMI, sin política exterior propia — La Nación · FED: Sin posiciones relevantes en el eje Nación-provincias; valor neutral — revisión de prensa · IDN: Sindicalista peronista; condujo la CGT (2004–2012) y apoyó al Frente de Todos (2019) — La Nación"
-  },
-  {
-   "id": "luis_delia",
-   "catalog": "ar_actuales",
-   "name": "Luis D'Elía",
-   "era": "1998–",
-   "description": "Dirigente social fundador de la Federación Tierra, Vivienda y Hábitat (FTV), subsecretario de Tierras para el Hábitat Social (2006) y referente del ala piquetera del kirchnerismo.",
-   "coords": {
-    "ECO": -80,
-    "SOC": 20,
-    "INS": 70,
-    "POP": 100,
-    "SEG": -45,
-    "MEM": -90,
-    "EXT": -100,
-    "FED": 30,
-    "IDN": -90
-   },
-   "confidence": "alta",
-   "method": "seed-editorial",
-   "basis": "ECO: Defendió las retenciones móviles y movilizó contra el campo en 2008 — La Nación · SOC: Sin agenda progresista en valores; sus prioridades son tierra, vivienda y trabajo — Ámbito · INS: Defensor del liderazgo de Néstor y Cristina Kirchner y de la movilización callejera en su apoyo (2008) — La Nación · POP: Retórica de confrontación pueblo contra oligarquía (conflicto del campo, 2008) — La Nación · SEG: Referente piquetero, defensor de la protesta y crítico de la represión — Ámbito · MEM: Alineado con el kirchnerismo en memoria y juicios — Página/12 · EXT: Alineamiento explícito con Irán y Venezuela; en 2026 se presentó como vocero de posiciones del gobierno iraní — Radio JAI 02/03/2026; Revista Noticias 2026 · FED: Kirchnerismo centralista en la distribución de planes y recursos — La Nación · IDN: Peronista kirchnerista; en 2026 enfrentado con La Cámpora pero dentro del peronismo — Zona Norte Diario 08/04/2026"
   },
   {
    "id": "alfonsinismo",
