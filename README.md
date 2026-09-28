@@ -16,7 +16,7 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
 | Ejes | Economía, Comercio, Macroeconomía, Trabajo, Valores, Instituciones, Estilo (pluralista/populista), Seguridad, Memoria, Mundo, Territorio + Identidad (aparte) | Economía, Comercio, Libertades, Democracia, Valores, Religión, Nación, Guerra y paz, Migración, Ambiente, Estilo, Tecnología |
 | Afirmaciones | 182 (72 corta · 116 completa · 182 a fondo) | 192 (72 corta · 120 completa · 192 a fondo) |
 | Catálogos | Tradiciones y espacios · Figuras históricas · Figuras actuales | Ideologías · Figuras históricas · Figuras actuales · Partidos |
-| Perfiles | 149 | 295 |
+| Perfiles | 149 | 302 |
 
 ## Cómo se calcula
 

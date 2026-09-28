@@ -11,13 +11,13 @@
    "id": "intl_historicas",
    "name": "Figuras históricas",
    "kind": "figuras",
-   "description": "Jefes de Estado y de gobierno de los siglos XIX y XX, con posiciones de su época."
+   "description": "Jefes de Estado y de gobierno de los siglos XIX y XX, y dirigentes de gran influencia, con posiciones de su época."
   },
   {
    "id": "intl_actuales",
    "name": "Figuras actuales",
    "kind": "figuras",
-   "description": "Jefes de Estado y de gobierno actuales o recientes, incluidos argentinos."
+   "description": "Jefes de Estado y de gobierno actuales o recientes, incluidos argentinos, y dirigentes de gran influencia."
   },
   {
    "id": "intl_partidos",
@@ -7422,6 +7422,184 @@
    "confidence": "media",
    "method": "seed-editorial",
    "basis": "Rawls, 'Teoría de la justicia' (1971), 'Liberalismo político' (1993), 'El derecho de gentes' (1999); democracia de propietarios; Dworkin. MIG nulo: la teoría supone una sociedad cerrada."
+  },
+  {
+   "id": "che",
+   "catalog": "intl_historicas",
+   "name": "Ernesto \"Che\" Guevara",
+   "description": "Revolucionario marxista argentino, protagonista de la Revolución cubana e impulsor de la guerrilla continental.",
+   "coords": {
+    "ECO": -100,
+    "COM": -60,
+    "AUT": 80,
+    "DEM": 80,
+    "SOC": 10,
+    "REL": -90,
+    "NAC": -30,
+    "MIL": 90,
+    "MIG": null,
+    "ECOL": null,
+    "POP": 60,
+    "TEC": null
+   },
+   "confidence": "media",
+   "method": "seed-editorial",
+   "basis": "Revolución cubana",
+   "country": "Argentina",
+   "era": "1928–1967",
+   "contextNote": "Posiciones relativas al debate de su época."
+  },
+  {
+   "id": "leon_trotski",
+   "catalog": "intl_historicas",
+   "name": "León Trotski",
+   "country": "Rusia",
+   "era": "1917–1940",
+   "description": "Dirigente de la Revolución de Octubre, fundador del Ejército Rojo y comisario de Guerra (1918–1925); defendió el terror rojo y supervisó la represión de la rebelión de Kronstadt (1921). Expulsado por Stalin, encabezó la oposición antiestalinista y la Cuarta Internacional hasta su asesinato en México (1940).",
+   "coords": {
+    "ECO": -100,
+    "COM": -70,
+    "AUT": 70,
+    "DEM": 60,
+    "SOC": -50,
+    "REL": -100,
+    "NAC": -100,
+    "MIL": 100,
+    "MIG": null,
+    "ECOL": null,
+    "POP": 30,
+    "TEC": -80
+   },
+   "confidence": "media",
+   "method": "seed-editorial",
+   "basis": "'Terrorismo y comunismo' (1920) y militarización del trabajo (AUT, MIL); monopolio estatal del comercio exterior (COM); teoría de la revolución permanente (NAC); oposición a la burocracia y 'Nuevo Curso' (1923) (DEM atenuado); campaña antirreligiosa soviética (REL); industrialización acelerada (TEC). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "contextNote": "Posiciones relativas al debate de su época."
+  },
+  {
+   "id": "enrico_berlinguer",
+   "catalog": "intl_historicas",
+   "name": "Enrico Berlinguer",
+   "country": "Italia",
+   "era": "1972–1984",
+   "description": "Secretario general del Partido Comunista Italiano; impulsó el eurocomunismo y el 'compromiso histórico' con la Democracia Cristiana, y tomó distancia de la Unión Soviética.",
+   "coords": {
+    "ECO": -70,
+    "COM": -20,
+    "AUT": -40,
+    "DEM": -60,
+    "SOC": -40,
+    "REL": -40,
+    "NAC": -30,
+    "MIL": -60,
+    "MIG": null,
+    "ECOL": -20,
+    "POP": -30,
+    "TEC": -20
+   },
+   "confidence": "media",
+   "method": "seed-editorial",
+   "basis": "Compromiso histórico (1973) y apoyo externo a los gobiernos de solidaridad nacional (DEM); aceptación de la OTAN (1976) y condena de la invasión de Afganistán, 'strappo' con Moscú (1981) (NAC, MIL); discurso de la 'austeridad' como crítica del consumismo (1977) (ECOL); 'cuestión moral' (POP); centralismo democrático interno (DEM no extremo). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "contextNote": "Posiciones relativas al debate de su época."
+  },
+  {
+   "id": "sanders",
+   "catalog": "intl_actuales",
+   "name": "Bernie Sanders",
+   "description": "Senador socialdemócrata: salud universal, impuestos a las grandes fortunas y apoyo sindical.",
+   "coords": {
+    "ECO": -80,
+    "COM": -50,
+    "AUT": -50,
+    "DEM": -80,
+    "SOC": -70,
+    "REL": -60,
+    "NAC": -30,
+    "MIL": -60,
+    "MIG": -40,
+    "ECOL": -85,
+    "POP": 60,
+    "TEC": -20
+   },
+   "confidence": "media",
+   "method": "seed-editorial",
+   "basis": "Medicare for All",
+   "country": "EE.UU.",
+   "era": "1991–"
+  },
+  {
+   "id": "le_pen",
+   "catalog": "intl_actuales",
+   "name": "Marine Le Pen",
+   "description": "Líder de la derecha nacionalista francesa: control migratorio y proteccionismo.",
+   "coords": {
+    "ECO": -20,
+    "COM": -70,
+    "AUT": 60,
+    "DEM": 30,
+    "SOC": 50,
+    "REL": 0,
+    "NAC": 90,
+    "MIL": 30,
+    "MIG": 95,
+    "ECOL": 30,
+    "POP": 85,
+    "TEC": 10
+   },
+   "confidence": "media",
+   "method": "seed-editorial",
+   "basis": "Usa la laicidad contra el islam: REL ≈ 0",
+   "country": "Francia",
+   "era": "2011–"
+  },
+  {
+   "id": "farage",
+   "catalog": "intl_actuales",
+   "name": "Nigel Farage",
+   "country": "Reino Unido",
+   "era": "2024–",
+   "description": "Líder de Reform UK, derecha populista y euroescéptica: deportaciones masivas y abandono de las metas de cero emisiones netas.",
+   "coords": {
+    "ECO": 50,
+    "COM": 40,
+    "AUT": 60,
+    "DEM": 20,
+    "SOC": 50,
+    "REL": 20,
+    "NAC": 90,
+    "MIL": 20,
+    "MIG": 100,
+    "ECOL": 90,
+    "POP": 90,
+    "TEC": 0
+   },
+   "confidence": "alta",
+   "method": "seed-editorial",
+   "basis": "Programa de Reform UK 2025–2026; propuestas de salir del CEDH y deportar; retroceso en encuestas (YouGov MRP sept. 2026); renuncia a su banca en julio de 2026 bajo investigación del comisionado de estándares, sigue como líder."
+  },
+  {
+   "id": "melenchon",
+   "catalog": "intl_actuales",
+   "name": "Jean-Luc Mélenchon",
+   "country": "Francia",
+   "era": "2016–",
+   "description": "Fundador y líder de La Francia Insumisa, izquierda populista.",
+   "coords": {
+    "ECO": -80,
+    "COM": -70,
+    "AUT": -40,
+    "DEM": -40,
+    "SOC": -70,
+    "REL": -80,
+    "NAC": 20,
+    "MIL": -50,
+    "MIG": -70,
+    "ECOL": -70,
+    "POP": 90,
+    "TEC": -20
+   },
+   "confidence": "alta",
+   "method": "seed-editorial",
+   "basis": "Programa L'Avenir en commun; salida del mando de la OTAN; proteccionismo solidario; planificación ecológica; laicismo; France 24/Al Jazeera 3-5-2026."
   }
  ]
 }
