@@ -27,6 +27,16 @@ inseguridad, juicios por la dictadura y aprobación del gobierno. Dan un perfil 
 cada partida para cruzar con el resto de las cartas (la exportación las trae como columnas).
 La de aprobación es `"volatil": true`: hay que actualizar su dato con la última medición.
 
+## Brújula política
+
+Las cartas con `eje` ubican a quien juega en dos ejes: economía (`-1` más Estado, `+1` más
+mercado) y valores y seguridad (`-1` más libertades individuales, `+1` más orden y tradición).
+El número indica hacia dónde empuja elegir A; elegir B empuja al revés. Al final de la ronda se
+promedian las respuestas de cada eje (`brujula()` en `src/engine/juego.ts`) y se dibuja también el
+punto de la mayoría: la opción más elegida en la encuesta de esas mismas cartas. Las núcleo tienen
+eje, así que toda ronda alcanza el mínimo de respuestas por eje. La brújula no se guarda ni va en
+la imagen para historias.
+
 ## Cartas parecidas
 
 Las cartas de un mismo tema fino comparten `"grupos"` (religión, "¿Creés en…?", jubilaciones,

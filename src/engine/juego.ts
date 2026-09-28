@@ -159,3 +159,74 @@ export function perfil(conLaMayoria: number, definidas: number): { titulo: strin
   if (p >= 0.25) return { titulo: 'A contracorriente', texto: 'Más de una vez pensás distinto que la mayoría del país.' }
   return { titulo: 'Minoría intensa', texto: 'Casi siempre elegís lo que eligen menos argentinos.' }
 }
+
+/** Un lugar en la brújula: cada eje va de -1 a 1. */
+export interface Punto {
+  /** -1 más Estado, 1 más mercado. */
+  economia: number
+  /** -1 más libertades individuales, 1 más orden y tradición. */
+  sociedad: number
+}
+
+export interface Brujula {
+  vos: Punto
+  /** Dónde cae la opción mayoritaria de las encuestas en las mismas cartas que respondiste. */
+  mayoria: Punto
+  /** Cuántas respuestas cuentan en cada eje. */
+  cartas: { economia: number; sociedad: number }
+}
+
+/** Respuestas mínimas por eje para ubicar a alguien en la brújula. */
+export const MINIMO_EJE = 2
+
+/** Ubica la ronda en dos ejes (Estado–mercado y libertades–orden) con las cartas que tienen eje. */
+export function brujula(lecturas: Lectura[]): Brujula | null {
+  const ejes = ['economia', 'sociedad'] as const
+  const suma = { vos: { economia: 0, sociedad: 0 }, mayoria: { economia: 0, sociedad: 0 } }
+  const cartas = { economia: 0, sociedad: 0 }
+  for (const { carta, jugada } of lecturas) {
+    if (!carta.eje || jugada.eleccion === 'nada') continue
+    const m = mayoria(carta)
+    for (const e of ejes) {
+      const v = carta.eje[e]
+      if (!v) continue
+      suma.vos[e] += jugada.eleccion === 'a' ? v : -v
+      suma.mayoria[e] += m === 'a' ? v : m === 'b' ? -v : 0
+      cartas[e]++
+    }
+  }
+  if (ejes.some((e) => cartas[e] < MINIMO_EJE)) return null
+  const promedio = (p: Punto): Punto => ({ economia: p.economia / cartas.economia, sociedad: p.sociedad / cartas.sociedad })
+  return { vos: promedio(suma.vos), mayoria: promedio(suma.mayoria), cartas }
+}
+
+/** Por debajo de esto (en valor absoluto) un eje cuenta como centro. */
+const CENTRO = 0.2
+
+/** El cuadrante en palabras, por ejemplo "Más Estado, más libertades". */
+export function cuadrante(p: Punto): string {
+  const eco = p.economia <= -CENTRO ? 'más Estado' : p.economia >= CENTRO ? 'más mercado' : null
+  const soc = p.sociedad <= -CENTRO ? 'más libertades' : p.sociedad >= CENTRO ? 'más orden' : null
+  const texto = eco && soc ? `${eco}, ${soc}` : eco ? `${eco}, centro en valores` : soc ? `centro en economía, ${soc}` : 'centro'
+  return texto[0].toUpperCase() + texto.slice(1)
+}
+
+/** Cómo te corrés respecto de la mayoría, o null si caés en el mismo lugar. */
+export function frenteALaMayoria(b: Brujula): string | null {
+  const de = (d: number, menos: string, mas: string) => (d <= -CENTRO ? menos : d >= CENTRO ? mas : null)
+  const partes = [
+    de(b.vos.economia - b.mayoria.economia, 'más hacia el Estado', 'más hacia el mercado'),
+    de(b.vos.sociedad - b.mayoria.sociedad, 'más hacia las libertades individuales', 'más hacia el orden y la tradición'),
+  ].filter(Boolean)
+  return partes.length ? `Frente a la mayoría, estás ${partes.join(' y ')}.` : null
+}
+
+/** El tema en el que más seguido quedaste en la minoría (al menos dos cartas definidas). */
+export function temaDistinto(porTema: Resumen['porTema']): Tema | null {
+  const candidatos = porTema.filter((t) => t.definidas >= 2 && t.mayoria < t.definidas)
+  if (!candidatos.length) return null
+  const ratio = (t: (typeof candidatos)[number]) => t.mayoria / t.definidas
+  return candidatos.reduce((a, b) =>
+    ratio(b) < ratio(a) || (ratio(b) === ratio(a) && b.definidas - b.mayoria > a.definidas - a.mayoria) ? b : a,
+  ).tema
+}

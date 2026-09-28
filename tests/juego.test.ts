@@ -1,6 +1,18 @@
 import { describe, expect, it } from 'vitest'
-import { lugar, mayoria, perfil, real, resumir, RONDA, sortear } from '../src/engine/juego'
-import type { Tema } from '../src/types'
+import {
+  brujula,
+  cuadrante,
+  frenteALaMayoria,
+  lugar,
+  mayoria,
+  perfil,
+  real,
+  resumir,
+  RONDA,
+  sortear,
+  temaDistinto,
+} from '../src/engine/juego'
+import type { Carta, Eje, Tema } from '../src/types'
 import { carta } from './fixture'
 
 describe('real y mayoría', () => {
@@ -120,5 +132,61 @@ describe('resumir', () => {
     expect(perfil(19, 20).titulo).toBe('Sos la mayoría')
     expect(perfil(10, 20).titulo).toBe('Mitad y mitad')
     expect(perfil(2, 20).titulo).toBe('Minoría intensa')
+  })
+})
+
+describe('brújula política', () => {
+  const con = (c: Carta, eje: Eje): Carta => ({ ...c, eje })
+  const banco = [
+    con(carta('m1', 70, 30), { economia: 1 }),
+    con(carta('m2', 20, 80), { economia: -1 }),
+    con(carta('s1', 60, 40), { sociedad: 1 }),
+    con(carta('s2', 50, 49), { sociedad: -1 }),
+    carta('x', 90, 10),
+  ]
+
+  it('promedia tus elecciones por eje y ubica a la mayoría en las mismas cartas', () => {
+    const r = resumir(banco, [
+      { carta: 'm1', eleccion: 'a' },
+      { carta: 'm2', eleccion: 'b' },
+      { carta: 's1', eleccion: 'b' },
+      { carta: 's2', eleccion: 'a' },
+      { carta: 'x', eleccion: 'a' },
+    ])
+    const b = brujula(r.lecturas)!
+    expect(b.cartas).toEqual({ economia: 2, sociedad: 2 })
+    expect(b.vos).toEqual({ economia: 1, sociedad: -1 })
+    // m1: mayoría A (+1); m2: mayoría B (+1); s1: mayoría A (+1); s2: parejo (0).
+    expect(b.mayoria).toEqual({ economia: 1, sociedad: 0.5 })
+    expect(cuadrante(b.vos)).toBe('Más mercado, más libertades')
+    expect(frenteALaMayoria(b)).toBe('Frente a la mayoría, estás más hacia las libertades individuales.')
+  })
+
+  it('sin suficientes respuestas por eje no ubica', () => {
+    const r = resumir(banco, [
+      { carta: 'm1', eleccion: 'a' },
+      { carta: 'm2', eleccion: 'a' },
+      { carta: 's1', eleccion: 'a' },
+      { carta: 's2', eleccion: 'nada' },
+    ])
+    expect(brujula(r.lecturas)).toBeNull()
+  })
+
+  it('nombra el centro', () => {
+    expect(cuadrante({ economia: 0.1, sociedad: -0.1 })).toBe('Centro')
+    expect(cuadrante({ economia: -0.5, sociedad: 0 })).toBe('Más Estado, centro en valores')
+  })
+})
+
+describe('tema en el que más te diferenciás', () => {
+  it('elige el de menor proporción con la mayoría, con al menos dos cartas', () => {
+    expect(
+      temaDistinto([
+        { tema: 'economia', mayoria: 3, definidas: 4 },
+        { tema: 'cultura', mayoria: 0, definidas: 1 },
+        { tema: 'sociedad', mayoria: 1, definidas: 3 },
+      ]),
+    ).toBe('sociedad')
+    expect(temaDistinto([{ tema: 'economia', mayoria: 2, definidas: 2 }])).toBeNull()
   })
 })

@@ -38,6 +38,12 @@ export function ComoFunciona({ onBack, backLabel = 'Volver' }: { onBack: () => v
         del gobierno se actualiza con la última medición disponible.
       </Bloque>
 
+      <Bloque titulo="La brújula política">
+        {`${cartas.filter((c) => c.eje?.economia).length} cartas miden economía (más Estado o más mercado) y ${
+          cartas.filter((c) => c.eje?.sociedad).length
+        } miden valores y seguridad (más libertades individuales o más orden y tradición). Cada respuesta suma o resta en su eje y al final se promedia: por eso tu lugar va de un extremo al otro según qué tan parejo elegiste. El punto de la mayoría usa, en esas mismas cartas, la opción más elegida en la encuesta. Es una aproximación con las cartas que te tocaron, no un test: otra ronda puede moverte un poco. No se guarda ni se comparte.`}
+      </Bloque>
+
       <Bloque titulo="Lo que se guarda">
         {collecting
           ? 'Cada ronda terminada se guarda de forma anónima: qué elegiste en cada carta, cuánto tardaste y, si decidís darlos, tu rango de edad, género y nivel educativo (se preguntan antes de cada resultado, con tus respuestas anteriores ya marcadas). No se guarda nombre, mail, IP ni nada que te identifique, y nunca las rondas de menores de 16 años. Lo que eligen quienes juegan no es una encuesta representativa: juega quien quiere.'

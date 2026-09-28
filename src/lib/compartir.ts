@@ -7,8 +7,8 @@ export interface Tarjeta {
   definidas: number
   titulo: string
   texto: string
-  /** Preguntas en las que la persona quedó en la minoría (se muestran hasta tres). */
-  minorias: string[]
+  /** Tema en el que más se aparta de la mayoría. */
+  temaDistinto?: string
   url: string
 }
 
@@ -19,7 +19,10 @@ const ARRIBA = 250
 const ABAJO = 330
 const C = { noche: '#0f2230', marfil: '#f0ece3', naranja: '#c8602a', azul: '#1e3a47', arena: '#cac4b0' }
 
-function envolver(ctx: CanvasRenderingContext2D, texto: string, ancho: number): string[] {
+type Ctx = CanvasRenderingContext2D
+const font = (peso: number, px: number) => `${peso} ${px}px Montserrat, system-ui, sans-serif`
+
+function envolver(ctx: Ctx, texto: string, ancho: number): string[] {
   const lineas: string[] = []
   let linea = ''
   for (const w of texto.split(/\s+/)) {
@@ -33,15 +36,7 @@ function envolver(ctx: CanvasRenderingContext2D, texto: string, ancho: number): 
   return lineas
 }
 
-/** Recorta a una línea con puntos suspensivos. */
-function recortar(ctx: CanvasRenderingContext2D, texto: string, ancho: number): string {
-  if (ctx.measureText(texto).width <= ancho) return texto
-  let t = texto
-  while (t.length > 1 && ctx.measureText(`${t}…`).width > ancho) t = t.slice(0, -1)
-  return `${t.trimEnd()}…`
-}
-
-function redondeado(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number) {
+function redondeado(ctx: Ctx, x: number, y: number, w: number, h: number, r: number) {
   ctx.beginPath()
   ctx.moveTo(x + r, y)
   ctx.arcTo(x + w, y, x + w, y + h, r)
@@ -51,110 +46,97 @@ function redondeado(ctx: CanvasRenderingContext2D, x: number, y: number, w: numb
   ctx.closePath()
 }
 
+/** Texto centrado que se achica hasta entrar en el ancho. */
+function ajustado(ctx: Ctx, texto: string, x: number, y: number, ancho: number, peso: number, px: number) {
+  let size = px
+  ctx.font = font(peso, size)
+  while (size > 20 && ctx.measureText(texto).width > ancho) {
+    size -= 4
+    ctx.font = font(peso, size)
+  }
+  ctx.fillText(texto, x, y)
+}
+
+function sitio(url: string): string {
+  return url.replace(/^https?:\/\//, '').replace(/\/$/, '')
+}
+
+/** Botón de llamado a jugar, apoyado sobre el margen de abajo. */
+function llamado(ctx: Ctx, t: Tarjeta, fondo: string, color: string, texto: string) {
+  const y = H - ABAJO - 150
+  ctx.fillStyle = fondo
+  redondeado(ctx, 70, y, W - 140, 130, 65)
+  ctx.fill()
+  ctx.fillStyle = color
+  ctx.textAlign = 'center'
+  ajustado(ctx, texto, W / 2, y + 62, W - 220, 700, 44)
+  ctx.globalAlpha = 0.75
+  ajustado(ctx, sitio(t.url), W / 2, y + 106, W - 220, 500, 30)
+  ctx.globalAlpha = 1
+  ctx.textAlign = 'left'
+}
+
+/** Insignia estilo resumen anual: el perfil como identidad para mostrar. */
+function insignia(ctx: Ctx, t: Tarjeta) {
+  const g = ctx.createLinearGradient(0, 0, 0, H)
+  g.addColorStop(0, C.naranja)
+  g.addColorStop(0.55, '#7a3b1f')
+  g.addColorStop(1, C.noche)
+  ctx.fillStyle = g
+  ctx.fillRect(0, 0, W, H)
+  ctx.textAlign = 'center'
+  ctx.fillStyle = C.marfil
+  ctx.font = font(600, 36)
+  ctx.globalAlpha = 0.8
+  ctx.fillText('MI RESULTADO EN LA MAYORÍA', W / 2, ARRIBA + 60)
+  ctx.globalAlpha = 1
+  ctx.font = font(700, 90)
+  ctx.fillText('SOY', W / 2, ARRIBA + 250)
+
+  // Insignia inclinada con el perfil
+  ctx.save()
+  ctx.translate(W / 2, ARRIBA + 460)
+  ctx.rotate(-0.06)
+  ctx.fillStyle = C.marfil
+  redondeado(ctx, -470, -150, 940, 300, 150)
+  ctx.fill()
+  ctx.fillStyle = C.noche
+  ctx.font = font(700, 110)
+  const lineas = envolver(ctx, t.titulo.toUpperCase(), 820).slice(0, 2)
+  lineas.forEach((l, i) => ajustado(ctx, l, 0, (lineas.length === 1 ? 38 : -12) + i * 104, 840, 700, lineas.length === 1 ? 110 : 90))
+  ctx.restore()
+
+  let y = ARRIBA + 720
+  ctx.fillStyle = C.marfil
+  ctx.font = font(500, 42)
+  envolver(ctx, t.texto, W - 200)
+    .slice(0, 2)
+    .forEach((l) => {
+      ctx.fillText(l, W / 2, y)
+      y += 56
+    })
+  y += 50
+  const dato = (titulo: string, valor: string, yy: number) => {
+    ctx.globalAlpha = 0.7
+    ctx.font = font(600, 30)
+    ctx.fillText(titulo, W / 2, yy)
+    ctx.globalAlpha = 1
+    ctx.font = font(700, 64)
+    ctx.fillText(valor, W / 2, yy + 76)
+  }
+  dato('CON LA MAYORÍA', `${t.mayoria} de ${t.definidas}`, y)
+  if (t.temaDistinto) dato('DONDE MÁS ME DIFERENCIO', t.temaDistinto, y + 160)
+  ctx.textAlign = 'left'
+  llamado(ctx, t, C.marfil, C.noche, '¿Y vos qué sos? Jugá →')
+}
+
 export async function renderShareImage(t: Tarjeta): Promise<Blob> {
   await document.fonts?.ready
   const canvas = document.createElement('canvas')
   canvas.width = W
   canvas.height = H
   const ctx = canvas.getContext('2d')!
-  const font = (peso: number, px: number) => `${peso} ${px}px Montserrat, system-ui, sans-serif`
-  const X = 90
-  const ANCHO = W - 2 * X
-
-  ctx.fillStyle = C.noche
-  ctx.fillRect(0, 0, W, H)
-  // Un toque de color arriba a la derecha.
-  const brillo = ctx.createRadialGradient(W, 0, 0, W, 0, 900)
-  brillo.addColorStop(0, 'rgba(200,96,42,0.35)')
-  brillo.addColorStop(1, 'rgba(200,96,42,0)')
-  ctx.fillStyle = brillo
-  ctx.fillRect(0, 0, W, H)
-
-  // Marca
-  let y = ARRIBA + 30
-  ctx.fillStyle = C.marfil
-  ctx.font = font(700, 56)
-  ctx.fillText('La Mayoría', X, y)
-  ctx.fillStyle = C.naranja
-  ctx.beginPath()
-  ctx.arc(X + ctx.measureText('La Mayoría').width + 20, y - 14, 10, 0, Math.PI * 2)
-  ctx.fill()
-
-  // Resultado principal
-  y += 110
-  ctx.fillStyle = 'rgba(240,236,227,0.7)'
-  ctx.font = font(600, 40)
-  ctx.fillText('Pienso como la mayoría', X, y)
-  ctx.fillText('de los argentinos en', X, y + 52)
-  y += 300
-  ctx.fillStyle = C.marfil
-  ctx.font = font(700, 260)
-  const num = String(t.mayoria)
-  ctx.fillText(num, X - 10, y)
-  const anchoNum = ctx.measureText(num).width
-  ctx.fillStyle = 'rgba(240,236,227,0.6)'
-  ctx.font = font(500, 88)
-  ctx.fillText(`de ${t.definidas}`, X + anchoNum + 20, y)
-
-  // Un punto por carta: claro con la mayoría, naranja en la minoría.
-  y += 60
-  const n = Math.max(1, t.definidas)
-  const porFila = Math.min(n, 13)
-  const paso = ANCHO / porFila
-  const radio = Math.min(22, paso * 0.34)
-  for (let i = 0; i < n; i++) {
-    const fila = Math.floor(i / porFila)
-    const col = i % porFila
-    ctx.fillStyle = i < t.mayoria ? C.marfil : C.naranja
-    ctx.beginPath()
-    ctx.arc(X + paso * col + paso / 2, y + fila * (radio * 2 + 18) + radio, radio, 0, Math.PI * 2)
-    ctx.fill()
-  }
-  y += Math.ceil(n / porFila) * (radio * 2 + 18) + 20
-
-  // Perfil
-  ctx.fillStyle = C.naranja
-  ctx.font = font(700, 96)
-  const titulo = envolver(ctx, t.titulo, ANCHO).slice(0, 2)
-  titulo.forEach((l, i) => ctx.fillText(l, X, y + 96 + i * 104))
-  y += 96 + (titulo.length - 1) * 104 + 60
-  ctx.fillStyle = 'rgba(240,236,227,0.8)'
-  ctx.font = font(500, 38)
-  const texto = envolver(ctx, t.texto, ANCHO).slice(0, 2)
-  texto.forEach((l, i) => ctx.fillText(l, X, y + i * 50))
-  y += (texto.length - 1) * 50 + 50
-
-  // Llamado a jugar, justo arriba del margen de abajo.
-  const ctaAlto = 120
-  const ctaY = H - ABAJO - ctaAlto - 20
-
-  // Donde es minoría: tantas como entren (hasta tres) entre el perfil y el llamado.
-  const libre = ctaY - 40 - y
-  const entran = Math.max(0, Math.min(3, t.minorias.length, Math.floor((libre - 100) / 58)))
-  if (entran > 0) {
-    const alto = 96 + entran * 58
-    ctx.fillStyle = 'rgba(240,236,227,0.08)'
-    redondeado(ctx, X - 30, y, ANCHO + 60, alto, 36)
-    ctx.fill()
-    ctx.fillStyle = C.naranja
-    ctx.font = font(700, 30)
-    ctx.fillText('SOY MINORÍA EN', X, y + 58)
-    ctx.fillStyle = C.marfil
-    ctx.font = font(500, 36)
-    t.minorias.slice(0, entran).forEach((m, i) => ctx.fillText(recortar(ctx, m, ANCHO), X, y + 116 + i * 58))
-  }
-
-  ctx.fillStyle = C.naranja
-  redondeado(ctx, X - 30, ctaY, ANCHO + 60, ctaAlto, 60)
-  ctx.fill()
-  ctx.fillStyle = C.marfil
-  ctx.textAlign = 'center'
-  ctx.font = font(700, 44)
-  ctx.fillText('¿Y vos? Jugá en', W / 2, ctaY + 54)
-  ctx.font = font(500, 32)
-  ctx.fillText(recortar(ctx, t.url.replace(/^https?:\/\//, '').replace(/\/$/, ''), ANCHO), W / 2, ctaY + 98)
-  ctx.textAlign = 'left'
-
+  insignia(ctx, t)
   return new Promise((resolve, reject) =>
     canvas.toBlob((b) => (b ? resolve(b) : reject(new Error('No se pudo generar la imagen'))), 'image/png'),
   )

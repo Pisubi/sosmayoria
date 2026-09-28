@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { TEMAS } from '../data/cartas'
-import { perfil, type Lectura, type Lugar, type Resumen } from '../engine/juego'
+import { brujula, cuadrante, frenteALaMayoria, perfil, temaDistinto, type Lectura, type Lugar, type Resumen } from '../engine/juego'
 import { renderShareImage, type Tarjeta } from '../lib/compartir'
 import { fecha } from '../lib/formato'
+import { BrujulaPolitica } from './BrujulaPolitica'
 import { Eyebrow } from './Eyebrow'
 import { Footer } from './Footer'
 
@@ -25,6 +26,8 @@ export function Resultado({ resumen, onOtraRonda, onMethodology }: ResultadoProp
   const { conLaMayoria, definidas, enLaMinoria, parejas, lecturas, porTema } = resumen
   const p = perfil(conLaMayoria, definidas)
   const minoria = lecturas.filter((l) => l.lugar === 'minoria')
+  const b = brujula(lecturas)
+  const distinto = temaDistinto(porTema)
   const texto = `Pienso como la mayoría de los argentinos en ${conLaMayoria} de ${definidas} temas: ${p.titulo.toLowerCase()}. ¿Y vos?`
 
   return (
@@ -59,13 +62,30 @@ export function Resultado({ resumen, onOtraRonda, onMethodology }: ResultadoProp
                 definidas,
                 titulo: p.titulo,
                 texto: p.texto,
-                // Las núcleo (gobierno, aborto, juicios…) no van a la historia: revelarían la postura política.
-                minorias: minoria.filter((l) => !l.carta.nucleo).map((l) => l.carta.pregunta),
+                temaDistinto: distinto ? nombreTema(distinto) : undefined,
               }}
             />
           </div>
         </div>
       </section>
+
+      {b && (
+        <section className="mx-auto max-w-3xl px-4 pt-14 sm:px-6">
+          <Eyebrow>Tu brújula política</Eyebrow>
+          <h2 className="mt-4 text-2xl font-bold">{cuadrante(b.vos)}</h2>
+          <p className="mt-2 leading-7 text-azul/75">
+            {frenteALaMayoria(b) ?? 'En estas cartas caés en el mismo lugar que la mayoría.'}
+          </p>
+          <div className="mt-6">
+            <BrujulaPolitica b={b} />
+          </div>
+          <p className="mx-auto mt-4 max-w-md text-xs leading-5 text-azul/55">
+            Sale de {b.cartas.economia} respuestas sobre economía y {b.cartas.sociedad} sobre valores y seguridad de
+            esta ronda. «La mayoría» es la opción más elegida en las encuestas de esas mismas cartas. Es una
+            aproximación: cada ronda trae cartas distintas.
+          </p>
+        </section>
+      )}
 
       {minoria.length > 0 && (
         <section className="mx-auto max-w-3xl px-4 pt-14 sm:px-6">

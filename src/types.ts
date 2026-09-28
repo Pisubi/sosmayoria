@@ -21,6 +21,15 @@ export interface Referencia {
   nota?: string
 }
 
+/**
+ * Hacia dónde empuja elegir A en la brújula política; elegir B empuja al revés.
+ * economia: +1 más mercado, -1 más Estado. sociedad: +1 más orden y tradición, -1 más libertades individuales.
+ */
+export interface Eje {
+  economia?: 1 | -1
+  sociedad?: 1 | -1
+}
+
 export type Tema = 'economia' | 'politica' | 'sociedad' | 'historia' | 'cultura' | 'vida'
 
 export interface Carta {
@@ -38,6 +47,8 @@ export interface Carta {
    * partida según la orientación política de quien juega.
    */
   nucleo?: boolean
+  /** Si la carta cuenta para la brújula política, y hacia dónde. */
+  eje?: Eje
   /** Dato coyuntural que hay que actualizar seguido (por ejemplo, aprobación del gobierno). */
   volatil?: boolean
   /** Cartas parecidas comparten grupo: en una misma ronda sale como mucho una de cada grupo. */

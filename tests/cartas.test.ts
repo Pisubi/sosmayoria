@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { cartas, orden, todas, TEMAS } from '../src/data/cartas'
-import { RONDA, sortear } from '../src/engine/juego'
+import { MINIMO_EJE, RONDA, sortear } from '../src/engine/juego'
 import fotos from '../src/data/fotos.json'
 import guardado from './orden-cartas.json'
 
@@ -27,6 +27,18 @@ describe('banco de cartas', () => {
       const grupos = r.flatMap((c) => c.grupos ?? [])
       expect(new Set(grupos).size).toBe(grupos.length)
     }
+  })
+
+  it('los ejes de la brújula son ±1 y las núcleo alcanzan para ubicar a cualquiera', () => {
+    for (const c of todas) {
+      for (const [k, v] of Object.entries(c.eje ?? {})) {
+        expect(['economia', 'sociedad'], c.id).toContain(k)
+        expect([1, -1], c.id).toContain(v)
+      }
+    }
+    const nucleo = cartas.filter((c) => c.nucleo)
+    expect(nucleo.filter((c) => c.eje?.economia).length).toBeGreaterThanOrEqual(MINIMO_EJE)
+    expect(nucleo.filter((c) => c.eje?.sociedad).length).toBeGreaterThanOrEqual(MINIMO_EJE)
   })
 
   it('hay entre 4 y 5 cartas núcleo, nacionales', () => {
