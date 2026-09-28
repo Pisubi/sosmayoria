@@ -10,7 +10,7 @@ import {
 import { Eyebrow } from './Eyebrow'
 
 interface ParticipantFormProps {
-  /** null = juega sin guardar respuestas. */
+  /** null = no se guarda nada (menores de 16). */
   onContinue: (participant: Participant | null) => void
 }
 
@@ -18,32 +18,20 @@ export function ParticipantForm({ onContinue }: ParticipantFormProps) {
   const [age, setAge] = useState<number>()
   const [gender, setGender] = useState<number>()
   const [education, setEducation] = useState<number>()
-  const [consent, setConsent] = useState(false)
-
   const minor = age === UNDER_16
-  const complete = age !== undefined && gender !== undefined && education !== undefined
-  const canStart = complete && (consent || minor)
-
-  function start() {
-    if (!canStart || age === undefined || gender === undefined || education === undefined) return
-    onContinue(minor ? null : { age, gender, education })
-  }
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-20">
-      <Eyebrow>Antes de empezar</Eyebrow>
-      <h1 className="mt-6 text-3xl font-bold sm:text-4xl">Tres datos sobre vos</h1>
+      <Eyebrow>Último paso</Eyebrow>
+      <h1 className="mt-6 text-3xl font-bold sm:text-4xl">Antes de ver tu resultado</h1>
       <p className="mt-5 leading-7 text-azul/75">
-        Los usamos junto con tus respuestas, solo con fines estadísticos y de investigación. No
-        pedimos nombre, mail ni nada que te identifique. Participar es voluntario: podés jugar
-        igual sin que se guarde nada.
+        Tres datos opcionales para las estadísticas del test. Se guardan de forma anónima junto
+        con tus respuestas, sin nombre, mail ni nada que te identifique.
       </p>
 
       <Field label="Edad" options={AGE_OPTIONS} value={age} onChange={setAge} />
       {minor && (
-        <p className="mt-3 text-sm text-naranja">
-          Podés hacer el test, pero no guardamos respuestas de menores de 16 años.
-        </p>
+        <p className="mt-3 text-sm text-naranja">No guardamos respuestas de menores de 16 años.</p>
       )}
       <Field label="Género" options={GENDER_OPTIONS} value={gender} onChange={setGender} />
       <Field
@@ -53,39 +41,13 @@ export function ParticipantForm({ onContinue }: ParticipantFormProps) {
         onChange={setEducation}
       />
 
-      {!minor && (
-        <label className="mt-10 flex cursor-pointer items-start gap-3 text-sm leading-6 text-azul/80">
-          <input
-            type="checkbox"
-            checked={consent}
-            onChange={(e) => setConsent(e.target.checked)}
-            className="mt-1 size-4 accent-azul"
-          />
-          <span>
-            Acepto que mis respuestas y estos datos se guarden de forma anónima con fines
-            estadísticos. Las opiniones políticas son datos sensibles (Ley 25.326) y nadie está
-            obligado a darlas.
-          </span>
-        </label>
-      )}
-
-      <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
-        <button
-          type="button"
-          disabled={!canStart}
-          onClick={start}
-          className="rounded-md bg-azul px-8 py-3.5 text-sm font-semibold text-marfil hover:bg-noche disabled:opacity-40"
-        >
-          Empezar →
-        </button>
-        <button
-          type="button"
-          onClick={() => onContinue(null)}
-          className="text-sm font-medium text-azul/70 underline-offset-4 hover:text-azul hover:underline"
-        >
-          Jugar sin guardar mis respuestas
-        </button>
-      </div>
+      <button
+        type="button"
+        onClick={() => onContinue(minor ? null : { age: age ?? 0, gender: gender ?? 0, education: education ?? 0 })}
+        className="mt-12 rounded-md bg-azul px-8 py-3.5 text-sm font-semibold text-marfil hover:bg-noche"
+      >
+        Ver mi resultado →
+      </button>
     </main>
   )
 }

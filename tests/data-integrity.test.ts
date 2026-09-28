@@ -21,13 +21,22 @@ describe.each(Object.values(tests))('datos $name', (test) => {
     }
   })
 
+  // Con cantidades impares (la corta tiene 25) un eje queda 2 a 1; los desbalances se alternan
+  // entre ejes para que en total el test siga equilibrado.
   it.each(['short', 'full', 'deep'] as const)('balance de polos por eje en la versión %s', (variant) => {
+    let total = 0
     for (const axis of test.axes) {
       const items = questionsFor(test, variant).filter((q) => q.primaryAxis === axis.id)
       const pos = items.filter((q) => q.effects[axis.id] > 0).length
       const neg = items.filter((q) => q.effects[axis.id] < 0).length
-      expect(pos, `${axis.id} ${variant}`).toBe(neg)
+      expect(Math.abs(pos - neg), `${axis.id} ${variant}`).toBe(items.length % 2)
+      total += pos - neg
     }
+    expect(Math.abs(total), `total ${variant}`).toBeLessThanOrEqual(1)
+  })
+
+  it('versiones de 25, 50 y 100 afirmaciones', () => {
+    expect([questionsFor(test, 'short'), questionsFor(test, 'full'), questionsFor(test, 'deep')].map((q) => q.length)).toEqual([25, 50, 100])
   })
 
   it('no incluye perfiles excluidos por decisión editorial', () => {

@@ -17,7 +17,7 @@ export function submitResult(
   variant: Variant,
   participant: Participant,
   answers: Record<string, Response>,
-  startedAt: number,
+  seconds: number,
 ): void {
   if (!URL || !KEY) return
   const row = {
@@ -26,7 +26,7 @@ export function submitResult(
     edad: participant.age,
     genero: participant.gender,
     educacion: participant.education,
-    segundos: Math.min(MAX_SMALLINT, Math.max(0, Math.round((Date.now() - startedAt) / 1000))),
+    segundos: Math.min(MAX_SMALLINT, Math.max(0, seconds)),
     respuestas: encodeAnswers(test, answers),
   }
   fetch(`${URL.replace(/\/$/, '')}/rest/v1/respuestas`, {

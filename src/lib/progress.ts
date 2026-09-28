@@ -1,5 +1,4 @@
 import type { Response, TestId, Variant } from '../types'
-import type { Participant } from './participant'
 
 export interface SavedProgress {
   testId: TestId
@@ -7,12 +6,10 @@ export interface SavedProgress {
   seed: number
   index: number
   answers: Record<string, Response>
-  /** Datos demográficos si la persona aceptó guardar sus respuestas; si no, null. */
-  participant?: Participant | null
   startedAt?: number
 }
 
-// El progreso queda en este navegador; solo el resultado final se envía, y solo con consentimiento.
+// El progreso queda en este navegador; a Supabase solo se envía el test terminado.
 const KEY = 'brujula:progreso:v2'
 
 export function loadProgress(): SavedProgress | null {

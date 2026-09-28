@@ -7,8 +7,12 @@ import type { Axis, Profile } from '../src/types'
 import { rng, simulate } from './helpers'
 
 const RUNS = 30
-/** Por debajo de esta distancia media entre ejes, dos perfiles son indistinguibles para el test. */
-export const TWIN_DISTANCE = 15
+/**
+ * Por debajo de esta distancia media entre ejes, dos perfiles son indistinguibles para el test.
+ * Con 6 afirmaciones por eje en la versión completa y ruido σ = 0,25, el puntaje de cada eje
+ * varía unos ±10 puntos entre simulaciones, así que perfiles a menos de 20 se confunden.
+ */
+export const TWIN_DISTANCE = 20
 
 function distance(a: Profile, b: Profile, axes: Axis[]): number {
   const diffs = axes

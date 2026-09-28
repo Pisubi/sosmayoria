@@ -4,7 +4,7 @@ import type { Response, TestDefinition } from '../types'
  * Respuestas empaquetadas en medio byte por afirmación, en el orden de test.questions
  * (que solo admite agregar al final: ver tests/answer-layout.json).
  * 0 = no preguntada, 1 = "No sé", 2..6 = −1, −0,5, 0, 0,5, 1.
- * 118 afirmaciones ocupan 59 bytes.
+ * 100 afirmaciones ocupan 50 bytes.
  */
 const VALUES: Response[] = [null, -1, -0.5, 0, 0.5, 1]
 

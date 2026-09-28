@@ -16,10 +16,17 @@ import type { Question, Response, TestId, Variant } from './types'
 
 type Stage =
   | { step: 'intro' }
-  | { step: 'datos'; testId: TestId; variant: Variant }
+  | { step: 'datos'; data: ResultData; pending: PendingSubmission }
   | { step: 'quiz'; progress: SavedProgress }
   | { step: 'results'; data: ResultData }
   | { step: 'metodologia' }
+
+/** Lo que se envía a Supabase una vez completados los datos demográficos. */
+interface PendingSubmission {
+  variant: Variant
+  answers: Record<string, Response>
+  seconds: number
+}
 
 function initialStage(): Stage {
   const shared = decodeResult(window.location.search, tests)
@@ -51,41 +58,37 @@ function App() {
 
   function start(testId: TestId, variant: Variant) {
     clearProgress()
-    if (collecting) setStage({ step: 'datos', testId, variant })
-    else begin(testId, variant, null)
-  }
-
-  function begin(testId: TestId, variant: Variant, participant: Participant | null) {
     setStage({
       step: 'quiz',
-      progress: {
-        testId,
-        variant,
-        seed: newSeed(),
-        index: 0,
-        answers: {},
-        participant,
-        startedAt: Date.now(),
-      },
+      progress: { testId, variant, seed: newSeed(), index: 0, answers: {}, startedAt: Date.now() },
     })
   }
 
   function finish(progress: SavedProgress, questions: Question[], answers: Record<string, Response>) {
     clearProgress()
     setSaved(null)
-    const { testId, variant, participant, startedAt } = progress
+    const { testId, variant, startedAt } = progress
     const test = tests[testId]
-    if (participant) submitResult(test, variant, participant, answers, startedAt ?? Date.now())
-    setStage({
-      step: 'results',
-      data: {
-        testId,
-        scores: scoreAxes(test.axes, questions, answers),
-        acquiescence: acquiescence(answers),
-        answered: Object.values(answers).filter((r) => r != null).length,
-        total: questions.length,
-      },
-    })
+    const data: ResultData = {
+      testId,
+      scores: scoreAxes(test.axes, questions, answers),
+      acquiescence: acquiescence(answers),
+      answered: Object.values(answers).filter((r) => r != null).length,
+      total: questions.length,
+    }
+    if (!collecting) {
+      setStage({ step: 'results', data })
+      return
+    }
+    const seconds = Math.round((Date.now() - (startedAt ?? Date.now())) / 1000)
+    setStage({ step: 'datos', data, pending: { variant, answers, seconds } })
+  }
+
+  function showResults(data: ResultData, pending: PendingSubmission, participant: Participant | null) {
+    if (participant) {
+      submitResult(tests[data.testId], pending.variant, participant, pending.answers, pending.seconds)
+    }
+    setStage({ step: 'results', data })
   }
 
   return (
@@ -101,7 +104,7 @@ function App() {
       )}
       {stage.step === 'datos' && (
         <ParticipantForm
-          onContinue={(participant) => begin(stage.testId, stage.variant, participant)}
+          onContinue={(participant) => showResults(stage.data, stage.pending, participant)}
         />
       )}
       {stage.step === 'quiz' && (

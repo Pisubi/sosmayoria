@@ -14,7 +14,7 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
 | | Argentina | Internacional |
 |---|---|---|
 | Temas (ejes) | Economía (Estado, macroeconomía, trabajo y comercio), Valores, Instituciones, Estilo (pluralista/populista), Seguridad y memoria, Mundo, Territorio + Identidad (aparte) | Economía (incluye comercio), Libertades (incluye democracia), Valores (incluye religión), Nación, Guerra y paz, Migración, Ambiente, Estilo |
-| Afirmaciones | 118 (48 corta · 76 completa · 118 a fondo) | 112 (48 corta · 80 completa · 112 a fondo) |
+| Afirmaciones | 25 corta · 50 completa · 100 a fondo | 25 corta · 50 completa · 100 a fondo |
 | Catálogos | Tradiciones y espacios · Figuras históricas · Figuras actuales | Ideologías · Figuras históricas · Figuras actuales · Partidos |
 | Perfiles | 169 | 302 |
 
@@ -51,12 +51,11 @@ JSON versionados en `src/data/{ar,intl}/{axes,questions,profiles}.json`:
 
 ## Datos de quienes juegan (Supabase)
 
-Si el despliegue tiene configurado Supabase, antes de empezar la app pide edad,
-género y nivel educativo, con consentimiento explícito (las opiniones políticas
-son datos sensibles según la Ley 25.326). Al terminar el test guarda una fila
-con esos datos y las respuestas. Sin nombre, mail ni identificadores. Quien no
-acepta, o tiene menos de 16 años, juega igual y no se guarda nada. Sin las
-variables de entorno, la app no pide datos ni envía nada.
+Si el despliegue tiene configurado Supabase, entre la última afirmación y el
+resultado la app pide edad, género y nivel educativo (opcionales) y guarda una
+fila con esos datos y las respuestas, de forma anónima: sin nombre, mail ni
+identificadores. De menores de 16 años no se guarda nada. Sin las variables de
+entorno, la app no pide datos ni envía nada.
 
 ### Configuración
 
@@ -84,7 +83,7 @@ JSON de respuestas y puntajes, textos y timestamp, ocupa unos 840 bytes por
 fila, 6 veces más.
 
 - **Respuestas en medio byte cada una**: el valor de cada afirmación ocupa 4 bits
-  en un `bytea`, en el orden de `questions.json`: 59 bytes para 118 afirmaciones.
+  en un `bytea`, en el orden de `questions.json`: 50 bytes para 100 afirmaciones.
   Como las filas guardadas dependen de ese orden, a `questions.json` solo se le
   agregan afirmaciones al final; lo controla un test contra
   `tests/answer-layout.json`, que hay que actualizar al agregarlas.

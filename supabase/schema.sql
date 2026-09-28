@@ -3,7 +3,7 @@
 --
 -- Una fila por test terminado, ~140 bytes con índice incluido:
 --   las columnas de códigos son smallint (2 bytes), la fecha es date (4 bytes, sin hora),
---   las respuestas van empaquetadas en medio byte por afirmación (59 bytes para 118),
+--   las respuestas van empaquetadas en medio byte por afirmación (50 bytes para 100),
 --   y los puntajes por eje no se guardan porque se recalculan desde las respuestas.
 -- Las columnas van de mayor a menor tamaño para no perder bytes en relleno de alineación.
 
@@ -20,7 +20,7 @@ create table if not exists public.respuestas (
 );
 
 comment on table public.respuestas is
-  'Una fila por test terminado con consentimiento. respuestas: medio byte por afirmación en el orden de src/data/<test>/questions.json; 0 no preguntada, 1 No sé, 2..6 = −1, −0,5, 0, 0,5, 1.';
+  'Una fila por test terminado. respuestas: medio byte por afirmación en el orden de src/data/<test>/questions.json; 0 no preguntada, 1 No sé, 2..6 = −1, −0,5, 0, 0,5, 1.';
 
 -- Solo se puede insertar. Nadie con la clave pública puede leer, modificar ni borrar.
 alter table public.respuestas enable row level security;

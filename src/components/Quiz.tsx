@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { tests } from '../data/tests'
 import { questionsFor, shuffled, variantLabel } from '../engine/selection'
 import { saveProgress, type SavedProgress } from '../lib/progress'
+import { collecting } from '../lib/submit'
 import type { Question, Response } from '../types'
 import { Eyebrow } from './Eyebrow'
 import { ProgressBar } from './ProgressBar'
@@ -76,8 +77,8 @@ export function Quiz({ progress, onComplete }: QuizProps) {
           ← Anterior
         </button>
         <p className="text-right text-xs text-azul/50">
-          {progress.participant
-            ? 'Al terminar, tus respuestas se guardan de forma anónima.'
+          {collecting
+            ? 'Tus respuestas se guardan de forma anónima, con fines estadísticos.'
             : 'Tus respuestas se guardan solo en este dispositivo.'}
         </p>
       </div>

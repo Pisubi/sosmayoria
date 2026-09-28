@@ -1,20 +1,8 @@
 {
- "version": "intl-2.0.0",
+ "version": "intl-2.1.0",
  "questions": [
   {
    "id": "IN-ECO-01",
-   "text": "Los servicios esenciales como agua, energía y salud deberían ser públicos.",
-   "primaryAxis": "ECO",
-   "effects": {
-    "ECO": -1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-ECO-02",
    "text": "La desigualdad de ingresos es un precio aceptable a cambio de una economía dinámica.",
    "primaryAxis": "ECO",
    "effects": {
@@ -26,12 +14,11 @@
    ]
   },
   {
-   "id": "IN-ECO-03",
-   "text": "Los países deben proteger sus industrias estratégicas aunque cueste eficiencia.",
+   "id": "IN-ECO-02",
+   "text": "Los servicios esenciales como agua, energía y salud deberían ser públicos.",
    "primaryAxis": "ECO",
    "effects": {
-    "ECO": -1,
-    "NAC": 0.3
+    "ECO": -1
    },
    "variants": [
     "short",
@@ -39,7 +26,7 @@
    ]
   },
   {
-   "id": "IN-ECO-04",
+   "id": "IN-ECO-03",
    "text": "El libre comercio global benefició a la mayoría de la humanidad.",
    "primaryAxis": "ECO",
    "effects": {
@@ -52,11 +39,12 @@
    ]
   },
   {
-   "id": "IN-ECO-05",
-   "text": "Quienes más ganan deberían pagar impuestos significativamente más altos.",
+   "id": "IN-ECO-04",
+   "text": "Los países deben proteger sus industrias estratégicas aunque cueste eficiencia.",
    "primaryAxis": "ECO",
    "effects": {
-    "ECO": -1
+    "ECO": -1,
+    "NAC": 0.3
    },
    "variants": [
     "short",
@@ -64,20 +52,19 @@
    ]
   },
   {
-   "id": "IN-ECO-06",
+   "id": "IN-ECO-05",
    "text": "Las empresas públicas que dan pérdida deberían privatizarse.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
   {
-   "id": "IN-ECO-07",
-   "text": "Los aranceles son una herramienta legítima para defender el empleo local.",
+   "id": "IN-ECO-06",
+   "text": "Quienes más ganan deberían pagar impuestos significativamente más altos.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
@@ -87,7 +74,7 @@
    ]
   },
   {
-   "id": "IN-ECO-08",
+   "id": "IN-ECO-07",
    "text": "Bajar aranceles a las importaciones beneficia a los consumidores.",
    "primaryAxis": "ECO",
    "effects": {
@@ -98,8 +85,8 @@
    ]
   },
   {
-   "id": "IN-ECO-09",
-   "text": "Una economía planificada puede asignar los recursos de forma más justa que el mercado.",
+   "id": "IN-ECO-08",
+   "text": "Los aranceles son una herramienta legítima para defender el empleo local.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
@@ -109,19 +96,19 @@
    ]
   },
   {
-   "id": "IN-ECO-10",
+   "id": "IN-ECO-09",
    "text": "Los precios deberían fijarse libremente por la oferta y la demanda.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
-   "id": "IN-ECO-11",
-   "text": "Un país debería producir por sí mismo los bienes esenciales, aunque le cueste más.",
+   "id": "IN-ECO-10",
+   "text": "Una economía planificada puede asignar los recursos de forma más justa que el mercado.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
@@ -131,7 +118,7 @@
    ]
   },
   {
-   "id": "IN-ECO-12",
+   "id": "IN-ECO-11",
    "text": "Las empresas extranjeras deberían poder invertir con las mismas reglas que las nacionales.",
    "primaryAxis": "ECO",
    "effects": {
@@ -142,8 +129,8 @@
    ]
   },
   {
-   "id": "IN-ECO-13",
-   "text": "Los sindicatos son fundamentales para defender a los trabajadores.",
+   "id": "IN-ECO-12",
+   "text": "Un país debería producir por sí mismo los bienes esenciales, aunque le cueste más.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
@@ -153,11 +140,22 @@
    ]
   },
   {
-   "id": "IN-ECO-14",
+   "id": "IN-ECO-13",
    "text": "Los programas sociales generan dependencia y desalientan el trabajo.",
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-ECO-14",
+   "text": "Los sindicatos son fundamentales para defender a los trabajadores.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
    },
    "variants": [
     "deep"
@@ -207,7 +205,6 @@
     "AUT": 1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
@@ -219,7 +216,6 @@
     "AUT": -1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
@@ -231,7 +227,6 @@
     "AUT": 1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
@@ -243,7 +238,7 @@
     "AUT": -1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -254,7 +249,7 @@
     "AUT": 1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -265,7 +260,7 @@
     "AUT": -1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -276,7 +271,7 @@
     "AUT": 1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -326,18 +321,6 @@
   },
   {
    "id": "IN-SOC-01",
-   "text": "El matrimonio entre personas del mismo sexo debería ser legal.",
-   "primaryAxis": "SOC",
-   "effects": {
-    "SOC": -1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-SOC-02",
    "text": "Los roles tradicionales de hombres y mujeres son beneficiosos para la sociedad.",
    "primaryAxis": "SOC",
    "effects": {
@@ -349,8 +332,8 @@
    ]
   },
   {
-   "id": "IN-SOC-03",
-   "text": "La religión debe mantenerse fuera de las decisiones políticas.",
+   "id": "IN-SOC-02",
+   "text": "El matrimonio entre personas del mismo sexo debería ser legal.",
    "primaryAxis": "SOC",
    "effects": {
     "SOC": -1
@@ -361,7 +344,7 @@
    ]
   },
   {
-   "id": "IN-SOC-04",
+   "id": "IN-SOC-03",
    "text": "Las leyes deberían reflejar valores religiosos.",
    "primaryAxis": "SOC",
    "effects": {
@@ -373,32 +356,30 @@
    ]
   },
   {
-   "id": "IN-SOC-05",
-   "text": "El aborto debería ser legal en las primeras semanas.",
+   "id": "IN-SOC-04",
+   "text": "La religión debe mantenerse fuera de las decisiones políticas.",
    "primaryAxis": "SOC",
    "effects": {
     "SOC": -1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
   {
-   "id": "IN-SOC-06",
+   "id": "IN-SOC-05",
    "text": "La familia tradicional es la base de la sociedad y el Estado debería protegerla especialmente.",
    "primaryAxis": "SOC",
    "effects": {
     "SOC": 1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
   {
-   "id": "IN-SOC-07",
-   "text": "El Estado no debería financiar a ninguna religión.",
+   "id": "IN-SOC-06",
+   "text": "El aborto debería ser legal en las primeras semanas.",
    "primaryAxis": "SOC",
    "effects": {
     "SOC": -1
@@ -408,41 +389,19 @@
    ]
   },
   {
-   "id": "IN-SOC-08",
+   "id": "IN-SOC-07",
    "text": "Un país con más fe religiosa es un país con mejores valores.",
    "primaryAxis": "SOC",
    "effects": {
     "SOC": 1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
-   "id": "IN-SOC-09",
-   "text": "Las personas trans deberían poder cambiar su identidad legal sin requisitos médicos.",
-   "primaryAxis": "SOC",
-   "effects": {
-    "SOC": -1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-SOC-10",
-   "text": "Los cambios culturales de las últimas décadas fueron demasiado rápidos.",
-   "primaryAxis": "SOC",
-   "effects": {
-    "SOC": 1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-SOC-11",
-   "text": "Los símbolos religiosos no deberían exhibirse en edificios públicos.",
+   "id": "IN-SOC-08",
+   "text": "El Estado no debería financiar a ninguna religión.",
    "primaryAxis": "SOC",
    "effects": {
     "SOC": -1
@@ -452,7 +411,29 @@
    ]
   },
   {
-   "id": "IN-SOC-12",
+   "id": "IN-SOC-09",
+   "text": "Los cambios culturales de las últimas décadas fueron demasiado rápidos.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-SOC-10",
+   "text": "Las personas trans deberían poder cambiar su identidad legal sin requisitos médicos.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-SOC-11",
    "text": "La enseñanza religiosa debería estar presente en las escuelas públicas.",
    "primaryAxis": "SOC",
    "effects": {
@@ -463,22 +444,11 @@
    ]
   },
   {
-   "id": "IN-SOC-13",
-   "text": "La eutanasia debería ser legal.",
+   "id": "IN-SOC-12",
+   "text": "Los símbolos religiosos no deberían exhibirse en edificios públicos.",
    "primaryAxis": "SOC",
    "effects": {
     "SOC": -1
-   },
-   "variants": [
-    "deep"
-   ]
-  },
-  {
-   "id": "IN-SOC-14",
-   "text": "Las tradiciones de un país deben preservarse aunque choquen con valores modernos.",
-   "primaryAxis": "SOC",
-   "effects": {
-    "SOC": 1
    },
    "variants": [
     "deep"
@@ -529,7 +499,6 @@
     "NAC": 1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
@@ -541,7 +510,6 @@
     "NAC": -1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
@@ -553,7 +521,6 @@
     "NAC": 1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
@@ -565,7 +532,7 @@
     "NAC": -1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -576,7 +543,7 @@
     "NAC": 1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -588,7 +555,7 @@
     "AUT": -0.2
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -599,7 +566,7 @@
     "NAC": 1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -625,43 +592,7 @@
    ]
   },
   {
-   "id": "IN-NAC-13",
-   "text": "Debería existir un impuesto mínimo global a las grandes empresas acordado entre países.",
-   "primaryAxis": "NAC",
-   "effects": {
-    "NAC": -1,
-    "ECO": -0.2
-   },
-   "variants": [
-    "deep"
-   ]
-  },
-  {
-   "id": "IN-NAC-14",
-   "text": "Los recursos naturales estratégicos deberían quedar en manos de empresas nacionales.",
-   "primaryAxis": "NAC",
-   "effects": {
-    "NAC": 1,
-    "ECO": -0.3
-   },
-   "variants": [
-    "deep"
-   ]
-  },
-  {
    "id": "IN-MIL-01",
-   "text": "Los conflictos deben resolverse negociando, aunque haya que hacer concesiones.",
-   "primaryAxis": "MIL",
-   "effects": {
-    "MIL": -1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-MIL-02",
    "text": "El gasto militar de mi país debería aumentar.",
    "primaryAxis": "MIL",
    "effects": {
@@ -673,8 +604,8 @@
    ]
   },
   {
-   "id": "IN-MIL-03",
-   "text": "Habría que reducir el gasto militar y destinarlo a salud o educación.",
+   "id": "IN-MIL-02",
+   "text": "Los conflictos deben resolverse negociando, aunque haya que hacer concesiones.",
    "primaryAxis": "MIL",
    "effects": {
     "MIL": -1
@@ -685,7 +616,7 @@
    ]
   },
   {
-   "id": "IN-MIL-04",
+   "id": "IN-MIL-03",
    "text": "A veces una guerra es necesaria para defender los intereses nacionales.",
    "primaryAxis": "MIL",
    "effects": {
@@ -697,7 +628,29 @@
    ]
   },
   {
+   "id": "IN-MIL-04",
+   "text": "Habría que reducir el gasto militar y destinarlo a salud o educación.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": -1
+   },
+   "variants": [
+    "full"
+   ]
+  },
+  {
    "id": "IN-MIL-05",
+   "text": "El servicio militar obligatorio forma mejores ciudadanos.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": 1
+   },
+   "variants": [
+    "full"
+   ]
+  },
+  {
+   "id": "IN-MIL-06",
    "text": "Un país no debería intervenir militarmente en otro sin mandato de la ONU.",
    "primaryAxis": "MIL",
    "effects": {
@@ -705,69 +658,23 @@
     "NAC": -0.2
    },
    "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-MIL-06",
-   "text": "El servicio militar obligatorio forma mejores ciudadanos.",
-   "primaryAxis": "MIL",
-   "effects": {
-    "MIL": 1
-   },
-   "variants": [
-    "short",
     "full"
    ]
   },
   {
    "id": "IN-MIL-07",
-   "text": "El desarme nuclear total debería ser un objetivo mundial.",
-   "primaryAxis": "MIL",
-   "effects": {
-    "MIL": -1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-MIL-08",
    "text": "Las potencias tienen derecho a asegurar sus zonas de influencia.",
    "primaryAxis": "MIL",
    "effects": {
     "MIL": 1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
-   "id": "IN-MIL-09",
-   "text": "La venta de armas a países en guerra debería prohibirse.",
-   "primaryAxis": "MIL",
-   "effects": {
-    "MIL": -1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-MIL-10",
-   "text": "Un país fuerte necesita Fuerzas Armadas poderosas.",
-   "primaryAxis": "MIL",
-   "effects": {
-    "MIL": 1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-MIL-11",
-   "text": "Las Fuerzas Armadas deberían orientarse sobre todo a tareas civiles, como emergencias y catástrofes.",
+   "id": "IN-MIL-08",
+   "text": "El desarme nuclear total debería ser un objetivo mundial.",
    "primaryAxis": "MIL",
    "effects": {
     "MIL": -1
@@ -777,7 +684,29 @@
    ]
   },
   {
-   "id": "IN-MIL-12",
+   "id": "IN-MIL-09",
+   "text": "Un país fuerte necesita Fuerzas Armadas poderosas.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-MIL-10",
+   "text": "La venta de armas a países en guerra debería prohibirse.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-MIL-11",
    "text": "Mi país debería integrar alianzas militares con otros países para garantizar su defensa.",
    "primaryAxis": "MIL",
    "effects": {
@@ -789,22 +718,11 @@
    ]
   },
   {
-   "id": "IN-MIL-13",
-   "text": "Las sanciones económicas son preferibles al uso de la fuerza militar.",
+   "id": "IN-MIL-12",
+   "text": "Las Fuerzas Armadas deberían orientarse sobre todo a tareas civiles, como emergencias y catástrofes.",
    "primaryAxis": "MIL",
    "effects": {
     "MIL": -1
-   },
-   "variants": [
-    "deep"
-   ]
-  },
-  {
-   "id": "IN-MIL-14",
-   "text": "Las armas nucleares son una forma legítima de garantizar la paz mediante la disuasión.",
-   "primaryAxis": "MIL",
-   "effects": {
-    "MIL": 1
    },
    "variants": [
     "deep"
@@ -855,7 +773,6 @@
     "MIG": 1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
@@ -867,7 +784,6 @@
     "MIG": -1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
@@ -879,7 +795,6 @@
     "MIG": 1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
@@ -891,7 +806,7 @@
     "MIG": -1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -902,7 +817,7 @@
     "MIG": 1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -913,7 +828,7 @@
     "MIG": -1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -925,7 +840,7 @@
     "NAC": 0.2
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -952,42 +867,7 @@
    ]
   },
   {
-   "id": "IN-MIG-13",
-   "text": "Los hijos de inmigrantes nacidos en el país deberían tener automáticamente su ciudadanía.",
-   "primaryAxis": "MIG",
-   "effects": {
-    "MIG": -1
-   },
-   "variants": [
-    "deep"
-   ]
-  },
-  {
-   "id": "IN-MIG-14",
-   "text": "Los inmigrantes que cometan delitos deberían ser expulsados del país.",
-   "primaryAxis": "MIG",
-   "effects": {
-    "MIG": 1,
-    "AUT": 0.2
-   },
-   "variants": [
-    "deep"
-   ]
-  },
-  {
    "id": "IN-ECOL-01",
-   "text": "Proteger el ambiente debe priorizarse aunque frene el crecimiento.",
-   "primaryAxis": "ECOL",
-   "effects": {
-    "ECOL": -1
-   },
-   "variants": [
-    "short",
-    "full"
-   ]
-  },
-  {
-   "id": "IN-ECOL-02",
    "text": "Las advertencias sobre el cambio climático son exageradas.",
    "primaryAxis": "ECOL",
    "effects": {
@@ -999,8 +879,8 @@
    ]
   },
   {
-   "id": "IN-ECOL-03",
-   "text": "Los países deberían dejar de usar combustibles fósiles lo antes posible.",
+   "id": "IN-ECOL-02",
+   "text": "Proteger el ambiente debe priorizarse aunque frene el crecimiento.",
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": -1
@@ -1011,7 +891,7 @@
    ]
   },
   {
-   "id": "IN-ECOL-04",
+   "id": "IN-ECOL-03",
    "text": "La explotación de petróleo, gas y minerales debe expandirse todo lo posible.",
    "primaryAxis": "ECOL",
    "effects": {
@@ -1023,32 +903,30 @@
    ]
   },
   {
-   "id": "IN-ECOL-05",
-   "text": "Las actividades que más contaminan deberían pagar impuestos especiales.",
+   "id": "IN-ECOL-04",
+   "text": "Los países deberían dejar de usar combustibles fósiles lo antes posible.",
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": -1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
   {
-   "id": "IN-ECOL-06",
+   "id": "IN-ECOL-05",
    "text": "Las regulaciones ambientales frenan el desarrollo de los países pobres.",
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": 1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
   {
-   "id": "IN-ECOL-07",
-   "text": "Deberían prohibirse actividades que dañen glaciares o bosques nativos, aunque generen empleo.",
+   "id": "IN-ECOL-06",
+   "text": "Las actividades que más contaminan deberían pagar impuestos especiales.",
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": -1
@@ -1058,41 +936,19 @@
    ]
   },
   {
-   "id": "IN-ECOL-08",
+   "id": "IN-ECOL-07",
    "text": "El crecimiento económico debe priorizarse aunque tenga costos ambientales.",
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": 1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
-   "id": "IN-ECOL-09",
-   "text": "Habría que reducir el consumo de carne por razones ambientales.",
-   "primaryAxis": "ECOL",
-   "effects": {
-    "ECOL": -1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-ECOL-10",
-   "text": "Los combustibles fósiles seguirán siendo imprescindibles para el desarrollo.",
-   "primaryAxis": "ECOL",
-   "effects": {
-    "ECOL": 1
-   },
-   "variants": [
-    "full"
-   ]
-  },
-  {
-   "id": "IN-ECOL-11",
-   "text": "Las comunidades locales deberían poder vetar proyectos mineros o energéticos en su territorio.",
+   "id": "IN-ECOL-08",
+   "text": "Deberían prohibirse actividades que dañen glaciares o bosques nativos, aunque generen empleo.",
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": -1
@@ -1102,7 +958,29 @@
    ]
   },
   {
-   "id": "IN-ECOL-12",
+   "id": "IN-ECOL-09",
+   "text": "Los combustibles fósiles seguirán siendo imprescindibles para el desarrollo.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-ECOL-10",
+   "text": "Habría que reducir el consumo de carne por razones ambientales.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-ECOL-11",
    "text": "Los estudios de impacto ambiental deberían ser más rápidos y simples para no frenar inversiones.",
    "primaryAxis": "ECOL",
    "effects": {
@@ -1114,22 +992,11 @@
    ]
   },
   {
-   "id": "IN-ECOL-13",
-   "text": "Deberían prohibirse los plásticos de un solo uso.",
+   "id": "IN-ECOL-12",
+   "text": "Las comunidades locales deberían poder vetar proyectos mineros o energéticos en su territorio.",
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": -1
-   },
-   "variants": [
-    "deep"
-   ]
-  },
-  {
-   "id": "IN-ECOL-14",
-   "text": "La agricultura intensiva con agroquímicos es necesaria para producir alimentos a gran escala.",
-   "primaryAxis": "ECOL",
-   "effects": {
-    "ECOL": 1
    },
    "variants": [
     "deep"
@@ -1180,7 +1047,6 @@
     "POP": 1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
@@ -1192,7 +1058,6 @@
     "POP": -1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
@@ -1204,7 +1069,6 @@
     "POP": 1
    },
    "variants": [
-    "short",
     "full"
    ]
   },
@@ -1216,7 +1080,7 @@
     "POP": -1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -1227,7 +1091,7 @@
     "POP": 1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -1238,7 +1102,7 @@
     "POP": -1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -1249,7 +1113,7 @@
     "POP": 1
    },
    "variants": [
-    "full"
+    "deep"
    ]
   },
   {
@@ -1266,29 +1130,6 @@
   {
    "id": "IN-POP-12",
    "text": "Las decisiones más importantes deberían someterse a referéndum en lugar de decidirse solo en el parlamento.",
-   "primaryAxis": "POP",
-   "effects": {
-    "POP": 1
-   },
-   "variants": [
-    "deep"
-   ]
-  },
-  {
-   "id": "IN-POP-13",
-   "text": "Los organismos técnicos, como los bancos centrales, deberían decidir con independencia de la opinión pública.",
-   "primaryAxis": "POP",
-   "effects": {
-    "POP": -1,
-    "AUT": -0.2
-   },
-   "variants": [
-    "deep"
-   ]
-  },
-  {
-   "id": "IN-POP-14",
-   "text": "Los grandes medios de comunicación defienden los intereses de una élite, no los de la gente común.",
    "primaryAxis": "POP",
    "effects": {
     "POP": 1

@@ -92,10 +92,10 @@ export function Methodology({ onBack }: MethodologyProps) {
       <Block title="Privacidad">
         {collecting ? (
           <p>
-            Antes de empezar te pedimos edad, género y nivel educativo. Solo si das tu
-            consentimiento, al terminar se guardan esos datos y tus respuestas, sin nombre, mail ni
-            ningún otro dato que te identifique, con fines estadísticos. Si no aceptás, o si tenés
-            menos de 16 años, no se guarda nada en ningún servidor.
+            Al terminar te pedimos, de forma opcional, edad, género y nivel educativo. Esos datos
+            y tus respuestas se guardan de forma anónima, sin nombre, mail ni ningún otro dato que
+            te identifique, solo con fines estadísticos. Si tenés menos de 16 años no se guarda
+            nada.
           </p>
         ) : (
           <p>No se guarda nada en ningún servidor.</p>
