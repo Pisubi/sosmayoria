@@ -118,6 +118,72 @@
    ]
   },
   {
+   "id": "IN-ECO-11",
+   "text": "Las herencias de gran valor deberían pagar un impuesto elevado.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-ECO-12",
+   "text": "El Estado debería regular el precio de los alquileres donde la vivienda es muy cara.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-ECO-13",
+   "text": "Los trabajadores deberían tener representantes en los directorios de las grandes empresas.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-ECO-14",
+   "text": "Un impuesto a la renta con una tasa única para todos es más justo que uno progresivo.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-ECO-15",
+   "text": "El Estado debería entregar a las familias vales para que elijan escuela, pública o privada.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-ECO-16",
+   "text": "Reducir las regulaciones a las empresas es la mejor forma de crear empleo.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
    "id": "IN-COM-01",
    "text": "El libre comercio global benefició a la mayoría de la humanidad.",
    "primaryAxis": "COM",
@@ -233,6 +299,74 @@
    },
    "variants": [
     "full"
+   ]
+  },
+  {
+   "id": "IN-COM-11",
+   "text": "Los gobiernos deberían dar preferencia a los proveedores nacionales en sus compras.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-COM-12",
+   "text": "La compra de empresas estratégicas por capitales extranjeros debería requerir aprobación del gobierno.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": -1,
+    "NAC": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-COM-13",
+   "text": "Las importaciones de países con salarios muy bajos compiten de manera desleal con los trabajadores locales.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-COM-14",
+   "text": "Las cadenas globales de producción hacen que los productos sean más baratos para todos.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-COM-15",
+   "text": "Un país debería especializarse en lo que produce mejor e importar el resto.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-COM-16",
+   "text": "Las reglas de la Organización Mundial del Comercio deberían respetarse aunque limiten la política comercial de cada país.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": 1,
+    "NAC": -0.2
+   },
+   "variants": [
+    "deep"
    ]
   },
   {
@@ -354,6 +488,72 @@
    ]
   },
   {
+   "id": "IN-AUT-11",
+   "text": "Las cámaras con reconocimiento facial en espacios públicos son una herramienta aceptable contra el delito.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-AUT-12",
+   "text": "Las manifestaciones que bloquean calles deberían dispersarse de inmediato.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-AUT-13",
+   "text": "Las redes sociales deberían estar obligadas a eliminar la desinformación, aunque eso limite lo que se puede publicar.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-AUT-14",
+   "text": "Las personas deberían poder usar comunicaciones cifradas que ni siquiera el Estado pueda leer.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-AUT-15",
+   "text": "Los adultos deberían poder decidir sobre su propio cuerpo aunque eso implique riesgos para su salud.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-AUT-16",
+   "text": "Quienes cumplieron su condena deberían recuperar todos sus derechos, incluido el voto.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
    "id": "IN-DEM-01",
    "text": "Un gobierno eficaz no necesita elecciones competitivas.",
    "primaryAxis": "DEM",
@@ -468,6 +668,74 @@
    },
    "variants": [
     "full"
+   ]
+  },
+  {
+   "id": "IN-DEM-11",
+   "text": "Los organismos que organizan las elecciones deben ser independientes del gobierno.",
+   "primaryAxis": "DEM",
+   "effects": {
+    "DEM": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-DEM-12",
+   "text": "Los organismos de control y auditoría deben funcionar con independencia del gobierno de turno.",
+   "primaryAxis": "DEM",
+   "effects": {
+    "DEM": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-DEM-13",
+   "text": "Las minorías deben tener derechos que ninguna mayoría pueda suprimir por votación.",
+   "primaryAxis": "DEM",
+   "effects": {
+    "DEM": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-DEM-14",
+   "text": "Un gobierno debería poder postergar las elecciones si el país atraviesa una emergencia grave.",
+   "primaryAxis": "DEM",
+   "effects": {
+    "DEM": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-DEM-15",
+   "text": "Los jueces deberían acompañar las prioridades del gobierno que eligió la mayoría.",
+   "primaryAxis": "DEM",
+   "effects": {
+    "DEM": 1,
+    "POP": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-DEM-16",
+   "text": "Las organizaciones civiles financiadas desde el exterior deberían tener fuertes restricciones.",
+   "primaryAxis": "DEM",
+   "effects": {
+    "DEM": 1,
+    "NAC": 0.3
+   },
+   "variants": [
+    "deep"
    ]
   },
   {
@@ -588,6 +856,72 @@
    ]
   },
   {
+   "id": "IN-SOC-11",
+   "text": "Las parejas del mismo sexo deberían poder adoptar en igualdad de condiciones.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-SOC-12",
+   "text": "Las leyes de paridad de género en cargos públicos son una medida justa.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-SOC-13",
+   "text": "Las licencias por nacimiento deberían ser iguales para padres y madres.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-SOC-14",
+   "text": "Los tratamientos de cambio de género deberían estar reservados a mayores de edad.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-SOC-15",
+   "text": "En las competencias deportivas femeninas deberían participar solo personas de sexo biológico femenino.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-SOC-16",
+   "text": "Los niños crecen mejor cuando tienen un padre y una madre.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
    "id": "IN-REL-01",
    "text": "La religión debe mantenerse fuera de las decisiones políticas.",
    "primaryAxis": "REL",
@@ -702,6 +1036,73 @@
    },
    "variants": [
     "full"
+   ]
+  },
+  {
+   "id": "IN-REL-11",
+   "text": "Las instituciones religiosas deberían pagar los mismos impuestos que cualquier otra organización.",
+   "primaryAxis": "REL",
+   "effects": {
+    "REL": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-REL-12",
+   "text": "Los juramentos de los cargos públicos deberían ser siempre laicos.",
+   "primaryAxis": "REL",
+   "effects": {
+    "REL": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-REL-13",
+   "text": "Las leyes deben aplicarse a todos por igual, sin excepciones por motivos religiosos.",
+   "primaryAxis": "REL",
+   "effects": {
+    "REL": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-REL-14",
+   "text": "Las escuelas religiosas deberían recibir financiamiento público.",
+   "primaryAxis": "REL",
+   "effects": {
+    "REL": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-REL-15",
+   "text": "Los profesionales de la salud deberían poder negarse a prácticas que contradigan sus creencias religiosas.",
+   "primaryAxis": "REL",
+   "effects": {
+    "REL": 1,
+    "SOC": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-REL-16",
+   "text": "Las organizaciones religiosas deberían tener un papel importante en la gestión de la ayuda social.",
+   "primaryAxis": "REL",
+   "effects": {
+    "REL": 1
+   },
+   "variants": [
+    "deep"
    ]
   },
   {
@@ -823,6 +1224,74 @@
    ]
   },
   {
+   "id": "IN-NAC-11",
+   "text": "Los países ricos deberían destinar una parte mayor de su presupuesto a la ayuda al desarrollo de otros países.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-NAC-12",
+   "text": "Debería existir un impuesto mínimo global a las grandes empresas acordado entre países.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": -1,
+    "ECO": -0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-NAC-13",
+   "text": "La historia que se enseña en las escuelas debería mostrar también los errores del propio país.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-NAC-14",
+   "text": "La enseñanza de los símbolos patrios y de la historia nacional debería reforzarse en las escuelas.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-NAC-15",
+   "text": "Los recursos naturales estratégicos deberían quedar en manos de empresas nacionales.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": 1,
+    "COM": -0.3
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-NAC-16",
+   "text": "Las leyes nacionales deberían prevalecer sobre los tratados internacionales.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
    "id": "IN-MIL-01",
    "text": "El gasto militar de mi país debería aumentar.",
    "primaryAxis": "MIL",
@@ -937,6 +1406,74 @@
    },
    "variants": [
     "full"
+   ]
+  },
+  {
+   "id": "IN-MIL-11",
+   "text": "Mi país debería integrar alianzas militares con otros países para garantizar su defensa.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": 1,
+    "NAC": -0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-MIL-12",
+   "text": "Las armas nucleares son una forma legítima de garantizar la paz mediante la disuasión.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-MIL-13",
+   "text": "Es legítimo enviar armas a un país que fue invadido.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-MIL-14",
+   "text": "Las Fuerzas Armadas deberían orientarse sobre todo a tareas civiles, como emergencias y catástrofes.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-MIL-15",
+   "text": "Las sanciones económicas son preferibles al uso de la fuerza militar.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-MIL-16",
+   "text": "Toda persona debería tener derecho a la objeción de conciencia frente al servicio militar.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": -1,
+    "AUT": -0.2
+   },
+   "variants": [
+    "deep"
    ]
   },
   {
@@ -1058,6 +1595,74 @@
    ]
   },
   {
+   "id": "IN-MIG-11",
+   "text": "Los solicitantes de asilo deberían poder trabajar legalmente mientras se resuelve su pedido.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-MIG-12",
+   "text": "Los hijos de inmigrantes nacidos en el país deberían tener automáticamente su ciudadanía.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-MIG-13",
+   "text": "Debería facilitarse la reunificación familiar de los inmigrantes que ya viven en el país.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-MIG-14",
+   "text": "Las fronteras deberían controlarse con barreras físicas y más vigilancia.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": 1,
+    "AUT": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-MIG-15",
+   "text": "Los inmigrantes que cometan delitos deberían ser expulsados del país.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": 1,
+    "AUT": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-MIG-16",
+   "text": "La inmigración debería limitarse a las personas con las calificaciones que la economía necesita.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
    "id": "IN-ECOL-01",
    "text": "Proteger el ambiente debe priorizarse aunque frene el crecimiento.",
    "primaryAxis": "ECOL",
@@ -1171,6 +1776,74 @@
    },
    "variants": [
     "full"
+   ]
+  },
+  {
+   "id": "IN-ECOL-11",
+   "text": "Las comunidades locales deberían poder vetar proyectos mineros o energéticos en su territorio.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-ECOL-12",
+   "text": "Deberían prohibirse los plásticos de un solo uso.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-ECOL-13",
+   "text": "Una parte grande del territorio de cada país debería protegerse por ley como área natural.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-ECOL-14",
+   "text": "Los estudios de impacto ambiental deberían ser más rápidos y simples para no frenar inversiones.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": 1,
+    "ECO": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-ECOL-15",
+   "text": "La agricultura intensiva con agroquímicos es necesaria para producir alimentos a gran escala.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": 1,
+    "TEC": -0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-ECOL-16",
+   "text": "El precio de la energía para los hogares debería importar más que las metas de reducción de emisiones.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": 1
+   },
+   "variants": [
+    "deep"
    ]
   },
   {
@@ -1291,6 +1964,73 @@
    ]
   },
   {
+   "id": "IN-POP-11",
+   "text": "Las decisiones más importantes deberían someterse a referéndum en lugar de decidirse solo en el parlamento.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-POP-12",
+   "text": "Los grandes medios de comunicación defienden los intereses de una élite, no los de la gente común.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-POP-13",
+   "text": "Los políticos deberían cobrar un sueldo similar al de un trabajador promedio.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-POP-14",
+   "text": "Un buen político reconoce públicamente cuando su adversario tiene razón.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-POP-15",
+   "text": "Los organismos técnicos, como los bancos centrales, deberían decidir con independencia de la opinión pública.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1,
+    "DEM": -0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-POP-16",
+   "text": "Las personas con formación profesional y académica aportan un conocimiento valioso para gobernar.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
    "id": "IN-TEC-01",
    "text": "Debería permitirse la edición genética de embriones para prevenir enfermedades.",
    "primaryAxis": "TEC",
@@ -1406,6 +2146,72 @@
    },
    "variants": [
     "full"
+   ]
+  },
+  {
+   "id": "IN-TEC-11",
+   "text": "La energía nuclear es una tecnología necesaria para el futuro.",
+   "primaryAxis": "TEC",
+   "effects": {
+    "TEC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-TEC-12",
+   "text": "Los autos sin conductor deberían permitirse en cuanto demuestren ser más seguros que los humanos.",
+   "primaryAxis": "TEC",
+   "effects": {
+    "TEC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-TEC-13",
+   "text": "La carne cultivada en laboratorio debería poder venderse libremente.",
+   "primaryAxis": "TEC",
+   "effects": {
+    "TEC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-TEC-14",
+   "text": "El acceso a las redes sociales debería prohibirse a los menores de 16 años.",
+   "primaryAxis": "TEC",
+   "effects": {
+    "TEC": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-TEC-15",
+   "text": "El desarrollo de la inteligencia artificial más avanzada debería frenarse hasta entender mejor sus riesgos.",
+   "primaryAxis": "TEC",
+   "effects": {
+    "TEC": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "IN-TEC-16",
+   "text": "La selección genética de embriones por características no médicas debería prohibirse.",
+   "primaryAxis": "TEC",
+   "effects": {
+    "TEC": 1
+   },
+   "variants": [
+    "deep"
    ]
   }
  ]

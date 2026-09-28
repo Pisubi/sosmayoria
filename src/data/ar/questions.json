@@ -121,6 +121,74 @@
    ]
   },
   {
+   "id": "AR-ECO-11",
+   "text": "Los subsidios a la luz, el gas y el transporte deberían mantenerse para proteger el poder adquisitivo de los hogares.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-ECO-12",
+   "text": "El Banco Nación debería otorgar créditos a tasa subsidiada para impulsar la producción.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-ECO-13",
+   "text": "Las grandes fortunas deberían pagar un impuesto adicional para financiar políticas sociales.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-ECO-14",
+   "text": "Los alquileres deberían pactarse libremente entre inquilinos y propietarios, sin una ley que fije plazos ni actualizaciones.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   },
+   "variants": [
+    "deep"
+   ],
+   "volatile": true
+  },
+  {
+   "id": "AR-ECO-15",
+   "text": "Las tarifas de los servicios públicos deberían reflejar su costo real, con ayuda solo para quienes no puedan pagarlas.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1,
+    "MAC": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-ECO-16",
+   "text": "Desregular sectores como el transporte aéreo o las telecomunicaciones beneficia a los usuarios.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
    "id": "AR-COM-01",
    "text": "Hay que proteger a la industria nacional con aranceles, aunque los importados sean más baratos.",
    "primaryAxis": "COM",
@@ -239,6 +307,74 @@
    },
    "variants": [
     "full"
+   ]
+  },
+  {
+   "id": "AR-COM-11",
+   "text": "Las importaciones deberían requerir autorización previa cuando ponen en riesgo a productores locales.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-COM-12",
+   "text": "Restringir las exportaciones de carne se justifica si ayuda a cuidar el precio interno.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": -1,
+    "ECO": -0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-COM-13",
+   "text": "Las empresas extranjeras que invierten en el país deberían estar obligadas a contratar un mínimo de proveedores locales.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-COM-14",
+   "text": "Bajar los aranceles a la tecnología importada, como computadoras y maquinaria, mejoraría la productividad del país.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-COM-15",
+   "text": "Los productores deberían poder exportar sin cupos ni prohibiciones, aunque eso suba algunos precios internos.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": 1,
+    "ECO": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-COM-16",
+   "text": "Las empresas deberían poder importar insumos libremente, sin trámites de autorización previa.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": 1
+   },
+   "variants": [
+    "deep"
    ]
   },
   {
@@ -366,6 +502,73 @@
    ]
   },
   {
+   "id": "AR-MAC-11",
+   "text": "El Banco Central debería tener prohibido financiar al Tesoro.",
+   "primaryAxis": "MAC",
+   "effects": {
+    "MAC": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-MAC-12",
+   "text": "Bajar la inflación debe ser la prioridad económica aunque cause una recesión temporal.",
+   "primaryAxis": "MAC",
+   "effects": {
+    "MAC": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-MAC-13",
+   "text": "Pagar la deuda pública en los términos pactados es indispensable para recuperar el crédito del país.",
+   "primaryAxis": "MAC",
+   "effects": {
+    "MAC": 1,
+    "EXT": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-MAC-14",
+   "text": "Un poco de inflación es un costo aceptable para sostener el crecimiento y el empleo.",
+   "primaryAxis": "MAC",
+   "effects": {
+    "MAC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-MAC-15",
+   "text": "Reestructurar la deuda con fuertes quitas es preferible a hacer un ajuste para pagarla.",
+   "primaryAxis": "MAC",
+   "effects": {
+    "MAC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-MAC-16",
+   "text": "El Banco Central debería tener entre sus objetivos el empleo y el desarrollo, no solo la estabilidad de precios.",
+   "primaryAxis": "MAC",
+   "effects": {
+    "MAC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
    "id": "AR-LAB-01",
    "text": "Las indemnizaciones por despido deberían reemplazarse por un fondo de cese laboral.",
    "primaryAxis": "LAB",
@@ -486,6 +689,75 @@
    ]
   },
   {
+   "id": "AR-LAB-11",
+   "text": "Los trabajadores deberían poder llevar sus aportes a la prepaga que elijan en lugar de a la obra social de su gremio.",
+   "primaryAxis": "LAB",
+   "effects": {
+    "LAB": 1,
+    "ECO": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-LAB-12",
+   "text": "Quienes trabajan en aplicaciones de reparto o de transporte deberían ser considerados trabajadores independientes.",
+   "primaryAxis": "LAB",
+   "effects": {
+    "LAB": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-LAB-13",
+   "text": "Los empleados públicos no deberían tener estabilidad garantizada en su puesto.",
+   "primaryAxis": "LAB",
+   "effects": {
+    "LAB": 1,
+    "ECO": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-LAB-14",
+   "text": "El salario mínimo debería alcanzar, por ley, para cubrir la canasta básica.",
+   "primaryAxis": "LAB",
+   "effects": {
+    "LAB": -1,
+    "ECO": -0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-LAB-15",
+   "text": "Los repartidores de plataformas digitales deberían tener derecho a formar sindicatos y negociar colectivamente.",
+   "primaryAxis": "LAB",
+   "effects": {
+    "LAB": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-LAB-16",
+   "text": "El país debería reducir la jornada laboral sin bajar los salarios.",
+   "primaryAxis": "LAB",
+   "effects": {
+    "LAB": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
    "id": "AR-SOC-01",
    "text": "La ley de interrupción voluntaria del embarazo debería mantenerse.",
    "primaryAxis": "SOC",
@@ -600,6 +872,72 @@
    },
    "variants": [
     "full"
+   ]
+  },
+  {
+   "id": "AR-SOC-11",
+   "text": "La ley debería permitir la eutanasia a pacientes con enfermedades terminales que la pidan.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-SOC-12",
+   "text": "El lenguaje inclusivo debería poder usarse en las escuelas y en los documentos oficiales.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-SOC-13",
+   "text": "La paridad de género en las listas legislativas es una política justa.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-SOC-14",
+   "text": "Los tratamientos hormonales de cambio de género deberían estar reservados a mayores de edad.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-SOC-15",
+   "text": "Los contenidos sobre diversidad sexual no deberían incluirse en la escuela primaria.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-SOC-16",
+   "text": "Los símbolos religiosos, como pesebres o crucifijos, deben poder exhibirse en edificios públicos.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   },
+   "variants": [
+    "deep"
    ]
   },
   {
@@ -721,6 +1059,75 @@
    ]
   },
   {
+   "id": "AR-INS-11",
+   "text": "Los jueces de la Corte Suprema deben designarse siempre con acuerdo del Senado, nunca por decreto.",
+   "primaryAxis": "INS",
+   "effects": {
+    "INS": -1
+   },
+   "variants": [
+    "deep"
+   ],
+   "volatile": true
+  },
+  {
+   "id": "AR-INS-12",
+   "text": "Un DNU debería perder vigencia si el Congreso no lo aprueba en un plazo breve.",
+   "primaryAxis": "INS",
+   "effects": {
+    "INS": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-INS-13",
+   "text": "La publicidad oficial debería repartirse con criterios objetivos, sin tener en cuenta la línea editorial de cada medio.",
+   "primaryAxis": "INS",
+   "effects": {
+    "INS": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-INS-14",
+   "text": "Es legítimo promover el juicio político a jueces de la Corte cuando sus fallos contradicen la voluntad popular.",
+   "primaryAxis": "INS",
+   "effects": {
+    "INS": 1,
+    "POP": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-INS-15",
+   "text": "Los miembros del Consejo de la Magistratura deberían elegirse por voto popular.",
+   "primaryAxis": "INS",
+   "effects": {
+    "INS": 1,
+    "POP": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-INS-16",
+   "text": "En una emergencia económica, el Congreso debería delegar amplias facultades en el Presidente.",
+   "primaryAxis": "INS",
+   "effects": {
+    "INS": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
    "id": "AR-POP-01",
    "text": "La política argentina es, en el fondo, una pelea entre el pueblo y una minoría privilegiada que lo perjudica.",
    "primaryAxis": "POP",
@@ -835,6 +1242,73 @@
    },
    "variants": [
     "full"
+   ]
+  },
+  {
+   "id": "AR-POP-11",
+   "text": "Las leyes más importantes deberían someterse a consulta popular en lugar de decidirse solo en el Congreso.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-POP-12",
+   "text": "Los grandes grupos económicos y mediáticos son los que realmente gobiernan el país.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-POP-13",
+   "text": "El carisma de un líder importa más que el programa de su partido.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-POP-14",
+   "text": "Un buen dirigente reconoce públicamente cuando la oposición tiene razón.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-POP-15",
+   "text": "Temas como la educación o la energía deberían tener políticas de Estado acordadas entre todos los partidos.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-POP-16",
+   "text": "Los organismos técnicos, como el INDEC, deben funcionar con autonomía del gobierno de turno.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1,
+    "INS": -0.3
+   },
+   "variants": [
+    "deep"
    ]
   },
   {
@@ -957,6 +1431,72 @@
    ]
   },
   {
+   "id": "AR-SEG-11",
+   "text": "Los extranjeros que cometan delitos deberían ser expulsados del país.",
+   "primaryAxis": "SEG",
+   "effects": {
+    "SEG": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-SEG-12",
+   "text": "La prisión preventiva debería aplicarse con más frecuencia a los acusados de delitos graves.",
+   "primaryAxis": "SEG",
+   "effects": {
+    "SEG": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-SEG-13",
+   "text": "Las cámaras de reconocimiento facial en la vía pública son una herramienta valiosa contra el delito.",
+   "primaryAxis": "SEG",
+   "effects": {
+    "SEG": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-SEG-14",
+   "text": "Los casos de violencia policial deberían investigarlos organismos independientes de las fuerzas de seguridad.",
+   "primaryAxis": "SEG",
+   "effects": {
+    "SEG": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-SEG-15",
+   "text": "Las penas alternativas a la cárcel, como el trabajo comunitario, deberían usarse más para delitos leves.",
+   "primaryAxis": "SEG",
+   "effects": {
+    "SEG": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-SEG-16",
+   "text": "La tenencia de armas por parte de civiles debería restringirse todavía más.",
+   "primaryAxis": "SEG",
+   "effects": {
+    "SEG": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
    "id": "AR-MEM-01",
    "text": "Los juicios por crímenes de lesa humanidad deben continuar hasta completarse.",
    "primaryAxis": "MEM",
@@ -1070,6 +1610,72 @@
    },
    "variants": [
     "full"
+   ]
+  },
+  {
+   "id": "AR-MEM-11",
+   "text": "Los crímenes de las organizaciones guerrilleras de los 70 también deberían juzgarse como delitos de lesa humanidad.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-MEM-12",
+   "text": "Las reparaciones económicas a víctimas de la dictadura deberían auditarse para detectar posibles abusos.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-MEM-13",
+   "text": "Las cifras oficiales de desaparecidos deberían basarse solo en los casos documentados.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-MEM-14",
+   "text": "Los archivos de las Fuerzas Armadas sobre la última dictadura deberían abrirse por completo.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-MEM-15",
+   "text": "Los civiles y empresarios que colaboraron con la dictadura también deben ser juzgados.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-MEM-16",
+   "text": "La búsqueda de los nietos apropiados debe seguir siendo una política de Estado.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": -1
+   },
+   "variants": [
+    "deep"
    ]
   },
   {
@@ -1193,6 +1799,77 @@
    ]
   },
   {
+   "id": "AR-EXT-11",
+   "text": "Argentina debería convertirse en socio global de la OTAN.",
+   "primaryAxis": "EXT",
+   "effects": {
+    "EXT": 1
+   },
+   "variants": [
+    "deep"
+   ],
+   "volatile": true
+  },
+  {
+   "id": "AR-EXT-12",
+   "text": "Argentina debería limitar la participación de empresas chinas en infraestructura estratégica, como puertos o telecomunicaciones.",
+   "primaryAxis": "EXT",
+   "effects": {
+    "EXT": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-EXT-13",
+   "text": "Argentina debería firmar un acuerdo comercial bilateral con Estados Unidos.",
+   "primaryAxis": "EXT",
+   "effects": {
+    "EXT": 1,
+    "COM": 0.3
+   },
+   "variants": [
+    "deep"
+   ],
+   "volatile": true
+  },
+  {
+   "id": "AR-EXT-14",
+   "text": "La alianza con Brasil debería ser prioritaria, más allá de quién gobierne cada país.",
+   "primaryAxis": "EXT",
+   "effects": {
+    "EXT": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-EXT-15",
+   "text": "Argentina debería mantenerse neutral en guerras como las de Ucrania o Medio Oriente.",
+   "primaryAxis": "EXT",
+   "effects": {
+    "EXT": -1
+   },
+   "variants": [
+    "deep"
+   ],
+   "volatile": true
+  },
+  {
+   "id": "AR-EXT-16",
+   "text": "Argentina debería impulsar un sistema de pagos regional para depender menos del dólar.",
+   "primaryAxis": "EXT",
+   "effects": {
+    "EXT": -1,
+    "MAC": -0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
    "id": "AR-FED-01",
    "text": "Las provincias deberían tener más autonomía para cobrar sus impuestos y decidir su gasto.",
    "primaryAxis": "FED",
@@ -1307,6 +1984,74 @@
    },
    "variants": [
     "full"
+   ]
+  },
+  {
+   "id": "AR-FED-11",
+   "text": "La coparticipación debería asignar a las provincias una proporción mayor de lo que recauda la Nación.",
+   "primaryAxis": "FED",
+   "effects": {
+    "FED": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-FED-12",
+   "text": "Ministerios y organismos nacionales deberían trasladar sus sedes a ciudades del interior.",
+   "primaryAxis": "FED",
+   "effects": {
+    "FED": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-FED-13",
+   "text": "Las grandes obras de infraestructura deberían definirse junto con las provincias y no solo desde la Nación.",
+   "primaryAxis": "FED",
+   "effects": {
+    "FED": -1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-FED-14",
+   "text": "La Nación debería fijar un piso salarial docente común para todo el país.",
+   "primaryAxis": "FED",
+   "effects": {
+    "FED": 1
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-FED-15",
+   "text": "La Nación debería poder fijar un tope al gasto y al endeudamiento de las provincias.",
+   "primaryAxis": "FED",
+   "effects": {
+    "FED": 1,
+    "MAC": 0.2
+   },
+   "variants": [
+    "deep"
+   ]
+  },
+  {
+   "id": "AR-FED-16",
+   "text": "Impuestos provinciales como Ingresos Brutos deberían reemplazarse por un sistema tributario nacional unificado.",
+   "primaryAxis": "FED",
+   "effects": {
+    "FED": 1,
+    "ECO": 0.2
+   },
+   "variants": [
+    "deep"
    ]
   },
   {
