@@ -41,19 +41,15 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
         matches: rankProfiles(
           scores,
           test.axes,
-          test.profiles.filter((p) => p.catalog === catalog.id && !p.sensitive),
+          test.profiles.filter((p) => p.catalog === catalog.id),
         ),
       })),
-    [test, scores],
-  )
-  const sensitive = useMemo(
-    () => rankProfiles(scores, test.axes, test.profiles.filter((p) => p.sensitive)),
     [test, scores],
   )
   // Ideologías/tradiciones y figuras actuales: suficientes puntos para orientarse sin saturar.
   const planeCatalogs = [test.catalogs[0], test.catalogs[2]]
   const planeProfiles = test.profiles.filter(
-    (p) => !p.sensitive && planeCatalogs.some((c) => c.id === p.catalog),
+    (p) => planeCatalogs.some((c) => c.id === p.catalog),
   )
 
   const [lead, ...others] = byCatalog
@@ -162,10 +158,6 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
         </Section>
       )}
 
-      {sensitive.length > 0 && (
-        <SensitiveReferences matches={sensitive} axisName={axisName} />
-      )}
-
       <section className="bg-arena">
         <div className="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6">
           <p className="text-2xl font-bold">Compartí o compará</p>
@@ -223,50 +215,6 @@ function Highlight({
         Más cerca en {listOf(match.agree.slice(0, 2).map(axisName))}
       </p>
     </div>
-  )
-}
-
-function SensitiveReferences({
-  matches,
-  axisName,
-}: {
-  matches: Match[]
-  axisName: (id: string) => string
-}) {
-  return (
-    <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-      <Eyebrow>Referencias históricas</Eyebrow>
-      <h2 className="mt-5 text-3xl font-bold sm:text-4xl">Distancia a regímenes autoritarios</h2>
-      <p className="mt-4 max-w-2xl text-sm leading-6 text-azul/70">
-        Dictaduras y totalitarismos con crímenes documentados se muestran solo como referencia
-        educativa, nunca como resultado principal. Parecerse en algunos ejes no implica compartir
-        sus métodos ni sus crímenes.
-      </p>
-      <details className="mt-8 rounded-xl border border-azul/14 p-5">
-        <summary className="cursor-pointer text-sm font-semibold">
-          Ver las {matches.length} referencias ordenadas por cercanía
-        </summary>
-        <ol className="mt-4 border-t border-azul/14">
-          {matches.map((m) => (
-            <li key={m.profile.id} className="border-b border-azul/14 py-4">
-              <div className="flex items-baseline justify-between gap-4">
-                <p className="font-semibold">
-                  {m.profile.name}
-                  <span className="ml-2 text-xs font-normal text-azul/55">
-                    {[m.profile.country, m.profile.era].filter(Boolean).join(' · ')}
-                  </span>
-                </p>
-                <p className="text-sm tabular-nums">{Math.round(m.similarity)}%</p>
-              </div>
-              <p className="mt-2 text-sm leading-6 text-azul/70">{m.profile.description}</p>
-              <p className="mt-1 text-xs text-azul/55">
-                Diferís en {listOf(m.differ.map(axisName))}.
-              </p>
-            </li>
-          ))}
-        </ol>
-      </details>
-    </section>
   )
 }
 

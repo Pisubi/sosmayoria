@@ -10,7 +10,7 @@ interface AvatarProps {
 }
 
 export function Avatar({ testId, profile, size = 40, dark = false }: AvatarProps) {
-  const image = profile.sensitive ? undefined : imageFor(testId, profile.id)
+  const image = imageFor(testId, profile.id)
   const style = { width: size, height: size }
 
   if (!image) {

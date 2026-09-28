@@ -7,17 +7,16 @@ partidos.
 
 Implementa la especificación técnica "Political compass argentino e internacional":
 ítems multi-eje balanceados, opción "No sé", cobertura por eje, catálogos
-separados, perfiles sensibles fuera del resultado principal, identidad peronista
-reportada aparte, planos 2D, enlace para compartir y tests de recall.
+separados, identidad peronista reportada aparte, planos 2D, enlace para compartir y tests de recall.
 
 ## Los tests
 
 | | Argentina | Internacional |
 |---|---|---|
 | Ejes | Economía, Comercio, Macroeconomía, Trabajo, Valores, Instituciones, Estilo (pluralista/populista), Seguridad, Memoria, Mundo, Territorio + Identidad (aparte) | Economía, Comercio, Libertades, Democracia, Valores, Religión, Nación, Guerra y paz, Migración, Ambiente, Estilo, Tecnología |
-| Afirmaciones | 116 (72 en la versión corta) | 120 (72 en la versión corta) |
+| Afirmaciones | 182 (72 corta · 116 completa · 182 a fondo) | 192 (72 corta · 120 completa · 192 a fondo) |
 | Catálogos | Tradiciones y espacios · Figuras históricas · Figuras actuales | Ideologías · Figuras históricas · Figuras actuales · Partidos |
-| Perfiles | 96 | 190 |
+| Perfiles | 149 | 347 |
 
 ## Cómo se calcula
 
@@ -26,8 +25,10 @@ reportada aparte, planos 2D, enlace para compartir y tests de recall.
   cobertura el eje queda indeterminado.
 - Cercanía: `100 · (1 − d/200)`, con `d` la distancia media cuadrática en los ejes
   con dato en ambos. Menos del 60% de ejes comparados = comparación parcial.
-- Los catálogos se rankean por separado. Dictaduras y totalitarismos (marcados
-  `sensitive`) solo aparecen como referencia histórica.
+- Los catálogos se rankean por separado. Las figuras de dictaduras y
+  totalitarismos se incluyen como cualquier otro perfil, con descripciones que
+  mencionan sus crímenes documentados. Por decisión editorial quedan excluidos
+  Adolf Hitler, el nazismo y la cúpula de la última dictadura argentina.
 
 Las coordenadas de los perfiles son **semillas editoriales**, con nivel de
 confianza y fundamento, basadas en la especificación, el "Atlas multidimensional",
@@ -41,8 +42,11 @@ JSON versionados en `src/data/{ar,intl}/{axes,questions,profiles}.json`:
 
 - `questions.json`: `effects` es un peso firmado por eje (principal ±1,
   secundarios ±0,2–0,4); `variants` indica si el ítem va en la versión corta.
-- `profiles.json`: `coords` de −100 a +100 o `null`, `confidence`, `basis`,
-  `contextNote` y `sensitive`.
+- `profiles.json`: `coords` de −100 a +100 o `null`, `confidence`, `basis` y
+  `contextNote`.
+- `images.json`: fotos, logos y símbolos de Wikimedia Commons con autor y
+  licencia. Se generan con `python3 scripts/fetch_images.py` (requiere acceso de
+  red a los dominios de Wikimedia).
 
 ## Stack
 

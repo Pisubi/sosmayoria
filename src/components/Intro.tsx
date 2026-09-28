@@ -101,7 +101,7 @@ export function Intro({ saved, onStart, onResume, onMethodology }: IntroProps) {
         <div className="mt-10 grid gap-10 border-t border-azul/14 pt-8 sm:grid-cols-2">
           {test.catalogs.map((catalog) => {
             const names = test.profiles
-              .filter((p) => p.catalog === catalog.id && !p.sensitive)
+              .filter((p) => p.catalog === catalog.id)
               .map((p) => p.name)
             return (
               <div key={catalog.id}>

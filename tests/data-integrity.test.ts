@@ -30,6 +30,13 @@ describe.each(Object.values(tests))('datos $name', (test) => {
     }
   })
 
+  it('no incluye perfiles excluidos por decisión editorial', () => {
+    const excluded = ['hitler', 'nazismo', 'videla', 'massera', 'agosti', 'galtieri', 'jose_alfredo_martinez_de_hoz']
+    const ids = new Set(test.profiles.map((p) => p.id))
+    for (const id of excluded) expect(ids.has(id), id).toBe(false)
+    for (const p of test.profiles) expect(p.name, p.id).not.toMatch(/hitler|videla|massera|galtieri|nazismo/i)
+  })
+
   it('perfiles con coordenadas en [−100, 100] o null y catálogo válido', () => {
     for (const p of test.profiles) {
       expect(catalogIds.has(p.catalog), p.id).toBe(true)

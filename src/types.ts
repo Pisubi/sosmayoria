@@ -48,8 +48,6 @@ export interface Profile {
   method: string
   basis?: string
   contextNote?: string
-  /** Dictaduras y totalitarismos: solo como referencia, nunca como resultado principal. */
-  sensitive?: boolean
 }
 
 export interface TestDefinition {

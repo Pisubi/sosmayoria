@@ -9,11 +9,10 @@ const images = imageData.images as Record<string, Record<string, { src: string; 
 describe.each(Object.values(tests))('imágenes $name', (test) => {
   const entries = Object.entries(images[test.id] ?? {})
 
-  it('cada imagen existe, corresponde a un perfil no sensible y tiene crédito', () => {
+  it('cada imagen existe, corresponde a un perfil y tiene crédito', () => {
     for (const [id, img] of entries) {
       const profile = test.profiles.find((p) => p.id === id)
       expect(profile, id).toBeDefined()
-      expect(profile?.sensitive ?? false, id).toBe(false)
       expect(existsSync(join('public', img.src)), img.src).toBe(true)
       expect(img.license, id).toBeTruthy()
       expect(img.sourceUrl, id).toMatch(/^https:\/\/commons\.wikimedia\.org\//)

@@ -76,8 +76,10 @@ export function Methodology({ onBack }: MethodologyProps) {
           dos primeros si tiene un gemelo.
         </p>
         <p>
-          Dictaduras y totalitarismos con crímenes documentados aparecen solo como referencia
-          histórica, nunca como resultado principal, con la misma regla para izquierda y derecha.
+          Las figuras de dictaduras y totalitarismos se incluyen como cualquier otro perfil, y sus
+          descripciones mencionan los crímenes documentados. Parecerse en algunos ejes no implica
+          compartir sus métodos. Quedan excluidos Adolf Hitler, el nazismo y la cúpula de la
+          última dictadura argentina.
         </p>
         <p>
           El test todavía no pasó una validación psicométrica (piloto, fiabilidad, análisis
@@ -217,7 +219,6 @@ function CatalogRows({ catalogId, name, testId }: { catalogId: string; name: str
         <tr key={p.id} className="border-t border-azul/14 align-top">
           <td className="py-1.5 pr-3 font-medium whitespace-nowrap">
             {p.name}
-            {p.sensitive && <span className="ml-1 text-naranja" title="Solo como referencia histórica">⚠</span>}
           </td>
           {test.axes.map((a) => (
             <td key={a.id} className="py-1.5 pr-2 text-right tabular-nums text-azul/75">
