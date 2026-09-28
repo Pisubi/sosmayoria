@@ -16,7 +16,7 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
 | Ejes | Economía, Comercio, Macroeconomía, Trabajo, Valores, Instituciones, Estilo (pluralista/populista), Seguridad, Memoria, Mundo, Territorio + Identidad (aparte) | Economía, Comercio, Libertades, Democracia, Valores, Religión, Nación, Guerra y paz, Migración, Ambiente, Estilo, Tecnología |
 | Afirmaciones | 182 (72 corta · 116 completa · 182 a fondo) | 192 (72 corta · 120 completa · 192 a fondo) |
 | Catálogos | Tradiciones y espacios · Figuras históricas · Figuras actuales | Ideologías · Figuras históricas · Figuras actuales · Partidos |
-| Perfiles | 149 | 347 |
+| Perfiles | 149 | 344 |
 
 ## Cómo se calcula
 
@@ -28,7 +28,8 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
 - Los catálogos se rankean por separado. Las figuras de dictaduras y
   totalitarismos se incluyen como cualquier otro perfil, con descripciones que
   mencionan sus crímenes documentados. Por decisión editorial quedan excluidos
-  Adolf Hitler, el nazismo y la cúpula de la última dictadura argentina.
+  Adolf Hitler, el nazismo, Augusto Pinochet, Alfredo Stroessner, Slobodan
+  Milošević y la cúpula de la última dictadura argentina.
 
 Las coordenadas de los perfiles son **semillas editoriales**, con nivel de
 confianza y fundamento, basadas en la especificación, el "Atlas multidimensional",

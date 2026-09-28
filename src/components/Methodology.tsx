@@ -78,8 +78,8 @@ export function Methodology({ onBack }: MethodologyProps) {
         <p>
           Las figuras de dictaduras y totalitarismos se incluyen como cualquier otro perfil, y sus
           descripciones mencionan los crímenes documentados. Parecerse en algunos ejes no implica
-          compartir sus métodos. Quedan excluidos Adolf Hitler, el nazismo y la cúpula de la
-          última dictadura argentina.
+          compartir sus métodos. Quedan excluidos Adolf Hitler, el nazismo, Augusto Pinochet,
+          Alfredo Stroessner, Slobodan Milošević y la cúpula de la última dictadura argentina.
         </p>
         <p>
           El test todavía no pasó una validación psicométrica (piloto, fiabilidad, análisis

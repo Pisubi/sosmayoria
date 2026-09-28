@@ -728,32 +728,6 @@
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
-   "id": "pinochet",
-   "catalog": "intl_historicas",
-   "name": "Augusto Pinochet",
-   "description": "Dictador tras el golpe de 1973. Reformas de libre mercado bajo un régimen con miles de asesinados, desaparecidos y torturados.",
-   "coords": {
-    "ECO": 80,
-    "COM": 80,
-    "AUT": 95,
-    "DEM": 95,
-    "SOC": 70,
-    "REL": 50,
-    "NAC": 70,
-    "MIL": 80,
-    "MIG": 40,
-    "ECOL": 40,
-    "POP": 0,
-    "TEC": 0
-   },
-   "confidence": "media",
-   "method": "seed-editorial",
-   "basis": "Comisiones Rettig y Valech",
-   "country": "Chile",
-   "era": "1973–1990",
-   "contextNote": "Posiciones relativas al debate de su época."
-  },
-  {
    "id": "reagan",
    "catalog": "intl_historicas",
    "name": "Ronald Reagan",
@@ -5224,32 +5198,6 @@
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
-   "id": "alfredo_stroessner",
-   "catalog": "intl_historicas",
-   "name": "Alfredo Stroessner",
-   "country": "Paraguay",
-   "era": "1954–1989",
-   "description": "Dictador militar de Paraguay que gobernó con el Partido Colorado bajo estado de sitio casi permanente y elecciones no competitivas. La Comisión de Verdad y Justicia documentó miles de detenciones arbitrarias y torturas, además de ejecuciones y desapariciones de opositores, y su régimen participó en el Plan Cóndor.",
-   "coords": {
-    "ECO": 10,
-    "COM": 30,
-    "AUT": 100,
-    "DEM": 90,
-    "SOC": 80,
-    "REL": 30,
-    "NAC": 50,
-    "MIL": 60,
-    "MIG": null,
-    "ECOL": 70,
-    "POP": 40,
-    "TEC": -20
-   },
-   "confidence": "alta",
-   "method": "seed-editorial",
-   "basis": "Informe final de la Comisión de Verdad y Justicia (2008) (AUT, DEM); anticomunismo y Plan Cóndor (MIL); represa de Itaipú y colonización de la región oriental con deforestación (ECOL); economía de contrabando y reexportación (COM); red clientelar colorada y culto al 'segundo reconstructor' (POP); persecución de homosexuales (caso 108) (SOC). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
-   "contextNote": "Posiciones relativas al debate de su época."
-  },
-  {
    "id": "georges_clemenceau",
    "catalog": "intl_historicas",
    "name": "Georges Clemenceau",
@@ -5793,32 +5741,6 @@
    "confidence": "media",
    "method": "seed-editorial",
    "basis": "Legiones polacas; guerra polaco-soviética (1919–21); golpe de mayo (1926); Sanación contra la 'partidocracia'; juicios de Brest (1931–32); Bereza Kartuska (1934); nacionalismo cívico/federalista frente al etnonacionalismo de Dmowski; Prometeísmo. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
-   "contextNote": "Posiciones relativas al debate de su época."
-  },
-  {
-   "id": "slobodan_milosevic",
-   "catalog": "intl_historicas",
-   "name": "Slobodan Milošević",
-   "country": "Serbia",
-   "era": "1989–2000",
-   "description": "Presidente de Serbia y luego de Yugoslavia que movilizó el nacionalismo serbio y gobernó con elecciones controladas. Fue acusado por el Tribunal Penal Internacional para la ex-Yugoslavia de crímenes de guerra, de lesa humanidad y genocidio por las guerras de Croacia, Bosnia y Kosovo; murió en 2006 antes de la sentencia.",
-   "coords": {
-    "ECO": -40,
-    "COM": -40,
-    "AUT": 80,
-    "DEM": 60,
-    "SOC": 40,
-    "REL": 20,
-    "NAC": 100,
-    "MIL": 90,
-    "MIG": 50,
-    "ECOL": 50,
-    "POP": 90,
-    "TEC": 0
-   },
-   "confidence": "alta",
-   "method": "seed-editorial",
-   "basis": "'Revolución antiburocrática' (1988–89); supresión de la autonomía de Kosovo; guerras de Croacia, Bosnia y Kosovo; propiedad social y economía de sanciones; fraude electoral de 1996 y 2000; acusación del TPIY (1999–2001). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
