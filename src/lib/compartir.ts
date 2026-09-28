@@ -9,6 +9,7 @@ export interface Tarjeta {
   texto: string
   /** Tema en el que más se aparta de la mayoría. */
   temaDistinto?: string
+  /** Dirección del juego; vacía si no hay una pública (por ejemplo, abierto como archivo). */
   url: string
 }
 
@@ -69,10 +70,12 @@ function llamado(ctx: Ctx, t: Tarjeta, fondo: string, color: string, texto: stri
   ctx.fill()
   ctx.fillStyle = color
   ctx.textAlign = 'center'
-  ajustado(ctx, texto, W / 2, y + 62, W - 220, 700, 44)
-  ctx.globalAlpha = 0.75
-  ajustado(ctx, sitio(t.url), W / 2, y + 106, W - 220, 500, 30)
-  ctx.globalAlpha = 1
+  if (t.url) {
+    ajustado(ctx, texto, W / 2, y + 62, W - 220, 700, 44)
+    ctx.globalAlpha = 0.75
+    ajustado(ctx, sitio(t.url), W / 2, y + 106, W - 220, 500, 30)
+    ctx.globalAlpha = 1
+  } else ajustado(ctx, texto, W / 2, y + 80, W - 220, 700, 44)
   ctx.textAlign = 'left'
 }
 

@@ -172,14 +172,18 @@ function otra(l: Lectura): string {
 function Compartir({ texto, tarjeta }: { texto: string; tarjeta: Omit<Tarjeta, 'url'> }) {
   const [estado, setEstado] = useState<'listo' | 'copiado' | 'generando'>('listo')
   async function compartir() {
-    const url = window.location.origin + window.location.pathname
+    // Abierta como archivo (file://) no hay dirección que mostrar; VITE_URL_PUBLICA la fija al publicar.
+    const url =
+      (import.meta.env.VITE_URL_PUBLICA as string | undefined) ??
+      (window.location.protocol.startsWith('http') ? window.location.origin + window.location.pathname : '')
+    const mensaje = `${texto} ${url}`.trim()
     setEstado('generando')
     try {
       const blob = await renderShareImage({ ...tarjeta, url })
       const file = new File([blob], 'la-mayoria.png', { type: 'image/png' })
       if (navigator.canShare?.({ files: [file] })) {
         try {
-          await navigator.share({ files: [file], text: `${texto} ${url}` })
+          await navigator.share({ files: [file], text: mensaje })
           setEstado('listo')
           return
         } catch (e) {
@@ -189,7 +193,7 @@ function Compartir({ texto, tarjeta }: { texto: string; tarjeta: Omit<Tarjeta, '
           }
         }
       }
-      await navigator.clipboard.writeText(`${texto} ${url}`).catch(() => undefined)
+      await navigator.clipboard.writeText(mensaje).catch(() => undefined)
       const a = document.createElement('a')
       a.href = URL.createObjectURL(blob)
       a.download = file.name
