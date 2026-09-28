@@ -10,28 +10,32 @@ import {
 import { Eyebrow } from './Eyebrow'
 
 interface ParticipantFormProps {
-  /** null = no se guarda nada (menores de 16). */
-  onContinue: (participant: Participant | null) => void
+  /** Lo que eligió la última vez en este dispositivo, para no tener que marcarlo de nuevo. */
+  inicial?: Participant
+  /** Si el despliegue guarda partidas (Supabase configurado). */
+  guardando: boolean
+  onContinue: (participant: Participant) => void
 }
 
-export function ParticipantForm({ onContinue }: ParticipantFormProps) {
-  const [age, setAge] = useState<number>()
-  const [gender, setGender] = useState<number>()
-  const [education, setEducation] = useState<number>()
+export function ParticipantForm({ inicial, guardando, onContinue }: ParticipantFormProps) {
+  const [age, setAge] = useState<number | undefined>(inicial?.age || undefined)
+  const [gender, setGender] = useState<number | undefined>(inicial?.gender || undefined)
+  const [education, setEducation] = useState<number | undefined>(inicial?.education || undefined)
   const minor = age === UNDER_16
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-20">
       <Eyebrow>Antes de tu resultado</Eyebrow>
-      <h1 className="mt-6 text-3xl font-bold sm:text-4xl">Tres datos, una sola vez</h1>
+      <h1 className="mt-6 text-3xl font-bold sm:text-4xl">Contanos un poco de vos</h1>
       <p className="mt-5 leading-7 text-azul/75">
-        Son opcionales y sirven para comparar cómo eligen distintas edades y grupos. Se guardan de
-        forma anónima junto con tus jugadas, sin nombre, mail ni nada que te identifique, y no te
-        los volvemos a pedir en este dispositivo.
+        {guardando
+          ? 'Son opcionales y sirven para ver cómo eligen distintas edades y grupos. Se guardan de forma anónima junto con tus jugadas, sin nombre, mail ni nada que te identifique.'
+          : 'Son opcionales. En esta versión de prueba no se guarda nada: todo queda en tu dispositivo.'}
+        {inicial && ' Quedaron marcadas tus respuestas anteriores.'}
       </p>
 
       <Field label="Edad" options={AGE_OPTIONS} value={age} onChange={setAge} />
-      {minor && (
+      {minor && guardando && (
         <p className="mt-3 text-sm text-naranja">No guardamos respuestas de menores de 16 años.</p>
       )}
       <Field label="Género" options={GENDER_OPTIONS} value={gender} onChange={setGender} />
@@ -42,13 +46,22 @@ export function ParticipantForm({ onContinue }: ParticipantFormProps) {
         onChange={setEducation}
       />
 
-      <button
-        type="button"
-        onClick={() => onContinue(minor ? null : { age: age ?? 0, gender: gender ?? 0, education: education ?? 0 })}
-        className="mt-12 rounded-md bg-azul px-8 py-3.5 text-sm font-semibold text-marfil hover:bg-noche"
-      >
-        Ver mi resultado →
-      </button>
+      <div className="mt-12 flex flex-wrap items-center gap-4">
+        <button
+          type="button"
+          onClick={() => onContinue({ age: age ?? 0, gender: gender ?? 0, education: education ?? 0 })}
+          className="rounded-md bg-azul px-8 py-3.5 text-sm font-semibold text-marfil hover:bg-noche"
+        >
+          Ver mi resultado →
+        </button>
+        <button
+          type="button"
+          onClick={() => onContinue({ age: 0, gender: 0, education: 0 })}
+          className="text-sm font-medium text-azul/60 underline underline-offset-4 hover:text-azul"
+        >
+          Prefiero no decir
+        </button>
+      </div>
     </main>
   )
 }

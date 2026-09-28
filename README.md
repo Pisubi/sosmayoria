@@ -9,8 +9,9 @@ los demás se guarda de forma anónima (si el despliegue tiene Supabase).
 
 ## Cómo se juega
 
-- Rondas de 15 cartas sorteadas del banco, alternando temas (política, economía, sociedad,
-  historia, cultura, vida cotidiana) y priorizando las que la persona todavía no vio.
+- Rondas de 15 cartas sorteadas del banco (solo encuestas de alcance nacional en la
+  Argentina), alternando temas (política, economía, sociedad, historia, cultura, vida
+  cotidiana) y priorizando las que la persona todavía no vio.
 - Cada carta: elegís A, B o "prefiero no decir"; después movés una barra hasta el porcentaje
   que creés que eligió cada opción.
 - Puntos: `100 − 2,5 · |predicción − dato real|`, mínimo 0.
@@ -31,9 +32,9 @@ carta que se quiera sacar se marca `"retirada": true`.
 
 ## Datos de quienes juegan (Supabase)
 
-Si hay `VITE_SUPABASE_URL` y `VITE_SUPABASE_KEY` (ver `.env.example`), la primera ronda pide
-edad, género y nivel educativo (opcionales, una vez por dispositivo) y cada ronda terminada se
-guarda en una fila anónima de unos 90 bytes:
+Antes de cada resultado se piden edad, género y nivel educativo (opcionales; quedan marcadas
+las respuestas anteriores del dispositivo). Si hay `VITE_SUPABASE_URL` y `VITE_SUPABASE_KEY`
+(ver `.env.example`), cada ronda terminada se guarda en una fila anónima de unos 90 bytes:
 
 - `supabase/schema.sql` crea `partidas` (solo inserción con la clave pública), `conteos` y
   `puntajes`, que un trigger actualiza con cada partida, y la función `estado()`, que devuelve

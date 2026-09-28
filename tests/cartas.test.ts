@@ -4,8 +4,14 @@ import fotos from '../src/data/fotos.json'
 import guardado from './orden-cartas.json'
 
 describe('banco de cartas', () => {
-  it('ids únicos', () => {
+  it('ids y preguntas únicos', () => {
     expect(new Set(orden).size).toBe(orden.length)
+    const activas = todas.filter((c) => !c.retirada).map((c) => c.pregunta.trim().toLowerCase())
+    expect(new Set(activas).size).toBe(activas.length)
+  })
+
+  it('solo datos nacionales de la Argentina', () => {
+    for (const c of todas.filter((x) => !x.retirada)) expect(c.ref.alcance).toMatch(/^nacional/)
   })
 
   it('el orden solo crece al final (las partidas guardadas dependen de él)', () => {

@@ -16,7 +16,7 @@ import {
   rondaGuardada,
   type RondaGuardada,
 } from './lib/guardado'
-import type { Participant } from './lib/participant'
+import { UNDER_16, type Participant } from './lib/participant'
 import { cargarEstado, collecting, enviarPartida, type Estado } from './lib/supabase'
 import type { Carta, Jugada, Tema } from './types'
 
@@ -66,23 +66,15 @@ function App() {
     marcarVistas(jugadas.map((j) => j.carta))
     guardarRonda(null)
     setGuardada(null)
-    const persona = personaGuardada()
-    if (collecting && persona === undefined) {
-      setStage({ step: 'datos', ronda: { ...ronda, jugadas }, resumen })
-      return
-    }
-    enviar({ ...ronda, jugadas }, resumen, persona ?? null)
-    setStage({ step: 'resultado', resumen })
+    // Los datos demográficos van siempre entre la última carta y el resultado.
+    setStage({ step: 'datos', ronda: { ...ronda, jugadas }, resumen })
   }
 
-  function enviar(ronda: RondaGuardada, resumen: Resumen, persona: Participant | null) {
-    if (!persona) return
-    enviarPartida(orden, ronda.jugadas, persona, (Date.now() - ronda.inicio) / 1000, resumen.promedio)
-  }
-
-  function datos(ronda: RondaGuardada, resumen: Resumen, persona: Participant | null) {
+  function datos(ronda: RondaGuardada, resumen: Resumen, persona: Participant) {
     guardarPersona(persona)
-    enviar(ronda, resumen, persona)
+    if (persona.age !== UNDER_16) {
+      enviarPartida(orden, ronda.jugadas, persona, (Date.now() - ronda.inicio) / 1000, resumen.promedio)
+    }
     setStage({ step: 'resultado', resumen })
   }
 
@@ -121,7 +113,11 @@ function App() {
         />
       )}
       {stage.step === 'datos' && (
-        <ParticipantForm onContinue={(p) => datos(stage.ronda, stage.resumen, p)} />
+        <ParticipantForm
+          inicial={personaGuardada()}
+          guardando={collecting}
+          onContinue={(p) => datos(stage.ronda, stage.resumen, p)}
+        />
       )}
       {stage.step === 'resultado' && (
         <Resultado

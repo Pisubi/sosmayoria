@@ -40,7 +40,7 @@ export function ComoFunciona({ onBack, backLabel = 'Volver' }: { onBack: () => v
 
       <Bloque titulo="Privacidad">
         {collecting
-          ? 'Cada ronda terminada se guarda de forma anónima: qué elegiste y qué porcentaje dijiste en cada carta, cuánto tardaste y, si decidís darlos, tu rango de edad, género y nivel educativo (se preguntan una sola vez por dispositivo). No se guarda nombre, mail, IP ni nada que te identifique, y nunca las rondas de menores de 16 años. La app solo lee totales por carta, nunca partidas individuales.'
+          ? 'Cada ronda terminada se guarda de forma anónima: qué elegiste y qué porcentaje dijiste en cada carta, cuánto tardaste y, si decidís darlos, tu rango de edad, género y nivel educativo (se preguntan antes de cada resultado, con tus respuestas anteriores ya marcadas). No se guarda nombre, mail, IP ni nada que te identifique, y nunca las rondas de menores de 16 años. La app solo lee totales por carta, nunca partidas individuales.'
           : 'No se guarda nada fuera de tu dispositivo.'}
       </Bloque>
 
