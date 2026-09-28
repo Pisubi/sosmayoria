@@ -29,4 +29,30 @@ export interface AxisResult {
   score: number
 }
 
-export type TestMode = 'rapido' | 'completo'
+export type TestMode = 'rapida' | 'completa' | 'fondo'
+
+export type TestId = 'internacional' | 'argentina'
+
+export type Era = 'actual' | 'historica'
+
+export interface Reference {
+  id: string
+  kind: 'figura' | 'partido'
+  name: string
+  country: string
+  era: Era
+  description: string
+  /** Posición estimada por eje, de -100 (poleA) a +100 (poleB); null = no aplica */
+  position: Record<string, number | null>
+}
+
+export interface TestDefinition {
+  id: TestId
+  name: string
+  tagline: string
+  description: string
+  axes: Axis[]
+  questions: Question[]
+  figures: Reference[]
+  parties: Reference[]
+}

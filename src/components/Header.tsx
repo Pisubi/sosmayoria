@@ -1,5 +1,3 @@
-import { axes } from '../data/axes'
-
 interface HeaderProps {
   onHome?: () => void
 }
@@ -17,7 +15,7 @@ export function Header({ onHome }: HeaderProps) {
           <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-naranja" />
         </button>
         <span className="text-xs font-medium tracking-[0.12em] text-azul/60 uppercase">
-          {axes.length} ejes<span className="hidden sm:inline"> · Argentina y el mundo</span>
+          Test político
         </span>
       </div>
     </header>

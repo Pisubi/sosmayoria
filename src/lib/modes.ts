@@ -1,48 +1,36 @@
-import { axes } from '../data/axes'
-import { questions } from '../data/questions'
-import type { Question, TestMode } from '../types'
+import type { Question, TestDefinition, TestMode } from '../types'
 
-const QUESTIONS_PER_AXIS_FULL = 4
-const QUESTIONS_PER_AXIS_QUICK = 2
+export const MODE_ORDER: TestMode[] = ['rapida', 'completa', 'fondo']
 
-export const modeInfo: Record<
-  TestMode,
-  {
-    label: string
-    cta: string
-    questionCount: number
-    minutes: number
-    description: string
-  }
-> = {
-  rapido: {
-    label: 'Rápida',
-    cta: 'Empezar versión rápida',
-    questionCount: axes.length * QUESTIONS_PER_AXIS_QUICK,
-    minutes: 4,
-    description: 'Una primera lectura de tu perfil, con una afirmación de cada polo por eje.',
-  },
-  completo: {
-    label: 'Completa',
-    cta: 'Empezar versión completa',
-    questionCount: axes.length * QUESTIONS_PER_AXIS_FULL,
-    minutes: 7,
-    description: 'Mayor precisión, con las cuatro afirmaciones de cada eje.',
-  },
+export const modeInfo: Record<TestMode, { label: string; perAxis: number }> = {
+  rapida: { label: 'Rápida', perAxis: 2 },
+  completa: { label: 'Completa', perAxis: 4 },
+  fondo: { label: 'A fondo', perAxis: 8 },
 }
 
-export function getQuestionsForMode(mode: TestMode): Question[] {
-  if (mode === 'completo') return questions
+export function questionCount(test: TestDefinition, mode: TestMode): number {
+  return test.axes.length * modeInfo[mode].perAxis
+}
 
-  const byAxis = new Map<string, Question[]>()
-  for (const question of questions) {
-    const list = byAxis.get(question.axisId) ?? []
-    list.push(question)
-    byAxis.set(question.axisId, list)
+/** Unos 10 segundos por afirmación. */
+export function estimatedMinutes(test: TestDefinition, mode: TestMode): number {
+  return Math.max(1, Math.round((questionCount(test, mode) * 10) / 60))
+}
+
+/**
+ * Toma las primeras N afirmaciones de cada eje y las intercala (una de cada eje por
+ * ronda) para que el test no repita el mismo tema muchas veces seguidas.
+ */
+export function getQuestionsForMode(test: TestDefinition, mode: TestMode): Question[] {
+  const { perAxis } = modeInfo[mode]
+  const byAxis = test.axes.map((axis) =>
+    test.questions.filter((q) => q.axisId === axis.id).slice(0, perAxis),
+  )
+  const ordered: Question[] = []
+  for (let round = 0; round < perAxis; round++) {
+    for (const axisQuestions of byAxis) {
+      if (axisQuestions[round]) ordered.push(axisQuestions[round])
+    }
   }
-
-  return axes.flatMap((axis) => {
-    const axisQuestions = byAxis.get(axis.id) ?? []
-    return axisQuestions.slice(0, QUESTIONS_PER_AXIS_QUICK)
-  })
+  return ordered
 }

@@ -1,9 +1,8 @@
 import { useMemo } from 'react'
-import { axes } from '../data/axes'
-import { figures, parties } from '../data/references'
+import { tests } from '../data/tests'
 import { rankMatches, type Match } from '../lib/matching'
 import { computeAxisResults, scoresByAxisId } from '../lib/scoring'
-import type { Answer, Question } from '../types'
+import type { Answer, Question, TestId } from '../types'
 import { AxisBreakdown } from './AxisBreakdown'
 import { AxisRadarChart } from './AxisRadarChart'
 import { Eyebrow } from './Eyebrow'
@@ -11,35 +10,50 @@ import { Footer } from './Footer'
 import { RankingList } from './RankingList'
 
 interface ResultsProps {
+  testId: TestId
   questions: Question[]
   answers: Record<string, Answer>
   onRestart: () => void
 }
 
-export function Results({ questions, answers, onRestart }: ResultsProps) {
+const DISCLAIMER =
+  'Las posiciones de partidos y figuras son estimaciones editoriales basadas en programas, decisiones de gobierno y declaraciones públicas. En figuras históricas se omiten los ejes que no aplican a su época.'
+
+export function Results({ testId, questions, answers, onRestart }: ResultsProps) {
+  const test = tests[testId]
   const results = useMemo(
-    () => computeAxisResults(questions, answers),
-    [questions, answers],
+    () => computeAxisResults(test.axes, questions, answers),
+    [test, questions, answers],
   )
   const scores = useMemo(() => scoresByAxisId(results), [results])
-
-  const figureMatches = useMemo(() => rankMatches(scores, figures), [scores])
-  const argentineParties = useMemo(
-    () => rankMatches(scores, parties.filter((p) => p.country === 'Argentina')),
-    [scores],
-  )
-  const worldParties = useMemo(
-    () => rankMatches(scores, parties.filter((p) => p.country !== 'Argentina')),
-    [scores],
-  )
+  const figureMatches = useMemo(() => rankMatches(scores, test.figures), [scores, test])
+  const partyMatches = useMemo(() => rankMatches(scores, test.parties), [scores, test])
 
   const topFigure = figureMatches[0]
+  const topHistoric = figureMatches.find((m) => m.reference.era === 'historica')
+  const topCurrent = figureMatches.find((m) => m.reference.era === 'actual')
+  const argentineParties = partyMatches.filter((m) => m.reference.country === 'Argentina')
+  const worldParties = partyMatches.filter((m) => m.reference.country !== 'Argentina')
+  const international = test.id === 'internacional'
+
+  const highlights: [string, Match | undefined][] = international
+    ? [
+        ['Figura histórica', topHistoric],
+        ['Figura actual', topCurrent],
+        ['Partido en Argentina', argentineParties[0]],
+        ['Partido en el mundo', worldParties[0]],
+      ]
+    : [
+        ['Figura histórica', topHistoric],
+        ['Figura actual', topCurrent],
+        ['Partido', partyMatches[0]],
+      ]
 
   return (
     <main>
       <section className="bg-noche text-marfil">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
-          <Eyebrow>Tu resultado</Eyebrow>
+          <Eyebrow>Tu resultado · Test {test.name}</Eyebrow>
           <h1 className="mt-6 max-w-3xl text-4xl leading-[1.1] font-normal tracking-[-0.015em] sm:text-6xl">
             La figura más cercana a tu perfil es{' '}
             <em className="font-light text-naranja">{topFigure.reference.name}</em>
@@ -48,10 +62,14 @@ export function Results({ questions, answers, onRestart }: ResultsProps) {
             {topFigure.reference.description}
           </p>
 
-          <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-marfil/20 bg-marfil/20 sm:grid-cols-3">
-            <Highlight label="Figura" match={topFigure} />
-            <Highlight label="Partido en Argentina" match={argentineParties[0]} />
-            <Highlight label="Partido en el mundo" match={worldParties[0]} />
+          <div
+            className={`mt-12 grid gap-px overflow-hidden rounded-xl border border-marfil/20 bg-marfil/20 sm:grid-cols-2 ${
+              international ? 'lg:grid-cols-4' : 'lg:grid-cols-3'
+            }`}
+          >
+            {highlights.map(([label, match]) =>
+              match ? <Highlight key={label} label={label} match={match} /> : null,
+            )}
           </div>
           <p className="mt-4 text-xs leading-5 text-marfil/60">
             Afinidad de 0 a 100% sobre {questions.length} afirmaciones respondidas.
@@ -61,7 +79,7 @@ export function Results({ questions, answers, onRestart }: ResultsProps) {
 
       <Section
         eyebrow="01 · Mapa"
-        title={`Tu posición en los ${axes.length} ejes`}
+        title={`Tu posición en los ${test.axes.length} ejes`}
         note="El centro del gráfico corresponde al primer polo de cada eje y el borde al segundo; el anillo medio es la posición neutral."
       >
         <AxisRadarChart results={results} />
@@ -78,40 +96,44 @@ export function Results({ questions, answers, onRestart }: ResultsProps) {
       <Section
         eyebrow="03 · Figuras"
         title="A quién te parecés"
-        note={`Cercanía con ${figures.length} figuras políticas de Argentina y del mundo. ${DISCLAIMER}`}
+        note={`Cercanía con ${test.figures.length} figuras históricas y actuales. ${DISCLAIMER}`}
       >
-        <RankingList matches={figureMatches} />
+        <RankingList matches={figureMatches} showCountry={international} eraFilter />
       </Section>
 
       <Section
         eyebrow="04 · Partidos"
         title="Con qué partido coincidís"
-        note={`Cercanía con ${parties.length} partidos y espacios. ${DISCLAIMER}`}
+        note={`Cercanía con ${test.parties.length} partidos y espacios actuales.`}
       >
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-10">
-          <div>
-            <h3 className="mb-4 text-lg font-bold">En Argentina</h3>
-            <RankingList matches={argentineParties} initialCount={6} showCountry={false} />
+        {international ? (
+          <div className="grid gap-12 lg:grid-cols-2 lg:gap-10">
+            <div>
+              <h3 className="mb-4 text-lg font-bold">En Argentina</h3>
+              <RankingList matches={argentineParties} initialCount={7} showCountry={false} />
+            </div>
+            <div>
+              <h3 className="mb-4 text-lg font-bold">En el resto del mundo</h3>
+              <RankingList matches={worldParties} />
+            </div>
           </div>
-          <div>
-            <h3 className="mb-4 text-lg font-bold">En el resto del mundo</h3>
-            <RankingList matches={worldParties} />
-          </div>
-        </div>
+        ) : (
+          <RankingList matches={partyMatches} initialCount={8} showCountry={false} />
+        )}
       </Section>
 
       <section className="bg-arena">
         <div className="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6">
           <p className="text-2xl font-bold">¿Querés comparar?</p>
           <p className="mx-auto mt-3 max-w-md leading-7 text-azul/75">
-            Volvé a hacer el test o probá la otra versión para ver si tu resultado cambia.
+            Probá el otro test o una versión más larga para ver si tu resultado cambia.
           </p>
           <button
             type="button"
             onClick={onRestart}
             className="mt-8 rounded-md bg-azul px-8 py-3.5 text-sm font-semibold text-marfil transition-colors hover:bg-noche"
           >
-            Volver a hacer el test
+            Volver al inicio
           </button>
         </div>
       </section>
@@ -120,9 +142,6 @@ export function Results({ questions, answers, onRestart }: ResultsProps) {
     </main>
   )
 }
-
-const DISCLAIMER =
-  'Las posiciones de partidos y figuras son estimaciones editoriales basadas en programas y declaraciones públicas.'
 
 function Highlight({ label, match }: { label: string; match: Match }) {
   return (
