@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { TEMAS } from '../data/cartas'
 import { perfil, type Lectura, type Lugar, type Resumen } from '../engine/juego'
-import { renderShareImage } from '../lib/compartir'
+import { renderShareImage, type Tarjeta } from '../lib/compartir'
 import { fecha } from '../lib/formato'
 import { Eyebrow } from './Eyebrow'
 import { Footer } from './Footer'
@@ -52,7 +52,17 @@ export function Resultado({ resumen, onOtraRonda, onMethodology }: ResultadoProp
             >
               Jugar otra ronda →
             </button>
-            <Compartir texto={texto} mayoria={conLaMayoria} definidas={definidas} titulo={p.titulo} />
+            <Compartir
+              texto={texto}
+              tarjeta={{
+                mayoria: conLaMayoria,
+                definidas,
+                titulo: p.titulo,
+                texto: p.texto,
+                // Las núcleo (gobierno, aborto, juicios…) no van a la historia: revelarían la postura política.
+                minorias: minoria.filter((l) => !l.carta.nucleo).map((l) => l.carta.pregunta),
+              }}
+            />
           </div>
         </div>
       </section>
@@ -139,13 +149,13 @@ function otra(l: Lectura): string {
   return l.jugada.eleccion === 'a' ? `«${l.carta.b.texto}»` : `«${l.carta.a.texto}»`
 }
 
-function Compartir({ texto, mayoria, definidas, titulo }: { texto: string; mayoria: number; definidas: number; titulo: string }) {
+function Compartir({ texto, tarjeta }: { texto: string; tarjeta: Omit<Tarjeta, 'url'> }) {
   const [estado, setEstado] = useState<'listo' | 'copiado' | 'generando'>('listo')
   async function compartir() {
     const url = window.location.origin + window.location.pathname
     setEstado('generando')
     try {
-      const blob = await renderShareImage({ mayoria, definidas, titulo, url })
+      const blob = await renderShareImage({ ...tarjeta, url })
       const file = new File([blob], 'la-mayoria.png', { type: 'image/png' })
       if (navigator.canShare?.({ files: [file] })) {
         try {
@@ -178,7 +188,7 @@ function Compartir({ texto, mayoria, definidas, titulo }: { texto: string; mayor
       disabled={estado === 'generando'}
       className="rounded-md border border-marfil/40 px-8 py-3.5 text-sm font-semibold text-marfil hover:bg-marfil hover:text-azul disabled:opacity-60"
     >
-      {estado === 'generando' ? 'Generando…' : estado === 'copiado' ? 'Imagen descargada y texto copiado' : 'Compartir resultado'}
+      {estado === 'generando' ? 'Generando…' : estado === 'copiado' ? 'Imagen descargada y texto copiado' : 'Compartir en historias'}
     </button>
   )
 }
