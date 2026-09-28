@@ -26,6 +26,11 @@ export const tests: Record<TestId, TestDefinition> = {
       ['ECO', 'SOC'],
       ['INS', 'MEM'],
     ],
+    dimensions: [
+      { label: 'En economía', axes: ['ECO', 'EXT'] },
+      { label: 'En valores y seguridad', axes: ['SOC', 'SEG', 'MEM'] },
+      { label: 'En instituciones y estilo', axes: ['INS', 'POP', 'FED'] },
+    ],
     draw: {
       // Mundo va casi a la par de Economía entre los perfiles; Territorio es el tema más independiente.
       core: { ECO: 4, SOC: 3, INS: 3, POP: 3, SEG: 3, MEM: 2, EXT: 2, FED: 3, IDN: 2 },
@@ -51,6 +56,11 @@ export const tests: Record<TestId, TestDefinition> = {
       ['ECO', 'AUT'],
       ['ECO', 'SOC'],
       ['NAC', 'DEM'],
+    ],
+    dimensions: [
+      { label: 'En economía', axes: ['ECO', 'COM', 'ECOL'] },
+      { label: 'En lo social', axes: ['SOC', 'REL', 'AUT', 'MIG'] },
+      { label: 'En lo político', axes: ['DEM', 'POP', 'NAC', 'MIL'] },
     ],
     draw: {
       core: { ECO: 3, COM: 2, AUT: 3, DEM: 2, SOC: 3, REL: 2, NAC: 2, MIL: 2, MIG: 2, ECOL: 2, POP: 2 },

@@ -73,8 +73,14 @@ export function AxisBars({ axes, scores }: AxisBarsProps) {
                 )}
               </div>
               <div className="mt-2 flex justify-between gap-4 text-xs text-azul/60">
-                <span>{axis.poleA.label}</span>
-                <span className="text-right">{axis.poleB.label}</span>
+                <span className={score != null && score < 0 ? 'font-semibold text-azul' : ''}>
+                  {axis.poleA.label}
+                  {score != null && <span className="ml-1 tabular-nums">{Math.round((100 - score) / 2)}%</span>}
+                </span>
+                <span className={`text-right ${score != null && score > 0 ? 'font-semibold text-azul' : ''}`}>
+                  {score != null && <span className="mr-1 tabular-nums">{Math.round((100 + score) / 2)}%</span>}
+                  {axis.poleB.label}
+                </span>
               </div>
               {score == null && (
                 <p className="mt-2 text-xs text-azul/60">

@@ -1,13 +1,17 @@
 import { useMemo, useState } from 'react'
 import { tests } from '../../data/tests'
-import { closenessLabel, rankProfiles, type Match } from '../../engine/matching'
+import { closenessLabel, rankProfiles } from '../../engine/matching'
 import { ACQUIESCENCE_THRESHOLD, CONSISTENCY_THRESHOLD } from '../../engine/scoring'
 import type { AxisScore, TestId } from '../../types'
 import { Avatar } from '../Avatar'
 import { Eyebrow } from '../Eyebrow'
 import { Footer } from '../Footer'
+import { phraseFor } from '../../lib/phrases'
+import { renderShareImage, type ShareCard } from '../../lib/shareImage'
 import { AxisBars } from './AxisBars'
-import { CatalogRanking } from './CatalogRanking'
+import { CatalogSection } from './CatalogSection'
+import { Distinctive } from './Distinctive'
+import { Ring } from './Ring'
 import { IdentityMeter } from './IdentityMeter'
 import { Plane2D } from './Plane2D'
 
@@ -56,6 +60,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
 
   const [lead, ...others] = byCatalog
   const top = lead.matches[0]
+  const runnerUpTied = lead.matches[1] && top.similarity - lead.matches[1].similarity < 2
   const undetermined = scores.filter(
     (s) => s.score == null && matchAxes.some((a) => a.id === s.axisId),
   )
@@ -93,30 +98,72 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
     <main>
       <section className="bg-noche text-marfil">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
-          <Eyebrow>Tu resultado · Test {test.name}</Eyebrow>
-          <h1 className="mt-6 max-w-3xl text-4xl leading-[1.1] font-normal tracking-[-0.015em] sm:text-6xl">
-            {tooFew
-              ? 'Faltan respuestas para ubicarte bien; lo más próximo es'
-              : mixed
-              ? 'Tus respuestas son mixtas; lo más próximo es'
-              : top.similarity >= 50
-                ? 'Tu perfil se acerca a'
-                : 'Ningún perfil está muy cerca; el más próximo es'}{' '}
-            <em className="font-light text-naranja">{top.profile.name}</em>
+          <Eyebrow>Análisis completo · Test {test.name}</Eyebrow>
+          <h1 className="mt-5 text-4xl leading-[1.05] font-bold tracking-[-0.02em] sm:text-6xl">
+            Tu perfil político
           </h1>
-          <p className="mt-6 max-w-2xl leading-7 text-marfil/75 sm:text-lg sm:leading-8">
-            {top.agree.length > 0 && <>Coincidís sobre todo en {listOf(top.agree.map(axisName))}</>}
-            {top.differ.length > 0 && <>, y te diferenciás en {listOf(top.differ.map(axisName))}</>}
-            {top.agree.length > 0 && '. '}
-            Abajo están tus cercanías con cada catálogo y tu posición tema por tema.
+          <p className="mt-4 max-w-2xl leading-7 text-marfil/70">
+            {tooFew
+              ? 'Faltan respuestas para ubicarte bien: tomá esto como una primera aproximación.'
+              : mixed
+                ? 'Tus respuestas son mixtas: lo que sigue es lo más próximo, no un calce exacto.'
+                : top.similarity >= 50
+                  ? `Entre ${lead.matches.length} ${lead.catalog.name.toLowerCase()}, la más cercana a vos es:`
+                  : 'Ningún perfil está muy cerca; este es el más próximo:'}
           </p>
 
-          <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-marfil/20 bg-marfil/20 sm:grid-cols-2 lg:grid-cols-4">
-            {byCatalog.map(({ catalog, matches }) =>
-              matches[0] ? (
-                <Highlight key={catalog.id} testId={test.id} label={catalog.name} match={matches[0]} runnerUp={matches[1]} axisName={axisName} />
-              ) : null,
-            )}
+          <div className="mt-8 grid gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
+            <div className="rounded-3xl bg-papel p-6 text-azul sm:p-8">
+              <div className="flex flex-wrap-reverse items-start justify-between gap-x-6 gap-y-4">
+                <div className="min-w-0 flex-1 basis-56">
+                  <p className="inline-block rounded-full bg-azul px-3 py-1 text-xs font-semibold text-marfil">
+                    {phraseFor(test.id, top.profile.id)?.familia ?? lead.catalog.name}
+                  </p>
+                  <p className="mt-4 text-3xl leading-tight font-bold tracking-[-0.015em] break-words sm:text-4xl">
+                    {top.profile.name}
+                  </p>
+                  <p className="mt-2 text-sm font-medium text-azul/60">
+                    {closenessLabel(top.similarity)}
+                    {runnerUpTied && ` · casi empatado con ${lead.matches[1].profile.name}`}
+                  </p>
+                </div>
+                <Ring value={top.similarity} />
+              </div>
+              <p className="mt-6 leading-7 text-azul/80">{top.profile.description}</p>
+              {top.agree.length > 0 && (
+                <p className="mt-4 text-sm leading-6 text-azul/65">
+                  Coinciden sobre todo en {listOf(top.agree.map(axisName))}
+                  {top.differ.length > 0 && <>, y se diferencian en {listOf(top.differ.map(axisName))}</>}.
+                </p>
+              )}
+            </div>
+
+            <div className="grid gap-4">
+              {phraseFor(test.id, top.profile.id) && (
+                <figure className="rounded-3xl border border-marfil/15 bg-marfil/[0.06] p-6 sm:p-8">
+                  <blockquote className="text-xl leading-snug font-medium text-marfil sm:text-2xl">
+                    “{phraseFor(test.id, top.profile.id)!.frase}”
+                  </blockquote>
+                  <figcaption className="mt-4 text-sm text-marfil/60">
+                    Así resumiría alguien de esta corriente la sociedad que quiere.
+                  </figcaption>
+                </figure>
+              )}
+              <ul className="grid gap-2 rounded-3xl border border-marfil/15 p-3">
+                {others.map(({ catalog, matches }) =>
+                  matches[0] ? (
+                    <li key={catalog.id} className="flex items-center gap-3 rounded-2xl px-3 py-2.5 hover:bg-marfil/[0.06]">
+                      <Avatar testId={test.id} profile={matches[0].profile} size={44} dark />
+                      <div className="min-w-0 flex-1">
+                        <p className="text-[11px] font-medium tracking-[0.1em] text-marfil/55 uppercase">{catalog.name}</p>
+                        <p className="truncate font-semibold">{matches[0].profile.name}</p>
+                      </div>
+                      <p className="text-xl font-bold text-naranja tabular-nums">{Math.round(matches[0].similarity)}%</p>
+                    </li>
+                  ) : null,
+                )}
+              </ul>
+            </div>
           </div>
           <p className="mt-4 text-xs leading-5 text-marfil/60">
             Cercanía de 0 a 100% según la distancia media entre tus posiciones y las de cada
@@ -155,14 +202,16 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
         </section>
       )}
 
+      <Distinctive test={test} scores={scores} profiles={lead.matches.map((m) => m.profile)} catalogName={lead.catalog.name} />
+
       <Section
         eyebrow="01 · Cercanías"
         title="A quién te parecés, y en qué"
-        note="Cada catálogo se compara por separado. Las posiciones de los perfiles son semillas editoriales basadas en decisiones de gobierno, programas y declaraciones públicas; en figuras históricas son de época."
+        note="Cada catálogo se compara por separado. Cada perfil respondió el mismo test según su trayectoria documentada (decisiones de gobierno, votos, programas y declaraciones; en figuras históricas, de época), así que se mide con la misma vara que vos."
       >
-        <div className="grid gap-14">
-          {[lead, ...others].map(({ catalog, matches }) => (
-            <CatalogRanking key={catalog.id} testId={test.id} catalog={catalog} matches={matches} axes={test.axes} scores={scores} />
+        <div className="grid gap-6">
+          {[lead, ...others].map(({ catalog, matches }, i) => (
+            <CatalogSection key={catalog.id} test={test} catalog={catalog} matches={matches} scores={scores} skipFeatured={i === 0} />
           ))}
         </div>
       </Section>
@@ -214,12 +263,28 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
 
       <section className="bg-arena">
         <div className="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6">
-          <p className="text-2xl font-bold">Compartí o compará</p>
+          <p className="text-2xl font-bold">Compartí tu resultado</p>
           <p className="mx-auto mt-3 max-w-md leading-7 text-azul/75">
             El enlace guarda solo tus puntajes por tema, no tus respuestas. Probá también el otro
             test o la versión completa.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <ImageButton
+              card={{
+                testName: test.name,
+                lead: {
+                  catalog: lead.catalog.name,
+                  family: phraseFor(test.id, top.profile.id)?.familia,
+                  name: top.profile.name,
+                  similarity: top.similarity,
+                  phrase: phraseFor(test.id, top.profile.id)?.frase,
+                },
+                others: others.flatMap(({ catalog, matches }) =>
+                  matches[0] ? [{ catalog: catalog.name, name: matches[0].profile.name, similarity: matches[0].similarity }] : [],
+                ),
+                url: window.location.href,
+              }}
+            />
             <ShareButton
               text={`Hice el test ${test.name} de Brújula: ${byCatalog
                 .map(({ matches }) => matches[0])
@@ -233,7 +298,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
               onClick={onRestart}
               className="rounded-md border border-azul px-8 py-3.5 text-sm font-semibold text-azul transition-colors hover:bg-azul hover:text-marfil"
             >
-              Volver al inicio
+              Hacer otro test
             </button>
           </div>
         </div>
@@ -250,38 +315,39 @@ function listOf(items: string[]): string {
   return `${lower.slice(0, -1).join(', ')} y ${lower[lower.length - 1]}`
 }
 
-function Highlight({
-  testId,
-  label,
-  match,
-  runnerUp,
-  axisName,
-}: {
-  testId: TestId
-  label: string
-  match: Match
-  runnerUp?: Match
-  axisName: (id: string) => string
-}) {
-  const tied = runnerUp && match.similarity - runnerUp.similarity < 2
+function ImageButton({ card }: { card: ShareCard }) {
+  const [busy, setBusy] = useState(false)
+  async function make() {
+    setBusy(true)
+    try {
+      const blob = await renderShareImage(card)
+      const file = new File([blob], 'brujula-resultado.png', { type: 'image/png' })
+      if (navigator.canShare?.({ files: [file] })) {
+        try {
+          await navigator.share({ files: [file], title: 'Brújula' })
+          return
+        } catch (e) {
+          if ((e as Error).name === 'AbortError') return
+        }
+      }
+      const a = document.createElement('a')
+      a.href = URL.createObjectURL(blob)
+      a.download = file.name
+      a.click()
+      window.setTimeout(() => URL.revokeObjectURL(a.href), 5000)
+    } finally {
+      setBusy(false)
+    }
+  }
   return (
-    <div className="bg-noche p-5 sm:p-6">
-      <p className="text-xs font-medium tracking-[0.12em] text-marfil/60 uppercase">{label}</p>
-      <div className="mt-4">
-        <Avatar testId={testId} profile={match.profile} size={56} dark />
-      </div>
-      <p className="mt-3 text-lg leading-snug font-semibold">{match.profile.name}</p>
-      {match.profile.country && <p className="text-xs text-marfil/60">{match.profile.country}</p>}
-      <p className="mt-4 text-3xl font-bold text-naranja tabular-nums">
-        {Math.round(match.similarity)}%
-        <span className="ml-2 text-sm font-medium text-marfil/70">{closenessLabel(match.similarity)}</span>
-      </p>
-      <p className="mt-2 text-xs leading-5 text-marfil/60">
-        {tied
-          ? `Casi empatado con ${runnerUp.profile.name}`
-          : match.agree.length > 0 && `Más cerca en ${listOf(match.agree.slice(0, 2).map(axisName))}`}
-      </p>
-    </div>
+    <button
+      type="button"
+      onClick={make}
+      disabled={busy}
+      className="rounded-md bg-naranja px-8 py-3.5 text-sm font-semibold text-marfil transition-colors hover:bg-azul disabled:opacity-60"
+    >
+      {busy ? 'Generando…' : 'Descargar imagen'}
+    </button>
   )
 }
 

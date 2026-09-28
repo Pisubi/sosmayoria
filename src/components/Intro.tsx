@@ -4,7 +4,46 @@ import { estimatedMinutes, VARIANT_SIZE, VARIANTS, variantLabel } from '../engin
 import type { SavedProgress } from '../lib/progress'
 import type { TestDefinition, TestId, Variant } from '../types'
 import { Eyebrow, Index } from './Eyebrow'
+import { Avatar } from './Avatar'
 import { Footer } from './Footer'
+
+const STEPS = [
+  {
+    title: 'Respondé',
+    text: 'Afirmaciones cortas sobre economía, valores, instituciones y el mundo. Si no tenés opinión, marcá "No sé": no te empuja a ningún lado.',
+  },
+  {
+    title: 'Te ubicamos',
+    text: 'Cada respuesta suma en uno o más temas. Con eso armamos tu posición y la comparamos con la de cada perfil, medida con el mismo test.',
+  },
+  {
+    title: 'Mirá a quién te parecés',
+    text: 'Ideologías, figuras históricas y actuales y partidos, cada catálogo por separado: en qué coincidís, en qué no y qué te distingue.',
+  },
+]
+
+const FAQ = [
+  {
+    q: '¿Cómo se ubican los perfiles?',
+    a: 'Cada figura, partido e ideología respondió todas las afirmaciones del test como lo haría según su trayectoria documentada (leyes, votos, decisiones de gobierno, programas y declaraciones; en las históricas, con las posiciones de su época). Su posición sale de esas respuestas con la misma fórmula que la tuya. Las respuestas de cada perfil son públicas en el repositorio.',
+  },
+  {
+    q: '¿Por qué me tocaron afirmaciones distintas que a otra persona?',
+    a: 'Cada partida sortea sus afirmaciones de un banco más grande. Las más informativas de cada tema pesan más y aparecen en todas las versiones; el resto varía. Así el test no se vuelve predecible.',
+  },
+  {
+    q: '¿Qué significa el porcentaje?',
+    a: 'Es la cercanía entre tus posiciones y las del perfil, tema por tema: 80% o más es muy cerca, menos de 50% es lejos. Importa sobre todo el orden: quién te queda más cerca dentro de cada catálogo.',
+  },
+  {
+    q: '¿Guardan mis respuestas?',
+    a: 'Si el sitio tiene activada la recolección, se guardan de forma anónima, sin nombre ni mail, con la edad, el género y el nivel educativo si decidís darlos. Nunca se guardan las de menores de 16 años.',
+  },
+  {
+    q: '¿Es científico?',
+    a: 'Es una herramienta educativa, no un diagnóstico: el test no está validado psicométricamente y las posiciones de los perfiles son una codificación, no una medición. La metodología explica cómo funciona y sus límites.',
+  },
+]
 
 interface IntroProps {
   saved: SavedProgress | null
@@ -29,10 +68,36 @@ export function Intro({ saved, onStart, onResume, onMethodology }: IntroProps) {
           partidos e ideologías te parecés, en qué coincidís y en qué te diferenciás. Sin
           etiquetas cerradas.
         </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href="#tests"
+            className="rounded-md bg-azul px-7 py-3.5 text-sm font-semibold text-marfil hover:bg-noche"
+          >
+            Empezar el test →
+          </a>
+          <a
+            href="#como-funciona"
+            className="rounded-md border border-azul/30 px-7 py-3.5 text-sm font-semibold hover:border-azul"
+          >
+            Cómo funciona
+          </a>
+        </div>
         {saved && <ResumeBanner saved={saved} onResume={onResume} />}
       </section>
 
-      <section className="bg-noche text-marfil">
+      <section id="como-funciona" className="mx-auto max-w-5xl scroll-mt-20 px-4 pb-16 sm:px-6 sm:pb-20">
+        <ol className="grid gap-4 md:grid-cols-3">
+          {STEPS.map((step, i) => (
+            <li key={step.title} className="rounded-3xl border border-azul/12 bg-papel p-6">
+              <Index n={i + 1} />
+              <p className="mt-3 text-lg font-bold">{step.title}</p>
+              <p className="mt-2 text-sm leading-6 text-azul/70">{step.text}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section id="tests" className="scroll-mt-16 bg-noche text-marfil">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
           <Eyebrow>Elegí el test</Eyebrow>
           <h2 className="mt-5 text-3xl font-bold sm:text-4xl">Dos tests, tres versiones</h2>
@@ -62,11 +127,17 @@ export function Intro({ saved, onStart, onResume, onMethodology }: IntroProps) {
         </p>
         <div className="mt-10 grid gap-10 border-t border-azul/14 pt-8 sm:grid-cols-2">
           {test.catalogs.map((catalog) => {
-            const names = test.profiles
-              .filter((p) => p.catalog === catalog.id)
-              .map((p) => p.name)
+            const members = test.profiles.filter((p) => p.catalog === catalog.id)
+            const names = members.map((p) => p.name)
             return (
               <div key={catalog.id}>
+                <div className="mb-3 flex -space-x-2">
+                  {members.slice(0, 8).map((p) => (
+                    <span key={p.id} className="rounded-full ring-2 ring-marfil">
+                      <Avatar testId={test.id} profile={p} size={36} />
+                    </span>
+                  ))}
+                </div>
                 <p className="font-semibold">
                   {catalog.name} <span className="font-normal text-azul/60">· {names.length}</span>
                 </p>
@@ -101,6 +172,21 @@ export function Intro({ saved, onStart, onResume, onMethodology }: IntroProps) {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
+        <Eyebrow>Preguntas frecuentes</Eyebrow>
+        <div className="mt-6 divide-y divide-azul/12 border-y border-azul/12">
+          {FAQ.map((item) => (
+            <details key={item.q} className="group py-4">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
+                {item.q}
+                <span className="text-naranja transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-3 text-sm leading-6 text-azul/75">{item.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 

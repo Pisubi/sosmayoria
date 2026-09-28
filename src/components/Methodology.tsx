@@ -109,11 +109,17 @@ export function Methodology({ onBack, backLabel = 'Volver a los tests' }: Method
 
       <Block title="Perfiles y límites">
         <p>
-          Las coordenadas de figuras, partidos e ideologías son semillas editoriales, no
-          mediciones: se basan en decisiones de gobierno, leyes, programas y declaraciones, y en
-          figuras históricas son de época (null cuando un eje no aplica). Cada perfil indica su
-          nivel de confianza. El paso siguiente previsto es calibrarlos con varios codificadores
-          que respondan el cuestionario "como" cada figura.
+          Cada figura, partido e ideología respondió todas las afirmaciones del test como lo haría
+          según su trayectoria documentada: leyes, votos, decisiones de gobierno, programas y
+          declaraciones; en figuras históricas, con las posiciones de su época. La codificación se
+          hizo con asistencia de IA y revisión editorial, contrastando cada perfil con una semilla
+          editorial previa: donde difieren mucho, se revisó con evidencia. La posición de cada
+          perfil sale de sus respuestas con la misma fórmula que la tuya, así que vos y los
+          perfiles se miden con el mismo instrumento. En figuras del siglo XIX, los temas sin
+          ninguna afirmación con equivalente de época toman la semilla editorial, llevada a la
+          misma escala. Las respuestas de cada perfil están publicadas en el repositorio
+          (data/calibracion) para que cualquiera pueda auditarlas. Sigue siendo una codificación,
+          no una medición: la ideal es con varios codificadores independientes.
         </p>
         <p>
           Algunas figuras del mismo espacio tienen perfiles casi idénticos (por ejemplo, Cristina y

@@ -10,7 +10,7 @@ import { expressedCoords, normal, rng, simulate } from './helpers'
 const ORDER: Record<TestId, [string, string, string][]> = {
   ar: [
     ['ECO', 'milei', 'macri'], ['ECO', 'macri', 'massa'], ['ECO', 'massa', 'kicillof'],
-    ['ECO', 'kicillof', 'bregman'], ['ECO', 'milei', 'larreta'], ['ECO', 'bullrich', 'cfk'],
+    ['ECO', 'larreta', 'bregman'], ['ECO', 'milei', 'larreta'], ['ECO', 'bullrich', 'cfk'],
     ['ECO', 'menem', 'alfonsin'], ['ECO', 'alsogaray', 'peron'], ['ECO', 'domingo_cavallo', 'antonio_cafiero'],
     ['ECO', 'lla', 'kirchnerismo'], ['ECO', 'pro', 'peronismo_ortodoxo'], ['ECO', 'liberalismo_alberdiano', 'fitu'],
     ['SOC', 'laje', 'bregman'], ['SOC', 'villarruel', 'cfk'], ['SOC', 'nacionalismo_catolico', 'socialismo_ps'],

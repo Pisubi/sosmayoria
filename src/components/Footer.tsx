@@ -9,8 +9,8 @@ export function Footer({ onMethodology }: FooterProps) {
         <p className="max-w-2xl">
           Brújula es una herramienta educativa de lectura comparativa, no un diagnóstico
           científico. La cercanía con un perfil no indica filiación, recomendación de voto ni
-          evaluación moral. Los perfiles son semillas editoriales y el test todavía no está
-          validado psicométricamente.
+          evaluación moral. Las posiciones de los perfiles son una codificación documentada, no
+          una medición, y el test todavía no está validado psicométricamente.
         </p>
         <button
           type="button"

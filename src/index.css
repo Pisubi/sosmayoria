@@ -10,6 +10,10 @@
   --color-noche: #0f2230;
   --color-dato: #3d6b84;
   --color-linea: #e4e0d4;
+  /* Acuerdo y desacuerdo en las respuestas: tonos apagados que conviven con la paleta. */
+  --color-acuerdo: #3f7a5e;
+  --color-desacuerdo: #b0533a;
+  --color-papel: #f7f4ee;
 }
 
 html,

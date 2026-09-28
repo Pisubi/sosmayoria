@@ -39,14 +39,31 @@ def main():
         questions = [q for q in json.load(open(f'{ROOT}/src/data/{test}/questions.json'))['questions'] if not q.get('retired')]
         pf = f'{ROOT}/src/data/{test}/profiles.json'
         data = json.load(open(pf))
-        done = 0
+        measured = {pid: measure(questions, axes, e['respuestas']) for pid, e in calib['perfiles'].items()}
+        # Donde un perfil no se pudo medir (sobre todo figuras del siglo XIX, sin equivalente de
+        # época para muchas afirmaciones) se usa su semilla editorial llevada a la escala medida:
+        # por tema, el factor que mejor ajusta lo medido a la semilla en los perfiles que tienen ambos.
+        factor = {}
+        for a in axes:
+            pairs = [(m[a], e['semilla'][a]) for pid, e in calib['perfiles'].items()
+                     if (m := measured[pid])[a] is not None and e.get('semilla') and e['semilla'].get(a) is not None]
+            ss = sum(x * x for _, x in pairs)
+            factor[a] = sum(y * x for y, x in pairs) / ss if ss else 1
+        done = fallback = 0
         for p in data['profiles']:
             entry = calib['perfiles'].get(p['id'])
             if not entry:
                 continue
-            p['coords'] = measure(questions, axes, entry['respuestas'])
+            coords = measured[p['id']]
+            seed = entry.get('semilla') or {}
+            for a in axes:
+                if coords[a] is None and seed.get(a) is not None:
+                    coords[a] = max(-100, min(100, round(seed[a] * factor[a])))
+                    fallback += 1
+            p['coords'] = coords
             p['method'] = 'respuestas'
             done += 1
+        print(test, 'factor semilla→medido por tema:', {a: round(v, 2) for a, v in factor.items()}, '·', fallback, 'valores de semilla')
         with open(pf, 'w') as fh:
             json.dump(data, fh, ensure_ascii=False, indent=1); fh.write('\n')
         print(f'{test}: {done} de {len(data["profiles"])} perfiles calculados desde sus respuestas')

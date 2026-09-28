@@ -78,6 +78,8 @@ export interface TestDefinition {
   profiles: Profile[]
   /** Pares de ejes para los planos 2D. */
   planes: [string, string][]
+  /** Grupos de temas para "también cerca, por dimensión". */
+  dimensions: { label: string; axes: string[] }[]
   /** Afirmaciones que se sortean por eje: el núcleo va en todas las versiones y el detalle suma. */
   draw: {
     core: Record<string, number>
