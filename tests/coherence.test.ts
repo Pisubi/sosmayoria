@@ -76,7 +76,7 @@ const OWN_SPACE: Record<TestId, [string, string][]> = {
     ['keiko_fujimori', 'fuerza_popular'], ['orsi', 'frente_amplio_uy'], ['boric', 'fa_cl_p'],     ['santiago_pena', 'partido_colorado_py'], ['chavez', 'psuv'],
     ['stalin', 'marxismo_leninismo'], ['mao', 'maoismo'], ['leon_trotski', 'marxismo_leninismo'], ['mussolini', 'fascismo'],
     ['chavez', 'bolivarianismo'], ['peron', 'peronismo_ideologia'], ['tony_blair', 'tercera_via'],
-    ['jomeini', 'islamismo_politico'], ['sanders', 'socialismo_democratico'], ['thatcher', 'conservadurismo_liberal'],
+    ['jomeini', 'islamismo_politico'], ['bukele', 'derecha_autoritaria'], ['sanders', 'socialismo_democratico'], ['thatcher', 'conservadurismo_liberal'],
   ],
 }
 

@@ -2908,8 +2908,8 @@
   {
    "id": "islamismo_politico",
    "catalog": "intl_ideologias",
-   "name": "Islamismo político",
-   "description": "Familia de movimientos que propone que el Estado y el derecho se orienten por la sharía; abarca desde partidos electorales (Hermanos Musulmanes, Ennahda) hasta regímenes teocráticos.",
+   "name": "Integrismo religioso (teocracia)",
+   "description": "Posición que propone que la ley y la autoridad religiosas orienten al Estado y al derecho por encima de la soberanía popular: el islamismo político (Hermanos Musulmanes, la República Islámica de Irán) y, en otras tradiciones, el integrismo católico o el nacionalismo religioso radical.",
    "coords": {
     "ECO": -15,
     "COM": -15,
@@ -3648,6 +3648,28 @@
    "confidence": "media",
    "method": "seed-editorial",
    "basis": "ECO: Nacionalizaciones de CANTV, electricidad y Faja del Orinoco (2007), control de cambios (2003) y Ley de Precios Justos (2014) — Corrales y Penfold, 'Dragon in the Tropics' (2011) · COM: ALBA (2004) frente al ALCA y salida de la Comunidad Andina (2006) — ALBA-TCP; CAN · AUT: 'Unión cívico-militar', Milicia Bolivariana (2008) y Operativos de Liberación del Pueblo (2015); no renovación de la licencia de RCTV (2007) — Corrales y Penfold; ONU · DEM: Enmienda de reelección indefinida (2009), ampliación del TSJ (2004), Asamblea Constituyente de 2017 y elecciones disputadas (2018, 2024) — V-Dem; Carter Center · SOC: Constitución de 1999 (art. 77): matrimonio entre hombre y mujer; aborto prohibido salvo riesgo de vida; discurso de 'Cristo socialista' — Constitución de Venezuela (1999) · REL: Chávez invocaba a Cristo como 'el primer socialista', con choques con la jerarquía católica — Corrales y Penfold (2011) · NAC: Antiimperialismo: denuncia de la Convención Americana de DD.HH. (2012–13) y retiro de la OEA (anunciado en 2017) — OEA; CIDH · MIL: Militares en el gabinete y compras de armas rusas (unos USD 11.000 millones, 2005–13) — SIPRI; Corrales y Penfold (2011) · MIG: Misión Identidad (2004) regularizó y naturalizó a cientos de miles de inmigrantes, aunque Maduro cerró la frontera y deportó colombianos (2015) — ACNUR; Gobierno de Colombia · ECOL: Rentismo petrolero (más del 90% de las exportaciones) y Arco Minero del Orinoco (decreto de 2016) — Gaceta Oficial; OPEP · POP: 'Aló Presidente' (1999–2012), democracia plebiscitaria y 'el pueblo' frente a la 'oligarquía escuálida' — de la Torre, 'Populist Seduction in Latin America' (2010)"
+  },
+  {
+   "id": "derecha_autoritaria",
+   "catalog": "intl_ideologias",
+   "name": "Derecha autoritaria de mano dura",
+   "description": "Corriente que prioriza el orden y la seguridad por sobre los contrapesos: estados de excepción, concentración del poder en el Ejecutivo y liderazgo personalista, con una economía pragmática o promercado. Ejemplos: el fujimorismo de los años 90, el bukelismo y el gobierno de Duterte.",
+   "coords": {
+    "ECO": 35,
+    "COM": 30,
+    "AUT": 90,
+    "DEM": 75,
+    "SOC": 50,
+    "REL": 30,
+    "NAC": 50,
+    "MIL": 50,
+    "MIG": 30,
+    "ECOL": 55,
+    "POP": 85
+   },
+   "confidence": "media",
+   "method": "seed-editorial",
+   "basis": "ECO: ajuste y apertura del fujimorismo (1990–92) y pragmatismo promercado de Bukele (bitcoin, inversión extranjera) — Degregori; Meléndez · COM: apertura comercial de Fujimori y TLC de El Salvador — OMC · AUT: régimen de excepción en El Salvador desde 2022 y guerra contra las drogas de Duterte (2016) — HRW, Amnistía · DEM: autogolpe de 1992 y reelección de Bukele en 2024 pese a la prohibición constitucional — Levitsky y Way · SOC: conservadurismo social moderado (rechazo al aborto en El Salvador y Filipinas) · REL: religiosidad presente pero no programa confesional · NAC: soberanismo frente a organismos de derechos humanos (salida de la CIDH de Perú, 1999) · MIL: militarización de la seguridad interior · MIG: sin política migratoria distintiva, moderadamente restrictiva · ECOL: prioridad del crecimiento (minería metálica habilitada en El Salvador, 2024) · POP: liderazgo personalista contra partidos y élites tradicionales — Mudde y Rovira Kaltwasser"
   },
   {
    "id": "che",
