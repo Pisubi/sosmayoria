@@ -33,7 +33,11 @@ function App() {
       stage.step === 'results'
         ? encodeResult(tests[stage.data.testId], stage.data.scores)
         : window.location.pathname
-    window.history.replaceState(null, '', url)
+    try {
+      window.history.replaceState(null, '', url)
+    } catch {
+      // En un iframe aislado puede no estar permitido; el test funciona igual.
+    }
   }, [stage])
 
   function goHome() {
