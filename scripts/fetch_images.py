@@ -160,10 +160,31 @@ def page_images(lang, titles):
     return res
 
 
+_INFO = {}
+
+
+def commons_infos(fnames, width=250):
+    """Pide la info de hasta 50 archivos por consulta (la API de Commons limita el ritmo)."""
+    todo = [f for f in dict.fromkeys(fnames) if (f, width) not in _INFO]
+    for i in range(0, len(todo), 50):
+        chunk = todo[i:i + 50]
+        d = get("https://commons.wikimedia.org/w/api.php", {"action": "query", "titles": "|".join("File:" + f for f in chunk),
+                "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": width})
+        q = d["query"]; alias = {}
+        for x in q.get("normalized", []) + q.get("redirects", []): alias[x["to"]] = x["from"]
+        for pg in q.get("pages", []):
+            t = pg["title"]
+            while t in alias: t = alias[t]
+            _INFO[(t.split(":", 1)[1], width)] = _parse_info(pg)
+        for f in chunk: _INFO.setdefault((f, width), None)
+
+
 def commons_info(fname, width=250):
-    d = get("https://commons.wikimedia.org/w/api.php", {"action": "query", "titles": "File:" + fname,
-            "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": width})
-    pg = d["query"]["pages"][0]
+    commons_infos([fname], width)
+    return _INFO.get((fname, width))
+
+
+def _parse_info(pg):
     if pg.get("missing") or "imageinfo" not in pg: return None  # no está en Commons
     ii = pg["imageinfo"][0]; md = ii.get("extmetadata", {})
     val = lambda k: (md.get(k) or {}).get("value", "")
@@ -203,6 +224,10 @@ def main(dry=False):
         for k, title in titles.items():
             f, dis, miss = pi.get(title, (None, False, True))
             if f and not dis: cand[k] = (f, f"{lang}:{title}")
+    # Toda la info de Commons de una vez, en lotes de 50.
+    wanted = [f for (_, _), (f, _) in cand.items()]
+    for spec in SYMBOLS.values(): wanted += spec.get("files", [])
+    commons_infos(wanted)
     review = []
     for t, p in profiles:
         pid, kind = p["id"], kind_of(t, p)
