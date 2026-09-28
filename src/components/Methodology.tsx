@@ -66,7 +66,15 @@ export function Methodology({ onBack }: MethodologyProps) {
       </Block>
 
       <Block title="Cercanía con perfiles">
-        <Formula>d = √( Σ (vos − perfil)² / ejes comparados )      cercanía = 100 · (1 − d / 200)</Formula>
+        <Formula>{'k = Σ vos·perfil / Σ vos²  (entre 1 y 2)      d = √( Σ (k·vos − perfil)² / temas )      cercanía = 100 · (1 − d / 100)'}</Formula>
+        <p>
+          Mucha gente responde "de acuerdo" donde una figura respondería "muy de acuerdo": sus
+          puntajes quedan más cerca del centro aunque piense en la misma dirección. Por eso, antes
+          de comparar, tus puntajes se pueden estirar hasta el doble (el factor k que mejor te
+          acerca a cada perfil): cuenta sobre todo hacia dónde van tus posiciones. Una diferencia
+          media de 100 puntos por tema es 0% de cercanía; 80% o más es muy cerca y menos de 50%,
+          lejos.
+        </p>
         <p>
           Se comparan los ejes donde tenés puntaje. Si el perfil no tiene dato en alguno, ese eje
           cuenta como tu distancia al centro, con un mínimo de 40 puntos, para que un perfil con

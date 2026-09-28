@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { tests } from '../../data/tests'
-import { rankProfiles, type Match } from '../../engine/matching'
+import { closenessLabel, rankProfiles, type Match } from '../../engine/matching'
 import { ACQUIESCENCE_THRESHOLD } from '../../engine/scoring'
 import type { AxisScore, TestId } from '../../types'
 import { Avatar } from '../Avatar'
@@ -65,7 +65,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
           <Eyebrow>Tu resultado · Test {test.name}</Eyebrow>
           <h1 className="mt-6 max-w-3xl text-4xl leading-[1.1] font-normal tracking-[-0.015em] sm:text-6xl">
-            Tu perfil se acerca a{' '}
+            {top.similarity >= 50 ? 'Tu perfil se acerca a' : 'Ningún perfil está muy cerca; el más próximo es'}{' '}
             <em className="font-light text-naranja">{top.profile.name}</em>
           </h1>
           <p className="mt-6 max-w-2xl leading-7 text-marfil/75 sm:text-lg sm:leading-8">
@@ -82,7 +82,8 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
             )}
           </div>
           <p className="mt-4 text-xs leading-5 text-marfil/60">
-            Cercanía de 0 a 100% según la distancia media entre tus posiciones y las de cada perfil.
+            Cercanía de 0 a 100% según la distancia media entre tus posiciones y las de cada
+            perfil: 80% o más es muy cerca; menos de 50%, lejos.
             {data.total != null && ` Respondiste ${data.answered} de ${data.total} afirmaciones.`}
           </p>
         </div>
@@ -219,6 +220,7 @@ function Highlight({
       {match.profile.country && <p className="text-xs text-marfil/60">{match.profile.country}</p>}
       <p className="mt-4 text-3xl font-bold text-naranja tabular-nums">
         {Math.round(match.similarity)}%
+        <span className="ml-2 text-sm font-medium text-marfil/70">{closenessLabel(match.similarity)}</span>
       </p>
       <p className="mt-2 text-xs leading-5 text-marfil/60">
         Más cerca en {listOf(match.agree.slice(0, 2).map(axisName))}

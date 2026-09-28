@@ -30,8 +30,12 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
 - `puntaje_eje = 100 · Σ(w·r·e) / Σ w·|e|` sobre ítems respondidos, con `w = 3` para
   el núcleo en su tema principal y 1 en el resto; con menos del 50% de
   cobertura el eje queda indeterminado.
-- Cercanía: `100 · (1 − d/200)`, con `d` la distancia media cuadrática en los ejes
-  con puntaje del usuario; donde el perfil no tiene dato se cuenta la distancia del usuario al centro (mínimo 40). Menos del 60% de ejes comparados = comparación parcial.
+- Cercanía: `100 · (1 − d/100)`, con `d` la distancia media cuadrática en los temas
+  con puntaje del usuario, después de estirar sus puntajes por `k = Σu·p / Σu²`
+  (entre 1 y 2): quien responde "de acuerdo" en vez de "muy de acuerdo" se compara por
+  la dirección de sus posiciones. Donde el perfil no tiene dato se cuenta la distancia
+  del usuario al centro (mínimo 40). 80% o más se muestra como "muy cerca"; menos de
+  50%, "lejos".
 - Los catálogos se rankean por separado. Las figuras de dictaduras y
   totalitarismos se incluyen como cualquier otro perfil, con descripciones que
   mencionan sus crímenes documentados. Por decisión editorial quedan excluidos

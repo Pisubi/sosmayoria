@@ -176,6 +176,32 @@ describe.each(Object.values(tests))('coherencia $name', (test) => {
     expect(hits / n).toBeGreaterThanOrEqual(0.8)
   })
 
+  it('personas que responden con intensidad media (0,6) igual encuentran su perfil entre los 3 primeros en el 85%', () => {
+    // La mayoría responde "de acuerdo" donde una figura respondería "muy de acuerdo".
+    const next = rng(44)
+    const L: Response[] = [-1, -0.5, 0, 0.5, 1]
+    let hits = 0
+    let n = 0
+    for (const profile of test.profiles) {
+      for (let r = 0; r < 3; r++) {
+        const qs = drawQuestions(test, 'full', Math.floor(next() * 2 ** 31))
+        const answers = Object.fromEntries(
+          qs.map((q) => {
+            const v = profile.coords[q.primaryAxis]
+            if (v == null) return [q.id, null]
+            const x = (0.6 * Math.sign(q.effects[q.primaryAxis]) * v) / 100 + normal(next) * 0.25
+            return [q.id, L.reduce((b, l) => (Math.abs(l - x) < Math.abs(b - x) ? l : b), 0 as number) as Response]
+          }),
+        )
+        const pool = test.profiles.filter((p) => p.catalog === profile.catalog)
+        const ranked = rankProfiles(scoreAxes(test.axes, qs, answers), test.axes, pool)
+        n++
+        if (ranked.slice(0, 3).some((m) => m.profile.id === profile.id)) hits++
+      }
+    }
+    expect(hits / n).toBeGreaterThanOrEqual(0.85)
+  })
+
   it('en la versión corta, cada perfil sale entre los 3 primeros de su catálogo en al menos el 70% de las partidas', () => {
     const next = rng(21)
     const RUNS = 20

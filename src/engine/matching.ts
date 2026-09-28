@@ -25,32 +25,50 @@ const PARTIAL_THRESHOLD = 0.6
 export const MISSING_DIFF = 40
 
 /**
- * d = sqrt(Σ (u_k − p_k)² / |A|) sobre los ejes A con puntaje tuyo (0..200), contando
- * max(MISSING_DIFF, |u_k|) donde el perfil no tiene dato; sim = 100 · (1 − d/200).
+ * Tolerancia a la intensidad. Mucha gente responde "de acuerdo" donde una figura respondería
+ * "muy de acuerdo": sus puntajes quedan más cerca del centro aunque piense en la misma
+ * dirección. Antes de comparar, tus puntajes se estiran por el factor k ∈ [1, MAX_STRETCH]
+ * que mejor te acerca a cada perfil; así cuenta sobre todo la dirección de tus posiciones.
+ */
+export const MAX_STRETCH = 2
+
+/** Una diferencia media de SCALE puntos por tema equivale a 0% de cercanía. */
+const SCALE = 100
+
+/**
+ * k = Σ u·p / Σ u² (acotado a [1, MAX_STRETCH]) sobre los temas con dato en ambos;
+ * d = sqrt(Σ (k·u − p)² / |A|) sobre los temas A con puntaje tuyo, contando
+ * max(MISSING_DIFF, |k·u|) donde el perfil no tiene dato; cercanía = 100 · (1 − d / SCALE).
  */
 export function matchProfile(scores: AxisScore[], axes: Axis[], profile: Profile): Match {
   const matchable = axes.filter((a) => a.includeInMatching)
   const byAxis = new Map(scores.map((s) => [s.axisId, s.score]))
-  const diffs: { axisId: string; diff: number }[] = []
-  let missingSq = 0
-
+  const pairs: { axisId: string; u: number; p: number | null }[] = []
   for (const axis of matchable) {
     const u = byAxis.get(axis.id)
-    const p = profile.coords[axis.id]
     if (u == null) continue
-    if (p == null) missingSq += Math.max(MISSING_DIFF, Math.abs(u)) ** 2
-    else diffs.push({ axisId: axis.id, diff: Math.abs(u - p) })
+    pairs.push({ axisId: axis.id, u, p: profile.coords[axis.id] ?? null })
   }
 
-  const n = matchable.filter((a) => byAxis.get(a.id) != null).length
+  const both = pairs.filter((x) => x.p != null)
+  const uu = both.reduce((s, x) => s + x.u * x.u, 0)
+  const up = both.reduce((s, x) => s + x.u * (x.p as number), 0)
+  const k = uu > 0 ? Math.min(MAX_STRETCH, Math.max(1, up / uu)) : 1
+  const stretch = (u: number) => Math.max(-100, Math.min(100, k * u))
+
+  const diffs = both.map((x) => ({ axisId: x.axisId, diff: Math.abs(stretch(x.u) - (x.p as number)) }))
+  const missingSq = pairs
+    .filter((x) => x.p == null)
+    .reduce((s, x) => s + Math.max(MISSING_DIFF, Math.abs(stretch(x.u))) ** 2, 0)
+
   const d = diffs.length
-    ? Math.sqrt((diffs.reduce((sum, x) => sum + x.diff * x.diff, 0) + missingSq) / n)
-    : 200
+    ? Math.sqrt((diffs.reduce((sum, x) => sum + x.diff * x.diff, 0) + missingSq) / pairs.length)
+    : SCALE
   const sorted = [...diffs].sort((a, b) => a.diff - b.diff)
 
   return {
     profile,
-    similarity: 100 * (1 - d / 200),
+    similarity: Math.max(0, 100 * (1 - d / SCALE)),
     compared: diffs.map((x) => x.axisId),
     partial: diffs.length < PARTIAL_THRESHOLD * matchable.length,
     agree: sorted.slice(0, 3).map((x) => x.axisId),
@@ -59,6 +77,14 @@ export function matchProfile(scores: AxisScore[], axes: Axis[], profile: Profile
       .reverse()
       .map((x) => x.axisId),
   }
+}
+
+/** Traducción en palabras de la cercanía, para que el porcentaje no se lea como más de lo que es. */
+export function closenessLabel(similarity: number): string {
+  if (similarity >= 80) return 'Muy cerca'
+  if (similarity >= 65) return 'Cerca'
+  if (similarity >= 50) return 'Algo cerca'
+  return 'Lejos'
 }
 
 export function rankProfiles(scores: AxisScore[], axes: Axis[], profiles: Profile[]): Match[] {

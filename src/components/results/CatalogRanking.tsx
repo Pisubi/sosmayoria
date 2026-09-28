@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { Match } from '../../engine/matching'
+import { closenessLabel, type Match } from '../../engine/matching'
 import type { Axis, Catalog, TestId } from '../../types'
 import { Avatar } from '../Avatar'
 
@@ -82,8 +82,8 @@ function MatchHeader({
               {profile.name}
               {sub && <span className="ml-2 text-xs font-normal text-azul/55">{sub}</span>}
             </p>
-            <p className="text-sm font-semibold tabular-nums" title="Cercanía de 0 a 100%">
-              {pct}%
+            <p className="text-sm font-semibold whitespace-nowrap tabular-nums" title="Cercanía de 0 a 100%">
+              {pct}% <span className="font-normal text-azul/60">· {closenessLabel(match.similarity)}</span>
             </p>
           </div>
           <div className="mt-2 h-2 rounded-full bg-linea">
