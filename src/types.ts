@@ -37,6 +37,8 @@ export interface Question {
   weight?: number
   /** Ítem coyuntural que conviene revisar cada ciclo electoral. */
   volatile?: boolean
+  /** Reemplazada: ya no se sortea, pero conserva su lugar en el empaquetado de respuestas. */
+  retired?: boolean
 }
 
 export interface Catalog {
@@ -68,7 +70,10 @@ export interface TestDefinition {
   tagline: string
   description: string
   axes: Axis[]
+  /** Afirmaciones activas (las que se sortean). */
   questions: Question[]
+  /** Ids de todo el banco, retiradas incluidas, en el orden del empaquetado de respuestas. */
+  layout: string[]
   catalogs: Catalog[]
   profiles: Profile[]
   /** Pares de ejes para los planos 2D. */

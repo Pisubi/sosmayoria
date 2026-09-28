@@ -6,6 +6,8 @@ import intlAxes from './intl/axes.json'
 import intlProfiles from './intl/profiles.json'
 import intlQuestions from './intl/questions.json'
 
+const active = (questions: Question[]) => questions.filter((q) => !q.retired)
+
 export const tests: Record<TestId, TestDefinition> = {
   ar: {
     id: 'ar',
@@ -15,7 +17,8 @@ export const tests: Record<TestId, TestDefinition> = {
     description:
       'Los grandes debates argentinos —economía, instituciones, estilo político, seguridad y memoria— y comparación con tradiciones y figuras del país.',
     axes: arAxes.axes as unknown as Axis[],
-    questions: arQuestions.questions as unknown as Question[],
+    questions: active(arQuestions.questions as unknown as Question[]),
+    layout: arQuestions.questions.map((q) => q.id),
     catalogs: arProfiles.catalogs as unknown as Catalog[],
     profiles: arProfiles.profiles as unknown as Profile[],
     planes: [
@@ -24,10 +27,11 @@ export const tests: Record<TestId, TestDefinition> = {
       ['INS', 'MEM'],
     ],
     draw: {
-      core: { ECO: 4, SOC: 3, INS: 3, POP: 3, SEG: 3, MEM: 2, EXT: 3, FED: 2, IDN: 2 },
+      // Mundo va casi a la par de Economía entre los perfiles; Territorio es el tema más independiente.
+      core: { ECO: 4, SOC: 3, INS: 3, POP: 3, SEG: 3, MEM: 2, EXT: 2, FED: 3, IDN: 2 },
       detail: {
-        full: { ECO: 4, SOC: 3, INS: 3, POP: 3, SEG: 3, MEM: 2, EXT: 3, FED: 2, IDN: 2 },
-        deep: { ECO: 12, SOC: 9, INS: 9, POP: 9, SEG: 9, MEM: 8, EXT: 9, FED: 6, IDN: 4 },
+        full: { ECO: 4, SOC: 3, INS: 3, POP: 3, SEG: 3, MEM: 2, EXT: 2, FED: 3, IDN: 2 },
+        deep: { ECO: 12, SOC: 9, INS: 9, POP: 9, SEG: 9, MEM: 8, EXT: 8, FED: 7, IDN: 4 },
       },
     },
   },
@@ -39,7 +43,8 @@ export const tests: Record<TestId, TestDefinition> = {
     description:
       'Los grandes debates del mundo y comparación con ideologías, figuras históricas y actuales —argentinas incluidas— y partidos de hoy.',
     axes: intlAxes.axes as unknown as Axis[],
-    questions: intlQuestions.questions as unknown as Question[],
+    questions: active(intlQuestions.questions as unknown as Question[]),
+    layout: intlQuestions.questions.map((q) => q.id),
     catalogs: intlProfiles.catalogs as unknown as Catalog[],
     profiles: intlProfiles.profiles as unknown as Profile[],
     planes: [

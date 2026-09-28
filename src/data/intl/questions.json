@@ -1,5 +1,5 @@
 {
- "version": "intl-4.0.0",
+ "version": "intl-5.0.0",
  "questions": [
   {
    "id": "IN-ECO-01",
@@ -17,7 +17,7 @@
    "effects": {
     "ECO": 1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "IN-ECO-03",
@@ -26,7 +26,7 @@
    "effects": {
     "ECO": 1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "IN-ECO-04",
@@ -34,8 +34,7 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-ECO-05",
@@ -61,7 +60,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "IN-ECO-08",
@@ -69,7 +69,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   }
+   },
+   "core": true
   },
   {
    "id": "IN-ECO-09",
@@ -85,7 +86,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-ECO-11",
@@ -152,7 +154,7 @@
    "effects": {
     "COM": 1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "IN-COM-03",
@@ -170,8 +172,7 @@
    "effects": {
     "COM": -1,
     "NAC": 0.3
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-COM-05",
@@ -229,7 +230,8 @@
    "primaryAxis": "COM",
    "effects": {
     "COM": 1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-COM-12",
@@ -254,7 +256,8 @@
    "effects": {
     "COM": -1,
     "NAC": 0.2
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-COM-15",
@@ -271,7 +274,8 @@
    "primaryAxis": "COM",
    "effects": {
     "COM": -1
-   }
+   },
+   "core": true
   },
   {
    "id": "IN-AUT-01",
@@ -308,7 +312,7 @@
    "effects": {
     "AUT": -1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "IN-AUT-05",
@@ -326,7 +330,7 @@
    "effects": {
     "AUT": -1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "IN-AUT-07",
@@ -391,7 +395,8 @@
    "primaryAxis": "AUT",
    "effects": {
     "AUT": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-AUT-15",
@@ -399,7 +404,8 @@
    "primaryAxis": "AUT",
    "effects": {
     "AUT": 1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-AUT-16",
@@ -415,8 +421,7 @@
    "primaryAxis": "DEM",
    "effects": {
     "DEM": 1
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-DEM-02",
@@ -424,8 +429,7 @@
    "primaryAxis": "DEM",
    "effects": {
     "DEM": 1
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-DEM-03",
@@ -442,8 +446,7 @@
    "primaryAxis": "DEM",
    "effects": {
     "DEM": -1
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-DEM-05",
@@ -510,7 +513,8 @@
    "primaryAxis": "DEM",
    "effects": {
     "DEM": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-DEM-13",
@@ -519,7 +523,8 @@
    "effects": {
     "DEM": 1,
     "POP": 0.2
-   }
+   },
+   "core": true
   },
   {
    "id": "IN-DEM-14",
@@ -527,7 +532,8 @@
    "primaryAxis": "DEM",
    "effects": {
     "DEM": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-DEM-15",
@@ -536,7 +542,8 @@
    "effects": {
     "DEM": 1,
     "NAC": 0.3
-   }
+   },
+   "core": true
   },
   {
    "id": "IN-DEM-16",
@@ -623,7 +630,8 @@
    "primaryAxis": "SOC",
    "effects": {
     "SOC": 1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-SOC-10",
@@ -698,8 +706,7 @@
    "effects": {
     "REL": 1,
     "SOC": 0.2
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-REL-03",
@@ -734,8 +741,7 @@
    "primaryAxis": "REL",
    "effects": {
     "REL": -1
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-REL-07",
@@ -743,7 +749,8 @@
    "primaryAxis": "REL",
    "effects": {
     "REL": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "IN-REL-08",
@@ -751,7 +758,8 @@
    "primaryAxis": "REL",
    "effects": {
     "REL": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-REL-09",
@@ -783,7 +791,8 @@
    "primaryAxis": "REL",
    "effects": {
     "REL": -1
-   }
+   },
+   "core": true
   },
   {
    "id": "IN-REL-13",
@@ -816,7 +825,8 @@
    "primaryAxis": "REL",
    "effects": {
     "REL": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-NAC-01",
@@ -833,8 +843,7 @@
    "primaryAxis": "NAC",
    "effects": {
     "NAC": 1
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-NAC-03",
@@ -851,8 +860,7 @@
    "primaryAxis": "NAC",
    "effects": {
     "NAC": -1
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-NAC-05",
@@ -862,7 +870,7 @@
     "NAC": -1,
     "ECOL": -0.2
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "IN-NAC-06",
@@ -879,7 +887,8 @@
    "primaryAxis": "NAC",
    "effects": {
     "NAC": 1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-NAC-08",
@@ -904,7 +913,8 @@
    "effects": {
     "NAC": -1,
     "AUT": -0.2
-   }
+   },
+   "core": true
   },
   {
    "id": "IN-NAC-11",
@@ -946,7 +956,8 @@
    "primaryAxis": "NAC",
    "effects": {
     "NAC": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "IN-NAC-16",
@@ -954,7 +965,8 @@
    "primaryAxis": "NAC",
    "effects": {
     "NAC": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-MIL-01",
@@ -981,8 +993,7 @@
    "effects": {
     "MIL": 1,
     "AUT": 0.2
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-MIL-04",
@@ -990,8 +1001,7 @@
    "primaryAxis": "MIL",
    "effects": {
     "MIL": -1
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-MIL-05",
@@ -1018,7 +1028,8 @@
    "primaryAxis": "MIL",
    "effects": {
     "MIL": 1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-MIL-08",
@@ -1026,7 +1037,8 @@
    "primaryAxis": "MIL",
    "effects": {
     "MIL": -1
-   }
+   },
+   "core": true
   },
   {
    "id": "IN-MIL-09",
@@ -1075,7 +1087,8 @@
    "primaryAxis": "MIL",
    "effects": {
     "MIL": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-MIL-15",
@@ -1110,8 +1123,7 @@
    "primaryAxis": "MIG",
    "effects": {
     "MIG": 1
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-MIG-03",
@@ -1120,7 +1132,7 @@
    "effects": {
     "MIG": 1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "IN-MIG-04",
@@ -1155,7 +1167,8 @@
    "primaryAxis": "MIG",
    "effects": {
     "MIG": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "IN-MIG-08",
@@ -1206,7 +1219,8 @@
    "effects": {
     "MIG": 1,
     "AUT": 0.2
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-MIG-14",
@@ -1247,8 +1261,7 @@
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": 1
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-ECOL-03",
@@ -1292,7 +1305,8 @@
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "IN-ECOL-08",
@@ -1365,7 +1379,8 @@
    "primaryAxis": "ECOL",
    "effects": {
     "ECOL": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-POP-01",
@@ -1373,8 +1388,7 @@
    "primaryAxis": "POP",
    "effects": {
     "POP": 1
-   },
-   "core": true
+   }
   },
   {
    "id": "IN-POP-02",
@@ -1392,7 +1406,7 @@
    "effects": {
     "POP": 1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "IN-POP-04",
@@ -1402,7 +1416,7 @@
     "POP": -1,
     "DEM": -0.2
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "IN-POP-05",
@@ -1436,7 +1450,8 @@
    "primaryAxis": "POP",
    "effects": {
     "POP": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-POP-09",
@@ -1444,7 +1459,8 @@
    "primaryAxis": "POP",
    "effects": {
     "POP": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "IN-POP-10",
@@ -1468,7 +1484,8 @@
    "primaryAxis": "POP",
    "effects": {
     "POP": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "IN-POP-13",
@@ -1498,6 +1515,282 @@
   {
    "id": "IN-POP-16",
    "text": "Las personas con formación profesional y académica aportan un conocimiento valioso para gobernar.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1
+   },
+   "retired": true
+  },
+  {
+   "id": "IN-ECO-17",
+   "text": "La inteligencia artificial debería regularse de forma estricta, aunque eso frene su desarrollo.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "IN-AUT-17",
+   "text": "La venta de marihuana debería ser legal y regulada por el Estado.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1,
+    "SOC": -0.2
+   }
+  },
+  {
+   "id": "IN-MIG-17",
+   "text": "Las ayudas sociales deberían reservarse para quienes tienen la ciudadanía del país.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": 1,
+    "NAC": 0.2
+   }
+  },
+  {
+   "id": "IN-MIL-17",
+   "text": "La OTAN es necesaria para mantener la paz.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": 1,
+    "NAC": -0.2
+   }
+  },
+  {
+   "id": "IN-ECO-18",
+   "text": "Las empresas del Estado deberían venderse a privados, incluso las que dan ganancias.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-ECO-19",
+   "text": "El Estado no debería fijar precios máximos, ni siquiera para alimentos básicos.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "IN-ECO-20",
+   "text": "El Estado debería pagarle a cada persona un ingreso básico, trabaje o no.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "IN-COM-17",
+   "text": "Bajar aranceles conviene aunque algunas fábricas locales tengan que cerrar.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": 1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-COM-18",
+   "text": "Un país debería mantener sus aranceles bajos aunque otros países suban los suyos.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": 1
+   }
+  },
+  {
+   "id": "IN-COM-19",
+   "text": "Las personas y empresas extranjeras no deberían poder comprar tierras en el país.",
+   "primaryAxis": "COM",
+   "effects": {
+    "COM": -1,
+    "NAC": 0.2
+   }
+  },
+  {
+   "id": "IN-AUT-18",
+   "text": "Los gobiernos no deberían guardar registros masivos de las comunicaciones, ni siquiera para prevenir el terrorismo.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-AUT-19",
+   "text": "Nadie debería ir preso sin un juicio con todas las garantías, aunque se lo acuse de terrorismo.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-AUT-20",
+   "text": "El Estado no debería prohibirle a un adulto algo que solo lo perjudica a él mismo.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": -1
+   }
+  },
+  {
+   "id": "IN-AUT-21",
+   "text": "La policía debería poder pedirle documentos a cualquiera en la calle sin motivo.",
+   "primaryAxis": "AUT",
+   "effects": {
+    "AUT": 1
+   }
+  },
+  {
+   "id": "IN-DEM-17",
+   "text": "Un gobierno debería aceptar su derrota electoral aunque sospeche fraude, si la justicia no lo confirma.",
+   "primaryAxis": "DEM",
+   "effects": {
+    "DEM": -1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-DEM-18",
+   "text": "Los jueces de la corte suprema deberían elegirse con un acuerdo amplio entre gobierno y oposición.",
+   "primaryAxis": "DEM",
+   "effects": {
+    "DEM": -1
+   }
+  },
+  {
+   "id": "IN-SOC-17",
+   "text": "Las leyes deberían hacer más difícil divorciarse.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1,
+    "REL": 0.2
+   }
+  },
+  {
+   "id": "IN-REL-17",
+   "text": "Los argumentos religiosos no deberían pesar al decidir leyes como las del aborto o la eutanasia.",
+   "primaryAxis": "REL",
+   "effects": {
+    "REL": -1,
+    "SOC": -0.2
+   }
+  },
+  {
+   "id": "IN-REL-18",
+   "text": "Ninguna creencia religiosa debería eximir de cumplir una ley, como la de vacunación obligatoria.",
+   "primaryAxis": "REL",
+   "effects": {
+    "REL": -1
+   }
+  },
+  {
+   "id": "IN-NAC-17",
+   "text": "Los acuerdos climáticos internacionales deberían cumplirse aunque obliguen a cambiar leyes nacionales.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": -1,
+    "ECOL": -0.2
+   },
+   "core": true
+  },
+  {
+   "id": "IN-NAC-18",
+   "text": "La ONU tiene demasiada influencia sobre las decisiones de cada país.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": 1
+   }
+  },
+  {
+   "id": "IN-NAC-19",
+   "text": "Un país debería pedir perdón públicamente por los crímenes de su pasado.",
+   "primaryAxis": "NAC",
+   "effects": {
+    "NAC": -1
+   }
+  },
+  {
+   "id": "IN-MIL-18",
+   "text": "Mi país debería estar dispuesto a usar la fuerza para defender a un aliado atacado.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": 1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-MIL-19",
+   "text": "Un país puede vivir mejor sin ejército.",
+   "primaryAxis": "MIL",
+   "effects": {
+    "MIL": -1
+   }
+  },
+  {
+   "id": "IN-MIG-18",
+   "text": "Los inmigrantes sin papeles no deberían recibir atención gratuita en hospitales públicos, salvo emergencias.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": 1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-MIG-19",
+   "text": "Los inmigrantes sin papeles deberían ser deportados aunque lleven años trabajando en el país.",
+   "primaryAxis": "MIG",
+   "effects": {
+    "MIG": 1,
+    "AUT": 0.2
+   }
+  },
+  {
+   "id": "IN-ECOL-17",
+   "text": "Al menos un tercio del territorio de cada país debería protegerse por ley como área natural.",
+   "primaryAxis": "ECOL",
+   "effects": {
+    "ECOL": -1
+   }
+  },
+  {
+   "id": "IN-POP-17",
+   "text": "Haría falta reemplazar a casi toda la clase política actual.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": 1
+   },
+   "core": true
+  },
+  {
+   "id": "IN-POP-18",
+   "text": "Los partidos que pierden las elecciones deberían tener influencia real en las decisiones del gobierno.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1,
+    "DEM": -0.2
+   },
+   "core": true
+  },
+  {
+   "id": "IN-POP-19",
+   "text": "Los adversarios políticos merecen respeto aunque defiendan ideas que me parecen dañinas.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1
+   }
+  },
+  {
+   "id": "IN-POP-20",
+   "text": "Prefiero un gobierno que negocie cada ley con la oposición a uno que imponga su programa.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1
+   }
+  },
+  {
+   "id": "IN-POP-21",
+   "text": "Los gobiernos deberían estar integrados sobre todo por especialistas y no por militantes.",
    "primaryAxis": "POP",
    "effects": {
     "POP": -1

@@ -32,7 +32,7 @@ MIN_COVERAGE = 0.5
 def load(test):
     axes = json.load(open(f'{ROOT}/src/data/{test}/axes.json'))['axes']
     questions = json.load(open(f'{ROOT}/src/data/{test}/questions.json'))['questions']
-    return [a['id'] for a in axes], questions
+    return [a['id'] for a in axes], questions  # incluye las retiradas: conservan su lugar
 
 
 def decode(hex_str, questions):
@@ -42,10 +42,13 @@ def decode(hex_str, questions):
         raw = bytes.fromhex(hex_str.removeprefix('\\x'))
     except ValueError:
         return None
-    if len(raw) != (len(questions) + 1) // 2:
+    # Las filas de antes de que creciera el banco son más cortas: lo que falta no se preguntó.
+    if not raw or len(raw) > (len(questions) + 1) // 2:
         return None
     asked, core = {}, set()
     for i, q in enumerate(questions):
+        if i // 2 >= len(raw):
+            break
         c = raw[i // 2] >> 4 if i % 2 == 0 else raw[i // 2] & 15
         if (c & 7) == 7:
             return None

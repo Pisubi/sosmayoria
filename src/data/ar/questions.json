@@ -1,5 +1,5 @@
 {
- "version": "ar-4.0.0",
+ "version": "ar-5.0.0",
  "questions": [
   {
    "id": "AR-ECO-01",
@@ -17,8 +17,7 @@
    "effects": {
     "ECO": 1,
     "EXT": 0.3
-   },
-   "core": true
+   }
   },
   {
    "id": "AR-ECO-03",
@@ -27,7 +26,7 @@
    "effects": {
     "ECO": 1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-ECO-04",
@@ -37,7 +36,7 @@
     "ECO": -1,
     "EXT": -0.2
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-ECO-05",
@@ -55,7 +54,7 @@
    "effects": {
     "ECO": -1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-ECO-07",
@@ -64,7 +63,8 @@
    "effects": {
     "ECO": 1,
     "EXT": 0.2
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-ECO-08",
@@ -88,7 +88,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-ECO-11",
@@ -96,7 +97,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-ECO-12",
@@ -104,7 +106,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-ECO-13",
@@ -121,7 +124,8 @@
    "effects": {
     "ECO": -1,
     "SEG": -0.2
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-ECO-15",
@@ -129,7 +133,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-ECO-16",
@@ -188,7 +193,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-ECO-23",
@@ -196,7 +202,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-ECO-24",
@@ -228,7 +235,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-ECO-28",
@@ -287,7 +295,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-ECO-35",
@@ -295,7 +304,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-ECO-36",
@@ -303,7 +313,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-ECO-37",
@@ -376,7 +387,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-ECO-46",
@@ -384,7 +396,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-ECO-47",
@@ -448,7 +461,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-ECO-55",
@@ -472,7 +486,8 @@
    "primaryAxis": "ECO",
    "effects": {
     "ECO": 1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-ECO-58",
@@ -547,7 +562,7 @@
    "effects": {
     "SOC": 1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-SOC-03",
@@ -583,7 +598,7 @@
    "effects": {
     "SOC": -1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-SOC-07",
@@ -600,7 +615,8 @@
    "effects": {
     "SOC": -1,
     "SEG": -0.3
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-SOC-09",
@@ -624,7 +640,8 @@
    "primaryAxis": "SOC",
    "effects": {
     "SOC": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-SOC-12",
@@ -648,7 +665,8 @@
    "primaryAxis": "SOC",
    "effects": {
     "SOC": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-SOC-15",
@@ -682,8 +700,7 @@
    "effects": {
     "INS": 1,
     "POP": 0.3
-   },
-   "core": true
+   }
   },
   {
    "id": "AR-INS-03",
@@ -701,7 +718,7 @@
    "effects": {
     "INS": -1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-INS-05",
@@ -710,7 +727,7 @@
    "effects": {
     "INS": -1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-INS-06",
@@ -718,8 +735,7 @@
    "primaryAxis": "INS",
    "effects": {
     "INS": -1
-   },
-   "core": true
+   }
   },
   {
    "id": "AR-INS-07",
@@ -728,7 +744,8 @@
    "effects": {
     "INS": 1,
     "POP": 0.2
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-INS-08",
@@ -744,7 +761,8 @@
    "primaryAxis": "INS",
    "effects": {
     "INS": 1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-INS-10",
@@ -752,7 +770,8 @@
    "primaryAxis": "INS",
    "effects": {
     "INS": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-INS-11",
@@ -770,6 +789,7 @@
    "effects": {
     "INS": -1
    },
+   "core": true,
    "volatile": true
   },
   {
@@ -803,7 +823,8 @@
    "primaryAxis": "INS",
    "effects": {
     "INS": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-POP-01",
@@ -830,7 +851,7 @@
    "effects": {
     "POP": 1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-POP-04",
@@ -858,7 +879,7 @@
    "effects": {
     "POP": -1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-POP-07",
@@ -882,7 +903,8 @@
    "primaryAxis": "POP",
    "effects": {
     "POP": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-POP-10",
@@ -890,7 +912,8 @@
    "primaryAxis": "POP",
    "effects": {
     "POP": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-POP-11",
@@ -906,7 +929,8 @@
    "primaryAxis": "POP",
    "effects": {
     "POP": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-POP-13",
@@ -984,8 +1008,7 @@
    "primaryAxis": "SEG",
    "effects": {
     "SEG": -1
-   },
-   "core": true
+   }
   },
   {
    "id": "AR-SEG-06",
@@ -994,7 +1017,7 @@
    "effects": {
     "SEG": -1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-SEG-07",
@@ -1011,7 +1034,8 @@
    "primaryAxis": "SEG",
    "effects": {
     "SEG": -1
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-SEG-09",
@@ -1019,7 +1043,8 @@
    "primaryAxis": "SEG",
    "effects": {
     "SEG": 1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-SEG-10",
@@ -1035,7 +1060,8 @@
    "primaryAxis": "SEG",
    "effects": {
     "SEG": 1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-SEG-12",
@@ -1043,7 +1069,8 @@
    "primaryAxis": "SEG",
    "effects": {
     "SEG": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-SEG-13",
@@ -1092,8 +1119,7 @@
    "primaryAxis": "MEM",
    "effects": {
     "MEM": 1
-   },
-   "core": true
+   }
   },
   {
    "id": "AR-MEM-03",
@@ -1137,7 +1163,8 @@
    "primaryAxis": "MEM",
    "effects": {
     "MEM": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-MEM-08",
@@ -1145,7 +1172,8 @@
    "primaryAxis": "MEM",
    "effects": {
     "MEM": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-MEM-09",
@@ -1161,7 +1189,8 @@
    "primaryAxis": "MEM",
    "effects": {
     "MEM": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-MEM-11",
@@ -1177,7 +1206,8 @@
    "primaryAxis": "MEM",
    "effects": {
     "MEM": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-MEM-13",
@@ -1236,7 +1266,7 @@
    "effects": {
     "EXT": 1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-EXT-04",
@@ -1256,7 +1286,7 @@
     "EXT": -1,
     "ECO": -0.1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-EXT-06",
@@ -1289,7 +1319,8 @@
    "primaryAxis": "EXT",
    "effects": {
     "EXT": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-EXT-10",
@@ -1315,7 +1346,8 @@
    "primaryAxis": "EXT",
    "effects": {
     "EXT": -1
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-EXT-13",
@@ -1323,7 +1355,8 @@
    "primaryAxis": "EXT",
    "effects": {
     "EXT": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-EXT-14",
@@ -1342,7 +1375,8 @@
     "EXT": 1,
     "ECO": 0.3
    },
-   "volatile": true
+   "volatile": true,
+   "retired": true
   },
   {
    "id": "AR-EXT-16",
@@ -1351,7 +1385,8 @@
    "effects": {
     "EXT": -1,
     "ECO": -0.2
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-FED-01",
@@ -1360,8 +1395,7 @@
    "effects": {
     "FED": 1,
     "ECO": 0.2
-   },
-   "core": true
+   }
   },
   {
    "id": "AR-FED-02",
@@ -1370,7 +1404,7 @@
    "effects": {
     "FED": 1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-FED-03",
@@ -1379,7 +1413,7 @@
    "effects": {
     "FED": 1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-FED-04",
@@ -1397,7 +1431,7 @@
    "effects": {
     "FED": -1
    },
-   "core": true
+   "retired": true
   },
   {
    "id": "AR-FED-06",
@@ -1415,7 +1449,8 @@
    "effects": {
     "FED": 1,
     "ECO": -0.2
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-FED-08",
@@ -1423,7 +1458,8 @@
    "primaryAxis": "FED",
    "effects": {
     "FED": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-FED-09",
@@ -1431,7 +1467,8 @@
    "primaryAxis": "FED",
    "effects": {
     "FED": 1
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-FED-10",
@@ -1439,7 +1476,8 @@
    "primaryAxis": "FED",
    "effects": {
     "FED": -1
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-FED-11",
@@ -1464,7 +1502,8 @@
    "effects": {
     "FED": 1,
     "ECO": 0.2
-   }
+   },
+   "core": true
   },
   {
    "id": "AR-FED-14",
@@ -1489,7 +1528,8 @@
    "primaryAxis": "FED",
    "effects": {
     "FED": -1
-   }
+   },
+   "retired": true
   },
   {
    "id": "AR-IDN-01",
@@ -1544,6 +1584,457 @@
     "IDN": -1
    },
    "core": true
+  },
+  {
+   "id": "AR-ECO-65",
+   "text": "La universidad pública debería seguir siendo gratuita, también para quienes pueden pagarla.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-ECO-66",
+   "text": "La ley de glaciares debería flexibilizarse para permitir más minería.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "AR-INS-17",
+   "text": "Quien tenga una condena por corrupción confirmada en segunda instancia no debería poder ser candidato.",
+   "primaryAxis": "INS",
+   "effects": {
+    "INS": -1
+   }
+  },
+  {
+   "id": "AR-INS-18",
+   "text": "En la Argentina hay jueces que persiguen a dirigentes por razones políticas.",
+   "primaryAxis": "INS",
+   "effects": {
+    "INS": 1,
+    "POP": 0.2
+   }
+  },
+  {
+   "id": "AR-SEG-17",
+   "text": "La Argentina debería recibir inmigrantes de países vecinos sin ponerles más requisitos.",
+   "primaryAxis": "SEG",
+   "effects": {
+    "SEG": -1
+   }
+  },
+  {
+   "id": "AR-SEG-18",
+   "text": "Los extranjeros sin residencia deberían pagar por atenderse en hospitales públicos.",
+   "primaryAxis": "SEG",
+   "effects": {
+    "SEG": 1,
+    "ECO": 0.2
+   }
+  },
+  {
+   "id": "AR-SOC-17",
+   "text": "Las escuelas públicas deberían poder dar clases de religión.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   }
+  },
+  {
+   "id": "AR-IDN-07",
+   "text": "Un gobierno peronista no puede sacar al país adelante.",
+   "primaryAxis": "IDN",
+   "effects": {
+    "IDN": 1
+   }
+  },
+  {
+   "id": "AR-IDN-08",
+   "text": "Los mejores años de la Argentina fueron con gobiernos peronistas.",
+   "primaryAxis": "IDN",
+   "effects": {
+    "IDN": -1
+   }
+  },
+  {
+   "id": "AR-ECO-67",
+   "text": "Las indemnizaciones por despido deberían reemplazarse por un fondo que el empleador aporte todos los meses.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-ECO-68",
+   "text": "Aerolíneas Argentinas debería seguir siendo del Estado.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "AR-ECO-69",
+   "text": "Sin sindicatos fuertes, los salarios serían más bajos.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-ECO-70",
+   "text": "La Argentina debería reemplazar el peso por el dólar.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1,
+    "EXT": 0.2
+   }
+  },
+  {
+   "id": "AR-ECO-71",
+   "text": "El Estado debería elegir qué industrias impulsar y darles crédito barato.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "AR-ECO-72",
+   "text": "La educación debería ser un servicio esencial, con clases garantizadas aunque haya paro.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "AR-ECO-73",
+   "text": "El Banco Central debería cerrarse.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "AR-ECO-74",
+   "text": "El Estado debería poder decretar aumentos de sueldo para los trabajadores privados.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "AR-ECO-75",
+   "text": "El Estado debería financiar a cada alumno para que su familia elija la escuela, pública o privada.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "AR-ECO-76",
+   "text": "Vale la pena pagar más impuestos para tener mejores hospitales y escuelas públicas.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "AR-ECO-77",
+   "text": "Los grandes proyectos de minería y energía deberían pagar menos impuestos para atraer inversiones.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "AR-ECO-78",
+   "text": "El Estado debería hacer obra pública aunque tenga que endeudarse.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "AR-ECO-79",
+   "text": "Los planes sociales no deberían pasar por organizaciones sociales.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "AR-ECO-80",
+   "text": "El salario mínimo debería subir aunque a algunas pymes les cueste pagarlo.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "AR-ECO-81",
+   "text": "Los repartidores de aplicaciones deberían tener los mismos derechos que un empleado en blanco.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": -1
+   }
+  },
+  {
+   "id": "AR-ECO-82",
+   "text": "Cualquier aerolínea debería poder operar rutas en el país sin permisos especiales.",
+   "primaryAxis": "ECO",
+   "effects": {
+    "ECO": 1
+   }
+  },
+  {
+   "id": "AR-SOC-18",
+   "text": "Está bien que la Constitución le dé a la Iglesia Católica un lugar especial.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": 1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-SOC-19",
+   "text": "El sistema público de salud debería cubrir tratamientos de cambio de género para adultos.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   }
+  },
+  {
+   "id": "AR-SOC-20",
+   "text": "El lenguaje inclusivo debería poder usarse en las escuelas.",
+   "primaryAxis": "SOC",
+   "effects": {
+    "SOC": -1
+   }
+  },
+  {
+   "id": "AR-INS-19",
+   "text": "La Justicia debería poder frenar un decreto del Presidente aunque tenga apoyo popular.",
+   "primaryAxis": "INS",
+   "effects": {
+    "INS": -1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-INS-20",
+   "text": "Que un mismo partido gobierne muchos años seguidos es malo, aunque gobierne bien.",
+   "primaryAxis": "INS",
+   "effects": {
+    "INS": -1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-INS-21",
+   "text": "Un gobierno que representa a la mayoría no debería frenarse por trámites y controles institucionales.",
+   "primaryAxis": "INS",
+   "effects": {
+    "INS": 1,
+    "POP": 0.2
+   }
+  },
+  {
+   "id": "AR-INS-22",
+   "text": "Los organismos que controlan al gobierno, como la Auditoría General, deberían estar a cargo de la oposición.",
+   "primaryAxis": "INS",
+   "effects": {
+    "INS": -1
+   }
+  },
+  {
+   "id": "AR-INS-23",
+   "text": "Los funcionarios no deberían descalificar a periodistas desde sus cargos.",
+   "primaryAxis": "INS",
+   "effects": {
+    "INS": -1
+   }
+  },
+  {
+   "id": "AR-POP-17",
+   "text": "Haría falta reemplazar a casi toda la dirigencia política actual, de todos los partidos.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": 1
+   }
+  },
+  {
+   "id": "AR-POP-18",
+   "text": "Para gobernar bien hay que negociar con la oposición, aunque eso obligue a ceder.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-POP-19",
+   "text": "Cerrar la grieta debería ser una prioridad, aunque haya que resignar ideas propias.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1
+   }
+  },
+  {
+   "id": "AR-POP-20",
+   "text": "Prefiero un presidente que busque consensos antes que uno que imponga su programa.",
+   "primaryAxis": "POP",
+   "effects": {
+    "POP": -1,
+    "INS": -0.2
+   }
+  },
+  {
+   "id": "AR-SEG-19",
+   "text": "Es preferible que un culpable quede libre a que un inocente vaya preso.",
+   "primaryAxis": "SEG",
+   "effects": {
+    "SEG": -1
+   }
+  },
+  {
+   "id": "AR-SEG-20",
+   "text": "Las penas deberían endurecerse aunque eso llene más las cárceles.",
+   "primaryAxis": "SEG",
+   "effects": {
+    "SEG": 1
+   }
+  },
+  {
+   "id": "AR-SEG-21",
+   "text": "Un extranjero condenado por un delito grave debería ser expulsado aunque tenga familia en el país.",
+   "primaryAxis": "SEG",
+   "effects": {
+    "SEG": 1
+   }
+  },
+  {
+   "id": "AR-SEG-22",
+   "text": "Un policía que mata a alguien en un operativo debería ir a juicio, aunque haya actuado en servicio.",
+   "primaryAxis": "SEG",
+   "effects": {
+    "SEG": -1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-MEM-17",
+   "text": "Los organismos de derechos humanos deberían seguir recibiendo fondos del Estado.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": -1
+   }
+  },
+  {
+   "id": "AR-MEM-18",
+   "text": "Nada justifica los crímenes de la última dictadura, ni siquiera la violencia guerrillera.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": -1
+   }
+  },
+  {
+   "id": "AR-MEM-19",
+   "text": "Las Fuerzas Armadas deberían pedir perdón como institución por los crímenes de la dictadura.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": -1
+   }
+  },
+  {
+   "id": "AR-EXT-17",
+   "text": "En los conflictos de Medio Oriente, la Argentina debería respaldar a Israel.",
+   "primaryAxis": "EXT",
+   "effects": {
+    "EXT": 1
+   }
+  },
+  {
+   "id": "AR-EXT-18",
+   "text": "América Latina debería ser la prioridad de la política exterior argentina.",
+   "primaryAxis": "EXT",
+   "effects": {
+    "EXT": -1,
+    "ECO": -0.1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-EXT-19",
+   "text": "Un acuerdo comercial con Estados Unidos conviene aunque complique la relación con China.",
+   "primaryAxis": "EXT",
+   "effects": {
+    "EXT": 1,
+    "ECO": 0.2
+   },
+   "volatile": true
+  },
+  {
+   "id": "AR-EXT-20",
+   "text": "La Argentina debería comerciar con sus vecinos en monedas locales en lugar de dólares.",
+   "primaryAxis": "EXT",
+   "effects": {
+    "EXT": -1,
+    "ECO": -0.2
+   }
+  },
+  {
+   "id": "AR-FED-17",
+   "text": "Lo que se enseña en las escuelas debería definirse a nivel nacional, igual en todas las provincias.",
+   "primaryAxis": "FED",
+   "effects": {
+    "FED": 1
+   }
+  },
+  {
+   "id": "AR-FED-18",
+   "text": "Ante una crisis, la Nación debería poder imponer sus decisiones a las provincias.",
+   "primaryAxis": "FED",
+   "effects": {
+    "FED": 1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-FED-19",
+   "text": "La coparticipación debería favorecer a las provincias más pobres, aunque Buenos Aires reciba menos por habitante.",
+   "primaryAxis": "FED",
+   "effects": {
+    "FED": -1
+   }
+  },
+  {
+   "id": "AR-FED-20",
+   "text": "La Nación debería manejar los puertos y las rutas principales, sin participación de las provincias.",
+   "primaryAxis": "FED",
+   "effects": {
+    "FED": 1
+   }
+  },
+  {
+   "id": "AR-FED-21",
+   "text": "Los gobernadores deberían tener más peso que el Presidente en lo que afecta a sus provincias.",
+   "primaryAxis": "FED",
+   "effects": {
+    "FED": -1
+   }
+  },
+  {
+   "id": "AR-FED-22",
+   "text": "Las provincias deberían poder firmar acuerdos de comercio e inversión con otros países.",
+   "primaryAxis": "FED",
+   "effects": {
+    "FED": -1
+   }
   }
  ]
 }
