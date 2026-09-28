@@ -21,7 +21,7 @@ export function deJugadores(conteo: Conteo | undefined): { pct: number; n: numbe
 
 /**
  * Puntos por carta: 100 si acertás exacto, 2,5 puntos menos por cada punto de error;
- * errarle por 40 o más da 0. Adivinar 50 siempre rinde, en promedio, unos 55 puntos.
+ * errarle por 40 o más da 0. Con el banco actual, decir 50% en todas rinde unos 57 puntos.
  */
 export function puntos(prediccion: number, realA: number): number {
   return Math.max(0, Math.round(100 - 2.5 * Math.abs(prediccion - realA)))

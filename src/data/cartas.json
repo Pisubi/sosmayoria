@@ -431,7 +431,8 @@
     "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
     "pregunta_original": "¿Usted cree en…? La vida después de la muerte",
     "nota": "El informe publica sólo el % afirmativo; B es el complemento (no + ns). Dato 2019."
-   }
+   },
+   "retirada": true
   },
   {
    "id": "crees-en-la-astrologia",
@@ -699,6 +700,2429 @@
   },
   {
    "id": "chicos-de-3er-grado-tienen-celular-propi",
+   "tipo": "duelo",
+   "pregunta": "Chicos de 3er grado: ¿tienen celular propio?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "vida",
+   "ref": {
+    "a": 59,
+    "b": 41,
+    "resto": 0,
+    "encuestadora": "Argentinos por la Educación (datos Aprender 2024)",
+    "fecha": "2024",
+    "muestra": "evaluación Aprender 2024, alumnos de 3er grado",
+    "alcance": "nacional",
+    "url": "https://chequeado.com/el-explicador/celulares-en-la-infancia-el-59-de-los-alumnos-argentinos-de-3er-grado-de-primaria-tiene-un-telefono-movil-propio/",
+    "pregunta_original": "Tenencia de celular propio entre alumnos de 3er grado",
+    "nota": "Dato de hábito, no de opinión. B = usa el de un familiar 23% + no tiene acceso 18%."
+   }
+  },
+  {
+   "id": "estuvo-bien-no-dolarizar-la-economia-y-m",
+   "tipo": "afirmacion",
+   "pregunta": "Estuvo bien no dolarizar la economía y mantener el peso.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 67,
+    "b": 16,
+    "resto": 17,
+    "encuestadora": "UdeSA - ESPOP",
+    "fecha": "2026-05",
+    "muestra": "1.006 casos, online, nacional (6-8 may 2026), ponderado por voto 2025",
+    "alcance": "nacional",
+    "url": "https://www.udesa.edu.ar/sites/default/files/2026-05/51.%20UdeSA%20ESPOP%20Mayo%202026.pdf",
+    "pregunta_original": "Respecto de la decisión de no dolarizar la economía, y mantener el peso como moneda, dirías que estás de acuerdo o en desacuerdo.",
+    "nota": "Grupo de control del experimento (sin argumento previo). De acuerdo = muy (39) + algo (28); en desacuerdo = algo (9) + muy (7); resto = no sé (11) + prefiero no responder (6)."
+   }
+  },
+  {
+   "id": "la-argentina-necesita-una-reforma-labora",
+   "tipo": "afirmacion",
+   "pregunta": "La Argentina necesita una reforma laboral.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 61.8,
+    "b": 30.6,
+    "resto": 7.6,
+    "encuestadora": "Explanans",
+    "fecha": "2025-11",
+    "muestra": "6.145 casos, 25 aglomerados urbanos / 91 ciudades (7-15 nov 2025)",
+    "alcance": "nacional urbano",
+    "url": "https://www.perfil.com/noticias/cordoba/encuesta-nacional-el-61-apoya-una-reforma-laboral-pero-el-43-respalda-la-propuesta-de-milei.phtml",
+    "pregunta_original": "Posición sobre la reforma laboral.",
+    "nota": "De acuerdo = 43,1% apoya la propuesta oficial + 18,7% quiere una reforma pero distinta a la del gobierno; en desacuerdo = se opone a cualquier reforma (30,6). Resto = no tiene información suficiente."
+   }
+  },
+  {
+   "id": "hay-que-permitir-jornadas-laborales-de-1",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que permitir jornadas laborales de 12 horas.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 22.3,
+    "b": 71.5,
+    "resto": 6.2,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2025-02",
+    "muestra": "2.400 casos, mixto 25% CAWI / 75% mailing, nacional, mayores de 16 (30 ene-3 feb 2025)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2025/02/DDD-Febrero-2025-2.pdf",
+    "pregunta_original": "El gobierno de Milei está preparando una nueva reforma laboral. ¿Qué tan de acuerdo estaría Ud. con la siguiente medida? Jornadas de 12 hs.",
+    "nota": "Resto = no sabe."
+   }
+  },
+  {
+   "id": "hay-que-bajar-los-aportes-patronales",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que bajar los aportes patronales.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 39.3,
+    "b": 53.1,
+    "resto": 7.6,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2025-02",
+    "muestra": "2.400 casos, mixto 25% CAWI / 75% mailing, nacional, mayores de 16 (30 ene-3 feb 2025)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2025/02/DDD-Febrero-2025-2.pdf",
+    "pregunta_original": "El gobierno de Milei está preparando una nueva reforma laboral. ¿Qué tan de acuerdo estaría Ud. con la siguiente medida? Baja de aportes patronales.",
+    "nota": "Resto = no sabe."
+   }
+  },
+  {
+   "id": "tienen-que-volver-las-afjp-jubilacion-pr",
+   "tipo": "afirmacion",
+   "pregunta": "Tienen que volver las AFJP (jubilación privada).",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 33.1,
+    "b": 58.9,
+    "resto": 8.0,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2025-02",
+    "muestra": "2.400 casos, mixto 25% CAWI / 75% mailing, nacional, mayores de 16 (30 ene-3 feb 2025)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2025/02/DDD-Febrero-2025-2.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo estaría Ud. con la siguiente medida? Regreso de las AFJP (jubilación privada con aportes).",
+    "nota": "Resto = no sabe."
+   }
+  },
+  {
+   "id": "estoy-de-acuerdo-con-la-reforma-jubilato",
+   "tipo": "afirmacion",
+   "pregunta": "Estoy de acuerdo con la reforma jubilatoria que impulsa el gobierno.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 32,
+    "b": 67,
+    "resto": 1,
+    "encuestadora": "Management & Fit",
+    "fecha": "2025-12",
+    "muestra": "no especificada en la fuente (publicado 19/12/2025)",
+    "alcance": "nacional",
+    "url": "https://noticias.perfil.com/noticias/politica/encuesta-el-52-por-ciento-desaprueba-la-reforma-laboral-y-el-63-la-jubilatoria.phtml",
+    "pregunta_original": "Acuerdo con la reforma previsional.",
+    "nota": "La nota dice 67% de desacuerdo en el cuerpo (el título dice 63%); se usa el dato del cuerpo. Resto calculado por diferencia."
+   }
+  },
+  {
+   "id": "estoy-de-acuerdo-con-la-reforma-tributar",
+   "tipo": "afirmacion",
+   "pregunta": "Estoy de acuerdo con la reforma tributaria que impulsa el gobierno.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 47,
+    "b": 41,
+    "resto": 12,
+    "encuestadora": "Management & Fit",
+    "fecha": "2025-12",
+    "muestra": "no especificada en la fuente (publicado 19/12/2025)",
+    "alcance": "nacional",
+    "url": "https://noticias.perfil.com/noticias/politica/encuesta-el-52-por-ciento-desaprueba-la-reforma-laboral-y-el-63-la-jubilatoria.phtml",
+    "pregunta_original": "Aprobación de la reforma tributaria.",
+    "nota": "Resto calculado por diferencia (ns/nc)."
+   }
+  },
+  {
+   "id": "estuvo-bien-vetar-el-aumento-a-los-jubil",
+   "tipo": "afirmacion",
+   "pregunta": "Estuvo bien vetar el aumento a los jubilados.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 24.3,
+    "b": 71.1,
+    "resto": 4.6,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2024-09",
+    "muestra": "2.300 casos, 50% CAWI / 50% mailing, nacional, mayores de 16 (6-9 sep 2024)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/09/DDD-SEPTIEMBRE.pdf",
+    "pregunta_original": "¿Podría indicar su nivel de aprobación de las siguientes políticas que ya están en marcha del gobierno de Javier Milei? Veto del aumento a los jubilados.",
+    "nota": "Resto = no sabe."
+   }
+  },
+  {
+   "id": "reducir-el-deficit-fiscal-es-una-buena-p",
+   "tipo": "afirmacion",
+   "pregunta": "Reducir el déficit fiscal es una buena política.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 51.5,
+    "b": 33,
+    "resto": 15.5,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2024-09",
+    "muestra": "2.300 casos, 50% CAWI / 50% mailing, nacional, mayores de 16 (6-9 sep 2024)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/09/DDD-SEPTIEMBRE.pdf",
+    "pregunta_original": "¿Podría indicar su nivel de aprobación de las siguientes políticas que ya están en marcha del gobierno de Javier Milei? Reducción del déficit fiscal.",
+    "nota": "Resto = no sabe."
+   }
+  },
+  {
+   "id": "hay-que-eliminar-los-subsidios-a-la-luz",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que eliminar los subsidios a la luz y el gas.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 27.6,
+    "b": 68.3,
+    "resto": 4.1,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2024-09",
+    "muestra": "2.300 casos, 50% CAWI / 50% mailing, nacional, mayores de 16 (6-9 sep 2024)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/09/DDD-SEPTIEMBRE.pdf",
+    "pregunta_original": "¿Podría indicar su nivel de aprobación de las siguientes políticas que ya están en marcha del gobierno de Javier Milei? Eliminación subsidios a tarifas de luz y gas.",
+    "nota": "Resto = no sabe."
+   }
+  },
+  {
+   "id": "tienen-que-seguir-los-despidos-de-emplea",
+   "tipo": "afirmacion",
+   "pregunta": "Tienen que seguir los despidos de empleados públicos.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 45.3,
+    "b": 52.3,
+    "resto": 2.4,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2024-07",
+    "muestra": "1.400 casos, CAWI, nacional, mayores de 16 (15-16 jul 2024)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/07/DDD-JULIO-2nda-Parte.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo está Ud. con las siguientes políticas que propone el gobierno de Milei? Que sigan los despidos de empleados públicos.",
+    "nota": "Resto = no sabe."
+   }
+  },
+  {
+   "id": "la-argentina-deberia-pedirle-un-nuevo-pr",
+   "tipo": "afirmacion",
+   "pregunta": "La Argentina debería pedirle un nuevo préstamo al FMI.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 34.2,
+    "b": 63.8,
+    "resto": 2.0,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2025-03",
+    "muestra": "1.600 casos, mixto 70% CAWI / 30% mailing, nacional, mayores de 16 (12-14 mar 2025)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2025/03/DDD-Marzo-2025-corregido.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo está usted en que Argentina pida un nuevo préstamo al FMI?",
+    "nota": "Medido días antes del acuerdo de abril de 2025. Resto = no sabe."
+   }
+  },
+  {
+   "id": "hay-que-privatizar-aerolineas-argentinas",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que privatizar Aerolíneas Argentinas.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 38.4,
+    "b": 57.7,
+    "resto": 3.9,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2024-11",
+    "muestra": "no especificada en la fuente (publicado nov 2024)",
+    "alcance": "nacional",
+    "url": "https://aviones.com/aerolineas-argentinas-una-encuesta-revela-que-un-57-7-de-la-gente-la-quiere-estatal-y-un-38-4-no-entrevista-al-politologo-que-la-realizo/",
+    "pregunta_original": "Posición sobre la privatización de Aerolíneas Argentinas (57,7% la quiere estatal, 38,4% no).",
+    "nota": "Ficha técnica no incluida en la fuente; resto calculado por diferencia."
+   }
+  },
+  {
+   "id": "hay-que-privatizar-ypf",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que privatizar YPF.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 24.2,
+    "b": 68.2,
+    "resto": 7.6,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2023-04",
+    "muestra": "1.300 casos, domiciliario, nacional, mayores de 16 (11-16 abr 2023)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2023/04/ABRIL-2023.pdf",
+    "pregunta_original": "¿Podría decirme si está de acuerdo o en desacuerdo con las siguientes propuestas o ideas? Privatizar YPF.",
+    "nota": "Dato de 2023 (tema estable, sin mediciones públicas más recientes encontradas). Resto = no sabe."
+   }
+  },
+  {
+   "id": "se-deben-privatizar-todas-las-empresas-y",
+   "tipo": "afirmacion",
+   "pregunta": "Se deben privatizar todas las empresas y organismos del Estado.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 37.8,
+    "b": 59.5,
+    "resto": 2.7,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2024-11",
+    "muestra": "1.800 casos, 70% CAWI / 30% mailing, nacional, mayores de 16 (20-21 nov 2024)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/12/DDD-Un-Ano-de-Polarizacion.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo está Ud. con la siguiente frase? “Se deben privatizar todas las empresas y organismos estatales”.",
+    "nota": "Resto = no sabe."
+   }
+  },
+  {
+   "id": "los-ricos-deben-pagar-mas-impuestos-que",
+   "tipo": "afirmacion",
+   "pregunta": "Los ricos deben pagar más impuestos que el resto.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 74.2,
+    "b": 23.1,
+    "resto": 2.7,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2024-11",
+    "muestra": "1.800 casos, 70% CAWI / 30% mailing, nacional, mayores de 16 (20-21 nov 2024)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/12/DDD-Un-Ano-de-Polarizacion.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo está Ud. con la siguiente frase? “Los ricos deben pagar más impuestos que el resto.”",
+    "nota": "Resto = no sabe."
+   }
+  },
+  {
+   "id": "hay-que-bajar-el-impuesto-a-los-bienes-p",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que bajar el impuesto a los Bienes Personales (a la riqueza).",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 33.5,
+    "b": 58.6,
+    "resto": 7.9,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2024-09",
+    "muestra": "2.300 casos, 50% CAWI / 50% mailing, nacional, mayores de 16 (6-9 sep 2024)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/09/DDD-SEPTIEMBRE.pdf",
+    "pregunta_original": "¿Podría indicar su nivel de aprobación de las siguientes políticas que ya están en marcha del gobierno de Javier Milei? Baja impuesto Bienes Personales (riqueza).",
+    "nota": "Resto = no sabe."
+   }
+  },
+  {
+   "id": "como-deberia-abrirse-la-economia-argenti",
+   "tipo": "duelo",
+   "pregunta": "¿Cómo debería abrirse la economía argentina al mundo?",
+   "a": {
+    "texto": "Sin restricciones"
+   },
+   "b": {
+    "texto": "Cuidando recursos estratégicos"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 14.2,
+    "b": 60.5,
+    "resto": 25.3,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2026-08",
+    "muestra": "1.200 casos, online, nacional, mayores de 16 (8-10 ago 2026)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2026/08/DATAZO-Soberania-nacional.pdf",
+    "pregunta_original": "¿Con cuál de las siguientes ideas para el rumbo económico-internacional del país se siente más identificado/a? “Abrir la economía al mundo, sin restricciones” / “Abrirse al mundo pero cuidando los recursos estratégicos” / “El país debe reservar exclusivamente para sí la explotación de todos sus recursos”.",
+    "nota": "Resto = reservar exclusivamente los recursos para el país (24,5) + ninguna/no sabe (0,8)."
+   }
+  },
+  {
+   "id": "es-mas-importante-proteger-la-produccion",
+   "tipo": "afirmacion",
+   "pregunta": "Es más importante proteger la producción y la industria nacional.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 74.1,
+    "b": 23,
+    "resto": 2.9,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2026-08",
+    "muestra": "1.200 casos, online, nacional, mayores de 16 (8-10 ago 2026)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2026/08/DATAZO-Soberania-nacional.pdf",
+    "pregunta_original": "Indique su nivel de acuerdo y desacuerdo: “Es más importante proteger la producción y la industria nacional”.",
+    "nota": "Resto = no sabe."
+   }
+  },
+  {
+   "id": "que-es-mejor-para-un-pais-que-el-empleo",
+   "tipo": "duelo",
+   "pregunta": "¿Qué es mejor para un país: que el empleo lo creen…",
+   "a": {
+    "texto": "Las empresas privadas"
+   },
+   "b": {
+    "texto": "El Estado"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 54,
+    "b": 36,
+    "resto": 10,
+    "encuestadora": "Pulsar.UBA",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónico CATI + domiciliario, probabilística, nacional (27 may-4 jun 2025)",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
+    "pregunta_original": "¿Qué es, para usted, lo mejor para un país? Un país donde la mayor parte del empleo lo crean las empresas privadas / lo crea el Estado y las empresas públicas.",
+    "nota": "Resto = ns/nc."
+   }
+  },
+  {
+   "id": "que-te-genera-mas-confianza",
+   "tipo": "duelo",
+   "pregunta": "¿Qué te genera más confianza?",
+   "a": {
+    "texto": "Una empresa privada"
+   },
+   "b": {
+    "texto": "Una empresa pública"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 47,
+    "b": 42,
+    "resto": 11,
+    "encuestadora": "Pulsar.UBA",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónico CATI + domiciliario, probabilística, nacional (27 may-4 jun 2025)",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
+    "pregunta_original": "¿A usted qué le genera mayor confianza: una empresa pública o una empresa privada?",
+    "nota": "Resto = ns/nc."
+   }
+  },
+  {
+   "id": "las-empresas-de-servicios-publicos-deber",
+   "tipo": "duelo",
+   "pregunta": "Las empresas de servicios públicos deberían ser…",
+   "a": {
+    "texto": "Privadas con control estatal"
+   },
+   "b": {
+    "texto": "Del Estado"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 56,
+    "b": 31,
+    "resto": 13,
+    "encuestadora": "Pulsar.UBA",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónico CATI + domiciliario, probabilística, nacional (27 may-4 jun 2025)",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
+    "pregunta_original": "Con respecto a las empresas de servicios públicos, ¿qué cree usted que es mejor? Que permanezcan privatizadas, pero con mayores controles del Estado / Que estén en manos del Estado / Que sean privadas / Ns/nc.",
+    "nota": "Resto = que sean privadas sin más (11) + ns/nc (2)."
+   }
+  },
+  {
+   "id": "con-el-mismo-sueldo-y-condiciones-que-tr",
+   "tipo": "duelo",
+   "pregunta": "Con el mismo sueldo y condiciones, ¿qué trabajo elegís?",
+   "a": {
+    "texto": "Empleo privado"
+   },
+   "b": {
+    "texto": "Empleo público"
+   },
+   "tema": "vida",
+   "ref": {
+    "a": 52,
+    "b": 43,
+    "resto": 5,
+    "encuestadora": "Pulsar.UBA",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónico CATI + domiciliario, probabilística, nacional (27 may-4 jun 2025)",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
+    "pregunta_original": "Si usted tuviera la posibilidad de elegir entre tener un empleo público o un empleo privado que le diera la misma remuneración y tengan las mismas condiciones laborales, ¿cuál de los dos elegiría?",
+    "nota": "Resto = ns/nc."
+   }
+  },
+  {
+   "id": "la-ayuda-del-estado-a-los-sectores-mas-p",
+   "tipo": "duelo",
+   "pregunta": "La ayuda del Estado a los sectores más pobres…",
+   "a": {
+    "texto": "Es necesaria"
+   },
+   "b": {
+    "texto": "Genera más problemas"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 77,
+    "b": 20,
+    "resto": 3,
+    "encuestadora": "Pulsar.UBA",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónico CATI + domiciliario, probabilística, nacional (27 may-4 jun 2025)",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
+    "pregunta_original": "¿Cuál es su postura con respecto a la ayuda del Estado a los sectores más pobres? Es necesaria a pesar de no resolver todos los problemas / Genera más problemas que soluciones.",
+    "nota": "Resto = ns/nc."
+   }
+  },
+  {
+   "id": "hay-que-hacer-mas-controles-de-precios-p",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que hacer más controles de precios para frenar la inflación.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 76.2,
+    "b": 17.2,
+    "resto": 6.6,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2023-04",
+    "muestra": "1.300 casos, domiciliario, nacional, mayores de 16 (11-16 abr 2023)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2023/04/ABRIL-2023.pdf",
+    "pregunta_original": "¿Podría decirme si está de acuerdo o en desacuerdo con las siguientes propuestas o ideas? Realizar más controles de precios para parar la inflación.",
+    "nota": "Dato de abril de 2023, en contexto de inflación alta; puede haber cambiado. Resto = no sabe."
+   }
+  },
+  {
+   "id": "que-imagen-tenes-de-los-sindicatos",
+   "tipo": "duelo",
+   "pregunta": "¿Qué imagen tenés de los sindicatos?",
+   "a": {
+    "texto": "Buena"
+   },
+   "b": {
+    "texto": "Mala"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 15,
+    "b": 78,
+    "resto": 7,
+    "encuestadora": "Explanans",
+    "fecha": "2025-11",
+    "muestra": "6.145 casos, 25 aglomerados urbanos / 91 ciudades (7-15 nov 2025)",
+    "alcance": "nacional urbano",
+    "url": "https://www.perfil.com/noticias/cordoba/encuesta-nacional-el-61-apoya-una-reforma-laboral-pero-el-43-respalda-la-propuesta-de-milei.phtml",
+    "pregunta_original": "Imagen de los sindicatos.",
+    "nota": "Mala = muy mala (49) + mala (29); buena = valoraciones positivas (15). Resto calculado por diferencia (regular/ns)."
+   }
+  },
+  {
+   "id": "hay-que-arancelar-o-provincializar-las-u",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que arancelar o provincializar las universidades públicas.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 33.3,
+    "b": 58.9,
+    "resto": 7.8,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2024-10",
+    "muestra": "1.900 casos, 50% CAWI / 50% mailing, nacional, mayores de 16 (11-13 oct 2024)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/10/FINALULTIMO-DDD-OCTUBRE-Universidad-Publica-Orgullo-Nacional-EDITABLE-copy.pdf",
+    "pregunta_original": "Con respecto al posible proyecto del gobierno para arancelar o provincializar las universidades públicas, ¿cuál es su posición? A favor / En contra / No sabe.",
+    "nota": "Resto = no sabe."
+   }
+  },
+  {
+   "id": "la-educacion-deberia-ser-servicio-esenci",
+   "tipo": "afirmacion",
+   "pregunta": "La educación debería ser servicio esencial para limitar los paros docentes.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 57.9,
+    "b": 38.1,
+    "resto": 4.0,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2024-07",
+    "muestra": "1.400 casos, CAWI, nacional, mayores de 16 (15-16 jul 2024)",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/07/DDD-JULIO-2nda-Parte.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo está Ud. con las siguientes políticas que propone el gobierno de Milei? Que la educación sea un servicio esencial para limitar los eventuales paros docentes.",
+    "nota": "Resto = no sabe."
+   }
+  },
+  {
+   "id": "hay-que-bajar-la-edad-de-imputabilidad",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que bajar la edad de imputabilidad.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 80,
+    "b": 15,
+    "resto": 5,
+    "encuestadora": "Opinaia",
+    "fecha": "2026-02",
+    "alcance": "nacional",
+    "url": "https://www.lanacion.com.ar/politica/regimen-penal-juvenil-la-baja-de-la-edad-de-imputabilidad-logra-un-apoyo-contundente-en-la-opinion-nid12022026/",
+    "pregunta_original": "Acuerdo con bajar la edad de imputabilidad (muy + bastante de acuerdo vs. poco + nada)",
+    "nota": "Relevamiento del 5 al 9 de febrero de 2026, publicado por La Nación. \"De acuerdo\" suma muy de acuerdo (67) y bastante de acuerdo (14): 80 según la fuente, por redondeo."
+   }
+  },
+  {
+   "id": "hay-que-eliminar-definitivamente-las-pas",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que eliminar definitivamente las PASO.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 54.6,
+    "b": 39.1,
+    "resto": 6.3,
+    "encuestadora": "Management & Fit",
+    "fecha": "2026-07",
+    "muestra": "no especificada en la fuente (ficha técnica no publicada)",
+    "alcance": "nacional",
+    "url": "https://eduardogerman.com/2026/09/14/paso-reforma-electoral-encuesta-management-fit-julio-2026/",
+    "pregunta_original": "Eliminación definitiva de las elecciones primarias abiertas, simultáneas y obligatorias (PASO).",
+    "nota": "Resto calculado por diferencia (ns/nc)."
+   }
+  },
+  {
+   "id": "hay-que-aplicar-ficha-limpia-para-los-ca",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que aplicar Ficha Limpia para los candidatos.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 71.8,
+    "b": 23.6,
+    "resto": 4.6,
+    "encuestadora": "Management & Fit",
+    "fecha": "2026-07",
+    "muestra": "no especificada en la fuente (ficha técnica no publicada)",
+    "alcance": "nacional",
+    "url": "https://eduardogerman.com/2026/09/14/paso-reforma-electoral-encuesta-management-fit-julio-2026/",
+    "pregunta_original": "Implementación de Ficha Limpia.",
+    "nota": "Resto calculado por diferencia (ns/nc)."
+   }
+  },
+  {
+   "id": "la-boleta-unica-de-papel-debe-ser-la-uni",
+   "tipo": "afirmacion",
+   "pregunta": "La boleta única de papel debe ser la única forma de votar.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 70.3,
+    "b": 24.5,
+    "resto": 5.2,
+    "encuestadora": "Management & Fit",
+    "fecha": "2026-07",
+    "muestra": "no especificada en la fuente (ficha técnica no publicada)",
+    "alcance": "nacional",
+    "url": "https://eduardogerman.com/2026/09/14/paso-reforma-electoral-encuesta-management-fit-julio-2026/",
+    "pregunta_original": "La boleta única de papel como único instrumento de votación.",
+    "nota": "Resto calculado por diferencia (ns/nc)."
+   }
+  },
+  {
+   "id": "las-campanas-politicas-pueden-financiars",
+   "tipo": "afirmacion",
+   "pregunta": "Las campañas políticas pueden financiarse con aportes privados.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 57.7,
+    "b": 34.3,
+    "resto": 8.0,
+    "encuestadora": "Management & Fit",
+    "fecha": "2026-07",
+    "muestra": "no especificada en la fuente (ficha técnica no publicada)",
+    "alcance": "nacional",
+    "url": "https://eduardogerman.com/2026/09/14/paso-reforma-electoral-encuesta-management-fit-julio-2026/",
+    "pregunta_original": "El financiamiento privado de las campañas.",
+    "nota": "Resto calculado por diferencia (ns/nc)."
+   }
+  },
+  {
+   "id": "el-voto-deberia-ser",
+   "tipo": "duelo",
+   "pregunta": "El voto debería ser…",
+   "a": {
+    "texto": "Obligatorio"
+   },
+   "b": {
+    "texto": "Voluntario"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 55,
+    "b": 43,
+    "resto": 2,
+    "encuestadora": "Pulsar.UBA",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónico CATI + domiciliario, probabilística, nacional (27 may-4 jun 2025)",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Informe-3-_-Los-argentinos-frente-a-las-elecciones-_-Creencias-Sociales-2025.pdf",
+    "pregunta_original": "¿Usted cree que el voto debería ser obligatorio o voluntario?",
+    "nota": "Resto = ns/nc."
+   }
+  },
+  {
+   "id": "los-jueces-nacionales-deberian-ser",
+   "tipo": "duelo",
+   "pregunta": "Los jueces nacionales deberían ser…",
+   "a": {
+    "texto": "Electos por el pueblo"
+   },
+   "b": {
+    "texto": "Designados por los poderes"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 56,
+    "b": 34,
+    "resto": 10,
+    "encuestadora": "Pulsar.UBA",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónico CATI + domiciliario, probabilística, nacional (27 may-4 jun 2025)",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Informe-3-_-Los-argentinos-frente-a-las-elecciones-_-Creencias-Sociales-2025.pdf",
+    "pregunta_original": "¿Con cuál de estas dos posturas está más de acuerdo? Los jueces nacionales deben ser electos por el pueblo por medio de elecciones / Los jueces deben ser designados por los otros poderes del Estado.",
+    "nota": "Resto = ns/nc."
+   }
+  },
+  {
+   "id": "estoy-de-acuerdo-con-el-protocolo-antipi",
+   "tipo": "afirmacion",
+   "pregunta": "Estoy de acuerdo con el protocolo antipiquetes.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 51,
+    "b": 48,
+    "resto": 1,
+    "encuestadora": "Opina Argentina",
+    "fecha": "2024-02",
+    "muestra": "2.908 casos, online, nacional (19-20 feb 2024)",
+    "alcance": "nacional",
+    "url": "https://noticias.perfil.com/noticias/politica/encuesta-51-aprueba-el-protocolo-de-patricia-bullrich-en-seguridad.phtml",
+    "pregunta_original": "Aprobación del protocolo de seguridad contra las protestas en la vía pública (protocolo antipiquetes).",
+    "nota": "Resto calculado por diferencia."
+   }
+  },
+  {
+   "id": "tiene-que-haber-acceso-al-aborto-legal",
+   "tipo": "afirmacion",
+   "pregunta": "Tiene que haber acceso al aborto legal.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 50,
+    "b": 48,
+    "resto": 2,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Creencias-25_informe-4-1.pdf",
+    "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con… 'Acceso a la interrupción voluntaria del embarazo'?",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Datos del informe escrito (50% vs 48%)."
+   }
+  },
+  {
+   "id": "una-persona-deberia-poder-decidir-su-mue",
+   "tipo": "afirmacion",
+   "pregunta": "Una persona debería poder decidir su muerte en una situación médica extrema.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 77,
+    "b": 21,
+    "resto": 2,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
+    "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con que se permita a las personas tomar decisiones sobre su propia muerte en situaciones médicas extremas?",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Eutanasia. Muy 48 + bastante 29; poco 11 + nada 10 (serie interanual: 77/21/2)."
+   }
+  },
+  {
+   "id": "dos-personas-del-mismo-sexo-deberian-pod",
+   "tipo": "afirmacion",
+   "pregunta": "Dos personas del mismo sexo deberían poder adoptar.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 69,
+    "b": 28,
+    "resto": 3,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
+    "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con que dos personas del mismo sexo puedan adoptar?",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 48 + bastante 21; poco 14 + nada 14; ns/nc 3."
+   }
+  },
+  {
+   "id": "alquilar-un-vientre-para-tener-hijos-deb",
+   "tipo": "afirmacion",
+   "pregunta": "Alquilar un vientre para tener hijos debería estar permitido.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 54,
+    "b": 43,
+    "resto": 3,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Creencias-25_informe-4-1.pdf",
+    "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con que las personas puedan alquilar vientres para tener hijos?",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 30 + bastante 24; poco 25 + nada 18."
+   }
+  },
+  {
+   "id": "el-trabajo-sexual-deberia-ser-legal",
+   "tipo": "afirmacion",
+   "pregunta": "El trabajo sexual debería ser legal.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 48,
+    "b": 47,
+    "resto": 5,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
+    "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con que el trabajo sexual debería ser legal?",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Valores del gráfico (muy 24 + bastante 24; poco 19 + nada 28; ns/nc 5). OJO: el informe escrito del mismo estudio dice 47% acuerdo y 48% rechazo; en cualquier caso, empate técnico."
+   }
+  },
+  {
+   "id": "hay-que-legalizar-el-consumo-de-marihuan",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que legalizar el consumo de marihuana.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 36,
+    "b": 61,
+    "resto": 3,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
+    "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con que se legalice el consumo de marihuana?",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 22 + bastante 14; poco 19 + nada 42. El informe escrito confirma 61% de rechazo."
+   }
+  },
+  {
+   "id": "igualdad-entre-varones-y-mujeres-que-pen",
+   "tipo": "duelo",
+   "pregunta": "Igualdad entre varones y mujeres: ¿qué pensás?",
+   "a": {
+    "texto": "Falta trabajar más"
+   },
+   "b": {
+    "texto": "Ya se hizo suficiente"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 77,
+    "b": 20,
+    "resto": 3,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
+    "pregunta_original": "¿Con cuál de las siguientes frases está más de acuerdo? 'Es necesario seguir trabajando para lograr una mayor igualdad entre varones y mujeres' / 'Ya se ha hecho suficiente en materia de igualdad entre varones y mujeres'",
+    "nota": "Resto = ns/nc (3%)."
+   }
+  },
+  {
+   "id": "con-que-frase-estas-mas-de-acuerdo",
+   "tipo": "duelo",
+   "pregunta": "¿Con qué frase estás más de acuerdo?",
+   "a": {
+    "texto": "Democracia siempre"
+   },
+   "b": {
+    "texto": "A veces, autoritarismo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 78,
+    "b": 10,
+    "resto": 12,
+    "encuestadora": "Pulsar.UBA + CELS",
+    "fecha": "2025-10",
+    "muestra": "1.143 casos, mixta (CATI 600 + online 441 + domiciliaria 102), probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/05/A-50-anos-del-golpe_-miradas-actuales-sobre-la-democracia-argentina_Segunda-entrega.pdf",
+    "pregunta_original": "¿Con cuál de las siguientes frases está más de acuerdo? 'La democracia es preferible a cualquier otra forma de gobierno' / 'En algunas circunstancias, un gobierno autoritario puede ser preferible a uno democrático' / 'Me da lo mismo…' / Ns/Nc",
+    "nota": "Resto = 'me da lo mismo' 7% + ns/nc 5%. (En junio 2025 el mismo observatorio midió 85/8/6.)"
+   }
+  },
+  {
+   "id": "si-un-gobierno-democratico-no-da-solucio",
+   "tipo": "duelo",
+   "pregunta": "Si un gobierno democrático no da soluciones…",
+   "a": {
+    "texto": "Que termine igual"
+   },
+   "b": {
+    "texto": "Que lo reemplacen"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 62,
+    "b": 36,
+    "resto": 2,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/08/Informe-2_-Los-argentinos-la-democracia-y-el-poder-presidencial-_-Creencias-Sociales-2025.pdf",
+    "pregunta_original": "¿Con cuál de las siguientes frases está más de acuerdo? 'Un gobierno democrático siempre debería terminar su mandato sin importar qué suceda' / 'Si un gobierno democrático no da soluciones a la población deberían reemplazarlo antes de que termine el mandato'",
+    "nota": "Resto = ns/nc (2%)."
+   }
+  },
+  {
+   "id": "hay-que-respetar-el-derecho-a-manifestar",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que respetar el derecho a manifestarse aunque no comparta el reclamo.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 84,
+    "b": 15,
+    "resto": 1,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/08/Informe-2_-Los-argentinos-la-democracia-y-el-poder-presidencial-_-Creencias-Sociales-2025.pdf",
+    "pregunta_original": "Nivel de acuerdo: 'Se debe respetar el derecho a manifestarse, incluso cuando yo no esté de acuerdo con el motivo del reclamo.'",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 59 + bastante 25; poco 12 + nada 3."
+   }
+  },
+  {
+   "id": "el-gobierno-funcionaria-mejor-si-decidie",
+   "tipo": "afirmacion",
+   "pregunta": "El gobierno funcionaría mejor si decidieran expertos y no políticos.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 53,
+    "b": 43,
+    "resto": 4,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/08/Informe-2_-Los-argentinos-la-democracia-y-el-poder-presidencial-_-Creencias-Sociales-2025.pdf",
+    "pregunta_original": "Nivel de acuerdo: 'El gobierno funciona mejor si las decisiones las toman expertos independientes en vez de políticos.'",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 27 + bastante 26; poco 21 + nada 22; ns/nc 4."
+   }
+  },
+  {
+   "id": "las-personas-poco-informadas-no-deberian",
+   "tipo": "afirmacion",
+   "pregunta": "Las personas poco informadas no deberían votar.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 29,
+    "b": 66,
+    "resto": 5,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/08/Informe-2_-Los-argentinos-la-democracia-y-el-poder-presidencial-_-Creencias-Sociales-2025.pdf",
+    "pregunta_original": "Nivel de acuerdo: 'Las personas poco informadas no deben votar en las elecciones.'",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 16 + bastante 13; poco 26 + nada 40; ns/nc 5."
+   }
+  },
+  {
+   "id": "si-un-fallo-judicial-es-politico-el-pres",
+   "tipo": "afirmacion",
+   "pregunta": "Si un fallo judicial es político, el presidente puede no cumplirlo.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 22,
+    "b": 71,
+    "resto": 7,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/08/Informe-2_-Los-argentinos-la-democracia-y-el-poder-presidencial-_-Creencias-Sociales-2025.pdf",
+    "pregunta_original": "Nivel de acuerdo: 'Si un fallo judicial está influenciado políticamente, el presidente tiene derecho a no cumplirlo.'",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 10 + bastante 12; poco 27 + nada 44; ns/nc 7."
+   }
+  },
+  {
+   "id": "en-la-argentina-la-justicia-es-independi",
+   "tipo": "afirmacion",
+   "pregunta": "En la Argentina la Justicia es independiente del poder político.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 52,
+    "b": 46,
+    "resto": 2,
+    "encuestadora": "Pulsar.UBA + CELS",
+    "fecha": "2025-10",
+    "muestra": "1.143 casos, mixta (CATI 600 + online 441 + domiciliaria 102), probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/05/A-50-anos-del-golpe_-miradas-actuales-sobre-la-democracia-argentina_Segunda-entrega.pdf",
+    "pregunta_original": "Entre los siguientes elementos de la democracia argentina, ¿usted está muy, bastante, poco o nada de acuerdo con que… la justicia es independiente del poder político?",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 33 + bastante 19; poco 22 + nada 24; ns/nc 2."
+   }
+  },
+  {
+   "id": "en-la-argentina-uno-puede-expresarse-lib",
+   "tipo": "afirmacion",
+   "pregunta": "En la Argentina uno puede expresarse libremente sin miedo.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 79,
+    "b": 21,
+    "resto": 0,
+    "encuestadora": "Pulsar.UBA + CELS",
+    "fecha": "2025-10",
+    "muestra": "1.143 casos, mixta (CATI 600 + online 441 + domiciliaria 102), probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/05/A-50-anos-del-golpe_-miradas-actuales-sobre-la-democracia-argentina_Segunda-entrega.pdf",
+    "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con que… las personas se pueden expresar libremente sin miedo?",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 56 + bastante 23; poco 14 + nada 7."
+   }
+  },
+  {
+   "id": "como-describirias-a-la-ultima-dictadura",
+   "tipo": "duelo",
+   "pregunta": "¿Cómo describirías a la última dictadura (1976-83)?",
+   "a": {
+    "texto": "Plan sistemático"
+   },
+   "b": {
+    "texto": "Lucha con excesos"
+   },
+   "tema": "historia",
+   "ref": {
+    "a": 61,
+    "b": 32,
+    "resto": 7,
+    "encuestadora": "Pulsar.UBA + CELS",
+    "fecha": "2025-10",
+    "muestra": "1.143 casos, mixta (CATI 600 + online 441 + domiciliaria 102), probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/05/Miradas-retrospectivas-sobre-la-dictadura-argentina_Primera-entrega.pdf",
+    "pregunta_original": "¿Cómo describiría el accionar del gobierno militar 1976-1983? 'Fue una dictadura que llevó a cabo un plan sistemático de desaparición de personas y violación de derechos humanos' / 'Fue un gobierno que encaró una lucha contra el terrorismo, en la que pudo haber habido excesos'",
+    "nota": "Resto = ns/nc (7%)."
+   }
+  },
+  {
+   "id": "en-1976-habia-motivos-que-justificaban-e",
+   "tipo": "afirmacion",
+   "pregunta": "En 1976 había motivos que justificaban el golpe militar.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "historia",
+   "ref": {
+    "a": 27,
+    "b": 63,
+    "resto": 10,
+    "encuestadora": "Pulsar.UBA + CELS",
+    "fecha": "2025-10",
+    "muestra": "1.143 casos, mixta (CATI 600 + online 441 + domiciliaria 102), probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/05/Miradas-retrospectivas-sobre-la-dictadura-argentina_Primera-entrega.pdf",
+    "pregunta_original": "¿Usted considera que en 1976 había motivos que justificaron el golpe de Estado por parte de los militares?",
+    "nota": "Agregación del propio informe: 'había bastantes' 16 + 'muchos motivos' 11 = 27 (de acuerdo) vs 'no hubo motivos' 45 + 'había pocos motivos' 18 = 63 (en desacuerdo). Resto = ns/nc 10."
+   }
+  },
+  {
+   "id": "el-estado-tiene-que-seguir-juzgando-a-lo",
+   "tipo": "afirmacion",
+   "pregunta": "El Estado tiene que seguir juzgando a los militares de la dictadura.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "historia",
+   "ref": {
+    "a": 70,
+    "b": 26,
+    "resto": 4,
+    "encuestadora": "Pulsar.UBA + CELS",
+    "fecha": "2025-10",
+    "muestra": "1.143 casos, mixta (CATI 600 + online 441 + domiciliaria 102), probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/05/Miradas-retrospectivas-sobre-la-dictadura-argentina_Primera-entrega.pdf",
+    "pregunta_original": "Nivel de acuerdo con la frase: 'Es necesario que el Estado siga juzgando a los militares'",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 51 + bastante 19; poco 13 + nada 13; ns/nc 4."
+   }
+  },
+  {
+   "id": "puede-volver-a-haber-una-dictadura-en-la",
+   "tipo": "duelo",
+   "pregunta": "¿Puede volver a haber una dictadura en la Argentina?",
+   "a": {
+    "texto": "Es probable"
+   },
+   "b": {
+    "texto": "Es improbable"
+   },
+   "tema": "historia",
+   "ref": {
+    "a": 13,
+    "b": 83,
+    "resto": 4,
+    "encuestadora": "Pulsar.UBA + CELS",
+    "fecha": "2025-10",
+    "muestra": "1.143 casos, mixta (CATI 600 + online 441 + domiciliaria 102), probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/05/Miradas-retrospectivas-sobre-la-dictadura-argentina_Primera-entrega.pdf",
+    "pregunta_original": "¿Cuán probable cree que es que vuelva a haber una dictadura en Argentina?",
+    "nota": "Muy 3 + bastante 10 = probable; poco 40 + nada 43 = improbable. Resto = ns/nc 3 + redondeo."
+   }
+  },
+  {
+   "id": "podrias-estar-en-pareja-con-alguien-de-i",
+   "tipo": "duelo",
+   "pregunta": "¿Podrías estar en pareja con alguien de ideas políticas opuestas?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 70,
+    "b": 28,
+    "resto": 2,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2026-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/08/El-ascenso-del-nigunismo-Primer-Informe-Creencias-Sociales-2026.pdf",
+    "pregunta_original": "¿Usted podría estar en pareja con una persona que tiene ideas políticas opuestas a las suyas?",
+    "nota": "Resto = ns/nc (2%)."
+   }
+  },
+  {
+   "id": "se-puede-saber-si-alguien-es-buena-o-mal",
+   "tipo": "afirmacion",
+   "pregunta": "Se puede saber si alguien es buena o mala persona por sus opiniones políticas.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 16,
+    "b": 82,
+    "resto": 2,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2026-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/08/El-ascenso-del-nigunismo-Primer-Informe-Creencias-Sociales-2026.pdf",
+    "pregunta_original": "Nivel de acuerdo con 'Se puede saber si una persona es buena o mala por sus opiniones políticas'.",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Resto = ns/nc."
+   }
+  },
+  {
+   "id": "tenes-amigos-con-ideas-politicas-opuesta",
+   "tipo": "duelo",
+   "pregunta": "¿Tenés amigos con ideas políticas opuestas a las tuyas?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 87,
+    "b": 12,
+    "resto": 1,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/07/Creencias-25_informe-1.pdf",
+    "pregunta_original": "¿Usted tiene amigos que tienen ideas políticas opuestas a las suyas?",
+    "nota": "Resto = ns/nc (1%)."
+   }
+  },
+  {
+   "id": "los-argentinos-hoy-estan",
+   "tipo": "duelo",
+   "pregunta": "¿Los argentinos hoy están…?",
+   "a": {
+    "texto": "Más unidos"
+   },
+   "b": {
+    "texto": "Más desunidos"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 29.9,
+    "b": 59.7,
+    "resto": 10.4,
+    "encuestadora": "Pulso Research",
+    "fecha": "2024-11",
+    "muestra": "s/d (no informada en la nota)",
+    "alcance": "nacional",
+    "url": "https://www.perfil.com/noticias/politica/encuesta-el-60-cree-que-los-argentinos-estan-mas-enfrentados-pero-se-mantiene-la-esperanza-en-el-gobierno-con-una-oposicion-fragmentada.phtml",
+    "pregunta_original": "Los argentinos están 'más unidos' / 'más desunidos' que antes (redacción exacta no publicada).",
+    "nota": "Resto = ns/nc. Nota periodística del 26/11/2024; muestra y método no informados."
+   }
+  },
+  {
+   "id": "en-general-en-la-mayoria-de-las-personas",
+   "tipo": "duelo",
+   "pregunta": "En general, en la mayoría de las personas…",
+   "a": {
+    "texto": "Se puede confiar"
+   },
+   "b": {
+    "texto": "No se puede confiar"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 28,
+    "b": 71,
+    "resto": 1,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2026-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/08/El-ascenso-del-nigunismo-Primer-Informe-Creencias-Sociales-2026.pdf",
+    "pregunta_original": "¿Con cuál de las siguientes frases está más de acuerdo? 'En general, se puede confiar en la mayoría de las personas' / 'En general, no se puede confiar en la mayoría de las personas'",
+    "nota": "Resto = ns/nc (1%)."
+   }
+  },
+  {
+   "id": "no-me-gustaria-tener-inmigrantes-como-ve",
+   "tipo": "afirmacion",
+   "pregunta": "No me gustaría tener inmigrantes como vecinos.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 16,
+    "b": 84,
+    "resto": 0,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2026-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/08/El-ascenso-del-nigunismo-Primer-Informe-Creencias-Sociales-2026.pdf",
+    "pregunta_original": "Para cada grupo señale el nivel de acuerdo con la frase 'No me gustaría tener a estas personas como vecinos…': Inmigrantes",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc."
+   }
+  },
+  {
+   "id": "no-me-gustaria-tener-como-vecinos-a-pers",
+   "tipo": "afirmacion",
+   "pregunta": "No me gustaría tener como vecinos a personas que consumen drogas.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 49,
+    "b": 50,
+    "resto": 1,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2026-06",
+    "muestra": "1.252 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/08/El-ascenso-del-nigunismo-Primer-Informe-Creencias-Sociales-2026.pdf",
+    "pregunta_original": "Para cada grupo señale el nivel de acuerdo con la frase 'No me gustaría tener a estas personas como vecinos…': Personas que consumen drogas",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc."
+   }
+  },
+  {
+   "id": "para-algunos-delitos-deberia-existir-la",
+   "tipo": "afirmacion",
+   "pregunta": "Para algunos delitos debería existir la pena de muerte.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 37,
+    "b": 61,
+    "resto": 2,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2024-06",
+    "muestra": "1.250 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2024/08/Creencias-Sociales-2024-Segundo-Informe-Version-web.pdf",
+    "pregunta_original": "¿Usted está muy de acuerdo, bastante de acuerdo, poco de acuerdo o nada de acuerdo con…? 'Para algunos delitos se debería instalar la pena de muerte.'",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 25 + bastante 12; poco 13 + nada 48; ns/nc 2."
+   }
+  },
+  {
+   "id": "cualquier-persona-deberia-poder-portar-l",
+   "tipo": "afirmacion",
+   "pregunta": "Cualquier persona debería poder portar legalmente un arma.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 11,
+    "b": 87,
+    "resto": 2,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2024-06",
+    "muestra": "1.250 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2024/08/Creencias-Sociales-2024-Segundo-Informe-Version-web.pdf",
+    "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con que cualquier persona pueda portar legalmente un arma?",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 5 + bastante 6; poco 21 + nada 66; ns/nc 2."
+   }
+  },
+  {
+   "id": "ante-la-inseguridad-que-hay-que-prioriza",
+   "tipo": "duelo",
+   "pregunta": "Ante la inseguridad, ¿qué hay que priorizar?",
+   "a": {
+    "texto": "Endurecer las penas"
+   },
+   "b": {
+    "texto": "Reducir la desigualdad"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 54,
+    "b": 34,
+    "resto": 12,
+    "encuestadora": "QSocial",
+    "fecha": "2026-05",
+    "muestra": "1.829 casos, nacional (método no informado en la nota)",
+    "alcance": "nacional",
+    "url": "https://www.agenciacomunas.com.ar/encuesta-nacional-universidades-estado-seguridad-y-protesta-en-una-foto-sensible-del-clima-social/",
+    "pregunta_original": "Soluciones frente al delito: endurecer leyes y penas / reducir las diferencias sociales (redacción exacta no publicada).",
+    "nota": "Resto = otras + ns/nc."
+   }
+  },
+  {
+   "id": "ante-un-corte-de-calle-el-gobierno-deber",
+   "tipo": "duelo",
+   "pregunta": "Ante un corte de calle, el gobierno debería…",
+   "a": {
+    "texto": "Priorizar el diálogo"
+   },
+   "b": {
+    "texto": "Despejar con la fuerza"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 55,
+    "b": 42,
+    "resto": 3,
+    "encuestadora": "QSocial",
+    "fecha": "2026-05",
+    "muestra": "1.829 casos, nacional (método no informado en la nota)",
+    "alcance": "nacional",
+    "url": "https://www.agenciacomunas.com.ar/encuesta-nacional-universidades-estado-seguridad-y-protesta-en-una-foto-sensible-del-clima-social/",
+    "pregunta_original": "'El Gobierno debe garantizar el derecho a la protesta y buscar el diálogo' / 'debe priorizar la libre circulación usando la fuerza si es necesario'",
+    "nota": "Resto = ns/nc."
+   }
+  },
+  {
+   "id": "una-sociedad-justa-es-aquella-en-la-que",
+   "tipo": "duelo",
+   "pregunta": "Una sociedad justa es aquella en la que…",
+   "a": {
+    "texto": "Según el esfuerzo"
+   },
+   "b": {
+    "texto": "Todos tienen lo mismo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 66,
+    "b": 26,
+    "resto": 8,
+    "encuestadora": "QSocial",
+    "fecha": "2026-05",
+    "muestra": "1.829 casos, nacional (método no informado en la nota)",
+    "alcance": "nacional",
+    "url": "https://www.agenciacomunas.com.ar/encuesta-nacional-universidades-estado-seguridad-y-protesta-en-una-foto-sensible-del-clima-social/",
+    "pregunta_original": "Definición de sociedad justa: 'cada uno recibe según su esfuerzo' / 'que todos tengan lo mismo'",
+    "nota": "Resto = ns/nc."
+   }
+  },
+  {
+   "id": "crees-en-los-milagros",
+   "tipo": "duelo",
+   "pregunta": "¿Creés en los milagros?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 68,
+    "b": 31,
+    "resto": 1,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2024-06",
+    "muestra": "1.250 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/03/Creencias-Sociales-5_Los-argentinos-y-el-mas-alla_2024.pdf",
+    "pregunta_original": "En su vida cotidiana, usted cree en milagros…",
+    "nota": "Resto = ns/nc (1%). Creencias: tema estable."
+   }
+  },
+  {
+   "id": "hay-vida-despues-de-la-muerte",
+   "tipo": "afirmacion",
+   "pregunta": "Hay vida después de la muerte.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 47,
+    "b": 45,
+    "resto": 8,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2024-06",
+    "muestra": "1.250 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/03/Creencias-Sociales-5_Los-argentinos-y-el-mas-alla_2024.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo está usted con la frase 'hay vida después de la muerte'?",
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 27 + bastante 20; poco 18 + nada 27; ns/nc 8."
+   }
+  },
+  {
+   "id": "cada-cuanto-rezas",
+   "tipo": "duelo",
+   "pregunta": "¿Cada cuánto rezás?",
+   "a": {
+    "texto": "Seguido"
+   },
+   "b": {
+    "texto": "Casi nunca"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 48,
+    "b": 46,
+    "resto": 6,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2024-06",
+    "muestra": "1.250 casos, telefónica CATI + domiciliaria, probabilística, nacional",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/03/Creencias-Sociales-5_Los-argentinos-y-el-mas-alla_2024.pdf",
+    "pregunta_original": "En su vida cotidiana, usted reza… todos los días / alguna vez a la semana / alguna vez al mes / alguna vez en el año / no lo hago nunca",
+    "nota": "'Seguido' = todos los días 31 + alguna vez a la semana 17; 'Casi nunca' = alguna vez en el año 9 + nunca 37. Resto = alguna vez al mes (6%)."
+   }
+  },
+  {
+   "id": "la-argentina-debe-seguir-reclamando-la-s",
+   "tipo": "afirmacion",
+   "pregunta": "La Argentina debe seguir reclamando la soberanía de Malvinas.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "historia",
+   "ref": {
+    "a": 81.4,
+    "b": 10.2,
+    "resto": 8.4,
+    "encuestadora": "Julio Aurelio – Aresco",
+    "fecha": "2024-07",
+    "muestra": "s/d (encuesta nacional, 13 al 15/07/2024)",
+    "alcance": "nacional",
+    "url": "https://cancilleria.gob.ar/es/mas-del-80-por-ciento-de-la-poblacion-argentina-respalda-el-reclamo-de-soberania-sobre-malvinas",
+    "pregunta_original": "Pensando en el reclamo de soberanía sobre las Islas Malvinas, ¿usted cree que debemos seguir reclamando?",
+    "nota": "Sí 81,4 / No 10,2 / no se expresa 8,5 (suma 100,1 por redondeo). Tema estable (dato de 2024)."
+   }
+  },
+  {
+   "id": "las-parejas-del-mismo-sexo-deberian-pode",
+   "tipo": "afirmacion",
+   "pregunta": "Las parejas del mismo sexo deberían poder casarse.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 65,
+    "b": 18,
+    "resto": 17,
+    "encuestadora": "Ipsos (LGBT+ Pride 2026)",
+    "fecha": "2026-05",
+    "muestra": "~500 casos, online (Global Advisor), 16-74 años, representativa según Ipsos",
+    "alcance": "nacional",
+    "url": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-07/ipsos-lgbt-plus-pride-surey-report-2026.pdf",
+    "pregunta_original": "When you think about the rights of same-sex couples, which comes closest to your personal opinion? Marry legally / some legal recognition but not marry / no recognition / not sure",
+    "nota": "De acuerdo = 'deberían poder casarse' 65. En desacuerdo = 'solo algún reconocimiento legal, no casarse' 8 + 'ningún reconocimiento' 10. Resto = no está seguro 18 (−1 por redondeo)."
+   }
+  },
+  {
+   "id": "las-deportistas-trans-deberian-competir",
+   "tipo": "afirmacion",
+   "pregunta": "Las deportistas trans deberían competir según su identidad de género.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 23,
+    "b": 45,
+    "resto": 32,
+    "encuestadora": "Ipsos (LGBT+ Pride 2026)",
+    "fecha": "2026-05",
+    "muestra": "~500 casos, online (Global Advisor), 16-74 años, representativa según Ipsos",
+    "alcance": "nacional",
+    "url": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-07/ipsos-lgbt-plus-pride-surey-report-2026.pdf",
+    "pregunta_original": "To what extent do you support or oppose: Transgender athletes competing based on the gender they identify with rather than the sex they were assigned at birth",
+    "nota": "Apoya vs se opone; resto (32%) = ni apoya ni se opone + no sabe. A+B = 68%."
+   }
+  },
+  {
+   "id": "quien-es-el-mejor-jugador-de-la-historia-2",
+   "tipo": "duelo",
+   "pregunta": "¿Quién es el mejor jugador de la historia argentina?",
+   "a": {
+    "texto": "Messi"
+   },
+   "b": {
+    "texto": "Maradona"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 73.0,
+    "b": 22.8,
+    "resto": 4.2,
+    "encuestadora": "Giacobbe & Asociados",
+    "fecha": "2026-06",
+    "muestra": "no informada en la nota",
+    "alcance": "nacional",
+    "url": "https://www.mdzol.com/deportes/lionel-messi-versus-diego-maradona-quien-es-el-mejor-jugador-argentino-segun-una-encuesta-n1544071",
+    "pregunta_original": "El mejor jugador de la historia argentina es...",
+    "nota": "Resto = no responde (4,2%)."
+   }
+  },
+  {
+   "id": "por-valores-y-forma-de-ser-a-quien-nos-p-2",
+   "tipo": "duelo",
+   "pregunta": "Por valores y forma de ser, ¿a quién nos parecemos más los argentinos?",
+   "a": {
+    "texto": "Maradona"
+   },
+   "b": {
+    "texto": "Messi"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 57.4,
+    "b": 39.4,
+    "resto": 3.2,
+    "encuestadora": "Giacobbe & Asociados",
+    "fecha": "2026-07",
+    "muestra": "2.500 casos, cuestionario por celular, ajustado por sexo, edad, educación, ingreso y región",
+    "alcance": "nacional",
+    "url": "https://www.perfil.com/noticias/sociedad/encuesta-maradona-o-messi-a-quien-nos-parecemos-mas-los-argentinos.phtml",
+    "pregunta_original": "En cuanto a nuestros valores y forma de ser, ¿a quién nos parecemos más los argentinos?",
+    "nota": "Campo 30/06–06/07/2026. Resto = ns/nc (3,2%, por diferencia). Buen contraste con la carta de 'mejor jugador'."
+   }
+  },
+  {
+   "id": "de-que-cuadro-hay-mas-hinchas-2",
+   "tipo": "duelo",
+   "pregunta": "¿De qué cuadro hay más hinchas?",
+   "a": {
+    "texto": "Boca"
+   },
+   "b": {
+    "texto": "River"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 39,
+    "b": 33,
+    "resto": 28,
+    "encuestadora": "Isasi/Burdman",
+    "fecha": "2026-02",
+    "muestra": "2.076 casos, online (CAWI), estratificada por región, ponderada por sexo y edad",
+    "alcance": "nacional",
+    "url": "https://eleconomista.com.ar/deportes/crisis-futbol-argentino-encuesta-var-sospecha-tongo-n92925",
+    "pregunta_original": "Simpatía por club de fútbol (entre quienes se declaran hinchas)",
+    "nota": "Base: hinchas de algún club. Sobre el total de la muestra: Boca 32%, River 27%, sin club 18%. Resto = otros clubes. Campo 11–18/02/2026."
+   }
+  },
+  {
+   "id": "como-preferis-el-mate-2",
+   "tipo": "duelo",
+   "pregunta": "¿Cómo preferís el mate?",
+   "a": {
+    "texto": "Dulce"
+   },
+   "b": {
+    "texto": "Amargo"
+   },
+   "tema": "vida",
+   "ref": {
+    "a": 44,
+    "b": 42,
+    "resto": 14,
+    "encuestadora": "TriaPanel",
+    "fecha": "2017-02",
+    "muestra": "670 casos, 18+, todos los NSE",
+    "alcance": "CABA, GBA y principales ciudades",
+    "url": "https://www.diariopopular.com.ar/general/revelador-la-mayoria-los-argentinos-prefiere-el-mate-dulce-n300223",
+    "pregunta_original": "Preferencia de mate dulce, amargo o indistinto",
+    "nota": "Dato viejo (2017) pero tema estable; no se encontró medición nacional más reciente verificable. Resto = indistinto (14%)."
+   }
+  },
+  {
+   "id": "como-va-a-estar-la-argentina-dentro-de-u-2",
+   "tipo": "duelo",
+   "pregunta": "¿Cómo va a estar la Argentina dentro de un año?",
+   "a": {
+    "texto": "Mejor"
+   },
+   "b": {
+    "texto": "Peor"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 30,
+    "b": 55,
+    "resto": 15,
+    "encuestadora": "Opina Argentina",
+    "fecha": "2026-08",
+    "muestra": "1.486 casos, nacional",
+    "alcance": "nacional",
+    "url": "https://www.eldestapeweb.com/politica/giro-expectativas-encuesta-muestra-cayo-optimismo-agosto-2026823171713",
+    "pregunta_original": "¿Cómo cree que la Argentina estará dentro de un año?",
+    "nota": "Campo 1–4/08/2026. Resto = igual 11% + ns 1% + redondeo (la nota publica 55/30/11/1)."
+   }
+  },
+  {
+   "id": "que-habria-que-hacer-con-las-apuestas-on-2",
+   "tipo": "duelo",
+   "pregunta": "¿Qué habría que hacer con las apuestas online?",
+   "a": {
+    "texto": "Prohibirlas"
+   },
+   "b": {
+    "texto": "Regularlas"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 39,
+    "b": 38,
+    "resto": 23,
+    "encuestadora": "Opina Argentina",
+    "fecha": "2024-05",
+    "muestra": "más de 1.000 casos",
+    "alcance": "nacional",
+    "url": "https://www.lanacion.com.ar/sociedad/el-16-de-los-jovenes-reconoce-que-realiza-apuestas-online-segun-un-estudio-de-opina-argentina-nid30052024/",
+    "pregunta_original": "Postura frente a las apuestas online: prohibir o regular",
+    "nota": "Campo 17–20/05/2024. Resto = otras respuestas/ns (por diferencia; la nota no lo desglosa)."
+   }
+  },
+  {
+   "id": "en-el-futbol-argentino-los-arbitros-favo-2",
+   "tipo": "afirmacion",
+   "pregunta": "En el fútbol argentino, los árbitros favorecen a los clubes cercanos a la AFA.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 57,
+    "b": 10,
+    "resto": 33,
+    "encuestadora": "Isasi/Burdman",
+    "fecha": "2026-02",
+    "muestra": "2.076 casos, online (CAWI), estratificada por región, ponderada por sexo y edad",
+    "alcance": "nacional",
+    "url": "https://eleconomista.com.ar/deportes/crisis-futbol-argentino-encuesta-var-sospecha-tongo-n92925",
+    "pregunta_original": "Acuerdo con que los arbitrajes favorecen a clubes cercanos a la conducción de la AFA",
+    "nota": "Resto = ni acuerdo ni desacuerdo / ns (por diferencia). Entre quienes se declaran hinchas el acuerdo sube a 65%."
+   }
+  },
+  {
+   "id": "confias-en-lo-que-te-responde-la-intelig-2",
+   "tipo": "duelo",
+   "pregunta": "¿Confiás en lo que te responde la inteligencia artificial?",
+   "a": {
+    "texto": "Confío"
+   },
+   "b": {
+    "texto": "Tengo dudas"
+   },
+   "tema": "vida",
+   "ref": {
+    "a": 46,
+    "b": 54,
+    "resto": 0,
+    "encuestadora": "Voices! / WIN World AI Index",
+    "fecha": "2026-06",
+    "muestra": "1.007 casos, online",
+    "alcance": "nacional",
+    "url": "https://www.perfil.com/noticias/sociedad/en-argentina-ocho-de-cada-diez-personas-ya-usan-herramientas-de-iapero-el-54-desconfia-de-la-informacion-que-produce.phtml",
+    "pregunta_original": "Confianza en la veracidad de las respuestas de sistemas de IA (ChatGPT, Copilot, Claude, etc.)",
+    "nota": "B agrupa 'dudas' y 'desconfianza' (54%). Muestra online: sobrerrepresenta población conectada."
+   }
+  },
+  {
+   "id": "de-que-clase-social-te-sentis-2",
+   "tipo": "duelo",
+   "pregunta": "¿De qué clase social te sentís?",
+   "a": {
+    "texto": "Media o más"
+   },
+   "b": {
+    "texto": "Media baja o baja"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 49.5,
+    "b": 50.1,
+    "resto": 0.4,
+    "encuestadora": "Zentrix Consultora",
+    "fecha": "2026-06",
+    "muestra": "no informada en la nota",
+    "alcance": "nacional",
+    "url": "https://www.eldestapeweb.com/sociedad/fin-clase-media-argentina-encuesta-demoledora-sociedad-milei-202676162636",
+    "pregunta_original": "¿A qué clase social pertenece?",
+    "nota": "A = media 39% + media alta 9,6% + alta 0,9%. B = media baja 36,4% + baja 13,7%. Resto = redondeo/ns."
+   }
+  },
+  {
+   "id": "que-deberia-priorizar-la-economia-2",
+   "tipo": "duelo",
+   "pregunta": "¿Qué debería priorizar la economía?",
+   "a": {
+    "texto": "Salarios y empleo"
+   },
+   "b": {
+    "texto": "Precios estables"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 65.6,
+    "b": 27.1,
+    "resto": 7.3,
+    "encuestadora": "Analogías",
+    "fecha": "2026-09",
+    "muestra": "2.932 casos en 24 provincias, telefónica",
+    "alcance": "nacional",
+    "url": "https://www.eldestapeweb.com/economia/casi-dos-tercios-priorizan-salarios-empleo-antes-supuesta-estabilidad-precios-2026911154253",
+    "pregunta_original": "Si tuviera que elegir entre un programa orientado a recuperar salarios y empleo o uno concentrado en sostener la estabilidad de precios",
+    "nota": "Campo 5–8/09/2026. Resto = ns/nc."
+   }
+  },
+  {
+   "id": "que-problema-deberia-resolver-primero-el-2",
+   "tipo": "duelo",
+   "pregunta": "¿Qué problema debería resolver primero el Gobierno?",
+   "a": {
+    "texto": "Desempleo"
+   },
+   "b": {
+    "texto": "Corrupción"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 36,
+    "b": 32,
+    "resto": 32,
+    "encuestadora": "Opina Argentina",
+    "fecha": "2026-08",
+    "muestra": "1.507 casos, online",
+    "alcance": "nacional",
+    "url": "https://es.mercopress.com/2026/08/24/el-desempleo-desplaza-a-la-inflacion-como-principal-preocupacion-de-los-argentinos",
+    "pregunta_original": "Principal problema que el Gobierno debería resolver",
+    "nota": "Campo 7–11/08/2026. Resto = inflación 11% + inseguridad 9% + otros/ns 12%. Inflación vs inseguridad descartada (suman 20%)."
+   }
+  },
+  {
+   "id": "si-pudieras-elegir-en-que-moneda-cobrari-2",
+   "tipo": "duelo",
+   "pregunta": "Si pudieras elegir, ¿en qué moneda cobrarías tu sueldo?",
+   "a": {
+    "texto": "En pesos"
+   },
+   "b": {
+    "texto": "En dólares"
+   },
+   "tema": "economia",
+   "ref": {
+    "a": 47,
+    "b": 29,
+    "resto": 24,
+    "encuestadora": "UdeSA (ESPOP)",
+    "fecha": "2026-05",
+    "muestra": "online, nacional",
+    "alcance": "nacional",
+    "url": "https://www.lagaceta.com.ar/nota/1136567/economia/segun-encuesta-peso-cobra-fuerza-sobre-dolar.html",
+    "pregunta_original": "Preferencia por cobrar el salario en pesos o en dólares",
+    "nota": "Resto = indiferente/ns (por diferencia; la nota no lo desglosa)."
+   }
+  },
+  {
+   "id": "en-general-sos-feliz-2",
+   "tipo": "duelo",
+   "pregunta": "En general, ¿sos feliz?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "vida",
+   "ref": {
+    "a": 72,
+    "b": 28,
+    "resto": 0,
+    "encuestadora": "Ipsos (Happiness Index 2026)",
+    "fecha": "2026-03",
+    "muestra": "panel online (Ipsos Global Advisor)",
+    "alcance": "nacional (online)",
+    "url": "https://www.ipsos.com/es-ar/la-felicidad-en-argentina-2026",
+    "pregunta_original": "Tomando todo en cuenta, ¿diría que es muy feliz, bastante feliz, no muy feliz o nada feliz?",
+    "nota": "A = muy + bastante feliz (72%, dato publicado). B = no muy + nada feliz, calculado como complemento. Argentina queda última en LatAm."
+   }
+  },
+  {
+   "id": "cual-es-tu-religion-2",
+   "tipo": "duelo",
+   "pregunta": "¿Cuál es tu religión?",
+   "a": {
+    "texto": "Católica"
+   },
+   "b": {
+    "texto": "Ninguna"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 62.9,
+    "b": 18.9,
+    "resto": 18.2,
+    "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
+    "fecha": "2019-09",
+    "muestra": "2.421 casos, presencial, muestra probabilística nacional",
+    "alcance": "nacional",
+    "url": "https://www.conicet.gov.ar/wp-content/uploads/Infografi%CC%81a-Encuesta-Religi%C3%B3n-1.pdf",
+    "pregunta_original": "¿Cuál es su religión?",
+    "nota": "Dato 2019 (última medición nacional de este tipo). Resto = evangélica 15,3%, Testigos/mormones 2,1%, otras 1,2%, ns 0,3% (suma 100,7 por redondeo). 'Ninguna' incluye ateos (6,0%)."
+   }
+  },
+  {
+   "id": "vas-a-misa-o-al-culto-al-menos-una-vez-p-2",
+   "tipo": "duelo",
+   "pregunta": "¿Vas a misa o al culto al menos una vez por mes?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 27.0,
+    "b": 72.9,
+    "resto": 0.1,
+    "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
+    "fecha": "2019-09",
+    "muestra": "2.421 casos, presencial, muestra probabilística nacional",
+    "alcance": "nacional",
+    "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
+    "pregunta_original": "¿Con qué frecuencia asiste usted a misa o la celebración de un culto?",
+    "nota": "A = varias veces por semana 6,2 + una vez por semana 11,2 + una o dos veces al mes 9,6 (=27,0, dato publicado). B = sólo en ocasiones especiales 43,3 + nunca 29,6. Resto = ns 0,1. Dato 2019."
+   }
+  },
+  {
+   "id": "si-crees-en-dios-como-te-relacionas-con-2",
+   "tipo": "duelo",
+   "pregunta": "Si creés en Dios, ¿cómo te relacionás con Él?",
+   "a": {
+    "texto": "Por mi cuenta"
+   },
+   "b": {
+    "texto": "En una iglesia"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 59.9,
+    "b": 30.3,
+    "resto": 9.8,
+    "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
+    "fecha": "2019-09",
+    "muestra": "2.129 casos (quienes creen en Dios)",
+    "alcance": "nacional",
+    "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
+    "pregunta_original": "¿Cuál es la principal manera en que Usted se relaciona con Dios?",
+    "nota": "Base: creyentes. Resto = grupos o comunidades 3,3 + no se relaciona 6,2 + ns 0,3. Dato 2019."
+   }
+  },
+  {
+   "id": "crees-en-la-astrologia-2",
+   "tipo": "duelo",
+   "pregunta": "¿Creés en la astrología?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 33.0,
+    "b": 67.0,
+    "resto": 0,
+    "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
+    "fecha": "2019-09",
+    "muestra": "2.421 casos, presencial, muestra probabilística nacional",
+    "alcance": "nacional",
+    "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
+    "pregunta_original": "¿Usted cree en…? Astrología",
+    "nota": "El informe publica sólo el % afirmativo; B es el complemento (no + ns). Dato 2019."
+   }
+  },
+  {
+   "id": "crees-en-los-ovnis-2",
+   "tipo": "duelo",
+   "pregunta": "¿Creés en los ovnis?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 30.7,
+    "b": 69.3,
+    "resto": 0,
+    "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
+    "fecha": "2019-09",
+    "muestra": "2.421 casos, presencial, muestra probabilística nacional",
+    "alcance": "nacional",
+    "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
+    "pregunta_original": "¿Usted cree en…? Ovnis",
+    "nota": "El informe publica sólo el % afirmativo; B es el complemento (no + ns). Dato 2019."
+   }
+  },
+  {
+   "id": "crees-en-el-gauchito-gil-2",
+   "tipo": "duelo",
+   "pregunta": "¿Creés en el Gauchito Gil?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 23.0,
+    "b": 77.0,
+    "resto": 0,
+    "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
+    "fecha": "2019-09",
+    "muestra": "2.421 casos, presencial, muestra probabilística nacional",
+    "alcance": "nacional",
+    "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
+    "pregunta_original": "¿Usted cree en…? El Gauchito Gil",
+    "nota": "El informe publica sólo el % afirmativo; B es el complemento (no + ns). Dato 2019."
+   }
+  },
+  {
+   "id": "crees-en-la-suerte-2",
+   "tipo": "duelo",
+   "pregunta": "¿Creés en la suerte?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 63.2,
+    "b": 36.8,
+    "resto": 0,
+    "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
+    "fecha": "2019-09",
+    "muestra": "2.421 casos, presencial, muestra probabilística nacional",
+    "alcance": "nacional",
+    "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
+    "pregunta_original": "¿Usted cree en…? La suerte",
+    "nota": "El informe publica sólo el % afirmativo; B es el complemento (no + ns). Dato 2019."
+   }
+  },
+  {
+   "id": "como-evaluas-a-los-docentes-argentinos-2",
+   "tipo": "duelo",
+   "pregunta": "¿Cómo evaluás a los docentes argentinos?",
+   "a": {
+    "texto": "Bien"
+   },
+   "b": {
+    "texto": "Mal"
+   },
+   "tema": "sociedad",
+   "ref": {
+    "a": 61,
+    "b": 19,
+    "resto": 20,
+    "encuestadora": "UdeSA (ESPOP)",
+    "fecha": "2026-06",
+    "muestra": "online, nacional",
+    "alcance": "nacional",
+    "url": "https://mercado.com.ar/tendencias/udesa-espop-consenso-sobre-buenos-docentes-y-senales-de-clima-politico-en-junio",
+    "pregunta_original": "Evaluación del desempeño de los docentes",
+    "nota": "A = bueno o muy bueno. B = impresión negativa. Resto = regular/ns (por diferencia)."
+   }
+  },
+  {
+   "id": "si-pudieras-te-irias-a-vivir-a-otro-pais-2",
+   "tipo": "duelo",
+   "pregunta": "Si pudieras, ¿te irías a vivir a otro país?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "vida",
+   "ref": {
+    "a": 52,
+    "b": 48,
+    "resto": 0,
+    "encuestadora": "Opinaia",
+    "fecha": "2025-12",
+    "muestra": "1.000 casos, online, cuotas por sexo, edad, NSE y zona",
+    "alcance": "nacional (online)",
+    "url": "https://www.lanacion.com.ar/sociedad/optimismo-brasileno-orgullo-argentino-una-encuesta-revela-el-clima-de-dos-socios-del-mercosur-y-las-nid28122025/",
+    "pregunta_original": "Deseo de irse a vivir al exterior si pudiera",
+    "nota": "La nota publica sólo el 52%; B es el complemento (no + ns)."
+   }
+  },
+  {
+   "id": "jovenes-de-16-a-29-este-ano-pensaste-en-2",
+   "tipo": "duelo",
+   "pregunta": "Jóvenes de 16 a 29: ¿este año pensaste en irte a vivir afuera?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "Nunca"
+   },
+   "tema": "vida",
+   "ref": {
+    "a": 27,
+    "b": 70,
+    "resto": 3,
+    "encuestadora": "Mora Jozami",
+    "fecha": "2025-11",
+    "muestra": "más de 1.200 casos, jóvenes 16–29 años",
+    "alcance": "nacional",
+    "url": "https://eleconomista.com.ar/politica/jovenes-argentinos-emigracion-regreso-tendencia-n91140",
+    "pregunta_original": "En lo que va del año, ¿usted pensó en irse y mudarse a otro país?",
+    "nota": "Sólo jóvenes. En oct-2024 era 33% sí / 63% nunca. Resto = ns (por diferencia)."
+   }
+  },
+  {
+   "id": "estas-orgulloso-de-ser-argentino-2",
+   "tipo": "duelo",
+   "pregunta": "¿Estás orgulloso de ser argentino?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 81,
+    "b": 19,
+    "resto": 0,
+    "encuestadora": "Opinaia",
+    "fecha": "2025-12",
+    "muestra": "1.000 casos, online, cuotas por sexo, edad, NSE y zona",
+    "alcance": "nacional (online)",
+    "url": "https://www.lanacion.com.ar/sociedad/optimismo-brasileno-orgullo-argentino-una-encuesta-revela-el-clima-de-dos-socios-del-mercosur-y-las-nid28122025/",
+    "pregunta_original": "Orgullo por la nacionalidad (muy o bastante orgulloso)",
+    "nota": "A = muy + bastante orgulloso (81%, dato publicado). B = complemento (poco + nada + ns). En Brasil: 66%."
+   }
+  },
+  {
+   "id": "que-te-importa-mas-2",
+   "tipo": "duelo",
+   "pregunta": "¿Qué te importa más?",
+   "a": {
+    "texto": "Que gane la Selección"
+   },
+   "b": {
+    "texto": "Que gane mi club"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 86,
+    "b": 14,
+    "resto": 0,
+    "encuestadora": "Observatorio de Psicología Social Aplicada, Facultad de Psicología (UBA)",
+    "fecha": "2026-07",
+    "muestra": "no informada",
+    "alcance": "CABA y conurbano (AMBA)",
+    "url": "https://www.perfil.com/noticias/sociedad/encuesta-tras-el-mundial-2026-la-sociedad-argentina-enfrenta-un-profundo-vacio-existencial-y-sentimiento-de-orfandad.phtml",
+    "pregunta_original": "¿Es más importante que Argentina gane el Mundial o que gane tu club?",
+    "nota": "Sólo AMBA. La nota publica 86% (Selección); B es el complemento. Relevado después de la final del Mundial 2026."
+   }
+  },
+  {
+   "id": "leiste-al-menos-un-libro-en-el-ultimo-an-2",
+   "tipo": "duelo",
+   "pregunta": "¿Leíste al menos un libro en el último año?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 51,
+    "b": 49,
+    "resto": 0,
+    "encuestadora": "Ministerio de Cultura – SInCA (Encuesta Nacional de Consumos Culturales)",
+    "fecha": "2022-11",
+    "muestra": "3.380 casos, domiciliaria, probabilística, 13+ años, aglomerados >30.000 hab.",
+    "alcance": "nacional urbano",
+    "url": "https://www.argentina.gob.ar/sites/default/files/2023/05/encc2023_informe_preliminar.pdf",
+    "pregunta_original": "¿Leyó al menos un libro (en papel o formato electrónico) durante el último año?",
+    "nota": "Campo nov-2022 a ene-2023. B = complemento. Serie: 57% (2013), 44% (2017), 51% (2022)."
+   }
+  },
+  {
+   "id": "fuiste-al-cine-en-el-ultimo-ano-2",
+   "tipo": "duelo",
+   "pregunta": "¿Fuiste al cine en el último año?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "cultura",
+   "ref": {
+    "a": 36,
+    "b": 64,
+    "resto": 0,
+    "encuestadora": "Ministerio de Cultura – SInCA (Encuesta Nacional de Consumos Culturales)",
+    "fecha": "2022-11",
+    "muestra": "3.380 casos, domiciliaria, probabilística, 13+ años, aglomerados >30.000 hab.",
+    "alcance": "nacional urbano",
+    "url": "https://www.argentina.gob.ar/sites/default/files/2023/05/encc2023_informe_preliminar.pdf",
+    "pregunta_original": "¿Fue al cine el último año?",
+    "nota": "Ambos valores publicados (64% 'no asistió'). Sólo 6% va todos o casi todos los meses."
+   }
+  },
+  {
+   "id": "chicos-de-3er-grado-tienen-celular-propi-2",
    "tipo": "duelo",
    "pregunta": "Chicos de 3er grado: ¿tienen celular propio?",
    "a": {
