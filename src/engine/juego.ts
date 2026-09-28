@@ -55,7 +55,7 @@ function mezclar<T>(items: T[], next: () => number): T[] {
 }
 
 /** Mínimo de cartas de cada escala por ronda, núcleo incluidas, para que la brújula tenga base. */
-export const CUPO: Record<NombreEje, number> = { economia: 7, valores: 5, autoridad: 5 }
+export const CUPO: Record<NombreEje, number> = { economia: 7, valores: 6, autoridad: 5 }
 
 /**
  * Sortea una ronda: las cartas núcleo siempre, repartidas en lugares al azar; después las

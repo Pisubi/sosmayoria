@@ -1850,6 +1850,9 @@
     "texto": "Ya se hizo suficiente"
    },
    "tema": "sociedad",
+   "grupos": [
+    "igualdad-genero"
+   ],
    "eje": {
     "valores": -1
    },
@@ -2490,6 +2493,9 @@
     "texto": "Todos tienen lo mismo"
    },
    "tema": "sociedad",
+   "grupos": [
+    "mercado"
+   ],
    "eje": {
     "economia": 1
    },
@@ -2717,6 +2723,607 @@
     "url": "https://mercado.com.ar/informes-especiales/encuesta-de-la-udesa-insatisfaccion-del-69-y-35-de-aprobacion-a-milei",
     "pregunta_original": "Aprobación de la gestión del gobierno de Javier Milei",
     "nota": "Relevamiento del 5 al 11 de agosto de 2026. Dato coyuntural: actualizar cada mes con la última medición."
+   }
+  },
+  {
+   "id": "el-estado-tiene-que-ser-dueno-de-algunas",
+   "tipo": "afirmacion",
+   "pregunta": "El Estado tiene que ser dueño de algunas áreas estratégicas del país.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "privatizaciones"
+   ],
+   "eje": {
+    "economia": -1
+   },
+   "ref": {
+    "a": 79.1,
+    "b": 17.6,
+    "resto": 3.2,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2024-01",
+    "muestra": "1.500 casos, online (CAWI), población 16+ años, campo 25-26/01/2024, error +/-2,53%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/02/Informe_enero_2024.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo está Ud. con las siguientes afirmaciones? “Un Estado debe tener propiedad sobre ciertas áreas estratégicas para el país”",
+    "nota": "A = muy de acuerdo (42,4) + de acuerdo (36,7); B = desacuerdo (12,4) + muy en desacuerdo (5,2); resto = no sabe (3,2). Módulo 'Mercado & Estado', pág. 18 del PDF (verificado sobre el gráfico). No evalúa una medida de gobierno."
+   }
+  },
+  {
+   "id": "el-libre-mercado-funciona-solo-para-los",
+   "tipo": "afirmacion",
+   "pregunta": "El libre mercado funciona solo para los ricos.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "mercado"
+   ],
+   "eje": {
+    "economia": -1
+   },
+   "ref": {
+    "a": 53.8,
+    "b": 44.0,
+    "resto": 2.3,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2024-01",
+    "muestra": "1.500 casos, online (CAWI), población 16+ años, campo 25-26/01/2024, error +/-2,53%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/02/Informe_enero_2024.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo está Ud. con las siguientes afirmaciones? “El libre mercado funciona sólo para los ricos”",
+    "nota": "A = muy de acuerdo (39) + de acuerdo (14,8); B = desacuerdo (27,1) + muy en desacuerdo (16,9); resto = no sabe (2,3). Suma 100,1 por redondeo de la fuente. Pág. 20 del PDF (verificado sobre el gráfico)."
+   }
+  },
+  {
+   "id": "la-obra-publica-es-una-inversion-no-un-g",
+   "tipo": "afirmacion",
+   "pregunta": "La obra pública es una inversión, no un gasto.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "eje": {
+    "economia": -1
+   },
+   "ref": {
+    "a": 79.3,
+    "b": 19.6,
+    "resto": 1.1,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2025-03",
+    "muestra": "1.600 casos, mixto (70% CAWI online, 30% mailing), población 16+ años, campo 12-14/03/2025",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2025/03/DDD-Marzo-2025-corregido.pdf",
+    "pregunta_original": "“La obra pública es una inversión, no un gasto” (de acuerdo / en desacuerdo / no sabe)",
+    "nota": "Respuesta dicotómica en la fuente; resto = no sabe. Pregunta incluida en el módulo sobre la inundación de Bahía Blanca (pág. 32 del PDF), pero la frase es general y no nombra a ningún gobierno."
+   }
+  },
+  {
+   "id": "en-la-argentina-de-hoy-el-estado-deberia",
+   "tipo": "duelo",
+   "pregunta": "En la Argentina de hoy, el Estado debería…",
+   "a": {
+    "texto": "Igualdad de oportunidades"
+   },
+   "b": {
+    "texto": "Libre competencia"
+   },
+   "tema": "economia",
+   "grupos": [
+    "mercado"
+   ],
+   "eje": {
+    "economia": -0.5
+   },
+   "ref": {
+    "a": 67.8,
+    "b": 29.2,
+    "resto": 3.0,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2025-02",
+    "muestra": "2.400 casos, mixto (25% CAWI online, 75% mailing), población 16+ años, campo 30/01-03/02/2025, error +/-2%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2025/02/DDD-Febrero-2025-2.pdf",
+    "pregunta_original": "Para Ud., en la Argentina de hoy… “El Estado debería garantizar la igualdad de oportunidades de los ciudadanos” / “El Estado no debería intervenir en la 'libre competencia'”",
+    "nota": "Pregunta de dos frases enfrentadas; resto = no sabe (3). B abreviada a 4 palabras: el original es 'no debería intervenir en la libre competencia'. Eje 0.5: 'igualdad de oportunidades' también la sostienen liberales de mercado (indicador débil). Pág. 8 del PDF."
+   }
+  },
+  {
+   "id": "el-estado-deberia-regular-la-inteligenci",
+   "tipo": "afirmacion",
+   "pregunta": "El Estado debería regular la inteligencia artificial.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "eje": {
+    "economia": -0.5
+   },
+   "ref": {
+    "a": 76.5,
+    "b": 14.9,
+    "resto": 8.6,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2025-08",
+    "muestra": "2.000 casos, online (CAWI), población 16+ años, campo 8-11/08/2025, error +/-2,19%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2025/08/VDD-AGOSTO_ok.pdf",
+    "pregunta_original": "¿Cree que la IA debería estar regulada por el Estado en Argentina? Sí, con regulaciones estrictas de uso / Sí, con algún tipo de regulación / No, debe autorregularse / No sabe",
+    "nota": "A = 'sí, con regulaciones estrictas' (40,5) + 'sí, con algún tipo de regulación' (36); B = 'no, debe autorregularse' (14,9); resto = no sabe (8,6). Pág. 22 del PDF. Eje 0.5: regulación sectorial, indicador parcial de Estado vs mercado."
+   }
+  },
+  {
+   "id": "para-combatir-el-narcotrafico-que-es-mas",
+   "tipo": "duelo",
+   "pregunta": "Para combatir el narcotráfico, ¿qué es más importante?",
+   "a": {
+    "texto": "Preservar libertades y derechos"
+   },
+   "b": {
+    "texto": "Resignar algunas libertades"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "narcotrafico"
+   ],
+   "eje": {
+    "autoridad": -1
+   },
+   "ref": {
+    "a": 52,
+    "b": 40,
+    "resto": 8,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2024-06",
+    "muestra": "1.250 casos, probabilística: telefónica CATI (1.000) + domiciliaria (250), 18+ años, campo 31/05-10/06/2024, error +/-2,8%",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2024/08/Creencias-Sociales-2024-Segundo-Informe-Version-web.pdf",
+    "pregunta_original": "¿Con cuál de las siguientes frases está más de acuerdo? “Debemos preservar nuestras libertades y derechos, aún si esto dificulta el combate del narcotráfico” / “Es necesario perder algunas libertades y derechos para combatir al narcotráfico”",
+    "nota": "Dato 2024 (en 2023: 54/37/9). Resto = ns/nc. Pág. 17 del PDF (Informe 2: El Estado frente al orden público)."
+   }
+  },
+  {
+   "id": "para-luchar-contra-el-delito-la-policia",
+   "tipo": "duelo",
+   "pregunta": "Para luchar contra el delito, ¿la policía tiene que tener más poder?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "sociedad",
+   "eje": {
+    "autoridad": 1
+   },
+   "ref": {
+    "a": 72,
+    "b": 23,
+    "resto": 5,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2024-06",
+    "muestra": "1.250 casos, probabilística: telefónica CATI (1.000) + domiciliaria (250), 18+ años, campo 31/05-10/06/2024, error +/-2,8%",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2024/08/Creencias-Sociales-2024-Segundo-Informe-Version-web.pdf",
+    "pregunta_original": "¿Con cuál de las siguientes frases está más de acuerdo? “La policía tiene que tener más poder para luchar contra el delito” / “La policía no puede tener más poder para luchar contra el delito”",
+    "nota": "Dato 2024 (en 2023: 73/20/7). Resto = ns/nc. Pág. 13 del PDF."
+   }
+  },
+  {
+   "id": "los-militares-tienen-que-ayudar-a-combat",
+   "tipo": "afirmacion",
+   "pregunta": "Los militares tienen que ayudar a combatir el narcotráfico.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "narcotrafico"
+   ],
+   "eje": {
+    "autoridad": 1
+   },
+   "ref": {
+    "a": 66,
+    "b": 33,
+    "resto": 1,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2024-06",
+    "muestra": "1.250 casos, probabilística: telefónica CATI (1.000) + domiciliaria (250), 18+ años, campo 31/05-10/06/2024, error +/-2,8%",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2024/08/Creencias-Sociales-2024-Segundo-Informe-Version-web.pdf",
+    "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con…? “Los militares tienen que actuar para ayudar a combatir el narcotráfico”",
+    "nota": "A = muy (41) + bastante de acuerdo (25); B = poco (13) + nada de acuerdo (20); resto = ns/nc (1, por diferencia con los totales 66/33 que publica la fuente). Dato 2024 (en 2023: 72/26). Pág. 15 del PDF. Es la única formulación verificada sobre militares y seguridad interior: aquí 'de acuerdo' = más orden."
+   }
+  },
+  {
+   "id": "un-gobierno-puede-suspender-por-un-tiemp",
+   "tipo": "afirmacion",
+   "pregunta": "Un gobierno puede suspender por un tiempo algunos derechos si lo considera mejor para la sociedad.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "grupos": [
+    "democracia"
+   ],
+   "eje": {
+    "autoridad": 1
+   },
+   "ref": {
+    "a": 24,
+    "b": 74,
+    "resto": 2,
+    "encuestadora": "Pulsar.UBA (Observatorio UBA)",
+    "fecha": "2025-06",
+    "muestra": "1.252 casos, probabilística: telefónica CATI (1.000) + domiciliaria (252), 18+ años, campo 27/05-04/06/2025, error +/-2,8%",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/08/Informe-2_-Los-argentinos-la-democracia-y-el-poder-presidencial-_-Creencias-Sociales-2025.pdf",
+    "pregunta_original": "Nivel de acuerdo con la frase “Un gobierno puede suspender por un tiempo algunos derechos si lo considera mejor para la sociedad”",
+    "nota": "A = muy (12) + bastante de acuerdo (12); B = poco (21) + nada de acuerdo (53); resto = ns/nc (2). Pág. 29 del PDF. No depende del gobierno de turno."
+   }
+  },
+  {
+   "id": "pensando-en-tu-provincia-que-deberia-hac",
+   "tipo": "duelo",
+   "pregunta": "Pensando en tu provincia, ¿qué debería hacer tu gobernador?",
+   "a": {
+    "texto": "Defender a la provincia"
+   },
+   "b": {
+    "texto": "Ayudar al presidente"
+   },
+   "tema": "politica",
+   "ref": {
+    "a": 61.9,
+    "b": 32.0,
+    "resto": 6.1,
+    "encuestadora": "Zuban Córdoba y Asoc.",
+    "fecha": "2024-11",
+    "muestra": "1.800 casos, mixto (70% CAWI online, 30% mailing), población 16+ años, campo 20-21/11/2024, error +/-2,31%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/12/DDD-Un-Ano-de-Polarizacion.pdf",
+    "pregunta_original": "Pensando sólo en su provincia y el estado de la misma, ¿qué es lo que debe hacer su gobernador? “Debe defender los intereses de su provincia, aunque tenga que enfrentar al presidente” / “Debe ayudar al presidente, aunque implique que su provincia pierda recursos” / No sabe",
+    "nota": "Resto = no sabe. Opciones abreviadas: el original agrega 'aunque tenga que enfrentar al presidente' / 'aunque la provincia pierda recursos'. Serie: feb-23 53,9/41,4; mar-24 61,8/35,9; abr-24 55,3/39,2; nov-24 61,9/32,0. Pág. 38 del PDF. Carta de federalismo (Nación vs provincias): no mapea a ninguno de los tres ejes, por eso eje vacío."
+   }
+  },
+  {
+   "id": "hay-que-derogar-el-matrimonio-igualitari",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que derogar el matrimonio igualitario y la ley de identidad de género.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "diversidad"
+   ],
+   "eje": {
+    "valores": 1
+   },
+   "ref": {
+    "a": 25.2,
+    "b": 65.7,
+    "resto": 9.1,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2024-11",
+    "muestra": "1.800 casos, online (70% CAWI, 30% mailing), mayores de 16, ponderada por edad, zona, género y voto; error ±2,31%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/12/DDD-Un-Ano-de-Polarizacion.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo está Ud. con la siguiente frase? \"Se debe derogar el matrimonio igualitario y la Ley de Identidad de Género\"",
+    "nota": "Informe Nacional Diciembre 2024 (campo 20-21/11/2024), lámina p. 27. Acuerdo 25,2 / desacuerdo 65,7 / no sabe 9,1 (resto). La frase original junta las dos leyes; se mantiene así por fidelidad."
+   }
+  },
+  {
+   "id": "se-avanzo-tanto-en-la-igualdad-de-las-mu",
+   "tipo": "afirmacion",
+   "pregunta": "Se avanzó tanto en la igualdad de las mujeres que hoy se discrimina a los varones.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "igualdad-genero"
+   ],
+   "eje": {
+    "valores": 1
+   },
+   "ref": {
+    "a": 50,
+    "b": 41,
+    "resto": 9,
+    "encuestadora": "Ipsos (con el Global Institute for Women's Leadership, King's College London)",
+    "fecha": "2026-01",
+    "muestra": "~500 casos en Argentina, online (Ipsos Global Advisor), 16-74 años; Ipsos la considera representativa de la población adulta menor de 75",
+    "alcance": "nacional",
+    "url": "https://resources.ipsos.com/rs/297-CXJ-795/images/IWD-2026-Global-Report.pdf",
+    "pregunta_original": "Below is a list of statements... We have gone so far in promoting women's equality that we are discriminating against men. (strongly/somewhat agree vs. somewhat/strongly disagree)",
+    "nota": "International Women's Day 2026, campo 24/12/2025-09/01/2026, gráfico p. 15. A = muy + algo de acuerdo (50); B = algo + muy en desacuerdo (41); resto = no sabe/no responde (9, no graficado). Mide la idea de que el feminismo 'fue demasiado lejos'."
+   }
+  },
+  {
+   "id": "en-las-decisiones-importantes-del-hogar",
+   "tipo": "afirmacion",
+   "pregunta": "En las decisiones importantes del hogar, la última palabra la debería tener el marido.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "roles-genero"
+   ],
+   "eje": {
+    "valores": 1
+   },
+   "ref": {
+    "a": 12,
+    "b": 62,
+    "resto": 26,
+    "encuestadora": "Ipsos (con el Global Institute for Women's Leadership, King's College London)",
+    "fecha": "2026-01",
+    "muestra": "~500 casos en Argentina, online (Ipsos Global Advisor), 16-74 años; Ipsos la considera representativa de la población adulta menor de 75",
+    "alcance": "nacional",
+    "url": "https://resources.ipsos.com/rs/297-CXJ-795/images/IWD-2026-Global-Report.pdf",
+    "pregunta_original": "To what extent do you personally agree or disagree with each of the following statements? A husband should have the final word on important decisions made in his home",
+    "nota": "International Women's Day 2026, campo 24/12/2025-09/01/2026, gráfico p. 69. A = muy + algo de acuerdo (12); B = algo + muy en desacuerdo (62); resto = ni de acuerdo ni en desacuerdo (22) + no sabe (4). A+B = 74. Mide familia tradicional / roles de género."
+   }
+  },
+  {
+   "id": "cuando-falta-trabajo-los-hombres-deberia",
+   "tipo": "afirmacion",
+   "pregunta": "Cuando falta trabajo, los hombres deberían tener prioridad para conseguir empleo.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "roles-genero"
+   ],
+   "eje": {
+    "valores": 1
+   },
+   "ref": {
+    "a": 23.9,
+    "b": 71.8,
+    "resto": 4.3,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2026-07",
+    "muestra": "1.500 casos, mixta (40% mailing, 60% CAWI), mayores de 16; error ±2,53%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2026/08/DDD-Julio-2026-ok.pdf",
+    "pregunta_original": "\"Cuando faltan empleos los hombres deberían tener prioridad para conseguir trabajo\" (acuerdo / desacuerdo / no sabe)",
+    "nota": "Informe Nacional Julio 2026 (campo 22-26/07/2026), lámina p. 23. Resto = no sabe. Ítem clásico de roles de género tradicionales (tipo Encuesta Mundial de Valores)."
+   }
+  },
+  {
+   "id": "el-cambio-climatico-es-un-invento-del-so",
+   "tipo": "afirmacion",
+   "pregunta": "«El cambio climático es un invento del socialismo» (frase de Milei en Davos).",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "eje": {
+    "valores": 0.5
+   },
+   "ref": {
+    "a": 21.8,
+    "b": 71.9,
+    "resto": 6.3,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2024-11",
+    "muestra": "1.800 casos, online (70% CAWI, 30% mailing), mayores de 16, ponderada por edad, zona, género y voto; error ±2,31%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/12/DDD-Un-Ano-de-Polarizacion.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo está Ud con las siguientes frases mencionadas por el Presidente Milei en Davos? \"El cambio climático es un invento del socialismo\"",
+    "nota": "Informe Nacional Diciembre 2024 (campo 20-21/11/2024), lámina p. 18. Resto = no sabe. La pregunta atribuía la frase a Milei, por eso la carta la atribuye. En ene-2024: 18,8 / 77,0 / 4,2. Hueco ambiente; eje débil (0.5) porque el negacionismo climático es transversal a lo económico."
+   }
+  },
+  {
+   "id": "los-recursos-naturales-estrategicos-liti",
+   "tipo": "afirmacion",
+   "pregunta": "Los recursos naturales estratégicos (litio, tierras, agua) tienen que quedar mayormente en manos argentinas.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "apertura"
+   ],
+   "eje": {
+    "economia": -0.5
+   },
+   "ref": {
+    "a": 81.8,
+    "b": 16.5,
+    "resto": 1.7,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2026-08",
+    "muestra": "1.200 casos, 100% online, mayores de 16; error ±2,83%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2026/08/DATAZO-Soberania-nacional.pdf",
+    "pregunta_original": "Indique su nivel de acuerdo y desacuerdo de las siguientes frases: \"Los recursos naturales estratégicos (litio, tierras, agua) deben quedar mayoritariamente en manos de argentinos\"",
+    "nota": "Informe 'Soberanía nacional' (Datazo, campo 8-10/08/2026), lámina p. 5. Resto = no sabe. Del mismo informe salen dos cartas ya existentes (apertura al mundo / industria nacional); esta frase no está en el banco. Hueco extractivismo/litio. 'De acuerdo' = nacionalismo económico (más Estado)."
+   }
+  },
+  {
+   "id": "estas-a-favor-del-acuerdo-de-libre-comer",
+   "tipo": "duelo",
+   "pregunta": "¿Estás a favor del acuerdo de libre comercio que firmaron la Argentina y EE.UU.?",
+   "a": {
+    "texto": "A favor"
+   },
+   "b": {
+    "texto": "En contra"
+   },
+   "tema": "economia",
+   "grupos": [
+    "apertura",
+    "eeuu"
+   ],
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 40.6,
+    "b": 49.2,
+    "resto": 10.4,
+    "encuestadora": "AtlasIntel / Bloomberg (Latam Pulse)",
+    "fecha": "2026-03",
+    "muestra": "5.037 casos, online por reclutamiento digital aleatorio (Atlas RDR), adultos; error ±1%",
+    "alcance": "nacional",
+    "url": "https://cdn.atlasintel.org/f1c824df-14c5-40ae-89cb-e709cd764de0.pdf",
+    "pregunta_original": "En febrero de 2025, Argentina y Estados Unidos firmaron un acuerdo de libre comercio que permite que los productos de ambos países entren con menos impuestos. ¿Estás a favor o en contra de este acuerdo?",
+    "nota": "Latam Pulse Argentina marzo 2026 (campo 20-24/03/2026), p. 37. Resto = no sé. La pregunta original dice 'febrero de 2025' (así en la fuente, probablemente errata por 2026) y no menciona a Milei. Reemplaza el dato de enero 2025 (Latam Pulse p. 60: buena idea 59,9 / mala idea 35,3 / no sé 4,9, sobre la intención de negociar el tratado)."
+   }
+  },
+  {
+   "id": "que-relacion-deberia-buscar-la-argentina",
+   "tipo": "duelo",
+   "pregunta": "¿Qué relación debería buscar la Argentina con EE.UU.?",
+   "a": {
+    "texto": "Más cercana"
+   },
+   "b": {
+    "texto": "Más distante"
+   },
+   "tema": "politica",
+   "grupos": [
+    "eeuu"
+   ],
+   "ref": {
+    "a": 31.1,
+    "b": 47.8,
+    "resto": 21.2,
+    "encuestadora": "AtlasIntel / Bloomberg (Latam Pulse)",
+    "fecha": "2026-07",
+    "muestra": "1.120 casos, online por reclutamiento digital aleatorio (Atlas RDR), adultos; error ±3%",
+    "alcance": "nacional",
+    "url": "https://cdn.atlasintel.org/39865b10-c10c-43c6-a1e2-e2b864962ffc.pdf",
+    "pregunta_original": "¿Crees que tu país debería buscar relaciones más cercanas o más distantes con Estados Unidos?",
+    "nota": "Latam Pulse Argentina julio 2026 (campo 30/07-03/08/2026), p. 42. Resto = 'la relación debería mantenerse como está' (13,4) + no sé (7,8). A+B = 78,9. Sin eje: alineamiento internacional no encaja en las tres escalas."
+   }
+  },
+  {
+   "id": "que-pais-le-ofrece-a-la-argentina-mejore",
+   "tipo": "duelo",
+   "pregunta": "¿Qué país le ofrece a la Argentina mejores oportunidades de inversión?",
+   "a": {
+    "texto": "Estados Unidos"
+   },
+   "b": {
+    "texto": "China"
+   },
+   "tema": "economia",
+   "grupos": [
+    "eeuu"
+   ],
+   "ref": {
+    "a": 36.9,
+    "b": 33.8,
+    "resto": 29.3,
+    "encuestadora": "AtlasIntel / Bloomberg (Latam Pulse)",
+    "fecha": "2025-05",
+    "muestra": "2.031 casos, online por reclutamiento digital aleatorio (Atlas RDR), adultos; error ±2%",
+    "alcance": "nacional",
+    "url": "https://cdn.atlasintel.org/00c0d02b-c1be-4b22-9bd7-fc2559bddafd.pdf",
+    "pregunta_original": "¿Qué país cree que ofrece mejores oportunidades de inversión y financiamiento para Argentina?",
+    "nota": "Latam Pulse Argentina mayo 2025 (campo 21-26/05/2025), p. 49. Resto = ambos por igual (17) + ninguno (4) + no sé (8,3). A+B = 70,7. Duelo EE.UU. vs China; sin eje."
+   }
+  },
+  {
+   "id": "en-la-argentina-para-quien-se-gobierna",
+   "tipo": "duelo",
+   "pregunta": "En la Argentina, ¿para quién se gobierna?",
+   "a": {
+    "texto": "Para unos pocos poderosos"
+   },
+   "b": {
+    "texto": "Para el bien común"
+   },
+   "tema": "politica",
+   "grupos": [
+    "representacion"
+   ],
+   "ref": {
+    "a": 79,
+    "b": 17,
+    "resto": 4,
+    "encuestadora": "Latinobarómetro",
+    "fecha": "2024-09",
+    "muestra": "1.200 casos, cara a cara, 18 años y más; error ~±3%",
+    "alcance": "nacional",
+    "url": "https://www.latinobarometro.org/documents/LAT-2024/latinobarometro-informe-2024.pdf",
+    "pregunta_original": "En términos generales ¿Diría Ud. que el país está gobernado por unos cuantos grupos poderosos en su propio beneficio, o que está gobernado para el bien de todo el pueblo?",
+    "nota": "Informe Latinobarómetro 2024, gráficos por país p. 52-53 (campo 23/08-09/10/2024). Argentina: grupos poderosos 79, bien de todo el pueblo 17; resto = NS/NR (4, por diferencia). Hueco populismo/antielitismo; sin eje."
+   }
+  },
+  {
+   "id": "los-partidos-politicos-representan-bien",
+   "tipo": "afirmacion",
+   "pregunta": "Los partidos políticos representan bien a la sociedad.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "grupos": [
+    "representacion"
+   ],
+   "ref": {
+    "a": 26.1,
+    "b": 69.7,
+    "resto": 4.2,
+    "encuestadora": "AtlasIntel / Bloomberg (Latam Pulse)",
+    "fecha": "2025-06",
+    "muestra": "1.963 casos, online por reclutamiento digital aleatorio (Atlas RDR), adultos; error ±2%",
+    "alcance": "nacional",
+    "url": "https://cdn.atlasintel.org/91ddd8bd-88e6-46e2-9286-24f7304cc1cb.pdf",
+    "pregunta_original": "¿Cree que los partidos políticos en Argentina representan bien a la sociedad?",
+    "nota": "Latam Pulse Argentina junio 2025 (campo 27-30/06/2025), p. 70. A = representan muy bien (6,8) + razonablemente bien (19,3); B = representan poco (38,4) + no representan nada (31,3); resto = no sé. Hueco populismo/antielitismo; sin eje."
    }
   }
  ]
