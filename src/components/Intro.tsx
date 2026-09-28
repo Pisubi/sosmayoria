@@ -20,14 +20,14 @@ export function Intro({ saved, onStart, onResume, onMethodology }: IntroProps) {
   return (
     <main>
       <section className="mx-auto max-w-5xl px-4 pt-14 pb-16 sm:px-6 sm:pt-20 sm:pb-24">
-        <Eyebrow>Test político multidimensional</Eyebrow>
+        <Eyebrow>Test político</Eyebrow>
         <h1 className="mt-6 max-w-3xl text-4xl leading-[1.08] font-normal tracking-[-0.015em] sm:text-6xl">
           Dónde te <em className="font-light text-naranja">ubicás</em> en la política
         </h1>
         <p className="mt-6 max-w-xl text-base leading-7 text-azul/75 sm:text-lg sm:leading-8">
-          Dos tests con doce ejes cada uno. El resultado no te encasilla: muestra tu posición en
-          cada eje y en qué coincidís y en qué te diferenciás de ideologías, tradiciones, figuras
-          y partidos.
+          Respondé sobre economía, valores, instituciones y el mundo, y descubrí a qué figuras,
+          partidos e ideologías te parecés, en qué coincidís y en qué te diferenciás. Sin
+          etiquetas cerradas.
         </p>
         {saved && <ResumeBanner saved={saved} onResume={onResume} />}
       </section>
@@ -37,52 +37,14 @@ export function Intro({ saved, onStart, onResume, onMethodology }: IntroProps) {
           <Eyebrow>Elegí el test</Eyebrow>
           <h2 className="mt-5 text-3xl font-bold sm:text-4xl">Dos tests, tres versiones</h2>
           <p className="mt-4 max-w-xl leading-7 text-marfil/70">
-            La versión corta tiene seis afirmaciones por eje; la completa, diez, y la a fondo, todas.
-            Podés responder "No sé" cuando no tengas una opinión formada.
+            La corta alcanza para ubicarte; la completa y la a fondo afinan el resultado. Podés
+            responder "No sé" cuando no tengas una opinión formada.
           </p>
           <div className="mt-10 grid gap-4 lg:grid-cols-2">
             {TEST_ORDER.map((id, i) => (
               <TestCard key={id} test={tests[id]} index={i + 1} onStart={onStart} />
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="bg-arena">
-        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-          <Eyebrow>Qué mide</Eyebrow>
-          <div className="mt-5 flex flex-wrap items-end justify-between gap-4">
-            <h2 className="text-3xl font-bold sm:text-4xl">Los ejes</h2>
-            <TestTabs value={tab} onChange={setTab} />
-          </div>
-          <p className="mt-4 max-w-xl leading-7 text-azul/75">
-            Cada eje va de un polo a otro. Ningún extremo es la respuesta correcta: el test
-            describe dónde estás, no dónde deberías estar.
-          </p>
-          <ol className="mt-10 border-t border-azul/14">
-            {test.axes.map((axis, i) => (
-              <li
-                key={axis.id}
-                className="grid gap-2 border-b border-azul/14 py-5 sm:grid-cols-[3rem_16rem_1fr] sm:gap-6"
-              >
-                <Index n={i + 1} />
-                <div>
-                  <p className="font-semibold">
-                    {axis.name}
-                    {!axis.includeInMatching && (
-                      <span className="ml-2 text-xs font-medium tracking-[0.12em] text-naranja uppercase">
-                        Aparte
-                      </span>
-                    )}
-                  </p>
-                  <p className="mt-1 text-sm text-azul/70">
-                    {axis.poleA.label} ↔ {axis.poleB.label}
-                  </p>
-                </div>
-                <p className="text-sm leading-6 text-azul/75">{axis.description}</p>
-              </li>
-            ))}
-          </ol>
         </div>
       </section>
 
@@ -116,6 +78,34 @@ export function Intro({ saved, onStart, onResume, onMethodology }: IntroProps) {
               </div>
             )
           })}
+        </div>
+      </section>
+
+      <section className="bg-arena">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
+          <Eyebrow>Qué te preguntamos</Eyebrow>
+          <div className="mt-5 flex flex-wrap items-end justify-between gap-4">
+            <h2 className="text-3xl font-bold sm:text-4xl">Los temas</h2>
+            <TestTabs value={tab} onChange={setTab} />
+          </div>
+          <p className="mt-4 max-w-xl leading-7 text-azul/75">
+            Ninguna respuesta es la correcta: el test describe dónde estás, no dónde deberías estar.
+          </p>
+          <ul className="mt-10 grid gap-x-10 border-t border-azul/14 sm:grid-cols-2">
+            {test.axes.map((axis) => (
+              <li key={axis.id} className="border-b border-azul/14 py-5">
+                <p className="font-semibold">
+                  {axis.name}
+                  {!axis.includeInMatching && (
+                    <span className="ml-2 text-xs font-medium tracking-[0.12em] text-naranja uppercase">
+                      Aparte
+                    </span>
+                  )}
+                </p>
+                <p className="mt-1 text-sm leading-6 text-azul/75">{axis.description}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 
@@ -173,7 +163,7 @@ function TestCard({
       </p>
       <p className="mt-4 leading-7 text-marfil/70">{test.description}</p>
       <p className="mt-4 text-sm text-marfil/60">
-        {test.axes.length} ejes · {test.profiles.length} perfiles
+        {test.profiles.length} perfiles para comparar
       </p>
       <div className="mt-8 grid gap-2">
         {VARIANTS.map((variant) => {

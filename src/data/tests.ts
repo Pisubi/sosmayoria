@@ -13,7 +13,7 @@ export const tests: Record<TestId, TestDefinition> = {
     name: 'Argentina',
     tagline: 'De Rosas a Milei',
     description:
-      'Ejes propios de la política argentina —incluidos el estilo populista, las instituciones y la memoria— y comparación con tradiciones y figuras del país.',
+      'Los grandes debates argentinos —economía, instituciones, estilo político, seguridad y memoria— y comparación con tradiciones y figuras del país.',
     axes: arAxes.axes as unknown as Axis[],
     questions: arQuestions.questions as unknown as Question[],
     catalogs: arProfiles.catalogs as unknown as Catalog[],
@@ -21,7 +21,7 @@ export const tests: Record<TestId, TestDefinition> = {
     planes: [
       ['ECO', 'POP'],
       ['ECO', 'SOC'],
-      ['INS', 'MEM'],
+      ['INS', 'SEG'],
     ],
   },
   intl: {
@@ -30,7 +30,7 @@ export const tests: Record<TestId, TestDefinition> = {
     name: 'Internacional',
     tagline: 'De Stalin a Merkel',
     description:
-      'Ejes universales y comparación con ideologías, figuras históricas y actuales de todo el mundo —argentinas incluidas— y partidos de hoy.',
+      'Los grandes debates del mundo y comparación con ideologías, figuras históricas y actuales —argentinas incluidas— y partidos de hoy.',
     axes: intlAxes.axes as unknown as Axis[],
     questions: intlQuestions.questions as unknown as Question[],
     catalogs: intlProfiles.catalogs as unknown as Catalog[],
@@ -38,7 +38,7 @@ export const tests: Record<TestId, TestDefinition> = {
     planes: [
       ['ECO', 'AUT'],
       ['ECO', 'SOC'],
-      ['NAC', 'DEM'],
+      ['NAC', 'MIG'],
     ],
   },
 }

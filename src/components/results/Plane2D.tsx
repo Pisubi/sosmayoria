@@ -179,7 +179,7 @@ export function Plane2D({ xAxis, yAxis, scores, profiles, labelCount = 6 }: Plan
         <span className="font-semibold">{yAxis.name}</span>
         {!hasUser && (
           <span className="block text-xs text-azul/60">
-            Algún eje quedó indeterminado: tu posición no se puede ubicar en este plano.
+            Algún tema quedó indeterminado: tu posición no se puede ubicar en este plano.
           </span>
         )}
       </figcaption>

@@ -103,7 +103,7 @@ function Meta({ match }: { match: Match }) {
   return (
     <p className="mt-3 text-xs leading-5 text-azul/55">
       Confianza {profile.confidence} · semilla editorial
-      {match.partial && ' · comparación parcial (pocos ejes con dato)'}
+      {match.partial && ' · comparación parcial (pocos temas con dato)'}
       {profile.contextNote && ` · ${profile.contextNote}`}
     </p>
   )

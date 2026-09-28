@@ -1,10 +1,10 @@
 {
- "version": "intl-1.0.0",
+ "version": "intl-2.0.0",
  "axes": [
   {
    "id": "ECO",
    "name": "Economía",
-   "description": "Propiedad, redistribución, impuestos y regulación.",
+   "description": "Estado o mercado, impuestos y redistribución, aranceles y libre comercio.",
    "poleA": {
     "label": "Igualdad / Estado"
    },
@@ -14,23 +14,11 @@
    "includeInMatching": true
   },
   {
-   "id": "COM",
-   "name": "Comercio",
-   "description": "Aranceles, inversión extranjera y globalización.",
-   "poleA": {
-    "label": "Proteccionismo"
-   },
-   "poleB": {
-    "label": "Libre comercio"
-   },
-   "includeInMatching": true
-  },
-  {
    "id": "AUT",
    "name": "Libertades",
-   "description": "Libertades civiles frente a orden y autoridad.",
+   "description": "Libertades civiles, pluralismo, elecciones y límites al poder.",
    "poleA": {
-    "label": "Libertades civiles"
+    "label": "Libertades y pluralismo"
    },
    "poleB": {
     "label": "Orden / autoridad"
@@ -38,38 +26,14 @@
    "includeInMatching": true
   },
   {
-   "id": "DEM",
-   "name": "Democracia",
-   "description": "Pluralismo, contrapesos y elecciones frente a poder concentrado.",
-   "poleA": {
-    "label": "Pluralismo"
-   },
-   "poleB": {
-    "label": "Autocracia"
-   },
-   "includeInMatching": true
-  },
-  {
    "id": "SOC",
    "name": "Valores",
-   "description": "Aborto, diversidad sexual, familia y roles de género.",
+   "description": "Aborto, diversidad, familia y el lugar de la religión en la vida pública.",
    "poleA": {
-    "label": "Progresismo"
+    "label": "Progresismo / laicidad"
    },
    "poleB": {
-    "label": "Tradición"
-   },
-   "includeInMatching": true
-  },
-  {
-   "id": "REL",
-   "name": "Religión",
-   "description": "Lugar de la religión en las leyes y la vida pública.",
-   "poleA": {
-    "label": "Secularismo"
-   },
-   "poleB": {
-    "label": "Religión en política"
+    "label": "Tradición / religión"
    },
    "includeInMatching": true
   },
@@ -130,18 +94,6 @@
    },
    "poleB": {
     "label": "Populismo"
-   },
-   "includeInMatching": true
-  },
-  {
-   "id": "TEC",
-   "name": "Tecnología",
-   "description": "Confianza en la tecnología y la biotecnología frente a límites naturales.",
-   "poleA": {
-    "label": "Tecnoprogresismo"
-   },
-   "poleB": {
-    "label": "Bioconservadurismo"
    },
    "includeInMatching": true
   }

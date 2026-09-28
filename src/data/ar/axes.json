@@ -1,51 +1,15 @@
 {
- "version": "ar-1.0.0",
+ "version": "ar-2.0.0",
  "axes": [
   {
    "id": "ECO",
    "name": "Economía",
-   "description": "Empresas públicas, gasto, planes sociales y precios.",
+   "description": "Empresas públicas y gasto, Banco Central y déficit, sindicatos y convenios, aranceles y retenciones.",
    "poleA": {
     "label": "Estado"
    },
    "poleB": {
     "label": "Mercado"
-   },
-   "includeInMatching": true
-  },
-  {
-   "id": "COM",
-   "name": "Comercio",
-   "description": "Aranceles, retenciones y tratados de libre comercio.",
-   "poleA": {
-    "label": "Protección"
-   },
-   "poleB": {
-    "label": "Apertura"
-   },
-   "includeInMatching": true
-  },
-  {
-   "id": "MAC",
-   "name": "Macroeconomía",
-   "description": "Banco Central, déficit, dolarización y FMI.",
-   "poleA": {
-    "label": "Heterodoxia"
-   },
-   "poleB": {
-    "label": "Ortodoxia"
-   },
-   "includeInMatching": true
-  },
-  {
-   "id": "LAB",
-   "name": "Trabajo",
-   "description": "Sindicatos, convenios colectivos e indemnizaciones.",
-   "poleA": {
-    "label": "Pro-sindical"
-   },
-   "poleB": {
-    "label": "Flexibilización"
    },
    "includeInMatching": true
   },
@@ -87,25 +51,13 @@
   },
   {
    "id": "SEG",
-   "name": "Seguridad",
-   "description": "Imputabilidad, uso de la fuerza y protesta.",
+   "name": "Seguridad y memoria",
+   "description": "Delito, fuerzas de seguridad y protesta; juicios de lesa humanidad y relato de los años 70.",
    "poleA": {
-    "label": "Garantista"
+    "label": "Garantismo / Memoria, Verdad y Justicia"
    },
    "poleB": {
-    "label": "Mano dura"
-   },
-   "includeInMatching": true
-  },
-  {
-   "id": "MEM",
-   "name": "Memoria",
-   "description": "Juicios de lesa humanidad, domiciliarias y relato de los años 70.",
-   "poleA": {
-    "label": "Memoria, Verdad y Justicia"
-   },
-   "poleB": {
-    "label": "Revisionismo"
+    "label": "Mano dura / revisionismo"
    },
    "includeInMatching": true
   },

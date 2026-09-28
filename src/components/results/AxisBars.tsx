@@ -55,7 +55,7 @@ export function AxisBars({ axes, scores }: AxisBarsProps) {
                       }
                     : undefined
                 }
-                title={score == null ? 'Menos de la mitad del eje respondido' : `${axis.name}: ${score > 0 ? '+' : ''}${score}`}
+                title={score == null ? 'Menos de la mitad del tema respondido' : `${axis.name}: ${score > 0 ? '+' : ''}${score}`}
               >
                 <span
                   aria-hidden
@@ -77,7 +77,7 @@ export function AxisBars({ axes, scores }: AxisBarsProps) {
               </div>
               {score == null && (
                 <p className="mt-2 text-xs text-azul/60">
-                  Respondiste "No sé" en más de la mitad de este eje: no entra en las comparaciones.
+                  Respondiste "No sé" en más de la mitad de este tema: no entra en las comparaciones.
                 </p>
               )}
             </div>

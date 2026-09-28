@@ -1,9 +1,9 @@
 -- Brújula: tabla de respuestas anónimas.
 -- Pegar entero en Supabase → SQL Editor → Run. Se puede volver a correr sin romper nada.
 --
--- Una fila por test terminado, ~170 bytes con índice incluido:
+-- Una fila por test terminado, ~140 bytes con índice incluido:
 --   las columnas de códigos son smallint (2 bytes), la fecha es date (4 bytes, sin hora),
---   las respuestas van empaquetadas en medio byte por afirmación (96 bytes para 192),
+--   las respuestas van empaquetadas en medio byte por afirmación (59 bytes para 118),
 --   y los puntajes por eje no se guardan porque se recalculan desde las respuestas.
 -- Las columnas van de mayor a menor tamaño para no perder bytes en relleno de alineación.
 

@@ -70,8 +70,8 @@ export function Methodology({ onBack }: MethodologyProps) {
           que respondan el cuestionario "como" cada figura.
         </p>
         <p>
-          Algunas figuras del mismo espacio tienen perfiles casi idénticos (por ejemplo, Biden y
-          Harris, o Cristina y Máximo Kirchner): con doce ejes el test no puede distinguirlas y
+          Algunas figuras del mismo espacio tienen perfiles casi idénticos (por ejemplo, Cristina y
+          Máximo Kirchner): el test no puede distinguirlas y
           aparecen juntas en el ranking. Cada perfil se valida simulando respuestas "como" esa
           figura con ruido: tiene que salir primero en al menos el 80% de los casos, o entre los
           dos primeros si tiene un gemelo.
@@ -102,7 +102,7 @@ export function Methodology({ onBack }: MethodologyProps) {
         )}
         <p>
           El progreso queda en tu navegador para que puedas retomar, y el enlace para compartir
-          contiene solo tus puntajes por eje.
+          contiene solo tus puntajes por tema.
         </p>
       </Block>
 

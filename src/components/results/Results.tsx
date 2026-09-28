@@ -70,8 +70,8 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
           </h1>
           <p className="mt-6 max-w-2xl leading-7 text-marfil/75 sm:text-lg sm:leading-8">
             Coincidís sobre todo en {listOf(top.agree.map(axisName))}, y te diferenciás en{' '}
-            {listOf(top.differ.map(axisName))}. Abajo están tu posición eje por eje y la cercanía
-            con cada catálogo.
+            {listOf(top.differ.map(axisName))}. Abajo están tus cercanías con cada catálogo y tu
+            posición tema por tema.
           </p>
 
           <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-marfil/20 bg-marfil/20 sm:grid-cols-2 lg:grid-cols-4">
@@ -82,7 +82,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
             )}
           </div>
           <p className="mt-4 text-xs leading-5 text-marfil/60">
-            Cercanía de 0 a 100% calculada con la distancia media entre ejes.
+            Cercanía de 0 a 100% según la distancia media entre tus posiciones y las de cada perfil.
             {data.total != null && ` Respondiste ${data.answered} de ${data.total} afirmaciones.`}
           </p>
         </div>
@@ -96,8 +96,8 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
             )}
             {acquiescent && (
               <p>
-                Respondiste casi todo en el mismo sentido. Como cada eje tiene afirmaciones de ambos
-                polos, tu resultado puede quedar más cerca del centro de lo que realmente pensás.
+                Respondiste casi todo en el mismo sentido. Como cada tema tiene afirmaciones en los dos
+                sentidos, tu resultado puede quedar más cerca del centro de lo que realmente pensás.
               </p>
             )}
             {undetermined.length > 0 && (
@@ -111,17 +111,29 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
       )}
 
       <Section
-        eyebrow="01 · Ejes"
-        title="Tu posición eje por eje"
-        note="Escala de −100 a +100 desde la posición neutral, con la intensidad de tu postura. En naranja, el eje donde es más marcada."
+        eyebrow="01 · Cercanías"
+        title="A quién te parecés, y en qué"
+        note="Cada catálogo se compara por separado. Las posiciones de los perfiles son semillas editoriales basadas en decisiones de gobierno, programas y declaraciones públicas; en figuras históricas son de época."
+      >
+        <div className="grid gap-14">
+          {[lead, ...others].map(({ catalog, matches }) => (
+            <CatalogRanking key={catalog.id} testId={test.id} catalog={catalog} matches={matches} axes={test.axes} />
+          ))}
+        </div>
+      </Section>
+
+      <Section
+        eyebrow="02 · Temas"
+        title="Tu posición tema por tema"
+        note="Escala de −100 a +100 desde la posición neutral, con la intensidad de tu postura. En naranja, el tema donde es más marcada."
       >
         <AxisBars axes={matchAxes} scores={scores} />
       </Section>
 
       <Section
-        eyebrow="02 · Planos"
+        eyebrow="03 · Mapas"
         title="Tu lugar en el mapa"
-        note={`Tres cortes de dos ejes. Los puntos son ${planeCatalogs.map((c) => c.name.toLowerCase()).join(' y ')}; se nombran los más cercanos a vos.`}
+        note={`Tres cruces de dos temas. Los puntos son ${planeCatalogs.map((c) => c.name.toLowerCase()).join(' y ')}; se nombran los más cercanos a vos.`}
       >
         <div className="grid gap-10 md:grid-cols-3 md:gap-6">
           {test.planes.map(([x, y]) => (
@@ -132,18 +144,6 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
               scores={scores}
               profiles={planeProfiles}
             />
-          ))}
-        </div>
-      </Section>
-
-      <Section
-        eyebrow="03 · Cercanías"
-        title="A quién te parecés, y en qué"
-        note="Cada catálogo se compara por separado. Las posiciones de los perfiles son semillas editoriales basadas en decisiones de gobierno, programas y declaraciones públicas; en figuras históricas son de época."
-      >
-        <div className="grid gap-14">
-          {[lead, ...others].map(({ catalog, matches }) => (
-            <CatalogRanking key={catalog.id} testId={test.id} catalog={catalog} matches={matches} axes={test.axes} />
           ))}
         </div>
       </Section>
@@ -162,7 +162,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
         <div className="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6">
           <p className="text-2xl font-bold">Compartí o compará</p>
           <p className="mx-auto mt-3 max-w-md leading-7 text-azul/75">
-            El enlace guarda solo tus puntajes por eje, no tus respuestas. Probá también el otro
+            El enlace guarda solo tus puntajes por tema, no tus respuestas. Probá también el otro
             test o la versión completa.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">

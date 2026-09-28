@@ -1,9 +1,9 @@
 # Brújula — test político multidimensional
 
-Dos tests de posicionamiento político, uno argentino y otro internacional, con 12
-ejes cada uno. El resultado no encasilla: muestra la posición en cada eje y en qué
-coincide y en qué se diferencia la persona de ideologías, tradiciones, figuras y
-partidos.
+Dos tests de posicionamiento político, uno argentino y otro internacional. El
+resultado no encasilla: muestra a qué ideologías, tradiciones, figuras y partidos
+se parece la persona, en qué coincide y en qué se diferencia, y su posición tema
+por tema.
 
 Implementa la especificación técnica "Political compass argentino e internacional":
 ítems multi-eje balanceados, opción "No sé", cobertura por eje, catálogos
@@ -13,8 +13,8 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
 
 | | Argentina | Internacional |
 |---|---|---|
-| Ejes | Economía, Comercio, Macroeconomía, Trabajo, Valores, Instituciones, Estilo (pluralista/populista), Seguridad, Memoria, Mundo, Territorio + Identidad (aparte) | Economía, Comercio, Libertades, Democracia, Valores, Religión, Nación, Guerra y paz, Migración, Ambiente, Estilo, Tecnología |
-| Afirmaciones | 182 (72 corta · 116 completa · 182 a fondo) | 192 (72 corta · 120 completa · 192 a fondo) |
+| Temas (ejes) | Economía (Estado, macroeconomía, trabajo y comercio), Valores, Instituciones, Estilo (pluralista/populista), Seguridad y memoria, Mundo, Territorio + Identidad (aparte) | Economía (incluye comercio), Libertades (incluye democracia), Valores (incluye religión), Nación, Guerra y paz, Migración, Ambiente, Estilo |
+| Afirmaciones | 118 (48 corta · 76 completa · 118 a fondo) | 112 (48 corta · 80 completa · 112 a fondo) |
 | Catálogos | Tradiciones y espacios · Figuras históricas · Figuras actuales | Ideologías · Figuras históricas · Figuras actuales · Partidos |
 | Perfiles | 169 | 302 |
 
@@ -77,14 +77,14 @@ variables de entorno, la app no pide datos ni envía nada.
 
 ### Cómo se ahorra espacio
 
-El plan Free da 500 MB de base. Cada test terminado ocupa unos **180 bytes**
+El plan Free da 500 MB de base. Cada test terminado ocupa unos **140 bytes**
 con el índice incluido (medido con 100.000 filas en PostgreSQL 16): alcanza para
-unos **2 millones de tests**. La misma información guardada "a lo simple", con
-JSON de respuestas y puntajes, textos y timestamp, ocupa unos 1.200 bytes por
-fila, 6,6 veces más.
+unos **3 millones de tests**. La misma información guardada "a lo simple", con
+JSON de respuestas y puntajes, textos y timestamp, ocupa unos 840 bytes por
+fila, 6 veces más.
 
 - **Respuestas en medio byte cada una**: el valor de cada afirmación ocupa 4 bits
-  en un `bytea`, en el orden de `questions.json`: 96 bytes para 192 afirmaciones.
+  en un `bytea`, en el orden de `questions.json`: 59 bytes para 118 afirmaciones.
   Como las filas guardadas dependen de ese orden, a `questions.json` solo se le
   agregan afirmaciones al final; lo controla un test contra
   `tests/answer-layout.json`, que hay que actualizar al agregarlas.
