@@ -2,17 +2,18 @@ import { describe, expect, it } from 'vitest'
 import {
   brujula,
   cuadrante,
-  frenteALaMayoria,
+  enPalabras,
   lugar,
   mayoria,
   perfil,
+  random,
   real,
   resumir,
   RONDA,
   sortear,
   temaDistinto,
 } from '../src/engine/juego'
-import type { Carta, Eje, Tema } from '../src/types'
+import type { Carta, Eje, Eleccion, Tema } from '../src/types'
 import { carta } from './fixture'
 
 describe('real y mayoría', () => {
@@ -138,43 +139,54 @@ describe('resumir', () => {
 describe('brújula política', () => {
   const con = (c: Carta, eje: Eje): Carta => ({ ...c, eje })
   const banco = [
-    con(carta('m1', 70, 30), { economia: 1 }),
-    con(carta('m2', 20, 80), { economia: -1 }),
-    con(carta('s1', 60, 40), { sociedad: 1 }),
-    con(carta('s2', 50, 49), { sociedad: -1 }),
+    con(carta('m1', 50, 50), { economia: 1 }),
+    con(carta('m2', 50, 50), { economia: -1 }),
+    con(carta('m3', 80, 20), { economia: 1 }),
+    con(carta('v1', 50, 50), { valores: 1 }),
+    con(carta('v2', 20, 80), { valores: -1 }),
+    con(carta('v3', 50, 50), { valores: 0.5 }),
     carta('x', 90, 10),
   ]
+  const responder = (e: Record<string, Eleccion>) =>
+    Object.entries(e).map(([id, eleccion]) => ({ carta: banco.find((c) => c.id === id)!, eleccion }))
 
-  it('promedia tus elecciones por eje y ubica a la mayoría en las mismas cartas', () => {
-    const r = resumir(banco, [
-      { carta: 'm1', eleccion: 'a' },
-      { carta: 'm2', eleccion: 'b' },
-      { carta: 's1', eleccion: 'b' },
-      { carta: 's2', eleccion: 'a' },
-      { carta: 'x', eleccion: 'a' },
-    ])
-    const b = brujula(r.lecturas)!
-    expect(b.cartas).toEqual({ economia: 2, sociedad: 2 })
-    expect(b.vos).toEqual({ economia: 1, sociedad: -1 })
-    // m1: mayoría A (+1); m2: mayoría B (+1); s1: mayoría A (+1); s2: parejo (0).
-    expect(b.mayoria).toEqual({ economia: 1, sociedad: 0.5 })
-    expect(cuadrante(b.vos)).toBe('Más mercado, más libertades')
-    expect(frenteALaMayoria(b)).toBe('Frente a la mayoría, estás más hacia las libertades individuales.')
+  it('el país, respondiendo con sus proporciones, promedia en el centro', () => {
+    const next = random(9)
+    const pos = Array.from({ length: 4000 }, () => {
+      const r = banco.map((c) => ({ carta: c, eleccion: (next() < real(c) / 100 ? 'a' : 'b') as Eleccion }))
+      return brujula(r)!.vos
+    })
+    const media = (e: 'economia' | 'valores') => pos.reduce((s, p) => s + p[e], 0) / pos.length
+    expect(Math.abs(media('economia'))).toBeLessThan(0.03)
+    expect(Math.abs(media('valores'))).toBeLessThan(0.03)
   })
 
-  it('sin suficientes respuestas por eje no ubica', () => {
-    const r = resumir(banco, [
-      { carta: 'm1', eleccion: 'a' },
-      { carta: 'm2', eleccion: 'a' },
-      { carta: 's1', eleccion: 'a' },
-      { carta: 's2', eleccion: 'nada' },
-    ])
-    expect(brujula(r.lecturas)).toBeNull()
+  it('elegir lo de pocos mueve más que elegir lo de muchos', () => {
+    const minoria = brujula(responder({ m1: 'a', m2: 'b', m3: 'b', v1: 'a', v2: 'b', v3: 'a' }))!
+    const mayoria = brujula(responder({ m1: 'a', m2: 'b', m3: 'a', v1: 'a', v2: 'b', v3: 'a' }))!
+    // m3 (80% A, empuja a mercado): elegir B (20%) corre mucho más a la izquierda que A a la derecha.
+    expect(mayoria.vos.economia).toBeGreaterThan(0)
+    expect(minoria.vos.economia).toBeLessThan(mayoria.vos.economia)
   })
 
-  it('nombra el centro', () => {
-    expect(cuadrante({ economia: 0.1, sociedad: -0.1 })).toBe('Centro')
-    expect(cuadrante({ economia: -0.5, sociedad: 0 })).toBe('Más Estado, centro en valores')
+  it('siempre del mismo lado queda lejos del centro, sin pasar del borde', () => {
+    const b = brujula(responder({ m1: 'a', m2: 'b', m3: 'a', v1: 'b', v2: 'a', v3: 'b' }))!
+    expect(b.vos.economia).toBeGreaterThan(0.5)
+    expect(b.vos.valores).toBeLessThan(-0.5)
+    expect(b.vos.economia).toBeLessThanOrEqual(1)
+    expect(cuadrante(b.vos)).toBe('Más mercado, valores más progresistas')
+    expect(b.cartas).toEqual({ economia: 3, valores: 3, autoridad: 0 })
+    expect(b.vos.autoridad).toBe(0)
+  })
+
+  it('sin suficientes respuestas por escala no ubica, y "no dice" no cuenta', () => {
+    expect(brujula(responder({ m1: 'a', m2: 'a', m3: 'nada', v1: 'a', v2: 'a', v3: 'a' }))).toBeNull()
+  })
+
+  it('nombra el centro y cada escala', () => {
+    expect(cuadrante({ economia: 0.1, valores: -0.1, autoridad: 0 })).toBe('Cerca del promedio')
+    expect(cuadrante({ economia: -0.5, valores: 0, autoridad: 0 })).toBe('Más Estado, centro en valores')
+    expect(enPalabras('autoridad', 0.4)).toBe('más orden')
   })
 })
 

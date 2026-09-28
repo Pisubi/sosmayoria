@@ -41,3 +41,29 @@ export const guardarPersona = (p: Participant): void => escribir(PERSONA, p)
 
 export const rondaGuardada = (): RondaGuardada | null => leer<RondaGuardada>(RONDA)
 export const guardarRonda = (r: RondaGuardada | null): void => escribir(RONDA, r)
+
+/**
+ * Tus respuestas de todas las rondas (la última por carta), para que la brújula se afine con cada
+ * ronda. Solo quedan en este navegador.
+ */
+const RESPUESTAS = 'mayoria:respuestas:v1'
+
+export interface Historial {
+  respuestas: Record<string, 'a' | 'b'>
+  rondas: number
+}
+
+export const historial = (): Historial => leer<Historial>(RESPUESTAS) ?? { respuestas: {}, rondas: 0 }
+
+export function sumarAlHistorial(jugadas: Jugada[]): Historial {
+  const h = historial()
+  for (const j of jugadas) {
+    if (j.eleccion === 'nada') delete h.respuestas[j.carta]
+    else h.respuestas[j.carta] = j.eleccion
+  }
+  const nuevo = { respuestas: h.respuestas, rondas: h.rondas + 1 }
+  escribir(RESPUESTAS, nuevo)
+  return nuevo
+}
+
+export const borrarHistorial = (): void => escribir(RESPUESTAS, null)

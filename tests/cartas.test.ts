@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { cartas, orden, todas, TEMAS } from '../src/data/cartas'
-import { MINIMO_EJE, RONDA, sortear } from '../src/engine/juego'
+import { brujula, CUPO, EJES, esIdeologica, RONDA, sortear } from '../src/engine/juego'
 import fotos from '../src/data/fotos.json'
 import guardado from './orden-cartas.json'
 
@@ -29,16 +29,36 @@ describe('banco de cartas', () => {
     }
   })
 
-  it('los ejes de la brújula son ±1 y las núcleo alcanzan para ubicar a cualquiera', () => {
+  it('los ejes de la brújula son ±1 o ±0,5 y la aprobación del gobierno no cuenta', () => {
     for (const c of todas) {
       for (const [k, v] of Object.entries(c.eje ?? {})) {
-        expect(['economia', 'sociedad'], c.id).toContain(k)
-        expect([1, -1], c.id).toContain(v)
+        expect(EJES, c.id).toContain(k)
+        expect([1, -1, 0.5, -0.5], c.id).toContain(v)
       }
     }
-    const nucleo = cartas.filter((c) => c.nucleo)
-    expect(nucleo.filter((c) => c.eje?.economia).length).toBeGreaterThanOrEqual(MINIMO_EJE)
-    expect(nucleo.filter((c) => c.eje?.sociedad).length).toBeGreaterThanOrEqual(MINIMO_EJE)
+    expect(todas.find((c) => c.id.startsWith('aprobas-la-gestion'))?.eje).toBeUndefined()
+  })
+
+  it('cada ronda real trae el cupo de cada escala y deja lugar para las otras cartas', () => {
+    for (let s = 0; s < 200; s++) {
+      const r = sortear(cartas, s)
+      for (const e of EJES) expect(r.filter((c) => c.eje?.[e]).length, `${e}, semilla ${s}`).toBeGreaterThanOrEqual(CUPO[e])
+      const ideologicas = r.filter(esIdeologica).length
+      expect(ideologicas).toBeLessThanOrEqual(19)
+      expect(RONDA - ideologicas).toBeGreaterThanOrEqual(6)
+      const b = brujula(r.map((carta) => ({ carta, eleccion: 'a' as const })))
+      expect(b).not.toBeNull()
+    }
+  })
+
+  it('las cartas sobre medidas de un gobierno son de 2025 en adelante y lo nombran', () => {
+    for (const c of cartas) {
+      if (!/gobierno/i.test(c.pregunta) || c.nucleo) continue
+      if (/impulsa|medida|reforma/i.test(c.pregunta)) {
+        expect(c.ref.fecha >= '2025-01', c.id).toBe(true)
+        expect(c.pregunta, c.id).toMatch(/gobierno de \w+/)
+      }
+    }
   })
 
   it('hay entre 4 y 5 cartas núcleo, nacionales', () => {

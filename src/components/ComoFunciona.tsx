@@ -1,9 +1,12 @@
 import { cartas, TEMAS, version } from '../data/cartas'
-import { MARGEN, mayoria } from '../engine/juego'
+import { CUPO, esIdeologica, MARGEN, mayoria } from '../engine/juego'
 import { todasLasFotos } from '../lib/fotos'
 import { collecting } from '../lib/supabase'
 import { Eyebrow } from './Eyebrow'
 import { fecha } from '../lib/formato'
+import type { NombreEje } from '../types'
+
+const cuenta = (e: NombreEje) => cartas.filter((c) => c.eje?.[e]).length
 
 export function ComoFunciona({ onBack, backLabel = 'Volver' }: { onBack: () => void; backLabel?: string }) {
   const fotos = todasLasFotos().filter(([id]) => cartas.some((c) => c.a.foto === id || c.b.foto === id))
@@ -39,9 +42,7 @@ export function ComoFunciona({ onBack, backLabel = 'Volver' }: { onBack: () => v
       </Bloque>
 
       <Bloque titulo="La brújula política">
-        {`${cartas.filter((c) => c.eje?.economia).length} cartas miden economía (más Estado o más mercado) y ${
-          cartas.filter((c) => c.eje?.sociedad).length
-        } miden valores y seguridad (más libertades individuales o más orden y tradición). Cada respuesta suma o resta en su eje y al final se promedia: por eso tu lugar va de un extremo al otro según qué tan parejo elegiste. El punto de la mayoría usa, en esas mismas cartas, la opción más elegida en la encuesta. Es una aproximación con las cartas que te tocaron, no un test: otra ronda puede moverte un poco. No se guarda ni se comparte.`}
+        {`De las ${cartas.length} cartas, ${cartas.filter(esIdeologica).length} miden ideología en tres escalas: economía (más Estado o más mercado, ${cuenta('economia')} cartas), valores (más progresistas o más tradicionales, ${cuenta('valores')}) y autoridad (más garantías o más orden, ${cuenta('autoridad')}). La aprobación del gobierno no cuenta: mide apoyo a un gobierno, no ideología. Cada ronda trae al menos ${CUPO.economia} cartas de economía y ${CUPO.valores} de cada una de las otras, y el resto son de las otras cartas, las que no cuentan para la brújula. Tu respuesta se compara con lo que respondió el país en la encuesta: elegir lo que eligió el 80% casi no te mueve, y elegir lo del 20% te mueve mucho. Por eso el centro es el argentino promedio, y "más Estado" quiere decir más que el promedio. Las cartas débiles o atadas a un gobierno pesan la mitad. Tus respuestas de rondas anteriores quedan en tu teléfono y se suman, así que la brújula se afina con cada ronda. No se envían ni van en la imagen para compartir.`}
       </Bloque>
 
       <Bloque titulo="Lo que se guarda">

@@ -219,6 +219,9 @@
    "grupos": [
     "prioridades"
    ],
+   "eje": {
+    "economia": -0.5
+   },
    "ref": {
     "a": 65.6,
     "b": 27.1,
@@ -534,9 +537,6 @@
     "texto": "Mal"
    },
    "tema": "sociedad",
-   "grupos": [
-    "docentes"
-   ],
    "ref": {
     "a": 61,
     "b": 19,
@@ -694,7 +694,7 @@
     "reforma-laboral"
    ],
    "eje": {
-    "economia": 1
+    "economia": 0.5
    },
    "ref": {
     "a": 61.8,
@@ -802,7 +802,7 @@
   {
    "id": "estoy-de-acuerdo-con-la-reforma-jubilato",
    "tipo": "afirmacion",
-   "pregunta": "Estoy de acuerdo con la reforma jubilatoria que impulsa el gobierno.",
+   "pregunta": "Estoy de acuerdo con la reforma jubilatoria que impulsa el gobierno de Milei.",
    "a": {
     "texto": "De acuerdo"
    },
@@ -815,7 +815,7 @@
     "reformas-del-gobierno"
    ],
    "eje": {
-    "economia": 1
+    "economia": 0.5
    },
    "ref": {
     "a": 32,
@@ -833,7 +833,7 @@
   {
    "id": "estoy-de-acuerdo-con-la-reforma-tributar",
    "tipo": "afirmacion",
-   "pregunta": "Estoy de acuerdo con la reforma tributaria que impulsa el gobierno.",
+   "pregunta": "Estoy de acuerdo con la reforma tributaria que impulsa el gobierno de Milei.",
    "a": {
     "texto": "De acuerdo"
    },
@@ -846,7 +846,7 @@
     "reformas-del-gobierno"
    ],
    "eje": {
-    "economia": 1
+    "economia": 0.5
    },
    "ref": {
     "a": 47,
@@ -875,9 +875,6 @@
    "grupos": [
     "jubilaciones"
    ],
-   "eje": {
-    "economia": 1
-   },
    "ref": {
     "a": 24.3,
     "b": 71.1,
@@ -889,7 +886,9 @@
     "url": "https://zubancordoba.com/wp-content/uploads/2024/09/DDD-SEPTIEMBRE.pdf",
     "pregunta_original": "¿Podría indicar su nivel de aprobación de las siguientes políticas que ya están en marcha del gobierno de Javier Milei? Veto del aumento a los jubilados.",
     "nota": "Resto = no sabe."
-   }
+   },
+   "retirada": true,
+   "motivo_retiro": "Evaluaba una política del gobierno de Milei medida en 2024: el dato quedó viejo y la carta no nombraba al gobierno."
   },
   {
    "id": "reducir-el-deficit-fiscal-es-una-buena-p",
@@ -905,9 +904,6 @@
    "grupos": [
     "ajuste"
    ],
-   "eje": {
-    "economia": 1
-   },
    "ref": {
     "a": 51.5,
     "b": 33,
@@ -919,7 +915,9 @@
     "url": "https://zubancordoba.com/wp-content/uploads/2024/09/DDD-SEPTIEMBRE.pdf",
     "pregunta_original": "¿Podría indicar su nivel de aprobación de las siguientes políticas que ya están en marcha del gobierno de Javier Milei? Reducción del déficit fiscal.",
     "nota": "Resto = no sabe."
-   }
+   },
+   "retirada": true,
+   "motivo_retiro": "Evaluaba una política del gobierno de Milei medida en 2024: el dato quedó viejo y la carta no nombraba al gobierno."
   },
   {
    "id": "hay-que-eliminar-los-subsidios-a-la-luz",
@@ -935,9 +933,6 @@
    "grupos": [
     "ajuste"
    ],
-   "eje": {
-    "economia": 1
-   },
    "ref": {
     "a": 27.6,
     "b": 68.3,
@@ -949,7 +944,9 @@
     "url": "https://zubancordoba.com/wp-content/uploads/2024/09/DDD-SEPTIEMBRE.pdf",
     "pregunta_original": "¿Podría indicar su nivel de aprobación de las siguientes políticas que ya están en marcha del gobierno de Javier Milei? Eliminación subsidios a tarifas de luz y gas.",
     "nota": "Resto = no sabe."
-   }
+   },
+   "retirada": true,
+   "motivo_retiro": "Evaluaba una política del gobierno de Milei medida en 2024: el dato quedó viejo y la carta no nombraba al gobierno."
   },
   {
    "id": "tienen-que-seguir-los-despidos-de-emplea",
@@ -965,9 +962,6 @@
    "grupos": [
     "ajuste"
    ],
-   "eje": {
-    "economia": 1
-   },
    "ref": {
     "a": 45.3,
     "b": 52.3,
@@ -979,7 +973,9 @@
     "url": "https://zubancordoba.com/wp-content/uploads/2024/07/DDD-JULIO-2nda-Parte.pdf",
     "pregunta_original": "¿Qué tan de acuerdo está Ud. con las siguientes políticas que propone el gobierno de Milei? Que sigan los despidos de empleados públicos.",
     "nota": "Resto = no sabe."
-   }
+   },
+   "retirada": true,
+   "motivo_retiro": "Evaluaba una política del gobierno de Milei medida en 2024: el dato quedó viejo y la carta no nombraba al gobierno."
   },
   {
    "id": "la-argentina-deberia-pedirle-un-nuevo-pr",
@@ -1139,9 +1135,6 @@
    "grupos": [
     "impuestos"
    ],
-   "eje": {
-    "economia": 1
-   },
    "ref": {
     "a": 33.5,
     "b": 58.6,
@@ -1153,7 +1146,9 @@
     "url": "https://zubancordoba.com/wp-content/uploads/2024/09/DDD-SEPTIEMBRE.pdf",
     "pregunta_original": "¿Podría indicar su nivel de aprobación de las siguientes políticas que ya están en marcha del gobierno de Javier Milei? Baja impuesto Bienes Personales (riqueza).",
     "nota": "Resto = no sabe."
-   }
+   },
+   "retirada": true,
+   "motivo_retiro": "Evaluaba una política del gobierno de Milei medida en 2024: el dato quedó viejo y la carta no nombraba al gobierno."
   },
   {
    "id": "como-deberia-abrirse-la-economia-argenti",
@@ -1254,8 +1249,6 @@
     "texto": "Una empresa pública"
    },
    "tema": "economia",
-   "retirada": true,
-   "motivo_retiro": "Muy parecida a la carta núcleo sobre Estado o empresas privadas.",
    "ref": {
     "a": 47,
     "b": 42,
@@ -1267,7 +1260,9 @@
     "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
     "pregunta_original": "¿A usted qué le genera mayor confianza: una empresa pública o una empresa privada?",
     "nota": "Resto = ns/nc."
-   }
+   },
+   "retirada": true,
+   "motivo_retiro": "Muy parecida a la carta núcleo sobre Estado o empresas privadas."
   },
   {
    "id": "las-empresas-de-servicios-publicos-deber",
@@ -1310,8 +1305,6 @@
     "texto": "Empleo público"
    },
    "tema": "vida",
-   "retirada": true,
-   "motivo_retiro": "Muy parecida a la carta núcleo sobre Estado o empresas privadas.",
    "ref": {
     "a": 52,
     "b": 43,
@@ -1323,7 +1316,9 @@
     "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
     "pregunta_original": "Si usted tuviera la posibilidad de elegir entre tener un empleo público o un empleo privado que le diera la misma remuneración y tengan las mismas condiciones laborales, ¿cuál de los dos elegiría?",
     "nota": "Resto = ns/nc."
-   }
+   },
+   "retirada": true,
+   "motivo_retiro": "Muy parecida a la carta núcleo sobre Estado o empresas privadas."
   },
   {
    "id": "la-ayuda-del-estado-a-los-sectores-mas-p",
@@ -1391,7 +1386,7 @@
    },
    "tema": "politica",
    "eje": {
-    "economia": -1
+    "economia": -0.5
    },
    "ref": {
     "a": 15,
@@ -1417,9 +1412,6 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
-   "eje": {
-    "economia": 1
-   },
    "ref": {
     "a": 33.3,
     "b": 58.9,
@@ -1431,7 +1423,9 @@
     "url": "https://zubancordoba.com/wp-content/uploads/2024/10/FINALULTIMO-DDD-OCTUBRE-Universidad-Publica-Orgullo-Nacional-EDITABLE-copy.pdf",
     "pregunta_original": "Con respecto al posible proyecto del gobierno para arancelar o provincializar las universidades públicas, ¿cuál es su posición? A favor / En contra / No sabe.",
     "nota": "Resto = no sabe."
-   }
+   },
+   "retirada": true,
+   "motivo_retiro": "Evaluaba una política del gobierno de Milei medida en 2024: el dato quedó viejo y la carta no nombraba al gobierno."
   },
   {
    "id": "la-educacion-deberia-ser-servicio-esenci",
@@ -1447,9 +1441,6 @@
    "grupos": [
     "docentes"
    ],
-   "eje": {
-    "economia": 1
-   },
    "ref": {
     "a": 57.9,
     "b": 38.1,
@@ -1461,7 +1452,9 @@
     "url": "https://zubancordoba.com/wp-content/uploads/2024/07/DDD-JULIO-2nda-Parte.pdf",
     "pregunta_original": "¿Qué tan de acuerdo está Ud. con las siguientes políticas que propone el gobierno de Milei? Que la educación sea un servicio esencial para limitar los eventuales paros docentes.",
     "nota": "Resto = no sabe."
-   }
+   },
+   "retirada": true,
+   "motivo_retiro": "Evaluaba una política del gobierno de Milei medida en 2024: el dato quedó viejo y la carta no nombraba al gobierno."
   },
   {
    "id": "hay-que-bajar-la-edad-de-imputabilidad",
@@ -1475,7 +1468,7 @@
    },
    "tema": "politica",
    "eje": {
-    "sociedad": 1
+    "autoridad": 1
    },
    "ref": {
     "a": 80,
@@ -1665,9 +1658,6 @@
    "grupos": [
     "protesta"
    ],
-   "eje": {
-    "sociedad": 1
-   },
    "ref": {
     "a": 51,
     "b": 48,
@@ -1679,7 +1669,9 @@
     "url": "https://noticias.perfil.com/noticias/politica/encuesta-51-aprueba-el-protocolo-de-patricia-bullrich-en-seguridad.phtml",
     "pregunta_original": "Aprobación del protocolo de seguridad contra las protestas en la vía pública (protocolo antipiquetes).",
     "nota": "Resto calculado por diferencia."
-   }
+   },
+   "retirada": true,
+   "motivo_retiro": "Evaluaba una política del gobierno de Milei medida en 2024: el dato quedó viejo y la carta no nombraba al gobierno."
   },
   {
    "id": "tiene-que-haber-acceso-al-aborto-legal",
@@ -1694,7 +1686,7 @@
    "tema": "sociedad",
    "nucleo": true,
    "eje": {
-    "sociedad": -1
+    "valores": -1
    },
    "ref": {
     "a": 50,
@@ -1721,7 +1713,7 @@
    },
    "tema": "sociedad",
    "eje": {
-    "sociedad": -1
+    "valores": -1
    },
    "ref": {
     "a": 77,
@@ -1751,7 +1743,7 @@
     "diversidad"
    ],
    "eje": {
-    "sociedad": -1
+    "valores": -1
    },
    "ref": {
     "a": 69,
@@ -1778,7 +1770,7 @@
    },
    "tema": "sociedad",
    "eje": {
-    "sociedad": -1
+    "valores": -0.5
    },
    "ref": {
     "a": 54,
@@ -1805,7 +1797,7 @@
    },
    "tema": "sociedad",
    "eje": {
-    "sociedad": -1
+    "valores": -0.5
    },
    "ref": {
     "a": 48,
@@ -1832,7 +1824,7 @@
    },
    "tema": "sociedad",
    "eje": {
-    "sociedad": -1
+    "valores": -1
    },
    "ref": {
     "a": 36,
@@ -1859,7 +1851,7 @@
    },
    "tema": "sociedad",
    "eje": {
-    "sociedad": -1
+    "valores": -1
    },
    "ref": {
     "a": 77,
@@ -1889,7 +1881,7 @@
     "democracia"
    ],
    "eje": {
-    "sociedad": -1
+    "autoridad": -1
    },
    "ref": {
     "a": 78,
@@ -1919,7 +1911,7 @@
     "democracia"
    ],
    "eje": {
-    "sociedad": -1
+    "autoridad": -0.5
    },
    "ref": {
     "a": 62,
@@ -1949,7 +1941,7 @@
     "protesta"
    ],
    "eje": {
-    "sociedad": -1
+    "autoridad": -1
    },
    "ref": {
     "a": 84,
@@ -1978,6 +1970,9 @@
    "grupos": [
     "tecnocracia"
    ],
+   "eje": {
+    "autoridad": 0.5
+   },
    "ref": {
     "a": 53,
     "b": 43,
@@ -2006,7 +2001,7 @@
     "tecnocracia"
    ],
    "eje": {
-    "sociedad": 1
+    "autoridad": 1
    },
    "ref": {
     "a": 29,
@@ -2036,7 +2031,7 @@
     "justicia"
    ],
    "eje": {
-    "sociedad": 1
+    "autoridad": 1
    },
    "ref": {
     "a": 22,
@@ -2113,8 +2108,6 @@
     "texto": "Lucha con excesos"
    },
    "tema": "historia",
-   "retirada": true,
-   "motivo_retiro": "Muy parecida a la carta núcleo sobre los juicios por la dictadura.",
    "ref": {
     "a": 61,
     "b": 32,
@@ -2126,7 +2119,9 @@
     "url": "https://pulsar.uba.ar/wp-content/uploads/2026/05/Miradas-retrospectivas-sobre-la-dictadura-argentina_Primera-entrega.pdf",
     "pregunta_original": "¿Cómo describiría el accionar del gobierno militar 1976-1983? 'Fue una dictadura que llevó a cabo un plan sistemático de desaparición de personas y violación de derechos humanos' / 'Fue un gobierno que encaró una lucha contra el terrorismo, en la que pudo haber habido excesos'",
     "nota": "Resto = ns/nc (7%)."
-   }
+   },
+   "retirada": true,
+   "motivo_retiro": "Muy parecida a la carta núcleo sobre los juicios por la dictadura."
   },
   {
    "id": "en-1976-habia-motivos-que-justificaban-e",
@@ -2139,8 +2134,6 @@
     "texto": "En desacuerdo"
    },
    "tema": "historia",
-   "retirada": true,
-   "motivo_retiro": "Muy parecida a la carta núcleo sobre los juicios por la dictadura.",
    "ref": {
     "a": 27,
     "b": 63,
@@ -2152,7 +2145,9 @@
     "url": "https://pulsar.uba.ar/wp-content/uploads/2026/05/Miradas-retrospectivas-sobre-la-dictadura-argentina_Primera-entrega.pdf",
     "pregunta_original": "¿Usted considera que en 1976 había motivos que justificaron el golpe de Estado por parte de los militares?",
     "nota": "Agregación del propio informe: 'había bastantes' 16 + 'muchos motivos' 11 = 27 (de acuerdo) vs 'no hubo motivos' 45 + 'había pocos motivos' 18 = 63 (en desacuerdo). Resto = ns/nc 10."
-   }
+   },
+   "retirada": true,
+   "motivo_retiro": "Muy parecida a la carta núcleo sobre los juicios por la dictadura."
   },
   {
    "id": "el-estado-tiene-que-seguir-juzgando-a-lo",
@@ -2167,7 +2162,7 @@
    "tema": "historia",
    "nucleo": true,
    "eje": {
-    "sociedad": -1
+    "autoridad": -1
    },
    "ref": {
     "a": 70,
@@ -2329,7 +2324,7 @@
     "vecinos"
    ],
    "eje": {
-    "sociedad": 1
+    "valores": 0.5
    },
    "ref": {
     "a": 16,
@@ -2359,7 +2354,7 @@
     "vecinos"
    ],
    "eje": {
-    "sociedad": 1
+    "valores": 0.5
    },
    "ref": {
     "a": 49,
@@ -2386,7 +2381,7 @@
    },
    "tema": "sociedad",
    "eje": {
-    "sociedad": 1
+    "autoridad": 1
    },
    "ref": {
     "a": 37,
@@ -2438,7 +2433,8 @@
    "tema": "sociedad",
    "nucleo": true,
    "eje": {
-    "sociedad": 1
+    "economia": 0.5,
+    "autoridad": 1
    },
    "ref": {
     "a": 54,
@@ -2468,7 +2464,7 @@
     "protesta"
    ],
    "eje": {
-    "sociedad": -1
+    "autoridad": -1
    },
    "ref": {
     "a": 55,
@@ -2631,7 +2627,7 @@
     "diversidad"
    ],
    "eje": {
-    "sociedad": -1
+    "valores": -1
    },
    "ref": {
     "a": 65,
@@ -2658,7 +2654,7 @@
    },
    "tema": "sociedad",
    "eje": {
-    "sociedad": -1
+    "valores": -1
    },
    "ref": {
     "a": 23,
@@ -2710,9 +2706,6 @@
    "tema": "politica",
    "nucleo": true,
    "volatil": true,
-   "eje": {
-    "economia": 1
-   },
    "ref": {
     "a": 35,
     "b": 61,

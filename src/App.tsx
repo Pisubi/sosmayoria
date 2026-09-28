@@ -14,6 +14,8 @@ import {
   marcarVistas,
   personaGuardada,
   rondaGuardada,
+  sumarAlHistorial,
+  type Historial,
   type RondaGuardada,
 } from './lib/guardado'
 import { UNDER_16, type Participant } from './lib/participant'
@@ -23,8 +25,8 @@ import type { Carta, Jugada, Tema } from './types'
 type Stage =
   | { step: 'inicio' }
   | { step: 'juego'; ronda: RondaGuardada; cartas: Carta[] }
-  | { step: 'datos'; ronda: RondaGuardada; resumen: Resumen }
-  | { step: 'resultado'; resumen: Resumen }
+  | { step: 'datos'; ronda: RondaGuardada; resumen: Resumen; historial: Historial }
+  | { step: 'resultado'; resumen: Resumen; historial: Historial }
   | { step: 'metodologia'; from: Stage }
 
 const porId = new Map(cartas.map((c) => [c.id, c]))
@@ -58,18 +60,19 @@ function App() {
   function fin(ronda: RondaGuardada, jugadas: Jugada[]) {
     const resumen = resumir(cartas, jugadas)
     marcarVistas(jugadas.map((j) => j.carta))
+    const historial = sumarAlHistorial(jugadas)
     guardarRonda(null)
     setGuardada(null)
     // Los datos demográficos van siempre entre la última carta y el resultado.
-    setStage({ step: 'datos', ronda: { ...ronda, jugadas }, resumen })
+    setStage({ step: 'datos', ronda: { ...ronda, jugadas }, resumen, historial })
   }
 
-  function datos(ronda: RondaGuardada, resumen: Resumen, persona: Participant) {
+  function datos(ronda: RondaGuardada, resumen: Resumen, historial: Historial, persona: Participant) {
     guardarPersona(persona)
     if (persona.age !== UNDER_16) {
       enviarPartida(orden, ronda.jugadas, persona, (Date.now() - ronda.inicio) / 1000)
     }
-    setStage({ step: 'resultado', resumen })
+    setStage({ step: 'resultado', resumen, historial })
   }
 
   function inicio() {
@@ -109,12 +112,13 @@ function App() {
         <ParticipantForm
           inicial={personaGuardada()}
           guardando={collecting}
-          onContinue={(p) => datos(stage.ronda, stage.resumen, p)}
+          onContinue={(p) => datos(stage.ronda, stage.resumen, stage.historial, p)}
         />
       )}
       {stage.step === 'resultado' && (
         <Resultado
           resumen={stage.resumen}
+          historial={stage.historial}
           onOtraRonda={() => jugar([])}
           onMethodology={metodologia}
         />

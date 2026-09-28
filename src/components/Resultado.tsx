@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { TEMAS } from '../data/cartas'
-import { brujula, cuadrante, frenteALaMayoria, perfil, temaDistinto, type Lectura, type Lugar, type Resumen } from '../engine/juego'
+import { cartas, TEMAS } from '../data/cartas'
+import { brujula, cuadrante, enPalabras, perfil, temaDistinto, type Lectura, type Lugar, type Resumen } from '../engine/juego'
 import { renderShareImage, type Tarjeta } from '../lib/compartir'
+import { borrarHistorial, type Historial } from '../lib/guardado'
 import { fecha } from '../lib/formato'
 import { BrujulaPolitica } from './BrujulaPolitica'
 import { Eyebrow } from './Eyebrow'
@@ -9,6 +10,8 @@ import { Footer } from './Footer'
 
 interface ResultadoProps {
   resumen: Resumen
+  /** Tus respuestas de todas las rondas, para la brújula. */
+  historial: Historial
   onOtraRonda: () => void
   onMethodology: () => void
 }
@@ -21,12 +24,18 @@ const CHIP: Record<Lugar, { texto: string; clase: string }> = {
 }
 
 const nombreTema = (id: string) => TEMAS.find((t) => t.id === id)?.nombre ?? id
+const porId = new Map(cartas.map((c) => [c.id, c]))
 
-export function Resultado({ resumen, onOtraRonda, onMethodology }: ResultadoProps) {
+export function Resultado({ resumen, historial, onOtraRonda, onMethodology }: ResultadoProps) {
   const { conLaMayoria, definidas, enLaMinoria, parejas, lecturas, porTema } = resumen
   const p = perfil(conLaMayoria, definidas)
   const minoria = lecturas.filter((l) => l.lugar === 'minoria')
-  const b = brujula(lecturas)
+  const [conHistorial, setConHistorial] = useState(true)
+  const respuestas = Object.entries(historial.respuestas).flatMap(([id, eleccion]) => {
+    const carta = porId.get(id)
+    return carta ? [{ carta, eleccion }] : []
+  })
+  const b = conHistorial ? brujula(respuestas) : null
   const distinto = temaDistinto(porTema)
   const texto = `Pienso como la mayoría de los argentinos en ${conLaMayoria} de ${definidas} temas: ${p.titulo.toLowerCase()}. ¿Y vos?`
 
@@ -74,15 +83,27 @@ export function Resultado({ resumen, onOtraRonda, onMethodology }: ResultadoProp
           <Eyebrow>Tu brújula política</Eyebrow>
           <h2 className="mt-4 text-2xl font-bold">{cuadrante(b.vos)}</h2>
           <p className="mt-2 leading-7 text-azul/75">
-            {frenteALaMayoria(b) ?? 'En estas cartas caés en el mismo lugar que la mayoría.'}
+            Comparado con el argentino promedio.{b.cartas.autoridad > 0 && ` En autoridad: ${enPalabras('autoridad', b.vos.autoridad)}.`}
           </p>
           <div className="mt-6">
             <BrujulaPolitica b={b} />
           </div>
-          <p className="mx-auto mt-4 max-w-md text-xs leading-5 text-azul/55">
-            Sale de {b.cartas.economia} respuestas sobre economía y {b.cartas.sociedad} sobre valores y seguridad de
-            esta ronda. «La mayoría» es la opción más elegida en las encuestas de esas mismas cartas. Es una
-            aproximación: cada ronda trae cartas distintas.
+          <p className="mx-auto mt-5 max-w-md text-xs leading-5 text-azul/55">
+            Precisión {b.precision}: {b.cartas.economia} respuestas sobre economía, {b.cartas.valores} sobre valores
+            {b.cartas.autoridad > 0 && ` y ${b.cartas.autoridad} sobre autoridad`}
+            {historial.rondas > 1 ? `, sumando tus ${historial.rondas} rondas` : ''}. El centro es lo que respondió el
+            país en las encuestas: elegir lo que eligió casi todo el mundo te mueve poco; elegir lo de pocos, mucho.
+            {b.precision !== 'muy buena' && ' Cada ronda nueva la afina.'}{' '}
+            <button
+              type="button"
+              onClick={() => {
+                borrarHistorial()
+                setConHistorial(false)
+              }}
+              className="underline"
+            >
+              Borrar mis respuestas guardadas
+            </button>
           </p>
         </section>
       )}

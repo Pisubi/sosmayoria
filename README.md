@@ -29,13 +29,23 @@ La de aprobación es `"volatil": true`: hay que actualizar su dato con la últim
 
 ## Brújula política
 
-Las cartas con `eje` ubican a quien juega en dos ejes: economía (`-1` más Estado, `+1` más
-mercado) y valores y seguridad (`-1` más libertades individuales, `+1` más orden y tradición).
-El número indica hacia dónde empuja elegir A; elegir B empuja al revés. Al final de la ronda se
-promedian las respuestas de cada eje (`brujula()` en `src/engine/juego.ts`) y se dibuja también el
-punto de la mayoría: la opción más elegida en la encuesta de esas mismas cartas. Las núcleo tienen
-eje, así que toda ronda alcanza el mínimo de respuestas por eje. La brújula no se guarda ni va en
-la imagen para historias.
+Las cartas con `eje` ubican a quien juega en tres escalas: `economia` (`-` más Estado, `+` más
+mercado), `valores` (`-` más progresistas, `+` más tradicionales) y `autoridad` (`-` más
+garantías y libertades civiles, `+` más orden). El valor dice cuánto y hacia dónde empuja elegir
+A (B empuja al revés): `±1` si la carta mide bien la escala, `±0.5` si es un indicador débil o
+atado a un gobierno. La aprobación del gobierno no tiene eje: mide alineamiento, no ideología.
+
+- **Relativa al país.** Cada respuesta se compara con la encuesta (`brujula()` en
+  `src/engine/juego.ts`): se suma `(elegiste A − % de A) / desvío`, así que elegir lo que eligió
+  el 80% casi no mueve y elegir lo del 20% mueve mucho. El centro es el argentino promedio y las
+  cartas de consenso no corren a todos para el mismo lado.
+- **Cupo por ronda.** Cada ronda trae al menos `CUPO` cartas de cada escala (núcleo incluidas);
+  el resto son cartas sin eje (fútbol, mate, creencias…), que no cuentan.
+- **Se afina con cada ronda.** Las respuestas de todas las rondas quedan en el navegador
+  (`mayoria:respuestas:v1`) y la brújula usa todas. No se envían ni van en la imagen para
+  historias.
+- **Cartas sobre medidas de un gobierno:** de 2025 en adelante y nombrándolo; las de 2024 se
+  retiraron.
 
 ## Cartas parecidas
 

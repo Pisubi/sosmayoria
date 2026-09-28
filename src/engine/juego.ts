@@ -1,4 +1,4 @@
-import type { Carta, Jugada, Mayoria, Tema } from '../types'
+import type { Carta, Eleccion, Jugada, Mayoria, NombreEje, Tema } from '../types'
 
 /** Cartas por ronda. */
 export const RONDA = 25
@@ -54,10 +54,14 @@ function mezclar<T>(items: T[], next: () => number): T[] {
   return out
 }
 
+/** Mínimo de cartas de cada escala por ronda, núcleo incluidas, para que la brújula tenga base. */
+export const CUPO: Record<NombreEje, number> = { economia: 7, valores: 5, autoridad: 5 }
+
 /**
- * Sortea una ronda: las cartas núcleo siempre, repartidas en lugares al azar, y el resto
- * alternando temas por turnos (nunca salen varias de política seguidas), sin dos cartas del
- * mismo grupo de parecidas y, dentro de cada tema, priorizando las que todavía no vio.
+ * Sortea una ronda: las cartas núcleo siempre, repartidas en lugares al azar; después las
+ * ideológicas necesarias para el cupo de cada escala; y el resto, primero las que no miden
+ * ideología (las "divertidas"). Nunca dos cartas del mismo grupo de parecidas, siempre
+ * priorizando las que todavía no vio, y con los temas intercalados.
  */
 export function sortear(
   cartas: Carta[],
@@ -71,30 +75,43 @@ export function sortear(
   const activas = cartas.filter(
     (c) => !c.retirada && !c.nucleo && (!temas || temas.size === 0 || temas.has(c.tema)),
   )
-  // Una cola por tema, primero las no vistas; después se toma de a una por tema, por turnos.
-  const colas = new Map<Tema, Carta[]>()
-  for (const c of activas) colas.set(c.tema, [...(colas.get(c.tema) ?? []), c])
-  const orden = mezclar(
-    [...colas.values()].map((cola) => [
-      ...mezclar(cola.filter((c) => !vistas.has(c.id)), next),
-      ...mezclar(cola.filter((c) => vistas.has(c.id)), next),
-    ]),
-    next,
-  )
+  const candidatas = [
+    ...mezclar(activas.filter((c) => !vistas.has(c.id)), next),
+    ...mezclar(activas.filter((c) => vistas.has(c.id)), next),
+  ]
   // Como mucho una carta por grupo de cartas parecidas; las núcleo reservan el suyo primero.
   const grupos = new Set(nucleo.flatMap((c) => c.grupos ?? []))
-  const choca = (c: Carta) => (c.grupos ?? []).some((g) => grupos.has(g))
-  const out: Carta[] = []
+  const libre = (c: Carta) => !(c.grupos ?? []).some((g) => grupos.has(g))
+  const elegidas: Carta[] = []
   const total = Math.max(0, n - nucleo.length)
-  while (out.length < total && orden.some((cola) => cola.length > 0)) {
-    for (const cola of orden) {
-      let c = cola.shift()
-      while (c && choca(c)) c = cola.shift()
-      if (!c || out.length >= total) continue
-      for (const g of c.grupos ?? []) grupos.add(g)
-      out.push(c)
+  const tomar = (c: Carta) => {
+    for (const g of c.grupos ?? []) grupos.add(g)
+    elegidas.push(c)
+    candidatas.splice(candidatas.indexOf(c), 1)
+  }
+
+  const cuenta = (e: NombreEje) => [...nucleo, ...elegidas].filter((c) => c.eje?.[e]).length
+  for (const e of EJES) {
+    for (const c of candidatas.filter((x) => x.eje?.[e])) {
+      if (cuenta(e) >= CUPO[e] || elegidas.length >= total) break
+      if (libre(c)) tomar(c)
     }
   }
+  // El resto alternando temas por turnos: primero las que no miden ideología, después cualquiera.
+  for (const fuente of [candidatas.filter((c) => !esIdeologica(c)), [...candidatas]]) {
+    const colas = new Map<Tema, Carta[]>()
+    for (const c of fuente) colas.set(c.tema, [...(colas.get(c.tema) ?? []), c])
+    const turnos = mezclar([...colas.values()], next)
+    while (elegidas.length < total && turnos.some((cola) => cola.length > 0)) {
+      for (const cola of turnos) {
+        let c = cola.shift()
+        while (c && (!libre(c) || !candidatas.includes(c))) c = cola.shift()
+        if (c && elegidas.length < total) tomar(c)
+      }
+    }
+  }
+
+  const out = intercalar(elegidas, next)
   // Las cartas núcleo van en todas las rondas, en lugares al azar repartidos entre las demás
   // (una por tramo de la ronda, nunca la primera), para que no se note un bloque fijo.
   const tramos = nucleo.length
@@ -105,6 +122,23 @@ export function sortear(
     const pos = Math.min(out.length, desde + Math.floor(next() * (hasta - desde + 1)))
     out.splice(pos, 0, c)
   })
+  return out
+}
+
+/** Ordena para separar los temas: cada vez, del tema con más cartas pendientes que no sea el anterior. */
+function intercalar(cartas: Carta[], next: () => number): Carta[] {
+  const colas = new Map<Tema, Carta[]>()
+  for (const c of mezclar(cartas, next)) colas.set(c.tema, [...(colas.get(c.tema) ?? []), c])
+  const out: Carta[] = []
+  let anterior: Tema | null = null
+  while (out.length < cartas.length) {
+    const opciones = mezclar([...colas.entries()], next)
+      .filter(([, cola]) => cola.length > 0)
+      .sort(([, a], [, b]) => b.length - a.length)
+    const [tema, cola] = opciones.find(([t]) => t !== anterior) ?? opciones[0]
+    out.push(cola.shift()!)
+    anterior = tema
+  }
   return out
 }
 
@@ -160,65 +194,81 @@ export function perfil(conLaMayoria: number, definidas: number): { titulo: strin
   return { titulo: 'Minoría intensa', texto: 'Casi siempre elegís lo que eligen menos argentinos.' }
 }
 
-/** Un lugar en la brújula: cada eje va de -1 a 1. */
-export interface Punto {
-  /** -1 más Estado, 1 más mercado. */
-  economia: number
-  /** -1 más libertades individuales, 1 más orden y tradición. */
-  sociedad: number
-}
+/** Las tres escalas de la brújula. La brújula dibuja economía × valores; autoridad va aparte. */
+export const EJES: readonly NombreEje[] = ['economia', 'valores', 'autoridad']
+
+export const esIdeologica = (c: Carta): boolean => EJES.some((e) => c.eje?.[e])
+
+/** Posición en cada escala, de -1 a 1; 0 es el argentino promedio según las encuestas. */
+export type Posicion = Record<NombreEje, number>
 
 export interface Brujula {
-  vos: Punto
-  /** Dónde cae la opción mayoritaria de las encuestas en las mismas cartas que respondiste. */
-  mayoria: Punto
-  /** Cuántas respuestas cuentan en cada eje. */
-  cartas: { economia: number; sociedad: number }
+  vos: Posicion
+  /** Cuántas respuestas cuentan en cada escala. */
+  cartas: Record<NombreEje, number>
+  precision: 'aproximada' | 'buena' | 'muy buena'
 }
 
-/** Respuestas mínimas por eje para ubicar a alguien en la brújula. */
-export const MINIMO_EJE = 2
+/** Respuestas mínimas por escala para ubicar a alguien. */
+export const MINIMO_EJE = 3
 
-/** Ubica la ronda en dos ejes (Estado–mercado y libertades–orden) con las cartas que tienen eje. */
-export function brujula(lecturas: Lectura[]): Brujula | null {
-  const ejes = ['economia', 'sociedad'] as const
-  const suma = { vos: { economia: 0, sociedad: 0 }, mayoria: { economia: 0, sociedad: 0 } }
-  const cartas = { economia: 0, sociedad: 0 }
-  for (const { carta, jugada } of lecturas) {
-    if (!carta.eje || jugada.eleccion === 'nada') continue
-    const m = mayoria(carta)
-    for (const e of ejes) {
-      const v = carta.eje[e]
-      if (!v) continue
-      suma.vos[e] += jugada.eleccion === 'a' ? v : -v
-      suma.mayoria[e] += m === 'a' ? v : m === 'b' ? -v : 0
+/**
+ * Cuántos desvíos del promedio (z) equivalen al borde del gráfico. Alguien que siempre elige
+ * el mismo lado de una escala queda cerca de 1,2 z; con 1,5 no toca el borde.
+ */
+const ESCALA = 1.5
+
+/**
+ * Ubica a quien juega en cada escala, comparando cada respuesta con lo que respondió el país:
+ * elegir lo que eligió el 80% casi no mueve; elegir lo del 20% mueve mucho. Así el centro es el
+ * argentino promedio, y las cartas de consenso no corren a todos para el mismo lado.
+ */
+export function brujula(respuestas: { carta: Carta; eleccion: Eleccion }[]): Brujula | null {
+  const suma = { economia: 0, valores: 0, autoridad: 0 }
+  const pesos = { economia: 0, valores: 0, autoridad: 0 }
+  const cartas = { economia: 0, valores: 0, autoridad: 0 }
+  for (const { carta, eleccion } of respuestas) {
+    if (!carta.eje || eleccion === 'nada') continue
+    const p = Math.min(0.95, Math.max(0.05, real(carta) / 100))
+    const z = ((eleccion === 'a' ? 1 : 0) - p) / Math.sqrt(p * (1 - p))
+    for (const e of EJES) {
+      const w = carta.eje[e]
+      if (!w) continue
+      suma[e] += w * z
+      pesos[e] += Math.abs(w)
       cartas[e]++
     }
   }
-  if (ejes.some((e) => cartas[e] < MINIMO_EJE)) return null
-  const promedio = (p: Punto): Punto => ({ economia: p.economia / cartas.economia, sociedad: p.sociedad / cartas.sociedad })
-  return { vos: promedio(suma.vos), mayoria: promedio(suma.mayoria), cartas }
+  if (cartas.economia < MINIMO_EJE || cartas.valores < MINIMO_EJE) return null
+  const pos = (e: NombreEje) =>
+    cartas[e] < MINIMO_EJE ? 0 : Math.max(-1, Math.min(1, suma[e] / pesos[e] / ESCALA))
+  const base = Math.min(cartas.economia, cartas.valores)
+  return {
+    vos: { economia: pos('economia'), valores: pos('valores'), autoridad: pos('autoridad') },
+    cartas,
+    precision: base >= 16 ? 'muy buena' : base >= 8 ? 'buena' : 'aproximada',
+  }
 }
 
-/** Por debajo de esto (en valor absoluto) un eje cuenta como centro. */
-const CENTRO = 0.2
+/** Por debajo de esto (en valor absoluto) una escala cuenta como centro. */
+export const CENTRO = 0.15
 
-/** El cuadrante en palabras, por ejemplo "Más Estado, más libertades". */
-export function cuadrante(p: Punto): string {
-  const eco = p.economia <= -CENTRO ? 'más Estado' : p.economia >= CENTRO ? 'más mercado' : null
-  const soc = p.sociedad <= -CENTRO ? 'más libertades' : p.sociedad >= CENTRO ? 'más orden' : null
-  const texto = eco && soc ? `${eco}, ${soc}` : eco ? `${eco}, centro en valores` : soc ? `centro en economía, ${soc}` : 'centro'
+const PALABRAS: Record<NombreEje, [string, string, string]> = {
+  economia: ['más Estado', 'centro en economía', 'más mercado'],
+  valores: ['valores más progresistas', 'centro en valores', 'valores más tradicionales'],
+  autoridad: ['más garantías', 'cerca del promedio', 'más orden'],
+}
+
+/** Una escala en palabras, relativa al promedio: "más Estado", "centro en valores"… */
+export function enPalabras(e: NombreEje, v: number): string {
+  return PALABRAS[e][v <= -CENTRO ? 0 : v >= CENTRO ? 2 : 1]
+}
+
+/** Economía y valores en palabras, por ejemplo "Más Estado, valores más tradicionales". */
+export function cuadrante(p: Posicion): string {
+  if (Math.abs(p.economia) < CENTRO && Math.abs(p.valores) < CENTRO) return 'Cerca del promedio'
+  const texto = `${enPalabras('economia', p.economia)}, ${enPalabras('valores', p.valores)}`
   return texto[0].toUpperCase() + texto.slice(1)
-}
-
-/** Cómo te corrés respecto de la mayoría, o null si caés en el mismo lugar. */
-export function frenteALaMayoria(b: Brujula): string | null {
-  const de = (d: number, menos: string, mas: string) => (d <= -CENTRO ? menos : d >= CENTRO ? mas : null)
-  const partes = [
-    de(b.vos.economia - b.mayoria.economia, 'más hacia el Estado', 'más hacia el mercado'),
-    de(b.vos.sociedad - b.mayoria.sociedad, 'más hacia las libertades individuales', 'más hacia el orden y la tradición'),
-  ].filter(Boolean)
-  return partes.length ? `Frente a la mayoría, estás ${partes.join(' y ')}.` : null
 }
 
 /** El tema en el que más seguido quedaste en la minoría (al menos dos cartas definidas). */

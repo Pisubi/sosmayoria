@@ -21,14 +21,15 @@ export interface Referencia {
   nota?: string
 }
 
+export type NombreEje = 'economia' | 'valores' | 'autoridad'
+
 /**
- * Hacia dónde empuja elegir A en la brújula política; elegir B empuja al revés.
- * economia: +1 más mercado, -1 más Estado. sociedad: +1 más orden y tradición, -1 más libertades individuales.
+ * Cuánto y hacia dónde empuja elegir A en cada escala de la brújula (elegir B empuja al revés):
+ * 1 o -1 si la carta mide bien esa escala, 0,5 o -0,5 si es un indicador débil o atado al gobierno.
+ * economia: + más mercado, - más Estado. valores: + más tradicionales, - más progresistas.
+ * autoridad: + más orden y mano dura, - más garantías y libertades civiles.
  */
-export interface Eje {
-  economia?: 1 | -1
-  sociedad?: 1 | -1
-}
+export type Eje = Partial<Record<NombreEje, number>>
 
 export type Tema = 'economia' | 'politica' | 'sociedad' | 'historia' | 'cultura' | 'vida'
 
