@@ -7,8 +7,8 @@ export function Footer({ onMethodology }: FooterProps) {
     <footer className="border-t border-azul/14 bg-marfil">
       <div className="mx-auto max-w-5xl px-4 py-10 text-sm leading-6 text-azul/60 sm:px-6">
         <p className="max-w-2xl">
-          La Mayoría es un juego. La mayoría de cada carta sale de una encuesta nacional
-          publicada, citada con su fuente; lo que eligen quienes juegan no es una encuesta
+          La Mayoría es un juego. La mayoría de cada carta sale de una encuesta publicada,
+          citada con su fuente; lo que eligen quienes juegan no es una encuesta
           representativa.
         </p>
         <button

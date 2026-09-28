@@ -114,7 +114,8 @@ export function Resultado({ resumen, onOtraRonda, onMethodology }: ResultadoProp
               </div>
               {l.jugada.eleccion !== 'nada' && <p className="mt-1 text-sm text-azul/65">Elegiste {eleccion(l)}.</p>}
               <p className="mt-2 text-xs text-azul/50">
-                {l.carta.ref.encuestadora}, {fecha(l.carta.ref.fecha)} ·{' '}
+                {l.carta.ref.encuestadora}, {fecha(l.carta.ref.fecha)}
+                {!l.carta.ref.alcance.startsWith('nacional') && ` (${l.carta.ref.alcance})`} ·{' '}
                 <a href={l.carta.ref.url} target="_blank" rel="noreferrer" className="underline">
                   fuente
                 </a>

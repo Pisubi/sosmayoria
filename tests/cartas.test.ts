@@ -10,8 +10,13 @@ describe('banco de cartas', () => {
     expect(new Set(activas).size).toBe(activas.length)
   })
 
-  it('solo datos nacionales de la Argentina', () => {
-    for (const c of todas.filter((x) => !x.retirada)) expect(c.ref.alcance).toMatch(/^nacional/)
+  it('nacionales, o regionales amplias con al menos 500 casos informados', () => {
+    for (const c of todas.filter((x) => !x.retirada)) {
+      if (/^nacional/.test(c.ref.alcance)) continue
+      const m = (c.ref.muestra ?? '').match(/(\d{1,3}(?:\.\d{3})*|\d+)\s*casos/)
+      const casos = m ? Number(m[1].replace(/\./g, '')) : 0
+      expect(casos, `${c.id}: ${c.ref.alcance} sin muestra suficiente`).toBeGreaterThanOrEqual(500)
+    }
   })
 
   it('el orden solo crece al final (las partidas guardadas dependen de él)', () => {

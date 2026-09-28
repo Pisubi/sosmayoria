@@ -15,14 +15,14 @@ interface InicioProps {
 
 const PASOS = [
   { titulo: 'Elegí', texto: 'Una pregunta, dos opciones. Esto o aquello, de acuerdo o en desacuerdo. Si no querés decir, pasás.' },
-  { titulo: 'Mayoría o minoría', texto: 'Al toque te decimos si pensás como la mayoría de los argentinos, según una encuesta nacional publicada.' },
+  { titulo: 'Mayoría o minoría', texto: 'Al toque te decimos si pensás como la mayoría de los argentinos, según una encuesta publicada.' },
   { titulo: 'Tu resultado', texto: 'Al final: en cuántos temas pensás como la mayoría, dónde sos minoría y cómo te va en cada tema.' },
 ]
 
 const PREGUNTAS = [
   {
     q: '¿De dónde salen los datos reales?',
-    a: 'De encuestas publicadas por consultoras y universidades, con alcance nacional salvo que se aclare. Cada carta cita la encuestadora, la fecha, la muestra y el enlace. Cuando la encuesta tenía más opciones, se muestra cómo se reparten quienes eligieron una de las dos.',
+    a: 'De encuestas publicadas por consultoras y universidades, casi todas nacionales; cuando es regional (por ejemplo, el AMBA) la carta lo aclara. Cada carta cita la encuestadora, la fecha, la muestra y el enlace. Cuando la encuesta tenía más opciones, la mayoría se define entre quienes eligieron una de las dos.',
   },
   {
     q: '¿Qué pasa si está muy parejo?',

@@ -13,8 +13,11 @@ export function ComoFunciona({ onBack, backLabel = 'Volver' }: { onBack: () => v
       <h1 className="mt-6 text-4xl font-bold tracking-[-0.015em]">Un juego, no una encuesta</h1>
 
       <Bloque titulo="El dato real">
-        Cada carta tiene detrás una encuesta publicada, de alcance nacional: consultora o
-        universidad, fecha, muestra y enlace. Cuando la encuesta ofrecía más de dos respuestas (o
+        Cada carta tiene detrás una encuesta publicada: consultora o universidad, fecha, muestra y
+        enlace. La mayoría son nacionales; también entran encuestas regionales amplias (AMBA,
+        grandes ciudades o varias regiones) con al menos 500 casos y método conocido, y en ese
+        caso la carta lo aclara. No entran encuestas de una sola ciudad o provincia, muestras
+        autoseleccionadas ni subgrupos (solo jóvenes, por ejemplo). Cuando la encuesta ofrecía más de dos respuestas (o
         incluía "no sabe"), se compara solo entre quienes eligieron una de las dos opciones de la
         carta.
       </Bloque>

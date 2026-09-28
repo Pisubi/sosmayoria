@@ -108,7 +108,8 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
           >
             {MENSAJE[resultado].texto}
             <span className="mt-1 block text-xs font-normal opacity-75">
-              Según {carta.ref.encuestadora}, {fecha(carta.ref.fecha)} · tocá para seguir
+              Según {carta.ref.encuestadora}, {fecha(carta.ref.fecha)}
+              {!carta.ref.alcance.startsWith('nacional') && ` · ${carta.ref.alcance}`} · tocá para seguir
             </span>
           </button>
         ) : (

@@ -2,15 +2,15 @@
 
 ¿Pensás como la mayoría de los argentinos? Un juego web sobre la opinión pública: en cada
 carta elegís entre dos opciones (esto o aquello, de acuerdo o en desacuerdo) y al toque ves
-si estás con la mayoría, según una encuesta nacional publicada.
+si estás con la mayoría, según una encuesta publicada.
 
 No es una encuesta, pero junta opinión: lo que elige cada persona se guarda de forma anónima
 (si el despliegue tiene Supabase).
 
 ## Cómo se juega
 
-- Rondas de 25 cartas sorteadas del banco (solo encuestas de alcance nacional en la
-  Argentina), alternando temas (política, economía, sociedad, historia, cultura, vida
+- Rondas de 25 cartas sorteadas del banco (encuestas nacionales de la Argentina, o regionales
+  amplias —AMBA, grandes ciudades, varias regiones— con al menos 500 casos), alternando temas (política, economía, sociedad, historia, cultura, vida
   cotidiana) y priorizando las que la persona todavía no vio.
 - Cada carta: elegís A, B o "prefiero no decir" y aparece "Estás con la mayoría", "Estás en la
   minoría" o "Está parejo"; después pasa sola a la siguiente. No se muestran porcentajes.

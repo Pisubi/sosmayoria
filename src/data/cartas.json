@@ -2327,6 +2327,30 @@
     "pregunta_original": "To what extent do you support or oppose: Transgender athletes competing based on the gender they identify with rather than the sex they were assigned at birth",
     "nota": "Apoya vs se opone; resto (32%) = ni apoya ni se opone + no sabe. A+B = 68%."
    }
+  },
+  {
+   "id": "como-preferis-el-mate",
+   "tipo": "duelo",
+   "pregunta": "¿Cómo preferís el mate?",
+   "a": {
+    "texto": "Dulce"
+   },
+   "b": {
+    "texto": "Amargo"
+   },
+   "tema": "vida",
+   "ref": {
+    "a": 44,
+    "b": 42,
+    "resto": 14,
+    "encuestadora": "TriaPanel",
+    "fecha": "2017-02",
+    "muestra": "670 casos, 18+, todos los NSE",
+    "alcance": "CABA, GBA y principales ciudades",
+    "url": "https://www.diariopopular.com.ar/general/revelador-la-mayoria-los-argentinos-prefiere-el-mate-dulce-n300223",
+    "pregunta_original": "Preferencia de mate dulce, amargo o indistinto",
+    "nota": "Dato viejo (2017) pero tema estable; no se encontró medición nacional más reciente verificable. Resto = indistinto (14%)."
+   }
   }
  ]
 }
