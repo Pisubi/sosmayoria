@@ -68,8 +68,10 @@ export function Methodology({ onBack }: MethodologyProps) {
       <Block title="Cercanía con perfiles">
         <Formula>d = √( Σ (vos − perfil)² / ejes comparados )      cercanía = 100 · (1 − d / 200)</Formula>
         <p>
-          Solo se comparan los ejes que tienen valor en tu resultado y en el perfil. Si son menos
-          del 60%, la comparación se marca como parcial. Los catálogos (ideologías o tradiciones,
+          Se comparan los ejes donde tenés puntaje. Si el perfil no tiene dato en alguno, ese eje
+          cuenta como una diferencia de 40 puntos, para que un perfil con pocos ejes no se
+          parezca a cualquiera. Si el perfil tiene dato en menos del 60% de los ejes, la
+          comparación se marca como parcial. Los catálogos (ideologías o tradiciones,
           figuras históricas, figuras actuales y partidos) se rankean por separado y nunca se
           mezclan. En el test argentino, la identidad peronista o antiperonista se informa aparte
           y no entra en la cercanía.

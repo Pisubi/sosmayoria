@@ -17,23 +17,33 @@ export interface Match {
 const PARTIAL_THRESHOLD = 0.6
 
 /**
- * d = sqrt(Σ (u_k − p_k)² / |A|) sobre los ejes A con valor en ambos (0..200);
- * sim = 100 · (1 − d/200).
+ * Diferencia que se asume en un eje donde vos tenés puntaje y el perfil no tiene dato. Sin
+ * ella, un perfil con pocos ejes se compara solo en esos y le resulta fácil parecerse a
+ * cualquiera.
+ */
+export const MISSING_DIFF = 40
+
+/**
+ * d = sqrt(Σ (u_k − p_k)² / |A|) sobre los ejes A con puntaje tuyo (0..200), contando
+ * MISSING_DIFF donde el perfil no tiene dato; sim = 100 · (1 − d/200).
  */
 export function matchProfile(scores: AxisScore[], axes: Axis[], profile: Profile): Match {
   const matchable = axes.filter((a) => a.includeInMatching)
   const byAxis = new Map(scores.map((s) => [s.axisId, s.score]))
   const diffs: { axisId: string; diff: number }[] = []
+  let missing = 0
 
   for (const axis of matchable) {
     const u = byAxis.get(axis.id)
     const p = profile.coords[axis.id]
-    if (u == null || p == null) continue
-    diffs.push({ axisId: axis.id, diff: Math.abs(u - p) })
+    if (u == null) continue
+    if (p == null) missing++
+    else diffs.push({ axisId: axis.id, diff: Math.abs(u - p) })
   }
 
+  const n = diffs.length + missing
   const d = diffs.length
-    ? Math.sqrt(diffs.reduce((sum, x) => sum + x.diff * x.diff, 0) / diffs.length)
+    ? Math.sqrt((diffs.reduce((sum, x) => sum + x.diff * x.diff, 0) + missing * MISSING_DIFF ** 2) / n)
     : 200
   const sorted = [...diffs].sort((a, b) => a.diff - b.diff)
 
