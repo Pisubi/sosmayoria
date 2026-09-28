@@ -17,7 +17,7 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
 | Afirmaciones por partida | 25 corta · 50 completa · 100 a fondo | 25 corta · 50 completa · 100 a fondo |
 | Banco del que se sortean | 182 (48 elegibles para el núcleo) | 176 (48 elegibles para el núcleo) |
 | Catálogos | Tradiciones y espacios · Figuras históricas · Figuras actuales | Ideologías · Figuras históricas · Figuras actuales · Partidos |
-| Perfiles | 169 | 302 |
+| Perfiles | 111 | 157 |
 
 ## Cómo se calcula
 
