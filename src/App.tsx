@@ -1,180 +1,141 @@
 import { useEffect, useState } from 'react'
+import { ComoFunciona } from './components/ComoFunciona'
 import { Header } from './components/Header'
-import { Intro } from './components/Intro'
-import { Methodology } from './components/Methodology'
+import { Inicio } from './components/Inicio'
+import { Juego } from './components/Juego'
 import { ParticipantForm } from './components/ParticipantForm'
-import { Quiz } from './components/Quiz'
-import { Results, type ResultData } from './components/results/Results'
-import { tests } from './data/tests'
-import { acquiescence, consistency, scoreAxes } from './engine/scoring'
-import { drawQuestions, newSeed, VARIANT_SIZE } from './engine/selection'
-import { decodeResult, encodeResult } from './engine/share'
+import { Resultado } from './components/Resultado'
+import { cartas, orden } from './data/cartas'
+import { nuevaSemilla, resumir, sortear, type Resumen } from './engine/juego'
+import {
+  cartasVistas,
+  guardarPersona,
+  guardarRonda,
+  marcarVistas,
+  personaGuardada,
+  rondaGuardada,
+  type RondaGuardada,
+} from './lib/guardado'
 import type { Participant } from './lib/participant'
-import { clearProgress, drawnIds, loadProgress, saveProgress, type SavedProgress } from './lib/progress'
-import { collecting, submitResult } from './lib/submit'
-import type { Question, Response, TestId, Variant } from './types'
+import { cargarEstado, collecting, enviarPartida, type Estado } from './lib/supabase'
+import type { Carta, Jugada, Tema } from './types'
 
 type Stage =
-  | { step: 'intro' }
-  | { step: 'datos'; data: ResultData; pending: PendingSubmission }
-  | { step: 'quiz'; progress: SavedProgress }
-  | { step: 'results'; data: ResultData }
+  | { step: 'inicio' }
+  | { step: 'juego'; ronda: RondaGuardada; cartas: Carta[] }
+  | { step: 'datos'; ronda: RondaGuardada; resumen: Resumen }
+  | { step: 'resultado'; resumen: Resumen }
   | { step: 'metodologia'; from: Stage }
 
-/** Lo que se envía a Supabase una vez completados los datos demográficos. */
-interface PendingSubmission {
-  variant: Variant
-  questions: Question[]
-  answers: Record<string, Response>
-  seconds: number
-}
-
-// El último resultado propio, para que al recargar no se muestre como compartido
-// ni se pierdan los avisos y el conteo de respuestas.
-const LAST_RESULT = 'brujula:resultado'
-
-function initialStage(): Stage {
-  try {
-    const last = JSON.parse(sessionStorage.getItem(LAST_RESULT) ?? 'null') as { url: string; data: ResultData } | null
-    if (last && last.url === window.location.pathname + window.location.search) {
-      return { step: 'results', data: last.data }
-    }
-  } catch {
-    // Sin sessionStorage: se lee el enlace como compartido.
-  }
-  const shared = decodeResult(window.location.search, tests)
-  if (shared) return { step: 'results', data: { ...shared, shared: true } }
-  return { step: 'intro' }
-}
+const porId = new Map(cartas.map((c) => [c.id, c]))
 
 function App() {
-  const [stage, setStage] = useState<Stage>(initialStage)
-  const [saved, setSaved] = useState<SavedProgress | null>(() => loadProgress())
+  const [stage, setStage] = useState<Stage>({ step: 'inicio' })
+  const [guardada, setGuardada] = useState<RondaGuardada | null>(() => rondaGuardada())
+  const [estado, setEstado] = useState<Estado | null>(null)
+
+  useEffect(() => {
+    cargarEstado(orden).then(setEstado)
+  }, [])
 
   useEffect(() => {
     window.scrollTo(0, 0)
-    const url =
-      stage.step === 'results'
-        ? encodeResult(tests[stage.data.testId], stage.data.scores)
-        : window.location.pathname
-    try {
-      window.history.replaceState(null, '', url)
-    } catch {
-      // En un iframe aislado puede no estar permitido; el test funciona igual.
+  }, [stage.step])
+
+  function jugar(temas: Tema[]) {
+    const semilla = nuevaSemilla()
+    const elegidas = sortear(cartas, semilla, cartasVistas(), new Set(temas))
+    const ronda: RondaGuardada = { semilla, cartas: elegidas.map((c) => c.id), jugadas: [], temas, inicio: Date.now() }
+    guardarRonda(ronda)
+    setStage({ step: 'juego', ronda, cartas: elegidas })
+  }
+
+  function retomar(ronda: RondaGuardada) {
+    const elegidas = ronda.cartas.map((id) => porId.get(id)).filter((c): c is Carta => Boolean(c))
+    // Si cambió el banco y faltan cartas, se empieza de nuevo.
+    if (elegidas.length !== ronda.cartas.length) return jugar(ronda.temas)
+    setStage({ step: 'juego', ronda, cartas: elegidas })
+  }
+
+  function avance(ronda: RondaGuardada, jugadas: Jugada[]) {
+    guardarRonda({ ...ronda, jugadas })
+  }
+
+  function fin(ronda: RondaGuardada, jugadas: Jugada[]) {
+    const resumen = resumir(cartas, jugadas)
+    marcarVistas(jugadas.map((j) => j.carta))
+    guardarRonda(null)
+    setGuardada(null)
+    const persona = personaGuardada()
+    if (collecting && persona === undefined) {
+      setStage({ step: 'datos', ronda: { ...ronda, jugadas }, resumen })
+      return
     }
-    if (stage.step === 'results' && !stage.data.shared) {
-      try {
-        sessionStorage.setItem(LAST_RESULT, JSON.stringify({ url, data: stage.data }))
-      } catch {
-        // Ídem.
-      }
-    }
-  }, [stage])
-
-  function goHome() {
-    setSaved(loadProgress())
-    setStage({ step: 'intro' })
+    enviar({ ...ronda, jugadas }, resumen, persona ?? null)
+    setStage({ step: 'resultado', resumen })
   }
 
-  function start(testId: TestId, variant: Variant) {
-    clearProgress()
-    const seed = newSeed()
-    setStage({
-      step: 'quiz',
-      progress: { testId, variant, seed, ids: drawnIds(testId, variant, seed), index: 0, answers: {}, startedAt: Date.now() },
-    })
+  function enviar(ronda: RondaGuardada, resumen: Resumen, persona: Participant | null) {
+    if (!persona) return
+    enviarPartida(orden, ronda.jugadas, persona, (Date.now() - ronda.inicio) / 1000, resumen.promedio)
   }
 
-  function backFrom(from: Stage) {
-    if (from.step === 'intro' || from.step === 'metodologia') return goHome()
-    // El test en curso se retoma desde lo guardado, que tiene las respuestas más recientes.
-    const progress = from.step === 'quiz' ? loadProgress() : null
-    setStage(progress ? { step: 'quiz', progress } : from)
+  function datos(ronda: RondaGuardada, resumen: Resumen, persona: Participant | null) {
+    guardarPersona(persona)
+    enviar(ronda, resumen, persona)
+    setStage({ step: 'resultado', resumen })
   }
 
-  function openMethodology() {
+  function inicio() {
+    setGuardada(rondaGuardada())
+    setStage({ step: 'inicio' })
+  }
+
+  function metodologia() {
     setStage((from) => (from.step === 'metodologia' ? from : { step: 'metodologia', from }))
   }
 
-  function finish(progress: SavedProgress, questions: Question[], allAnswers: Record<string, Response>) {
-    const { testId, variant, startedAt } = progress
-    const test = tests[testId]
-    // Solo cuentan las afirmaciones de esta partida.
-    const answers = Object.fromEntries(
-      questions.filter((q) => q.id in allAnswers).map((q) => [q.id, allAnswers[q.id]]),
-    ) as Record<string, Response>
-    const data: ResultData = {
-      testId,
-      scores: scoreAxes(test.axes, questions, answers),
-      acquiescence: acquiescence(answers),
-      consistency: consistency(questions, answers),
-      answered: Object.values(answers).filter((r) => r != null).length,
-      total: questions.length,
+  function volver(from: Stage) {
+    if (from.step === 'inicio' || from.step === 'metodologia') return inicio()
+    if (from.step === 'juego') {
+      const r = rondaGuardada()
+      if (r) return retomar(r)
     }
-    if (!collecting) {
-      clearProgress()
-      setSaved(null)
-      setStage({ step: 'results', data })
-      return
-    }
-    // Hasta enviar los datos, el test terminado queda guardado: si se recarga, se retoma acá.
-    const seconds = progress.seconds ?? Math.round((Date.now() - (startedAt ?? Date.now())) / 1000)
-    saveProgress({ ...progress, index: questions.length, answers, seconds })
-    setStage({ step: 'datos', data, pending: { variant, questions, answers, seconds } })
-  }
-
-  function resume(progress: SavedProgress) {
-    if (progress.index >= VARIANT_SIZE[progress.variant]) {
-      const questions = drawQuestions(tests[progress.testId], progress.variant, progress.seed)
-      finish(progress, questions, progress.answers)
-    } else {
-      setStage({ step: 'quiz', progress })
-    }
-  }
-
-  function showResults(data: ResultData, pending: PendingSubmission, participant: Participant | null) {
-    clearProgress()
-    setSaved(null)
-    if (participant) {
-      submitResult(tests[data.testId], pending.variant, participant, pending.questions, pending.answers, pending.seconds)
-    }
-    setStage({ step: 'results', data })
+    setStage(from)
   }
 
   return (
     <>
-      <Header onHome={goHome} onMethodology={openMethodology} />
-      {stage.step === 'intro' && (
-        <Intro
-          saved={saved}
-          onStart={start}
-          onResume={resume}
-          onMethodology={openMethodology}
+      <Header onHome={inicio} onMethodology={metodologia} />
+      {stage.step === 'inicio' && (
+        <Inicio guardada={guardada} onJugar={jugar} onRetomar={retomar} onMethodology={metodologia} />
+      )}
+      {stage.step === 'juego' && (
+        <Juego
+          key={stage.ronda.semilla}
+          cartas={stage.cartas}
+          jugadas={stage.ronda.jugadas}
+          conteos={estado?.conteos ?? {}}
+          onJugada={(j) => avance(stage.ronda, j)}
+          onFin={(j) => fin(stage.ronda, j)}
         />
       )}
       {stage.step === 'datos' && (
-        <ParticipantForm
-          onContinue={(participant) => showResults(stage.data, stage.pending, participant)}
-        />
+        <ParticipantForm onContinue={(p) => datos(stage.ronda, stage.resumen, p)} />
       )}
-      {stage.step === 'quiz' && (
-        <Quiz
-          key={`${stage.progress.testId}-${stage.progress.seed}`}
-          progress={stage.progress}
-          onComplete={(questions, answers) => finish(stage.progress, questions, answers)}
-        />
-      )}
-      {stage.step === 'results' && (
-        <Results
-          data={stage.data}
-          onRestart={goHome}
-          onMethodology={openMethodology}
+      {stage.step === 'resultado' && (
+        <Resultado
+          resumen={stage.resumen}
+          conteos={estado?.conteos ?? {}}
+          histograma={estado?.histograma ?? null}
+          onOtraRonda={() => jugar([])}
+          onMethodology={metodologia}
         />
       )}
       {stage.step === 'metodologia' && (
-        <Methodology
-          backLabel={stage.from.step === 'results' ? 'Volver al resultado' : stage.from.step === 'intro' ? 'Volver a los tests' : 'Volver'}
-          onBack={() => backFrom(stage.from)}
+        <ComoFunciona
+          backLabel={stage.from.step === 'juego' ? 'Volver a la ronda' : stage.from.step === 'resultado' ? 'Volver al resultado' : 'Volver'}
+          onBack={() => volver(stage.from)}
         />
       )}
     </>

@@ -1,99 +1,59 @@
-export type TestId = 'ar' | 'intl'
-export type Variant = 'short' | 'full' | 'deep'
-export type Confidence = 'alta' | 'media' | 'baja'
-
-export interface Pole {
-  label: string
-  description?: string
+/** Una de las dos opciones de una carta. */
+export interface Opcion {
+  texto: string
+  /** Id de una foto de src/data/fotos.json (figuras, partidos). */
+  foto?: string
 }
 
-export interface Axis {
+/** El dato real con el que se compara la adivinanza: una encuesta publicada. */
+export interface Referencia {
+  /** Porcentajes crudos publicados para A y B, y el resto (otras respuestas, no sabe, no contesta). */
+  a: number
+  b: number
+  resto: number
+  encuestadora: string
+  /** AAAA-MM */
+  fecha: string
+  muestra?: string
+  alcance: string
+  url: string
+  pregunta_original?: string
+  nota?: string
+}
+
+export type Tema = 'economia' | 'politica' | 'sociedad' | 'historia' | 'cultura' | 'vida'
+
+export interface Carta {
   id: string
-  name: string
-  description: string
-  poleA: Pole
-  poleB: Pole
-  /** false: no entra en las comparaciones */
-  includeInMatching: boolean
-  /** Se muestra aparte en el resultado (identidad peronista), aunque cuente en la cercanía. */
-  reportSeparately?: boolean
-  /**
-   * Proporción del valor de un perfil hacia el polo B que expresan en el test quienes piensan
-   * como él. En temas con polo "poco declarable" (movimientismo, populismo, autoridad) los
-   * votantes no se expresan como actúan sus líderes; la comparación usa el valor escalado.
-   */
-  poleBExpressed?: number
+  /** duelo: esto o aquello; afirmacion: de acuerdo o en desacuerdo. */
+  tipo: 'duelo' | 'afirmacion'
+  pregunta: string
+  a: Opcion
+  b: Opcion
+  tema: Tema
+  ref: Referencia
+  /** Ya no se sortea, pero conserva su lugar en la codificación de partidas guardadas. */
+  retirada?: boolean
 }
 
-export interface Question {
-  id: string
-  text: string
-  primaryAxis: string
-  /** Peso firmado por eje: el acuerdo empuja hacia el polo B si es positivo. */
-  effects: Record<string, number>
-  /** Elegible para el núcleo: las afirmaciones centrales de cada tema, que pesan más. */
-  core?: boolean
-  /** Peso en el puntaje, asignado al sortear (núcleo = CORE_WEIGHT, detalle = 1). */
-  weight?: number
-  /** Ítem coyuntural que conviene revisar cada ciclo electoral. */
-  volatile?: boolean
-  /** Reemplazada: ya no se sortea, pero conserva su lugar en el empaquetado de respuestas. */
-  retired?: boolean
+/** Lo que eligió la persona: A, B o prefirió no decir. */
+export type Eleccion = 'a' | 'b' | 'nada'
+
+export interface Jugada {
+  carta: string
+  eleccion: Eleccion
+  /** Qué porcentaje cree que eligió A (0 a 100). */
+  prediccion: number
 }
 
-export interface Catalog {
-  id: string
-  name: string
-  description: string
-  kind: 'ideologias' | 'tradiciones' | 'figuras' | 'partidos'
-}
-
-export interface Profile {
-  id: string
-  catalog: string
-  name: string
-  country?: string
-  era?: string
-  description: string
-  /** −100 (polo A) a +100 (polo B); null = no aplica a su época o sin evidencia. */
-  coords: Record<string, number | null>
-  confidence: Confidence
-  method: string
-  basis?: string
-  contextNote?: string
-}
-
-export interface TestDefinition {
-  id: TestId
-  version: string
-  name: string
-  tagline: string
-  description: string
-  axes: Axis[]
-  /** Afirmaciones activas (las que se sortean). */
-  questions: Question[]
-  /** Ids de todo el banco, retiradas incluidas, en el orden del empaquetado de respuestas. */
-  layout: string[]
-  catalogs: Catalog[]
-  profiles: Profile[]
-  /** Pares de ejes para los planos 2D. */
-  planes: [string, string][]
-  /** Grupos de temas para "también cerca, por dimensión". */
-  dimensions: { label: string; axes: string[] }[]
-  /** Afirmaciones que se sortean por eje: el núcleo va en todas las versiones y el detalle suma. */
-  draw: {
-    core: Record<string, number>
-    detail: Record<Exclude<Variant, 'short'>, Record<string, number>>
-  }
-}
-
-/** 1 = muy de acuerdo … −1 = muy en desacuerdo; null = "No sé" (se excluye). */
-export type Response = -1 | -0.5 | 0 | 0.5 | 1 | null
-
-export interface AxisScore {
-  axisId: string
-  /** −100..100, o null si el eje quedó indeterminado. */
-  score: number | null
-  /** Proporción del peso del eje efectivamente respondido (0..1). */
-  coverage: number
+/** Lo que eligieron quienes jugaron cada carta (si el despliegue tiene Supabase). */
+export interface Conteo {
+  a: number
+  b: number
+  nada: number
+  /** Suma y cantidad de predicciones de quienes eligieron A, y de quienes eligieron B. */
+  predA: number
+  nA: number
+  predB: number
+  nB: number
 }

@@ -1,164 +1,58 @@
-# Brújula — test político multidimensional
+# La Mayoría
 
-Dos tests de posicionamiento político, uno argentino y otro internacional. El
-resultado no encasilla: muestra a qué ideologías, tradiciones, figuras y partidos
-se parece la persona, en qué coincide y en qué se diferencia, y su posición tema
-por tema.
+¿Sabés qué piensa la Argentina? Un juego web sobre la opinión pública: en cada carta elegís
+entre dos opciones (esto o aquello, de acuerdo o en desacuerdo), adivinás cómo se reparte el
+país y ves el dato real de una encuesta publicada. Cuanto más cerca, más puntos.
 
-Implementa la especificación técnica "Political compass argentino e internacional":
-ítems multi-eje balanceados, opción "No sé", cobertura por eje, catálogos
-separados, identidad peronista reportada aparte, planos 2D, enlace para compartir y tests de recall.
+No es una encuesta, pero junta opinión: lo que elige cada persona y lo que cree que piensan
+los demás se guarda de forma anónima (si el despliegue tiene Supabase).
 
-## Los tests
+## Cómo se juega
 
-| | Argentina | Internacional |
-|---|---|---|
-| Temas (ejes) | Economía (Estado, macroeconomía, trabajo y comercio), Valores, Instituciones, Estilo (pluralista/populista), Seguridad, Memoria, Mundo, Territorio + Identidad (aparte) | Economía, Comercio, Libertades, Democracia, Valores, Religión, Nación, Guerra y paz, Migración, Ambiente, Estilo |
-| Afirmaciones por partida | 25 corta · 50 completa · 100 a fondo | 25 corta · 50 completa · 100 a fondo |
-| Banco del que se sortean | 182 (54 elegibles para el núcleo) | 176 (66 elegibles para el núcleo) |
-| Catálogos | Tradiciones y espacios · Figuras históricas · Figuras actuales | Ideologías · Figuras históricas · Figuras actuales · Partidos |
-| Perfiles | 109 | 158 |
+- Rondas de 15 cartas sorteadas del banco, alternando temas (política, economía, sociedad,
+  historia, cultura, vida cotidiana) y priorizando las que la persona todavía no vio.
+- Cada carta: elegís A, B o "prefiero no decir"; después movés una barra hasta el porcentaje
+  que creés que eligió cada opción.
+- Puntos: `100 − 2,5 · |predicción − dato real|`, mínimo 0.
+- Al final: puntaje promedio, cuánto habrías sacado diciendo 50% en todas, en qué cartas
+  pensás como la mayoría o la minoría, tu mayor sorpresa y tu sesgo de "falso consenso"
+  (cuánto sobreestimás a quienes eligen lo mismo que vos).
 
-## Cómo se calcula
+## El dato real
 
-- Cada partida sortea sus afirmaciones del banco y las muestra en orden aleatorio.
-  Las 25 de la corta son el **núcleo** (2 a 4 por tema, entre las elegibles) y pesan
-  el triple en su tema; la completa y la a fondo suman 25 y 75 de **detalle**.
-  En la corta un sentido queda 2 a 1 por tema, alternado entre temas; en las otras
-  el detalle compensa y cada tema queda equilibrado.
-- Respuestas de −1 a +1 (±0,5 intermedios); "No sé" se excluye.
-- `puntaje_eje = 100 · Σ(w·r·e) / Σ w·|e|` sobre ítems respondidos, con `w = 3` para
-  el núcleo en su tema principal y 1 en el resto; con menos del 50% de
-  cobertura el eje queda indeterminado.
-- Cercanía: `100 · (1 − d/100)`, con `d = √((Σ (k·u − p)² + 50²) / (n + 1))` en los
-  `n` temas con puntaje del usuario, después de estirar sus puntajes por
-  `k = Σu·p / Σu²` (entre 1 y 2, recortado a ±100): quien responde "de acuerdo" en vez
-  de "muy de acuerdo" se compara por la dirección de sus posiciones. El tema ficticio a
-  50 puntos evita cercanías altas por coincidir en uno o dos temas, y con menos de 4
-  temas comparados k se acerca a 1. Donde el perfil no tiene dato se cuenta la
-  distancia estirada del usuario al centro (mínimo 40). 80% o más se muestra como
-  "muy cerca"; menos de 50%, "lejos".
-- Cada catálogo se compara solo en los temas que tienen dato al menos el 70% de sus
-  perfiles (en figuras históricas argentinas no cuentan Memoria ni la identidad; en las
-  internacionales, Ambiente). Fuera de eso, la identidad peronista cuenta en la
-  cercanía aunque se muestre aparte.
-- Consistencia: si en varios temas la persona estuvo de acuerdo con afirmaciones
-  opuestas (menos de 0,4), el resultado se marca como mixto y orientativo.
-- Los catálogos se rankean por separado. Las figuras de dictaduras y
-  totalitarismos se incluyen como cualquier otro perfil, con descripciones que
-  mencionan sus crímenes documentados. Por decisión editorial quedan excluidos
-  Adolf Hitler, el nazismo, Augusto Pinochet, Alfredo Stroessner, Slobodan
-  Milošević y la cúpula de la última dictadura argentina.
+Cada carta de `src/data/cartas.json` cita una encuesta publicada: encuestadora, fecha,
+muestra, alcance y enlace, con los porcentajes crudos de A, B y el resto. Si la encuesta tenía
+más opciones o "no sabe", el juego muestra la proporción entre A y B y lo aclara al revelar.
+El puntaje siempre se calcula contra la encuesta, nunca contra lo que eligen quienes juegan:
+esa muestra es autoseleccionada (y cualquiera podría inflarla), así que se muestra aparte.
 
-Las posiciones de los perfiles se **calibran respondiendo el test**: cada figura,
-partido e ideología respondió todas las afirmaciones activas según su trayectoria
-documentada (con asistencia de IA y revisión editorial, contrastando con la semilla
-editorial previa), y su posición sale de esas respuestas con la misma fórmula que la
-de quien juega. Las respuestas están en `data/calibracion/<test>.json` y las
-coordenadas se regeneran con `python3 scripts/calibrar_perfiles.py`. En figuras del
-siglo XIX, los temas sin ningún equivalente de época toman la semilla editorial,
-llevada a la escala medida. El test no está validado psicométricamente.
-
-## Datos
-
-JSON versionados en `src/data/{ar,intl}/{axes,questions,profiles}.json`:
-
-- `questions.json`: `effects` es un peso firmado por eje (principal ±1,
-  secundarios ±0,1–0,4); `core` marca las elegibles para el núcleo.
-- `profiles.json`: `coords` de −100 a +100 o `null`, `confidence`, `basis` y
-  `contextNote`.
-- `images.json`: fotos, logos y símbolos de Wikimedia Commons con autor y
-  licencia. Se generan con `python3 scripts/fetch_images.py` (requiere acceso de
-  red a los dominios de Wikimedia).
+El orden de `cartas.json` solo admite agregar al final (las partidas guardadas lo usan); una
+carta que se quiera sacar se marca `"retirada": true`.
 
 ## Datos de quienes juegan (Supabase)
 
-Si el despliegue tiene configurado Supabase, entre la última afirmación y el
-resultado la app pide edad, género y nivel educativo (opcionales) y guarda una
-fila con esos datos y las respuestas, de forma anónima: sin nombre, mail ni
-identificadores. De menores de 16 años no se guarda nada. Sin las variables de
-entorno, la app no pide datos ni envía nada.
+Si hay `VITE_SUPABASE_URL` y `VITE_SUPABASE_KEY` (ver `.env.example`), la primera ronda pide
+edad, género y nivel educativo (opcionales, una vez por dispositivo) y cada ronda terminada se
+guarda en una fila anónima de unos 90 bytes:
 
-### Configuración
+- `supabase/schema.sql` crea `partidas` (solo inserción con la clave pública), `conteos` y
+  `puntajes`, que un trigger actualiza con cada partida, y la función `estado()`, que devuelve
+  solo esos agregados. La app nunca lee partidas individuales.
+- Las jugadas van empaquetadas en 3 bytes por carta (ver `src/engine/codificacion.ts`).
+- Menores de 16: juegan, pero no se guarda nada.
+- `python3 scripts/exportar_partidas.py` baja todo con la clave secreta y arma `jugadas.csv`,
+  una fila por carta jugada, para analizar (por ejemplo, ponderando por edad, género y
+  educación según el censo: la muestra no es representativa).
 
-1. Crear un proyecto en [supabase.com](https://supabase.com) (plan Free).
-2. En **SQL Editor**, pegar y correr [`supabase/schema.sql`](supabase/schema.sql).
-   Crea la tabla `respuestas`, con permisos para que la clave pública solo pueda
-   insertar: nadie puede leer, modificar ni borrar desde la app.
-3. En **Project Settings → API Keys**, copiar la URL del proyecto y la clave
-   *publishable* (`sb_publishable_…`; también sirve la `anon` heredada).
-4. Cargarlas como variables de entorno, en `.env.local` para desarrollo (ver
-   `.env.example`) o en el hosting (Vercel, Netlify):
-   `VITE_SUPABASE_URL` y `VITE_SUPABASE_KEY`.
-5. Para bajar los datos: `python3 scripts/export_respuestas.py`, con
-   `SUPABASE_URL` y `SUPABASE_SECRET_KEY` (la clave `sb_secret_…`, que nunca va en
-   la app). También acepta un CSV bajado del panel: `--csv archivo.csv`.
-   Genera `respuestas_intl.csv` y `respuestas_ar.csv`, con etiquetas, puntaje por
-   eje y la respuesta a cada afirmación.
+## Desarrollo
 
-### Cómo se ahorra espacio
-
-El plan Free da 500 MB de base. Cada test terminado ocupa unos **180 bytes**
-con el índice incluido (medido con 100.000 filas en PostgreSQL 16): alcanza para
-unos **2,5 millones de tests**. La misma información guardada "a lo simple", con
-JSON de respuestas y puntajes, textos y timestamp, ocupa unos 1.000 bytes por
-fila, más de 5 veces.
-
-- **Respuestas en medio byte cada una**: el valor de cada afirmación ocupa 4 bits
-  en un `bytea`, en el orden del banco (`questions.json`): 91 bytes para 182. El
-  cuarto bit marca las que salieron como núcleo, para recalcular el puntaje.
-  Como las filas guardadas dependen de ese orden, a `questions.json` solo se le
-  agregan afirmaciones al final; lo controla un test contra
-  `tests/answer-layout.json`, que hay que actualizar al agregarlas.
-- **Sin puntajes guardados**: se recalculan desde las respuestas, en el script
-  de exportación o en la app.
-- **Códigos `smallint`** en vez de textos, **`date`** en vez de timestamp (4 bytes
-  y además menos identificable) y columnas ordenadas para no perder bytes por
-  alineación.
-- **Una sola fila por test terminado**, un solo envío al final: los tests
-  abandonados no ocupan lugar.
-- **Límites en la tabla**: `check` de rangos y máximo de 128 bytes de respuestas,
-  para que nadie pueda llenarla con filas gigantes usando la clave pública.
-
-Códigos (0 = prefiero no decir): `test` 1 internacional, 2 Argentina ·
-`variante` 1 corta, 2 completa, 3 a fondo · `edad` 1 16–17, 2 18–24, 3 25–34,
-4 35–44, 5 45–54, 6 55–64, 7 65+ · `genero` 1 mujer, 2 varón, 3 no binario u
-otra · `educacion` 1 sin estudios o primario incompleto, 2 primario completo,
-3 secundario incompleto, 4 secundario completo, 5 terciario/universitario
-incompleto, 6 terciario/universitario completo, 7 posgrado. En el SQL Editor,
-`respuesta(respuestas, i)` devuelve el valor de la afirmación `i` (desde 0).
-
-Para controlar el uso: `select pg_size_pretty(pg_total_relation_size('public.respuestas'));`.
-Un proyecto Free se pausa tras 7 días sin actividad: si pasa una semana sin
-jugadores, hay que reactivarlo desde el panel (los datos no se pierden).
-
-## Stack
-
-Vite + React + TypeScript + Tailwind CSS v4. El único backend es opcional: una
-tabla de Supabase para guardar respuestas (ver abajo). Estética según el
-manual de marca de Pisubí (tokens en `src/index.css`).
-
-```bash
+```
 npm install
-npm run dev      # servidor de desarrollo
-npm test         # Vitest: integridad, balance, puntaje y recall
-npm run build    # build de producción
-npm run lint     # oxlint
+npm run dev
+npm test        # vitest
+npm run lint    # oxlint
+npm run build
 ```
 
-## Estructura
-
-- `src/engine/` — `scoring`, `matching`, `selection` (versiones y orden aleatorio
-  con semilla) y `share` (resultado en la URL).
-- `src/components/` — inicio, test, metodología y `results/` (barras por eje,
-  planos 2D, rankings por catálogo, identidad).
-- `src/lib/progress.ts` — progreso guardado en el navegador.
-- `src/lib/participant.ts`, `src/lib/submit.ts` y `src/engine/encoding.ts` —
-  datos demográficos, envío a Supabase y empaquetado de respuestas.
-- `tests/` — tests de la especificación: neutral = 0, todo de acuerdo ≈ 0,
-  balance de polos, rangos, IDs y recall ≥ 80% con ruido σ = 0,25.
-- `tests/coherence.test.ts` — coherencia de los perfiles: órdenes indiscutibles
-  por tema (Milei más de mercado que Macri, Bolsonaro más de orden que Lula…),
-  cada figura cerca de su partido o ideología, la misma figura igual en los dos
-  tests, ningún perfil que "atraiga" a más del 15% de personas simuladas,
-  recall en la versión corta y estabilidad al jugar dos veces.
+Vite, React, TypeScript y Tailwind. Las fotos de figuras (`public/img`, `src/data/fotos.json`)
+son de Wikimedia Commons, con autor y licencia.

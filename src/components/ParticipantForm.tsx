@@ -22,11 +22,12 @@ export function ParticipantForm({ onContinue }: ParticipantFormProps) {
 
   return (
     <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-20">
-      <Eyebrow>Último paso</Eyebrow>
-      <h1 className="mt-6 text-3xl font-bold sm:text-4xl">Antes de ver tu resultado</h1>
+      <Eyebrow>Antes de tu resultado</Eyebrow>
+      <h1 className="mt-6 text-3xl font-bold sm:text-4xl">Tres datos, una sola vez</h1>
       <p className="mt-5 leading-7 text-azul/75">
-        Tres datos opcionales para las estadísticas del test. Se guardan de forma anónima junto
-        con tus respuestas, sin nombre, mail ni nada que te identifique.
+        Son opcionales y sirven para comparar cómo eligen distintas edades y grupos. Se guardan de
+        forma anónima junto con tus jugadas, sin nombre, mail ni nada que te identifique, y no te
+        los volvemos a pedir en este dispositivo.
       </p>
 
       <Field label="Edad" options={AGE_OPTIONS} value={age} onChange={setAge} />
