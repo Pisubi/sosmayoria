@@ -55,6 +55,33 @@ describe('sortear', () => {
   })
 })
 
+describe('cartas núcleo', () => {
+  const temas: Tema[] = ['politica', 'economia', 'cultura']
+  const banco = [
+    ...Array.from({ length: 40 }, (_, i) => carta(`c${i}`, 50, 50, temas[i % 3])),
+    ...Array.from({ length: 5 }, (_, i) => ({ ...carta(`n${i}`, 60, 40, 'sociedad'), nucleo: true })),
+  ]
+
+  it('salen todas en cada ronda, repartidas y nunca primera', () => {
+    for (let s = 0; s < 100; s++) {
+      const r = sortear(banco, s)
+      expect(r).toHaveLength(RONDA)
+      const pos = r.flatMap((c, i) => (c.nucleo ? [i] : []))
+      expect(pos).toHaveLength(5)
+      expect(pos[0]).toBeGreaterThan(0)
+      // Repartidas: una por cada quinto de la ronda.
+      pos.forEach((p, i) => expect(Math.floor((p * 5) / RONDA)).toBeLessThanOrEqual(i + 1))
+      expect(new Set(r.map((c) => c.id)).size).toBe(RONDA)
+    }
+  })
+
+  it('salen aunque se filtre por tema', () => {
+    const r = sortear(banco, 3, new Set(), new Set<Tema>(['cultura']))
+    expect(r.filter((c) => c.nucleo)).toHaveLength(5)
+    expect(r.filter((c) => !c.nucleo).every((c) => c.tema === 'cultura')).toBe(true)
+  })
+})
+
 describe('resumir', () => {
   const banco = [carta('a', 70, 30), carta('b', 40, 60), carta('c', 50, 49), carta('d', 20, 80, 'economia')]
 

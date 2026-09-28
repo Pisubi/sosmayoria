@@ -30,6 +30,14 @@ export function ComoFunciona({ onBack, backLabel = 'Volver' }: { onBack: () => v
         mayoría clara en las que elegiste.
       </Bloque>
 
+      <Bloque titulo="Las cartas que siempre salen">
+        En cada ronda hay cinco cartas fijas, mezcladas entre las demás: el rol del Estado en la
+        economía, el aborto legal, la seguridad, los juicios por la última dictadura y la
+        aprobación del gobierno. Son las que más distinguen las posturas políticas en la Argentina
+        y permiten analizar las respuestas de cada carta según la orientación de quien juega. La
+        del gobierno se actualiza con la última medición disponible.
+      </Bloque>
+
       <Bloque titulo="Lo que se guarda">
         {collecting
           ? 'Cada ronda terminada se guarda de forma anónima: qué elegiste en cada carta, cuánto tardaste y, si decidís darlos, tu rango de edad, género y nivel educativo (se preguntan antes de cada resultado, con tus respuestas anteriores ya marcadas). No se guarda nombre, mail, IP ni nada que te identifique, y nunca las rondas de menores de 16 años. Lo que eligen quienes juegan no es una encuesta representativa: juega quien quiere.'

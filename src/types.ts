@@ -32,6 +32,14 @@ export interface Carta {
   b: Opcion
   tema: Tema
   ref: Referencia
+  /**
+   * Carta núcleo: sale en todas las rondas, mezclada entre las demás. Las cartas núcleo cubren
+   * economía, valores, seguridad, memoria y postura frente al gobierno, y permiten leer cada
+   * partida según la orientación política de quien juega.
+   */
+  nucleo?: boolean
+  /** Dato coyuntural que hay que actualizar seguido (por ejemplo, aprobación del gobierno). */
+  volatil?: boolean
   /** Ya no se sortea, pero conserva su lugar en la codificación de partidas guardadas. */
   retirada?: boolean
 }

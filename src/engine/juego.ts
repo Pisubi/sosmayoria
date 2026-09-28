@@ -55,8 +55,9 @@ function mezclar<T>(items: T[], next: () => number): T[] {
 }
 
 /**
- * Sortea una ronda alternando temas por turnos (nunca salen varias de política seguidas) y,
- * dentro de cada tema, priorizando las cartas que la persona todavía no vio.
+ * Sortea una ronda: las cartas núcleo siempre, repartidas en lugares al azar, y el resto
+ * alternando temas por turnos (nunca salen varias de política seguidas) y, dentro de cada
+ * tema, priorizando las cartas que la persona todavía no vio.
  */
 export function sortear(
   cartas: Carta[],
@@ -66,7 +67,10 @@ export function sortear(
   n = RONDA,
 ): Carta[] {
   const next = random(seed)
-  const activas = cartas.filter((c) => !c.retirada && (!temas || temas.size === 0 || temas.has(c.tema)))
+  const nucleo = cartas.filter((c) => c.nucleo && !c.retirada)
+  const activas = cartas.filter(
+    (c) => !c.retirada && !c.nucleo && (!temas || temas.size === 0 || temas.has(c.tema)),
+  )
   // Una cola por tema, primero las no vistas; después se toma de a una por tema, por turnos.
   const colas = new Map<Tema, Carta[]>()
   for (const c of activas) colas.set(c.tema, [...(colas.get(c.tema) ?? []), c])
@@ -78,13 +82,23 @@ export function sortear(
     next,
   )
   const out: Carta[] = []
-  const total = Math.min(n, activas.length)
+  const total = Math.min(Math.max(0, n - nucleo.length), activas.length)
   while (out.length < total) {
     for (const cola of orden) {
       const c = cola.shift()
       if (c && out.length < total) out.push(c)
     }
   }
+  // Las cartas núcleo van en todas las rondas, en lugares al azar repartidos entre las demás
+  // (una por tramo de la ronda, nunca la primera), para que no se note un bloque fijo.
+  const tramos = nucleo.length
+  const largo = out.length + nucleo.length
+  mezclar(nucleo, next).forEach((c, i) => {
+    const desde = Math.max(1, Math.floor((i * largo) / tramos))
+    const hasta = Math.max(desde, Math.floor(((i + 1) * largo) / tramos) - 1)
+    const pos = Math.min(out.length, desde + Math.floor(next() * (hasta - desde + 1)))
+    out.splice(pos, 0, c)
+  })
   return out
 }
 

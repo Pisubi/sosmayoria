@@ -19,6 +19,14 @@ No es una encuesta, pero junta opinión: lo que elige cada persona se guarda de 
 - Al final: en cuántas cartas (con mayoría clara) pensás como la mayoría, un perfil (de "Sos la
   mayoría" a "Minoría intensa"), dónde sos minoría y cómo te va en cada tema.
 
+## Cartas núcleo
+
+Cinco cartas (`"nucleo": true`) salen en todas las rondas, en lugares al azar repartidos entre
+las demás: Estado o mercado en el empleo, aborto legal, penas o desigualdad frente a la
+inseguridad, juicios por la dictadura y aprobación del gobierno. Dan un perfil político de
+cada partida para cruzar con el resto de las cartas (la exportación las trae como columnas).
+La de aprobación es `"volatil": true`: hay que actualizar su dato con la última medición.
+
 ## El dato real
 
 Cada carta de `src/data/cartas.json` cita una encuesta publicada: encuestadora, fecha,

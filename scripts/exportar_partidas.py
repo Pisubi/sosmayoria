@@ -73,17 +73,25 @@ def main():
     invalid = n = 0
     with open('jugadas.csv', 'w', newline='', encoding='utf-8') as f:
         w = csv.writer(f)
-        w.writerow(['partida', 'fecha', 'edad', 'genero', 'educacion', 'segundos', 'carta', 'tema',
-                    'pregunta', 'opcion_a', 'opcion_b', 'eleccion', 'mayoria_encuesta', 'con_la_mayoria'])
+        # Las cartas núcleo (siempre en la ronda) van como columnas en cada fila: permiten cruzar
+        # cualquier carta con el perfil de quien jugó (economía, valores, seguridad, memoria, gobierno).
+        nucleo = [c for c in cartas if c.get('nucleo') and not c.get('retirada')]
+        w.writerow(['partida', 'fecha', 'edad', 'genero', 'educacion', 'segundos',
+                    *(f"nucleo:{c['id']}" for c in nucleo),
+                    'carta', 'tema', 'pregunta', 'opcion_a', 'opcion_b', 'eleccion', 'mayoria_encuesta',
+                    'con_la_mayoria'])
         for r in rows:
             jugadas = decodificar(r['jugadas'], cartas)
             if jugadas is None:
                 invalid += 1
                 continue
+            elegido = {c['id']: (c['a']['texto'] if e == 'A' else c['b']['texto'] if e == 'B' else 'no dice')
+                       for c, e in jugadas}
+            perfil = [elegido.get(c['id'], '') for c in nucleo]
             for c, e in jugadas:
                 m = mayoria(c)
                 w.writerow([r['id'], r['fecha'], AGE.get(int(r['edad']), ''), GENDER.get(int(r['genero']), ''),
-                            EDUCATION.get(int(r['educacion']), ''), r['segundos'], c['id'], c['tema'],
+                            EDUCATION.get(int(r['educacion']), ''), r['segundos'], *perfil, c['id'], c['tema'],
                             c['pregunta'], c['a']['texto'], c['b']['texto'],
                             c['a']['texto'] if e == 'A' else c['b']['texto'] if e == 'B' else '',
                             m, '' if e == 'no dice' or m == 'parejo' else ('sí' if e == m else 'no')])

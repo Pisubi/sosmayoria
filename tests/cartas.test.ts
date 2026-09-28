@@ -10,6 +10,13 @@ describe('banco de cartas', () => {
     expect(new Set(activas).size).toBe(activas.length)
   })
 
+  it('hay entre 4 y 5 cartas núcleo, nacionales', () => {
+    const nucleo = todas.filter((c) => c.nucleo && !c.retirada)
+    expect(nucleo.length).toBeGreaterThanOrEqual(4)
+    expect(nucleo.length).toBeLessThanOrEqual(5)
+    for (const c of nucleo) expect(c.ref.alcance).toBe('nacional')
+  })
+
   it('nacionales, o regionales amplias con al menos 500 casos informados', () => {
     for (const c of todas.filter((x) => !x.retirada)) {
       if (/^nacional/.test(c.ref.alcance)) continue

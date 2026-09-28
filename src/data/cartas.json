@@ -1079,7 +1079,8 @@
     "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
     "pregunta_original": "¿Qué es, para usted, lo mejor para un país? Un país donde la mayor parte del empleo lo crean las empresas privadas / lo crea el Estado y las empresas públicas.",
     "nota": "Resto = ns/nc."
-   }
+   },
+   "nucleo": true
   },
   {
    "id": "que-te-genera-mas-confianza",
@@ -1486,7 +1487,8 @@
     "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Creencias-25_informe-4-1.pdf",
     "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con… 'Acceso a la interrupción voluntaria del embarazo'?",
     "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Datos del informe escrito (50% vs 48%)."
-   }
+   },
+   "nucleo": true
   },
   {
    "id": "una-persona-deberia-poder-decidir-su-mue",
@@ -1894,7 +1896,8 @@
     "url": "https://pulsar.uba.ar/wp-content/uploads/2026/05/Miradas-retrospectivas-sobre-la-dictadura-argentina_Primera-entrega.pdf",
     "pregunta_original": "Nivel de acuerdo con la frase: 'Es necesario que el Estado siga juzgando a los militares'",
     "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 51 + bastante 19; poco 13 + nada 13; ns/nc 4."
-   }
+   },
+   "nucleo": true
   },
   {
    "id": "puede-volver-a-haber-una-dictadura-en-la",
@@ -2134,7 +2137,8 @@
     "url": "https://www.agenciacomunas.com.ar/encuesta-nacional-universidades-estado-seguridad-y-protesta-en-una-foto-sensible-del-clima-social/",
     "pregunta_original": "Soluciones frente al delito: endurecer leyes y penas / reducir las diferencias sociales (redacción exacta no publicada).",
     "nota": "Resto = otras + ns/nc."
-   }
+   },
+   "nucleo": true
   },
   {
    "id": "ante-un-corte-de-calle-el-gobierno-deber",
@@ -2350,6 +2354,32 @@
     "url": "https://www.diariopopular.com.ar/general/revelador-la-mayoria-los-argentinos-prefiere-el-mate-dulce-n300223",
     "pregunta_original": "Preferencia de mate dulce, amargo o indistinto",
     "nota": "Dato viejo (2017) pero tema estable; no se encontró medición nacional más reciente verificable. Resto = indistinto (14%)."
+   }
+  },
+  {
+   "id": "aprobas-la-gestion-del-gobierno-nacional",
+   "tipo": "duelo",
+   "pregunta": "¿Aprobás la gestión del gobierno de Javier Milei?",
+   "a": {
+    "texto": "Apruebo"
+   },
+   "b": {
+    "texto": "Desapruebo"
+   },
+   "tema": "politica",
+   "nucleo": true,
+   "volatil": true,
+   "ref": {
+    "a": 35,
+    "b": 61,
+    "resto": 4,
+    "encuestadora": "UdeSA (ESPOP)",
+    "fecha": "2026-08",
+    "muestra": "1.000 casos, online, adultos conectados a internet",
+    "alcance": "nacional",
+    "url": "https://mercado.com.ar/informes-especiales/encuesta-de-la-udesa-insatisfaccion-del-69-y-35-de-aprobacion-a-milei",
+    "pregunta_original": "Aprobación de la gestión del gobierno de Javier Milei",
+    "nota": "Relevamiento del 5 al 11 de agosto de 2026. Dato coyuntural: actualizar cada mes con la última medición."
    }
   }
  ]
