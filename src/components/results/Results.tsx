@@ -3,6 +3,7 @@ import { tests } from '../../data/tests'
 import { rankProfiles, type Match } from '../../engine/matching'
 import { ACQUIESCENCE_THRESHOLD } from '../../engine/scoring'
 import type { AxisScore, TestId } from '../../types'
+import { Avatar } from '../Avatar'
 import { Eyebrow } from '../Eyebrow'
 import { Footer } from '../Footer'
 import { AxisBars } from './AxisBars'
@@ -80,7 +81,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
           <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-marfil/20 bg-marfil/20 sm:grid-cols-2 lg:grid-cols-4">
             {byCatalog.map(({ catalog, matches }) =>
               matches[0] ? (
-                <Highlight key={catalog.id} label={catalog.name} match={matches[0]} axisName={axisName} />
+                <Highlight key={catalog.id} testId={test.id} label={catalog.name} match={matches[0]} axisName={axisName} />
               ) : null,
             )}
           </div>
@@ -146,7 +147,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
       >
         <div className="grid gap-14">
           {[lead, ...others].map(({ catalog, matches }) => (
-            <CatalogRanking key={catalog.id} catalog={catalog} matches={matches} axes={test.axes} />
+            <CatalogRanking key={catalog.id} testId={test.id} catalog={catalog} matches={matches} axes={test.axes} />
           ))}
         </div>
       </Section>
@@ -197,10 +198,12 @@ function listOf(items: string[]): string {
 }
 
 function Highlight({
+  testId,
   label,
   match,
   axisName,
 }: {
+  testId: TestId
   label: string
   match: Match
   axisName: (id: string) => string
@@ -208,6 +211,9 @@ function Highlight({
   return (
     <div className="bg-noche p-5 sm:p-6">
       <p className="text-xs font-medium tracking-[0.12em] text-marfil/60 uppercase">{label}</p>
+      <div className="mt-4">
+        <Avatar testId={testId} profile={match.profile} size={56} dark />
+      </div>
       <p className="mt-3 text-lg leading-snug font-semibold">{match.profile.name}</p>
       {match.profile.country && <p className="text-xs text-marfil/60">{match.profile.country}</p>}
       <p className="mt-4 text-3xl font-bold text-naranja tabular-nums">

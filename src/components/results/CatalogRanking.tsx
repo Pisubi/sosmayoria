@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import type { Match } from '../../engine/matching'
-import type { Axis, Catalog } from '../../types'
+import type { Axis, Catalog, TestId } from '../../types'
+import { Avatar } from '../Avatar'
 
 interface CatalogRankingProps {
+  testId: TestId
   catalog: Catalog
   matches: Match[]
   axes: Axis[]
@@ -10,7 +12,7 @@ interface CatalogRankingProps {
 
 const TOP = 3
 
-export function CatalogRanking({ catalog, matches, axes }: CatalogRankingProps) {
+export function CatalogRanking({ testId, catalog, matches, axes }: CatalogRankingProps) {
   const [expanded, setExpanded] = useState(false)
   const name = (id: string) => axes.find((a) => a.id === id)?.name ?? id
   const rest = matches.slice(TOP)
@@ -23,7 +25,7 @@ export function CatalogRanking({ catalog, matches, axes }: CatalogRankingProps) 
       <ol className="mt-5 border-t border-azul/14">
         {matches.slice(0, TOP).map((m, i) => (
           <li key={m.profile.id} className="border-b border-azul/14 py-5">
-            <MatchHeader match={m} top={i === 0} />
+            <MatchHeader testId={testId} match={m} top={i === 0} />
             <p className="mt-3 text-sm leading-6 text-azul/70">{m.profile.description}</p>
             <dl className="mt-3 grid gap-1 text-sm sm:grid-cols-2 sm:gap-6">
               <div>
@@ -41,7 +43,7 @@ export function CatalogRanking({ catalog, matches, axes }: CatalogRankingProps) 
         {expanded &&
           rest.map((m) => (
             <li key={m.profile.id} className="border-b border-azul/14 py-4">
-              <MatchHeader match={m} />
+              <MatchHeader testId={testId} match={m} />
             </li>
           ))}
       </ol>
@@ -58,26 +60,39 @@ export function CatalogRanking({ catalog, matches, axes }: CatalogRankingProps) 
   )
 }
 
-function MatchHeader({ match, top = false }: { match: Match; top?: boolean }) {
+function MatchHeader({
+  testId,
+  match,
+  top = false,
+}: {
+  testId: TestId
+  match: Match
+  top?: boolean
+}) {
   const pct = Math.round(match.similarity)
   const { profile } = match
   const sub = [profile.country, profile.era].filter(Boolean).join(' · ')
   return (
     <>
-      <div className="flex items-baseline justify-between gap-4">
-        <p className="font-semibold">
-          {profile.name}
-          {sub && <span className="ml-2 text-xs font-normal text-azul/55">{sub}</span>}
-        </p>
-        <p className="text-sm font-semibold tabular-nums" title="Cercanía de 0 a 100%">
-          {pct}%
-        </p>
-      </div>
-      <div className="mt-2 h-2 rounded-full bg-linea">
-        <div
-          className={`h-full rounded-full ${top ? 'bg-naranja' : 'bg-dato'}`}
-          style={{ width: `${pct}%` }}
-        />
+      <div className="flex items-center gap-4">
+        <Avatar testId={testId} profile={profile} size={top ? 48 : 36} />
+        <div className="min-w-0 flex-1">
+          <div className="flex items-baseline justify-between gap-4">
+            <p className="font-semibold">
+              {profile.name}
+              {sub && <span className="ml-2 text-xs font-normal text-azul/55">{sub}</span>}
+            </p>
+            <p className="text-sm font-semibold tabular-nums" title="Cercanía de 0 a 100%">
+              {pct}%
+            </p>
+          </div>
+          <div className="mt-2 h-2 rounded-full bg-linea">
+            <div
+              className={`h-full rounded-full ${top ? 'bg-naranja' : 'bg-dato'}`}
+              style={{ width: `${pct}%` }}
+            />
+          </div>
+        </div>
       </div>
     </>
   )

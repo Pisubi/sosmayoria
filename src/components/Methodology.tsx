@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { TEST_ORDER, tests } from '../data/tests'
 import { questionsFor } from '../engine/selection'
 import type { TestId } from '../types'
+import { allImages } from './Avatar'
 import { Eyebrow } from './Eyebrow'
 
 interface MethodologyProps {
@@ -181,6 +182,8 @@ export function Methodology({ onBack }: MethodologyProps) {
         </div>
       </details>
 
+      <ImageCredits testId={tab} />
+
       <Block title="Fuentes y antecedentes">
         <ul className="list-disc space-y-1 pl-5">
           {SOURCES.map((s) => (
@@ -243,5 +246,40 @@ function Formula({ children }: { children: React.ReactNode }) {
     <pre className="overflow-x-auto rounded-lg bg-linea/70 px-4 py-3 font-mono text-sm text-azul">
       {children}
     </pre>
+  )
+}
+
+function ImageCredits({ testId }: { testId: TestId }) {
+  const test = tests[testId]
+  const credits = allImages(testId)
+  if (credits.length === 0) return null
+  const nameOf = (id: string) => test.profiles.find((p) => p.id === id)?.name ?? id
+  return (
+    <details className="mt-4 rounded-xl border border-azul/14 p-5">
+      <summary className="cursor-pointer font-semibold">Créditos de imágenes ({credits.length})</summary>
+      <p className="mt-3 text-sm text-azul/70">
+        Fotos, logos y símbolos de Wikimedia Commons, con licencias libres. Se muestran reducidos.
+      </p>
+      <ul className="mt-4 space-y-1.5 text-xs leading-5 text-azul/75">
+        {credits
+          .sort(([a], [b]) => nameOf(a).localeCompare(nameOf(b), 'es'))
+          .map(([id, c]) => (
+            <li key={id}>
+              <span className="font-semibold text-azul">{nameOf(id)}</span>:{' '}
+              <a href={c.sourceUrl} target="_blank" rel="noreferrer" className="underline">
+                {c.author || 'Autor desconocido'}
+              </a>{' '}
+              ·{' '}
+              {c.licenseUrl ? (
+                <a href={c.licenseUrl} target="_blank" rel="noreferrer" className="underline">
+                  {c.license}
+                </a>
+              ) : (
+                c.license
+              )}
+            </li>
+          ))}
+      </ul>
+    </details>
   )
 }
