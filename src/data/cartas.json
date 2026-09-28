@@ -161,12 +161,12 @@
     "b": 54,
     "resto": 0,
     "encuestadora": "Voices! / WIN World AI Index",
-    "fecha": "2026-06",
-    "muestra": "1.007 casos, online",
+    "fecha": "2026-01",
+    "muestra": "1.007 casos, online (campo nov-2025 a ene-2026)",
     "alcance": "nacional",
     "url": "https://www.perfil.com/noticias/sociedad/en-argentina-ocho-de-cada-diez-personas-ya-usan-herramientas-de-iapero-el-54-desconfia-de-la-informacion-que-produce.phtml",
     "pregunta_original": "Confianza en la veracidad de las respuestas de sistemas de IA (ChatGPT, Copilot, Claude, etc.)",
-    "nota": "B agrupa 'dudas' y 'desconfianza' (54%). Muestra online: sobrerrepresenta población conectada."
+    "nota": "B agrupa 'dudas' y 'desconfianza' (54%). Muestra online: sobrerrepresenta población conectada. Campo nov-2025–ene-2026 (WIN World AI Index 2026, publicado mayo 2026)."
    }
   },
   {
@@ -305,12 +305,12 @@
     "b": 28,
     "resto": 0,
     "encuestadora": "Ipsos (Happiness Index 2026)",
-    "fecha": "2026-03",
-    "muestra": "panel online (Ipsos Global Advisor)",
+    "fecha": "2026-01",
+    "muestra": "panel online (Ipsos Global Advisor), campo 24/12/2025–9/1/2026",
     "alcance": "nacional (online)",
     "url": "https://www.ipsos.com/es-ar/la-felicidad-en-argentina-2026",
-    "pregunta_original": "Tomando todo en cuenta, ¿diría que es muy feliz, bastante feliz, no muy feliz o nada feliz?",
-    "nota": "A = muy + bastante feliz (72%, dato publicado). B = no muy + nada feliz, calculado como complemento. Argentina queda última en LatAm."
+    "pregunta_original": "Considerando todas las cosas, ¿diría que es: muy feliz, feliz, no muy feliz o para nada feliz?",
+    "nota": "A = muy feliz 15 + feliz 57 (72%). B = no muy feliz 24 + nada feliz 4 (28%), publicado en el informe. Argentina queda última en LatAm. Publicado 26/3/2026."
    }
   },
   {
@@ -331,10 +331,10 @@
     "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
     "fecha": "2019-09",
     "muestra": "2.421 casos, presencial, muestra probabilística nacional",
-    "alcance": "nacional",
+    "alcance": "nacional urbano",
     "url": "https://www.conicet.gov.ar/wp-content/uploads/Infografi%CC%81a-Encuesta-Religi%C3%B3n-1.pdf",
     "pregunta_original": "¿Cuál es su religión?",
-    "nota": "Dato 2019 (última medición nacional de este tipo). Resto = evangélica 15,3%, Testigos/mormones 2,1%, otras 1,2%, ns 0,3% (suma 100,7 por redondeo). 'Ninguna' incluye ateos (6,0%)."
+    "nota": "Dato 2019 (última medición nacional de este tipo). Resto = evangélica 15,3%, Testigos/mormones 1,4%, otras 1,2%, ns 0,3%. B = 'sin religión' (ninguna 9,7 + ateo 6,0 + agnóstico 3,2)."
    }
   },
   {
@@ -355,7 +355,7 @@
     "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
     "fecha": "2019-09",
     "muestra": "2.421 casos, presencial, muestra probabilística nacional",
-    "alcance": "nacional",
+    "alcance": "nacional urbano",
     "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
     "pregunta_original": "¿Con qué frecuencia asiste usted a misa o la celebración de un culto?",
     "nota": "A = varias veces por semana 6,2 + una vez por semana 11,2 + una o dos veces al mes 9,6 (=27,0, dato publicado). B = sólo en ocasiones especiales 43,3 + nunca 29,6. Resto = ns 0,1. Dato 2019."
@@ -379,7 +379,7 @@
     "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
     "fecha": "2019-09",
     "muestra": "2.129 casos (quienes creen en Dios)",
-    "alcance": "nacional",
+    "alcance": "nacional urbano",
     "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
     "pregunta_original": "¿Cuál es la principal manera en que Usted se relaciona con Dios?",
     "nota": "Base: creyentes. Resto = grupos o comunidades 3,3 + no se relaciona 6,2 + ns 0,3. Dato 2019."
@@ -403,7 +403,7 @@
     "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
     "fecha": "2019-09",
     "muestra": "2.421 casos, presencial, muestra probabilística nacional",
-    "alcance": "nacional",
+    "alcance": "nacional urbano",
     "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
     "pregunta_original": "¿Usted cree en…? Astrología",
     "nota": "El informe publica sólo el % afirmativo; B es el complemento (no + ns). Dato 2019."
@@ -427,7 +427,7 @@
     "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
     "fecha": "2019-09",
     "muestra": "2.421 casos, presencial, muestra probabilística nacional",
-    "alcance": "nacional",
+    "alcance": "nacional urbano",
     "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
     "pregunta_original": "¿Usted cree en…? Ovnis",
     "nota": "El informe publica sólo el % afirmativo; B es el complemento (no + ns). Dato 2019."
@@ -451,7 +451,7 @@
     "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
     "fecha": "2019-09",
     "muestra": "2.421 casos, presencial, muestra probabilística nacional",
-    "alcance": "nacional",
+    "alcance": "nacional urbano",
     "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
     "pregunta_original": "¿Usted cree en…? El Gauchito Gil",
     "nota": "El informe publica sólo el % afirmativo; B es el complemento (no + ns). Dato 2019."
@@ -475,7 +475,7 @@
     "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias)",
     "fecha": "2019-09",
     "muestra": "2.421 casos, presencial, muestra probabilística nacional",
-    "alcance": "nacional",
+    "alcance": "nacional urbano",
     "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
     "pregunta_original": "¿Usted cree en…? La suerte",
     "nota": "El informe publica sólo el % afirmativo; B es el complemento (no + ns). Dato 2019."
@@ -1993,30 +1993,6 @@
    }
   },
   {
-   "id": "los-argentinos-hoy-estan",
-   "tipo": "duelo",
-   "pregunta": "¿Los argentinos hoy están…?",
-   "a": {
-    "texto": "Más unidos"
-   },
-   "b": {
-    "texto": "Más desunidos"
-   },
-   "tema": "sociedad",
-   "ref": {
-    "a": 29.9,
-    "b": 59.7,
-    "resto": 10.4,
-    "encuestadora": "Pulso Research",
-    "fecha": "2024-11",
-    "muestra": "s/d (no informada en la nota)",
-    "alcance": "nacional",
-    "url": "https://www.perfil.com/noticias/politica/encuesta-el-60-cree-que-los-argentinos-estan-mas-enfrentados-pero-se-mantiene-la-esperanza-en-el-gobierno-con-una-oposicion-fragmentada.phtml",
-    "pregunta_original": "Los argentinos están 'más unidos' / 'más desunidos' que antes (redacción exacta no publicada).",
-    "nota": "Resto = ns/nc. Nota periodística del 26/11/2024; muestra y método no informados."
-   }
-  },
-  {
    "id": "en-general-en-la-mayoria-de-las-personas",
    "tipo": "duelo",
    "pregunta": "En general, en la mayoría de las personas…",
@@ -2168,7 +2144,7 @@
     "texto": "Priorizar el diálogo"
    },
    "b": {
-    "texto": "Despejar con la fuerza"
+    "texto": "Liberar la calle"
    },
    "tema": "sociedad",
    "ref": {
@@ -2296,12 +2272,12 @@
     "b": 10.2,
     "resto": 8.4,
     "encuestadora": "Julio Aurelio – Aresco",
-    "fecha": "2024-07",
-    "muestra": "s/d (encuesta nacional, 13 al 15/07/2024)",
+    "fecha": "2021-07",
+    "muestra": "s/d (encuesta nacional, 13 al 15/07/2021)",
     "alcance": "nacional",
     "url": "https://cancilleria.gob.ar/es/mas-del-80-por-ciento-de-la-poblacion-argentina-respalda-el-reclamo-de-soberania-sobre-malvinas",
-    "pregunta_original": "Pensando en el reclamo de soberanía sobre las Islas Malvinas, ¿usted cree que debemos seguir reclamando?",
-    "nota": "Sí 81,4 / No 10,2 / no se expresa 8,5 (suma 100,1 por redondeo). Tema estable (dato de 2024)."
+    "pregunta_original": "Pensando en el reclamo de soberanía sobre las Islas Malvinas, ¿usted cree que hay que seguir reclamando?",
+    "nota": "Sí 81,4 / No 10,2 / no se expresa 8,5 (suma 100,1 por redondeo). Encuesta de julio 2021 (Página/12, 29/07/2021); tema estable."
    }
   },
   {
@@ -2331,7 +2307,7 @@
   {
    "id": "las-deportistas-trans-deberian-competir",
    "tipo": "afirmacion",
-   "pregunta": "Las deportistas trans deberían competir según su identidad de género.",
+   "pregunta": "Las personas trans deberían competir en el deporte según su identidad de género.",
    "a": {
     "texto": "De acuerdo"
    },
