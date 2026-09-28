@@ -15,7 +15,7 @@ IMG_DIR = os.path.join(ROOT, "public", "img", "profiles")
 MANIFEST = os.path.join(ROOT, "src", "data", "images.json")
 UA = {"User-Agent": "BrujulaBot/1.0 (https://github.com/auparrino/compass; test político educativo)"}
 MAX_BYTES = 60 * 1024
-PAUSE = 1.0
+PAUSE = 4.0
 S = requests.Session(); S.headers.update(UA)
 
 FIGURES = {"ar_historicas", "ar_actuales", "intl_historicas", "intl_actuales"}

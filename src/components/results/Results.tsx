@@ -9,7 +9,7 @@ import { Footer } from '../Footer'
 import { phraseFor } from '../../lib/phrases'
 import { renderShareImage, type ShareCard } from '../../lib/shareImage'
 import { AxisBars } from './AxisBars'
-import { CatalogSection } from './CatalogSection'
+import { CatalogSection, Versus } from './CatalogSection'
 import { Distinctive } from './Distinctive'
 import { Ring } from './Ring'
 import { IdentityMeter } from './IdentityMeter'
@@ -112,7 +112,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
                   : 'Ningún perfil está muy cerca; este es el más próximo:'}
           </p>
 
-          <div className="mt-8 grid gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
+          <div className="mt-8 grid items-start gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)]">
             <div className="rounded-3xl bg-papel p-6 text-azul sm:p-8">
               <div className="flex flex-wrap-reverse items-start justify-between gap-x-6 gap-y-4">
                 <div className="min-w-0 flex-1 basis-56">
@@ -136,6 +136,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
                   {top.differ.length > 0 && <>, y se diferencian en {listOf(top.differ.map(axisName))}</>}.
                 </p>
               )}
+              <Versus match={top} axes={test.axes} scores={scores} />
             </div>
 
             <div className="grid gap-4">

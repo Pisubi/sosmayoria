@@ -35,8 +35,7 @@
    "poleB": {
     "label": "Movimientista"
    },
-   "includeInMatching": true,
-   "poleBExpressed": 0.5
+   "includeInMatching": true
   },
   {
    "id": "POP",
@@ -48,8 +47,7 @@
    "poleB": {
     "label": "Populista"
    },
-   "includeInMatching": true,
-   "poleBExpressed": 0.5
+   "includeInMatching": true
   },
   {
    "id": "SEG",

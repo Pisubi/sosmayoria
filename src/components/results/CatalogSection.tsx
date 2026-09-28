@@ -174,7 +174,7 @@ function MiniCard({ test, match, rank, label }: { test: TestDefinition; match: M
  * Vos contra el perfil en tres temas: los dos donde más coinciden y el de mayor diferencia.
  * Cada pista va de un polo al otro, con el centro marcado.
  */
-function Versus({ match, axes, scores }: { match: Match; axes: Axis[]; scores: AxisScore[] }) {
+export function Versus({ match, axes, scores }: { match: Match; axes: Axis[]; scores: AxisScore[] }) {
   const ids = [...match.agree.slice(0, 2), ...match.differ.slice(0, 1)]
   if (ids.length === 0) return null
   return (

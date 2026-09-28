@@ -417,6 +417,214 @@
         "license": "Public domain",
         "licenseUrl": "",
         "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ubaldinimirando.png"
+      },
+      "domingo_cavallo": {
+        "src": "/img/profiles/ar/domingo_cavallo.jpg",
+        "kind": "photo",
+        "author": "Ministerio de Hacienda de la Nación Argentina",
+        "license": "CC BY 2.5 ar",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Domingo_Felipe_Cavallo.jpg"
+      },
+      "alicia_moreau_de_justo": {
+        "src": "/img/profiles/ar/alicia_moreau_de_justo.png",
+        "kind": "photo",
+        "author": "http://www.universalmedios.com.ar/efemerides/alicia-moreau-de-justo-2/",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:AliciaMoreau.png"
+      },
+      "carrio": {
+        "src": "/img/profiles/ar/carrio.jpg",
+        "kind": "photo",
+        "author": "Gobierno de la Ciudad de Buenos Aires",
+        "license": "CC BY 2.5 ar",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elisa_Carrio.jpg"
+      },
+      "lousteau": {
+        "src": "/img/profiles/ar/lousteau.jpg",
+        "kind": "photo",
+        "author": "Equipo de Campaña",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MartinLousteau.jpg"
+      },
+      "pullaro": {
+        "src": "/img/profiles/ar/pullaro.jpg",
+        "kind": "photo",
+        "author": "Juan Giovacchini",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Maximiliano_Pullaro,_gobernador_de_Santa_Fe.jpg"
+      },
+      "llaryora": {
+        "src": "/img/profiles/ar/llaryora.jpg",
+        "kind": "photo",
+        "author": "[argentina.gob.ar Gobierno argentino]",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MartinLlaryoraGob.jpg"
+      },
+      "maximo_kirchner": {
+        "src": "/img/profiles/ar/maximo_kirchner.jpg",
+        "kind": "photo",
+        "author": "Honorable Cámara de Diputados de la Nación Argentina",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sesi%C3%B3n_13-06-2018_Diputado_Maximo_Kirchner_(cropped).jpg"
+      },
+      "alberto_fernandez": {
+        "src": "/img/profiles/ar/alberto_fernandez.jpg",
+        "kind": "photo",
+        "author": "Nicolás Aboaf",
+        "license": "CC BY 2.5 ar",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Alberto_fernandez_presidente_(cropped).jpg"
+      },
+      "pichetto": {
+        "src": "/img/profiles/ar/pichetto.jpg",
+        "kind": "photo",
+        "author": "ConquistadorDelDesierto",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:MAP_Foto_Oficial_AGN.jpg"
+      },
+      "jorge_macri": {
+        "src": "/img/profiles/ar/jorge_macri.jpg",
+        "kind": "photo",
+        "author": "Unknown authorUnknown author",
+        "license": "CC BY 2.5 ar",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jorge_Macri_en_2024.jpg"
+      },
+      "caputo": {
+        "src": "/img/profiles/ar/caputo.png",
+        "kind": "photo",
+        "author": "Gobierno argentino",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Luis_Caputo_-_Retrato_Oficial_2024.png"
+      },
+      "sturzenegger": {
+        "src": "/img/profiles/ar/sturzenegger.jpg",
+        "kind": "photo",
+        "author": "[argentina.gob.ar Gobierno argentino]",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:FedericoSturzeneggerOficial.jpg"
+      },
+      "manes": {
+        "src": "/img/profiles/ar/manes.jpg",
+        "kind": "photo",
+        "author": "Ministerio de Cultura de la Nación",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Facundo_Manes_-_La_Neurociencia_de_la_Creatividad_-_(27411957132)_(cropped).jpg"
+      },
+      "insfran": {
+        "src": "/img/profiles/ar/insfran.jpg",
+        "kind": "photo",
+        "author": "Casa Rosada",
+        "license": "CC BY 2.5 ar",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.5/ar/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gildo_Insfr%C3%A1n_2018.jpg"
+      },
+      "laje": {
+        "src": "/img/profiles/ar/laje.jpg",
+        "kind": "photo",
+        "author": "HazteOir.org",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Agust%C3%ADn_Laje_(48927483208)_(cropped).jpg"
+      },
+      "coalicion_civica": {
+        "src": "/img/profiles/ar/coalicion_civica.png",
+        "kind": "logo",
+        "author": "Unknown authorUnknown author",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:CCARI_Logo.svg"
+      },
+      "frente_renovador": {
+        "src": "/img/profiles/ar/frente_renovador.png",
+        "kind": "logo",
+        "author": "Design: Frente Renovador Vectorization: Goldsztern (talk)",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Logo_Frente_Renovador_Argentina.svg"
+      },
+      "frepaso": {
+        "src": "/img/profiles/ar/frepaso.png",
+        "kind": "logo",
+        "author": "Eluan SA",
+        "license": "CC0",
+        "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arg_FREPASO_logo_Remake_(cropped).png"
+      },
+      "cgt": {
+        "src": "/img/profiles/ar/cgt.png",
+        "kind": "logo",
+        "author": "CGT",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Logo_cgtra.png"
+      },
+      "martin_miguel_de_guemes": {
+        "src": "/img/profiles/ar/martin_miguel_de_guemes.jpg",
+        "kind": "photo",
+        "author": "M. Prieto",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mart%C3%ADn_Miguel_de_G%C3%BCemes_1.jpg"
+      },
+      "manuel_dorrego": {
+        "src": "/img/profiles/ar/manuel_dorrego.jpg",
+        "kind": "photo",
+        "author": "AnonymousUnknown author",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dorrego_a_color.jpg"
+      },
+      "facundo_quiroga": {
+        "src": "/img/profiles/ar/facundo_quiroga.jpg",
+        "kind": "photo",
+        "author": "Alfonso Fermepin",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Facundo_Quiroga_por_Fermepin.JPG"
+      },
+      "jose_manuel_de_la_sota": {
+        "src": "/img/profiles/ar/jose_manuel_de_la_sota.jpg",
+        "kind": "photo",
+        "author": "Ricardo Stuckert/PR",
+        "license": "CC BY 3.0 br",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/br/deed.en",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Delasota12032007.jpg"
+      },
+      "carlos_reutemann": {
+        "src": "/img/profiles/ar/carlos_reutemann.jpg",
+        "kind": "photo",
+        "author": "Unknown authorUnknown author",
+        "license": "Public domain",
+        "licenseUrl": "",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Reutemann_1981.jpg"
+      },
+      "adolfo_rodriguez_saa": {
+        "src": "/img/profiles/ar/adolfo_rodriguez_saa.jpg",
+        "kind": "photo",
+        "author": "Víctor Bugge",
+        "license": "CC BY-SA 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Asunci%C3%B3n_Rodr%C3%ADguez_Sa%C3%A1.jpg"
+      },
+      "roberto_lavagna": {
+        "src": "/img/profiles/ar/roberto_lavagna.png",
+        "kind": "photo",
+        "author": "Todo Noticias",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+        "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lavagna01.png"
       }
     },
     "intl": {}

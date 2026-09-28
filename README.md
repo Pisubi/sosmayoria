@@ -42,9 +42,6 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
   perfiles (en figuras históricas argentinas no cuentan Memoria ni la identidad; en las
   internacionales, Ambiente). Fuera de eso, la identidad peronista cuenta en la
   cercanía aunque se muestre aparte.
-- En temas con un polo "poco declarable" (Instituciones y Estilo; Libertades, Democracia
-  y Estilo) el valor de los perfiles hacia ese polo se compara a la mitad, porque sus
-  votantes no se expresan como actúan sus referentes (`poleBExpressed` en `axes.json`).
 - Consistencia: si en varios temas la persona estuvo de acuerdo con afirmaciones
   opuestas (menos de 0,4), el resultado se marca como mixto y orientativo.
 - Los catálogos se rankean por separado. Las figuras de dictaduras y
@@ -53,11 +50,14 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
   Adolf Hitler, el nazismo, Augusto Pinochet, Alfredo Stroessner, Slobodan
   Milošević y la cúpula de la última dictadura argentina.
 
-Las coordenadas de los perfiles son **semillas editoriales**, con nivel de
-confianza y fundamento, basadas en la especificación, el "Atlas multidimensional",
-el informe "Brújula política histórica y contemporánea" y una ronda de
-investigación asistida. Deben calibrarse con codificadores (ver la página de
-metodología). El test no está validado psicométricamente.
+Las posiciones de los perfiles se **calibran respondiendo el test**: cada figura,
+partido e ideología respondió todas las afirmaciones activas según su trayectoria
+documentada (con asistencia de IA y revisión editorial, contrastando con la semilla
+editorial previa), y su posición sale de esas respuestas con la misma fórmula que la
+de quien juega. Las respuestas están en `data/calibracion/<test>.json` y las
+coordenadas se regeneran con `python3 scripts/calibrar_perfiles.py`. En figuras del
+siglo XIX, los temas sin ningún equivalente de época toman la semilla editorial,
+llevada a la escala medida. El test no está validado psicométricamente.
 
 ## Datos
 
