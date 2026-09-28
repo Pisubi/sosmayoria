@@ -1,43 +1,67 @@
 import type { AxisResult } from '../types'
+import { Index } from './Eyebrow'
 
 interface AxisBreakdownProps {
   results: AxisResult[]
 }
 
 export function AxisBreakdown({ results }: AxisBreakdownProps) {
+  const strongest = results.reduce(
+    (best, r) => (Math.abs(r.score) > Math.abs(best.score) ? r : best),
+    results[0],
+  )
+
   return (
-    <div className="space-y-6">
-      {results.map(({ axis, score }) => {
-        // score: -100..100 -> posición 0%..100% en la barra
-        const position = (score + 100) / 2
+    <ol className="border-t border-azul/14">
+      {results.map((result, i) => {
+        const { axis, score } = result
+        const highlight = result === strongest && score !== 0
         const leaning = score >= 0 ? axis.poleB : axis.poleA
+        // Barra divergente desde el centro (neutral) hacia el polo elegido
+        const start = score >= 0 ? 50 : 50 + score / 2
+        const width = Math.abs(score) / 2
 
         return (
-          <div key={axis.id}>
-            <div className="flex items-baseline justify-between">
-              <p className="font-semibold">{axis.name}</p>
-              <p className="text-sm text-ink/60 dark:text-cream/60">
-                {Math.abs(score)}% hacia{' '}
-                <span className="font-medium text-ink dark:text-cream">
-                  {leaning.label}
-                </span>
-              </p>
-            </div>
-            <div className="mt-2 flex items-center gap-3 text-xs text-ink/50 dark:text-cream/50">
-              <span className="w-24 shrink-0 text-right sm:w-32">
-                {axis.poleA.label}
-              </span>
-              <div className="relative h-2 w-full rounded-full bg-ink/10 dark:bg-cream/10">
-                <div
-                  className="absolute top-1/2 h-4 w-4 -translate-y-1/2 rounded-full border-2 border-cream bg-forest shadow dark:border-ink dark:bg-forest-light"
-                  style={{ left: `calc(${position}% - 8px)` }}
+          <li
+            key={axis.id}
+            className="grid gap-3 border-b border-azul/14 py-5 sm:grid-cols-[3rem_1fr] sm:gap-6"
+          >
+            <Index n={i + 1} />
+            <div>
+              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <p className="font-semibold">{axis.name}</p>
+                <p className="text-sm text-azul/75 tabular-nums">
+                  {score === 0 ? (
+                    'Neutral'
+                  ) : (
+                    <>
+                      <span className="font-semibold text-azul">{Math.abs(score)}</span>{' '}
+                      hacia {leaning.label}
+                    </>
+                  )}
+                </p>
+              </div>
+              <div
+                className="relative mt-3 h-2 rounded-full bg-linea"
+                title={`${axis.name}: ${score > 0 ? '+' : ''}${score}`}
+              >
+                <span
+                  aria-hidden
+                  className="absolute top-1/2 left-1/2 h-4 w-px -translate-y-1/2 bg-azul/40"
+                />
+                <span
+                  className={`absolute top-0 h-full rounded-full ${highlight ? 'bg-naranja' : 'bg-dato'}`}
+                  style={{ left: `${start}%`, width: `${width}%` }}
                 />
               </div>
-              <span className="w-24 shrink-0 sm:w-32">{axis.poleB.label}</span>
+              <div className="mt-2 flex justify-between text-xs text-azul/60">
+                <span>{axis.poleA.label}</span>
+                <span className="text-right">{axis.poleB.label}</span>
+              </div>
             </div>
-          </div>
+          </li>
         )
       })}
-    </div>
+    </ol>
   )
 }

@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react'
+import { axes } from '../data/axes'
 import { getQuestionsForMode } from '../lib/modes'
 import type { Answer, Question, TestMode } from '../types'
+import { Eyebrow } from './Eyebrow'
 import { ProgressBar } from './ProgressBar'
 import { QuestionCard } from './QuestionCard'
 
@@ -8,6 +10,8 @@ interface QuizProps {
   mode: TestMode
   onComplete: (questions: Question[], answers: Record<string, Answer>) => void
 }
+
+const axisNameById = Object.fromEntries(axes.map((a) => [a.id, a.name]))
 
 export function Quiz({ mode, onComplete }: QuizProps) {
   const questions = useMemo(() => getQuestionsForMode(mode), [mode])
@@ -30,9 +34,18 @@ export function Quiz({ mode, onComplete }: QuizProps) {
   }
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-10 sm:py-16">
-      <ProgressBar current={index + 1} total={questions.length} />
-      <div className="mt-6">
+    <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-20">
+      <div className="flex items-center justify-between gap-4">
+        <Eyebrow>{axisNameById[question.axisId]}</Eyebrow>
+        <p className="text-sm text-azul/60 tabular-nums">
+          {String(index + 1).padStart(2, '0')} / {questions.length}
+        </p>
+      </div>
+      <div className="mt-4">
+        <ProgressBar current={index + 1} total={questions.length} />
+      </div>
+
+      <div className="mt-12">
         <QuestionCard
           key={question.id}
           question={question}
@@ -40,16 +53,15 @@ export function Quiz({ mode, onComplete }: QuizProps) {
           onAnswer={handleAnswer}
         />
       </div>
-      <div className="mt-6 flex justify-between text-sm">
-        <button
-          type="button"
-          disabled={index === 0}
-          onClick={() => setIndex((i) => Math.max(0, i - 1))}
-          className="font-medium text-ink/60 disabled:opacity-30 dark:text-cream/60"
-        >
-          ← Anterior
-        </button>
-      </div>
-    </div>
+
+      <button
+        type="button"
+        disabled={index === 0}
+        onClick={() => setIndex((i) => Math.max(0, i - 1))}
+        className="mt-10 text-sm font-medium text-azul/70 hover:text-azul disabled:opacity-30"
+      >
+        ← Anterior
+      </button>
+    </main>
   )
 }

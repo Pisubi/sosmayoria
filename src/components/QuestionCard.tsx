@@ -16,23 +16,29 @@ interface QuestionCardProps {
 
 export function QuestionCard({ question, value, onAnswer }: QuestionCardProps) {
   return (
-    <div className="rounded-2xl border border-ink/10 bg-cream-soft p-6 sm:p-8 dark:border-cream/10 dark:bg-white/5">
-      <p className="text-xl font-semibold sm:text-2xl">{question.text}</p>
-      <div className="mt-8 grid grid-cols-1 gap-2 sm:grid-cols-5">
-        {LIKERT_OPTIONS.map((option) => (
-          <button
-            key={option.value}
-            type="button"
-            onClick={() => onAnswer(option.value)}
-            className={`rounded-xl border px-3 py-3 text-sm font-medium transition ${
-              value === option.value
-                ? 'border-forest bg-forest text-cream'
-                : 'border-ink/15 bg-transparent hover:border-forest hover:bg-forest/10 dark:border-cream/15'
-            }`}
-          >
-            {option.label}
-          </button>
-        ))}
+    <div>
+      <p className="text-2xl leading-snug font-normal sm:text-4xl sm:leading-tight">
+        {question.text}
+      </p>
+      <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-5">
+        {LIKERT_OPTIONS.map((option) => {
+          const selected = value === option.value
+          return (
+            <button
+              key={option.value}
+              type="button"
+              aria-pressed={selected}
+              onClick={() => onAnswer(option.value)}
+              className={`rounded-md border px-4 py-3.5 text-left text-sm font-medium transition-colors sm:text-center ${
+                selected
+                  ? 'border-azul bg-azul text-marfil'
+                  : 'border-azul/20 bg-transparent hover:border-azul hover:bg-linea'
+              }`}
+            >
+              {option.label}
+            </button>
+          )
+        })}
       </div>
     </div>
   )

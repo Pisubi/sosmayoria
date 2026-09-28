@@ -4,21 +4,19 @@ interface ProgressBarProps {
 }
 
 export function ProgressBar({ current, total }: ProgressBarProps) {
-  const pct = Math.round((current / total) * 100)
+  const pct = (current / total) * 100
   return (
-    <div>
-      <div className="flex justify-between text-xs text-ink/50 dark:text-cream/50">
-        <span>
-          {current} / {total}
-        </span>
-        <span>{pct}%</span>
-      </div>
-      <div className="mt-1 h-2 w-full overflow-hidden rounded-full bg-ink/10 dark:bg-cream/10">
-        <div
-          className="h-full rounded-full bg-forest transition-all duration-300 dark:bg-forest-light"
-          style={{ width: `${pct}%` }}
-        />
-      </div>
+    <div
+      role="progressbar"
+      aria-valuemin={1}
+      aria-valuemax={total}
+      aria-valuenow={current}
+      className="h-1 w-full rounded-full bg-linea"
+    >
+      <div
+        className="h-full rounded-full bg-azul transition-[width] duration-300"
+        style={{ width: `${pct}%` }}
+      />
     </div>
   )
 }

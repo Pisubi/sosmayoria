@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { Header } from './components/Header'
 import { Intro } from './components/Intro'
 import { Quiz } from './components/Quiz'
 import { Results } from './components/Results'
@@ -12,27 +13,32 @@ type Stage =
 function App() {
   const [stage, setStage] = useState<Stage>({ step: 'intro' })
 
-  if (stage.step === 'intro') {
-    return <Intro onStart={(mode) => setStage({ step: 'quiz', mode })} />
-  }
-
-  if (stage.step === 'quiz') {
-    return (
-      <Quiz
-        mode={stage.mode}
-        onComplete={(questions, answers) =>
-          setStage({ step: 'results', questions, answers })
-        }
-      />
-    )
-  }
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [stage.step])
 
   return (
-    <Results
-      questions={stage.questions}
-      answers={stage.answers}
-      onRestart={() => setStage({ step: 'intro' })}
-    />
+    <>
+      <Header onHome={() => setStage({ step: 'intro' })} />
+      {stage.step === 'intro' && (
+        <Intro onStart={(mode) => setStage({ step: 'quiz', mode })} />
+      )}
+      {stage.step === 'quiz' && (
+        <Quiz
+          mode={stage.mode}
+          onComplete={(questions, answers) =>
+            setStage({ step: 'results', questions, answers })
+          }
+        />
+      )}
+      {stage.step === 'results' && (
+        <Results
+          questions={stage.questions}
+          answers={stage.answers}
+          onRestart={() => setStage({ step: 'intro' })}
+        />
+      )}
+    </>
   )
 }
 

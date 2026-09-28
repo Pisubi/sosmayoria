@@ -7,19 +7,27 @@ const QUESTIONS_PER_AXIS_QUICK = 2
 
 export const modeInfo: Record<
   TestMode,
-  { label: string; questionCount: number; minutes: number; description: string }
+  {
+    label: string
+    cta: string
+    questionCount: number
+    minutes: number
+    description: string
+  }
 > = {
   rapido: {
-    label: 'Rápido',
+    label: 'Rápida',
+    cta: 'Empezar versión rápida',
     questionCount: axes.length * QUESTIONS_PER_AXIS_QUICK,
     minutes: 3,
-    description: 'Una lectura rápida de tu perfil, con una afirmación de cada polo por eje.',
+    description: 'Una primera lectura de tu perfil, con una afirmación de cada polo por eje.',
   },
   completo: {
-    label: 'Completo',
+    label: 'Completa',
+    cta: 'Empezar versión completa',
     questionCount: axes.length * QUESTIONS_PER_AXIS_FULL,
     minutes: 6,
-    description: 'Mayor precisión: todas las afirmaciones de los 10 ejes.',
+    description: 'Mayor precisión, con las cuatro afirmaciones de cada eje.',
   },
 }
 

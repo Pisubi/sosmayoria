@@ -9,7 +9,7 @@ adaptado desde cero a la política argentina: ejes, preguntas y arquetipos propi
 - Un cuestionario de afirmaciones (escala de 1 a 5) organizado en **10 ejes**:
   Economía, Fiscal, Comercio exterior, Moneda, Estado y provincias, Trabajo,
   Seguridad, Campo y energía, Agenda social, y Peronismo/Antiperonismo.
-- Dos modos: **Rápido** (20 preguntas) y **Completo** (40 preguntas).
+- Dos versiones: **Rápida** (20 afirmaciones) y **Completa** (40 afirmaciones).
 - Un resultado con:
   - Un gráfico de radar con tu posición en cada eje.
   - El detalle eje por eje (hacia qué polo te inclinás y cuánto).
@@ -21,6 +21,13 @@ adaptado desde cero a la política argentina: ejes, preguntas y arquetipos propi
 ## Stack
 
 Vite + React + TypeScript + Tailwind CSS v4 + Recharts.
+
+## Estética
+
+Sigue el manual de marca de Pisubí: Montserrat, paleta azul Pisubí `#1E3A47`,
+naranja señal `#C8602A` (solo para líneas, índices, cifras y un énfasis),
+arena `#CAC4B0`, marfil `#F0ECE3`, azul noche `#0F2230` y azul dato `#3D6B84`
+para series. Los tokens están en `src/index.css`.
 
 ## Desarrollo
 

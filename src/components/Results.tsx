@@ -2,9 +2,11 @@ import { useMemo } from 'react'
 import { matchArchetypes } from '../data/archetypes'
 import { computeAxisResults, scoresByAxisId } from '../lib/scoring'
 import type { Answer, Question } from '../types'
-import { ArchetypeCard } from './ArchetypeCard'
+import { AffinityBars } from './AffinityBars'
 import { AxisBreakdown } from './AxisBreakdown'
 import { AxisRadarChart } from './AxisRadarChart'
+import { Eyebrow } from './Eyebrow'
+import { Footer } from './Footer'
 
 interface ResultsProps {
   questions: Question[]
@@ -17,59 +19,92 @@ export function Results({ questions, answers, onRestart }: ResultsProps) {
     () => computeAxisResults(questions, answers),
     [questions, answers],
   )
-  const matches = useMemo(
-    () => matchArchetypes(scoresByAxisId(results)),
-    [results],
-  )
-  const [top, ...rest] = matches
+  const matches = useMemo(() => matchArchetypes(scoresByAxisId(results)), [results])
+  const top = matches[0]
+  const n = questions.length
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 sm:py-16">
-      <header className="text-center">
-        <p className="text-sm font-semibold tracking-wide text-amber uppercase">
-          Tu resultado
-        </p>
-        <h1 className="mt-2 text-3xl font-bold text-forest sm:text-4xl dark:text-forest-light">
-          Tu corriente más cercana: {top.archetype.name}
-        </h1>
-      </header>
-
-      <div className="mt-8">
-        <ArchetypeCard match={top} primary />
-      </div>
-
-      <section className="mt-10">
-        <h2 className="text-lg font-bold">Tu mapa en los 10 ejes</h2>
-        <div className="mt-4 rounded-2xl border border-ink/10 bg-cream-soft p-4 dark:border-cream/10 dark:bg-white/5">
-          <AxisRadarChart results={results} />
+    <main>
+      <section className="bg-noche text-marfil">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
+          <Eyebrow>Tu resultado</Eyebrow>
+          <h1 className="mt-6 max-w-3xl text-4xl leading-[1.1] font-normal tracking-[-0.015em] sm:text-6xl">
+            Tu perfil más cercano es{' '}
+            <em className="font-light text-naranja">{top.archetype.name}</em>
+          </h1>
+          <p className="mt-6 max-w-2xl leading-7 text-marfil/75 sm:text-lg sm:leading-8">
+            {top.archetype.description}
+          </p>
+          <div className="mt-10 flex items-baseline gap-4 border-t border-marfil/20 pt-8">
+            <span className="text-5xl font-bold text-naranja tabular-nums sm:text-6xl">
+              {Math.round(top.similarity)}%
+            </span>
+            <span className="max-w-xs text-sm leading-6 text-marfil/70">
+              de afinidad con este perfil, sobre {n} afirmaciones respondidas
+            </span>
+          </div>
         </div>
       </section>
 
-      <section className="mt-10">
-        <h2 className="text-lg font-bold">Eje por eje</h2>
-        <div className="mt-4 rounded-2xl border border-ink/10 bg-cream-soft p-6 dark:border-cream/10 dark:bg-white/5">
-          <AxisBreakdown results={results} />
+      <Section
+        eyebrow="01 · Mapa"
+        title="Tu posición en los 10 ejes"
+        note="El centro del gráfico corresponde al primer polo de cada eje y el borde al segundo; el anillo medio es la posición neutral."
+      >
+        <AxisRadarChart results={results} />
+      </Section>
+
+      <Section
+        eyebrow="02 · Detalle"
+        title="Eje por eje"
+        note="Escala de −100 a +100 por eje, medida desde la posición neutral. En naranja, el eje donde tu postura es más marcada."
+      >
+        <AxisBreakdown results={results} />
+      </Section>
+
+      <Section
+        eyebrow="03 · Afinidad"
+        title="Cercanía con cada perfil"
+        note="Similitud entre tus respuestas y seis perfiles de referencia de la política argentina, de 0 a 100%."
+      >
+        <AffinityBars matches={matches} />
+      </Section>
+
+      <section className="bg-arena">
+        <div className="mx-auto max-w-5xl px-4 py-16 text-center sm:px-6">
+          <p className="text-2xl font-bold">¿Querés comparar?</p>
+          <p className="mx-auto mt-3 max-w-md leading-7 text-azul/75">
+            Volvé a hacer el test o probá la otra versión para ver si tu perfil cambia.
+          </p>
+          <button
+            type="button"
+            onClick={onRestart}
+            className="mt-8 rounded-md bg-azul px-8 py-3.5 text-sm font-semibold text-marfil transition-colors hover:bg-noche"
+          >
+            Volver a hacer el test
+          </button>
         </div>
       </section>
 
-      <section className="mt-10">
-        <h2 className="text-lg font-bold">Otras corrientes cercanas</h2>
-        <div className="mt-4 grid gap-3 sm:grid-cols-2">
-          {rest.map((match) => (
-            <ArchetypeCard key={match.archetype.id} match={match} />
-          ))}
-        </div>
-      </section>
+      <Footer />
+    </main>
+  )
+}
 
-      <div className="mt-12 text-center">
-        <button
-          type="button"
-          onClick={onRestart}
-          className="rounded-full border border-forest px-6 py-3 font-semibold text-forest transition hover:bg-forest hover:text-cream dark:border-forest-light dark:text-forest-light"
-        >
-          Volver a hacer el test
-        </button>
-      </div>
-    </div>
+interface SectionProps {
+  eyebrow: string
+  title: string
+  note: string
+  children: React.ReactNode
+}
+
+function Section({ eyebrow, title, note, children }: SectionProps) {
+  return (
+    <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
+      <Eyebrow>{eyebrow}</Eyebrow>
+      <h2 className="mt-5 text-3xl font-bold sm:text-4xl">{title}</h2>
+      <p className="mt-4 max-w-2xl text-sm leading-6 text-azul/70">{note}</p>
+      <div className="mt-10">{children}</div>
+    </section>
   )
 }
