@@ -56,8 +56,8 @@ function mezclar<T>(items: T[], next: () => number): T[] {
 
 /**
  * Sortea una ronda: las cartas núcleo siempre, repartidas en lugares al azar, y el resto
- * alternando temas por turnos (nunca salen varias de política seguidas) y, dentro de cada
- * tema, priorizando las cartas que la persona todavía no vio.
+ * alternando temas por turnos (nunca salen varias de política seguidas), sin dos cartas del
+ * mismo grupo de parecidas y, dentro de cada tema, priorizando las que todavía no vio.
  */
 export function sortear(
   cartas: Carta[],
@@ -81,12 +81,18 @@ export function sortear(
     ]),
     next,
   )
+  // Como mucho una carta por grupo de cartas parecidas; las núcleo reservan el suyo primero.
+  const grupos = new Set(nucleo.flatMap((c) => c.grupos ?? []))
+  const choca = (c: Carta) => (c.grupos ?? []).some((g) => grupos.has(g))
   const out: Carta[] = []
-  const total = Math.min(Math.max(0, n - nucleo.length), activas.length)
-  while (out.length < total) {
+  const total = Math.max(0, n - nucleo.length)
+  while (out.length < total && orden.some((cola) => cola.length > 0)) {
     for (const cola of orden) {
-      const c = cola.shift()
-      if (c && out.length < total) out.push(c)
+      let c = cola.shift()
+      while (c && choca(c)) c = cola.shift()
+      if (!c || out.length >= total) continue
+      for (const g of c.grupos ?? []) grupos.add(g)
+      out.push(c)
     }
   }
   // Las cartas núcleo van en todas las rondas, en lugares al azar repartidos entre las demás

@@ -40,8 +40,11 @@ export interface Carta {
   nucleo?: boolean
   /** Dato coyuntural que hay que actualizar seguido (por ejemplo, aprobación del gobierno). */
   volatil?: boolean
+  /** Cartas parecidas comparten grupo: en una misma ronda sale como mucho una de cada grupo. */
+  grupos?: string[]
   /** Ya no se sortea, pero conserva su lugar en la codificación de partidas guardadas. */
   retirada?: boolean
+  motivo_retiro?: string
 }
 
 /** Lo que eligió la persona: A, B o prefirió no decir. */

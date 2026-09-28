@@ -12,6 +12,9 @@
     "texto": "Maradona"
    },
    "tema": "cultura",
+   "grupos": [
+    "messi-maradona"
+   ],
    "ref": {
     "a": 73.0,
     "b": 22.8,
@@ -36,6 +39,9 @@
     "texto": "Messi"
    },
    "tema": "cultura",
+   "grupos": [
+    "messi-maradona"
+   ],
    "ref": {
     "a": 57.4,
     "b": 39.4,
@@ -60,6 +66,9 @@
     "texto": "River"
    },
    "tema": "cultura",
+   "grupos": [
+    "futbol"
+   ],
    "ref": {
     "a": 39,
     "b": 33,
@@ -132,6 +141,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "cultura",
+   "grupos": [
+    "futbol"
+   ],
    "ref": {
     "a": 57,
     "b": 10,
@@ -204,6 +216,9 @@
     "texto": "Precios estables"
    },
    "tema": "economia",
+   "grupos": [
+    "prioridades"
+   ],
    "ref": {
     "a": 65.6,
     "b": 27.1,
@@ -228,6 +243,9 @@
     "texto": "Corrupción"
    },
    "tema": "sociedad",
+   "grupos": [
+    "prioridades"
+   ],
    "ref": {
     "a": 36,
     "b": 32,
@@ -252,6 +270,9 @@
     "texto": "En dólares"
    },
    "tema": "economia",
+   "grupos": [
+    "moneda"
+   ],
    "ref": {
     "a": 47,
     "b": 29,
@@ -324,6 +345,9 @@
     "texto": "Ninguna"
    },
    "tema": "cultura",
+   "grupos": [
+    "religion"
+   ],
    "ref": {
     "a": 62.9,
     "b": 18.9,
@@ -348,6 +372,9 @@
     "texto": "No"
    },
    "tema": "cultura",
+   "grupos": [
+    "religion"
+   ],
    "ref": {
     "a": 27.0,
     "b": 72.9,
@@ -372,6 +399,9 @@
     "texto": "En una iglesia"
    },
    "tema": "cultura",
+   "grupos": [
+    "religion"
+   ],
    "ref": {
     "a": 59.9,
     "b": 30.3,
@@ -396,6 +426,9 @@
     "texto": "No"
    },
    "tema": "cultura",
+   "grupos": [
+    "creencias"
+   ],
    "ref": {
     "a": 33.0,
     "b": 67.0,
@@ -420,6 +453,9 @@
     "texto": "No"
    },
    "tema": "cultura",
+   "grupos": [
+    "creencias"
+   ],
    "ref": {
     "a": 30.7,
     "b": 69.3,
@@ -444,6 +480,9 @@
     "texto": "No"
    },
    "tema": "cultura",
+   "grupos": [
+    "creencias"
+   ],
    "ref": {
     "a": 23.0,
     "b": 77.0,
@@ -468,6 +507,9 @@
     "texto": "No"
    },
    "tema": "cultura",
+   "grupos": [
+    "creencias"
+   ],
    "ref": {
     "a": 63.2,
     "b": 36.8,
@@ -492,6 +534,9 @@
     "texto": "Mal"
    },
    "tema": "sociedad",
+   "grupos": [
+    "docentes"
+   ],
    "ref": {
     "a": 61,
     "b": 19,
@@ -564,6 +609,9 @@
     "texto": "No"
    },
    "tema": "cultura",
+   "grupos": [
+    "consumos-culturales"
+   ],
    "ref": {
     "a": 51,
     "b": 49,
@@ -588,6 +636,9 @@
     "texto": "No"
    },
    "tema": "cultura",
+   "grupos": [
+    "consumos-culturales"
+   ],
    "ref": {
     "a": 36,
     "b": 64,
@@ -612,6 +663,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "moneda"
+   ],
    "ref": {
     "a": 67,
     "b": 16,
@@ -636,6 +690,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "reforma-laboral"
+   ],
    "ref": {
     "a": 61.8,
     "b": 30.6,
@@ -660,6 +717,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "reforma-laboral"
+   ],
    "ref": {
     "a": 22.3,
     "b": 71.5,
@@ -684,6 +744,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "reforma-laboral"
+   ],
    "ref": {
     "a": 39.3,
     "b": 53.1,
@@ -708,6 +771,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "jubilaciones"
+   ],
    "ref": {
     "a": 33.1,
     "b": 58.9,
@@ -732,6 +798,10 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "jubilaciones",
+    "reformas-del-gobierno"
+   ],
    "ref": {
     "a": 32,
     "b": 67,
@@ -756,6 +826,10 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "impuestos",
+    "reformas-del-gobierno"
+   ],
    "ref": {
     "a": 47,
     "b": 41,
@@ -780,6 +854,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "jubilaciones"
+   ],
    "ref": {
     "a": 24.3,
     "b": 71.1,
@@ -804,6 +881,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "ajuste"
+   ],
    "ref": {
     "a": 51.5,
     "b": 33,
@@ -828,6 +908,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "ajuste"
+   ],
    "ref": {
     "a": 27.6,
     "b": 68.3,
@@ -852,6 +935,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "ajuste"
+   ],
    "ref": {
     "a": 45.3,
     "b": 52.3,
@@ -900,6 +986,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "privatizaciones"
+   ],
    "ref": {
     "a": 38.4,
     "b": 57.7,
@@ -924,6 +1013,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "privatizaciones"
+   ],
    "ref": {
     "a": 24.2,
     "b": 68.2,
@@ -948,6 +1040,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "privatizaciones"
+   ],
    "ref": {
     "a": 37.8,
     "b": 59.5,
@@ -972,6 +1067,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "impuestos"
+   ],
    "ref": {
     "a": 74.2,
     "b": 23.1,
@@ -996,6 +1094,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "impuestos"
+   ],
    "ref": {
     "a": 33.5,
     "b": 58.6,
@@ -1020,6 +1121,9 @@
     "texto": "Cuidando recursos estratégicos"
    },
    "tema": "economia",
+   "grupos": [
+    "apertura"
+   ],
    "ref": {
     "a": 14.2,
     "b": 60.5,
@@ -1044,6 +1148,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
+   "grupos": [
+    "apertura"
+   ],
    "ref": {
     "a": 74.1,
     "b": 23,
@@ -1068,6 +1175,7 @@
     "texto": "El Estado"
    },
    "tema": "economia",
+   "nucleo": true,
    "ref": {
     "a": 54,
     "b": 36,
@@ -1079,8 +1187,7 @@
     "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
     "pregunta_original": "¿Qué es, para usted, lo mejor para un país? Un país donde la mayor parte del empleo lo crean las empresas privadas / lo crea el Estado y las empresas públicas.",
     "nota": "Resto = ns/nc."
-   },
-   "nucleo": true
+   }
   },
   {
    "id": "que-te-genera-mas-confianza",
@@ -1093,6 +1200,8 @@
     "texto": "Una empresa pública"
    },
    "tema": "economia",
+   "retirada": true,
+   "motivo_retiro": "Muy parecida a la carta núcleo sobre Estado o empresas privadas.",
    "ref": {
     "a": 47,
     "b": 42,
@@ -1117,6 +1226,9 @@
     "texto": "Del Estado"
    },
    "tema": "economia",
+   "grupos": [
+    "privatizaciones"
+   ],
    "ref": {
     "a": 56,
     "b": 31,
@@ -1141,6 +1253,8 @@
     "texto": "Empleo público"
    },
    "tema": "vida",
+   "retirada": true,
+   "motivo_retiro": "Muy parecida a la carta núcleo sobre Estado o empresas privadas.",
    "ref": {
     "a": 52,
     "b": 43,
@@ -1261,6 +1375,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "politica",
+   "grupos": [
+    "docentes"
+   ],
    "ref": {
     "a": 57.9,
     "b": 38.1,
@@ -1308,6 +1425,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "politica",
+   "grupos": [
+    "reforma-electoral"
+   ],
    "ref": {
     "a": 54.6,
     "b": 39.1,
@@ -1332,6 +1452,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "politica",
+   "grupos": [
+    "reforma-electoral"
+   ],
    "ref": {
     "a": 71.8,
     "b": 23.6,
@@ -1356,6 +1479,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "politica",
+   "grupos": [
+    "reforma-electoral"
+   ],
    "ref": {
     "a": 70.3,
     "b": 24.5,
@@ -1380,6 +1506,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "politica",
+   "grupos": [
+    "reforma-electoral"
+   ],
    "ref": {
     "a": 57.7,
     "b": 34.3,
@@ -1404,6 +1533,9 @@
     "texto": "Voluntario"
    },
    "tema": "politica",
+   "grupos": [
+    "reforma-electoral"
+   ],
    "ref": {
     "a": 55,
     "b": 43,
@@ -1428,6 +1560,9 @@
     "texto": "Designados por los poderes"
    },
    "tema": "politica",
+   "grupos": [
+    "justicia"
+   ],
    "ref": {
     "a": 56,
     "b": 34,
@@ -1452,6 +1587,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "politica",
+   "grupos": [
+    "protesta"
+   ],
    "ref": {
     "a": 51,
     "b": 48,
@@ -1476,6 +1614,7 @@
     "texto": "En desacuerdo"
    },
    "tema": "sociedad",
+   "nucleo": true,
    "ref": {
     "a": 50,
     "b": 48,
@@ -1487,8 +1626,7 @@
     "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Creencias-25_informe-4-1.pdf",
     "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con… 'Acceso a la interrupción voluntaria del embarazo'?",
     "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Datos del informe escrito (50% vs 48%)."
-   },
-   "nucleo": true
+   }
   },
   {
    "id": "una-persona-deberia-poder-decidir-su-mue",
@@ -1525,6 +1663,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "sociedad",
+   "grupos": [
+    "diversidad"
+   ],
    "ref": {
     "a": 69,
     "b": 28,
@@ -1645,6 +1786,9 @@
     "texto": "A veces, autoritarismo"
    },
    "tema": "politica",
+   "grupos": [
+    "democracia"
+   ],
    "ref": {
     "a": 78,
     "b": 10,
@@ -1669,6 +1813,9 @@
     "texto": "Que lo reemplacen"
    },
    "tema": "politica",
+   "grupos": [
+    "democracia"
+   ],
    "ref": {
     "a": 62,
     "b": 36,
@@ -1693,6 +1840,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "politica",
+   "grupos": [
+    "protesta"
+   ],
    "ref": {
     "a": 84,
     "b": 15,
@@ -1717,6 +1867,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "politica",
+   "grupos": [
+    "tecnocracia"
+   ],
    "ref": {
     "a": 53,
     "b": 43,
@@ -1741,6 +1894,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "politica",
+   "grupos": [
+    "tecnocracia"
+   ],
    "ref": {
     "a": 29,
     "b": 66,
@@ -1765,6 +1921,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "politica",
+   "grupos": [
+    "justicia"
+   ],
    "ref": {
     "a": 22,
     "b": 71,
@@ -1789,6 +1948,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "politica",
+   "grupos": [
+    "justicia"
+   ],
    "ref": {
     "a": 52,
     "b": 46,
@@ -1837,6 +1999,8 @@
     "texto": "Lucha con excesos"
    },
    "tema": "historia",
+   "retirada": true,
+   "motivo_retiro": "Muy parecida a la carta núcleo sobre los juicios por la dictadura.",
    "ref": {
     "a": 61,
     "b": 32,
@@ -1861,6 +2025,8 @@
     "texto": "En desacuerdo"
    },
    "tema": "historia",
+   "retirada": true,
+   "motivo_retiro": "Muy parecida a la carta núcleo sobre los juicios por la dictadura.",
    "ref": {
     "a": 27,
     "b": 63,
@@ -1885,6 +2051,7 @@
     "texto": "En desacuerdo"
    },
    "tema": "historia",
+   "nucleo": true,
    "ref": {
     "a": 70,
     "b": 26,
@@ -1896,8 +2063,7 @@
     "url": "https://pulsar.uba.ar/wp-content/uploads/2026/05/Miradas-retrospectivas-sobre-la-dictadura-argentina_Primera-entrega.pdf",
     "pregunta_original": "Nivel de acuerdo con la frase: 'Es necesario que el Estado siga juzgando a los militares'",
     "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Muy 51 + bastante 19; poco 13 + nada 13; ns/nc 4."
-   },
-   "nucleo": true
+   }
   },
   {
    "id": "puede-volver-a-haber-una-dictadura-en-la",
@@ -1910,6 +2076,9 @@
     "texto": "Es improbable"
    },
    "tema": "historia",
+   "grupos": [
+    "democracia"
+   ],
    "ref": {
     "a": 13,
     "b": 83,
@@ -1934,6 +2103,9 @@
     "texto": "No"
    },
    "tema": "sociedad",
+   "grupos": [
+    "grieta"
+   ],
    "ref": {
     "a": 70,
     "b": 28,
@@ -1958,6 +2130,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "sociedad",
+   "grupos": [
+    "grieta"
+   ],
    "ref": {
     "a": 16,
     "b": 82,
@@ -1982,6 +2157,9 @@
     "texto": "No"
    },
    "tema": "sociedad",
+   "grupos": [
+    "grieta"
+   ],
    "ref": {
     "a": 87,
     "b": 12,
@@ -2030,6 +2208,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "sociedad",
+   "grupos": [
+    "vecinos"
+   ],
    "ref": {
     "a": 16,
     "b": 84,
@@ -2054,6 +2235,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "sociedad",
+   "grupos": [
+    "vecinos"
+   ],
    "ref": {
     "a": 49,
     "b": 50,
@@ -2126,6 +2310,7 @@
     "texto": "Reducir la desigualdad"
    },
    "tema": "sociedad",
+   "nucleo": true,
    "ref": {
     "a": 54,
     "b": 34,
@@ -2137,8 +2322,7 @@
     "url": "https://www.agenciacomunas.com.ar/encuesta-nacional-universidades-estado-seguridad-y-protesta-en-una-foto-sensible-del-clima-social/",
     "pregunta_original": "Soluciones frente al delito: endurecer leyes y penas / reducir las diferencias sociales (redacción exacta no publicada).",
     "nota": "Resto = otras + ns/nc."
-   },
-   "nucleo": true
+   }
   },
   {
    "id": "ante-un-corte-de-calle-el-gobierno-deber",
@@ -2151,6 +2335,9 @@
     "texto": "Liberar la calle"
    },
    "tema": "sociedad",
+   "grupos": [
+    "protesta"
+   ],
    "ref": {
     "a": 55,
     "b": 42,
@@ -2199,6 +2386,10 @@
     "texto": "No"
    },
    "tema": "sociedad",
+   "grupos": [
+    "religion",
+    "creencias"
+   ],
    "ref": {
     "a": 68,
     "b": 31,
@@ -2223,6 +2414,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "sociedad",
+   "grupos": [
+    "religion"
+   ],
    "ref": {
     "a": 47,
     "b": 45,
@@ -2247,6 +2441,9 @@
     "texto": "Casi nunca"
    },
    "tema": "sociedad",
+   "grupos": [
+    "religion"
+   ],
    "ref": {
     "a": 48,
     "b": 46,
@@ -2295,6 +2492,9 @@
     "texto": "En desacuerdo"
    },
    "tema": "sociedad",
+   "grupos": [
+    "diversidad"
+   ],
    "ref": {
     "a": 65,
     "b": 18,

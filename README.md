@@ -27,6 +27,14 @@ inseguridad, juicios por la dictadura y aprobación del gobierno. Dan un perfil 
 cada partida para cruzar con el resto de las cartas (la exportación las trae como columnas).
 La de aprobación es `"volatil": true`: hay que actualizar su dato con la última medición.
 
+## Cartas parecidas
+
+Las cartas de un mismo tema fino comparten `"grupos"` (religión, "¿Creés en…?", jubilaciones,
+privatizaciones, reforma electoral, grieta, etc.): en una ronda sale como mucho una por grupo,
+y las núcleo reservan el suyo. Una carta puede estar en más de un grupo. Las que eran casi
+iguales a una núcleo se retiraron (`motivo_retiro`). Al agregar cartas, asignales grupo si se
+parecen a otra; los tests verifican que ninguna ronda repita grupo.
+
 ## El dato real
 
 Cada carta de `src/data/cartas.json` cita una encuesta publicada: encuestadora, fecha,

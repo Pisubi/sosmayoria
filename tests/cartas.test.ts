@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { orden, todas, TEMAS } from '../src/data/cartas'
+import { cartas, orden, todas, TEMAS } from '../src/data/cartas'
+import { RONDA, sortear } from '../src/engine/juego'
 import fotos from '../src/data/fotos.json'
 import guardado from './orden-cartas.json'
 
@@ -8,6 +9,24 @@ describe('banco de cartas', () => {
     expect(new Set(orden).size).toBe(orden.length)
     const activas = todas.filter((c) => !c.retirada).map((c) => c.pregunta.trim().toLowerCase())
     expect(new Set(activas).size).toBe(activas.length)
+  })
+
+  it('los grupos de parecidas tienen al menos dos cartas y ninguna activa comparte grupo con una núcleo', () => {
+    const activas = todas.filter((c) => !c.retirada)
+    const porGrupo = new Map<string, number>()
+    for (const c of activas) for (const g of c.grupos ?? []) porGrupo.set(g, (porGrupo.get(g) ?? 0) + 1)
+    const deNucleo = new Set(activas.filter((c) => c.nucleo).flatMap((c) => c.grupos ?? []))
+    for (const c of activas) if (!c.nucleo) for (const g of c.grupos ?? []) expect(deNucleo.has(g), c.id).toBe(false)
+    for (const [g, n] of porGrupo) if (!deNucleo.has(g)) expect(n, g).toBeGreaterThanOrEqual(2)
+  })
+
+  it('una ronda real sale completa, sin parecidas', () => {
+    for (let s = 0; s < 200; s++) {
+      const r = sortear(cartas, s)
+      expect(r).toHaveLength(RONDA)
+      const grupos = r.flatMap((c) => c.grupos ?? [])
+      expect(new Set(grupos).size).toBe(grupos.length)
+    }
   })
 
   it('hay entre 4 y 5 cartas núcleo, nacionales', () => {

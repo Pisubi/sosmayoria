@@ -82,6 +82,20 @@ describe('cartas núcleo', () => {
   })
 })
 
+describe('cartas parecidas', () => {
+  it('nunca salen dos del mismo grupo en una ronda, ni una parecida a una núcleo', () => {
+    const banco = [
+      ...Array.from({ length: 40 }, (_, i) => ({ ...carta(`c${i}`, 50, 50), grupos: [`g${i % 8}`, `h${i % 5}`] })),
+      ...Array.from({ length: 30 }, (_, i) => carta(`s${i}`, 50, 50, 'cultura')),
+      { ...carta('n0', 60, 40), nucleo: true, grupos: ['g0'] },
+    ]
+    for (let s = 0; s < 100; s++) {
+      const grupos = sortear(banco, s).flatMap((c) => c.grupos ?? [])
+      expect(new Set(grupos).size).toBe(grupos.length)
+    }
+  })
+})
+
 describe('resumir', () => {
   const banco = [carta('a', 70, 30), carta('b', 40, 60), carta('c', 50, 49), carta('d', 20, 80, 'economia')]
 
