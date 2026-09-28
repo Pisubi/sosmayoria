@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { TEST_ORDER, tests } from '../data/tests'
 import { questionsFor } from '../engine/selection'
 import type { TestId } from '../types'
-import { allImages } from './Avatar'
+import { allImages } from '../lib/images'
 import { Eyebrow } from './Eyebrow'
 
 interface MethodologyProps {
