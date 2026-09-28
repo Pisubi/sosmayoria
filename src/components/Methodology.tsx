@@ -61,29 +61,41 @@ export function Methodology({ onBack, backLabel = 'Volver a los tests' }: Method
         <Formula>{`puntaje_eje = 100 · Σ (peso · respuesta · efecto) / Σ peso · |efecto|   (peso ${CORE_WEIGHT} para el núcleo en su tema principal, 1 en el resto)`}</Formula>
         <p>
           Si respondiste menos de la mitad del peso de un eje, queda indeterminado y no entra en
-          las comparaciones. Cada eje tiene la misma cantidad de afirmaciones hacia cada polo, así
-          que responder lo mismo a todo lleva al centro; si lo detectamos, te avisamos.
+          las comparaciones. En la versión completa y en la a fondo cada tema queda equilibrado en
+          peso entre los dos polos, así que responder lo mismo a todo lleva al centro; en la corta
+          queda un leve desequilibrio (dos afirmaciones hacia un polo y una hacia el otro). Si
+          detectamos que respondiste casi todo en el mismo sentido, te avisamos.
         </p>
       </Block>
 
       <Block title="Cercanía con perfiles">
-        <Formula>{'k = Σ vos·perfil / Σ vos²  (entre 1 y 2)      d = √( Σ (k·vos − perfil)² / temas )      cercanía = 100 · (1 − d / 100)'}</Formula>
+        <Formula>{'k = Σ vos·perfil / Σ vos²  (entre 1 y 2)      d = √( (Σ (k·vos − perfil)² + 50²) / (temas + 1) )      cercanía = 100 · (1 − d / 100)'}</Formula>
         <p>
           Mucha gente responde "de acuerdo" donde una figura respondería "muy de acuerdo": sus
           puntajes quedan más cerca del centro aunque piense en la misma dirección. Por eso, antes
           de comparar, tus puntajes se pueden estirar hasta el doble (el factor k que mejor te
           acerca a cada perfil): cuenta sobre todo hacia dónde van tus posiciones. Una diferencia
           media de 100 puntos por tema es 0% de cercanía; 80% o más es muy cerca y menos de 50%,
-          lejos.
+          lejos. Los puntajes estirados nunca pasan de ±100.
+        </p>
+        <p>
+          Con pocos temas respondidos es fácil coincidir por casualidad. Por eso la distancia se
+          promedia con un tema ficticio a 50 puntos (el 50² de la fórmula), que casi no cambia
+          nada con todos los temas pero impide quedar "muy cerca" de alguien por coincidir en uno
+          o dos; y el estiramiento se aplica entero recién desde 4 temas comparados.
         </p>
         <p>
           Se comparan los ejes donde tenés puntaje. Si el perfil no tiene dato en alguno, ese eje
-          cuenta como tu distancia al centro, con un mínimo de 40 puntos, para que un perfil con
-          pocos ejes no se parezca a cualquiera. Si el perfil tiene dato en menos del 60% de los ejes, la
-          comparación se marca como parcial. Los catálogos (ideologías o tradiciones,
+          cuenta como tu distancia (estirada) al centro, con un mínimo de 40 puntos, para que un
+          perfil con pocos ejes no se parezca a cualquiera. Si se pudo comparar en menos del 60%
+          de los temas del catálogo (porque al perfil le faltan datos o a vos te quedaron temas
+          indeterminados), la comparación se marca como parcial. Cada catálogo se compara solo en
+          los temas que tienen dato al menos el 70% de sus perfiles: en las figuras históricas
+          argentinas no cuentan Memoria ni la identidad peronista, y en las internacionales no
+          cuenta Ambiente. Los catálogos (ideologías o tradiciones,
           figuras históricas, figuras actuales y partidos) se rankean por separado y nunca se
           mezclan. En el test argentino, la identidad peronista o antiperonista se muestra aparte
-          y también cuenta en la cercanía: es lo que más distingue, por ejemplo, a un votante
+          y también cuenta en la cercanía (salvo con las figuras históricas): es lo que más distingue, por ejemplo, a un votante
           kirchnerista de uno de la izquierda trotskista.
         </p>
         <p>

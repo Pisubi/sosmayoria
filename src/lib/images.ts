@@ -12,10 +12,16 @@ export interface ImageCredit {
 
 const images = imageData.images as unknown as Record<TestId, Record<string, ImageCredit>>
 
+/** Las rutas del manifiesto son absolutas (/img/…); se resuelven contra la base del sitio. */
+function withBase(image: ImageCredit): ImageCredit {
+  return { ...image, src: import.meta.env.BASE_URL + image.src.replace(/^\//, '') }
+}
+
 export function imageFor(testId: TestId, profileId: string): ImageCredit | undefined {
-  return images[testId]?.[profileId]
+  const image = images[testId]?.[profileId]
+  return image && withBase(image)
 }
 
 export function allImages(testId: TestId): [string, ImageCredit][] {
-  return Object.entries(images[testId] ?? {})
+  return Object.entries(images[testId] ?? {}).map(([id, image]) => [id, withBase(image)])
 }

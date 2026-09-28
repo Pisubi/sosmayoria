@@ -30,15 +30,18 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
 - `puntaje_eje = 100 · Σ(w·r·e) / Σ w·|e|` sobre ítems respondidos, con `w = 3` para
   el núcleo en su tema principal y 1 en el resto; con menos del 50% de
   cobertura el eje queda indeterminado.
-- Cercanía: `100 · (1 − d/100)`, con `d` la distancia media cuadrática en los temas
-  con puntaje del usuario, después de estirar sus puntajes por `k = Σu·p / Σu²`
-  (entre 1 y 2): quien responde "de acuerdo" en vez de "muy de acuerdo" se compara por
-  la dirección de sus posiciones. Donde el perfil no tiene dato se cuenta la distancia
-  del usuario al centro (mínimo 40). 80% o más se muestra como "muy cerca"; menos de
-  50%, "lejos".
+- Cercanía: `100 · (1 − d/100)`, con `d = √((Σ (k·u − p)² + 50²) / (n + 1))` en los
+  `n` temas con puntaje del usuario, después de estirar sus puntajes por
+  `k = Σu·p / Σu²` (entre 1 y 2, recortado a ±100): quien responde "de acuerdo" en vez
+  de "muy de acuerdo" se compara por la dirección de sus posiciones. El tema ficticio a
+  50 puntos evita cercanías altas por coincidir en uno o dos temas, y con menos de 4
+  temas comparados k se acerca a 1. Donde el perfil no tiene dato se cuenta la
+  distancia estirada del usuario al centro (mínimo 40). 80% o más se muestra como
+  "muy cerca"; menos de 50%, "lejos".
 - Cada catálogo se compara solo en los temas que tienen dato al menos el 70% de sus
-  perfiles (en figuras históricas argentinas no cuenta Memoria; en las internacionales,
-  Ambiente). La identidad peronista cuenta en la cercanía aunque se muestre aparte.
+  perfiles (en figuras históricas argentinas no cuentan Memoria ni la identidad; en las
+  internacionales, Ambiente). Fuera de eso, la identidad peronista cuenta en la
+  cercanía aunque se muestre aparte.
 - En temas con un polo "poco declarable" (Instituciones y Estilo; Libertades, Democracia
   y Estilo) el valor de los perfiles hacia ese polo se compara a la mitad, porque sus
   votantes no se expresan como actúan sus referentes (`poleBExpressed` en `axes.json`).
@@ -61,7 +64,7 @@ metodología). El test no está validado psicométricamente.
 JSON versionados en `src/data/{ar,intl}/{axes,questions,profiles}.json`:
 
 - `questions.json`: `effects` es un peso firmado por eje (principal ±1,
-  secundarios ±0,2–0,4); `variants` indica si el ítem va en la versión corta.
+  secundarios ±0,1–0,4); `core` marca las elegibles para el núcleo.
 - `profiles.json`: `coords` de −100 a +100 o `null`, `confidence`, `basis` y
   `contextNote`.
 - `images.json`: fotos, logos y símbolos de Wikimedia Commons con autor y
