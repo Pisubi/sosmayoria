@@ -49,9 +49,71 @@ JSON versionados en `src/data/{ar,intl}/{axes,questions,profiles}.json`:
   licencia. Se generan con `python3 scripts/fetch_images.py` (requiere acceso de
   red a los dominios de Wikimedia).
 
+## Datos de quienes juegan (Supabase)
+
+Si el despliegue tiene configurado Supabase, antes de empezar la app pide edad,
+género y nivel educativo, con consentimiento explícito (las opiniones políticas
+son datos sensibles según la Ley 25.326). Al terminar el test guarda una fila
+con esos datos y las respuestas. Sin nombre, mail ni identificadores. Quien no
+acepta, o tiene menos de 16 años, juega igual y no se guarda nada. Sin las
+variables de entorno, la app no pide datos ni envía nada.
+
+### Configuración
+
+1. Crear un proyecto en [supabase.com](https://supabase.com) (plan Free).
+2. En **SQL Editor**, pegar y correr [`supabase/schema.sql`](supabase/schema.sql).
+   Crea la tabla `respuestas`, con permisos para que la clave pública solo pueda
+   insertar: nadie puede leer, modificar ni borrar desde la app.
+3. En **Project Settings → API Keys**, copiar la URL del proyecto y la clave
+   *publishable* (`sb_publishable_…`; también sirve la `anon` heredada).
+4. Cargarlas como variables de entorno, en `.env.local` para desarrollo (ver
+   `.env.example`) o en el hosting (Vercel, Netlify):
+   `VITE_SUPABASE_URL` y `VITE_SUPABASE_KEY`.
+5. Para bajar los datos: `python3 scripts/export_respuestas.py`, con
+   `SUPABASE_URL` y `SUPABASE_SECRET_KEY` (la clave `sb_secret_…`, que nunca va en
+   la app). También acepta un CSV bajado del panel: `--csv archivo.csv`.
+   Genera `respuestas_intl.csv` y `respuestas_ar.csv`, con etiquetas, puntaje por
+   eje y la respuesta a cada afirmación.
+
+### Cómo se ahorra espacio
+
+El plan Free da 500 MB de base. Cada test terminado ocupa unos **180 bytes**
+con el índice incluido (medido con 100.000 filas en PostgreSQL 16): alcanza para
+unos **2 millones de tests**. La misma información guardada "a lo simple", con
+JSON de respuestas y puntajes, textos y timestamp, ocupa unos 1.200 bytes por
+fila, 6,6 veces más.
+
+- **Respuestas en medio byte cada una**: el valor de cada afirmación ocupa 4 bits
+  en un `bytea`, en el orden de `questions.json`: 96 bytes para 192 afirmaciones.
+  Como las filas guardadas dependen de ese orden, a `questions.json` solo se le
+  agregan afirmaciones al final; lo controla un test contra
+  `tests/answer-layout.json`, que hay que actualizar al agregarlas.
+- **Sin puntajes guardados**: se recalculan desde las respuestas, en el script
+  de exportación o en la app.
+- **Códigos `smallint`** en vez de textos, **`date`** en vez de timestamp (4 bytes
+  y además menos identificable) y columnas ordenadas para no perder bytes por
+  alineación.
+- **Una sola fila por test terminado**, un solo envío al final: los tests
+  abandonados no ocupan lugar.
+- **Límites en la tabla**: `check` de rangos y máximo de 128 bytes de respuestas,
+  para que nadie pueda llenarla con filas gigantes usando la clave pública.
+
+Códigos (0 = prefiero no decir): `test` 1 internacional, 2 Argentina ·
+`variante` 1 corta, 2 completa, 3 a fondo · `edad` 1 16–17, 2 18–24, 3 25–34,
+4 35–44, 5 45–54, 6 55–64, 7 65+ · `genero` 1 mujer, 2 varón, 3 no binario u
+otra · `educacion` 1 sin estudios o primario incompleto, 2 primario completo,
+3 secundario incompleto, 4 secundario completo, 5 terciario/universitario
+incompleto, 6 terciario/universitario completo, 7 posgrado. En el SQL Editor,
+`respuesta(respuestas, i)` devuelve el valor de la afirmación `i` (desde 0).
+
+Para controlar el uso: `select pg_size_pretty(pg_total_relation_size('public.respuestas'));`.
+Un proyecto Free se pausa tras 7 días sin actividad: si pasa una semana sin
+jugadores, hay que reactivarlo desde el panel (los datos no se pierden).
+
 ## Stack
 
-Vite + React + TypeScript + Tailwind CSS v4, sin backend. Estética según el
+Vite + React + TypeScript + Tailwind CSS v4. El único backend es opcional: una
+tabla de Supabase para guardar respuestas (ver abajo). Estética según el
 manual de marca de Pisubí (tokens en `src/index.css`).
 
 ```bash
@@ -67,7 +129,9 @@ npm run lint     # oxlint
 - `src/engine/` — `scoring`, `matching`, `selection` (versiones y orden aleatorio
   con semilla) y `share` (resultado en la URL).
 - `src/components/` — inicio, test, metodología y `results/` (barras por eje,
-  planos 2D, rankings por catálogo, identidad, referencias sensibles).
-- `src/lib/progress.ts` — progreso guardado solo en el navegador.
+  planos 2D, rankings por catálogo, identidad).
+- `src/lib/progress.ts` — progreso guardado en el navegador.
+- `src/lib/participant.ts`, `src/lib/submit.ts` y `src/engine/encoding.ts` —
+  datos demográficos, envío a Supabase y empaquetado de respuestas.
 - `tests/` — tests de la especificación: neutral = 0, todo de acuerdo ≈ 0,
   balance de polos, rangos, IDs y recall ≥ 80% con ruido σ = 0,25.

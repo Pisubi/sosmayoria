@@ -35,7 +35,7 @@ export function Quiz({ progress, onComplete }: QuizProps) {
     window.setTimeout(() => {
       if (index + 1 < questions.length) {
         setIndex(index + 1)
-        saveProgress({ testId, variant, seed, index: index + 1, answers: next })
+        saveProgress({ ...progress, index: index + 1, answers: next })
       } else {
         onComplete(questions, next)
       }
@@ -76,7 +76,9 @@ export function Quiz({ progress, onComplete }: QuizProps) {
           ← Anterior
         </button>
         <p className="text-right text-xs text-azul/50">
-          Tus respuestas se guardan solo en este dispositivo.
+          {progress.participant
+            ? 'Al terminar, tus respuestas se guardan de forma anónima.'
+            : 'Tus respuestas se guardan solo en este dispositivo.'}
         </p>
       </div>
     </main>

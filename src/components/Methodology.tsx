@@ -3,6 +3,7 @@ import { TEST_ORDER, tests } from '../data/tests'
 import { questionsFor } from '../engine/selection'
 import type { TestId } from '../types'
 import { allImages } from '../lib/images'
+import { collecting } from '../lib/submit'
 import { Eyebrow } from './Eyebrow'
 
 interface MethodologyProps {
@@ -89,9 +90,19 @@ export function Methodology({ onBack }: MethodologyProps) {
       </Block>
 
       <Block title="Privacidad">
+        {collecting ? (
+          <p>
+            Antes de empezar te pedimos edad, género y nivel educativo. Solo si das tu
+            consentimiento, al terminar se guardan esos datos y tus respuestas, sin nombre, mail ni
+            ningún otro dato que te identifique, con fines estadísticos. Si no aceptás, o si tenés
+            menos de 16 años, no se guarda nada en ningún servidor.
+          </p>
+        ) : (
+          <p>No se guarda nada en ningún servidor.</p>
+        )}
         <p>
-          No se guarda nada en ningún servidor. El progreso queda en tu navegador para que puedas
-          retomar, y el enlace para compartir contiene solo tus puntajes por eje.
+          El progreso queda en tu navegador para que puedas retomar, y el enlace para compartir
+          contiene solo tus puntajes por eje.
         </p>
       </Block>
 
