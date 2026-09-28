@@ -1,39 +1,41 @@
 import { useMemo, useState } from 'react'
 import { tests } from '../data/tests'
-import { getQuestionsForMode, modeInfo } from '../lib/modes'
+import { questionsFor, shuffled, variantLabel } from '../engine/selection'
 import { saveProgress, type SavedProgress } from '../lib/progress'
-import type { Answer, Question, TestId, TestMode } from '../types'
+import type { Question, Response } from '../types'
 import { Eyebrow } from './Eyebrow'
 import { ProgressBar } from './ProgressBar'
 import { QuestionCard } from './QuestionCard'
 
 interface QuizProps {
-  testId: TestId
-  mode: TestMode
-  resume?: SavedProgress
-  onComplete: (questions: Question[], answers: Record<string, Answer>) => void
+  progress: SavedProgress
+  onComplete: (questions: Question[], answers: Record<string, Response>) => void
 }
 
-export function Quiz({ testId, mode, resume, onComplete }: QuizProps) {
+export function Quiz({ progress, onComplete }: QuizProps) {
+  const { testId, variant, seed } = progress
   const test = tests[testId]
-  const questions = useMemo(() => getQuestionsForMode(test, mode), [test, mode])
-  const axisNameById = useMemo(
+  const questions = useMemo(
+    () => shuffled(questionsFor(test, variant), seed),
+    [test, variant, seed],
+  )
+  const axisName = useMemo(
     () => Object.fromEntries(test.axes.map((a) => [a.id, a.name])),
     [test],
   )
-  const [index, setIndex] = useState(() => Math.min(resume?.index ?? 0, questions.length - 1))
-  const [answers, setAnswers] = useState<Record<string, Answer>>(() => resume?.answers ?? {})
+  const [index, setIndex] = useState(() => Math.min(progress.index, questions.length - 1))
+  const [answers, setAnswers] = useState<Record<string, Response>>(progress.answers)
 
   const question = questions[index]
 
-  function handleAnswer(answer: Answer) {
+  function handleAnswer(answer: Response) {
     const next = { ...answers, [question.id]: answer }
     setAnswers(next)
 
     window.setTimeout(() => {
       if (index + 1 < questions.length) {
         setIndex(index + 1)
-        saveProgress({ testId, mode, index: index + 1, answers: next })
+        saveProgress({ testId, variant, seed, index: index + 1, answers: next })
       } else {
         onComplete(questions, next)
       }
@@ -43,10 +45,10 @@ export function Quiz({ testId, mode, resume, onComplete }: QuizProps) {
   return (
     <main className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-20">
       <p className="mb-6 text-xs font-medium tracking-[0.12em] text-azul/60 uppercase">
-        Test {test.name} · Versión {modeInfo[mode].label.toLowerCase()}
+        Test {test.name} · Versión {variantLabel[variant].toLowerCase()}
       </p>
       <div className="flex items-center justify-between gap-4">
-        <Eyebrow>{axisNameById[question.axisId]}</Eyebrow>
+        <Eyebrow>{axisName[question.primaryAxis]}</Eyebrow>
         <p className="text-sm text-azul/60 tabular-nums">
           {String(index + 1).padStart(2, '0')} / {questions.length}
         </p>
@@ -64,7 +66,7 @@ export function Quiz({ testId, mode, resume, onComplete }: QuizProps) {
         />
       </div>
 
-      <div className="mt-10 flex items-center justify-between text-sm">
+      <div className="mt-10 flex items-center justify-between gap-4 text-sm">
         <button
           type="button"
           disabled={index === 0}
@@ -73,9 +75,9 @@ export function Quiz({ testId, mode, resume, onComplete }: QuizProps) {
         >
           ← Anterior
         </button>
-        {index > 0 && (
-          <p className="text-xs text-azul/50">Tu progreso se guarda en este dispositivo.</p>
-        )}
+        <p className="text-right text-xs text-azul/50">
+          Tus respuestas se guardan solo en este dispositivo.
+        </p>
       </div>
     </main>
   )

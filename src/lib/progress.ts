@@ -1,13 +1,15 @@
-import type { Answer, TestId, TestMode } from '../types'
+import type { Response, TestId, Variant } from '../types'
 
 export interface SavedProgress {
   testId: TestId
-  mode: TestMode
+  variant: Variant
+  seed: number
   index: number
-  answers: Record<string, Answer>
+  answers: Record<string, Response>
 }
 
-const KEY = 'brujula:progreso'
+// Las opiniones políticas son datos sensibles (Ley 25.326): solo se guardan en este navegador.
+const KEY = 'brujula:progreso:v2'
 
 export function loadProgress(): SavedProgress | null {
   try {

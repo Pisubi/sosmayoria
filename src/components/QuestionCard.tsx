@@ -1,17 +1,18 @@
-import type { Answer, Question } from '../types'
+import type { Question, Response } from '../types'
 
-const LIKERT_OPTIONS: { value: Answer; label: string }[] = [
-  { value: 1, label: 'Muy en desacuerdo' },
-  { value: 2, label: 'En desacuerdo' },
-  { value: 3, label: 'Neutral' },
-  { value: 4, label: 'De acuerdo' },
-  { value: 5, label: 'Muy de acuerdo' },
+const OPTIONS: { value: Exclude<Response, null>; label: string }[] = [
+  { value: -1, label: 'Muy en desacuerdo' },
+  { value: -0.5, label: 'En desacuerdo' },
+  { value: 0, label: 'Neutral' },
+  { value: 0.5, label: 'De acuerdo' },
+  { value: 1, label: 'Muy de acuerdo' },
 ]
 
 interface QuestionCardProps {
   question: Question
-  value?: Answer
-  onAnswer: (answer: Answer) => void
+  /** undefined = sin responder; null = "No sé" */
+  value: Response | undefined
+  onAnswer: (answer: Response) => void
 }
 
 export function QuestionCard({ question, value, onAnswer }: QuestionCardProps) {
@@ -21,7 +22,7 @@ export function QuestionCard({ question, value, onAnswer }: QuestionCardProps) {
         {question.text}
       </p>
       <div className="mt-10 grid grid-cols-1 gap-2 sm:grid-cols-5">
-        {LIKERT_OPTIONS.map((option) => {
+        {OPTIONS.map((option) => {
           const selected = value === option.value
           return (
             <button
@@ -40,6 +41,16 @@ export function QuestionCard({ question, value, onAnswer }: QuestionCardProps) {
           )
         })}
       </div>
+      <button
+        type="button"
+        aria-pressed={value === null}
+        onClick={() => onAnswer(null)}
+        className={`mt-3 rounded-md px-4 py-2 text-sm font-medium transition-colors ${
+          value === null ? 'bg-linea text-azul' : 'text-azul/60 hover:bg-linea hover:text-azul'
+        }`}
+      >
+        No sé / prefiero no responder
+      </button>
     </div>
   )
 }
