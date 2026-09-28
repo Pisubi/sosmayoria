@@ -35,10 +35,10 @@ export function Intro({ saved, onStart, onResume, onMethodology }: IntroProps) {
       <section className="bg-noche text-marfil">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
           <Eyebrow>Elegí el test</Eyebrow>
-          <h2 className="mt-5 text-3xl font-bold sm:text-4xl">Dos tests, dos versiones</h2>
+          <h2 className="mt-5 text-3xl font-bold sm:text-4xl">Dos tests, tres versiones</h2>
           <p className="mt-4 max-w-xl leading-7 text-marfil/70">
-            La versión corta tiene seis afirmaciones por eje; la completa, diez. Podés responder
-            "No sé" cuando no tengas una opinión formada.
+            La versión corta tiene seis afirmaciones por eje; la completa, diez, y la a fondo, todas.
+            Podés responder "No sé" cuando no tengas una opinión formada.
           </p>
           <div className="mt-10 grid gap-4 lg:grid-cols-2">
             {TEST_ORDER.map((id, i) => (

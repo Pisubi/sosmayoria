@@ -1,13 +1,16 @@
 import type { Question, TestDefinition, Variant } from '../types'
 
-export const VARIANTS: Variant[] = ['short', 'full']
+export const VARIANTS: Variant[] = ['short', 'full', 'deep']
 
 export const variantLabel: Record<Variant, string> = {
   short: 'Corta',
   full: 'Completa',
+  deep: 'A fondo',
 }
 
+/** Corta ⊂ completa ⊂ a fondo: la versión a fondo usa todas las afirmaciones. */
 export function questionsFor(test: TestDefinition, variant: Variant): Question[] {
+  if (variant === 'deep') return test.questions
   return test.questions.filter((q) => q.variants.includes(variant))
 }
 

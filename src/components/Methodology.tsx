@@ -119,7 +119,7 @@ export function Methodology({ onBack }: MethodologyProps) {
 
       <details className="mt-8 rounded-xl border border-azul/14 p-5">
         <summary className="cursor-pointer font-semibold">
-          Afirmaciones ({test.questions.length}; {questionsFor(test, 'short').length} en la versión corta)
+          Afirmaciones ({test.questions.length}: {questionsFor(test, 'short').length} en la corta, {questionsFor(test, 'full').length} en la completa)
         </summary>
         <div className="mt-4 overflow-x-auto">
           <table className="w-full min-w-[40rem] text-left text-sm">
@@ -144,7 +144,13 @@ export function Methodology({ onBack }: MethodologyProps) {
                       .map(([a, e]) => `${a} ${e > 0 ? '+' : ''}${e}`)
                       .join(', ')}
                   </td>
-                  <td className="py-2 text-azul/60">{q.variants.includes('short') ? 'corta y completa' : 'completa'}</td>
+                  <td className="py-2 text-azul/60">
+                    {q.variants.includes('short')
+                      ? 'todas'
+                      : q.variants.includes('full')
+                        ? 'completa y a fondo'
+                        : 'a fondo'}
+                  </td>
                 </tr>
               ))}
             </tbody>

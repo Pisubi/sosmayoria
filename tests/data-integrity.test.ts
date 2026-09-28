@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { tests } from '../src/data/tests'
+import { questionsFor } from '../src/engine/selection'
 
 describe.each(Object.values(tests))('datos $name', (test) => {
   const axisIds = new Set(test.axes.map((a) => a.id))
@@ -20,11 +21,9 @@ describe.each(Object.values(tests))('datos $name', (test) => {
     }
   })
 
-  it.each(['short', 'full'] as const)('balance de polos por eje en la versión %s', (variant) => {
+  it.each(['short', 'full', 'deep'] as const)('balance de polos por eje en la versión %s', (variant) => {
     for (const axis of test.axes) {
-      const items = test.questions.filter(
-        (q) => q.primaryAxis === axis.id && q.variants.includes(variant),
-      )
+      const items = questionsFor(test, variant).filter((q) => q.primaryAxis === axis.id)
       const pos = items.filter((q) => q.effects[axis.id] > 0).length
       const neg = items.filter((q) => q.effects[axis.id] < 0).length
       expect(pos, `${axis.id} ${variant}`).toBe(neg)

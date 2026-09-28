@@ -1,5 +1,5 @@
 export type TestId = 'ar' | 'intl'
-export type Variant = 'short' | 'full'
+export type Variant = 'short' | 'full' | 'deep'
 export type Confidence = 'alta' | 'media' | 'baja'
 
 export interface Pole {
