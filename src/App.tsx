@@ -7,10 +7,10 @@ import { Quiz } from './components/Quiz'
 import { Results, type ResultData } from './components/results/Results'
 import { tests } from './data/tests'
 import { acquiescence, consistency, scoreAxes } from './engine/scoring'
-import { newSeed } from './engine/selection'
+import { drawQuestions, newSeed, VARIANT_SIZE } from './engine/selection'
 import { decodeResult, encodeResult } from './engine/share'
 import type { Participant } from './lib/participant'
-import { clearProgress, loadProgress, type SavedProgress } from './lib/progress'
+import { clearProgress, loadProgress, saveProgress, type SavedProgress } from './lib/progress'
 import { collecting, submitResult } from './lib/submit'
 import type { Question, Response, TestId, Variant } from './types'
 
@@ -66,8 +66,6 @@ function App() {
   }
 
   function finish(progress: SavedProgress, questions: Question[], answers: Record<string, Response>) {
-    clearProgress()
-    setSaved(null)
     const { testId, variant, startedAt } = progress
     const test = tests[testId]
     const data: ResultData = {
@@ -79,14 +77,29 @@ function App() {
       total: questions.length,
     }
     if (!collecting) {
+      clearProgress()
+      setSaved(null)
       setStage({ step: 'results', data })
       return
     }
+    // Hasta enviar los datos, el test terminado queda guardado: si se recarga, se retoma acá.
+    saveProgress({ ...progress, index: questions.length, answers })
     const seconds = Math.round((Date.now() - (startedAt ?? Date.now())) / 1000)
     setStage({ step: 'datos', data, pending: { variant, questions, answers, seconds } })
   }
 
+  function resume(progress: SavedProgress) {
+    if (progress.index >= VARIANT_SIZE[progress.variant]) {
+      const questions = drawQuestions(tests[progress.testId], progress.variant, progress.seed)
+      finish(progress, questions, progress.answers)
+    } else {
+      setStage({ step: 'quiz', progress })
+    }
+  }
+
   function showResults(data: ResultData, pending: PendingSubmission, participant: Participant | null) {
+    clearProgress()
+    setSaved(null)
     if (participant) {
       submitResult(tests[data.testId], pending.variant, participant, pending.questions, pending.answers, pending.seconds)
     }
@@ -100,7 +113,7 @@ function App() {
         <Intro
           saved={saved}
           onStart={start}
-          onResume={(progress) => setStage({ step: 'quiz', progress })}
+          onResume={resume}
           onMethodology={() => setStage({ step: 'metodologia' })}
         />
       )}

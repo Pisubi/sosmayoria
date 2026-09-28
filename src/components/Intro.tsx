@@ -121,11 +121,11 @@ function ResumeBanner({
   return (
     <div className="mt-10 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-azul/14 bg-linea/60 p-5">
       <p className="text-sm leading-6">
-        Tenés un test sin terminar:{' '}
+        {saved.index >= total ? 'Terminaste el test' : 'Tenés un test sin terminar:'}{' '}
         <span className="font-semibold">
           {test.name}, versión {variantLabel[saved.variant].toLowerCase()}
         </span>{' '}
-        ({saved.index} de {total}).
+        {saved.index >= total ? 'y falta ver tu resultado.' : `(${saved.index} de ${total}).`}
       </p>
       <button
         type="button"

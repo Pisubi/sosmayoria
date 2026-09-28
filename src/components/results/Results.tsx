@@ -61,6 +61,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
   )
   const acquiescent = Math.abs(data.acquiescence ?? 0) > ACQUIESCENCE_THRESHOLD
   const mixed = (data.consistency ?? 1) < CONSISTENCY_THRESHOLD
+  const tooFew = matchAxes.filter((a) => scores.find((s) => s.axisId === a.id)?.score != null).length < 3
 
   return (
     <main>
@@ -68,7 +69,9 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
           <Eyebrow>Tu resultado · Test {test.name}</Eyebrow>
           <h1 className="mt-6 max-w-3xl text-4xl leading-[1.1] font-normal tracking-[-0.015em] sm:text-6xl">
-            {mixed
+            {tooFew
+              ? 'Faltan respuestas para ubicarte bien; lo más próximo es'
+              : mixed
               ? 'Tus respuestas son mixtas; lo más próximo es'
               : top.similarity >= 50
                 ? 'Tu perfil se acerca a'
