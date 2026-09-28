@@ -2220,46 +2220,6 @@
    "basis": "Impulso de los juicios de lesa humanidad y del Banco Nacional de Datos Genéticos; cercanía con los gobiernos kirchneristas sin afiliación partidaria; críticas al gobierno de Milei por el retiro del apoyo estatal a la búsqueda (2026) y a la reivindicación de la dictadura. Sin posiciones macroeconómicas o comerciales definidas (null). Fuentes: Infobae (jun. 2026), MendoVoz (mar. 2026), Página/12."
   },
   {
-   "id": "adolfo_perez_esquivel",
-   "catalog": "ar_actuales",
-   "name": "Adolfo Pérez Esquivel",
-   "era": "1974–",
-   "description": "Premio Nobel de la Paz (1980), fundador del Servicio Paz y Justicia (SERPAJ) y referente del humanismo cristiano y de los derechos humanos en América Latina.",
-   "coords": {
-    "ECO": -60,
-    "SOC": -20,
-    "INS": -10,
-    "POP": 0,
-    "SEG": -95,
-    "EXT": -90,
-    "FED": null,
-    "IDN": null
-   },
-   "confidence": "media",
-   "method": "seed-editorial",
-   "basis": "Campañas por la anulación de la deuda externa de los países del Sur global, crítica al FMI y a la política exterior de EE.UU.; defensa de movimientos sociales y pueblos originarios; crítica a gobiernos de distinto signo sin pertenencia partidaria (IDN null). Orador en el 50.º aniversario del golpe (2026). Fuentes: SERPAJ, Página/12 (abr. 2026), Britannica."
-  },
-  {
-   "id": "lilia_lemoine",
-   "catalog": "ar_actuales",
-   "name": "Lilia Lemoine",
-   "era": "2021–",
-   "description": "Diputada nacional por La Libertad Avanza (2023–2027) por Buenos Aires, ex asesora de imagen de Javier Milei y comunicadora digital.",
-   "coords": {
-    "ECO": 85,
-    "SOC": 100,
-    "INS": 70,
-    "POP": 100,
-    "SEG": 85,
-    "EXT": 90,
-    "FED": null,
-    "IDN": 100
-   },
-   "confidence": "media",
-   "method": "seed-editorial",
-   "basis": "Apoyo a todo el programa económico de Milei; batalla cultural antifeminista (propuesta de 'renuncia a la paternidad'); retórica antikirchnerista y antiperonista; defensa de la 'memoria completa' junto al bloque oficialista; estilo de confrontación en redes. Más marcada que Milei en valores y estilo. Fuentes: Infobae (mar. 2026), Ámbito, El Cronista."
-  },
-  {
    "id": "alfonsinismo",
    "catalog": "ar_tradiciones",
    "name": "Radicalismo alfonsinista",
