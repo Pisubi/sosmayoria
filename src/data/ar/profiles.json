@@ -28,18 +28,18 @@
    "era": "1945–",
    "description": "Justicialismo clásico: CGT, doctrina social de la Iglesia, tercera posición y comunidad organizada.",
    "coords": {
-    "ECO": -65,
-    "SOC": 40,
-    "INS": 60,
+    "ECO": -70,
+    "SOC": 30,
+    "INS": 70,
     "POP": 70,
-    "SEG": 5,
-    "EXT": -50,
+    "SEG": 25,
+    "EXT": -60,
     "FED": 20,
     "IDN": -95
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CGT, catolicismo, tercera posición"
+   "basis": "CGT, catolicismo, tercera posición · Revisión 2026: SEG sube: la ortodoxia peronista (derecha del movimiento en 1973-76, línea Luder/Herminio Iglesias/Ruckauf) apoya penas duras y restricciones a la protesta aunque respalda los juicios de lesa humanidad; el valor 5 salía de promediar SEG 30 con MEM -20. ECO, INS y EXT se alinean con Perón (-75/70/-60)."
   },
   {
    "id": "kirchnerismo",
@@ -48,16 +48,16 @@
    "era": "2003–",
    "description": "Peronismo de centroizquierda: estatizaciones, redistribución, derechos humanos y ampliación de derechos civiles.",
    "coords": {
-    "ECO": -70,
-    "SOC": -50,
-    "INS": 60,
+    "ECO": -80,
+    "SOC": -60,
+    "INS": 65,
     "POP": 75,
-    "SEG": -70,
-    "EXT": -70,
+    "SEG": -75,
+    "EXT": -75,
     "FED": 40,
     "IDN": -85
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Estatizaciones, DD.HH., matrimonio igualitario; Saiegh 2015"
   },
@@ -68,18 +68,18 @@
    "era": "1989–1999",
    "description": "Peronismo de mercado: privatizaciones, convertibilidad, indultos y alineamiento con EE.UU.",
    "coords": {
-    "ECO": 70,
+    "ECO": 80,
     "SOC": 50,
-    "INS": 60,
+    "INS": 75,
     "POP": 50,
-    "SEG": 50,
+    "SEG": 60,
     "EXT": 90,
     "FED": 0,
     "IDN": -60
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Privatizaciones, convertibilidad, indultos"
+   "basis": "Privatizaciones, convertibilidad, indultos · Revisión 2026: INS sube: ampliación de la Corte de 5 a 9 (1990), gobierno masivo por DNU, reforma de 1994 para la reelección e intento de re-reelección en 1999. ECO y SEG suben levemente (privatizaciones, convertibilidad, propuesta de dolarización en 1999, indultos)."
   },
   {
    "id": "peronismo_federal",
@@ -88,18 +88,18 @@
    "era": "2003–",
    "description": "Peronismo no kirchnerista, pragmático y con eje en los gobernadores.",
    "coords": {
-    "ECO": 0,
+    "ECO": 20,
     "SOC": 20,
     "INS": -20,
-    "POP": 10,
-    "SEG": 10,
-    "EXT": 10,
+    "POP": -10,
+    "SEG": 25,
+    "EXT": 15,
     "FED": -70,
     "IDN": -40
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Pragmatismo provincial"
+   "basis": "Pragmatismo provincial · Revisión 2026: ECO sube: gobernadores y legisladores del peronismo no K (Schiaretti, Pichetto, Córdoba) pidieron bajar retenciones y acompañaron en buena parte la Ley Bases. POP baja por su perfil de negociación y acuerdos; SEG sube por políticas de mano dura provinciales (Córdoba, Pichetto) sin revisionismo sobre los 70."
   },
   {
    "id": "ucr",
@@ -108,18 +108,18 @@
    "era": "1983–",
    "description": "Radicalismo republicano: instituciones, educación pública y economía mixta.",
    "coords": {
-    "ECO": -10,
+    "ECO": 10,
     "SOC": -20,
     "INS": -80,
-    "POP": -30,
-    "SEG": -35,
-    "EXT": 0,
+    "POP": -40,
+    "SEG": -10,
+    "EXT": 20,
     "FED": -30,
     "IDN": 60
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Republicanismo; PELA ~4–5/10"
+   "basis": "Republicanismo; PELA ~4–5/10 · Revisión 2026: ECO sube: la UCR contemporánea integró Cambiemos y la mayoría de su bloque votó la Ley Bases; sus gobernadores (Cornejo, Pullaro) son pro-mercado. SEG sube: la UCR votó la baja de imputabilidad a 14 años (Diputados, feb. 2026) y sus gobernadores aplican mano dura, aunque defiende los juicios de lesa humanidad. EXT sube por su alineamiento con JxC (OCDE, rechazo a BRICS)."
   },
   {
    "id": "desarrollismo",
@@ -129,17 +129,17 @@
    "description": "Industrialización pesada con capital externo y planificación del desarrollo.",
    "coords": {
     "ECO": -20,
-    "SOC": 10,
+    "SOC": 20,
     "INS": -20,
-    "POP": 0,
-    "SEG": 0,
-    "EXT": 0,
-    "FED": -10,
-    "IDN": 20
+    "POP": -30,
+    "SEG": 20,
+    "EXT": -10,
+    "FED": 20,
+    "IDN": 0
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Frondizi-Frigerio"
+   "basis": "Frondizi-Frigerio · Revisión 2026: POP baja: tradición tecnocrática y planificadora (Frigerio). SEG sube por el Plan CONINTES y la represión de huelgas bajo Frondizi. FED sube: la planificación nacional y la Ley 14.773 de 1958 pusieron los hidrocarburos bajo dominio nacional. IDN a 0: pacto Frondizi-Perón y el MID integró el FREJULI en 1973."
   },
   {
    "id": "socialismo_ps",
@@ -149,17 +149,17 @@
    "description": "Socialdemocracia argentina: laicismo, derechos laborales e instituciones.",
    "coords": {
     "ECO": -45,
-    "SOC": -80,
+    "SOC": -85,
     "INS": -70,
-    "POP": -20,
+    "POP": -40,
     "SEG": -70,
-    "EXT": -40,
+    "EXT": -20,
     "FED": -40,
     "IDN": 40
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Socialdemocracia, laicismo"
+   "basis": "Socialdemocracia, laicismo · Revisión 2026: POP baja: el PS santafesino (Binner) es pluralista, de gestión técnica y coaliciones amplias. EXT sube: prioriza integración regional pero sin simpatía por BRICS ni China y vota con las democracias occidentales (alianza con Schiaretti en 2023)."
   },
   {
    "id": "fitu",
@@ -168,18 +168,18 @@
    "era": "2011–",
    "description": "Izquierda trotskista: estatización, no pago de la deuda y defensa sindical.",
    "coords": {
-    "ECO": -90,
-    "SOC": -90,
-    "INS": 0,
-    "POP": 40,
+    "ECO": -95,
+    "SOC": -95,
+    "INS": -20,
+    "POP": 50,
     "SEG": -95,
-    "EXT": -80,
-    "FED": 0,
-    "IDN": 30
+    "EXT": -60,
+    "FED": 30,
+    "IDN": 40
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "No pago de deuda; GOP 2022"
+   "basis": "No pago de deuda; GOP 2022 · Revisión 2026: EXT sube: el trotskismo rechaza a EE.UU. y la OTAN pero también el ingreso a los BRICS y la sociedad con China, que considera bloques capitalistas. INS baja: rechaza decretos, liderazgos fuertes y la reelección, aunque propone jueces electos. FED sube: propone nacionalizar recursos, planificación y pisos salariales nacionales."
   },
   {
    "id": "liberalismo_alberdiano",
@@ -188,8 +188,8 @@
    "era": "1853–",
    "description": "Liberalismo constitucional: libre comercio, inmigración, propiedad y límites al poder.",
    "coords": {
-    "ECO": 65,
-    "SOC": -10,
+    "ECO": 80,
+    "SOC": -20,
     "INS": -85,
     "POP": -60,
     "SEG": 5,
@@ -197,9 +197,9 @@
     "FED": -40,
     "IDN": 70
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Constitución de 1853"
+   "basis": "Constitución de 1853 · Revisión 2026: ECO sube: el liberalismo que se reivindica alberdiano hoy (Benegas Lynch, López Murphy) está a favor de privatizar, abrir el comercio y limitar el Banco Central; el 65 venía de promediar."
   },
   {
    "id": "lla",
@@ -208,18 +208,18 @@
    "era": "2021–",
    "description": "Derecha radical personalista: liberalismo económico extremo y conservadurismo cultural.",
    "coords": {
-    "ECO": 90,
-    "SOC": 60,
-    "INS": 40,
+    "ECO": 95,
+    "SOC": 70,
+    "INS": 55,
     "POP": 70,
-    "SEG": 75,
+    "SEG": 85,
     "EXT": 95,
     "FED": 10,
     "IDN": 70
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Morresi y Ramos 2023; Pulsar.UBA 2026 (7,5)"
+   "basis": "Morresi y Ramos 2023; Pulsar.UBA 2026 (7,5) · Revisión 2026: INS sube: DNU 70/2023, facultades delegadas en la Ley Bases, designación por decreto de jueces de la Corte (2025) y ataques a medios críticos. SEG y SOC suben levemente (protocolo antipiquetes, baja de imputabilidad, cierre del Ministerio de las Mujeres)."
   },
   {
    "id": "pro",
@@ -228,18 +228,18 @@
    "era": "2005–",
    "description": "Centroderecha \"alta\": mercado, gestión y moderación institucional.",
    "coords": {
-    "ECO": 40,
-    "SOC": 0,
-    "INS": -50,
+    "ECO": 50,
+    "SOC": 10,
+    "INS": -40,
     "POP": -60,
-    "SEG": 35,
+    "SEG": 50,
     "EXT": 60,
     "FED": -10,
     "IDN": 80
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Pulsar.UBA 2026 JxC (6,7)"
+   "basis": "Pulsar.UBA 2026 JxC (6,7) · Revisión 2026: SEG sube: protocolo antipiquetes y doctrina Chocobar de Bullrich, impulso a la baja de imputabilidad (2017-2019 y voto en 2026) y cuestionamientos a la cifra de desaparecidos."
   },
   {
    "id": "nacionalismo_catolico",
@@ -248,16 +248,16 @@
    "era": "1930–",
    "description": "Hispanismo, orden, tradición religiosa y desconfianza hacia el liberalismo.",
    "coords": {
-    "ECO": -30,
-    "SOC": 95,
-    "INS": 80,
-    "POP": 50,
-    "SEG": 90,
+    "ECO": -40,
+    "SOC": 100,
+    "INS": 90,
+    "POP": 60,
+    "SEG": 95,
     "EXT": -40,
     "FED": 20,
     "IDN": 0
    },
-   "confidence": "baja",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Hispanismo, orden"
   },
@@ -268,18 +268,18 @@
    "era": "1829–1852",
    "description": "Gobernador de Buenos Aires con la suma del poder público. Ley de Aduanas proteccionista y persecución de opositores.",
    "coords": {
-    "ECO": -35,
+    "ECO": -30,
     "SOC": 80,
     "INS": 100,
-    "POP": 50,
+    "POP": 70,
     "SEG": 100,
-    "EXT": -70,
+    "EXT": -80,
     "FED": 40,
     "IDN": null
    },
-   "confidence": "baja",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Ley de Aduanas, suma del poder público",
+   "basis": "Ley de Aduanas, suma del poder público · Revisión 2026: POP sube: liderazgo plebeyo del 'Restaurador' con base en gauchos y sectores populares porteños contra los 'salvajes unitarios', sin lugar para acuerdos con opositores. EXT: resistencia a los bloqueos francés y anglofrancés (Vuelta de Obligado). Fuente: Wikipedia es 'Juan Manuel de Rosas'.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -289,18 +289,18 @@
    "era": "1810–1884",
    "description": "Autor de las Bases, fundamento de la Constitución de 1853: libre comercio, inmigración y gobierno limitado.",
    "coords": {
-    "ECO": 65,
+    "ECO": 75,
     "SOC": -20,
-    "INS": -80,
+    "INS": -70,
     "POP": -60,
-    "SEG": 0,
+    "SEG": -20,
     "EXT": 50,
-    "FED": -40,
+    "FED": -20,
     "IDN": null
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Bases",
+   "basis": "Bases · Revisión 2026: FED menos federal: en las Bases propuso un sistema mixto con aduana nacional y fuerte poder central, y luego respaldó la federalización de Buenos Aires. SEG levemente garantista por 'El crimen de la guerra' y su crítica a la guerra del Paraguay. Fuente: Alberdi, 'Bases' y 'La República Argentina consolidada en 1880'.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -314,14 +314,14 @@
     "SOC": -40,
     "INS": -60,
     "POP": -80,
-    "SEG": 50,
+    "SEG": 70,
     "EXT": 60,
-    "FED": 40,
+    "FED": 50,
     "IDN": null
    },
-   "confidence": "baja",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Educación pública",
+   "basis": "Educación pública · Revisión 2026: SEG sube: represión de las montoneras y del Chacho Peñaloza, carta a Mitre sobre 'no ahorrar sangre de gauchos' y represión de López Jordán. Fuente: Wikipedia es 'Domingo Faustino Sarmiento'.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -331,18 +331,18 @@
    "era": "1880–1886, 1898–1904",
    "description": "Presidente. Modelo agroexportador, Ley 1420 de educación laica y Ley de Residencia.",
    "coords": {
-    "ECO": 50,
-    "SOC": -40,
-    "INS": 20,
+    "ECO": 60,
+    "SOC": -60,
+    "INS": 30,
     "POP": -70,
-    "SEG": 80,
-    "EXT": 50,
-    "FED": 50,
+    "SEG": 90,
+    "EXT": 40,
+    "FED": 70,
     "IDN": null
    },
-   "confidence": "baja",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Agroexportación, Ley 1420, Ley de Residencia",
+   "basis": "Agroexportación, Ley 1420, Ley de Residencia · Revisión 2026: FED sube: federalización de Buenos Aires (1880) y consolidación del Estado nacional sobre las provincias. SOC más laico por la Ley 1420, el registro civil y la ruptura con el Vaticano (1884). SEG más extremo por la Conquista del Desierto y la Ley de Residencia. Fuente: Wikipedia es 'Julio Argentino Roca'.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -352,18 +352,18 @@
    "era": "1890–1892",
    "description": "Presidente tras la crisis de 1890. Fundó el Banco Nación, reorganizó la Caja de Conversión y defendió aranceles selectivos.",
    "coords": {
-    "ECO": 5,
-    "SOC": 30,
-    "INS": 20,
+    "ECO": -15,
+    "SOC": -10,
+    "INS": 10,
     "POP": -80,
-    "SEG": 30,
+    "SEG": 40,
     "EXT": 40,
-    "FED": 20,
+    "FED": 40,
     "IDN": null
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Banco Nación, Caja de Conversión; Atlas y Brújula tetradimensional",
+   "basis": "Banco Nación, Caja de Conversión; Atlas y Brújula tetradimensional · Revisión 2026: ECO más estatista: defensor del proteccionismo industrial en los debates de 1875-76 ('sin industria no hay nación') y fundador del Banco Nación. SOC corregido: formó parte de la generación liberal y laica del 80 y presidió el Senado durante el debate del matrimonio civil (1888); no hay base para ubicarlo conservador. FED: gobierno del PAN con intervenciones. Fuente: Chiaramonte, 'Nacionalismo y liberalismo económicos'; El Historiador.",
    "contextNote": "Régimen del PAN con fraude electoral; posiciones relativas a su época."
   },
   {
@@ -373,18 +373,18 @@
    "era": "1842–1896",
    "description": "Fundador de la Unión Cívica Radical y líder de la Revolución del Parque.",
    "coords": {
-    "ECO": 0,
+    "ECO": -30,
     "SOC": -10,
-    "INS": -80,
-    "POP": 30,
-    "SEG": null,
+    "INS": -60,
+    "POP": 60,
+    "SEG": -20,
     "EXT": null,
-    "FED": -60,
+    "FED": -70,
     "IDN": null
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Revolución del Parque",
+   "basis": "Revolución del Parque · Revisión 2026: ECO: fue parte de los jóvenes autonomistas proteccionistas en los debates de la Ley de Aduana de 1875-76. POP sube: retórica de 'la causa' contra el 'régimen', intransigencia y rechazo del acuerdo Mitre-Roca de 1891. INS menos extremo por encabezar revoluciones armadas (1890, 1893). SEG se completa con su defensa de las libertades frente al Unicato. Fuente: Scielo, 'Las Tres cartas de Emilio de Alvear y los debates proteccionistas' (2014); Wikipedia es.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -398,14 +398,14 @@
     "SOC": 20,
     "INS": -60,
     "POP": -60,
-    "SEG": 20,
-    "EXT": 0,
-    "FED": 0,
+    "SEG": 30,
+    "EXT": -30,
+    "FED": 20,
     "IDN": null
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Ley 8871; Atlas y Brújula tetradimensional",
+   "basis": "Ley 8871; Atlas y Brújula tetradimensional · Revisión 2026: EXT: en la Conferencia Panamericana de 1889 opuso 'América para la humanidad' al panamericanismo de EE.UU.; combatió por Perú en la Guerra del Pacífico. Fuente: Wikipedia es 'Roque Sáenz Peña'.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -415,18 +415,18 @@
    "era": "1916–1922, 1928–1930",
    "description": "Primer presidente elegido por voto secreto. Personalismo, neutralidad e intervenciones federales.",
    "coords": {
-    "ECO": -20,
+    "ECO": -40,
     "SOC": 10,
-    "INS": 30,
-    "POP": 60,
-    "SEG": -10,
-    "EXT": -60,
-    "FED": 50,
+    "INS": 60,
+    "POP": 70,
+    "SEG": 10,
+    "EXT": -70,
+    "FED": 60,
     "IDN": null
    },
-   "confidence": "baja",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Personalismo, neutralidad, intervenciones"
+   "basis": "Personalismo, neutralidad, intervenciones · Revisión 2026: INS y FED suben: gobernó con decenas de intervenciones federales, muchas por decreto, y un fuerte personalismo ('la causa contra el régimen'). ECO más estatista: proyecto de monopolio estatal del petróleo (1927-28) y flota mercante estatal. SEG: la Semana Trágica y la Patagonia rebelde ocurrieron bajo su gobierno. Fuente: Wikipedia es 'Hipólito Yrigoyen'."
   },
   {
    "id": "palacios",
@@ -435,18 +435,18 @@
    "era": "1878–1965",
    "description": "Primer diputado socialista de América. Pionero de la legislación laboral y opositor al peronismo.",
    "coords": {
-    "ECO": -55,
-    "SOC": -60,
+    "ECO": -60,
+    "SOC": -70,
     "INS": -70,
     "POP": -40,
-    "SEG": -50,
-    "EXT": -20,
+    "SEG": -40,
+    "EXT": -60,
     "FED": 0,
     "IDN": 80
    },
-   "confidence": "baja",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Legislación laboral"
+   "basis": "Legislación laboral · Revisión 2026: EXT corregido: antiimperialista, apoyó a Sandino y la Unión Latinoamericana y en 1961 ganó la senaduría porteña con apoyo explícito a la Revolución Cubana. Fuente: Wikipedia es 'Alfredo Palacios'."
   },
   {
    "id": "peron",
@@ -455,18 +455,18 @@
    "era": "1946–1955",
    "description": "Presidente. IAPI, nacionalizaciones, CGT, reforma constitucional de 1949 y tercera posición.",
    "coords": {
-    "ECO": -75,
-    "SOC": 20,
-    "INS": 70,
-    "POP": 80,
-    "SEG": 30,
+    "ECO": -80,
+    "SOC": 0,
+    "INS": 85,
+    "POP": 90,
+    "SEG": 40,
     "EXT": -60,
-    "FED": 30,
+    "FED": 60,
     "IDN": -100
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "IAPI, CGT, reforma de 1949"
+   "basis": "IAPI, CGT, reforma de 1949 · Revisión 2026: SOC por regla de época: a la enseñanza religiosa de 1947 le siguieron el voto femenino, la ley de divorcio de 1954 y la ruptura con la Iglesia, balance mixto que lo distingue del peronismo ortodoxo posterior. SEG por orden público: estado de guerra interno (1951), movilización militar de la huelga ferroviaria y persecución de opositores. FED sube: la Constitución de 1949 (art. 40) nacionalizó los recursos del subsuelo y la planificación era nacional (planes quinquenales). INS: reelección indefinida, juicio político a la Corte en 1947 y control de la prensa. Fuente: Wikipedia es 'Constitución argentina de 1949'."
   },
   {
    "id": "evita",
@@ -475,18 +475,18 @@
    "era": "1946–1952",
    "description": "Figura central del primer peronismo: Fundación Eva Perón, rama femenina y voto femenino.",
    "coords": {
-    "ECO": -75,
+    "ECO": -85,
     "SOC": -10,
     "INS": 80,
     "POP": 95,
     "SEG": 20,
     "EXT": -60,
-    "FED": 30,
+    "FED": 50,
     "IDN": -100
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Fundación, voto femenino"
+   "basis": "Fundación, voto femenino · Revisión 2026: FED alineado con Perón: planificación nacional y Fundación Eva Perón gestionada desde el centro. Fuente: Wikipedia es 'Eva Perón'."
   },
   {
    "id": "frondizi",
@@ -495,18 +495,18 @@
    "era": "1958–1962",
    "description": "Presidente desarrollista: contratos petroleros con capital extranjero y Plan CONINTES.",
    "coords": {
-    "ECO": -15,
-    "SOC": 20,
+    "ECO": -20,
+    "SOC": 30,
     "INS": -30,
-    "POP": 10,
-    "SEG": 20,
-    "EXT": 0,
-    "FED": 0,
+    "POP": -30,
+    "SEG": 60,
+    "EXT": -20,
+    "FED": 40,
     "IDN": 20
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Contratos petroleros, Plan CONINTES"
+   "basis": "Contratos petroleros, Plan CONINTES · Revisión 2026: SEG sube: Plan CONINTES con militarización de huelguistas y juzgamiento de civiles por tribunales militares, y represión de la toma del frigorífico Lisandro de la Torre (1959). FED: la Ley 14.773 declaró los hidrocarburos propiedad exclusiva del Estado nacional e intervino provincias en 1962. POP pluralista: gobierno de técnicos desarrollistas y pacto con Perón. EXT: abstención sobre Cuba en Punta del Este y acuerdo de Uruguayana con Brasil. Fuente: Ley 14.773 (argentina.gob.ar); Wikipedia es 'Plan CONINTES'."
   },
   {
    "id": "illia",
@@ -515,18 +515,18 @@
    "era": "1963–1966",
    "description": "Presidente radical: anuló los contratos petroleros, ley de medicamentos y gobierno sin estado de sitio.",
    "coords": {
-    "ECO": -30,
+    "ECO": -50,
     "SOC": 0,
     "INS": -90,
     "POP": -40,
-    "SEG": -40,
-    "EXT": -40,
+    "SEG": -60,
+    "EXT": -60,
     "FED": -20,
     "IDN": 50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Anulación de contratos, ley de medicamentos"
+   "basis": "Anulación de contratos, ley de medicamentos · Revisión 2026: ECO más estatista: anuló los contratos petroleros, ley de medicamentos con control de precios, salario mínimo vital y móvil y no acordó con el FMI. EXT: resolución 2065 de la ONU sobre Malvinas y negativa a enviar tropas a República Dominicana (1965). SEG: gobernó sin estado de sitio. Fuente: Wikipedia es 'Arturo Umberto Illia'."
   },
   {
    "id": "alsogaray",
@@ -535,18 +535,18 @@
    "era": "1913–2005",
    "description": "Economista liberal, varias veces ministro y fundador de la UCeDé.",
    "coords": {
-    "ECO": 85,
+    "ECO": 95,
     "SOC": 30,
-    "INS": -20,
+    "INS": 10,
     "POP": -70,
-    "SEG": 50,
-    "EXT": 70,
-    "FED": 0,
+    "SEG": 60,
+    "EXT": 80,
+    "FED": null,
     "IDN": 90
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "UCeDé"
+   "basis": "UCeDé · Revisión 2026: INS sube: fue ministro de Guido y embajador en EE.UU. de Onganía, y en 1989 respaldó la delegación de facultades a Menem. FED pasa a null: no hay posición documentada sobre federalismo. Fuente: Wikipedia es 'Álvaro Alsogaray'."
   },
   {
    "id": "alfonsin",
@@ -555,18 +555,18 @@
    "era": "1983–1989",
    "description": "Presidente de la recuperación democrática. Juicio a las Juntas, luego Punto Final; ley de divorcio.",
    "coords": {
-    "ECO": -15,
-    "SOC": -40,
+    "ECO": -25,
+    "SOC": -55,
     "INS": -85,
-    "POP": -20,
+    "POP": -30,
     "SEG": -60,
-    "EXT": -30,
-    "FED": -20,
-    "IDN": 60
+    "EXT": -40,
+    "FED": -40,
+    "IDN": 70
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Juicio a las Juntas, Punto Final, divorcio"
+   "basis": "Juicio a las Juntas, Punto Final, divorcio · Revisión 2026: SOC más progresista: divorcio vincular (1987) y patria potestad compartida (1985), en línea con el alfonsinismo. FED más federal: proyecto de traslado de la Capital a Viedma-Carmen de Patagones (1986). Fuente: Wikipedia es 'Raúl Alfonsín' y 'Proyecto Patagonia'."
   },
   {
    "id": "menem",
@@ -575,18 +575,18 @@
    "era": "1989–1999",
    "description": "Presidente. Privatizaciones, convertibilidad, indultos y \"relaciones carnales\" con EE.UU.",
    "coords": {
-    "ECO": 70,
-    "SOC": 50,
-    "INS": 60,
-    "POP": 50,
-    "SEG": 50,
+    "ECO": 80,
+    "SOC": 60,
+    "INS": 75,
+    "POP": 60,
+    "SEG": 70,
     "EXT": 90,
-    "FED": 0,
+    "FED": 10,
     "IDN": -60
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Ver menemismo"
+   "basis": "Ver menemismo · Revisión 2026: INS sube: ampliación de la Corte de 5 a 9 jueces (1990), uso masivo de DNU y reforma para la reelección. SEG sube: indultos a jefes militares y guerrilleros bajo la idea de 'reconciliación'. Fuente: Wikipedia es 'Carlos Menem'."
   },
   {
    "id": "delarua",
@@ -595,18 +595,18 @@
    "era": "1999–2001",
    "description": "Presidente de la Alianza. Ajuste fiscal, reforma laboral y crisis de 2001.",
    "coords": {
-    "ECO": 45,
+    "ECO": 50,
     "SOC": 20,
-    "INS": -60,
+    "INS": -50,
     "POP": -70,
-    "SEG": -10,
-    "EXT": 40,
+    "SEG": 10,
+    "EXT": 50,
     "FED": 10,
     "IDN": 70
    },
-   "confidence": "baja",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Déficit cero, reforma laboral"
+   "basis": "Déficit cero, reforma laboral · Revisión 2026: SEG sube: decreto 1581/2001 que rechazó de plano los pedidos de extradición de militares y estado de sitio con represión en diciembre de 2001. Fuente: Wikipedia es 'Fernando de la Rúa'."
   },
   {
    "id": "duhalde",
@@ -616,17 +616,17 @@
    "description": "Presidente tras la crisis de 2001. Salida de la convertibilidad y pesificación.",
    "coords": {
     "ECO": -45,
-    "SOC": 30,
+    "SOC": 50,
     "INS": 20,
     "POP": 30,
-    "SEG": 10,
-    "EXT": -20,
-    "FED": 10,
+    "SEG": 40,
+    "EXT": -40,
+    "FED": 30,
     "IDN": -80
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Devaluación, pesificación"
+   "basis": "Devaluación, pesificación · Revisión 2026: SEG sube: política de seguridad bonaerense de los noventa y represión del Puente Pueyrredón (2002). SOC: cercanía con la Iglesia (Mesa del Diálogo Argentino). EXT: prioridad al Mercosur y luego presidente de su Comisión de Representantes. FED: Fondo del Conurbano a favor del AMBA. Fuente: Wikipedia es 'Eduardo Duhalde'."
   },
   {
    "id": "nestor",
@@ -635,18 +635,18 @@
    "era": "2003–2007",
    "description": "Presidente. Reapertura de los juicios de lesa humanidad, cancelación de la deuda con el FMI y \"No al ALCA\".",
    "coords": {
-    "ECO": -50,
-    "SOC": -30,
-    "INS": 50,
-    "POP": 60,
-    "SEG": -70,
-    "EXT": -60,
-    "FED": 40,
+    "ECO": -55,
+    "SOC": -40,
+    "INS": 55,
+    "POP": 70,
+    "SEG": -85,
+    "EXT": -70,
+    "FED": 50,
     "IDN": -70
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Reapertura de juicios, \"No al ALCA\""
+   "basis": "Reapertura de juicios, \"No al ALCA\" · Revisión 2026: SEG más extremo: impulsó la nulidad de las leyes de impunidad, la reapertura de los juicios y el Espacio de Memoria en la ESMA. Fuente: Wikipedia es 'Néstor Kirchner'."
   },
   {
    "id": "cfk",
@@ -655,18 +655,18 @@
    "era": "2007–",
    "description": "Expresidenta y líder del kirchnerismo: Estado activo, redistribución y ampliación de derechos.",
    "coords": {
-    "ECO": -70,
-    "SOC": -50,
-    "INS": 65,
-    "POP": 75,
+    "ECO": -75,
+    "SOC": -55,
+    "INS": 70,
+    "POP": 80,
     "SEG": -70,
-    "EXT": -70,
+    "EXT": -75,
     "FED": 50,
-    "IDN": -80
+    "IDN": -95
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Saiegh 2015: a la izquierda de FpV/PJ"
+   "basis": "Saiegh 2015: a la izquierda de FpV/PJ · Revisión 2026: IDN: preside el PJ nacional desde diciembre de 2024 y es la referente central de la identidad peronista; el resto se ajusta levemente (estatización de YPF, cepo, ampliación del Consejo de la Magistratura por voto popular, ingreso a BRICS). Fuente: PJ, Boletín Oficial."
   },
   {
    "id": "macri",
@@ -675,18 +675,18 @@
    "era": "2015–",
    "description": "Expresidente y fundador del PRO: salida del cepo, gradualismo y acuerdo con el FMI en 2018.",
    "coords": {
-    "ECO": 40,
-    "SOC": 10,
-    "INS": -50,
-    "POP": -60,
-    "SEG": 35,
-    "EXT": 60,
+    "ECO": 60,
+    "SOC": 15,
+    "INS": -40,
+    "POP": -45,
+    "SEG": 50,
+    "EXT": 70,
     "FED": -10,
-    "IDN": 80
+    "IDN": 90
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Salida del cepo, FMI 2018"
+   "basis": "Salida del cepo, FMI 2018 · Revisión 2026: ECO: salida del cepo, baja de retenciones, reforma laboral intentada en 2017 y acuerdo con el FMI; hoy reclama privatizaciones y reformas más rápidas que las de Milei. SEG: doctrina de seguridad de Bullrich, proyecto de baja de imputabilidad (2019) y declaraciones críticas sobre la política de memoria. POP: estrategia de polarización con el kirchnerismo, menos pluralista de lo supuesto. Fuentes: Boletín Oficial, La Nación."
   },
   {
    "id": "milei",
@@ -695,18 +695,18 @@
    "era": "2023–",
    "description": "Presidente desde 2023: DNU 70/2023, ajuste de shock, dolarización como objetivo y alineamiento con EE.UU.",
    "coords": {
-    "ECO": 90,
+    "ECO": 95,
     "SOC": 60,
-    "INS": 40,
-    "POP": 70,
-    "SEG": 75,
+    "INS": 65,
+    "POP": 80,
+    "SEG": 85,
     "EXT": 95,
     "FED": 10,
-    "IDN": 70
+    "IDN": 85
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "DNU 70/2023; Morresi y Ramos 2023"
+   "basis": "DNU 70/2023; Morresi y Ramos 2023 · Revisión 2026: INS: DNU 70/2023, facultades delegadas, designación de jueces de la Corte por decreto (2025), vetos sistemáticos y ataques a la prensa: responde afirmativamente a casi todas las afirmaciones movimientistas. IDN: presenta al peronismo como causa central de la decadencia. Fuentes: Boletín Oficial, Infobae."
   },
   {
    "id": "bullrich",
@@ -715,18 +715,18 @@
    "era": "2015–",
    "description": "Referente de seguridad: protocolo antipiquetes y endurecimiento penal.",
    "coords": {
-    "ECO": 60,
+    "ECO": 80,
     "SOC": 30,
-    "INS": -10,
-    "POP": 20,
-    "SEG": 70,
-    "EXT": 80,
+    "INS": 10,
+    "POP": 40,
+    "SEG": 85,
+    "EXT": 90,
     "FED": 0,
     "IDN": 80
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Protocolo antipiquetes"
+   "basis": "Protocolo antipiquetes · Revisión 2026: ECO: programa de 2023 (privatizaciones, reforma laboral, bimonetarismo) y jefatura del bloque de LLA en el Senado desde 2025. INS/POP: respalda DNU, facultades delegadas y vetos, con retórica de confrontación total con el kirchnerismo. SEG: protocolo antipiquetes e impulso del régimen penal juvenil con imputabilidad a 14 años (2026). Fuentes: Senado, Infobae."
   },
   {
    "id": "massa",
@@ -735,18 +735,18 @@
    "era": "2013–",
    "description": "Líder del Frente Renovador y exministro de Economía: peronismo de centro.",
    "coords": {
-    "ECO": -20,
-    "SOC": -10,
-    "INS": 20,
-    "POP": 20,
-    "SEG": -5,
-    "EXT": 0,
-    "FED": 10,
-    "IDN": -40
+    "ECO": -45,
+    "SOC": -35,
+    "INS": 10,
+    "POP": -20,
+    "SEG": 30,
+    "EXT": -20,
+    "FED": 15,
+    "IDN": -60
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Peronismo de centro"
+   "basis": "Peronismo de centro · Revisión 2026: ECO: como ministro sostuvo cepo, SIRA, Precios Justos y financiamiento monetario, y su espacio rechazó la Ley Bases y la reforma laboral de 2026. SEG: propone bajar la imputabilidad a 14 años desde 2015 y el massismo la votó en 2026 (cámaras, expulsión de extranjeros), aunque defiende las políticas de memoria. SOC: defendió la IVE, la ESI y las áreas de género en 2023; EXT: celebró el ingreso a los BRICS; POP: perfil de acuerdos ('unidad nacional'). Alineado con el Frente Renovador. Fuentes: Infobae (feb. 2026), Perfil, La Nueva (2015)."
   },
   {
    "id": "kicillof",
@@ -755,18 +755,18 @@
    "era": "2012–",
    "description": "Gobernador bonaerense y exministro de Economía: heterodoxia y estatización de YPF.",
    "coords": {
-    "ECO": -80,
-    "SOC": -60,
-    "INS": 40,
-    "POP": 55,
+    "ECO": -85,
+    "SOC": -65,
+    "INS": 50,
+    "POP": 60,
     "SEG": -65,
-    "EXT": -60,
-    "FED": -40,
-    "IDN": -75
+    "EXT": -70,
+    "FED": -15,
+    "IDN": -85
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Estatización de YPF, heterodoxia"
+   "basis": "Estatización de YPF, heterodoxia · Revisión 2026: FED: como gobernador reclama fondos y coparticipación, pero defiende la coordinación nacional, el piso docente y los subsidios al AMBA, y rechaza la tesis de que el interior financia al conurbano: posición mixta, no federalista. Fuentes: Gobierno bonaerense, La Nación."
   },
   {
    "id": "larreta",
@@ -775,18 +775,18 @@
    "era": "2015–",
    "description": "Exjefe de Gobierno porteño: centroderecha de gestión y consensos.",
    "coords": {
-    "ECO": 25,
+    "ECO": 40,
     "SOC": -20,
     "INS": -60,
     "POP": -70,
-    "SEG": 25,
-    "EXT": 40,
-    "FED": 20,
+    "SEG": 30,
+    "EXT": 50,
+    "FED": 10,
     "IDN": 60
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "GOP 2022: el más asociado al \"centro\""
+   "basis": "GOP 2022: el más asociado al \"centro\" · Revisión 2026: ECO: su plataforma de 2023 incluía reforma laboral, orden fiscal y apertura; su gestión porteña fue de centroderecha, más pro-mercado que lo cargado. Fuentes: La Nación, Chequeado."
   },
   {
    "id": "bregman",
@@ -795,18 +795,18 @@
    "era": "2011–",
    "description": "Referente del Frente de Izquierda: socialismo, derechos humanos y feminismo.",
    "coords": {
-    "ECO": -90,
+    "ECO": -95,
     "SOC": -90,
-    "INS": 0,
-    "POP": 40,
+    "INS": -20,
+    "POP": 50,
     "SEG": -95,
-    "EXT": -80,
+    "EXT": -65,
     "FED": 0,
-    "IDN": 30
+    "IDN": 40
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Igual a FIT-U"
+   "basis": "Igual a FIT-U · Revisión 2026: INS: el FIT-U defiende el control del Congreso, la alternancia y límites a los DNU, además de jueces electos; no es movimientista. EXT: rechaza el alineamiento con EE.UU., pero también los BRICS y la asociación con China. Fuentes: plataforma FIT-U, HCDN."
   },
   {
    "id": "villarruel",
@@ -815,18 +815,18 @@
    "era": "2023–",
    "description": "Vicepresidenta: nacionalismo conservador y reivindicación de las víctimas de las organizaciones armadas.",
    "coords": {
-    "ECO": 15,
+    "ECO": 0,
     "SOC": 90,
-    "INS": 20,
+    "INS": 10,
     "POP": 30,
     "SEG": 100,
     "EXT": -20,
     "FED": 0,
-    "IDN": 20
+    "IDN": 0
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Centro de Estudios Legales sobre el Terrorismo"
+   "basis": "Centro de Estudios Legales sobre el Terrorismo · Revisión 2026: ECO: en 2026 critica el plan de Milei y reclama producción, salarios y protección de la industria, junto con la eliminación de retenciones: posición productivista mixta. IDN: tantea una candidatura para 2027 con dirigentes peronistas y radicales. Fuentes: Ámbito, La Política Online (2026)."
   },
   {
    "id": "schiaretti",
@@ -835,18 +835,18 @@
    "era": "2007–",
    "description": "Exgobernador de Córdoba: peronismo no kirchnerista, productivista y federal.",
    "coords": {
-    "ECO": 10,
+    "ECO": 15,
     "SOC": 10,
     "INS": -30,
-    "POP": -10,
-    "SEG": 10,
-    "EXT": 10,
+    "POP": -30,
+    "SEG": 15,
+    "EXT": 20,
     "FED": -80,
     "IDN": -30
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Peronismo cordobés"
+   "basis": "Peronismo cordobés · Revisión 2026: POP: perfil de gestión, acuerdos transversales (Hacemos, Provincias Unidas) y rechazo a la grieta; más pluralista de lo cargado. Fuente: La Voz del Interior."
   },
   {
    "id": "grabois",
@@ -855,8 +855,8 @@
    "era": "2015–",
    "description": "Dirigente de la economía popular: peronismo de izquierda de raíz católica.",
    "coords": {
-    "ECO": -75,
-    "SOC": -20,
+    "ECO": -80,
+    "SOC": -15,
     "INS": 40,
     "POP": 70,
     "SEG": -85,
@@ -864,7 +864,7 @@
     "FED": 0,
     "IDN": -80
    },
-   "confidence": "baja",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "UTEP, Frente Patria Grande"
   },
@@ -896,18 +896,18 @@
    "era": "1794–1820",
    "description": "Secretario del Consulado de Buenos Aires, vocal de la Primera Junta y jefe del Ejército del Norte. Creó la bandera y propuso en el Congreso de Tucumán (1816) una monarquía constitucional encabezada por un descendiente de los incas.",
    "coords": {
-    "ECO": 5,
+    "ECO": -30,
     "SOC": 20,
-    "INS": -20,
-    "POP": -20,
+    "INS": -30,
+    "POP": -40,
     "SEG": 30,
-    "EXT": -20,
-    "FED": 30,
+    "EXT": -10,
+    "FED": 50,
     "IDN": null
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Memorias del Consulado: ideas fisiocráticas y librecambistas combinadas con fomento de manufacturas locales, escuelas de náutica, dibujo y educación femenina (ECO mixto). Católico practicante (SOC). Propuesta de monarquía incaica constitucional (INS/POP). Éxodo jujeño y disciplina militar (SEG). Gestiones diplomáticas en Europa para la independencia, sin alineamiento (EXT). Actuó bajo gobiernos porteños centrales (FED). Fuentes: Wikipedia es 'Manuel Belgrano'; Casa Rosada; Instituto Nacional Belgraniano.",
+   "basis": "Memorias del Consulado: ideas fisiocráticas y librecambistas combinadas con fomento de manufacturas locales, escuelas de náutica, dibujo y educación femenina (ECO mixto). Católico practicante (SOC). Propuesta de monarquía incaica constitucional (INS/POP). Éxodo jujeño y disciplina militar (SEG). Gestiones diplomáticas en Europa para la independencia, sin alineamiento (EXT). Actuó bajo gobiernos porteños centrales (FED). Fuentes: Wikipedia es 'Manuel Belgrano'; Casa Rosada; Instituto Nacional Belgraniano. · Revisión 2026: ECO: en las Memorias del Consulado pidió proteger manufacturas locales frente a importaciones y propuso repartir tierras incultas; no era neutral. FED: jefe militar de los gobiernos centrales porteños y enfrentado a los federales artiguistas en 1819. POP: ilustrado y técnico. Fuente: Wikipedia es 'Manuel Belgrano'; Instituto Nacional Belgraniano.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -926,7 +926,7 @@
     "FED": 90,
     "IDN": null
    },
-   "confidence": "alta",
+   "confidence": "media",
    "method": "seed-editorial",
    "basis": "Reforma eclesiástica de 1822 (supresión de conventos, fin del fuero) (SOC). Empréstito Baring (1824) y Banco de Descuentos; Banco Nacional de 1826 luego con emisión inconvertible por la guerra con Brasil (ECO mixto). Enfiteusis mantuvo la tierra en manos estatales pero con fines de colonización y renta (ECO no extremo). Ley de capitalización y Constitución unitaria de 1826, rechazada por las provincias (FED). Gobierno de élite ilustrada (POP). Vínculos con capital británico (EXT). Fuentes: Wikipedia es 'Bernardino Rivadavia'; Casa Rosada, bustos presidenciales; Ternavasio, 'Historia de la Argentina 1806–1852'.",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -1001,7 +1001,7 @@
    "era": "1894–1928",
    "description": "Médico, fundador del Partido Socialista (1896) y de la cooperativa El Hogar Obrero. Fue diputado y senador nacional y traductor de El Capital al castellano.",
    "coords": {
-    "ECO": 5,
+    "ECO": -20,
     "SOC": -70,
     "INS": -80,
     "POP": -50,
@@ -1010,9 +1010,9 @@
     "FED": null,
     "IDN": null
    },
-   "confidence": "alta",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Socialismo reformista y parlamentario: legislación laboral, jornada de 8 horas, cooperativismo en lugar de estatización masiva (ECO). Librecambismo: se opuso a aranceles que encarecían el consumo obrero (ECO). Defensa de la moneda sana y la conversión frente a la inflación (ECO). Laicismo y proyectos de divorcio (SOC). Crítica a la 'política criolla' y al personalismo (INS, POP). Fuentes: Wikipedia es 'Juan B. Justo'; Aricó, 'La hipótesis de Justo' (1999).",
+   "basis": "Socialismo reformista y parlamentario: legislación laboral, jornada de 8 horas, cooperativismo en lugar de estatización masiva (ECO). Librecambismo: se opuso a aranceles que encarecían el consumo obrero (ECO). Defensa de la moneda sana y la conversión frente a la inflación (ECO). Laicismo y proyectos de divorcio (SOC). Crítica a la 'política criolla' y al personalismo (INS, POP). Fuentes: Wikipedia es 'Juan B. Justo'; Aricó, 'La hipótesis de Justo' (1999). · Revisión 2026: ECO baja: aunque librecambista y defensor de la moneda sana, su programa central era sindical y de legislación laboral (jornada de 8 horas), con cooperativismo e impuestos progresivos; las afirmaciones de núcleo sobre sindicatos y fondo de cese lo ubican del lado del Estado. Fuente: Wikipedia es 'Juan B. Justo'; Diccionario CeDInCI.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1022,18 +1022,18 @@
    "era": "1908–1939",
    "description": "Fundador de la Liga del Sur y del Partido Demócrata Progresista, diputado y senador por Santa Fe. En 1935 denunció en el Senado el comercio de carnes posterior al pacto Roca-Runciman; durante ese debate fue asesinado el senador Enzo Bordabehere.",
    "coords": {
-    "ECO": -15,
+    "ECO": -20,
     "SOC": -70,
     "INS": -80,
     "POP": -30,
-    "SEG": null,
+    "SEG": -30,
     "EXT": -50,
     "FED": -60,
     "IDN": null
    },
-   "confidence": "alta",
+   "confidence": "baja",
    "method": "seed-editorial",
-   "basis": "Investigación del comercio de carnes contra los frigoríficos británicos y norteamericanos (EXT, ECO regulatorio). Defensa de productores exportadores, no de protección arancelaria (ECO 0). Polémica pública con monseñor Franceschi sobre religión (1937) (SOC). Lucha contra el fraude de la Concordancia (INS). Liga del Sur: autonomía del sur santafesino y federalismo (FED). Fuentes: Wikipedia es 'Lisandro de la Torre'; 'Debate de las carnes' (Wikipedia es); Casa Rosada.",
+   "basis": "Investigación del comercio de carnes contra los frigoríficos británicos y norteamericanos (EXT, ECO regulatorio). Defensa de productores exportadores, no de protección arancelaria (ECO 0). Polémica pública con monseñor Franceschi sobre religión (1937) (SOC). Lucha contra el fraude de la Concordancia (INS). Liga del Sur: autonomía del sur santafesino y federalismo (FED). Fuentes: Wikipedia es 'Lisandro de la Torre'; 'Debate de las carnes' (Wikipedia es); Casa Rosada. · Revisión 2026: SEG se completa: defensa de las libertades públicas frente al fraude y la represión de la Concordancia. Fuente: Wikipedia es 'Lisandro de la Torre'.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1052,7 +1052,7 @@
     "FED": -10,
     "IDN": null
    },
-   "confidence": "alta",
+   "confidence": "media",
    "method": "seed-editorial",
    "basis": "Creación de YPF con Mosconi (componente estatal) junto a una gestión económica liberal y ordenada (ECO 0, ECO). Revisión arancelaria de 1923 con aumentos parciales (ECO mixto). Ley de jubilaciones 11.289 (ECO leve). Conflicto con el Vaticano por la designación del arzobispo De Andrea (SOC). Menos intervenciones federales que Yrigoyen y estilo aristocrático y parlamentario (INS, POP, FED). Fuentes: Wikipedia es 'Marcelo T. de Alvear'; Casa Rosada; Persello, 'El partido radical: gobierno y oposición 1916–1943'.",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -1066,16 +1066,16 @@
    "coords": {
     "ECO": 5,
     "SOC": 40,
-    "INS": 50,
+    "INS": 70,
     "POP": -50,
     "SEG": 60,
     "EXT": 60,
-    "FED": 40,
+    "FED": 60,
     "IDN": null
    },
    "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Intervencionismo conservador: control de cambios (1933), juntas reguladoras de granos y carnes, Banco Central (1935) (ECO mixto). Pacto Roca-Runciman con preferencias al Reino Unido (ECO, EXT). 'Fraude patriótico' y abstención radical (INS). Estado de sitio y represión de levantamientos radicales (SEG). Congreso Eucarístico Internacional de 1934 (SOC). Ley 11.729 de indemnización por despido junto a represión sindical (ECO mixto). Fuentes: Wikipedia es 'Agustín P. Justo'; Casa Rosada; Béjar, 'El régimen fraudulento'.",
+   "basis": "Intervencionismo conservador: control de cambios (1933), juntas reguladoras de granos y carnes, Banco Central (1935) (ECO mixto). Pacto Roca-Runciman con preferencias al Reino Unido (ECO, EXT). 'Fraude patriótico' y abstención radical (INS). Estado de sitio y represión de levantamientos radicales (SEG). Congreso Eucarístico Internacional de 1934 (SOC). Ley 11.729 de indemnización por despido junto a represión sindical (ECO mixto). Fuentes: Wikipedia es 'Agustín P. Justo'; Casa Rosada; Béjar, 'El régimen fraudulento'. · Revisión 2026: INS sube: gobierno sostenido en el 'fraude patriótico' con la UCR proscripta y estado de sitio. FED: ley de unificación de impuestos internos y régimen de coparticipación (1934-35), que centralizó la recaudación. Fuente: Wikipedia es 'Agustín Pedro Justo'.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1085,7 +1085,7 @@
    "era": "1935–1974",
    "description": "Escritor y político, cofundador de FORJA y presidente del Banco de la Provincia de Buenos Aires (1946–1950). Autor de 'Manual de zonceras argentinas' y 'El medio pelo en la sociedad argentina'.",
    "coords": {
-    "ECO": -60,
+    "ECO": -70,
     "SOC": 0,
     "INS": 20,
     "POP": 80,
@@ -1106,18 +1106,18 @@
    "era": "1940–1981",
    "description": "Dirigente de la UCR, candidato presidencial en 1951, 1958 y 1973; estuvo preso durante el primer peronismo. Protagonizó el acercamiento con Perón en 1972 y encabezó la Multipartidaria (1981).",
    "coords": {
-    "ECO": -10,
+    "ECO": -30,
     "SOC": 10,
     "INS": -80,
     "POP": -30,
-    "SEG": 20,
-    "EXT": -10,
+    "SEG": 30,
+    "EXT": -20,
     "FED": -10,
     "IDN": 40
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Opositor encarcelado en 1950 (IDN antiperonista en los cincuenta, luego moderado). 'La Hora del Pueblo' (1970) y el abrazo con Perón (1972); despedida de Perón en 1974 (IDN atenuado, INS republicano). Discurso de 1975 sobre la 'guerrilla fabril' (SEG, ECO). Declaración de 1980 'no hay desaparecidos, están muertos' y postura moderada de la Multipartidaria frente al régimen (SEG levemente revisionista, confianza baja en este eje). Fuentes: Wikipedia es 'Ricardo Balbín'; Casa Rosada; Página/12 y La Nación (archivo).",
+   "basis": "Opositor encarcelado en 1950 (IDN antiperonista en los cincuenta, luego moderado). 'La Hora del Pueblo' (1970) y el abrazo con Perón (1972); despedida de Perón en 1974 (IDN atenuado, INS republicano). Discurso de 1975 sobre la 'guerrilla fabril' (SEG, ECO). Declaración de 1980 'no hay desaparecidos, están muertos' y postura moderada de la Multipartidaria frente al régimen (SEG levemente revisionista, confianza baja en este eje). Fuentes: Wikipedia es 'Ricardo Balbín'; Casa Rosada; Página/12 y La Nación (archivo). · Revisión 2026: ECO más estatista: la UCR del Pueblo que conducía llevó a Illia con la anulación de los contratos petroleros y control de precios. Fuente: Wikipedia es 'Ricardo Balbín'.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1127,18 +1127,18 @@
    "era": "1958–1969",
    "description": "Secretario general de la Unión Obrera Metalúrgica y figura central de las 62 Organizaciones. Condujo el Plan de Lucha de la CGT (1964) y encabezó la corriente de 'peronismo sin Perón'; fue asesinado en 1969.",
    "coords": {
-    "ECO": -75,
-    "SOC": null,
-    "INS": 60,
+    "ECO": -80,
+    "SOC": 30,
+    "INS": 70,
     "POP": 60,
-    "SEG": null,
-    "EXT": null,
+    "SEG": 30,
+    "EXT": -30,
     "FED": null,
     "IDN": -80
    },
-   "confidence": "media",
+   "confidence": "baja",
    "method": "seed-editorial",
-   "basis": "Plan de Lucha de 1964 con ocupación de miles de fábricas (ECO). Estrategia 'golpear para negociar' y asistencia a la asunción de Onganía en 1966 (INS: poder corporativo sindical por encima de reglas institucionales). Desafío al liderazgo de Perón en las elecciones de Mendoza de 1966 (IDN no extremo). Defensa de la industria metalúrgica nacional (ECO). Fuentes: Wikipedia es 'Augusto Timoteo Vandor'; James, 'Resistencia e integración'.",
+   "basis": "Plan de Lucha de 1964 con ocupación de miles de fábricas (ECO). Estrategia 'golpear para negociar' y asistencia a la asunción de Onganía en 1966 (INS: poder corporativo sindical por encima de reglas institucionales). Desafío al liderazgo de Perón en las elecciones de Mendoza de 1966 (IDN no extremo). Defensa de la industria metalúrgica nacional (ECO). Fuentes: Wikipedia es 'Augusto Timoteo Vandor'; James, 'Resistencia e integración'. · Revisión 2026: Se completan ejes vacíos (tenía cuatro null): SOC por la cultura católica del sindicalismo peronista ortodoxo; SEG por el enfrentamiento violento con la izquierda sindical y el apoyo al golpe de Onganía; EXT por el nacionalismo peronista. INS sube por el apoyo a la Revolución Argentina. Fuente: Wikipedia es 'Augusto Timoteo Vandor'; James, 'Resistencia e integración'.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1148,7 +1148,7 @@
    "era": "1973",
    "description": "Presidente de la Nación entre mayo y julio de 1973, electo por el FREJULI con Perón proscripto. Su gobierno sancionó la amnistía a presos políticos y firmó el Pacto Social; renunció para permitir nuevas elecciones con Perón como candidato.",
    "coords": {
-    "ECO": -60,
+    "ECO": -70,
     "SOC": 0,
     "INS": 40,
     "POP": 60,
@@ -1178,7 +1178,7 @@
     "FED": 50,
     "IDN": -90
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Rodrigazo: devaluación y ajuste ortodoxo seguidos de homologación forzada de paritarias por la CGT (ECO mixto). Decreto 659/1974 restringiendo la anticoncepción e intervención de universidades (Ivanissevich, Ottalagano) (SOC). Estado de sitio (nov. 1974) (SEG). Verticalismo (INS). Intervenciones federales a provincias (FED). Fuentes: Wikipedia es 'Isabel Martínez de Perón' y 'Rodrigazo'; Casa Rosada; Franco, 'Un enemigo para la nación' (2012).",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -1253,7 +1253,7 @@
    "era": "1982–2001",
    "description": "Economista. Presidente del Banco Central (1982), canciller (1989–1991) y ministro de Economía (1991–1996 y 2001); diseñó la Ley de Convertibilidad y aplicó el 'corralito' en 2001.",
    "coords": {
-    "ECO": 80,
+    "ECO": 85,
     "SOC": 20,
     "INS": 20,
     "POP": -70,
@@ -1274,18 +1274,18 @@
    "era": "1906–1986",
    "description": "Médica, dirigente socialista y feminista. Fundó la Unión Feminista Nacional, impulsó el sufragio femenino y fue cofundadora de la Asamblea Permanente por los Derechos Humanos (1975).",
    "coords": {
-    "ECO": -30,
+    "ECO": -40,
     "SOC": -90,
     "INS": -80,
     "POP": -40,
     "SEG": -70,
-    "EXT": null,
+    "EXT": -40,
     "FED": null,
     "IDN": 60
    },
-   "confidence": "media",
+   "confidence": "baja",
    "method": "seed-editorial",
-   "basis": "Campañas por el sufragio femenino, el divorcio y la educación sexual (SOC). Socialismo reformista del PS, tradición librecambista (ECO, confianza baja). Oposición al peronismo desde la Unión Democrática (1945) (IDN; atenuado por su giro con el PSA). Cofundadora de la APDH y acompañamiento a las Madres de Plaza de Mayo durante la dictadura (SEG). Fuentes: Wikipedia es 'Alicia Moreau de Justo'; APDH; Barrancos, 'Mujeres en la sociedad argentina'.",
+   "basis": "Campañas por el sufragio femenino, el divorcio y la educación sexual (SOC). Socialismo reformista del PS, tradición librecambista (ECO, confianza baja). Oposición al peronismo desde la Unión Democrática (1945) (IDN; atenuado por su giro con el PSA). Cofundadora de la APDH y acompañamiento a las Madres de Plaza de Mayo durante la dictadura (SEG). Fuentes: Wikipedia es 'Alicia Moreau de Justo'; APDH; Barrancos, 'Mujeres en la sociedad argentina'. · Revisión 2026: EXT se completa: condujo el Partido Socialista Argentino, que tras 1958 giró a la izquierda y respaldó la Revolución Cubana. Fuente: Wikipedia es 'Alicia Moreau de Justo'.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1295,10 +1295,10 @@
    "era": "1995–",
    "description": "Fundadora y referente de la Coalición Cívica-ARI; exdiputada nacional y cofundadora de Cambiemos/Juntos por el Cambio.",
    "coords": {
-    "ECO": 20,
+    "ECO": 15,
     "SOC": 40,
     "INS": -100,
-    "POP": 0,
+    "POP": 20,
     "SEG": -10,
     "EXT": 40,
     "FED": null,
@@ -1306,7 +1306,7 @@
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Eje central en anticorrupción y control institucional (denuncias ante la Justicia, juicio político). Se declaró en contra de la IVE en 2018. Integró Cambiemos 2015–2023; posiciones económicas de centro. Críticas a Milei y a sectores del PRO 2023–2025. Fuentes: La Nación, Chequeado, votaciones HCDN."
+   "basis": "Eje central en anticorrupción y control institucional (denuncias ante la Justicia, juicio político). Se declaró en contra de la IVE en 2018. Integró Cambiemos 2015–2023; posiciones económicas de centro. Críticas a Milei y a sectores del PRO 2023–2025. Fuentes: La Nación, Chequeado, votaciones HCDN. · Revisión 2026: POP: su discurso moralista contra 'mafias' y grupos de poder, el liderazgo personal y las rupturas de alianzas la corren hacia el polo populista en estilo, aunque sea institucionalista. Su bloque votó contra la reforma laboral de 2026 (ECO levemente menor). Fuentes: HCDN, La Nación."
   },
   {
    "id": "lousteau",
@@ -1315,7 +1315,7 @@
    "era": "2008–",
    "description": "Economista, exministro de Economía (2007–2008), senador nacional por CABA y presidente del Comité Nacional de la UCR (2023–2025).",
    "coords": {
-    "ECO": 0,
+    "ECO": -10,
     "SOC": -60,
     "INS": -70,
     "POP": -60,
@@ -1337,16 +1337,16 @@
    "coords": {
     "ECO": 100,
     "SOC": 20,
-    "INS": 10,
+    "INS": 30,
     "POP": 50,
-    "SEG": 65,
+    "SEG": 75,
     "EXT": 90,
     "FED": null,
     "IDN": 90
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Programa de apertura comercial total, baja de impuestos, déficit cero y reforma laboral. Consigna 'cárcel o bala' en seguridad. Retórica fuertemente antiperonista. Acompañó Ley Bases y vetos del Ejecutivo. SOC y SEG con evidencia escasa. Fuentes: Chequeado, Infobae, Perfil."
+   "basis": "Programa de apertura comercial total, baja de impuestos, déficit cero y reforma laboral. Consigna 'cárcel o bala' en seguridad. Retórica fuertemente antiperonista. Acompañó Ley Bases y vetos del Ejecutivo. SOC y SEG con evidencia escasa. Fuentes: Chequeado, Infobae, Perfil. · Revisión 2026: INS: acompañó el DNU 70/2023, las facultades delegadas y los vetos del Ejecutivo. SOC: se declaró 'provida desde una posición liberal' y dijo que votaría contra la legalización del aborto, aunque apoya despenalizar la marihuana. Fuentes: HCDN, Perfil."
   },
   {
    "id": "pullaro",
@@ -1355,18 +1355,18 @@
    "era": "2011–",
    "description": "Gobernador de Santa Fe (UCR, Unidos para Cambiar Santa Fe) desde 2023 y uno de los fundadores de Provincias Unidas (2025).",
    "coords": {
-    "ECO": 50,
+    "ECO": 40,
     "SOC": 10,
-    "INS": -30,
+    "INS": -20,
     "POP": -20,
-    "SEG": 25,
+    "SEG": 45,
     "EXT": 20,
     "FED": -80,
     "IDN": 60
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Leyes provinciales de seguridad y control carcelario (2024), reforma constitucional santafesina (2025) que habilita su reelección; reforma previsional provincial y conflicto con gremios docentes. Reclamo por retenciones y coparticipación ante Nación. Fuentes: El Litoral, La Nación, Infobae. · SEG y EXT imputados desde la tradición radical y la postura de Provincias Unidas (confianza baja en esos ejes)."
+   "basis": "Leyes provinciales de seguridad y control carcelario (2024), reforma constitucional santafesina (2025) que habilita su reelección; reforma previsional provincial y conflicto con gremios docentes. Reclamo por retenciones y coparticipación ante Nación. Fuentes: El Litoral, La Nación, Infobae. · SEG y EXT imputados desde la tradición radical y la postura de Provincias Unidas (confianza baja en esos ejes). · Revisión 2026: SEG: leyes provinciales de microtráfico y de régimen carcelario (2024), exhibición de presos y política de mano dura contra el narco en Rosario; solo lo modera la tradición radical en memoria. Fuentes: El Litoral, La Nación."
   },
   {
    "id": "llaryora",
@@ -1379,32 +1379,32 @@
     "SOC": 10,
     "INS": -20,
     "POP": 0,
-    "SEG": 50,
-    "EXT": null,
+    "SEG": 20,
+    "EXT": 10,
     "FED": -90,
     "IDN": -40
    },
-   "confidence": "media",
+   "confidence": "baja",
    "method": "seed-editorial",
-   "basis": "Continuidad del 'cordobesismo' de Schiaretti: reclamo contra retenciones agropecuarias y por fondos federales, distancia tanto del kirchnerismo como de LLA. Legisladores de su espacio apoyaron parcialmente Ley Bases. Fuentes: La Voz, La Nación, Infobae."
+   "basis": "Continuidad del 'cordobesismo' de Schiaretti: reclamo contra retenciones agropecuarias y por fondos federales, distancia tanto del kirchnerismo como de LLA. Legisladores de su espacio apoyaron parcialmente Ley Bases. Fuentes: La Voz, La Nación, Infobae. · Revisión 2026: SEG: el valor anterior solo reflejaba seguridad; el peronismo cordobés sostiene los juicios de lesa humanidad y los sitios de memoria (La Perla), lo que modera el eje fusionado. EXT: Provincias Unidas apoya el acuerdo Mercosur–UE y la apertura exportadora (confianza baja). Fuentes: La Voz, Infobae."
   },
   {
    "id": "maximo_kirchner",
    "catalog": "ar_actuales",
    "name": "Máximo Kirchner",
    "era": "2015–",
-   "description": "Diputado nacional, referente de La Cámpora y presidente del PJ bonaerense (2023–2025).",
+   "description": "Diputado nacional, referente de La Cámpora y presidente del PJ bonaerense (2021–2026).",
    "coords": {
-    "ECO": -80,
+    "ECO": -85,
     "SOC": -60,
     "INS": 70,
-    "POP": 70,
+    "POP": 75,
     "SEG": -75,
-    "EXT": -70,
+    "EXT": -75,
     "FED": 40,
     "IDN": -90
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Renunció a la presidencia del bloque oficialista en 2022 en rechazo al acuerdo con el FMI y votó en contra. Votó a favor de la IVE (2018, 2020). Votó contra Ley Bases y DNU 70/2023. Defensa de CFK frente a causas judiciales. Fuentes: HCDN, Página/12, La Nación."
   },
@@ -1415,18 +1415,18 @@
    "era": "2019–2023",
    "description": "Presidente de la Nación 2019–2023 por el Frente de Todos; exjefe de Gabinete (2003–2008).",
    "coords": {
-    "ECO": -45,
+    "ECO": -60,
     "SOC": -80,
-    "INS": 20,
-    "POP": 0,
+    "INS": 40,
+    "POP": 10,
     "SEG": -65,
-    "EXT": -40,
+    "EXT": -55,
     "FED": 20,
     "IDN": -70
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Envió y promulgó la ley de IVE (2020). Mantuvo cepo y retenciones, acordó con el FMI (2022). DNU durante la pandemia, proyecto de reforma judicial y pedido de juicio político a la Corte (2023). Solicitud de ingreso a BRICS. Fuentes: Boletín Oficial, Chequeado."
+   "basis": "Envió y promulgó la ley de IVE (2020). Mantuvo cepo y retenciones, acordó con el FMI (2022). DNU durante la pandemia, proyecto de reforma judicial y pedido de juicio político a la Corte (2023). Solicitud de ingreso a BRICS. Fuentes: Boletín Oficial, Chequeado. · Revisión 2026: ECO: cepo, suba de retenciones, controles de precios, prohibición de despidos, doble indemnización y aporte de grandes fortunas. INS: impulsó la reforma judicial, la ampliación de la Corte y el juicio político a sus miembros. EXT: pedido de ingreso a los BRICS, adhesión a la Franja y la Ruta y acercamiento a Rusia en 2022. Fuentes: Boletín Oficial, Chequeado."
   },
   {
    "id": "pichetto",
@@ -1435,18 +1435,18 @@
    "era": "1993–",
    "description": "Diputado nacional (Encuentro Federal), exjefe del bloque peronista en el Senado y excandidato a vicepresidente de Macri (2019).",
    "coords": {
-    "ECO": 30,
-    "SOC": 20,
+    "ECO": 10,
+    "SOC": 0,
     "INS": -40,
     "POP": -20,
-    "SEG": 45,
+    "SEG": 50,
     "EXT": 60,
     "FED": -20,
-    "IDN": 0
+    "IDN": -20
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Origen peronista; alianza con Juntos por el Cambio desde 2019. Votó a favor de la IVE en 2018. Posiciones restrictivas en migración y seguridad. Apoyo a Ley Bases con cambios y rechazo a vetos universitarios. Alineamiento pro-occidental. Fuentes: Senado, HCDN, La Nación."
+   "basis": "Origen peronista; alianza con Juntos por el Cambio desde 2019. Votó a favor de la IVE en 2018. Posiciones restrictivas en migración y seguridad. Apoyo a Ley Bases con cambios y rechazo a vetos universitarios. Alineamiento pro-occidental. Fuentes: Senado, HCDN, La Nación. · Revisión 2026: ECO: desarrollista e industrialista; su bloque votó contra la reforma laboral de 2026. SOC: votó a favor del matrimonio igualitario (2010) y de la IVE (2018). IDN: se define como 'peronismo republicano'. Fuentes: Senado, Ámbito (feb. 2026)."
   },
   {
    "id": "jorge_macri",
@@ -1455,12 +1455,12 @@
    "era": "2011–",
    "description": "Jefe de Gobierno de la Ciudad de Buenos Aires (PRO) desde 2023; exintendente de Vicente López.",
    "coords": {
-    "ECO": 45,
+    "ECO": 50,
     "SOC": 20,
     "INS": -30,
     "POP": -30,
-    "SEG": 70,
-    "EXT": 50,
+    "SEG": 60,
+    "EXT": 60,
     "FED": null,
     "IDN": 80
    },
@@ -1473,20 +1473,20 @@
    "catalog": "ar_actuales",
    "name": "Luis Caputo",
    "era": "2015–",
-   "description": "Ministro de Economía desde diciembre de 2023; exministro de Finanzas y expresidente del BCRA (2017–2019).",
+   "description": "Ministro de Economía desde diciembre de 2023; exministro de Finanzas (2017–2018) y expresidente del BCRA (2018).",
    "coords": {
-    "ECO": 80,
+    "ECO": 90,
     "SOC": null,
-    "INS": 30,
-    "POP": 30,
+    "INS": 40,
+    "POP": 40,
     "SEG": null,
     "EXT": 90,
     "FED": 40,
-    "IDN": null
+    "IDN": 70
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Ejecutor del programa de déficit cero, acuerdo con el FMI (2025), salida parcial del cepo y reducción de retenciones. Reducción de transferencias discrecionales a provincias. Estilo confrontativo en redes. Fuentes: Ministerio de Economía, Infobae, Ámbito."
+   "basis": "Ejecutor del programa de déficit cero, acuerdo con el FMI (2025), salida parcial del cepo y reducción de retenciones. Reducción de transferencias discrecionales a provincias. Estilo confrontativo en redes. Fuentes: Ministerio de Economía, Infobae, Ámbito. · Revisión 2026: IDN: define al kirchnerismo como 'el infierno' y al modelo industrialista peronista como prebendario (2026); se completa para no dejar más de dos nulos. Fuentes: El Intransigente (ago. 2026), MendoVoz (mar. 2026)."
   },
   {
    "id": "sturzenegger",
@@ -1498,15 +1498,15 @@
     "ECO": 100,
     "SOC": null,
     "INS": 40,
-    "POP": 20,
+    "POP": 10,
     "SEG": null,
     "EXT": 90,
-    "FED": null,
-    "IDN": null
+    "FED": 10,
+    "IDN": 60
    },
-   "confidence": "media",
+   "confidence": "baja",
    "method": "seed-editorial",
-   "basis": "Redactor del DNU 70/2023 y de gran parte de la Ley Bases; impulsa desregulación y uso de facultades delegadas. Metas de inflación y apertura. Sin posiciones públicas relevantes en valores, seguridad o memoria. Fuentes: Boletín Oficial, La Nación."
+   "basis": "Redactor del DNU 70/2023 y de gran parte de la Ley Bases; impulsa desregulación y uso de facultades delegadas. Metas de inflación y apertura. Sin posiciones públicas relevantes en valores, seguridad o memoria. Fuentes: Boletín Oficial, La Nación. · Revisión 2026: FED: pide que las provincias repliquen el ajuste nacional y bajen Ingresos Brutos, con desregulación impulsada desde la Nación (confianza baja). IDN: funcionario de Macri y de Milei, crítico del modelo peronista. Se completan para no dejar más de dos nulos. Fuente: El Cronista, La Nación."
   },
   {
    "id": "manes",
@@ -1515,18 +1515,18 @@
    "era": "2021–",
    "description": "Neurocientífico; diputado nacional (2021–2025) por la UCR y luego por el bloque Democracia para Siempre.",
    "coords": {
-    "ECO": 0,
+    "ECO": -20,
     "SOC": -10,
     "INS": -90,
-    "POP": -60,
+    "POP": -70,
     "SEG": -10,
     "EXT": 20,
     "FED": -40,
     "IDN": 30
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Denunció el DNU 70/2023 como inconstitucional y confrontó con el Ejecutivo por decretos. Votó contra partes de Ley Bases y a favor de financiamiento universitario. Posiciones económicas poco definidas. Fuentes: HCDN, Infobae."
+   "basis": "Denunció el DNU 70/2023 como inconstitucional y confrontó con el Ejecutivo por decretos. Votó contra partes de Ley Bases y a favor de financiamiento universitario. Posiciones económicas poco definidas. Fuentes: HCDN, Infobae. · Revisión 2026: ECO: votó contra partes de la Ley Bases, defendió el financiamiento universitario y científico y critica el ajuste: centro-izquierda, no neutral. Fuente: HCDN."
   },
   {
    "id": "gerardo_morales",
@@ -1535,18 +1535,18 @@
    "era": "1999–",
    "description": "Exgobernador de Jujuy (2015–2023) y expresidente de la UCR nacional.",
    "coords": {
-    "ECO": 20,
-    "SOC": 10,
-    "INS": 0,
-    "POP": -20,
-    "SEG": 25,
-    "EXT": null,
-    "FED": -60,
+    "ECO": 10,
+    "SOC": 20,
+    "INS": 25,
+    "POP": -10,
+    "SEG": 35,
+    "EXT": -20,
+    "FED": -70,
     "IDN": 70
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Reforma constitucional jujeña de 2023 con restricciones a cortes de ruta; detención de Milagro Sala. Negociación de litio. Crítico de LLA y del kirchnerismo. Fuentes: La Nación, Página/12, Chequeado."
+   "basis": "Reforma constitucional jujeña de 2023 con restricciones a cortes de ruta; detención de Milagro Sala. Negociación de litio. Crítico de LLA y del kirchnerismo. Fuentes: La Nación, Página/12, Chequeado. · Revisión 2026: INS: amplió el Superior Tribunal de Jujuy de 5 a 9 miembros (2015) y aprobó en semanas una reforma constitucional (2023). EXT: relación prioritaria con China (litio, parque solar Cauchari, seis misiones oficiales). SEG: la reforma jujeña restringe cortes de ruta. SOC: 'personalmente en contra' del aborto. FED: defensa del dominio provincial del litio. Fuentes: La Nación, Todo Jujuy, Perfil."
   },
   {
    "id": "insfran",
@@ -1555,18 +1555,18 @@
    "era": "1995–",
    "description": "Gobernador de Formosa (PJ) desde 1995.",
    "coords": {
-    "ECO": -40,
+    "ECO": -60,
     "SOC": 20,
     "INS": 90,
     "POP": 50,
-    "SEG": -15,
+    "SEG": 0,
     "EXT": -40,
     "FED": -40,
     "IDN": -90
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Reelección indefinida hasta el fallo de la Corte Suprema (2024) que la declaró inconstitucional; restricciones sanitarias estrictas en 2020–2021. Economía provincial basada en empleo público. Senadores formoseños votaron contra la IVE en 2018. Fuentes: CSJN, La Nación, Página/12."
+   "basis": "Reelección indefinida hasta el fallo de la Corte Suprema (2024) que la declaró inconstitucional; restricciones sanitarias estrictas en 2020–2021. Economía provincial basada en empleo público. Senadores formoseños votaron contra la IVE en 2018. Fuentes: CSJN, La Nación, Página/12. · Revisión 2026: ECO: economía provincial basada en empleo y empresas públicas y oposición frontal al programa de Milei. SEG: controles policiales estrictos (2020–2021) junto a la línea peronista en memoria. Fuentes: La Nación, Página/12."
   },
   {
    "id": "laje",
@@ -1575,16 +1575,16 @@
    "era": "2015–",
    "description": "Escritor y conferencista; preside la Fundación Faro, vinculada a La Libertad Avanza.",
    "coords": {
-    "ECO": 65,
+    "ECO": 75,
     "SOC": 100,
     "INS": 50,
     "POP": 60,
-    "SEG": 80,
+    "SEG": 90,
     "EXT": 90,
     "FED": null,
-    "IDN": 70
+    "IDN": 80
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Autor de 'El libro negro de la nueva izquierda' (2016) y 'La batalla cultural' (2022). Oposición a IVE, ESI, 'ideología de género'. Defiende la 'memoria completa'. Alineamiento con EE.UU. e Israel. Fuentes: publicaciones propias, Infobae, La Nación."
   },
@@ -1595,18 +1595,18 @@
    "era": "2008–",
    "description": "Dirigente del Sindicato de Camioneros; excotitular de la CGT (2022–2024).",
    "coords": {
-    "ECO": -70,
+    "ECO": -85,
     "SOC": null,
     "INS": 30,
-    "POP": 60,
-    "SEG": -60,
+    "POP": 70,
+    "SEG": -50,
     "EXT": -40,
     "FED": null,
     "IDN": -80
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Posición combativa contra el DNU 70/2023 y la reforma laboral; renunció al triunvirato de la CGT en diciembre de 2024 por diferencias sobre la estrategia de confrontación. Fuentes: Infobae, Página/12."
+   "basis": "Posición combativa contra el DNU 70/2023 y la reforma laboral; renunció al triunvirato de la CGT en diciembre de 2024 por diferencias sobre la estrategia de confrontación. Fuentes: Infobae, Página/12. · Revisión 2026: ECO: sindicalismo combativo: rechaza la reforma laboral, el fondo de cese y las privatizaciones, y defiende la cuota solidaria y el rol de la CGT (todas las afirmaciones laborales en el polo Estado). Fuente: Infobae."
   },
   {
    "id": "belliboni",
@@ -1615,18 +1615,18 @@
    "era": "2002–",
    "description": "Dirigente del Polo Obrero y del Partido Obrero (FIT-Unidad).",
    "coords": {
-    "ECO": -90,
+    "ECO": -95,
     "SOC": -80,
-    "INS": 20,
+    "INS": 0,
     "POP": 50,
     "SEG": -100,
-    "EXT": -80,
+    "EXT": -65,
     "FED": null,
     "IDN": 40
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Referente de movilizaciones de organizaciones sociales; oposición al protocolo antipiquetes y a la eliminación de intermediación de planes sociales. Programa trotskista del PO. Fuentes: Polo Obrero, La Nación, Página/12."
+   "basis": "Referente de movilizaciones de organizaciones sociales; oposición al protocolo antipiquetes y a la eliminación de intermediación de planes sociales. Programa trotskista del PO. Fuentes: Polo Obrero, La Nación, Página/12. · Revisión 2026: INS: el trotskismo no apoya el decretismo ni los liderazgos fuertes, aunque desconfía de la justicia; queda neutral. EXT: rechaza EE.UU. y el FMI pero también a China y los BRICS como potencias capitalistas. Fuente: programa del PO."
   },
   {
    "id": "coalicion_civica",
@@ -1655,18 +1655,18 @@
    "era": "2013–",
    "description": "Espacio peronista fundado por Sergio Massa; integró el Frente de Todos y Unión por la Patria.",
    "coords": {
-    "ECO": -10,
-    "SOC": 0,
-    "INS": 0,
-    "POP": 10,
-    "SEG": 10,
-    "EXT": 10,
-    "FED": 0,
-    "IDN": -40
+    "ECO": -45,
+    "SOC": -10,
+    "INS": 10,
+    "POP": -20,
+    "SEG": 35,
+    "EXT": -20,
+    "FED": 10,
+    "IDN": -50
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Surgió como peronismo no kirchnerista con énfasis en seguridad (2013–2015); luego se alió al kirchnerismo (2019). Fuentes: plataformas electorales, Chequeado."
+   "basis": "Surgió como peronismo no kirchnerista con énfasis en seguridad (2013–2015); luego se alió al kirchnerismo (2019). Fuentes: plataformas electorales, Chequeado. · Revisión 2026: Salía neutro en todo. ECO baja: el FR integró el FdT y UxP, con Massa como ministro sostuvo cepo, SIRA, Precios Justos y empresas públicas, y rechazó la Ley Bases y la reforma laboral 2026. SEG sube: propone desde 2015 bajar la imputabilidad a 14 años y en 2026 la votó en particular. EXT baja: Massa celebró el ingreso a los BRICS y usó el swap chino. POP baja por su perfil de acuerdos y 'unidad nacional'. Fuentes: Infobae 06/02/2026, MDZ 28/08/2023, La Nación 05/01/2023 (apoyo al juicio político a la Corte)."
   },
   {
    "id": "provincias_unidas",
@@ -1676,17 +1676,17 @@
    "description": "Frente de gobernadores (Córdoba, Santa Fe, Chubut, Jujuy, Santa Cruz, Corrientes) lanzado en 2025 como alternativa al kirchnerismo y a LLA.",
    "coords": {
     "ECO": 30,
-    "SOC": null,
+    "SOC": 10,
     "INS": -40,
     "POP": -20,
     "SEG": 60,
-    "EXT": null,
+    "EXT": 20,
     "FED": -90,
     "IDN": 10
    },
    "confidence": "baja",
    "method": "seed-editorial",
-   "basis": "Agenda de reclamos federales (retenciones, coparticipación, obra pública), orden fiscal provincial y seguridad. Mezcla de radicales, PRO y peronistas no K. Fuentes: Infobae (06/08/2025), La Nación (07/04/2026, 17/09/2026)."
+   "basis": "Agenda de reclamos federales (retenciones, coparticipación, obra pública), orden fiscal provincial y seguridad. Mezcla de radicales, PRO y peronistas no K. Fuentes: Infobae (06/08/2025), La Nación (07/04/2026, 17/09/2026). · Revisión 2026: Se completan SOC y EXT: coalición de gobernadores socialmente moderados (Pullaro, Llaryora) y a favor del acuerdo Mercosur-UE y de la exportación agroindustrial. Su bloque votó la baja de imputabilidad en 2026, lo que confirma SEG."
   },
   {
    "id": "frepaso",
@@ -1695,18 +1695,18 @@
    "era": "1994–2001",
    "description": "Frente de peronistas disidentes, socialistas y democristianos liderado por Chacho Álvarez y Graciela Fernández Meijide; integró la Alianza con la UCR.",
    "coords": {
-    "ECO": -20,
-    "SOC": -40,
-    "INS": -70,
+    "ECO": -15,
+    "SOC": -50,
+    "INS": -80,
     "POP": -20,
     "SEG": -60,
     "EXT": -10,
     "FED": null,
-    "IDN": 0
+    "IDN": 20
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Agenda anticorrupción e institucional; aceptó la convertibilidad en la Alianza. Renuncia de Álvarez a la vicepresidencia por el caso de sobornos en el Senado (2000). Fuentes: Novaro y Palermo; archivos de prensa."
+   "basis": "Agenda anticorrupción e institucional; aceptó la convertibilidad en la Alianza. Renuncia de Álvarez a la vicepresidencia por el caso de sobornos en el Senado (2000). Fuentes: Novaro y Palermo; archivos de prensa. · Revisión 2026: IDN sube: el Frepaso se alió con la UCR como alternativa al PJ y sus referentes (Álvarez, Fernández Meijide) rompieron con el peronismo."
   },
   {
    "id": "cgt",
@@ -1715,18 +1715,18 @@
    "era": "1930–",
    "description": "Confederación General del Trabajo, central sindical históricamente vinculada al peronismo.",
    "coords": {
-    "ECO": -60,
+    "ECO": -80,
     "SOC": 20,
-    "INS": 20,
-    "POP": 30,
-    "SEG": -40,
-    "EXT": -20,
-    "FED": null,
+    "INS": 30,
+    "POP": 40,
+    "SEG": -50,
+    "EXT": -40,
+    "FED": 20,
     "IDN": -80
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Defensa de convenios colectivos, ultraactividad y obras sociales; paros generales contra DNU 70/2023, Ley Bases y la reforma laboral 2026, cuya inconstitucionalidad planteó. Fuentes: comunicados CGT, Río Negro, Perfil."
+   "basis": "Defensa de convenios colectivos, ultraactividad y obras sociales; paros generales contra DNU 70/2023, Ley Bases y la reforma laboral 2026, cuya inconstitucionalidad planteó. Fuentes: comunicados CGT, Río Negro, Perfil. · Revisión 2026: ECO baja: el eje incluye sindicatos, convenios por rama, indemnizaciones y cuotas solidarias, en los que la CGT está en el extremo; además se opuso a privatizaciones y a la apertura (paros contra DNU 70/2023, Ley Bases y reforma laboral 2026). EXT baja por su rechazo al FMI y defensa de Malvinas e integración regional. FED se completa: defiende paritarias nacionales por rama y pisos salariales nacionales."
   },
   {
    "id": "martin_miguel_de_guemes",
@@ -1802,14 +1802,14 @@
     "SOC": 20,
     "INS": -20,
     "POP": 20,
-    "SEG": 25,
+    "SEG": 40,
     "EXT": 20,
     "FED": -80,
     "IDN": -40
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Rebaja del 30 % de impuestos provinciales y reforma del Estado cordobés (ECO). Defensa de la producción agropecuaria y oposición a las retenciones de 2008 (ECO). Endurecimiento policial en sus mandatos (SEG). Identidad 'cordobesista' y enfrentamiento con el gobierno nacional kirchnerista (FED). Renovación peronista con Cafiero (IDN, INS). Fuentes: Wikipedia es 'José Manuel de la Sota'; La Voz del Interior.",
+   "basis": "Rebaja del 30 % de impuestos provinciales y reforma del Estado cordobés (ECO). Defensa de la producción agropecuaria y oposición a las retenciones de 2008 (ECO). Endurecimiento policial en sus mandatos (SEG). Identidad 'cordobesista' y enfrentamiento con el gobierno nacional kirchnerista (FED). Renovación peronista con Cafiero (IDN, INS). Fuentes: Wikipedia es 'José Manuel de la Sota'; La Voz del Interior. · Revisión 2026: SEG sube: endurecimiento policial y aplicación extensiva del Código de Faltas en Córdoba. Fuente: Wikipedia es 'José Manuel de la Sota'; La Voz del Interior.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1823,7 +1823,7 @@
     "SOC": 50,
     "INS": -20,
     "POP": -30,
-    "SEG": 45,
+    "SEG": 50,
     "EXT": 40,
     "FED": -60,
     "IDN": -30
@@ -1840,7 +1840,7 @@
    "era": "1989–2000",
    "description": "Diputado que dejó el PJ con el Grupo de los Ocho, fundador del Frente Grande y del Frepaso y vicepresidente de la Nación (1999–2000). Renunció en octubre de 2000 tras las denuncias de sobornos en el Senado.",
    "coords": {
-    "ECO": 0,
+    "ECO": -30,
     "SOC": -50,
     "INS": -80,
     "POP": 10,
@@ -1851,7 +1851,7 @@
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Oposición a los indultos y a la corrupción menemista (INS, SEG). La Alianza aceptó mantener la convertibilidad (ECO). Crítica a las privatizaciones con aceptación de la economía de mercado (ECO). Renuncia a la vicepresidencia por el caso de la ley de reforma laboral (INS). Estilo mediático y personalizado (POP). Origen peronista (IDN cercano a 0). Fuentes: Wikipedia es 'Carlos Álvarez (político)'; Novaro, 'Historia de la Argentina 1955–2010'.",
+   "basis": "Oposición a los indultos y a la corrupción menemista (INS, SEG). La Alianza aceptó mantener la convertibilidad (ECO). Crítica a las privatizaciones con aceptación de la economía de mercado (ECO). Renuncia a la vicepresidencia por el caso de la ley de reforma laboral (INS). Estilo mediático y personalizado (POP). Origen peronista (IDN cercano a 0). Fuentes: Wikipedia es 'Carlos Álvarez (político)'; Novaro, 'Historia de la Argentina 1955–2010'. · Revisión 2026: ECO más estatista: el Frente Grande nació criticando las privatizaciones y la flexibilización laboral menemistas, aunque luego aceptó la convertibilidad. Fuente: Wikipedia es 'Frente Grande'.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1882,18 +1882,18 @@
    "era": "2002–2019",
    "description": "Economista, ministro de Economía (2002–2005) de Duhalde y Kirchner, a cargo de la salida de la crisis de 2001 y de la reestructuración de la deuda de 2005. Fue candidato presidencial en 2007 con apoyo de sectores de la UCR y en 2019 por Consenso Federal.",
    "coords": {
-    "ECO": -10,
-    "SOC": 0,
+    "ECO": -30,
+    "SOC": 20,
     "INS": -50,
     "POP": -70,
-    "SEG": -30,
+    "SEG": -20,
     "EXT": -10,
-    "FED": 0,
+    "FED": -30,
     "IDN": -10
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Superávit fiscal y comercial, tipo de cambio competitivo, retenciones a las exportaciones (ECO). Reestructuración con quita en 2005 y negociación dura con el FMI (EXT). Perfil técnico y dialoguista (POP, INS). Origen peronista y alianza con radicales (IDN cercano a 0). Fuentes: Wikipedia es 'Roberto Lavagna'; Ministerio de Economía, informes 2003–2005.",
+   "basis": "Superávit fiscal y comercial, tipo de cambio competitivo, retenciones a las exportaciones (ECO). Reestructuración con quita en 2005 y negociación dura con el FMI (EXT). Perfil técnico y dialoguista (POP, INS). Origen peronista y alianza con radicales (IDN cercano a 0). Fuentes: Wikipedia es 'Roberto Lavagna'; Ministerio de Economía, informes 2003–2005. · Revisión 2026: ECO más estatista: retenciones, tipo de cambio competitivo, acuerdos de precios y quita del 65% en el canje de 2005. FED: el Consenso Federal de 2019 se construyó con gobernadores y reclamos del interior. SOC levemente conservador por su fórmula con Urtubey y su rechazo personal al aborto. Fuente: Wikipedia es 'Roberto Lavagna' y 'Consenso Federal'.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1912,7 +1912,7 @@
     "FED": -60,
     "IDN": 50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Salud pública municipal y presupuesto participativo en Rosario (ECO, INS). Gestión fiscal prolija en Santa Fe (ECO). Posición intermedia ante las retenciones de 2008 (ECO). Apoyo a matrimonio igualitario y a la despenalización del aborto (SOC). Institucionalismo y oposición al kirchnerismo (IDN). Reclamo de coparticipación para Santa Fe (FED). Fuentes: Wikipedia es 'Hermes Binner'; Partido Socialista.",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -1924,7 +1924,7 @@
    "era": "1992–2020",
    "description": "Cineasta ('La hora de los hornos') y fundador de Proyecto Sur. Fue diputado y senador nacional y encabezó campañas contra la privatización del petróleo y la megaminería.",
    "coords": {
-    "ECO": -60,
+    "ECO": -70,
     "SOC": -50,
     "INS": -30,
     "POP": 30,
@@ -1933,7 +1933,7 @@
     "FED": 30,
     "IDN": -20
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Renacionalización de hidrocarburos y oposición a las privatizaciones (ECO, FED: control nacional de los recursos). Denuncias sobre la deuda externa (ECO). Antiimperialismo del cine de la liberación (EXT). Votó a favor de la IVE en el Senado en 2018 (SOC). Derechos humanos (SEG). Origen peronista, críticas al PJ y al kirchnerismo según el período (IDN cercano a 0). Fuentes: Wikipedia es 'Fernando Solanas'; Proyecto Sur.",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -1945,7 +1945,7 @@
    "era": "1977–2022",
    "description": "Presidenta de la Asociación Madres de Plaza de Mayo desde 1979 hasta su muerte en 2022. Desde 2003 respaldó a los gobiernos de Néstor Kirchner y Cristina Fernández.",
    "coords": {
-    "ECO": -75,
+    "ECO": -85,
     "SOC": -60,
     "INS": 40,
     "POP": 90,
@@ -1954,7 +1954,7 @@
     "FED": null,
     "IDN": -50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Búsqueda de desaparecidos y rechazo a las leyes de impunidad y los indultos (SEG). Reivindicación de la militancia revolucionaria de los hijos y de la Revolución Cubana (EXT, ECO). Declaraciones confrontativas contra jueces y medios (INS, POP). Apoyo al kirchnerismo desde 2003 tras años de crítica a todos los partidos (IDN). Fuentes: Wikipedia es 'Hebe de Bonafini'; Asociación Madres de Plaza de Mayo; Gorini, 'La rebelión de las Madres' (2006).",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -1968,7 +1968,7 @@
    "coords": {
     "ECO": 70,
     "SOC": 20,
-    "INS": 20,
+    "INS": 30,
     "POP": -40,
     "SEG": 40,
     "EXT": 80,
@@ -1986,11 +1986,11 @@
    "era": "1999–",
    "description": "Economista, ministro de Defensa y luego de Economía en el gobierno de De la Rúa (2001), fundador de Recrear y de Republicanos Unidos, y diputado nacional por la Ciudad de Buenos Aires (2021–2025).",
    "coords": {
-    "ECO": 85,
+    "ECO": 90,
     "SOC": 20,
     "INS": -80,
-    "POP": -50,
-    "SEG": 30,
+    "POP": -60,
+    "SEG": 35,
     "EXT": 80,
     "FED": -20,
     "IDN": 80
@@ -2010,12 +2010,12 @@
     "SOC": -30,
     "INS": -90,
     "POP": 10,
-    "SEG": 35,
+    "SEG": 40,
     "EXT": 90,
     "FED": 20,
     "IDN": 100
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Antiperonismo explícito en libros ('Es el peronismo, estúpido') e intervenciones (IDN). Apoyó la IVE (SOC). Votó a favor de la Ley Bases (2024) (ECO). Defensa de la república y la prensa frente al kirchnerismo (INS). Cosmopolitismo y alineamiento con democracias occidentales (EXT). Estilo confrontativo en redes y en el recinto (POP). Críticas a los 'feudos' provinciales (FED). No renovó su banca en 2025. Fuentes: HCDN; Infobae (bancas 2025); Wikipedia es 'Fernando Iglesias'."
   },
@@ -2026,8 +2026,8 @@
    "era": "2003–",
    "description": "Gobernador de Mendoza (2003–2007), vicepresidente de la Nación (2007–2011) por la Concertación con Cristina Fernández de Kirchner, senador y diputado nacional por la UCR. Su voto de desempate contra la Resolución 125 en 2008 definió el conflicto con el campo.",
    "coords": {
-    "ECO": 30,
-    "SOC": 0,
+    "ECO": 25,
+    "SOC": 30,
     "INS": -60,
     "POP": -40,
     "SEG": 0,
@@ -2035,9 +2035,9 @@
     "FED": -40,
     "IDN": 60
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "'Voto no positivo' contra las retenciones móviles (2008) (ECO, FED). Votó a favor de la Ley Bases como diputado (2024) (ECO). Defensa del Congreso frente al Ejecutivo en 2008 (INS). Estilo moderado y conciliador (POP). Acompañó políticas de memoria como gobernador y vicepresidente (SEG). Fuentes: Senado; HCDN; Wikipedia es 'Julio Cobos'; La Nación."
+   "basis": "'Voto no positivo' contra las retenciones móviles (2008) (ECO, FED). Votó a favor de la Ley Bases como diputado (2024) (ECO). Defensa del Congreso frente al Ejecutivo en 2008 (INS). Estilo moderado y conciliador (POP). Acompañó políticas de memoria como gobernador y vicepresidente (SEG). Fuentes: Senado; HCDN; Wikipedia es 'Julio Cobos'; La Nación. · Revisión 2026: SOC: votó contra la IVE en 2018 y 2020 y pidió una consulta popular sobre el tema. Fuente: Diario Uno, El Cronista (votación del Senado)."
   },
   {
    "id": "luis_juez",
@@ -2053,7 +2053,7 @@
     "SEG": 50,
     "EXT": 70,
     "FED": -40,
-    "IDN": 50
+    "IDN": 60
    },
    "confidence": "media",
    "method": "seed-editorial",
@@ -2066,18 +2066,18 @@
    "era": "1995–",
    "description": "Dirigente justicialista bonaerense, jefe de Gabinete (2009–2011 y 2015) y ministro de Seguridad de la Nación (2021–2023). Fue también senador nacional y candidato a gobernador de Buenos Aires en 2015.",
    "coords": {
-    "ECO": -40,
+    "ECO": -60,
     "SOC": -10,
     "INS": 50,
     "POP": 70,
-    "SEG": -10,
-    "EXT": -40,
+    "SEG": -5,
+    "EXT": -50,
     "FED": 20,
-    "IDN": -70
+    "IDN": -85
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Funcionario de Duhalde, Néstor Kirchner, CFK y Alberto Fernández (IDN). Defensor de la estatización de AFJP y de la política económica kirchnerista (ECO). Como ministro de Seguridad sostuvo operativos federales y discurso de orden (SEG por encima del promedio peronista). Estilo polémico y confrontativo en medios (POP). Defensa del liderazgo presidencial frente a la Justicia (INS). Fuentes: Wikipedia es 'Aníbal Fernández'; Infobae; Página/12."
+   "basis": "Funcionario de Duhalde, Néstor Kirchner, CFK y Alberto Fernández (IDN). Defensor de la estatización de AFJP y de la política económica kirchnerista (ECO). Como ministro de Seguridad sostuvo operativos federales y discurso de orden (SEG por encima del promedio peronista). Estilo polémico y confrontativo en medios (POP). Defensa del liderazgo presidencial frente a la Justicia (INS). Fuentes: Wikipedia es 'Aníbal Fernández'; Infobae; Página/12. · Revisión 2026: ECO: defendió la estatización de las AFJP y de YPF y toda la política económica kirchnerista; el valor anterior lo moderaba sin evidencia. Fuente: Infobae, Página/12."
   },
   {
    "id": "guillermo_moreno",
@@ -2086,7 +2086,7 @@
    "era": "2003–",
    "description": "Secretario de Comercio Interior (2006–2013) durante los gobiernos de Néstor Kirchner y Cristina Fernández de Kirchner. Fundador del partido Principios y Valores, reivindica un peronismo doctrinario.",
    "coords": {
-    "ECO": -80,
+    "ECO": -90,
     "SOC": 70,
     "INS": 70,
     "POP": 80,
@@ -2095,7 +2095,7 @@
     "FED": 20,
     "IDN": -100
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Controles de precios, restricción de importaciones mediante DJAI y administración de datos del INDEC (ECO). Discurso peronista doctrinario y católico, crítico del progresismo y de la agenda de género (SOC). Críticas al kirchnerismo 'progresista' y reivindicación de las Fuerzas Armadas junto a la condena de la dictadura (SEG moderado). Estilo personalista (POP). Fuentes: Wikipedia es 'Guillermo Moreno (político)'; La Nación; Clarín."
   },
@@ -2106,11 +2106,11 @@
    "era": "2012–",
    "description": "Médico y militar retirado, secretario de Seguridad de la Nación (2012–2015) y ministro de Seguridad de la provincia de Buenos Aires (2019–2023) en gobiernos peronistas.",
    "coords": {
-    "ECO": -30,
+    "ECO": -35,
     "SOC": 30,
     "INS": 40,
     "POP": 70,
-    "SEG": 40,
+    "SEG": 50,
     "EXT": -10,
     "FED": 20,
     "IDN": -70
@@ -2150,7 +2150,7 @@
     "SOC": 40,
     "INS": -60,
     "POP": -50,
-    "SEG": 30,
+    "SEG": 40,
     "EXT": 40,
     "FED": -20,
     "IDN": 70
@@ -2166,7 +2166,7 @@
    "era": "1987–",
    "description": "Secretario general de Camioneros desde 1987, fundador del MTA en los 90 y conductor de la CGT (2004–2012) y de la CGT Azopardo hasta 2016.",
    "coords": {
-    "ECO": -50,
+    "ECO": -70,
     "SOC": 40,
     "INS": 20,
     "POP": 70,
@@ -2177,7 +2177,7 @@
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "MTA contra las reformas de los 90; aliado de Néstor Kirchner y ruptura con CFK en 2011; acercamiento a Massa y distancia pragmática con Macri en 2015, luego confrontación; apoyo al Frente de Todos en 2019. En 2026 firmó paritarias dentro de la pauta del gobierno de Milei. Más pragmático y negociador que Pablo Moyano (ECO, INS, SEG). Fuentes: Infobae (mar. y sep. 2026), La Nación."
+   "basis": "MTA contra las reformas de los 90; aliado de Néstor Kirchner y ruptura con CFK en 2011; acercamiento a Massa y distancia pragmática con Macri en 2015, luego confrontación; apoyo al Frente de Todos en 2019. En 2026 firmó paritarias dentro de la pauta del gobierno de Milei. Más pragmático y negociador que Pablo Moyano (ECO, INS, SEG). Fuentes: Infobae (mar. y sep. 2026), La Nación. · Revisión 2026: ECO: pese a su pragmatismo negociador, como sindicalista responde en el polo Estado las afirmaciones sobre convenios por rama, indemnizaciones, cuota solidaria, obras sociales y rol de la CGT. Fuente: Infobae (2026)."
   },
   {
    "id": "luis_delia",
@@ -2190,12 +2190,12 @@
     "SOC": 20,
     "INS": 70,
     "POP": 100,
-    "SEG": -55,
+    "SEG": -60,
     "EXT": -100,
     "FED": 30,
     "IDN": -90
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Movilizaciones contra el campo en 2008 en defensa del gobierno; retórica de confrontación pueblo/oligarquía; alineamiento explícito con Irán y Venezuela y hostilidad a EE.UU. e Israel; en 2026 enfrentado con La Cámpora y difundiendo posiciones del gobierno iraní. Sin agenda progresista en valores. Fuentes: Revista Noticias (2026), Ámbito, La Nación."
   },
@@ -2208,7 +2208,7 @@
    "coords": {
     "ECO": -50,
     "SOC": -50,
-    "INS": -20,
+    "INS": -10,
     "POP": 0,
     "SEG": -90,
     "EXT": -50,
@@ -2226,18 +2226,18 @@
    "era": "1983–",
    "description": "Corriente de la UCR que reivindica el programa de Raúl Alfonsín: democracia, derechos humanos, laicidad y socialdemocracia. Tiene expresiones en Renovación y Cambio y en sectores internos de la UCR actual.",
    "coords": {
-    "ECO": -20,
-    "SOC": -40,
+    "ECO": -30,
+    "SOC": -55,
     "INS": -90,
     "POP": -30,
-    "SEG": -75,
+    "SEG": -65,
     "EXT": -30,
-    "FED": -20,
+    "FED": -30,
     "IDN": 60
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Juicio a las Juntas y CONADEP (SEG), ley de divorcio y patria potestad compartida (SOC), Plan Austral heterodoxo (ECO), no alineamiento y Grupo Contadora (EXT), garantismo penal (SEG). Se diferencia de la UCR contemporánea por su perfil socialdemócrata y su distancia de las alianzas con el PRO y LLA. Fuentes: Wikipedia es 'Movimiento de Renovación y Cambio'; Persello, 'Historia del radicalismo'."
+   "basis": "Juicio a las Juntas y CONADEP (SEG), ley de divorcio y patria potestad compartida (SOC), Plan Austral heterodoxo (ECO), no alineamiento y Grupo Contadora (EXT), garantismo penal (SEG). Se diferencia de la UCR contemporánea por su perfil socialdemócrata y su distancia de las alianzas con el PRO y LLA. Fuentes: Wikipedia es 'Movimiento de Renovación y Cambio'; Persello, 'Historia del radicalismo'. · Revisión 2026: SOC baja por regla de época: el alfonsinismo impulsó el divorcio vincular (1987) y la patria potestad compartida enfrentando a la Iglesia, y sus herederos actuales votaron el matrimonio igualitario y la IVE. Fuente: Persello, 'Historia del radicalismo'."
   }
  ]
 }

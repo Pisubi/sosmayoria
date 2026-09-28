@@ -31,7 +31,7 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
   el núcleo en su tema principal y 1 en el resto; con menos del 50% de
   cobertura el eje queda indeterminado.
 - Cercanía: `100 · (1 − d/200)`, con `d` la distancia media cuadrática en los ejes
-  con puntaje del usuario; donde el perfil no tiene dato se cuenta una diferencia de 40. Menos del 60% de ejes comparados = comparación parcial.
+  con puntaje del usuario; donde el perfil no tiene dato se cuenta la distancia del usuario al centro (mínimo 40). Menos del 60% de ejes comparados = comparación parcial.
 - Los catálogos se rankean por separado. Las figuras de dictaduras y
   totalitarismos se incluyen como cualquier otro perfil, con descripciones que
   mencionan sus crímenes documentados. Por decisión editorial quedan excluidos

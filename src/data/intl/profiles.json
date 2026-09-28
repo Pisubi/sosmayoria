@@ -33,18 +33,18 @@
    "name": "Liberalismo clásico",
    "description": "Mercado, libre comercio, libertades individuales y gobierno limitado.",
    "coords": {
-    "ECO": 80,
+    "ECO": 85,
     "AUT": -70,
-    "SOC": -15,
+    "SOC": -60,
     "NAC": -20,
-    "MIL": -20,
-    "MIG": -20,
-    "ECOL": 30,
-    "POP": -60
+    "MIL": -35,
+    "MIG": -40,
+    "ECOL": 35,
+    "POP": -65
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "CHES lrecon/galtan"
+   "basis": "CHES lrecon/galtan · Revisión 2026: SOC por regla de época: el liberalismo del siglo XIX impulsó la separación Iglesia-Estado, el matrimonio civil, la educación laica y, con Mill, el voto femenino. Manchesterianos (Cobden, Bright) antimilitaristas, contrarios al reclutamiento y a los ejércitos permanentes; el siglo XIX liberal defendió la libre circulación de personas (MIG). Resto se mantiene."
   },
   {
    "id": "liberalismo_social",
@@ -52,18 +52,18 @@
    "name": "Liberalismo social",
    "description": "Economía de mercado con red de protección, derechos civiles e integración internacional.",
    "coords": {
-    "ECO": 40,
-    "AUT": -60,
-    "SOC": -45,
+    "ECO": 15,
+    "AUT": -70,
+    "SOC": -65,
     "NAC": -60,
-    "MIL": -20,
-    "MIG": -30,
-    "ECOL": -30,
-    "POP": -70
+    "MIL": -15,
+    "MIG": -40,
+    "ECOL": -45,
+    "POP": -75
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "CHES"
+   "basis": "CHES · Revisión 2026: ECO sobreestimado por el promedio con comercio: el liberalismo social (Beveridge, Keynes, D66, Lib Dems) apoya impuestos progresivos y servicios públicos, con libre comercio; queda apenas pro-mercado. Muy progresista en valores (matrimonio igualitario, eutanasia, laicidad) y fuerte en agenda verde."
   },
   {
    "id": "socialdemocracia",
@@ -71,18 +71,18 @@
    "name": "Socialdemocracia",
    "description": "Economía mixta, Estado de bienestar, democracia parlamentaria y cooperación multilateral.",
    "coords": {
-    "ECO": -30,
-    "AUT": -65,
-    "SOC": -50,
-    "NAC": -40,
-    "MIL": -40,
-    "MIG": -40,
-    "ECOL": -50,
-    "POP": -50
+    "ECO": -55,
+    "AUT": -60,
+    "SOC": -60,
+    "NAC": -50,
+    "MIL": -35,
+    "MIG": -35,
+    "ECOL": -45,
+    "POP": -60
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CHES; Internacional Socialista"
+   "basis": "CHES; Internacional Socialista · Revisión 2026: ECO -30 era falsa moderación por promediar con comercio: el núcleo del eje (servicios públicos, impuestos progresivos, sindicatos, cogestión, no privatizar) ubica a la socialdemocracia canónica claramente del lado Estado/igualdad (programas de la Internacional Socialista, modelo nórdico)."
   },
   {
    "id": "socialismo_democratico",
@@ -90,18 +90,18 @@
    "name": "Socialismo democrático",
    "description": "Transformación socialista de la economía por vías democráticas.",
    "coords": {
-    "ECO": -55,
-    "AUT": -60,
-    "SOC": -65,
-    "NAC": -40,
-    "MIL": -60,
-    "MIG": -50,
-    "ECOL": -60,
-    "POP": 0
+    "ECO": -80,
+    "AUT": -65,
+    "SOC": -70,
+    "NAC": -35,
+    "MIL": -65,
+    "MIG": -60,
+    "ECOL": -65,
+    "POP": 25
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "CHES"
+   "basis": "CHES · Revisión 2026: ECO más estatista (socialización y planificación democrática, escepticismo ante el libre comercio). POP sube: el discurso de clase contra 'la clase multimillonaria', la crítica a los medios y el rechazo a bancos centrales independientes (Sanders, Corbyn, Mélenchon) puntúan como populismo en este eje."
   },
   {
    "id": "marxismo_leninismo",
@@ -109,18 +109,18 @@
    "name": "Marxismo-leninismo",
    "description": "Partido de vanguardia, propiedad estatal de los medios de producción y planificación central.",
    "coords": {
-    "ECO": -75,
-    "AUT": 90,
-    "SOC": -60,
-    "NAC": -20,
-    "MIL": 60,
-    "MIG": 0,
-    "ECOL": 60,
+    "ECO": -100,
+    "AUT": 100,
+    "SOC": -65,
+    "NAC": 35,
+    "MIL": 70,
+    "MIG": 40,
+    "ECOL": 70,
     "POP": 40
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Implementaciones históricas de partido-Estado"
+   "basis": "Implementaciones históricas de partido-Estado · Revisión 2026: Planificación central total y monopolio estatal del comercio exterior (ECO -100). SOC queda progresista/laico por regla de época (divorcio, aborto legal en 1920, ateísmo de Estado), atenuado por los retrocesos estalinistas. En la práctica, 'patriotismo socialista', soberanía estatal y control de recursos (NAC positivo) y control estricto de residencia de extranjeros (MIG)."
   },
   {
    "id": "anarcocomunismo",
@@ -128,18 +128,18 @@
    "name": "Anarcocomunismo",
    "description": "Abolición del Estado y de la propiedad privada; organización por ayuda mutua.",
    "coords": {
-    "ECO": -60,
+    "ECO": -85,
     "AUT": -100,
-    "SOC": -85,
+    "SOC": -90,
     "NAC": -90,
-    "MIL": -90,
+    "MIL": -85,
     "MIG": -90,
-    "ECOL": -40,
-    "POP": 0
+    "ECOL": -50,
+    "POP": 45
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Kropotkin"
+   "basis": "Kropotkin · Revisión 2026: Abolición de la propiedad privada: ECO más a la izquierda aunque rechace la mediación estatal. En este eje POP mide antielitismo y rechazo a partidos y expertos: democracia directa, antiparlamentarismo y rechazo a los políticos profesionales (Kropotkin, tradición anarquista) empujan hacia el polo populista."
   },
   {
    "id": "anarcocapitalismo",
@@ -148,17 +148,17 @@
    "description": "Abolición del Estado y provisión privada de todos los servicios, incluida la seguridad.",
    "coords": {
     "ECO": 100,
-    "AUT": -90,
+    "AUT": -85,
     "SOC": -25,
-    "NAC": -80,
-    "MIL": -90,
-    "MIG": -60,
+    "NAC": -20,
+    "MIL": -80,
+    "MIG": -25,
     "ECOL": 80,
     "POP": 20
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Rothbard"
+   "basis": "Rothbard · Revisión 2026: NAC -80 exageraba el cosmopolitismo: el anarcocapitalismo rechaza el patriotismo pero también la ONU, la cesión de soberanía, los acuerdos climáticos y el impuesto mínimo global; queda levemente cosmopolita. MIG dividido: Rothbard ('Nations by Consent', 1994) y Hoppe defienden restricciones por propiedad privada; Block y Caplan, apertura."
   },
   {
    "id": "libertarismo",
@@ -166,18 +166,18 @@
    "name": "Libertarismo",
    "description": "Estado mínimo, mercado libre y máxima autonomía individual.",
    "coords": {
-    "ECO": 95,
+    "ECO": 90,
     "AUT": -75,
-    "SOC": -35,
-    "NAC": -60,
-    "MIL": -60,
-    "MIG": -50,
-    "ECOL": 70,
-    "POP": 0
+    "SOC": -30,
+    "NAC": -25,
+    "MIL": -55,
+    "MIG": -40,
+    "ECOL": 65,
+    "POP": -10
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Nozick, Hayek"
+   "basis": "Nozick, Hayek · Revisión 2026: NAC corregido como en el anarcocapitalismo: rechazo al nacionalismo, pero oposición fuerte a organismos internacionales, tratados climáticos y fiscalidad global (plataforma del Libertarian Party, salida de la ONU); la mezcla da un valor apenas cosmopolita."
   },
   {
    "id": "conservadurismo_liberal",
@@ -185,18 +185,18 @@
    "name": "Conservadurismo liberal",
    "description": "Mercado, orden y valores tradicionales dentro de la democracia liberal.",
    "coords": {
-    "ECO": 45,
-    "AUT": -10,
-    "SOC": 60,
-    "NAC": 40,
-    "MIL": 40,
-    "MIG": 40,
-    "ECOL": 40,
-    "POP": -30
+    "ECO": 50,
+    "AUT": 5,
+    "SOC": 45,
+    "NAC": 35,
+    "MIL": 50,
+    "MIG": 45,
+    "ECOL": 35,
+    "POP": -45
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "CHES"
+   "basis": "CHES · Revisión 2026: AUT: ley y orden, penas más duras, criminalización de drogas y policía con más margen compensan su compromiso democrático. SOC más moderado que la democracia cristiana (Cameron y Rajoy mantuvieron o aprobaron matrimonio igualitario). Estilo institucionalista y elitista (POP)."
   },
   {
    "id": "democracia_cristiana",
@@ -204,18 +204,18 @@
    "name": "Democracia cristiana",
    "description": "Economía social de mercado, subsidiariedad y valores cristianos.",
    "coords": {
-    "ECO": 5,
-    "AUT": -35,
-    "SOC": 60,
-    "NAC": -20,
-    "MIL": -20,
-    "MIG": 0,
-    "ECOL": -10,
-    "POP": -40
+    "ECO": -5,
+    "AUT": -20,
+    "SOC": 70,
+    "NAC": -45,
+    "MIL": 10,
+    "MIG": 5,
+    "ECOL": -15,
+    "POP": -60
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CHES"
+   "basis": "CHES · Revisión 2026: Se acentúan sus rasgos distintivos para evitar falsa moderación: valores cristianos y familia (SOC), fundadores de la integración europea (Adenauer, Schuman, De Gasperi; NAC claramente integracionista), atlantismo y rearme en la OTAN (MIL positivo) y política de consenso, coaliciones y corporativismo (POP). Economía social de mercado sí es genuinamente intermedia (van Kersbergen, 'Social Capitalism')."
   },
   {
    "id": "tradicionalismo_reaccionario",
@@ -223,12 +223,12 @@
    "name": "Tradicionalismo reaccionario",
    "description": "Restauración de un orden jerárquico, religioso y previo a la modernidad liberal.",
    "coords": {
-    "ECO": -10,
-    "AUT": 80,
+    "ECO": -15,
+    "AUT": 90,
     "SOC": 100,
     "NAC": 70,
     "MIL": 50,
-    "MIG": 70,
+    "MIG": 75,
     "ECOL": 20,
     "POP": 20
    },
@@ -242,18 +242,18 @@
    "name": "Populismo de izquierda",
    "description": "Pueblo contra oligarquía, redistribución y liderazgo carismático.",
    "coords": {
-    "ECO": -70,
-    "AUT": 40,
+    "ECO": -75,
+    "AUT": 20,
     "SOC": -30,
     "NAC": 50,
-    "MIL": 20,
-    "MIG": -20,
+    "MIL": -20,
+    "MIG": -30,
     "ECOL": 0,
-    "POP": 90
+    "POP": 95
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Laclau; Mudde y Rovira Kaltwasser"
+   "basis": "Laclau; Mudde y Rovira Kaltwasser · Revisión 2026: MIL +20 era incoherente: el populismo de izquierda (Kirchner, Morales, Podemos, Mélenchon) rechaza aumentar el gasto militar, la OTAN y las intervenciones sin mandato ONU. AUT baja: combina tensiones con la justicia y los medios con posiciones garantistas en seguridad, drogas y protesta (promedio de CFK, Morales, Correa, Morena)."
   },
   {
    "id": "derecha_radical_populista",
@@ -261,18 +261,18 @@
    "name": "Derecha radical populista",
    "description": "Nativismo, autoritarismo y retórica pueblo contra élite.",
    "coords": {
-    "ECO": -15,
-    "AUT": 50,
-    "SOC": 60,
-    "NAC": 80,
-    "MIL": 50,
-    "MIG": 90,
-    "ECOL": 50,
+    "ECO": -10,
+    "AUT": 55,
+    "SOC": 65,
+    "NAC": 90,
+    "MIL": 40,
+    "MIG": 95,
+    "ECOL": 75,
     "POP": 90
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Mudde 2007"
+   "basis": "Mudde 2007 · Revisión 2026: ECOL subestimado: escepticismo climático y rechazo a las metas de emisiones son hoy programáticos en AfD, Vox, PVV, RN y el trumpismo (Schaller y Carius, 'Convenient Truths', adelphi 2019)."
   },
   {
    "id": "nacionalismo_desarrollista",
@@ -280,18 +280,18 @@
    "name": "Nacionalismo desarrollista",
    "description": "Industrialización dirigida por el Estado, soberanía económica y liderazgo nacional.",
    "coords": {
-    "ECO": -65,
-    "AUT": 55,
+    "ECO": -70,
+    "AUT": 50,
     "SOC": 15,
     "NAC": 80,
     "MIL": 40,
     "MIG": 20,
-    "ECOL": 60,
-    "POP": 70
+    "ECOL": 75,
+    "POP": 40
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Cepalismo, nacionalismos populares"
+   "basis": "Cepalismo, nacionalismos populares · Revisión 2026: El desarrollismo es productivista por definición (crecimiento primero; posición de Brasil en Estocolmo 1972). POP baja: la vertiente cepalina y los gobiernos desarrollistas (Kubitschek, Frondizi, Park) fueron tecnocráticos; solo la vertiente nacional-popular es plebiscitaria."
   },
   {
    "id": "fascismo",
@@ -299,18 +299,18 @@
    "name": "Fascismo",
    "description": "Nacionalismo totalitario, partido único, corporativismo, culto al líder y supresión violenta de la oposición.",
    "coords": {
-    "ECO": -45,
+    "ECO": -40,
     "AUT": 100,
-    "SOC": 55,
+    "SOC": 70,
     "NAC": 100,
     "MIL": 100,
-    "MIG": 90,
-    "ECOL": 40,
+    "MIG": 95,
+    "ECOL": 50,
     "POP": 80
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Paxton"
+   "basis": "Paxton · Revisión 2026: SOC más tradicionalista: roles de género rígidos, natalismo, prohibición del aborto, persecución de homosexuales y Pactos de Letrán en Italia (Paxton)."
   },
   {
    "id": "ecologismo_verde",
@@ -318,16 +318,16 @@
    "name": "Ecologismo verde",
    "description": "Prioridad climática y ambiental, derechos civiles, democracia participativa y justicia social.",
    "coords": {
-    "ECO": -45,
-    "AUT": -70,
-    "SOC": -70,
+    "ECO": -50,
+    "AUT": -75,
+    "SOC": -75,
     "NAC": -60,
-    "MIL": -80,
-    "MIG": -60,
+    "MIL": -70,
+    "MIG": -70,
     "ECOL": -100,
     "POP": -30
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Global Greens"
   },
@@ -337,18 +337,18 @@
    "name": "Vladímir Lenin",
    "description": "Líder de la Revolución bolchevique y fundador del Estado soviético de partido único. Impuso el terror rojo y la represión de toda oposición.",
    "coords": {
-    "ECO": -80,
-    "AUT": 90,
-    "SOC": -70,
+    "ECO": -95,
+    "AUT": 100,
+    "SOC": -85,
     "NAC": -60,
     "MIL": 60,
     "MIG": null,
     "ECOL": 50,
-    "POP": 40
+    "POP": 60
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Terror rojo, partido único",
+   "basis": "Terror rojo, partido único · Revisión 2026: ECO: comunismo de guerra, nacionalizaciones y monopolio estatal del comercio exterior (1918). SOC: legalizó el aborto (1920), el divorcio y despenalizó la homosexualidad, con ateísmo militante. POP: vanguardia de partido único, antipluralista y de lucha de clases contra la élite burguesa.",
    "country": "Rusia",
    "era": "1917–1924",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -359,18 +359,18 @@
    "name": "Iósif Stalin",
    "description": "Líder de la URSS. Colectivización forzada, planes quinquenales, purgas, deportaciones y el sistema de campos del Gulag, con millones de muertos.",
    "coords": {
-    "ECO": -95,
+    "ECO": -100,
     "AUT": 100,
-    "SOC": -20,
-    "NAC": 50,
+    "SOC": 0,
+    "NAC": 80,
     "MIL": 90,
     "MIG": 70,
     "ECOL": 80,
-    "POP": 30
+    "POP": 60
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Gosplán, Gulag, prohibición del aborto (1936)",
+   "basis": "Gosplán, Gulag, prohibición del aborto (1936) · Revisión 2026: SOC: prohibición del aborto (1936), recriminalización de la homosexualidad (1933) y exaltación de la familia, compensadas por la persecución religiosa. NAC: socialismo en un solo país, rusificación y campaña contra los 'cosmopolitas sin raíces' (1949). POP: antipluralismo total y campañas contra 'enemigos del pueblo' y especialistas burgueses.",
    "country": "URSS",
    "era": "1924–1953",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -381,18 +381,18 @@
    "name": "Mao Zedong",
    "description": "Líder de la Revolución china. Gran Salto Adelante y Revolución Cultural, con decenas de millones de muertos por hambruna y represión.",
    "coords": {
-    "ECO": -95,
+    "ECO": -100,
     "AUT": 100,
-    "SOC": -45,
-    "NAC": 50,
+    "SOC": -65,
+    "NAC": 60,
     "MIL": 70,
     "MIG": 50,
     "ECOL": 70,
-    "POP": 80
+    "POP": 90
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Gran Salto Adelante, Revolución Cultural",
+   "basis": "Gran Salto Adelante, Revolución Cultural · Revisión 2026: SOC: Ley de Matrimonio de 1950 (fin del matrimonio arreglado y derecho al divorcio), ataque a los 'cuatro viejos' y a toda religión en la Revolución Cultural; en los debates de su tiempo, claramente del lado anti-tradicional.",
    "country": "China",
    "era": "1949–1976",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -403,18 +403,18 @@
    "name": "Franklin D. Roosevelt",
    "description": "Presidente. New Deal, seguridad social y liderazgo aliado en la Segunda Guerra.",
    "coords": {
-    "ECO": -30,
-    "AUT": -25,
-    "SOC": 0,
-    "NAC": 0,
-    "MIL": 40,
-    "MIG": 0,
+    "ECO": -55,
+    "AUT": 15,
+    "SOC": -15,
+    "NAC": -30,
+    "MIL": 50,
+    "MIG": 30,
     "ECOL": -20,
-    "POP": 40
+    "POP": 50
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "New Deal",
+   "basis": "New Deal · Revisión 2026: ECO: New Deal, Seguridad Social, Ley Wagner, TVA y tasas marginales de hasta 94%. AUT: internación de japoneses-estadounidenses, intento de ampliar la Corte, cuatro mandatos y autorización de escuchas del FBI sin orden (1940). SOC: impulsó la derogación de la Ley Seca y nombró a la primera ministra mujer. NAC: arquitecto de la ONU y Bretton Woods. MIG: mantuvo las cuotas de 1924 y no amplió el ingreso de refugiados judíos.",
    "country": "EE.UU.",
    "era": "1933–1945",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -426,7 +426,7 @@
    "description": "Primer ministro conservador, imperialista y líder frente al nazismo.",
    "coords": {
     "ECO": 30,
-    "AUT": -15,
+    "AUT": 10,
     "SOC": 45,
     "NAC": 80,
     "MIL": 80,
@@ -436,7 +436,7 @@
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "CHES",
+   "basis": "CHES · Revisión 2026: AUT: parlamentario comprometido, pero con internaciones por la Regulación 18B, censura de guerra y postergación de elecciones hasta 1945; no corresponde un valor del lado libertario.",
    "country": "Reino Unido",
    "era": "1940–1945, 1951–1955",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -447,18 +447,18 @@
    "name": "Charles de Gaulle",
    "description": "Presidente. Nacionalismo, Ejecutivo fuerte e independencia frente a las potencias.",
    "coords": {
-    "ECO": -15,
-    "AUT": 10,
-    "SOC": 50,
-    "NAC": 80,
+    "ECO": -35,
+    "AUT": 40,
+    "SOC": 40,
+    "NAC": 90,
     "MIL": 60,
     "MIG": 40,
     "ECOL": null,
-    "POP": 40
+    "POP": 50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "V República",
+   "basis": "V República · Revisión 2026: ECO: dirigismo, planificación indicativa, campeones nacionales y nacionalizaciones de 1945–46. AUT: uso del artículo 16 (1961), control estatal de la ORTF y un Ejecutivo que decidía por encima del Parlamento.",
    "country": "Francia",
    "era": "1959–1969",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -471,16 +471,16 @@
    "coords": {
     "ECO": -35,
     "AUT": 100,
-    "SOC": 50,
+    "SOC": 70,
     "NAC": 100,
     "MIL": 90,
     "MIG": 70,
-    "ECOL": 20,
+    "ECOL": null,
     "POP": 80
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Régimen fascista",
+   "basis": "Régimen fascista · Revisión 2026: SOC: Pactos de Letrán con catolicismo como religión de Estado, 'batalla por los nacimientos', impuesto a los solteros y persecución de homosexuales. ECOL pasa a null: el debate ambiental no existía en su época (regla de época).",
    "country": "Italia",
    "era": "1922–1943",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -491,7 +491,7 @@
    "name": "Francisco Franco",
    "description": "Dictador tras la Guerra Civil: nacionalcatolicismo, represión masiva de la oposición y régimen autoritario durante casi cuatro décadas.",
    "coords": {
-    "ECO": -20,
+    "ECO": -25,
     "AUT": 95,
     "SOC": 100,
     "NAC": 90,
@@ -500,7 +500,7 @@
     "ECOL": null,
     "POP": 30
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Nacionalcatolicismo",
    "country": "España",
@@ -513,18 +513,18 @@
    "name": "Fidel Castro",
    "description": "Líder de la Revolución cubana: economía estatal, partido único, fusilamientos, presos políticos y enfrentamiento con EE.UU.",
    "coords": {
-    "ECO": -80,
-    "AUT": 95,
+    "ECO": -95,
+    "AUT": 100,
     "SOC": -40,
-    "NAC": 50,
-    "MIL": 60,
+    "NAC": 60,
+    "MIL": 70,
     "MIG": 30,
     "ECOL": 0,
     "POP": 80
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Partido único",
+   "basis": "Partido único · Revisión 2026: ECO: estatización casi total de la economía y planificación central; no se diferencia de otros regímenes de economía estatal.",
    "country": "Cuba",
    "era": "1959–2008",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -535,7 +535,7 @@
    "name": "Salvador Allende",
    "description": "Presidente. Vía democrática al socialismo y nacionalización del cobre; derrocado por un golpe militar.",
    "coords": {
-    "ECO": -70,
+    "ECO": -85,
     "AUT": -40,
     "SOC": -35,
     "NAC": 40,
@@ -544,9 +544,9 @@
     "ECOL": null,
     "POP": 50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Unidad Popular",
+   "basis": "Unidad Popular · Revisión 2026: ECO: nacionalización del cobre, la banca y grandes empresas, área de propiedad social, reforma agraria acelerada y control de precios.",
    "country": "Chile",
    "era": "1970–1973",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -557,18 +557,18 @@
    "name": "Ronald Reagan",
    "description": "Presidente. Rebaja de impuestos, desregulación y confrontación con la URSS.",
    "coords": {
-    "ECO": 60,
-    "AUT": -20,
+    "ECO": 70,
+    "AUT": 15,
     "SOC": 60,
     "NAC": 60,
-    "MIL": 80,
-    "MIG": 0,
+    "MIL": 85,
+    "MIG": -20,
     "ECOL": 50,
     "POP": 40
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Reaganomics",
+   "basis": "Reaganomics · Revisión 2026: AUT: 'guerra contra las drogas', penas mínimas obligatorias (1984, 1986) y apoyo a la pena de muerte, dentro de un marco democrático. MIG: la ley IRCA (1986) regularizó a unos 2,7 millones de indocumentados.",
    "country": "EE.UU.",
    "era": "1981–1989",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -579,18 +579,18 @@
    "name": "Margaret Thatcher",
    "description": "Primera ministra. Privatizaciones, enfrentamiento con los sindicatos y guerra de Malvinas.",
    "coords": {
-    "ECO": 75,
-    "AUT": -10,
+    "ECO": 85,
+    "AUT": 20,
     "SOC": 35,
     "NAC": 50,
-    "MIL": 60,
+    "MIL": 70,
     "MIG": 50,
     "ECOL": 30,
-    "POP": 20
+    "POP": 30
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Privatizaciones",
+   "basis": "Privatizaciones · Revisión 2026: AUT: ley y orden, apoyo a la pena de muerte, manejo policial de la huelga minera y prohibición de emitir voces de Sinn Féin (1988), dentro de un marco democrático. ECO sube para quedar por encima de Reagan: privatizaciones masivas y fin del control de cambios.",
    "country": "Reino Unido",
    "era": "1979–1990",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -602,17 +602,17 @@
    "description": "Reformas de mercado y apertura bajo el control del Partido Comunista; represión de Tiananmén.",
    "coords": {
     "ECO": 30,
-    "AUT": 85,
+    "AUT": 95,
     "SOC": -30,
     "NAC": 60,
     "MIL": 40,
     "MIG": null,
     "ECOL": 70,
-    "POP": -50
+    "POP": -30
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Atlas: POP bajo",
+   "basis": "Atlas: POP bajo · Revisión 2026: POP: tecnocracia de partido único; rechaza el populismo pero también el pluralismo (no hay oposición ni acuerdos entre partidos), lo que lo deja moderadamente negativo y no en el polo pluralista.",
    "country": "China",
    "era": "1978–1989",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -623,18 +623,18 @@
    "name": "Nelson Mandela",
    "description": "Presidente. Fin del apartheid, reconciliación y democracia multirracial.",
    "coords": {
-    "ECO": -15,
-    "AUT": -80,
-    "SOC": -40,
+    "ECO": -20,
+    "AUT": -75,
+    "SOC": -50,
     "NAC": -40,
-    "MIL": -60,
+    "MIL": -50,
     "MIG": -30,
     "ECOL": null,
-    "POP": 10
+    "POP": -50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Atlas",
+   "basis": "Atlas · Revisión 2026: POP: Gobierno de Unidad Nacional con el Partido Nacional y el IFP, política de reconciliación y Constitución con Tribunal Constitucional fuerte; estilo pluralista y de consenso, no populista.",
    "country": "Sudáfrica",
    "era": "1994–1999",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -645,18 +645,18 @@
    "name": "Angela Merkel",
    "description": "Canciller. Centroderecha pragmática, europeísmo, transición energética y apertura a refugiados.",
    "coords": {
-    "ECO": 40,
-    "AUT": -45,
-    "SOC": 0,
+    "ECO": 30,
+    "AUT": -25,
+    "SOC": 20,
     "NAC": -70,
     "MIL": -30,
     "MIG": -60,
-    "ECOL": -50,
+    "ECOL": -40,
     "POP": -80
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Atlas",
+   "basis": "Atlas · Revisión 2026: AUT: apoyó la retención de datos de telecomunicaciones y la NetzDG (2017), y restricciones fuertes en la pandemia. SOC: democristiana, votó contra el matrimonio igualitario en 2017 aunque habilitó el voto libre.",
    "country": "Alemania",
    "era": "2005–2021",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -667,8 +667,8 @@
    "name": "Hugo Chávez",
    "description": "Presidente. \"Socialismo del siglo XXI\", nacionalizaciones, liderazgo personalista y erosión de contrapesos.",
    "coords": {
-    "ECO": -70,
-    "AUT": 45,
+    "ECO": -85,
+    "AUT": 60,
     "SOC": 0,
     "NAC": 80,
     "MIL": 50,
@@ -676,9 +676,9 @@
     "ECOL": 50,
     "POP": 100
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Atlas",
+   "basis": "Atlas · Revisión 2026: ECO: nacionalizaciones de petróleo, electricidad, telecomunicaciones y acero, expropiaciones y controles de precios y de cambio. AUT: ampliación del TSJ (2004), cierre de RCTV (2007), leyes habilitantes y reelección indefinida (2009).",
    "country": "Venezuela",
    "era": "1999–2013",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -689,18 +689,18 @@
    "name": "Juan Domingo Perón",
    "description": "Fundador del justicialismo: justicia social, industrialismo y tercera posición.",
    "coords": {
-    "ECO": -70,
-    "AUT": 50,
-    "SOC": 15,
+    "ECO": -75,
+    "AUT": 65,
+    "SOC": -10,
     "NAC": 80,
     "MIL": 40,
     "MIG": -10,
     "ECOL": null,
     "POP": 90
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Atlas",
+   "basis": "Atlas · Revisión 2026: SOC: en los debates de su época impulsó el voto femenino (1947), la ley de divorcio (1954) y el fin de la enseñanza religiosa, en abierto conflicto con la Iglesia. AUT: juicio político a la Corte (1947), expropiación de La Prensa (1951), presos políticos y reforma de 1949 para habilitar la reelección.",
    "country": "Argentina",
    "era": "1946–1955, 1973–1974",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -712,15 +712,15 @@
    "description": "Presidente de la recuperación democrática y del Juicio a las Juntas.",
    "coords": {
     "ECO": -25,
-    "AUT": -80,
-    "SOC": -40,
+    "AUT": -75,
+    "SOC": -55,
     "NAC": -10,
     "MIL": -60,
     "MIG": -40,
     "ECOL": null,
-    "POP": -10
+    "POP": -20
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Atlas",
    "country": "Argentina",
@@ -733,18 +733,18 @@
    "name": "Carlos Menem",
    "description": "Presidente. Convertibilidad, privatizaciones, apertura y alineamiento con EE.UU.",
    "coords": {
-    "ECO": 75,
-    "AUT": 5,
-    "SOC": 45,
+    "ECO": 80,
+    "AUT": 35,
+    "SOC": 50,
     "NAC": -40,
     "MIL": -20,
     "MIG": 0,
     "ECOL": 50,
     "POP": 60
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Atlas",
+   "basis": "Atlas · Revisión 2026: AUT: ampliación de la Corte de 5 a 9 miembros (1990), 545 decretos de necesidad y urgencia, indultos y reforma de 1994 para la reelección.",
    "country": "Argentina",
    "era": "1989–1999",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -755,18 +755,18 @@
    "name": "Mijaíl Gorbachov",
    "description": "Último líder soviético: perestroika, glásnost y fin de la Guerra Fría.",
    "coords": {
-    "ECO": -5,
-    "AUT": -30,
-    "SOC": -40,
+    "ECO": -30,
+    "AUT": -10,
+    "SOC": -20,
     "NAC": -70,
-    "MIL": -80,
+    "MIL": -75,
     "MIG": null,
     "ECOL": -20,
     "POP": -40
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Perestroika",
+   "basis": "Perestroika · Revisión 2026: ECO: la perestroika buscó un socialismo con cooperativas y autonomía empresarial, no una economía de mercado. AUT: partido único hasta 1990 y uso de la fuerza en Tiflis, Bakú y Vilna pese a la glásnost. SOC: laico, con aborto legal y homosexualidad aún penalizada.",
    "country": "URSS",
    "era": "1985–1991",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -777,16 +777,16 @@
    "name": "Ruhollah Jomeini",
    "description": "Líder de la Revolución islámica: teocracia, ejecuciones masivas de opositores y régimen religioso.",
    "coords": {
-    "ECO": -35,
+    "ECO": -40,
     "AUT": 100,
     "SOC": 100,
     "NAC": 80,
     "MIL": 70,
     "MIG": null,
     "ECOL": null,
-    "POP": 70
+    "POP": 80
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Velayat-e faqih",
    "country": "Irán",
@@ -799,18 +799,18 @@
    "name": "Barack Obama",
    "description": "Presidente. Reforma de salud, Acuerdo de París y centroizquierda moderada.",
    "coords": {
-    "ECO": 5,
-    "AUT": -40,
-    "SOC": -30,
+    "ECO": -25,
+    "AUT": -30,
+    "SOC": -55,
     "NAC": -50,
     "MIL": 20,
     "MIG": -40,
     "ECOL": -60,
-    "POP": -30
+    "POP": -50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CHES/GPS (Partido Demócrata)",
+   "basis": "CHES/GPS (Partido Demócrata) · Revisión 2026: ECO: reforma de salud, suba de impuestos a los altos ingresos y ley Dodd-Frank, con apoyo al libre comercio (TPP). SOC: apoyo al matrimonio igualitario (2012), derogación del 'Don't ask, don't tell' y postura a favor del aborto legal. POP: estilo tecnocrático y de acuerdos bipartidarios.",
    "country": "EE.UU.",
    "era": "2009–2017",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -821,18 +821,18 @@
    "name": "José Mujica",
    "description": "Presidente. Izquierda austera: legalización del cannabis y matrimonio igualitario.",
    "coords": {
-    "ECO": -35,
-    "AUT": -75,
+    "ECO": -40,
+    "AUT": -70,
     "SOC": -80,
     "NAC": -10,
     "MIL": -70,
     "MIG": -60,
-    "ECOL": -60,
+    "ECOL": -30,
     "POP": 30
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Frente Amplio uruguayo",
+   "basis": "Frente Amplio uruguayo · Revisión 2026: ECOL: pese a su discurso contra el consumismo, impulsó la ley de minería de gran porte y el proyecto Aratirí, y la exploración petrolera en el mar.",
    "country": "Uruguay",
    "era": "2010–2015",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -843,18 +843,18 @@
    "name": "Getúlio Vargas",
    "description": "Presidente. Estado Novo, industrialización y legislación laboral.",
    "coords": {
-    "ECO": -55,
-    "AUT": 75,
-    "SOC": 35,
+    "ECO": -70,
+    "AUT": 85,
+    "SOC": 25,
     "NAC": 80,
     "MIL": 40,
-    "MIG": 20,
+    "MIG": 60,
     "ECOL": null,
     "POP": 80
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Estado Novo",
+   "basis": "Estado Novo · Revisión 2026: ECO: creación de CSN, Vale y Petrobras, CLT y sustitución de importaciones. MIG: cuotas de inmigración de 1934 y campaña de nacionalización del Estado Novo, que cerró escuelas de comunidades inmigrantes e impuso el portugués (fuentes: Wikipedia 'Nationalization campaign', MDPI 2024).",
    "country": "Brasil",
    "era": "1930–1945, 1951–1954",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -865,18 +865,18 @@
    "name": "Donald Trump",
    "description": "Presidente: aranceles, control migratorio, recortes de impuestos y rechazo a los acuerdos multilaterales.",
    "coords": {
-    "ECO": -25,
-    "AUT": 55,
-    "SOC": 55,
-    "NAC": 90,
-    "MIL": 50,
-    "MIG": 95,
-    "ECOL": 90,
+    "ECO": 10,
+    "AUT": 75,
+    "SOC": 60,
+    "NAC": 95,
+    "MIL": 75,
+    "MIG": 100,
+    "ECOL": 95,
     "POP": 90
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Aranceles, restricción migratoria",
+   "basis": "Aranceles, restricción migratoria · Revisión 2026: El −25 en economía venía de promediar recortes de impuestos y desregulación con aranceles; con ambos, queda levemente pro mercado. Más autoridad por despliegues de la Guardia Nacional en ciudades, gobierno por emergencia (IEEPA) y presión sobre medios y jueces; más militarismo por presupuesto de defensa récord, ataques a Irán y la intervención en Venezuela en 2026.",
    "country": "EE.UU.",
    "era": "2025–"
   },
@@ -886,18 +886,18 @@
    "name": "Joe Biden",
    "description": "Expresidente: política industrial, inversión climática y alianzas tradicionales.",
    "coords": {
-    "ECO": -30,
-    "AUT": -50,
-    "SOC": -40,
-    "NAC": -30,
-    "MIL": 20,
-    "MIG": -30,
+    "ECO": -50,
+    "AUT": -45,
+    "SOC": -50,
+    "NAC": -35,
+    "MIL": 30,
+    "MIG": -20,
     "ECOL": -60,
-    "POP": -30
+    "POP": -40
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "IRA, CHIPS Act",
+   "basis": "IRA, CHIPS Act · Revisión 2026: Política industrial (IRA, CHIPS), mantenimiento de aranceles a China, apoyo sindical y aumento de impuestos a grandes empresas: estatista en todos los ítems núcleo de economía.",
    "country": "EE.UU.",
    "era": "2021–2025"
   },
@@ -907,16 +907,16 @@
    "name": "Vladímir Putin",
    "description": "Presidente de Rusia: poder concentrado, persecución de opositores, nacionalismo y guerra contra Ucrania.",
    "coords": {
-    "ECO": -10,
-    "AUT": 90,
-    "SOC": 75,
+    "ECO": -15,
+    "AUT": 95,
+    "SOC": 80,
     "NAC": 95,
-    "MIL": 95,
-    "MIG": 60,
-    "ECOL": 80,
-    "POP": 60
+    "MIL": 100,
+    "MIG": 50,
+    "ECOL": 85,
+    "POP": 55
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "V-Party antipluralismo",
    "country": "Rusia",
@@ -928,18 +928,18 @@
    "name": "Xi Jinping",
    "description": "Presidente de China: partido único, control estatal y proyección de poder global.",
    "coords": {
-    "ECO": -40,
+    "ECO": -50,
     "AUT": 100,
-    "SOC": -20,
-    "NAC": 85,
-    "MIL": 70,
+    "SOC": 0,
+    "NAC": 90,
+    "MIL": 75,
     "MIG": 80,
-    "ECOL": -10,
-    "POP": 40
+    "ECOL": 5,
+    "POP": 30
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Partido único",
+   "basis": "Partido único · Revisión 2026: En valores combina laicidad estatal y hostilidad a la religión con familia tradicional, natalismo y restricciones a la diversidad sexual, lo que lo ubica cerca del centro y no del lado progresista. En ambiente, récord de renovables junto a expansión del carbón y defensa del derecho al desarrollo.",
    "country": "China",
    "era": "2012–"
   },
@@ -949,18 +949,18 @@
    "name": "Lula da Silva",
    "description": "Presidente: programas sociales, desarrollismo e integración regional Sur-Sur.",
    "coords": {
-    "ECO": -50,
-    "AUT": -40,
-    "SOC": -10,
-    "NAC": -10,
-    "MIL": -60,
-    "MIG": -30,
-    "ECOL": -30,
-    "POP": 60
+    "ECO": -60,
+    "AUT": -30,
+    "SOC": -15,
+    "NAC": 0,
+    "MIL": -50,
+    "MIG": -40,
+    "ECOL": -15,
+    "POP": 55
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Bolsa Família, BRICS",
+   "basis": "Bolsa Família, BRICS · Revisión 2026: Contradicciones en ambiente: la reducción de la deforestación y la COP30 conviven con la expansión de Petrobras y la exploración en el margen ecuatorial. En economía, exención del impuesto a la renta para bajos ingresos financiada con un impuesto mínimo a altos ingresos (2025).",
    "country": "Brasil",
    "era": "2003–2010, 2023–"
   },
@@ -970,18 +970,18 @@
    "name": "Jair Bolsonaro",
    "description": "Expresidente: conservadurismo religioso, mano dura y escepticismo ambiental.",
    "coords": {
-    "ECO": 30,
-    "AUT": 60,
+    "ECO": 45,
+    "AUT": 80,
     "SOC": 90,
     "NAC": 80,
     "MIL": 60,
-    "MIG": 40,
-    "ECOL": 90,
+    "MIG": 50,
+    "ECOL": 95,
     "POP": 90
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Tecnopopulismo (Atlas)",
+   "basis": "Tecnopopulismo (Atlas) · Revisión 2026: Más autoritario por su reivindicación de la dictadura militar y su cuestionamiento del sistema electoral; economía más pro mercado con la agenda de Guedes y la privatización de Eletrobras.",
    "country": "Brasil",
    "era": "2019–2022"
   },
@@ -992,17 +992,17 @@
    "description": "Presidente: centro liberal, reformas pro mercado, europeísmo y laicidad.",
    "coords": {
     "ECO": 35,
-    "AUT": -25,
-    "SOC": -45,
-    "NAC": -50,
-    "MIL": 20,
-    "MIG": 20,
+    "AUT": 0,
+    "SOC": -55,
+    "NAC": -60,
+    "MIL": 50,
+    "MIG": 30,
     "ECOL": -30,
-    "POP": -40
+    "POP": -50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Renaissance",
+   "basis": "Renaissance · Revisión 2026: El −25 en libertades venía de promediar su perfil democrático con leyes de seguridad, estados de emergencia, vigilancia algorítmica y uso del 49.3; queda en el centro. Más militarismo por el aumento del gasto, la disuasión nuclear europea y su oferta de enviar tropas a Ucrania.",
    "country": "Francia",
    "era": "2017–"
   },
@@ -1012,18 +1012,18 @@
    "name": "Giorgia Meloni",
    "description": "Primera ministra: derecha nacional-conservadora, atlantista y dentro de las reglas de la UE.",
    "coords": {
-    "ECO": 5,
-    "AUT": 15,
-    "SOC": 70,
-    "NAC": 80,
-    "MIL": 30,
+    "ECO": 20,
+    "AUT": 45,
+    "SOC": 75,
+    "NAC": 70,
+    "MIL": 40,
     "MIG": 85,
-    "ECOL": 30,
-    "POP": 40
+    "ECOL": 45,
+    "POP": 45
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Hermanos de Italia",
+   "basis": "Hermanos de Italia · Revisión 2026: Endurecimiento penal (decreto de seguridad que penaliza bloqueos, nuevos delitos, gestación subrogada como delito universal) y reforma del premierato: más autoridad que el promedio anterior. En economía, recorte de la renta de ciudadanía y rechazo a subir impuestos a altos ingresos.",
    "country": "Italia",
    "era": "2022–"
   },
@@ -1031,22 +1031,22 @@
    "id": "orban",
    "catalog": "intl_actuales",
    "name": "Viktor Orbán",
-   "description": "Líder de la \"democracia iliberal\": control de medios, nacionalismo cristiano y restricción migratoria.",
+   "description": "Primer ministro de Hungría (2010–2026) y líder de la \"democracia iliberal\": control de medios, nacionalismo cristiano y restricción migratoria; perdió el poder en 2026.",
    "coords": {
-    "ECO": -15,
-    "AUT": 65,
-    "SOC": 80,
+    "ECO": -10,
+    "AUT": 80,
+    "SOC": 90,
     "NAC": 90,
-    "MIL": 10,
-    "MIG": 95,
-    "ECOL": 30,
+    "MIL": 0,
+    "MIG": 100,
+    "ECOL": 40,
     "POP": 80
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "V-Party antipluralismo (Fidesz)",
+   "basis": "V-Party antipluralismo (Fidesz) · Revisión 2026: El control de medios, la Oficina de Protección de la Soberanía y la prohibición del Orgullo justifican un valor más alto en libertades. Nota: dejó el gobierno en mayo de 2026 tras perder ante Péter Magyar.",
    "country": "Hungría",
-   "era": "2010–"
+   "era": "2010–2026"
   },
   {
    "id": "bukele",
@@ -1054,18 +1054,18 @@
    "name": "Nayib Bukele",
    "description": "Presidente: régimen de excepción contra las pandillas, reelección y concentración del poder.",
    "coords": {
-    "ECO": 25,
-    "AUT": 85,
-    "SOC": 50,
-    "NAC": 60,
+    "ECO": 30,
+    "AUT": 95,
+    "SOC": 65,
+    "NAC": 50,
     "MIL": 50,
     "MIG": 20,
-    "ECOL": 20,
+    "ECOL": 60,
     "POP": 90
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Régimen de excepción, bitcoin",
+   "basis": "Régimen de excepción, bitcoin · Revisión 2026: En valores mantiene la prohibición total del aborto y eliminó la 'ideología de género' de las escuelas; en ambiente derogó la prohibición de la minería metálica (2024).",
    "country": "El Salvador",
    "era": "2019–"
   },
@@ -1075,18 +1075,18 @@
    "name": "Pedro Sánchez",
    "description": "Líder del PSOE: socialdemocracia, feminismo y europeísmo.",
    "coords": {
-    "ECO": -15,
-    "AUT": -55,
-    "SOC": -70,
-    "NAC": -40,
-    "MIL": -30,
-    "MIG": -60,
+    "ECO": -50,
+    "AUT": -40,
+    "SOC": -75,
+    "NAC": -50,
+    "MIL": -40,
+    "MIG": -65,
     "ECOL": -60,
-    "POP": -10
+    "POP": 0
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "PSOE",
+   "basis": "PSOE · Revisión 2026: El −15 en economía era un artefacto de promediar su apoyo al libre comercio con impuestos a la banca y las energéticas, el impuesto a las grandes fortunas, el control de alquileres y la entrada estatal en Telefónica: es estatista en casi todos los ítems núcleo.",
    "country": "España",
    "era": "2018–"
   },
@@ -1094,22 +1094,22 @@
    "id": "petro",
    "catalog": "intl_actuales",
    "name": "Gustavo Petro",
-   "description": "Presidente: izquierda, transición energética y \"paz total\".",
+   "description": "Expresidente (2022–2026): izquierda, transición energética y \"paz total\".",
    "coords": {
-    "ECO": -60,
-    "AUT": -20,
-    "SOC": -50,
-    "NAC": -30,
-    "MIL": -70,
-    "MIG": -50,
-    "ECOL": -90,
-    "POP": 80
+    "ECO": -75,
+    "AUT": -10,
+    "SOC": -55,
+    "NAC": -20,
+    "MIL": -75,
+    "MIG": -60,
+    "ECOL": -95,
+    "POP": 85
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Pacto Histórico",
+   "basis": "Pacto Histórico · Revisión 2026: Estatismo marcado: reformas laboral, de salud y pensional con más peso del Estado, freno a nuevas exploraciones de hidrocarburos e impuestos más altos a los altos ingresos y al sector extractivo.",
    "country": "Colombia",
-   "era": "2022–"
+   "era": "2022–2026"
   },
   {
    "id": "boric",
@@ -1117,18 +1117,18 @@
    "name": "Gabriel Boric",
    "description": "Expresidente: nueva izquierda, feminismo, ecologismo y ampliación del Estado social.",
    "coords": {
-    "ECO": -30,
-    "AUT": -60,
+    "ECO": -45,
+    "AUT": -40,
     "SOC": -75,
     "NAC": -40,
-    "MIL": -60,
-    "MIG": -40,
-    "ECOL": -70,
-    "POP": 20
+    "MIL": -35,
+    "MIG": -20,
+    "ECOL": -65,
+    "POP": 10
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Frente Amplio",
+   "basis": "Frente Amplio · Revisión 2026: Endureció la política migratoria con militarización de la frontera norte y expulsiones; en seguridad firmó leyes que dan más respaldo a las policías (Naín-Retamal) y estados de excepción en la Macrozona Sur.",
    "country": "Chile",
    "era": "2022–2026"
   },
@@ -1138,18 +1138,18 @@
    "name": "José Antonio Kast",
    "description": "Presidente de Chile desde marzo de 2026: derecha conservadora, libre mercado, orden público y control migratorio.",
    "coords": {
-    "ECO": 60,
-    "AUT": 20,
-    "SOC": 85,
+    "ECO": 75,
+    "AUT": 60,
+    "SOC": 90,
     "NAC": 70,
     "MIL": 50,
-    "MIG": 80,
-    "ECOL": 50,
+    "MIG": 90,
+    "ECOL": 55,
     "POP": 50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Partido Republicano de Chile",
+   "basis": "Partido Republicano de Chile · Revisión 2026: El 20 en libertades venía de promediar su adhesión democrática con su agenda de orden: megacárceles, estados de excepción, militares en la frontera y reivindicación del régimen militar. En su gobierno impulsa zanjas y muros fronterizos y un recorte de gasto de unos US$6.000 millones.",
    "country": "Chile",
    "era": "2026–"
   },
@@ -1159,18 +1159,18 @@
    "name": "Narendra Modi",
    "description": "Primer ministro: nacionalismo hindú, desarrollo y liderazgo personalista.",
    "coords": {
-    "ECO": -15,
-    "AUT": 60,
+    "ECO": 10,
+    "AUT": 65,
     "SOC": 80,
     "NAC": 90,
-    "MIL": 60,
-    "MIG": 80,
+    "MIL": 65,
+    "MIG": 85,
     "ECOL": 40,
-    "POP": 80
+    "POP": 75
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "BJP",
+   "basis": "BJP · Revisión 2026: El −15 en economía venía de promediar su proteccionismo (Make in India, rechazo al RCEP) con una agenda pro empresa, privatizaciones y rebajas de impuestos; en balance queda levemente pro mercado.",
    "country": "India",
    "era": "2014–"
   },
@@ -1180,18 +1180,18 @@
    "name": "Recep Tayyip Erdoğan",
    "description": "Presidente: islamismo conservador, nacionalismo y concentración del poder.",
    "coords": {
-    "ECO": -15,
-    "AUT": 75,
+    "ECO": 0,
+    "AUT": 90,
     "SOC": 85,
     "NAC": 90,
-    "MIL": 70,
-    "MIG": 40,
-    "ECOL": 30,
-    "POP": 90
+    "MIL": 75,
+    "MIG": 25,
+    "ECOL": 40,
+    "POP": 85
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "AKP",
+   "basis": "AKP · Revisión 2026: Más autoritario por el encarcelamiento de figuras opositoras y el control de medios. En migración acogió a unos 3,5 millones de sirios y defendió su permanencia frente a la oposición, aunque luego impulsó retornos.",
    "country": "Turquía",
    "era": "2003–"
   },
@@ -1202,17 +1202,17 @@
    "description": "Presidente argentino: libertario, ajuste de shock, alineamiento con EE.UU. e Israel y batalla cultural.",
    "coords": {
     "ECO": 95,
-    "AUT": 30,
-    "SOC": 45,
-    "NAC": 30,
-    "MIL": 30,
-    "MIG": 40,
+    "AUT": 40,
+    "SOC": 55,
+    "NAC": 40,
+    "MIL": 40,
+    "MIG": 70,
     "ECOL": 90,
     "POP": 80
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Atlas, Brújula tetradimensional",
+   "basis": "Atlas, Brújula tetradimensional · Revisión 2026: En migración endureció requisitos de residencia y ciudadanía, habilitó el cobro de salud y educación a extranjeros no residentes y facilitó expulsiones (decreto de 2025).",
    "country": "Argentina",
    "era": "2023–"
   },
@@ -1222,18 +1222,18 @@
    "name": "Cristina Fernández de Kirchner",
    "description": "Expresidenta argentina: Estado activo, redistribución y ampliación de derechos.",
    "coords": {
-    "ECO": -70,
-    "AUT": 0,
+    "ECO": -75,
+    "AUT": 15,
     "SOC": -45,
-    "NAC": 50,
+    "NAC": 55,
     "MIL": -30,
     "MIG": -40,
-    "ECOL": 20,
-    "POP": 80
+    "ECOL": 30,
+    "POP": 85
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Atlas, Brújula tetradimensional",
+   "basis": "Atlas, Brújula tetradimensional · Revisión 2026: Más autoridad por la ley de medios contra grupos de prensa, la intervención del INDEC y el proyecto de 'democratización de la justicia'.",
    "country": "Argentina",
    "era": "2007–"
   },
@@ -1243,18 +1243,18 @@
    "name": "Mauricio Macri",
    "description": "Expresidente argentino: centroderecha liberal y apertura al mundo.",
    "coords": {
-    "ECO": 55,
-    "AUT": -15,
-    "SOC": 0,
-    "NAC": -30,
-    "MIL": 0,
-    "MIG": 10,
-    "ECOL": 20,
-    "POP": -50
+    "ECO": 60,
+    "AUT": 20,
+    "SOC": 10,
+    "NAC": -40,
+    "MIL": 20,
+    "MIG": 35,
+    "ECOL": 40,
+    "POP": -55
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Atlas",
+   "basis": "Atlas · Revisión 2026: Estaba corrido al centro en libertades: respaldó la 'doctrina Chocobar' y el protocolo antipiquetes, propuso bajar la edad de imputabilidad y gobernó con DNU, aunque respetó el pluralismo. Más militarismo por habilitar el apoyo de las Fuerzas Armadas en seguridad interior; en migración endureció expulsiones (DNU 70/2017).",
    "country": "Argentina",
    "era": "2015–"
   },
@@ -1265,17 +1265,17 @@
    "description": "Derecha radical personalista: liberalismo económico extremo y conservadurismo cultural.",
    "coords": {
     "ECO": 90,
-    "AUT": 30,
-    "SOC": 45,
-    "NAC": 30,
-    "MIL": 30,
-    "MIG": 40,
+    "AUT": 40,
+    "SOC": 55,
+    "NAC": 45,
+    "MIL": 40,
+    "MIG": 60,
     "ECOL": 90,
     "POP": 70
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Morresi y Ramos 2023",
+   "basis": "Morresi y Ramos 2023 · Revisión 2026: Retiro de la OMS y rechazo a la Agenda 2030 y a la 'gobernanza global' (NAC más soberanista); el DNU 366/2025 endureció la ley migratoria: cobro de salud y educación a no residentes, expulsión por delitos y requisitos más estrictos de residencia y ciudadanía.",
    "country": "Argentina",
    "era": "2021–"
   },
@@ -1287,14 +1287,14 @@
    "coords": {
     "ECO": -70,
     "AUT": -10,
-    "SOC": -35,
+    "SOC": -40,
     "NAC": 40,
     "MIL": -30,
     "MIG": -40,
-    "ECOL": 10,
+    "ECOL": 20,
     "POP": 70
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Pulsar.UBA 2026",
    "country": "Argentina",
@@ -1306,18 +1306,18 @@
    "name": "PRO",
    "description": "Centroderecha liberal: mercado, gestión y moderación institucional.",
    "coords": {
-    "ECO": 50,
-    "AUT": -5,
+    "ECO": 60,
+    "AUT": 10,
     "SOC": 0,
     "NAC": -30,
     "MIL": 10,
-    "MIG": 20,
-    "ECOL": 20,
+    "MIG": 30,
+    "ECOL": 30,
     "POP": -50
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Pulsar.UBA 2026",
+   "basis": "Pulsar.UBA 2026 · Revisión 2026: Mano dura en seguridad (protocolo antipiquetes 2016, 'doctrina Chocobar', DNU 70/2017 sobre expulsiones) lo ubica del lado del orden en las afirmaciones penales pese a su institucionalismo.",
    "country": "Argentina",
    "era": "2005–"
   },
@@ -1327,8 +1327,8 @@
    "name": "Unión Cívica Radical",
    "description": "Centro republicano: instituciones y economía mixta.",
    "coords": {
-    "ECO": -5,
-    "AUT": -45,
+    "ECO": 0,
+    "AUT": -40,
     "SOC": -25,
     "NAC": -20,
     "MIL": -30,
@@ -1348,18 +1348,18 @@
    "name": "Frente de Izquierda",
    "description": "Izquierda trotskista: estatización y no pago de la deuda.",
    "coords": {
-    "ECO": -80,
-    "AUT": -50,
+    "ECO": -95,
+    "AUT": -60,
     "SOC": -90,
-    "NAC": -50,
+    "NAC": -20,
     "MIL": -80,
     "MIG": -90,
-    "ECOL": -40,
-    "POP": 40
+    "ECOL": -60,
+    "POP": 55
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "GOP 2022",
+   "basis": "GOP 2022 · Revisión 2026: Programa de estatización sin indemnización, planificación y no pago de la deuda: casi el polo de ECO. Su internacionalismo es de clase y rechaza FMI, OMC e integración tipo UE, por lo que no es cosmopolita en las afirmaciones de NAC. Rechazo a fracking y megaminería; propuesta de que los legisladores cobren como un docente (POP).",
    "country": "Argentina",
    "era": "2011–"
   },
@@ -1369,18 +1369,18 @@
    "name": "Partido Demócrata",
    "description": "Centroizquierda estadounidense: derechos civiles, clima y cobertura social.",
    "coords": {
-    "ECO": -25,
-    "AUT": -50,
-    "SOC": -45,
+    "ECO": -35,
+    "AUT": -45,
+    "SOC": -60,
     "NAC": -40,
-    "MIL": 10,
+    "MIL": 20,
     "MIG": -40,
-    "ECOL": -60,
+    "ECOL": -55,
     "POP": -30
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CHES/GPS",
+   "basis": "CHES/GPS · Revisión 2026: Defensa del derecho al aborto (post-Dobbs), matrimonio igualitario y derechos trans en la plataforma 2024: progresismo más claro que el valor anterior.",
    "country": "EE.UU.",
    "era": "1828–"
   },
@@ -1390,18 +1390,18 @@
    "name": "Partido Republicano",
    "description": "Derecha estadounidense marcada por el trumpismo: aranceles, control migratorio y soberanismo.",
    "coords": {
-    "ECO": -10,
-    "AUT": 50,
-    "SOC": 65,
+    "ECO": 30,
+    "AUT": 65,
+    "SOC": 70,
     "NAC": 90,
-    "MIL": 60,
-    "MIG": 90,
-    "ECOL": 80,
+    "MIL": 70,
+    "MIG": 95,
+    "ECOL": 90,
     "POP": 80
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "GPS 2023",
+   "basis": "GPS 2023 · Revisión 2026: El promedio con comercio lo dejaba como estatista: el trumpismo combina aranceles con recortes impositivos (One Big Beautiful Bill 2025), desregulación y rechazo a la redistribución, lo que da centroderecha de mercado neta. AUT sube por el uso de emergencias y Guardia Nacional, presión a medios y tribunales y apoyo a la pena de muerte.",
    "country": "EE.UU.",
    "era": "1854–"
   },
@@ -1411,18 +1411,18 @@
    "name": "PSOE",
    "description": "Socialdemocracia española: Estado de bienestar, feminismo y europeísmo.",
    "coords": {
-    "ECO": -15,
-    "AUT": -55,
+    "ECO": -40,
+    "AUT": -50,
     "SOC": -70,
-    "NAC": -40,
-    "MIL": -30,
-    "MIG": -50,
+    "NAC": -45,
+    "MIL": -25,
+    "MIG": -60,
     "ECOL": -60,
     "POP": -20
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CHES",
+   "basis": "CHES · Revisión 2026: El gobierno Sánchez subió el salario mínimo, creó impuestos a banca y energéticas, aprobó la ley de vivienda con control de alquileres y tomó participación pública en Telefónica: el promedio con comercio lo moderaba en exceso (CHES lrecon ≈3).",
    "country": "España",
    "era": "1879–"
   },
@@ -1432,18 +1432,18 @@
    "name": "Partido Popular",
    "description": "Centroderecha española: liberalismo económico moderado y europeísmo.",
    "coords": {
-    "ECO": 45,
-    "AUT": -15,
-    "SOC": 30,
-    "NAC": 10,
-    "MIL": 20,
-    "MIG": 30,
-    "ECOL": 10,
+    "ECO": 50,
+    "AUT": 15,
+    "SOC": 35,
+    "NAC": 15,
+    "MIL": 30,
+    "MIG": 45,
+    "ECOL": 20,
     "POP": -30
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "CHES",
+   "basis": "CHES · Revisión 2026: Autor de la Ley de Seguridad Ciudadana ('ley mordaza') y la prisión permanente revisable; a favor de penas más duras y control de protestas. Con Feijóo endureció su propuesta migratoria (expulsión de reincidentes, visado por puntos).",
    "country": "España",
    "era": "1989–"
   },
@@ -1453,18 +1453,18 @@
    "name": "Vox",
    "description": "Derecha nacionalista española: tradicionalismo, control migratorio y euroescepticismo.",
    "coords": {
-    "ECO": 20,
-    "AUT": 35,
-    "SOC": 70,
+    "ECO": 35,
+    "AUT": 55,
+    "SOC": 80,
     "NAC": 90,
     "MIL": 60,
-    "MIG": 90,
-    "ECOL": 60,
+    "MIG": 95,
+    "ECOL": 75,
     "POP": 70
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CHES",
+   "basis": "CHES · Revisión 2026: Programa de rebajas fiscales y privatizaciones con proteccionismo agrario (contra el acuerdo UE-Mercosur): derecha de mercado moderada, no centro. AUT sube por cadena perpetua, ilegalización de partidos separatistas y deportaciones masivas; ECOL por rechazo al Pacto Verde y escepticismo climático.",
    "country": "España",
    "era": "2013–"
   },
@@ -1474,14 +1474,14 @@
    "name": "Partido de los Trabajadores",
    "description": "Izquierda brasileña: programas sociales y Estado desarrollista.",
    "coords": {
-    "ECO": -50,
-    "AUT": -40,
-    "SOC": -15,
+    "ECO": -55,
+    "AUT": -35,
+    "SOC": -25,
     "NAC": -10,
-    "MIL": -50,
+    "MIL": -40,
     "MIG": -30,
-    "ECOL": -30,
-    "POP": 50
+    "ECOL": -25,
+    "POP": 45
    },
    "confidence": "media",
    "method": "seed-editorial",
@@ -1495,18 +1495,18 @@
    "name": "Partido Liberal (bolsonarismo)",
    "description": "Derecha brasileña: conservadurismo religioso y mano dura.",
    "coords": {
-    "ECO": 30,
-    "AUT": 60,
+    "ECO": 45,
+    "AUT": 75,
     "SOC": 90,
-    "NAC": 80,
+    "NAC": 75,
     "MIL": 60,
-    "MIG": 40,
+    "MIG": 50,
     "ECOL": 90,
     "POP": 90
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "GPS",
+   "basis": "GPS · Revisión 2026: Gestión Guedes: privatización de Eletrobras, reforma previsional y apertura comercial. AUT sube por la reivindicación de 1964, los ataques al sistema electoral y al STF, y el programa de armas y mano dura (V-Party antipluralismo muy alto).",
    "country": "Brasil",
    "era": "2006–"
   },
@@ -1517,17 +1517,17 @@
    "description": "Izquierda nacional-popular mexicana: programas sociales y soberanía energética.",
    "coords": {
     "ECO": -45,
-    "AUT": 25,
-    "SOC": -25,
+    "AUT": 45,
+    "SOC": -20,
     "NAC": 40,
     "MIL": -20,
-    "MIG": -10,
-    "ECOL": 20,
+    "MIG": 0,
+    "ECOL": 40,
     "POP": 80
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "GPS",
+   "basis": "GPS · Revisión 2026: Reforma judicial 2024 con elección popular de jueces, eliminación de organismos autónomos (INAI y otros) y Guardia Nacional bajo mando militar; productivismo petrolero (Dos Bocas, rescate de Pemex, Tren Maya).",
    "country": "México",
    "era": "2014–"
   },
@@ -1537,18 +1537,18 @@
    "name": "Rassemblement National",
    "description": "Derecha nacionalista francesa: control migratorio y proteccionismo.",
    "coords": {
-    "ECO": -45,
-    "AUT": 45,
-    "SOC": 25,
+    "ECO": -40,
+    "AUT": 55,
+    "SOC": 30,
     "NAC": 90,
     "MIL": 30,
     "MIG": 95,
-    "ECOL": 30,
-    "POP": 85
+    "ECOL": 50,
+    "POP": 80
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "CHES",
+   "basis": "CHES · Revisión 2026: Rechazo a la eólica, a las zonas de bajas emisiones y al Pacto Verde; defensa de bajar el precio de la energía por sobre las metas climáticas.",
    "country": "Francia",
    "era": "1972–"
   },
@@ -1558,18 +1558,18 @@
    "name": "Renaissance",
    "description": "Centro liberal francés: reformas pro mercado y europeísmo.",
    "coords": {
-    "ECO": 35,
-    "AUT": -25,
+    "ECO": 45,
+    "AUT": -5,
     "SOC": -45,
-    "NAC": -50,
-    "MIL": 20,
+    "NAC": -60,
+    "MIL": 40,
     "MIG": 20,
     "ECOL": -30,
-    "POP": -40
+    "POP": -50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CHES",
+   "basis": "CHES · Revisión 2026: Uso reiterado del 49.3, ley de seguridad global y videovigilancia algorítmica (JJOO 2024), manejo policial de protestas: menos libertario de lo que daba el promedio. MIL sube por la ley de programación militar 2024-2030, la 'economía de guerra' y la propuesta de tropas en Ucrania.",
    "country": "Francia",
    "era": "2016–"
   },
@@ -1579,18 +1579,18 @@
    "name": "Partido Laborista",
    "description": "Centroizquierda británica: servicios públicos y derechos laborales.",
    "coords": {
-    "ECO": -15,
-    "AUT": -50,
-    "SOC": -45,
+    "ECO": -25,
+    "AUT": -20,
+    "SOC": -40,
     "NAC": -30,
-    "MIL": 0,
-    "MIG": -20,
+    "MIL": 30,
+    "MIG": 30,
     "ECOL": -50,
     "POP": -30
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CHES",
+   "basis": "CHES · Revisión 2026: El gobierno Starmer elevó el gasto de defensa hacia 2,5-3 % y sostiene Trident y AUKUS; proscribió Palestine Action bajo la ley antiterrorista. En migración, el libro blanco de 2025 y la reforma de asilo de Mahmood (estatus temporal revisable cada 30 meses, 20 años para asentarse) lo ubican del lado restrictivo.",
    "country": "Reino Unido",
    "era": "1900–"
   },
@@ -1601,17 +1601,17 @@
    "description": "Democracia cristiana alemana: economía social de mercado y europeísmo.",
    "coords": {
     "ECO": 40,
-    "AUT": -30,
+    "AUT": -10,
     "SOC": 30,
     "NAC": -40,
-    "MIL": 10,
-    "MIG": 20,
-    "ECOL": -20,
+    "MIL": 50,
+    "MIG": 45,
+    "ECOL": 0,
     "POP": -60
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CHES",
+   "basis": "CHES · Revisión 2026: Con Merz: agenda de orden (rechazos en frontera, más facultades policiales) que modera su AUT; reforma del freno de deuda para defensa, nueva ley de servicio militar y objetivo de 'el ejército convencional más fuerte de Europa'; suspensión de la reunificación familiar; revisión de la ley de calefacción.",
    "country": "Alemania",
    "era": "1945–"
   },
@@ -1621,18 +1621,18 @@
    "name": "Los Verdes",
    "description": "Ecologismo alemán: transición energética y derechos civiles.",
    "coords": {
-    "ECO": -20,
-    "AUT": -75,
-    "SOC": -70,
+    "ECO": -30,
+    "AUT": -60,
+    "SOC": -80,
     "NAC": -70,
-    "MIL": -20,
+    "MIL": 10,
     "MIG": -70,
-    "ECOL": -100,
-    "POP": -40
+    "ECOL": -95,
+    "POP": -50
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "CHES",
+   "basis": "CHES · Revisión 2026: Los Verdes fueron el partido más favorable a enviar armas a Ucrania (Baerbock, Taurus) y votaron la reforma del freno de deuda para defensa en 2025; ya no son pacifistas. AUT algo menos extremo por su apoyo a regulación de plataformas y medidas COVID.",
    "country": "Alemania",
    "era": "1980–"
   },
@@ -1642,18 +1642,18 @@
    "name": "Frente Amplio",
    "description": "Nueva izquierda chilena: feminismo, ecologismo y derechos sociales.",
    "coords": {
-    "ECO": -45,
-    "AUT": -60,
+    "ECO": -50,
+    "AUT": -50,
     "SOC": -75,
-    "NAC": -40,
-    "MIL": -60,
-    "MIG": -40,
+    "NAC": -30,
+    "MIL": -40,
+    "MIG": -30,
     "ECOL": -75,
-    "POP": 20
+    "POP": 15
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "GPS",
+   "basis": "GPS · Revisión 2026: En el gobierno Boric apoyó estados de excepción, militarización de la frontera norte y alza del presupuesto de Carabineros: menos pacifista que el valor anterior.",
    "country": "Chile",
    "era": "2017–"
   },
@@ -1666,17 +1666,17 @@
    "description": "Canciller de Prusia y primer canciller del Imperio alemán; unificó Alemania tras tres guerras y creó los primeros seguros sociales obligatorios, a la vez que reprimió a socialistas y católicos.",
    "coords": {
     "ECO": -30,
-    "AUT": 50,
-    "SOC": 20,
+    "AUT": 75,
+    "SOC": 0,
     "NAC": 70,
     "MIL": 70,
     "MIG": 70,
     "ECOL": null,
-    "POP": -30
+    "POP": 0
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Guerras de 1864, 1866 y 1870–71; arancel proteccionista de 1879; Leyes Antisocialistas (1878–90); Kulturkampf y matrimonio civil; seguros de enfermedad, accidentes y vejez (1883–89); Reichstag por sufragio masculino con ejecutivo responsable ante el Káiser; expulsiones de polacos de Prusia (1885). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Guerras de 1864, 1866 y 1870–71; arancel proteccionista de 1879; Leyes Antisocialistas (1878–90); Kulturkampf y matrimonio civil; seguros de enfermedad, accidentes y vejez (1883–89); Reichstag por sufragio masculino con ejecutivo responsable ante el Káiser; expulsiones de polacos de Prusia (1885). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: SOC: el Kulturkampf impuso el matrimonio civil obligatorio y la inspección estatal de las escuelas contra la Iglesia católica, aunque él era un conservador protestante: queda en el centro según los debates de su tiempo. AUT: gobernó sin presupuesto aprobado en el conflicto constitucional (1862–66), Leyes Antisocialistas y prisión de clérigos en el Kulturkampf. POP: tachó de 'enemigos del Reich' a católicos y socialistas y despreciaba a los partidos, pero gobernó desde la élite y con la burocracia: queda en el centro, no en el polo pluralista.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1688,17 +1688,17 @@
    "description": "Fundador y primer presidente de la República de Turquía; impulsó una modernización laica radical bajo un régimen de partido único. Bajo su presidencia el Estado reprimió rebeliones kurdas, incluida la masacre de Dersim (1937–38), con miles de civiles muertos.",
    "coords": {
     "ECO": -50,
-    "AUT": 70,
+    "AUT": 85,
     "SOC": -80,
     "NAC": 90,
     "MIL": 30,
-    "MIG": 30,
+    "MIG": 50,
     "ECOL": null,
     "POP": 50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Abolición del califato (1924); laicismo constitucional; Código Civil de 1926, sufragio femenino (1934), reforma del alfabeto; estatismo económico desde 1931; partido único CHP; Guerra de Independencia y luego 'paz en casa, paz en el mundo'; intercambio de poblaciones con Grecia (1923); represión de la rebelión de Sheikh Said (1925) y de Dersim (1937–38). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Abolición del califato (1924); laicismo constitucional; Código Civil de 1926, sufragio femenino (1934), reforma del alfabeto; estatismo económico desde 1931; partido único CHP; Guerra de Independencia y luego 'paz en casa, paz en el mundo'; intercambio de poblaciones con Grecia (1923); represión de la rebelión de Sheikh Said (1925) y de Dersim (1937–38). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: AUT: partido único, Tribunales de la Independencia, Ley de Mantenimiento del Orden (1925) y disolución del Partido Republicano Progresista. MIG: Ley de Asentamiento (1934) que priorizaba a inmigrantes 'de cultura turca' y política de turquificación.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1709,8 +1709,8 @@
    "era": "1945–1980",
    "description": "Líder partisano y jefe de la Yugoslavia socialista; rompió con Stalin en 1948, desarrolló la autogestión obrera y cofundó el Movimiento de Países No Alineados. Su régimen fue responsable de ejecuciones masivas de prisioneros y civiles en 1945 (Bleiburg y otras) y del campo de prisioneros políticos de Goli Otok.",
    "coords": {
-    "ECO": -40,
-    "AUT": 75,
+    "ECO": -55,
+    "AUT": 85,
     "SOC": -50,
     "NAC": 10,
     "MIL": 40,
@@ -1718,9 +1718,9 @@
     "ECOL": null,
     "POP": 50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Ruptura Tito–Stalin (1948); socialismo autogestionario con elementos de mercado desde los 60; partido único (Liga de los Comunistas); 'hermandad y unidad' federal multinacional; Conferencia de Belgrado (1961); apertura a la emigración laboral hacia Europa occidental; culto a la personalidad; represalias de posguerra (1945) y Goli Otok (1949–56). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Ruptura Tito–Stalin (1948); socialismo autogestionario con elementos de mercado desde los 60; partido único (Liga de los Comunistas); 'hermandad y unidad' federal multinacional; Conferencia de Belgrado (1961); apertura a la emigración laboral hacia Europa occidental; culto a la personalidad; represalias de posguerra (1945) y Goli Otok (1949–56). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: ECO: pese a la autogestión y a elementos de mercado, la propiedad social y la planificación dominaban la economía.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1731,18 +1731,18 @@
    "era": "1969–1974",
    "description": "Canciller socialdemócrata de la República Federal de Alemania; impulsó la Ostpolitik de distensión con el bloque oriental y recibió el Nobel de la Paz en 1971.",
    "coords": {
-    "ECO": 5,
+    "ECO": -30,
     "AUT": -50,
     "SOC": -40,
     "NAC": -60,
-    "MIL": -60,
+    "MIL": -50,
     "MIG": 20,
     "ECOL": -30,
-    "POP": -30
+    "POP": -40
    },
    "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Ostpolitik y tratados con la URSS, Polonia y la RDA (1970–72); genuflexión de Varsovia; 'atrevernos a más democracia'; expansión del Estado de bienestar; Radikalenerlass (1972); Anwerbestopp de trabajadores extranjeros (1973); primer programa ambiental federal (1971); Comisión Norte-Sur. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Ostpolitik y tratados con la URSS, Polonia y la RDA (1970–72); genuflexión de Varsovia; 'atrevernos a más democracia'; expansión del Estado de bienestar; Radikalenerlass (1972); Anwerbestopp de trabajadores extranjeros (1973); primer programa ambiental federal (1971); Comisión Norte-Sur. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: ECO: expansión del Estado de bienestar, gasto social y agenda de cogestión obrera del SPD; el valor anterior lo trataba como centrista por su apoyo al libre comercio europeo.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1753,18 +1753,18 @@
    "era": "1981–1995",
    "description": "Primer presidente socialista de la Quinta República francesa; nacionalizó bancos e industrias en 1981 antes del giro de rigor de 1983, abolió la pena de muerte e impulsó el Tratado de Maastricht.",
    "coords": {
-    "ECO": -10,
-    "AUT": -60,
+    "ECO": -45,
+    "AUT": -50,
     "SOC": -55,
-    "NAC": -50,
-    "MIL": 20,
+    "NAC": -60,
+    "MIL": 30,
     "MIG": -30,
     "ECOL": 20,
     "POP": -20
    },
    "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Nacionalizaciones y programa común (1981); 'tournant de la rigueur' (1983); abolición de la pena de muerte (1981); regularización de inmigrantes (1981–82); Acta Única y Maastricht (1992); disuasión nuclear y participación en la Guerra del Golfo; atentado al Rainbow Warrior (1985); grandes proyectos tecnológicos (TGV, Minitel, nuclear). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Nacionalizaciones y programa común (1981); 'tournant de la rigueur' (1983); abolición de la pena de muerte (1981); regularización de inmigrantes (1981–82); Acta Única y Maastricht (1992); disuasión nuclear y participación en la Guerra del Golfo; atentado al Rainbow Warrior (1985); grandes proyectos tecnológicos (TGV, Minitel, nuclear). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: ECO: nacionalizaciones de 1982, impuesto a las grandes fortunas, jubilación a los 60 y semana de 39 horas; el giro de 1983 moderó pero no revirtió ese perfil, que el valor anterior dejaba casi en el centro.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1775,18 +1775,18 @@
    "era": "1980–1995",
    "description": "Líder del sindicato Solidaridad y Nobel de la Paz (1983); fue el primer presidente de Polonia elegido por voto popular tras el fin del régimen comunista.",
    "coords": {
-    "ECO": 30,
-    "AUT": -20,
-    "SOC": 65,
-    "NAC": 30,
-    "MIL": 0,
+    "ECO": 25,
+    "AUT": 10,
+    "SOC": 75,
+    "NAC": 35,
+    "MIL": 20,
     "MIG": 20,
     "ECOL": null,
-    "POP": 60
+    "POP": 70
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Huelgas de Gdańsk (1980) y Solidaridad; Mesa Redonda (1989); presidencia 1990–95 con la terapia de choque de Balcerowicz; cercanía con la Iglesia católica; retórica de 'guerra en la cúpula' y estilo personalista. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Huelgas de Gdańsk (1980) y Solidaridad; Mesa Redonda (1989); presidencia 1990–95 con la terapia de choque de Balcerowicz; cercanía con la Iglesia católica; retórica de 'guerra en la cúpula' y estilo personalista. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: AUT: pidió poderes especiales para gobernar por decreto y chocó con el Parlamento en la 'guerra en la cúpula'. MIL: impulsó la entrada de Polonia en la OTAN. SOC sube levemente por el veto a la liberalización del aborto (1994).",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1797,8 +1797,8 @@
    "era": "1991–1999",
    "description": "Primer presidente de la Federación de Rusia; encabezó la liberalización económica postsoviética y la privatización, disolvió por la fuerza el parlamento en 1993 y lanzó la primera guerra de Chechenia.",
    "coords": {
-    "ECO": 65,
-    "AUT": 30,
+    "ECO": 70,
+    "AUT": 45,
     "SOC": 10,
     "NAC": -10,
     "MIL": 50,
@@ -1806,9 +1806,9 @@
     "ECOL": 40,
     "POP": 50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Resistencia al golpe de 1991; terapia de choque y privatización por vouchers y 'préstamos por acciones'; crisis constitucional de 1993 y constitución hiperpresidencialista; guerra de Chechenia (1994–96); elecciones de 1996 con fuerte sesgo mediático; cooperación con Occidente y oposición a la guerra de Kosovo. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Resistencia al golpe de 1991; terapia de choque y privatización por vouchers y 'préstamos por acciones'; crisis constitucional de 1993 y constitución hiperpresidencialista; guerra de Chechenia (1994–96); elecciones de 1996 con fuerte sesgo mediático; cooperación con Occidente y oposición a la guerra de Kosovo. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: AUT: disolución por la fuerza del Parlamento (1993), constitución hiperpresidencialista y guerra de Chechenia, aunque con prensa relativamente libre y elecciones.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1819,9 +1819,9 @@
    "era": "1965–1989",
    "description": "Secretario general del Partido Comunista Rumano y jefe de Estado de un régimen personalista y represivo. Su gobierno usó la Securitate para la vigilancia y persecución masiva, prohibió el aborto (Decreto 770) con miles de muertes maternas y ordenó reprimir a tiros las protestas de 1989.",
    "coords": {
-    "ECO": -90,
+    "ECO": -100,
     "AUT": 100,
-    "SOC": -10,
+    "SOC": 30,
     "NAC": 90,
     "MIL": 30,
     "MIG": 90,
@@ -1830,7 +1830,7 @@
    },
    "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Securitate; Decreto 770 (1966); 'Tesis de julio' (1971) y culto a la personalidad; negativa a invadir Checoslovaquia (1968); pago acelerado de la deuda con austeridad extrema en los 80; sistematización rural e industria pesada; restricciones a la emigración y 'venta' de alemanes y judíos; masacre de Timișoara (1989). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Securitate; Decreto 770 (1966); 'Tesis de julio' (1971) y culto a la personalidad; negativa a invadir Checoslovaquia (1968); pago acelerado de la deuda con austeridad extrema en los 80; sistematización rural e industria pesada; restricciones a la emigración y 'venta' de alemanes y judíos; masacre de Timișoara (1989). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: SOC: el Decreto 770 prohibió el aborto y la anticoncepción, con política natalista, penalización de la homosexualidad y familia como deber hacia el Estado; el ateísmo oficial no alcanza para ubicarlo del lado progresista.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1842,17 +1842,17 @@
    "description": "Presidente republicano que abrió relaciones con China, negoció la distensión con la URSS y creó la Agencia de Protección Ambiental; renunció por el escándalo Watergate.",
    "coords": {
     "ECO": -5,
-    "AUT": 15,
-    "SOC": 30,
-    "NAC": 30,
-    "MIL": 40,
+    "AUT": 50,
+    "SOC": 45,
+    "NAC": 45,
+    "MIL": 50,
     "MIG": null,
     "ECOL": -30,
-    "POP": 40
+    "POP": 60
    },
    "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Creación de la EPA y Clean Air Act (1970); controles de precios y salarios y fin de Bretton Woods (1971) con sobretasa a importaciones; 'mayoría silenciosa' y 'ley y orden'; bombardeos de Camboya; SALT I y viaje a China (1972); Watergate y renuncia (1974). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Creación de la EPA y Clean Air Act (1970); controles de precios y salarios y fin de Bretton Woods (1971) con sobretasa a importaciones; 'mayoría silenciosa' y 'ley y orden'; bombardeos de Camboya; SALT I y viaje a China (1972); Watergate y renuncia (1974). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: AUT: 'ley y orden', guerra contra las drogas, escuchas, lista de enemigos y plan Huston. SOC: se declaró contra el aborto a demanda y restringió el aborto en bases militares (1971). NAC: abandonó Bretton Woods de forma unilateral con sobretasa a importaciones. POP: 'mayoría silenciosa' contra élites y grandes medios. ECO sigue mixto por sus controles de precios y su plan de ingreso garantizado.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1863,8 +1863,8 @@
    "era": "1990–2000",
    "description": "Presidente de Perú que aplicó un ajuste de shock, disolvió el Congreso en el autogolpe de 1992 y combatió a Sendero Luminoso. Fue condenado en 2009 a 25 años de prisión por las matanzas de Barrios Altos y La Cantuta cometidas por el Grupo Colina, y su gobierno ejecutó un programa de esterilizaciones forzadas.",
    "coords": {
-    "ECO": 75,
-    "AUT": 80,
+    "ECO": 80,
+    "AUT": 90,
     "SOC": 10,
     "NAC": 30,
     "MIL": 50,
@@ -1885,8 +1885,8 @@
    "era": "1945–1969",
    "description": "Fundador del Partido Comunista de Vietnam y presidente de la República Democrática de Vietnam; dirigió la guerra contra Francia y luego contra el Sur y Estados Unidos. La reforma agraria de 1953–56 incluyó ejecuciones masivas de presuntos terratenientes, estimadas en más de diez mil personas.",
    "coords": {
-    "ECO": -80,
-    "AUT": 90,
+    "ECO": -90,
+    "AUT": 95,
     "SOC": -40,
     "NAC": 80,
     "MIL": 80,
@@ -1894,7 +1894,7 @@
     "ECOL": null,
     "POP": 50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Declaración de independencia (1945); guerra de Indochina y Dien Bien Phu (1954); reforma agraria con tribunales populares (1953–56) y posterior 'rectificación de errores'; represión del movimiento Nhân Văn–Giai Phẩm; partido único; guerra de Vietnam. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -1914,11 +1914,11 @@
     "MIL": 90,
     "MIG": 100,
     "ECOL": null,
-    "POP": 0
+    "POP": 90
    },
    "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Evacuación de Phnom Penh (1975); 'Año Cero' y colectivización total; abolición de moneda, mercados, escuelas y religión; centro de tortura S-21; persecución de minorías vietnamita y cham; ataques fronterizos a Vietnam; condenas por genocidio a dirigentes (ECCC, 2018). SOC en 0: destrucción de la tradición combinada con un antimodernismo agrario. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Evacuación de Phnom Penh (1975); 'Año Cero' y colectivización total; abolición de moneda, mercados, escuelas y religión; centro de tortura S-21; persecución de minorías vietnamita y cham; ataques fronterizos a Vietnam; condenas por genocidio a dirigentes (ECCC, 2018). SOC en 0: destrucción de la tradición combinada con un antimodernismo agrario. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: POP: régimen que exterminó a intelectuales y profesionales, dividió a la población en 'pueblo de base' y 'pueblo nuevo' urbano y abolió todo pluralismo; en este eje (antiexpertos y antipluralista) corresponde el extremo, no el 0.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1929,16 +1929,16 @@
    "era": "1948–1994",
    "description": "Fundador de la República Popular Democrática de Corea y de su ideología Juche; inició la Guerra de Corea en 1950 y estableció un sistema dinástico. Su régimen mantuvo campos de prisioneros políticos, purgas y un control total de la población.",
    "coords": {
-    "ECO": -95,
+    "ECO": -100,
     "AUT": 100,
-    "SOC": -10,
+    "SOC": 0,
     "NAC": 100,
     "MIL": 100,
     "MIG": 100,
     "ECOL": 70,
     "POP": 80
    },
-   "confidence": "alta",
+   "confidence": "media",
    "method": "seed-editorial",
    "basis": "Invasión del Sur (1950); ideología Juche y autarquía; sistema songbun y campos kwanliso; purgas de facciones (1956–58); culto a la personalidad y sucesión hereditaria; militarización total; cierre de fronteras. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -1951,8 +1951,8 @@
    "era": "1954–1970",
    "description": "Líder de los Oficiales Libres y presidente de Egipto; nacionalizó el Canal de Suez, impulsó el panarabismo y el socialismo árabe, y gobernó con partido único y represión de opositores.",
    "coords": {
-    "ECO": -65,
-    "AUT": 80,
+    "ECO": -80,
+    "AUT": 90,
     "SOC": -35,
     "NAC": 90,
     "MIL": 70,
@@ -1962,7 +1962,7 @@
    },
    "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Revolución de 1952; reforma agraria; nacionalización del Canal (1956); República Árabe Unida (1958–61); nacionalizaciones de 1961; represión de Hermanos Musulmanes y comunistas; represa de Asuán; guerras de 1956 y 1967; salida forzada de comunidades extranjeras tras Suez. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Revolución de 1952; reforma agraria; nacionalización del Canal (1956); República Árabe Unida (1958–61); nacionalizaciones de 1961; represión de Hermanos Musulmanes y comunistas; represa de Asuán; guerras de 1956 y 1967; salida forzada de comunidades extranjeras tras Suez. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: ECO: reforma agraria y nacionalizaciones masivas de 1961 (socialismo árabe).",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -1974,17 +1974,17 @@
    "description": "Canciller de Alemania (CDU): rearme, endurecimiento migratorio y agenda promercado.",
    "coords": {
     "ECO": 55,
-    "AUT": -15,
-    "SOC": 30,
-    "NAC": -20,
-    "MIL": 50,
-    "MIG": 60,
-    "ECOL": 20,
-    "POP": -40
+    "AUT": 20,
+    "SOC": 35,
+    "NAC": -25,
+    "MIL": 75,
+    "MIG": 65,
+    "ECOL": 30,
+    "POP": -45
    },
    "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Reforma del freno de deuda para defensa (2025); controles fronterizos y rechazos en frontera; derrotas estatales de septiembre de 2026 (Sajonia-Anhalt, Mecklemburgo)."
+   "basis": "Reforma del freno de deuda para defensa (2025); controles fronterizos y rechazos en frontera; derrotas estatales de septiembre de 2026 (Sajonia-Anhalt, Mecklemburgo). · Revisión 2026: Más orden por la agenda de seguridad, el rechazo de solicitantes de asilo en frontera y la retención de datos. Más militarismo por la reforma del freno de deuda para rearme, un nuevo servicio militar y el objetivo de tener el mayor ejército convencional de Europa."
   },
   {
    "id": "zelenski",
@@ -1994,18 +1994,18 @@
    "era": "2019–",
    "description": "Presidente de Ucrania durante la invasión rusa: gobierna bajo ley marcial y busca la integración a la UE y garantías de seguridad occidentales.",
    "coords": {
-    "ECO": 35,
-    "AUT": 15,
-    "SOC": 5,
-    "NAC": 70,
-    "MIL": 80,
+    "ECO": 45,
+    "AUT": 45,
+    "SOC": -5,
+    "NAC": 75,
+    "MIL": 90,
     "MIG": null,
     "ECOL": 20,
-    "POP": 20
+    "POP": 30
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Ley marcial y aplazamiento electoral; ley de julio 2025 sobre NABU revertida tras protestas; ley que restringe la iglesia vinculada a Moscú; digitalización estatal (Diia) y guerra de drones; propuesta de 'tregua energética' (ONU, sept. 2026). MIG sin evidencia relevante."
+   "basis": "Ley marcial y aplazamiento electoral; ley de julio 2025 sobre NABU revertida tras protestas; ley que restringe la iglesia vinculada a Moscú; digitalización estatal (Diia) y guerra de drones; propuesta de 'tregua energética' (ONU, sept. 2026). MIG sin evidencia relevante. · Revisión 2026: Gobierna bajo ley marcial, postergó elecciones, unificó los noticieros de TV y sancionó a opositores y medios prorrusos; por eso el valor en libertades sube respecto del promedio anterior."
   },
   {
    "id": "sheinbaum",
@@ -2015,18 +2015,18 @@
    "era": "2024–",
    "description": "Presidenta de México (Morena), de centroizquierda con programas sociales y soberanía energética; su gobierno completó la elección popular de jueces y la eliminación de órganos autónomos, cuestionadas por debilitar contrapesos.",
    "coords": {
-    "ECO": -35,
-    "AUT": 25,
-    "SOC": -45,
-    "NAC": 30,
+    "ECO": -45,
+    "AUT": 40,
+    "SOC": -50,
+    "NAC": 45,
     "MIL": -30,
-    "MIG": 0,
-    "ECOL": 20,
-    "POP": 60
+    "MIG": -30,
+    "ECOL": 10,
+    "POP": 65
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Reforma judicial 2024 y elección judicial de 2025 (13% de participación); reforma electoral rechazada (marzo 2026); Guardia Nacional bajo Defensa; negociación arancelaria con EE.UU.; aranceles a China; Plan México."
+   "basis": "Reforma judicial 2024 y elección judicial de 2025 (13% de participación); reforma electoral rechazada (marzo 2026); Guardia Nacional bajo Defensa; negociación arancelaria con EE.UU.; aranceles a China; Plan México. · Revisión 2026: Más autoridad por la elección popular de jueces, la eliminación de órganos autónomos, la Guardia Nacional militar y la ley de inteligencia de 2025 que amplía el acceso a datos. En migración estaba corrida al centro: su política de 'humanismo mexicano', el refugio y la regularización la ubican del lado de la apertura, pese a la cooperación fronteriza con EE.UU."
   },
   {
    "id": "delcy_rodriguez",
@@ -2036,13 +2036,13 @@
    "era": "2026–",
    "description": "Presidenta encargada de Venezuela desde enero de 2026 y figura central del chavismo, del que fue canciller y vicepresidenta.",
    "coords": {
-    "ECO": -15,
-    "AUT": 90,
+    "ECO": -20,
+    "AUT": 80,
     "SOC": 10,
     "NAC": 30,
-    "MIL": 30,
+    "MIL": 20,
     "MIG": null,
-    "ECOL": 70,
+    "ECOL": 75,
     "POP": 60
    },
    "confidence": "baja",
@@ -2057,13 +2057,13 @@
    "era": "2007–",
    "description": "Copresidente de Nicaragua junto a Rosario Murillo desde la reforma constitucional de 2025; el Grupo de Expertos en Derechos Humanos de la ONU sobre Nicaragua concluyó que su gobierno cometió crímenes de lesa humanidad (ejecuciones, detenciones arbitrarias, desnacionalización de opositores) desde la represión de 2018.",
    "coords": {
-    "ECO": -20,
+    "ECO": -15,
     "AUT": 100,
-    "SOC": 50,
-    "NAC": 70,
+    "SOC": 60,
+    "NAC": 75,
     "MIL": 40,
     "MIG": null,
-    "ECOL": 40,
+    "ECOL": 50,
     "POP": 80
    },
    "confidence": "media",
@@ -2078,18 +2078,18 @@
    "era": "2018–",
    "description": "Presidente de Cuba y primer secretario del Partido Comunista, en un sistema de partido único. La CIDH y organismos de derechos humanos documentan más de mil presos políticos, muchos por las protestas del 11 de julio de 2021.",
    "coords": {
-    "ECO": -75,
+    "ECO": -90,
     "AUT": 100,
     "SOC": -40,
-    "NAC": 70,
-    "MIL": 30,
+    "NAC": 75,
+    "MIL": 20,
     "MIG": null,
-    "ECOL": 0,
+    "ECOL": -10,
     "POP": 40
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Constitución de 2019 (partido único); Código de las Familias 2022 (matrimonio igualitario); condenas masivas post-11J; Prisoners Defenders: 1.306 presos políticos (junio 2026); CIDH 2025–2026; apagones nacionales de 2026."
+   "basis": "Constitución de 2019 (partido único); Código de las Familias 2022 (matrimonio igualitario); condenas masivas post-11J; Prisoners Defenders: 1.306 presos políticos (junio 2026); CIDH 2025–2026; apagones nacionales de 2026. · Revisión 2026: Economía de planificación central con predominio estatal: corresponde al extremo del eje."
   },
   {
    "id": "noboa",
@@ -2100,17 +2100,17 @@
    "description": "Presidente de Ecuador, de centroderecha promercado: \"conflicto armado interno\" contra el crimen organizado y estados de excepción.",
    "coords": {
     "ECO": 65,
-    "AUT": 55,
-    "SOC": 10,
-    "NAC": 10,
-    "MIL": 60,
+    "AUT": 75,
+    "SOC": 20,
+    "NAC": 30,
+    "MIL": 70,
     "MIG": 50,
-    "ECOL": 40,
+    "ECOL": 50,
     "POP": 50
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Militarización de la seguridad desde 2024; conflicto con su vicepresidenta y con la Corte Constitucional; derrota en las cuatro preguntas del referendo de 16-11-2025; acuerdos comerciales y de seguridad con EE.UU."
+   "basis": "Militarización de la seguridad desde 2024; conflicto con su vicepresidenta y con la Corte Constitucional; derrota en las cuatro preguntas del referendo de 16-11-2025; acuerdos comerciales y de seguridad con EE.UU. · Revisión 2026: Más orden por el 'conflicto armado interno', los estados de excepción, las megacárceles y los militares en seguridad. Más nacionalismo por los aranceles de 'seguridad' a Colombia, que chocan con las reglas de la Comunidad Andina."
   },
   {
    "id": "keiko_fujimori",
@@ -2118,20 +2118,20 @@
    "name": "Keiko Fujimori",
    "country": "Perú",
    "era": "2026–",
-   "description": "Presidenta del Perú desde julio de 2026 y líder de Fuerza Popular: conservadora, promercado y de mano dura en seguridad.",
+   "description": "Presidenta del Perú desde el 28 de julio de 2026, tras ganar la segunda vuelta de junio, y líder de Fuerza Popular: conservadora, promercado y de mano dura en seguridad.",
    "coords": {
-    "ECO": 60,
-    "AUT": 55,
-    "SOC": 65,
-    "NAC": 40,
+    "ECO": 50,
+    "AUT": 70,
+    "SOC": 75,
+    "NAC": 45,
     "MIL": 40,
-    "MIG": 60,
-    "ECOL": 60,
+    "MIG": 70,
+    "ECOL": 70,
     "POP": 50
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Victoria 50,1% vs. Roberto Sánchez (CNN, 3-7-2026); denuncias de fraude sin pruebas en 2021; papel de Fuerza Popular en el Congreso que reformó órganos de control; agenda provida y de seguridad."
+   "basis": "Victoria 50,1% vs. Roberto Sánchez (CNN, 3-7-2026); denuncias de fraude sin pruebas en 2021; papel de Fuerza Popular en el Congreso que reformó órganos de control; agenda provida y de seguridad. · Revisión 2026: Más orden por su promesa de sacar a las Fuerzas Armadas a la seguridad ciudadana y su defensa del legado del gobierno de su padre; en economía combina orientación pro mercado con subas del salario mínimo y de Pensión 65."
   },
   {
    "id": "netanyahu",
@@ -2141,18 +2141,18 @@
    "era": "2022–",
    "description": "Primer ministro de Israel (Likud) al frente de la coalición más derechista de su historia, con socios nacionalistas religiosos; condujo la guerra en Gaza y los ataques contra Irán, impulsó una reforma judicial muy resistida y la CPI emitió en 2024 una orden de arresto en su contra por presuntos crímenes de guerra, que Israel rechaza.",
    "coords": {
-    "ECO": 50,
-    "AUT": 55,
+    "ECO": 65,
+    "AUT": 60,
     "SOC": 50,
-    "NAC": 90,
-    "MIL": 90,
-    "MIG": 80,
+    "NAC": 95,
+    "MIL": 95,
+    "MIG": 85,
     "ECOL": 40,
-    "POP": 60
+    "POP": 65
    },
-   "confidence": "alta",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Reforma judicial 2023; guerra de Gaza desde 2023; guerras con Irán (2025–2026); orden de arresto de la CPI (nov. 2024); juicio por corrupción en curso; elecciones previstas el 27-10-2026."
+   "basis": "Reforma judicial 2023; guerra de Gaza desde 2023; guerras con Irán (2025–2026); orden de arresto de la CPI (nov. 2024); juicio por corrupción en curso; elecciones previstas el 27-10-2026. · Revisión 2026: Reforma liberal de la economía como ministro de Finanzas y ley que permite cerrar medios extranjeros como Al Jazeera, además de la reforma judicial."
   },
   {
    "id": "kim_jong_un",
@@ -2162,18 +2162,18 @@
    "era": "2011–",
    "description": "Líder supremo de Corea del Norte, régimen totalitario de partido único; la Comisión de Investigación de la ONU (2014) concluyó que el Estado comete crímenes de lesa humanidad, incluidos campos de prisioneros políticos, ejecuciones y hambrunas inducidas. Envió tropas a Rusia en la guerra contra Ucrania.",
    "coords": {
-    "ECO": -85,
+    "ECO": -95,
     "AUT": 100,
-    "SOC": -10,
+    "SOC": 10,
     "NAC": 100,
     "MIL": 100,
     "MIG": 100,
     "ECOL": 60,
     "POP": 40
    },
-   "confidence": "alta",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "COI-ONU 2014 y relatores posteriores; tratado de defensa mutua con Rusia (2024) y despliegue de tropas; IX Congreso del Partido (feb. 2026); discurso del 25-9-2026. SOC: ateísmo oficial con culto a la dinastía Kim."
+   "basis": "COI-ONU 2014 y relatores posteriores; tratado de defensa mutua con Rusia (2024) y despliegue de tropas; IX Congreso del Partido (feb. 2026); discurso del 25-9-2026. SOC: ateísmo oficial con culto a la dinastía Kim. · Revisión 2026: En valores, el Estado ateo y hostil a la religión convive con una moral familiar y de género muy tradicional; queda cerca del centro, no del lado progresista."
   },
   {
    "id": "afd",
@@ -2183,18 +2183,18 @@
    "era": "2013–",
    "description": "Partido de derecha radical fundado en 2013 como formación euroescéptica; segunda fuerza en las federales de 2025 con 20,8 %. La Oficina Federal de Protección de la Constitución lo clasificó en 2025 como extremista de derecha comprobado (clasificación en litigio).",
    "coords": {
-    "ECO": 10,
-    "AUT": 55,
-    "SOC": 55,
+    "ECO": 35,
+    "AUT": 60,
+    "SOC": 70,
     "NAC": 90,
     "MIL": 30,
     "MIG": 100,
     "ECOL": 90,
     "POP": 80
    },
-   "confidence": "alta",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "CHES 2024 lrecon ≈7, galtan ≈9,4, immigrate_policy ≈10; V-Party antipluralismo alto; programa 2025: 'remigración', salida del euro/Dexit como opción, rechazo a Energiewende y a la ayuda militar a Ucrania. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "CHES 2024 lrecon ≈7, galtan ≈9,4, immigrate_policy ≈10; V-Party antipluralismo alto; programa 2025: 'remigración', salida del euro/Dexit como opción, rechazo a Energiewende y a la ayuda militar a Ucrania. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: El programa 2025 propone rebajas fiscales, eliminar el impuesto a la herencia y reducir regulación: el promedio con su euroescepticismo comercial lo dejaba en el centro. SOC sube por su defensa explícita de la familia tradicional y rechazo al aborto y a la 'ideología de género' (CHES galtan ≈9,4)."
   },
   {
    "id": "spd",
@@ -2204,18 +2204,18 @@
    "era": "1863–",
    "description": "Partido socialdemócrata histórico alemán; socio menor de la coalición con CDU/CSU encabezada por Friedrich Merz desde 2025, tras su peor resultado federal (16,4 %).",
    "coords": {
-    "ECO": -5,
-    "AUT": -55,
-    "SOC": -30,
+    "ECO": -25,
+    "AUT": -40,
+    "SOC": -40,
     "NAC": -60,
-    "MIL": 20,
-    "MIG": -20,
+    "MIL": 35,
+    "MIG": 0,
     "ECOL": -40,
     "POP": -70
    },
-   "confidence": "alta",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "CHES 2024 lrecon ≈3,5, galtan ≈3,5, pro-UE ≈6,7/7; 'Zeitenwende' y reforma del freno de deuda para defensa (Pistorius); endurecimiento migratorio aceptado en coalición. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "CHES 2024 lrecon ≈3,5, galtan ≈3,5, pro-UE ≈6,7/7; 'Zeitenwende' y reforma del freno de deuda para defensa (Pistorius); endurecimiento migratorio aceptado en coalición. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: Salario mínimo de 15 €, renta ciudadana y propuesta de más impuestos a altos ingresos: más estatista que el promedio. Aceptó controles fronterizos y suspensión de la reunificación familiar en la coalición con Merz; Pistorius impulsa rearme y nuevo servicio militar; como partido de gobierno acompaña el endurecimiento policial y migratorio, lo que modera su AUT."
   },
   {
    "id": "reform_uk",
@@ -2226,17 +2226,17 @@
    "description": "Partido de derecha populista liderado por Nigel Farage, heredero del Brexit Party: inmigración y rechazo a las políticas de cero emisiones netas.",
    "coords": {
     "ECO": 30,
-    "AUT": 35,
+    "AUT": 60,
     "SOC": 40,
-    "NAC": 80,
+    "NAC": 90,
     "MIL": 30,
     "MIG": 100,
     "ECOL": 90,
     "POP": 80
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CHES 2024 lrecon ≈7,5, galtan ≈8; propuestas 2025: abolir la residencia permanente (ILR), salir del CEDH, desmantelar 'Net Zero'; giro parcial a posiciones económicas estatistas (nacionalizar acero). Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "CHES 2024 lrecon ≈7,5, galtan ≈8; propuestas 2025: abolir la residencia permanente (ILR), salir del CEDH, desmantelar 'Net Zero'; giro parcial a posiciones económicas estatistas (nacionalizar acero). Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: Propone salir del CEDH, deportaciones masivas, abolir la residencia permanente y más penas y cárceles: claramente del lado del orden."
   },
   {
    "id": "conservadores_uk",
@@ -2247,17 +2247,17 @@
    "description": "Principal partido de centroderecha británico; perdió el gobierno en 2024 y, bajo el liderazgo de Kemi Badenoch, adoptó propuestas como salir del CEDH y derogar la Ley de Cambio Climático.",
    "coords": {
     "ECO": 55,
-    "AUT": -5,
-    "SOC": 25,
-    "NAC": 50,
+    "AUT": 25,
+    "SOC": 30,
+    "NAC": 60,
     "MIL": 50,
-    "MIG": 70,
-    "ECOL": 60,
+    "MIG": 85,
+    "ECOL": 75,
     "POP": -10
    },
    "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CHES 2024 lrecon ≈7, galtan ≈6,8, immigrate_policy ≈8; Brexit; compromiso con gasto en defensa y OTAN; propuestas de octubre 2025. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "CHES 2024 lrecon ≈7, galtan ≈6,8, immigrate_policy ≈8; Brexit; compromiso con gasto en defensa y OTAN; propuestas de octubre 2025. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: Con Badenoch propone salir del CEDH, deportar 150.000 personas al año, abolir la residencia indefinida y derogar la Ley de Cambio Climático 2008."
   },
   {
    "id": "lfi",
@@ -2267,16 +2267,16 @@
    "era": "2016–",
    "description": "Movimiento de izquierda liderado por Jean-Luc Mélenchon, principal fuerza del Nuevo Frente Popular; propone una VI República, planificación ecológica y salida del mando integrado de la OTAN.",
    "coords": {
-    "ECO": -70,
-    "AUT": -45,
-    "SOC": -65,
+    "ECO": -80,
+    "AUT": -40,
+    "SOC": -70,
     "NAC": 0,
     "MIL": -50,
     "MIG": -80,
     "ECOL": -70,
-    "POP": 70
+    "POP": 75
    },
-   "confidence": "alta",
+   "confidence": "media",
    "method": "seed-editorial",
    "basis": "CHES 2024 lrecon ≈1, galtan ≈2, antielite_salience alta; GPS: populismo alto; 'proteccionismo solidario'; plan A/plan B frente a los tratados europeos; estructura interna poco pluralista. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
   },
@@ -2286,11 +2286,11 @@
    "name": "Fidesz – Unión Cívica Húngara",
    "country": "Hungría",
    "era": "1988–",
-   "description": "Partido nacionalconservador de Viktor Orbán, gobernante en Hungría desde 2010: \"democracia iliberal\", control de medios y restricción migratoria.",
+   "description": "Partido nacionalconservador de Viktor Orbán, que gobernó Hungría entre 2010 y 2026: \"democracia iliberal\", control de medios y restricción migratoria; perdió las elecciones de abril de 2026 frente a Tisza.",
    "coords": {
-    "ECO": -10,
-    "AUT": 70,
-    "SOC": 75,
+    "ECO": 0,
+    "AUT": 80,
+    "SOC": 85,
     "NAC": 90,
     "MIL": 0,
     "MIG": 100,
@@ -2309,18 +2309,18 @@
    "era": "2012–",
    "description": "Partido de derecha nacionalconservadora liderado por Giorgia Meloni, primera ministra desde 2022; heredero de la tradición de MSI/AN, con línea atlantista y pragmática en la UE.",
    "coords": {
-    "ECO": 10,
-    "AUT": 30,
-    "SOC": 70,
+    "ECO": 20,
+    "AUT": 50,
+    "SOC": 75,
     "NAC": 60,
     "MIL": 50,
     "MIG": 80,
-    "ECOL": 40,
+    "ECOL": 50,
     "POP": 40
    },
    "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CHES 2024 lrecon ≈6, galtan ≈9; acuerdo de centros de migrantes con Albania; apoyo a Ucrania; reforma del 'premierato'. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "CHES 2024 lrecon ≈6, galtan ≈9; acuerdo de centros de migrantes con Albania; apoyo a Ucrania; reforma del 'premierato'. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: Decreto anti-rave, decreto de seguridad 2025 que penaliza bloqueos de rutas y protestas en cárceles, y reforma del 'premierato'."
   },
   {
    "id": "likud",
@@ -2331,17 +2331,17 @@
    "description": "Principal partido de derecha nacionalista de Israel, liderado por Benjamín Netanyahu; encabeza desde 2022 una coalición con partidos religiosos y de extrema derecha.",
    "coords": {
     "ECO": 45,
-    "AUT": 50,
+    "AUT": 65,
     "SOC": 50,
     "NAC": 90,
-    "MIL": 90,
-    "MIG": 60,
+    "MIL": 95,
+    "MIG": 70,
     "ECOL": 50,
-    "POP": 60
+    "POP": 70
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "GPS 2019: derecha, populismo moderado-alto; reforma judicial 2023; guerra en Gaza desde 2023 y ataques a Irán en 2025; orden de arresto de la CPI contra Netanyahu (2024). Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "GPS 2019: derecha, populismo moderado-alto; reforma judicial 2023; guerra en Gaza desde 2023 y ataques a Irán en 2025; orden de arresto de la CPI contra Netanyahu (2024). Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: Reforma judicial de 2023 para limitar a la Corte Suprema y ofensiva contra la fiscal general y medios críticos."
   },
   {
    "id": "bjp",
@@ -2351,12 +2351,12 @@
    "era": "1980–",
    "description": "Partido nacionalista hindú (Hindutva) que gobierna India desde 2014 bajo Narendra Modi; perdió la mayoría propia en 2024 y gobierna con la alianza NDA.",
    "coords": {
-    "ECO": 5,
-    "AUT": 60,
-    "SOC": 75,
+    "ECO": 15,
+    "AUT": 70,
+    "SOC": 80,
     "NAC": 90,
     "MIL": 70,
-    "MIG": 70,
+    "MIG": 80,
     "ECOL": 60,
     "POP": 60
    },
@@ -2372,18 +2372,18 @@
    "era": "1921–",
    "description": "Partido único gobernante de la República Popular China desde 1949; dirige una economía de 'socialismo con características chinas' bajo el liderazgo de Xi Jinping.",
    "coords": {
-    "ECO": -20,
+    "ECO": -40,
     "AUT": 100,
-    "SOC": -20,
+    "SOC": 0,
     "NAC": 90,
     "MIL": 70,
     "MIG": 70,
     "ECOL": 20,
-    "POP": 0
+    "POP": -10
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "V-Party/V-Dem: autocracia cerrada; represión documentada (Tiananmen 1989, Xinjiang según ACNUDH 2022, Hong Kong 2020); ateísmo de Estado y 'sinización' religiosa; política industrial Made in China 2025; líder en renovables y carbón. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "V-Party/V-Dem: autocracia cerrada; represión documentada (Tiananmen 1989, Xinjiang según ACNUDH 2022, Hong Kong 2020); ateísmo de Estado y 'sinización' religiosa; política industrial Made in China 2025; líder en renovables y carbón. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: Economía dirigida con empresas estatales, planes quinquenales y control de inversiones extranjeras: más estatista que -20 aunque defienda el libre comercio global. En SOC mezcla ateísmo de Estado y aborto legal con rechazo al matrimonio igualitario, censura de pornografía y promoción de la familia tradicional: centro real, no progresismo."
   },
   {
    "id": "rusia_unida",
@@ -2394,17 +2394,17 @@
    "description": "Partido gobernante de Rusia que respalda a Vladímir Putin; controla la Duma desde 2003 y apoyó la invasión de Ucrania de 2022.",
    "coords": {
     "ECO": -20,
-    "AUT": 90,
-    "SOC": 75,
+    "AUT": 95,
+    "SOC": 85,
     "NAC": 100,
     "MIL": 100,
-    "MIG": 40,
-    "ECOL": 70,
+    "MIG": 55,
+    "ECOL": 80,
     "POP": 20
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "V-Dem: autocracia electoral/cerrada; persecución de opositores (muerte de Navalni en prisión, 2024); ley contra 'propaganda LGBT' y designación 'extremista' (2023); alianza con la Iglesia ortodoxa; sustitución de importaciones bajo sanciones. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "V-Dem: autocracia electoral/cerrada; persecución de opositores (muerte de Navalni en prisión, 2024); ley contra 'propaganda LGBT' y designación 'extremista' (2023); alianza con la Iglesia ortodoxa; sustitución de importaciones bajo sanciones. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: Tras el atentado de Crocus (2024) endureció fuertemente la política migratoria: expulsiones, registro de extranjeros y restricciones a la escolarización de hijos de migrantes."
   },
   {
    "id": "frente_amplio_uy",
@@ -2414,13 +2414,13 @@
    "era": "1971–",
    "description": "Coalición de izquierda uruguaya que gobernó entre 2005 y 2020 y regresó al poder en 2025 con Yamandú Orsi; agenda de derechos (aborto, matrimonio igualitario, cannabis regulado).",
    "coords": {
-    "ECO": -20,
-    "AUT": -60,
+    "ECO": -30,
+    "AUT": -50,
     "SOC": -65,
     "NAC": -10,
     "MIL": -40,
-    "MIG": -60,
-    "ECOL": -30,
+    "MIG": -50,
+    "ECOL": -20,
     "POP": -20
    },
    "confidence": "media",
@@ -2435,9 +2435,9 @@
    "era": "2007–",
    "description": "Partido chavista fundado por Hugo Chávez que gobierna Venezuela. La Misión de Determinación de los Hechos de la ONU documentó crímenes de lesa humanidad cometidos por el Estado venezolano desde 2014.",
    "coords": {
-    "ECO": -70,
-    "AUT": 90,
-    "SOC": 15,
+    "ECO": -80,
+    "AUT": 95,
+    "SOC": 10,
     "NAC": 80,
     "MIL": 60,
     "MIG": 0,
@@ -2456,18 +2456,18 @@
    "era": "1887–",
    "description": "Asociación Nacional Republicana, partido dominante de Paraguay que gobernó durante la dictadura de Stroessner y casi ininterrumpidamente desde 1947; presidente Santiago Peña desde 2023.",
    "coords": {
-    "ECO": 30,
-    "AUT": 25,
-    "SOC": 75,
+    "ECO": 40,
+    "AUT": 45,
+    "SOC": 80,
     "NAC": 50,
     "MIL": 30,
     "MIG": 20,
     "ECOL": 70,
     "POP": 30
    },
-   "confidence": "baja",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "GPS 2019: derecha; conservadurismo social (oposición a 'ideología de género', aborto); expansión agroexportadora y deforestación del Chaco; expulsión de la senadora Kattya González (2024). Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "GPS 2019: derecha; conservadurismo social (oposición a 'ideología de género', aborto); expansión agroexportadora y deforestación del Chaco; expulsión de la senadora Kattya González (2024). Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: Ley de control de ONG con financiamiento externo (2024), expulsión de una senadora opositora y hegemonía estatal: más autoritario que 25."
   },
   {
    "id": "nacionalconservadurismo",
@@ -2475,18 +2475,18 @@
    "name": "Nacionalconservadurismo",
    "description": "Corriente que prioriza la nación soberana, la cohesión cultural y la religión tradicional frente al liberalismo cosmopolita; asociada a las conferencias NatCon y a gobiernos como el de Orbán.",
    "coords": {
-    "ECO": -15,
-    "AUT": 30,
-    "SOC": 70,
-    "NAC": 90,
-    "MIL": 50,
+    "ECO": -10,
+    "AUT": 45,
+    "SOC": 80,
+    "NAC": 95,
+    "MIL": 35,
     "MIG": 90,
-    "ECOL": 40,
-    "POP": 50
+    "ECOL": 50,
+    "POP": 60
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Hazony, 'The Virtue of Nationalism' (2018); declaración NatCon 2022; anclado entre Fidesz y Vox. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "Hazony, 'The Virtue of Nationalism' (2018); declaración NatCon 2022; anclado entre Fidesz y Vox. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: AUT sube: énfasis en ley y orden, restricción a ONG financiadas desde el exterior y subordinación de controles al mandato mayoritario (Hungría de Orbán). MIL baja: la declaración NatCon 2022 rechaza el imperialismo y parte de la corriente se opone a la ayuda militar a Ucrania."
   },
   {
    "id": "neoliberalismo",
@@ -2494,18 +2494,18 @@
    "name": "Neoliberalismo",
    "description": "Programa económico de liberalización, privatización, desregulación y disciplina fiscal que dominó el 'Consenso de Washington' desde los años 80; neutral o variable en temas culturales.",
    "coords": {
-    "ECO": 85,
+    "ECO": 90,
     "AUT": -15,
     "SOC": -5,
-    "NAC": -70,
+    "NAC": -40,
     "MIL": 20,
-    "MIG": -30,
+    "MIG": -25,
     "ECOL": 50,
     "POP": -70
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Hayek, Friedman, Sociedad Mont Pèlerin; Thatcher/Reagan; aislamiento tecnocrático de bancos centrales (AUT moderado). Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "Hayek, Friedman, Sociedad Mont Pèlerin; Thatcher/Reagan; aislamiento tecnocrático de bancos centrales (AUT moderado). Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: NAC -70 exageraba: el neoliberalismo apoya la OMC y el mercado único, pero rechaza el impuesto mínimo global, la ayuda al desarrollo y la gobernanza política supranacional (Friedman contra el FMI); es cosmopolita en lo económico, no en lo institucional."
   },
   {
    "id": "tercera_via",
@@ -2513,18 +2513,18 @@
    "name": "Tercera vía",
    "description": "Reformulación socialdemócrata de los años 90 que acepta la economía de mercado y la globalización, combinándolas con inversión social y 'mano dura' con el delito.",
    "coords": {
-    "ECO": 40,
-    "AUT": -35,
-    "SOC": -25,
+    "ECO": 35,
+    "AUT": 0,
+    "SOC": -30,
     "NAC": -50,
-    "MIL": 30,
-    "MIG": -20,
-    "ECOL": -20,
-    "POP": -60
+    "MIL": 50,
+    "MIG": -5,
+    "ECOL": -15,
+    "POP": -65
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Giddens (1998); Nuevo Laborismo de Blair, Clinton, Schröder (Agenda 2010); intervenciones en Kosovo e Irak. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "Giddens (1998); Nuevo Laborismo de Blair, Clinton, Schröder (Agenda 2010); intervenciones en Kosovo e Irak. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: AUT -35 era falsa moderación: el Nuevo Laborismo aprobó unas 40 leyes penales, ASBO, detención preventiva de 28 días, DNI biométrico y expansión de la vigilancia, y Clinton la ley penal de 1994. MIL sube por las intervenciones en Kosovo (sin mandato ONU), Afganistán e Irak. MIG casi neutral: apertura laboral a la UE en 2004 y reforma de ciudadanía de Schröder, junto a endurecimiento del asilo y la ley IIRIRA de 1996."
   },
   {
    "id": "ecosocialismo",
@@ -2532,18 +2532,18 @@
    "name": "Ecosocialismo",
    "description": "Síntesis de socialismo y ecología que atribuye la crisis ambiental a la acumulación capitalista y propone planificación democrática y, en algunas vertientes, decrecimiento.",
    "coords": {
-    "ECO": -70,
+    "ECO": -90,
     "AUT": -60,
     "SOC": -75,
-    "NAC": -70,
+    "NAC": -60,
     "MIL": -80,
     "MIG": -80,
     "ECOL": -100,
     "POP": 20
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Manifiesto ecosocialista (Kovel y Löwy, 2001); Saito; escepticismo ante soluciones tecnológicas y transgénicos. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "Manifiesto ecosocialista (Kovel y Löwy, 2001); Saito; escepticismo ante soluciones tecnológicas y transgénicos. Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: ECO más a la izquierda: el Manifiesto ecosocialista (Kovel y Löwy, 2001) propone propiedad social y planificación democrática, y rechaza el libre comercio."
   },
   {
    "id": "islamismo_politico",
@@ -2552,9 +2552,9 @@
    "description": "Familia de movimientos que propone que el Estado y el derecho se orienten por la sharía; abarca desde partidos electorales (Hermanos Musulmanes, Ennahda) hasta regímenes teocráticos.",
    "coords": {
     "ECO": 0,
-    "AUT": 55,
+    "AUT": 65,
     "SOC": 95,
-    "NAC": 0,
+    "NAC": 25,
     "MIL": 40,
     "MIG": null,
     "ECOL": null,
@@ -2562,7 +2562,7 @@
    },
    "confidence": "baja",
    "method": "seed-editorial",
-   "basis": "Qutb, al-Banna, Mawdudi; alta heterogeneidad interna; NAC mixto (umma transnacional vs. nacionalismo de Estado). Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset."
+   "basis": "Qutb, al-Banna, Mawdudi; alta heterogeneidad interna; NAC mixto (umma transnacional vs. nacionalismo de Estado). Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: NAC pasa a positivo: aunque Qutb y al-Banna rechazan el nacionalismo étnico, la corriente defiende la protección cultural frente a Occidente, la primacía de la sharía sobre los tratados y el rechazo a organismos internacionales y tribunales de derechos humanos."
   },
   {
    "id": "abraham_lincoln",
@@ -2573,17 +2573,17 @@
    "description": "Presidente republicano durante la Guerra de Secesión; preservó la Unión, proclamó la Emancipación (1863) e impulsó la 13.ª Enmienda que abolió la esclavitud.",
    "coords": {
     "ECO": -35,
-    "AUT": -10,
+    "AUT": 25,
     "SOC": -15,
-    "NAC": 50,
-    "MIL": 60,
+    "NAC": 60,
+    "MIL": 70,
     "MIG": -40,
     "ECOL": null,
-    "POP": 10
+    "POP": -10
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Aranceles Morrill y 'sistema americano' whig (ECO); Homestead Act, ferrocarril transcontinental, Morrill Land-Grant Act y Academia Nacional de Ciencias; suspensión del hábeas corpus en guerra (AUT) pero elecciones de 1864 celebradas (AUT); emancipación (SOC); Act to Encourage Immigration (1864) y rechazo a los Know-Nothings (MIG). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Aranceles Morrill y 'sistema americano' whig (ECO); Homestead Act, ferrocarril transcontinental, Morrill Land-Grant Act y Academia Nacional de Ciencias; suspensión del hábeas corpus en guerra (AUT) pero elecciones de 1864 celebradas (AUT); emancipación (SOC); Act to Encourage Immigration (1864) y rechazo a los Know-Nothings (MIG). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: AUT: suspendió el hábeas corpus, detuvo a miles de civiles y cerró diarios opositores, aunque mantuvo las elecciones de 1864. POP: político de partido y de la reconciliación ('no somos enemigos, sino amigos'), no un populista.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -2594,18 +2594,18 @@
    "era": "1961–1963",
    "description": "Presidente demócrata; enfrentó la crisis de los misiles en Cuba, lanzó el programa Apolo, la Alianza para el Progreso y los Cuerpos de Paz, y envió un proyecto de ley de derechos civiles; fue asesinado en 1963.",
    "coords": {
-    "ECO": 20,
-    "AUT": -35,
+    "ECO": -20,
+    "AUT": -20,
     "SOC": -30,
     "NAC": -20,
-    "MIL": 50,
+    "MIL": 60,
     "MIG": -40,
     "ECOL": -20,
-    "POP": -20
+    "POP": -30
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Nueva Frontera y propuesta de rebaja impositiva (ECO); Trade Expansion Act 1962 (ECO); discurso de Houston sobre separación Iglesia-Estado (SOC); Bahía de Cochinos, escalada de asesores en Vietnam, Tratado de Prohibición Parcial de Ensayos (MIL); propuesta de abolir las cuotas por origen nacional (MIG); revisión del PSAC sobre pesticidas (ECOL); gabinete de expertos ('the best and the brightest') (POP); programa Apolo. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Nueva Frontera y propuesta de rebaja impositiva (ECO); Trade Expansion Act 1962 (ECO); discurso de Houston sobre separación Iglesia-Estado (SOC); Bahía de Cochinos, escalada de asesores en Vietnam, Tratado de Prohibición Parcial de Ensayos (MIL); propuesta de abolir las cuotas por origen nacional (MIG); revisión del PSAC sobre pesticidas (ECOL); gabinete de expertos ('the best and the brightest') (POP); programa Apolo. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: ECO: Nueva Frontera keynesiana, propuesta de Medicare y choque con las acereras; el librecambio (Trade Expansion Act) no compensa. AUT: escuchas autorizadas por el Departamento de Justicia y pena de muerte federal vigente, dentro de un gobierno plenamente democrático.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -2616,18 +2616,18 @@
    "era": "1993–2001",
    "description": "Presidente demócrata de la 'Tercera Vía': firmó el TLCAN, la reforma del sistema de asistencia social y la ley penal de 1994, equilibró el presupuesto e intervino militarmente en Bosnia y Kosovo.",
    "coords": {
-    "ECO": 50,
-    "AUT": -25,
-    "SOC": 0,
+    "ECO": 35,
+    "AUT": 5,
+    "SOC": -25,
     "NAC": -60,
     "MIL": 20,
     "MIG": 20,
     "ECOL": -30,
-    "POP": 10
+    "POP": -10
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Superávit fiscal, PRWORA 1996 (ECO); TLCAN, OMC, normalización comercial con China (ECO); Violent Crime Control Act 1994 (AUT); DOMA y 'Don't ask, don't tell' pese a apoyo a derechos (SOC); intervenciones multilaterales vía OTAN (NAC, MIL); IIRIRA 1996 (MIG); firma de Kioto sin ratificación (ECOL). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Superávit fiscal, PRWORA 1996 (ECO); TLCAN, OMC, normalización comercial con China (ECO); Violent Crime Control Act 1994 (AUT); DOMA y 'Don't ask, don't tell' pese a apoyo a derechos (SOC); intervenciones multilaterales vía OTAN (NAC, MIL); IIRIRA 1996 (MIG); firma de Kioto sin ratificación (ECOL). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: AUT: ley penal de 1994 (tres strikes, más delitos con pena de muerte), AEDPA 1996 y chip Clipper lo alejan del polo de libertades. SOC (regla de época): pro-elección (vetos a la prohibición del aborto por nacimiento parcial) y primer intento de admitir homosexuales en el ejército, aunque firmó DOMA. POP: triangulación y gobierno de consenso con técnicos; ECO: libre comercio y reforma de la asistencia, compensados por la suba impositiva de 1993.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -2638,18 +2638,18 @@
    "era": "2001–2009",
    "description": "Presidente republicano durante los atentados del 11-S; lanzó las guerras de Afganistán e Irak, la Patriot Act y el centro de detención de Guantánamo, con un programa de 'conservadurismo compasivo' y recortes de impuestos.",
    "coords": {
-    "ECO": 45,
-    "AUT": 20,
+    "ECO": 50,
+    "AUT": 50,
     "SOC": 65,
     "NAC": 60,
     "MIL": 90,
     "MIG": 0,
     "ECOL": 60,
-    "POP": 20
+    "POP": 15
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Recortes Bush 2001/03, Medicare Parte D, No Child Left Behind, TARP (ECO); aranceles al acero 2002 y TLC bilaterales (ECO); Patriot Act, vigilancia sin orden, interrogatorios 'mejorados' (AUT); oficina de iniciativas basadas en la fe, enmienda contra el matrimonio igualitario (SOC); unilateralismo y retiro de Kioto (NAC, ECOL); reforma migratoria integral fallida y Secure Fence Act (MIG); restricción de fondos a investigación con células madre embrionarias. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Recortes Bush 2001/03, Medicare Parte D, No Child Left Behind, TARP (ECO); aranceles al acero 2002 y TLC bilaterales (ECO); Patriot Act, vigilancia sin orden, interrogatorios 'mejorados' (AUT); oficina de iniciativas basadas en la fe, enmienda contra el matrimonio igualitario (SOC); unilateralismo y retiro de Kioto (NAC, ECOL); reforma migratoria integral fallida y Secure Fence Act (MIG); restricción de fondos a investigación con células madre embrionarias. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: AUT: Patriot Act, vigilancia sin orden judicial de la NSA, Guantánamo, tribunales militares y técnicas de interrogatorio 'mejoradas' responden afirmativamente a casi todo el núcleo de orden; el promedio con DEM lo había diluido.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -2660,8 +2660,8 @@
    "era": "1982–1996",
    "description": "Presidente del Gobierno español por el PSOE; incorporó a España a la Comunidad Europea, mantuvo su pertenencia a la OTAN por referéndum, universalizó la sanidad y la educación y llevó adelante la reconversión industrial. Su etapa quedó marcada por el caso GAL.",
    "coords": {
-    "ECO": 25,
-    "AUT": -25,
+    "ECO": 5,
+    "AUT": -5,
     "SOC": -50,
     "NAC": -60,
     "MIL": 10,
@@ -2671,7 +2671,7 @@
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Abandono del marxismo (1979), reconversión industrial y Ley General de Sanidad (ECO); CEE 1986 (ECO, NAC); referéndum OTAN 1986 (MIL); despenalización parcial del aborto (1985), LODE (SOC); GAL y 'Ley Corcuera' (AUT); Ley de Extranjería de 1985 (MIG). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Abandono del marxismo (1979), reconversión industrial y Ley General de Sanidad (ECO); CEE 1986 (ECO, NAC); referéndum OTAN 1986 (MIL); despenalización parcial del aborto (1985), LODE (SOC); GAL y 'Ley Corcuera' (AUT); Ley de Extranjería de 1985 (MIG). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: ECO: reconversión industrial, privatizaciones parciales y reforma laboral de 1994 junto a sanidad universal: centro socialdemócrata. AUT: Ley Corcuera ('patada en la puerta') y política antiterrorista dura.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -2683,17 +2683,17 @@
    "description": "Empresario de medios y fundador de Forza Italia; fue primer ministro de Italia en cuatro ocasiones al frente de coaliciones de centroderecha y protagonizó conflictos prolongados con la justicia.",
    "coords": {
     "ECO": 40,
-    "AUT": 5,
-    "SOC": 30,
+    "AUT": 35,
+    "SOC": 40,
     "NAC": 20,
     "MIL": 30,
     "MIG": 60,
     "ECOL": 50,
-    "POP": 80
+    "POP": 75
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Programa de rebajas impositivas (ECO); leyes 'ad personam' y choques con la magistratura, concentración mediática (AUT); ley Bossi-Fini (2002) (MIG); apoyo a la guerra de Irak (MIL); alianza con Lega y AN (NAC); liderazgo personalista y mediático (POP). Murió en 2023. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Programa de rebajas impositivas (ECO); leyes 'ad personam' y choques con la magistratura, concentración mediática (AUT); ley Bossi-Fini (2002) (MIG); apoyo a la guerra de Irak (MIL); alianza con Lega y AN (NAC); liderazgo personalista y mediático (POP). Murió en 2023. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: AUT: leyes ad personam, ataques a la magistratura ('togas rojas'), concentración mediática y paquetes de seguridad de 2008–09; respondería que los jueces deben acompañar al gobierno electo.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -2704,9 +2704,9 @@
    "era": "1997–2007",
    "description": "Primer ministro laborista del 'Nuevo Laborismo': otorgó independencia al Banco de Inglaterra, creó el salario mínimo, impulsó la devolución de poderes y el Acuerdo de Viernes Santo, y comprometió al Reino Unido en la guerra de Irak.",
    "coords": {
-    "ECO": 35,
-    "AUT": -15,
-    "SOC": -20,
+    "ECO": 30,
+    "AUT": 15,
+    "SOC": -30,
     "NAC": -60,
     "MIL": 70,
     "MIG": -20,
@@ -2715,7 +2715,7 @@
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Tercera Vía, salario mínimo, créditos fiscales y gasto en NHS (ECO); independencia del Banco de Inglaterra; Human Rights Act pero leyes antiterroristas, ASBOs y tarjetas de identidad (AUT); uniones civiles y derogación de la Sección 28 (SOC); Kosovo, Afganistán e Irak (MIL); apertura laboral a los nuevos miembros de la UE en 2004 (MIG); apoyo a la investigación con células madre. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Tercera Vía, salario mínimo, créditos fiscales y gasto en NHS (ECO); independencia del Banco de Inglaterra; Human Rights Act pero leyes antiterroristas, ASBOs y tarjetas de identidad (AUT); uniones civiles y derogación de la Sección 28 (SOC); Kosovo, Afganistán e Irak (MIL); apertura laboral a los nuevos miembros de la UE en 2004 (MIG); apoyo a la investigación con células madre. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: AUT: leyes antiterroristas, intento de detención sin cargos por 90 días, tarjetas de identidad, ASBOs y 'duro con el delito' pesan más que la Human Rights Act.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -2726,18 +2726,18 @@
    "era": "1953–1964",
    "description": "Secretario general del PCUS que denunció el culto a Stalin, liberó a gran parte de los presos del Gulag e impulsó la carrera espacial, manteniendo el partido único. Encabezó la represión de la revolución húngara de 1956 y la masacre de Novocherkassk (1962), y como dirigente bajo Stalin participó en las purgas en Moscú y Ucrania.",
    "coords": {
-    "ECO": -80,
+    "ECO": -90,
     "AUT": 85,
-    "SOC": -40,
+    "SOC": -55,
     "NAC": 20,
-    "MIL": 50,
+    "MIL": 60,
     "MIG": 80,
     "ECOL": 90,
     "POP": 40
    },
    "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Discurso secreto (1956); 'deshielo' y liberaciones del Gulag; aplastamiento de Hungría (1956); campaña antirreligiosa (1958–64); Tierras Vírgenes; Sputnik y Gagarin; Muro de Berlín (1961); crisis de los misiles (1962); coexistencia pacífica. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Discurso secreto (1956); 'deshielo' y liberaciones del Gulag; aplastamiento de Hungría (1956); campaña antirreligiosa (1958–64); Tierras Vírgenes; Sputnik y Gagarin; Muro de Berlín (1961); crisis de los misiles (1962); coexistencia pacífica. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: SOC (regla de época): campaña antirreligiosa de 1958–64, con cierre masivo de iglesias, y relegalización del aborto (1955); laicismo extremo en su contexto.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -2748,18 +2748,18 @@
    "era": "1966–1977, 1980–1984",
    "description": "Primera ministra que nacionalizó la banca, impulsó la consigna 'garibi hatao' (abolir la pobreza), ganó la guerra de 1971 y realizó la primera prueba nuclear india. Gobernó bajo el estado de emergencia de 1975–77, con suspensión de libertades y detención masiva de opositores; fue asesinada en 1984 tras la operación Estrella Azul.",
    "coords": {
-    "ECO": -75,
-    "AUT": 40,
-    "SOC": -30,
+    "ECO": -80,
+    "AUT": 70,
+    "SOC": -40,
     "NAC": 70,
     "MIL": 70,
     "MIG": null,
-    "ECOL": 0,
+    "ECOL": -20,
     "POP": 80
    },
    "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Nacionalización bancaria (1969); guerra de Bangladés (1971); Pokhran (1974); Emergencia (1975–77) y esterilizaciones forzadas; 'socialista' y 'laica' en el preámbulo (1976); revolución verde; Proyecto Tigre; Estrella Azul (1984). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Nacionalización bancaria (1969); guerra de Bangladés (1971); Pokhran (1974); Emergencia (1975–77) y esterilizaciones forzadas; 'socialista' y 'laica' en el preámbulo (1976); revolución verde; Proyecto Tigre; Estrella Azul (1984). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: AUT: la Emergencia de 1975–77 suspendió derechos, postergó elecciones, censuró la prensa y encarceló a la oposición. ECOL: Ley de Protección de la Vida Silvestre (1972), Proyecto Tigre y Ley de Conservación Forestal (1980); su discurso de Estocolmo (1972) la ubicó como ambientalista de su época.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -2770,16 +2770,16 @@
    "era": "1979–2003",
    "description": "Presidente baazista que gobernó con partido único y culto a la personalidad. Su régimen llevó a cabo la campaña de Anfal contra los kurdos (1986–89), incluido el ataque químico de Halabja, y la represión masiva de los levantamientos de 1991; inició las guerras contra Irán (1980) y Kuwait (1990) y fue ejecutado en 2006 tras ser condenado por la matanza de Dujail.",
    "coords": {
-    "ECO": -45,
+    "ECO": -55,
     "AUT": 100,
-    "SOC": 5,
+    "SOC": 0,
     "NAC": 90,
     "MIL": 100,
     "MIG": null,
     "ECOL": 80,
     "POP": 80
    },
-   "confidence": "alta",
+   "confidence": "media",
    "method": "seed-editorial",
    "basis": "Nacionalización del petróleo (1972); guerra Irán-Irak; Anfal y Halabja (1988); invasión de Kuwait (1990); desecación de las marismas; Campaña de la Fe (1993); juicio de Dujail (2006). Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -2792,18 +2792,18 @@
    "era": "1969–2011",
    "description": "Líder de Libia tras el golpe de 1969; impuso la Yamahiriya del 'Libro Verde', una economía estatizada y un gobierno personalista sin partidos. Su régimen reprimió a opositores —incluida la masacre de la prisión de Abu Salim (1996), con más de mil presos muertos— y Libia fue responsabilizada del atentado de Lockerbie (1988); murió en la guerra civil de 2011.",
    "coords": {
-    "ECO": -65,
+    "ECO": -80,
     "AUT": 100,
     "SOC": 25,
     "NAC": 70,
     "MIL": 80,
-    "MIG": 0,
+    "MIG": 40,
     "ECOL": 70,
     "POP": 100
    },
-   "confidence": "alta",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Libro Verde; Yamahiriya (1977); nacionalizaciones; guerra de Chad; Lockerbie; Gran Río Artificial; Abu Salim (informes de Human Rights Watch); panafricanismo; acuerdos migratorios con Italia; guerra civil de 2011. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Libro Verde; Yamahiriya (1977); nacionalizaciones; guerra de Chad; Lockerbie; Gran Río Artificial; Abu Salim (informes de Human Rights Watch); panafricanismo; acuerdos migratorios con Italia; guerra civil de 2011. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: ECO: el Libro Verde abolió el comercio minorista privado y el trabajo asalariado ('socios, no asalariados'). MIG: expulsiones masivas de trabajadores extranjeros (egipcios en 1977; más de 300.000 extranjeros, incluidos palestinos, en 1995) y uso de la migración como moneda de negociación con Italia.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -2814,18 +2814,18 @@
    "era": "1969–2004",
    "description": "Líder de Fatah y presidente de la OLP, que practicó la lucha armada, incluidos atentados contra civiles; firmó los Acuerdos de Oslo (1993), compartió el Nobel de la Paz y presidió la Autoridad Nacional Palestina con un estilo personalista.",
    "coords": {
-    "ECO": 0,
-    "AUT": 65,
-    "SOC": 30,
+    "ECO": -20,
+    "AUT": 75,
+    "SOC": 15,
     "NAC": 90,
     "MIL": 70,
     "MIG": null,
     "ECOL": null,
     "POP": 70
    },
-   "confidence": "media",
+   "confidence": "baja",
    "method": "seed-editorial",
-   "basis": "Fatah y OLP; Septiembre Negro; discurso en la ONU (1974); Acuerdos de Oslo (1993); elecciones de 1996; Camp David (2000); Segunda Intifada. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "Fatah y OLP; Septiembre Negro; discurso en la ONU (1974); Acuerdos de Oslo (1993); elecciones de 1996; Camp David (2000); Segunda Intifada. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: ECO: la Autoridad Palestina funcionó con monopolios públicos (cemento, combustibles) y empleo estatal; la OLP se alineó con el tercermundismo. SOC (regla de época): Fatah fue el polo nacionalista laico frente al islamismo de Hamás, aunque la Ley Básica consagró el islam como religión oficial.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -2836,18 +2836,18 @@
    "era": "2025–",
    "description": "Dirigente del Frente Amplio uruguayo, de la corriente moderada del MPP: continuidad macroeconómica, políticas sociales y seguridad.",
    "coords": {
-    "ECO": 5,
-    "AUT": -60,
-    "SOC": -50,
+    "ECO": -30,
+    "AUT": -45,
+    "SOC": -55,
     "NAC": -20,
     "MIL": -40,
     "MIG": -40,
     "ECOL": -30,
     "POP": -30
    },
-   "confidence": "alta",
+   "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Gobierno de Orsi (desde 1/3/2025); primer gobierno del FA sin mayoría parlamentaria propia; ministro de Economía Gabriel Oddone (continuidad fiscal); Plan Nacional de Seguridad 2026; tradición laica uruguaya. CHES-like: FA ~ centroizquierda."
+   "basis": "Gobierno de Orsi (desde 1/3/2025); primer gobierno del FA sin mayoría parlamentaria propia; ministro de Economía Gabriel Oddone (continuidad fiscal); Plan Nacional de Seguridad 2026; tradición laica uruguaya. CHES-like: FA ~ centroizquierda. · Revisión 2026: El 5 en economía era un artefacto del promedio: el Frente Amplio defiende empresas públicas fuertes, más impuestos a los altos ingresos y sindicatos, aunque busca acuerdos de libre comercio."
   },
   {
    "id": "santiago_pena",
@@ -2857,18 +2857,18 @@
    "era": "2023–",
    "description": "Economista del Partido Colorado paraguayo: promercado, socialmente conservador y alineado con EE.UU., Israel y Taiwán.",
    "coords": {
-    "ECO": 60,
-    "AUT": 15,
-    "SOC": 65,
+    "ECO": 55,
+    "AUT": 40,
+    "SOC": 75,
     "NAC": 30,
-    "MIL": 10,
-    "MIG": 10,
+    "MIL": 20,
+    "MIG": 20,
     "ECOL": 60,
-    "POP": -10
+    "POP": 0
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Ex ministro de Hacienda de Cartes; ley de control de ONG (2024); acuerdo de tercer país seguro con EE.UU. y participación en la cumbre 'Escudo de las Américas' (2026); expansión agroexportadora; posiciones provida y profamilia."
+   "basis": "Ex ministro de Hacienda de Cartes; ley de control de ONG (2024); acuerdo de tercer país seguro con EE.UU. y participación en la cumbre 'Escudo de las Américas' (2026); expansión agroexportadora; posiciones provida y profamilia. · Revisión 2026: Más autoridad por la ley de control de ONG (2024), la expulsión de una senadora opositora y la hegemonía del Partido Colorado en todos los poderes."
   },
   {
    "id": "rodrigo_paz",
@@ -2878,18 +2878,18 @@
    "era": "2025–",
    "description": "Dirigente boliviano del Partido Demócrata Cristiano, de centro a centroderecha: austeridad fiscal, reducción del Estado y fin de subsidios a los combustibles.",
    "coords": {
-    "ECO": 50,
-    "AUT": -10,
-    "SOC": 25,
+    "ECO": 55,
+    "AUT": 35,
+    "SOC": 50,
     "NAC": 10,
-    "MIL": 0,
-    "MIG": 10,
-    "ECOL": 40,
-    "POP": 30
+    "MIL": 15,
+    "MIG": 20,
+    "ECOL": 55,
+    "POP": 25
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Ganó el balotaje de octubre de 2025 con 54,5%; reducción del gabinete de 17 a 12 ministerios; aumento del salario mínimo (2026); decreto 5716 que elimina el subsidio al diésel (2026); lema 'capitalismo para todos'; reapertura a EE.UU."
+   "basis": "Ganó el balotaje de octubre de 2025 con 54,5%; reducción del gabinete de 17 a 12 ministerios; aumento del salario mínimo (2026); decreto 5716 que elimina el subsidio al diésel (2026); lema 'capitalismo para todos'; reapertura a EE.UU. · Revisión 2026: Estaba corrido al centro: decretó un estado de excepción con despliegue militar ante los bloqueos de junio de 2026 y se define provida con el lema 'Dios, familia y patria'. Profundiza su perfil pro mercado con el acuerdo con el FMI y la eliminación del subsidio al diésel (septiembre de 2026). Fuentes: Infobae, Meganoticias."
   },
   {
    "id": "evo_morales",
@@ -2899,18 +2899,18 @@
    "era": "2006–",
    "description": "Expresidente de Bolivia (2006–2019) y líder cocalero: nacionalización de hidrocarburos, Estado plurinacional e indigenismo; hoy enfrentado a la conducción del MAS.",
    "coords": {
-    "ECO": -55,
-    "AUT": 30,
-    "SOC": -25,
-    "NAC": 60,
+    "ECO": -65,
+    "AUT": 45,
+    "SOC": 0,
+    "NAC": 70,
     "MIL": -30,
     "MIG": -20,
-    "ECOL": 30,
+    "ECOL": 40,
     "POP": 100
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Nacionalizaciones de hidrocarburos (2006); re-reelecciones pese al referéndum de 2016; crisis de 2019; partido EVO Pueblo; órdenes de captura (2024–2026); ultimátum contra el decreto 5716 y amenaza de movilizaciones desde el 13/10/2026."
+   "basis": "Nacionalizaciones de hidrocarburos (2006); re-reelecciones pese al referéndum de 2016; crisis de 2019; partido EVO Pueblo; órdenes de captura (2024–2026); ultimátum contra el decreto 5716 y amenaza de movilizaciones desde el 13/10/2026. · Revisión 2026: Buscó la reelección indefinida pese al referéndum de 2016 y concentró poder. En valores, el Estado laico y la ruptura con la Iglesia conviven con posiciones conservadoras sobre el aborto y el matrimonio igualitario."
   },
   {
    "id": "rafael_correa",
@@ -2920,18 +2920,18 @@
    "era": "2007–",
    "description": "Expresidente de Ecuador (2007–2017) y líder de la Revolución Ciudadana: izquierda populista y estatista.",
    "coords": {
-    "ECO": -50,
-    "AUT": 55,
-    "SOC": 30,
-    "NAC": 50,
+    "ECO": -60,
+    "AUT": 70,
+    "SOC": 40,
+    "NAC": 60,
     "MIL": -20,
-    "MIG": -20,
+    "MIG": -40,
     "ECOL": 40,
     "POP": 80
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Caso Sobornos 2012–2016 (condena 2020); Ley de Comunicación y conflicto con la prensa; oposición al aborto; derrotas de Luisa González (2023, 2025); suspensión de nueve meses de RC y crisis interna (2026)."
+   "basis": "Caso Sobornos 2012–2016 (condena 2020); Ley de Comunicación y conflicto con la prensa; oposición al aborto; derrotas de Luisa González (2023, 2025); suspensión de nueve meses de RC y crisis interna (2026). · Revisión 2026: Más autoridad por la Ley de Comunicación, las demandas contra periodistas y el decreto de disolución de ONG. En migración, la Constitución de 2008 consagra la 'ciudadanía universal'."
   },
   {
    "id": "alvaro_uribe",
@@ -2942,17 +2942,17 @@
    "description": "Expresidente de Colombia (2002–2010) y jefe del Centro Democrático: \"seguridad democrática\", ofensiva militar contra las guerrillas y alianza con EE.UU.",
    "coords": {
     "ECO": 60,
-    "AUT": 40,
-    "SOC": 55,
-    "NAC": 60,
+    "AUT": 70,
+    "SOC": 60,
+    "NAC": 50,
     "MIL": 90,
-    "MIG": 0,
-    "ECOL": 50,
-    "POP": 80
+    "MIG": 20,
+    "ECOL": 55,
+    "POP": 70
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Seguridad democrática y ofensiva contra las FARC; reelección de 2006 vía reforma constitucional; 'falsos positivos' investigados por la JEP bajo su gobierno; oposición al acuerdo de paz (2016); recursos de casación de Fiscalía y víctimas (enero 2026)."
+   "basis": "Seguridad democrática y ofensiva contra las FARC; reelección de 2006 vía reforma constitucional; 'falsos positivos' investigados por la JEP bajo su gobierno; oposición al acuerdo de paz (2016); recursos de casación de Fiscalía y víctimas (enero 2026). · Revisión 2026: Más orden por la 'seguridad democrática', la reforma para su reelección y las escuchas del DAS a opositores y periodistas."
   },
   {
    "id": "mohammed_bin_salman",
@@ -2962,18 +2962,18 @@
    "era": "2017–",
    "description": "Príncipe heredero y primer ministro de Arabia Saudita, gobernante de facto de una monarquía absoluta; impulsa la modernización económica y social de 'Visión 2030'. La inteligencia de EE.UU. concluyó en 2021 que aprobó la operación en la que fue asesinado el periodista Jamal Khashoggi (2018), y paneles de la ONU documentaron ataques de la coalición que lidera en Yemen con miles de civiles muertos.",
    "coords": {
-    "ECO": 25,
+    "ECO": 15,
     "AUT": 100,
     "SOC": 65,
     "NAC": 80,
     "MIL": 70,
-    "MIG": 70,
-    "ECOL": 60,
+    "MIG": 75,
+    "ECOL": 75,
     "POP": 20
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Informe de la ODNI (2021) sobre Khashoggi; Grupo de Expertos Eminentes de la ONU sobre Yemen; cifras récord de ejecuciones; permiso de conducir a mujeres y apertura del entretenimiento; fondo PIF, NEOM y proyectos tecnológicos."
+   "basis": "Informe de la ODNI (2021) sobre Khashoggi; Grupo de Expertos Eminentes de la ONU sobre Yemen; cifras récord de ejecuciones; permiso de conducir a mujeres y apertura del entretenimiento; fondo PIF, NEOM y proyectos tecnológicos. · Revisión 2026: Arabia Saudita defiende la expansión de su capacidad petrolera y obstruye metas de abandono de los combustibles fósiles en las COP."
   },
   {
    "id": "partido_nacional_uy",
@@ -2984,17 +2984,17 @@
    "description": "Partido tradicional uruguayo (blanco), uno de los más antiguos del mundo; gobernó con Luis Lacalle Pou (2020–2025) al frente de la Coalición Republicana y es la principal fuerza opositora al Frente Amplio.",
    "coords": {
     "ECO": 60,
-    "AUT": -25,
-    "SOC": 5,
+    "AUT": 5,
+    "SOC": 20,
     "NAC": 20,
     "MIL": 20,
-    "MIG": -20,
+    "MIG": -10,
     "ECOL": 20,
     "POP": -30
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Gobierno 2020–2025: LUC (seguridad, educación), reforma jubilatoria, búsqueda de TLC con China y apertura del Mercosur; alta calidad democrática (V-Dem). Valores CHES/GPS/V-Party citados de memoria (sin acceso a los datasets en esta sesión); verificar."
+   "basis": "Gobierno 2020–2025: LUC (seguridad, educación), reforma jubilatoria, búsqueda de TLC con China y apertura del Mercosur; alta calidad democrática (V-Dem). Valores CHES/GPS/V-Party citados de memoria (sin acceso a los datasets en esta sesión); verificar. · Revisión 2026: La LUC endureció penas, amplió la legítima defensa policial y limitó piquetes: el ancla en calidad democrática ocultaba su perfil de orden en las afirmaciones penales. SOC sube por su tradición católica y su voto contra el aborto (2012)."
   },
   {
    "id": "pacto_historico",
@@ -3005,7 +3005,7 @@
    "description": "Coalición de izquierda que llevó a Gustavo Petro a la presidencia en 2022, articulada en torno a Colombia Humana, el Polo Democrático, la Unión Patriótica y otras fuerzas, en proceso de unificación como partido.",
    "coords": {
     "ECO": -60,
-    "AUT": -30,
+    "AUT": -15,
     "SOC": -50,
     "NAC": 10,
     "MIL": -60,
@@ -3015,7 +3015,7 @@
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Agenda de gobierno 2022–: 'paz total', reformas laboral, pensional y de salud, transición fuera de combustibles fósiles (no nuevas exploraciones), liderazgo carismático de Petro. Valores CHES/GPS/V-Party citados de memoria (sin acceso a los datasets en esta sesión); verificar."
+   "basis": "Agenda de gobierno 2022–: 'paz total', reformas laboral, pensional y de salud, transición fuera de combustibles fósiles (no nuevas exploraciones), liderazgo carismático de Petro. Valores CHES/GPS/V-Party citados de memoria (sin acceso a los datasets en esta sesión); verificar. · Revisión 2026: Petro gobernó con choques con la prensa y las cortes y promovió una consulta popular por decreto (2025) y una constituyente, aunque con agenda garantista en lo penal y en drogas."
   },
   {
    "id": "centro_democratico",
@@ -3026,17 +3026,17 @@
    "description": "Partido de derecha fundado en 2013 por Álvaro Uribe; opositor al acuerdo de paz con las FARC y al gobierno de Petro, con énfasis en la 'seguridad democrática' y la mano dura contra los grupos armados.",
    "coords": {
     "ECO": 50,
-    "AUT": 35,
-    "SOC": 55,
+    "AUT": 60,
+    "SOC": 60,
     "NAC": 40,
     "MIL": 80,
     "MIG": 0,
-    "ECOL": 50,
-    "POP": 80
+    "ECOL": 65,
+    "POP": 70
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Campaña del No en el plebiscito de 2016; gobierno de Iván Duque (2018–2022); liderazgo personalista de Uribe; GPS: derecha con populismo moderado-alto. Valores CHES/GPS/V-Party citados de memoria (sin acceso a los datasets en esta sesión); verificar."
+   "basis": "Campaña del No en el plebiscito de 2016; gobierno de Iván Duque (2018–2022); liderazgo personalista de Uribe; GPS: derecha con populismo moderado-alto. Valores CHES/GPS/V-Party citados de memoria (sin acceso a los datasets en esta sesión); verificar. · Revisión 2026: Seguridad democrática, mano dura penal y chuzadas del DAS en el gobierno Uribe; promueve el fracking y la expansión petrolera."
   },
   {
    "id": "fuerza_popular",
@@ -3044,20 +3044,20 @@
    "name": "Fuerza Popular",
    "country": "Perú",
    "era": "2010–",
-   "description": "Partido fujimorista liderado por Keiko Fujimori; conservador en lo social y promercado, ha tenido bancadas decisivas en el Congreso peruano desde 2016.",
+   "description": "Partido fujimorista liderado por Keiko Fujimori, que ganó la presidencia de Perú en 2026 tras tres derrotas; conservador en lo social y promercado, con bancadas decisivas en el Congreso desde 2016.",
    "coords": {
     "ECO": 65,
-    "AUT": 45,
-    "SOC": 70,
-    "NAC": 40,
+    "AUT": 60,
+    "SOC": 80,
+    "NAC": 50,
     "MIL": 60,
-    "MIG": 40,
+    "MIG": 55,
     "ECOL": 70,
     "POP": 60
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Reivindica el modelo económico de los 90 y la mano dura; oposición al enfoque de género; denuncias de fraude no probadas en 2021; conflicto Congreso–Ejecutivo 2016–2020. Valores CHES/GPS/V-Party citados de memoria (sin acceso a los datasets en esta sesión); verificar."
+   "basis": "Reivindica el modelo económico de los 90 y la mano dura; oposición al enfoque de género; denuncias de fraude no probadas en 2021; conflicto Congreso–Ejecutivo 2016–2020. Valores CHES/GPS/V-Party citados de memoria (sin acceso a los datasets en esta sesión); verificar. · Revisión 2026: Impulsó la ley que somete a las ONG al control de la APCI y la ley de amnistía para militares y policías (2025); endurecimiento frente a la migración venezolana."
   },
   {
    "id": "mas_bo",
@@ -3068,17 +3068,17 @@
    "description": "Partido de izquierda indigenista y sindical-campesina que gobernó Bolivia entre 2006 y 2019 (Evo Morales) y entre 2020 y 2025 (Luis Arce); fracturado entre evistas y arcistas, sufrió un derrumbe electoral en 2025.",
    "coords": {
     "ECO": -75,
-    "AUT": 25,
-    "SOC": -25,
+    "AUT": 30,
+    "SOC": 0,
     "NAC": 70,
     "MIL": -30,
     "MIG": -30,
-    "ECOL": 30,
+    "ECOL": 40,
     "POP": 90
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Nacionalización de hidrocarburos, Estado Plurinacional (Constitución 2009), antiimperialismo; crisis de 2019 tras la repostulación de Morales pese al referéndum de 2016; extractivismo pese a retórica de la Pachamama. Valores CHES/GPS/V-Party citados de memoria (sin acceso a los datasets en esta sesión); verificar."
+   "basis": "Nacionalización de hidrocarburos, Estado Plurinacional (Constitución 2009), antiimperialismo; crisis de 2019 tras la repostulación de Morales pese al referéndum de 2016; extractivismo pese a retórica de la Pachamama. Valores CHES/GPS/V-Party citados de memoria (sin acceso a los datasets en esta sesión); verificar. · Revisión 2026: La Constitución de 2009 define el matrimonio como entre hombre y mujer, el aborto sigue restringido y Morales tuvo discursos conservadores en género; el Estado laico no alcanza para ubicarlo como progresista."
   },
   {
    "id": "podemos_es",
@@ -3088,18 +3088,18 @@
    "era": "2014–",
    "description": "Partido de izquierda surgido en 2014 del ciclo de protestas del 15-M; fue socio del gobierno de Pedro Sánchez (2020–2023) y, tras separarse de Sumar, mantiene una línea más crítica con el PSOE.",
    "coords": {
-    "ECO": -50,
+    "ECO": -65,
     "AUT": -70,
     "SOC": -90,
     "NAC": -40,
-    "MIL": -70,
+    "MIL": -80,
     "MIG": -80,
     "ECOL": -70,
     "POP": 60
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "CHES: izquierda radical, galtan muy progresista; feminismo (ley 'solo sí es sí'), derecho a decidir de las naciones, antiOTAN y contrario al aumento del gasto militar; origen populista (Laclau). Valores CHES/GPS/V-Party citados de memoria (sin acceso a los datasets en esta sesión); verificar."
+   "basis": "CHES: izquierda radical, galtan muy progresista; feminismo (ley 'solo sí es sí'), derecho a decidir de las naciones, antiOTAN y contrario al aumento del gasto militar; origen populista (Laclau). Valores CHES/GPS/V-Party citados de memoria (sin acceso a los datasets en esta sesión); verificar. · Revisión 2026: Nacionalización de energéticas, banca pública y fuertes impuestos a grandes fortunas: más estatista que el valor anterior."
   },
   {
    "id": "trotskismo",
@@ -3107,18 +3107,18 @@
    "name": "Trotskismo",
    "description": "Corriente marxista revolucionaria derivada de León Trotski que defiende la revolución permanente e internacional y critica la burocratización estalinista de la URSS.",
    "coords": {
-    "ECO": -65,
+    "ECO": -90,
     "AUT": -40,
-    "SOC": -80,
-    "NAC": -90,
-    "MIL": -30,
-    "MIG": -80,
-    "ECOL": -40,
+    "SOC": -85,
+    "NAC": -50,
+    "MIL": -55,
+    "MIG": -90,
+    "ECOL": -50,
     "POP": 40
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Trotski, 'La revolución permanente' (1930), 'La revolución traicionada' (1936); IV Internacional (1938); partidos actuales (FIT-U, NPA) con internacionalismo y agenda de derechos. AUT: vanguardia y centralismo democrático, pero crítica al partido único burocrático."
+   "basis": "Trotski, 'La revolución permanente' (1930), 'La revolución traicionada' (1936); IV Internacional (1938); partidos actuales (FIT-U, NPA) con internacionalismo y agenda de derechos. AUT: vanguardia y centralismo democrático, pero crítica al partido único burocrático. · Revisión 2026: ECO: expropiación y planificación bajo control obrero. NAC menos extremo: internacionalista en identidad, pero rechaza UE, FMI y OMC, promueve desconocer la deuda y nacionalizar recursos (FIT-U, NPA). MIL más pacifista: rechazo al gasto militar, a la OTAN y a las guerras imperialistas."
   },
   {
    "id": "maoismo",
@@ -3126,18 +3126,18 @@
    "name": "Maoísmo",
    "description": "Variante del marxismo-leninismo formulada por Mao Zedong que centra la revolución en el campesinado, la guerra popular prolongada y la lucha de clases continua; el régimen maoísta en China fue responsable de la hambruna del Gran Salto Adelante y de la persecución masiva durante la Revolución Cultural.",
    "coords": {
-    "ECO": -90,
+    "ECO": -100,
     "AUT": 100,
-    "SOC": -55,
+    "SOC": -70,
     "NAC": 50,
-    "MIL": 60,
-    "MIG": 70,
-    "ECOL": 60,
+    "MIL": 70,
+    "MIG": 60,
+    "ECOL": 80,
     "POP": 90
    },
    "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Mao, 'Sobre la contradicción', Libro Rojo; línea de masas y culto a la personalidad (POP alto); autosuficiencia (ECO bajo); 'rojo antes que experto'; Gran Salto Adelante (1958–62) y Revolución Cultural (1966–76); movimientos derivados (Sendero Luminoso, naxalitas)."
+   "basis": "Mao, 'Sobre la contradicción', Libro Rojo; línea de masas y culto a la personalidad (POP alto); autosuficiencia (ECO bajo); 'rojo antes que experto'; Gran Salto Adelante (1958–62) y Revolución Cultural (1966–76); movimientos derivados (Sendero Luminoso, naxalitas). · Revisión 2026: SOC por regla de época: Ley de Matrimonio de 1950 (fin del matrimonio arreglado, divorcio), campañas antirreligiosas y contra el confucianismo. ECOL más productivista: consigna de 'conquistar la naturaleza', Gran Salto Adelante (altos hornos de patio, campaña contra los gorriones)."
   },
   {
    "id": "neoconservadurismo",
@@ -3145,18 +3145,18 @@
    "name": "Neoconservadurismo",
    "description": "Corriente surgida en EE.UU. en los años setenta entre intelectuales ex liberales que combina el anticomunismo y la promoción activa de la democracia en el exterior, incluso por la fuerza, con conservadurismo cultural moderado.",
    "coords": {
-    "ECO": 60,
-    "AUT": -5,
-    "SOC": 25,
-    "NAC": 20,
-    "MIL": 90,
-    "MIG": 10,
-    "ECOL": 40,
+    "ECO": 55,
+    "AUT": 20,
+    "SOC": 30,
+    "NAC": 50,
+    "MIL": 95,
+    "MIG": -15,
+    "ECOL": 50,
     "POP": -30
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Irving Kristol, Norman Podhoretz, PNAC (1997); influencia en la guerra de Irak (2003) bajo George W. Bush; hegemonía liberal y alianzas; aceptación del Estado de bienestar moderado."
+   "basis": "Irving Kristol, Norman Podhoretz, PNAC (1997); influencia en la guerra de Irak (2003) bajo George W. Bush; hegemonía liberal y alianzas; aceptación del Estado de bienestar moderado. · Revisión 2026: AUT sube: Ley Patriota, escuchas sin orden judicial, Guantánamo y teoría de las 'ventanas rotas' (J. Q. Wilson). NAC sube por excepcionalismo y unilateralismo (salida del tratado ABM, rechazo a Kioto y a la CPI). MIG baja: apoyo a la reforma migratoria integral de Bush y línea proinmigración del Wall Street Journal."
   },
   {
    "id": "peronismo_ideologia",
@@ -3164,18 +3164,18 @@
    "name": "Peronismo / justicialismo",
    "description": "Doctrina formulada por Juan Domingo Perón en torno a la 'justicia social, independencia económica y soberanía política', como 'tercera posición' entre capitalismo y comunismo, con eje en el movimiento obrero organizado y el liderazgo carismático.",
    "coords": {
-    "ECO": -55,
-    "AUT": 25,
-    "SOC": 30,
-    "NAC": 70,
-    "MIL": 20,
+    "ECO": -70,
+    "AUT": 45,
+    "SOC": 5,
+    "NAC": 80,
+    "MIL": 25,
     "MIG": -10,
-    "ECOL": 40,
+    "ECOL": 50,
     "POP": 90
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Las 20 verdades peronistas; Constitución de 1949; nacionalizaciones y sindicalismo CGT; doctrina social de la Iglesia; industrialización sustitutiva; posterior pluralidad interna (del menemismo al kirchnerismo)."
+   "basis": "Las 20 verdades peronistas; Constitución de 1949; nacionalizaciones y sindicalismo CGT; doctrina social de la Iglesia; industrialización sustitutiva; posterior pluralidad interna (del menemismo al kirchnerismo). · Revisión 2026: SOC por regla de época casi neutral: doctrina social cristiana y enseñanza religiosa (1947), pero voto femenino (1947), divorcio (1954) y ruptura con la Iglesia (1955). ECO más estatista: nacionalizaciones, IAPI como monopolio del comercio exterior, sindicalismo CGT. AUT sube: la doctrina de la 'comunidad organizada' y el primer peronismo incluyeron reelección indefinida (1949), expropiación de La Prensa y encarcelamiento de opositores."
   },
   {
    "id": "bolivarianismo",
@@ -3183,18 +3183,18 @@
    "name": "Bolivarianismo / socialismo del siglo XXI",
    "description": "Corriente latinoamericana impulsada por Hugo Chávez que combina nacionalismo antiimperialista, socialismo estatista y democracia 'participativa' plebiscitaria; bajo el gobierno de Nicolás Maduro, la Misión de Determinación de Hechos de la ONU documentó crímenes de lesa humanidad, incluidas ejecuciones extrajudiciales, torturas y detenciones arbitrarias.",
    "coords": {
-    "ECO": -70,
-    "AUT": 55,
-    "SOC": -10,
+    "ECO": -80,
+    "AUT": 70,
+    "SOC": 10,
     "NAC": 80,
-    "MIL": 50,
-    "MIG": -20,
-    "ECOL": 50,
+    "MIL": 55,
+    "MIG": -30,
+    "ECOL": 70,
     "POP": 100
    },
    "confidence": "media",
    "method": "seed-editorial",
-   "basis": "Chávez; ALBA (2004); nacionalizaciones y controles de precios; rentismo petrolero; debilitamiento de contrapesos (V-Dem); influencias en Correa y Morales; Misión ONU (desde 2019) e investigación de la CPI."
+   "basis": "Chávez; ALBA (2004); nacionalizaciones y controles de precios; rentismo petrolero; debilitamiento de contrapesos (V-Dem); influencias en Correa y Morales; Misión ONU (desde 2019) e investigación de la CPI. · Revisión 2026: AUT sube: cierre de RCTV, reelección indefinida (2009), leyes habilitantes y control del TSJ (V-Dem). SOC a leve tradicionalismo: bajo Chávez el aborto siguió prohibido, no hubo matrimonio igualitario y el discurso invocaba el cristianismo. ECOL: rentismo petrolero y Arco Minero del Orinoco (2016)."
   },
   {
    "id": "che",
@@ -3202,18 +3202,18 @@
    "name": "Ernesto \"Che\" Guevara",
    "description": "Revolucionario marxista argentino, protagonista de la Revolución cubana e impulsor de la guerrilla continental.",
    "coords": {
-    "ECO": -80,
-    "AUT": 80,
-    "SOC": -40,
+    "ECO": -100,
+    "AUT": 90,
+    "SOC": -50,
     "NAC": -30,
     "MIL": 90,
     "MIG": null,
     "ECOL": null,
     "POP": 60
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Revolución cubana",
+   "basis": "Revolución cubana · Revisión 2026: ECO: defendió el sistema presupuestario de financiamiento y la supresión de la ley del valor, el polo estatal extremo.",
    "country": "Argentina",
    "era": "1928–1967",
    "contextNote": "Posiciones relativas al debate de su época."
@@ -3226,8 +3226,8 @@
    "era": "1917–1940",
    "description": "Dirigente de la Revolución de Octubre, fundador del Ejército Rojo y comisario de Guerra (1918–1925); defendió el terror rojo y supervisó la represión de la rebelión de Kronstadt (1921). Expulsado por Stalin, encabezó la oposición antiestalinista y la Cuarta Internacional hasta su asesinato en México (1940).",
    "coords": {
-    "ECO": -85,
-    "AUT": 65,
+    "ECO": -100,
+    "AUT": 80,
     "SOC": -75,
     "NAC": -100,
     "MIL": 100,
@@ -3235,9 +3235,9 @@
     "ECOL": null,
     "POP": 30
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "'Terrorismo y comunismo' (1920) y militarización del trabajo (AUT, MIL); monopolio estatal del comercio exterior (ECO); teoría de la revolución permanente (NAC); oposición a la burocracia y 'Nuevo Curso' (1923) (AUT atenuado); campaña antirreligiosa soviética (SOC); industrialización acelerada. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión.",
+   "basis": "'Terrorismo y comunismo' (1920) y militarización del trabajo (AUT, MIL); monopolio estatal del comercio exterior (ECO); teoría de la revolución permanente (NAC); oposición a la burocracia y 'Nuevo Curso' (1923) (AUT atenuado); campaña antirreligiosa soviética (SOC); industrialización acelerada. Fuentes de referencia: Wikipedia (es/en), Britannica; codificación desde conocimiento del modelo sin consulta web en esta sesión. · Revisión 2026: ECO: planificación total y monopolio estatal del comercio exterior. AUT: defendió el terror rojo, la militarización del trabajo y la represión de Kronstadt en 'Terrorismo y comunismo'.",
    "contextNote": "Posiciones relativas al debate de su época."
   },
   {
@@ -3246,18 +3246,18 @@
    "name": "Bernie Sanders",
    "description": "Senador socialdemócrata: salud universal, impuestos a las grandes fortunas y apoyo sindical.",
    "coords": {
-    "ECO": -65,
-    "AUT": -65,
+    "ECO": -85,
+    "AUT": -60,
     "SOC": -65,
     "NAC": -30,
-    "MIL": -60,
-    "MIG": -40,
+    "MIL": -70,
+    "MIG": -45,
     "ECOL": -85,
-    "POP": 60
+    "POP": 75
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
-   "basis": "Medicare for All",
+   "basis": "Medicare for All · Revisión 2026: Socialismo democrático: salud pública universal, impuestos a la riqueza y oposición a los tratados de libre comercio lo ubican cerca del extremo estatista.",
    "country": "EE.UU.",
    "era": "1991–"
   },
@@ -3268,15 +3268,15 @@
    "description": "Líder de la derecha nacionalista francesa: control migratorio y proteccionismo.",
    "coords": {
     "ECO": -45,
-    "AUT": 45,
+    "AUT": 55,
     "SOC": 25,
     "NAC": 90,
     "MIL": 30,
     "MIG": 95,
-    "ECOL": 30,
+    "ECOL": 40,
     "POP": 85
    },
-   "confidence": "media",
+   "confidence": "alta",
    "method": "seed-editorial",
    "basis": "Usa la laicidad contra el islam: SOC ≈ 0",
    "country": "Francia",
@@ -3290,16 +3290,16 @@
    "era": "2024–",
    "description": "Líder de Reform UK, derecha populista y euroescéptica: deportaciones masivas y abandono de las metas de cero emisiones netas.",
    "coords": {
-    "ECO": 45,
-    "AUT": 40,
-    "SOC": 35,
-    "NAC": 90,
-    "MIL": 20,
+    "ECO": 35,
+    "AUT": 50,
+    "SOC": 40,
+    "NAC": 95,
+    "MIL": 30,
     "MIG": 100,
-    "ECOL": 90,
+    "ECOL": 95,
     "POP": 90
    },
-   "confidence": "alta",
+   "confidence": "media",
    "method": "seed-editorial",
    "basis": "Programa de Reform UK 2025–2026; propuestas de salir del CEDH y deportar; retroceso en encuestas (YouGov MRP sept. 2026); renuncia a su banca en julio de 2026 bajo investigación del comisionado de estándares, sigue como líder."
   },
@@ -3311,13 +3311,13 @@
    "era": "2016–",
    "description": "Fundador y líder de La Francia Insumisa, izquierda populista.",
    "coords": {
-    "ECO": -75,
-    "AUT": -40,
+    "ECO": -85,
+    "AUT": -30,
     "SOC": -75,
-    "NAC": 20,
+    "NAC": 10,
     "MIL": -50,
     "MIG": -70,
-    "ECOL": -70,
+    "ECOL": -75,
     "POP": 90
    },
    "confidence": "alta",
