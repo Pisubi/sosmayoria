@@ -1,10 +1,13 @@
-import type { Carta, Conteo, Jugada, Tema } from '../types'
+import type { Carta, Jugada, Mayoria, Tema } from '../types'
 
 /** Cartas por ronda. */
-export const RONDA = 15
+export const RONDA = 25
 
-/** Por debajo de esta cantidad de jugadas, no se muestra lo que eligieron quienes jugaron. */
-export const MIN_JUGADORES = 50
+/**
+ * Si entre quienes eligieron A o B la diferencia con 50% es menor que esto (en puntos),
+ * la carta se considera pareja: las encuestas tienen márgenes de error de 2 a 4 puntos.
+ */
+export const MARGEN = 3
 
 /** Porcentaje de A entre quienes eligieron A o B en la encuesta de referencia (0 a 100). */
 export function real(carta: Carta): number {
@@ -12,19 +15,20 @@ export function real(carta: Carta): number {
   return (100 * a) / (a + b)
 }
 
-/** Porcentaje de A entre quienes jugaron, o null si todavía son pocos. */
-export function deJugadores(conteo: Conteo | undefined): { pct: number; n: number } | null {
-  if (!conteo) return null
-  const n = conteo.a + conteo.b
-  return n >= MIN_JUGADORES ? { pct: (100 * conteo.a) / n, n } : null
+export function mayoria(carta: Carta): Mayoria {
+  const pct = real(carta)
+  if (Math.abs(pct - 50) < MARGEN) return 'parejo'
+  return pct > 50 ? 'a' : 'b'
 }
 
-/**
- * Puntos por carta: 100 si acertás exacto, 2,5 puntos menos por cada punto de error;
- * errarle por 40 o más da 0. Con el banco actual, decir 50% en todas rinde unos 57 puntos.
- */
-export function puntos(prediccion: number, realA: number): number {
-  return Math.max(0, Math.round(100 - 2.5 * Math.abs(prediccion - realA)))
+/** Cómo quedó tu elección frente a la encuesta: con la mayoría, en la minoría, parejo o sin elegir. */
+export type Lugar = 'mayoria' | 'minoria' | 'parejo' | 'nada'
+
+export function lugar(carta: Carta, jugada: Jugada): Lugar {
+  if (jugada.eleccion === 'nada') return 'nada'
+  const m = mayoria(carta)
+  if (m === 'parejo') return 'parejo'
+  return m === jugada.eleccion ? 'mayoria' : 'minoria'
 }
 
 export function random(seed: number): () => number {
@@ -87,31 +91,17 @@ export function sortear(
 export interface Lectura {
   carta: Carta
   jugada: Jugada
-  real: number
-  puntos: number
-  /** Positivo: creíste que A tenía más apoyo del que tiene. */
-  error: number
-  /** Tu elección coincide con la opción más elegida (null si no elegiste). */
-  mayoria: boolean | null
+  lugar: Lugar
 }
 
 export interface Resumen {
   lecturas: Lectura[]
-  total: number
-  /** Promedio de puntos por carta, 0 a 100. */
-  promedio: number
-  /** Lo que habría sacado alguien que dice 50% en todas. */
-  alAzar: number
-  /** Cartas en las que elegiste lo mismo que la mayoría, sobre las que elegiste. */
   conLaMayoria: number
-  eligio: number
-  /**
-   * Cuánto sobreestimás, en promedio, a quienes eligen lo mismo que vos (puntos porcentuales).
-   * El "falso consenso": casi todos creemos que más gente piensa como nosotros.
-   */
-  sesgoPropio: number | null
-  /** La carta en la que más le erraste. */
-  sorpresa: Lectura | null
+  enLaMinoria: number
+  parejas: number
+  /** Cartas con mayoría clara en las que elegiste (la base del "X de Y"). */
+  definidas: number
+  porTema: { tema: Tema; mayoria: number; definidas: number }[]
 }
 
 export function resumir(cartas: Carta[], jugadas: Jugada[]): Resumen {
@@ -119,52 +109,33 @@ export function resumir(cartas: Carta[], jugadas: Jugada[]): Resumen {
   const lecturas: Lectura[] = []
   for (const jugada of jugadas) {
     const carta = porId.get(jugada.carta)
-    if (!carta) continue
-    const r = real(carta)
-    lecturas.push({
-      carta,
-      jugada,
-      real: r,
-      puntos: puntos(jugada.prediccion, r),
-      error: jugada.prediccion - r,
-      mayoria: jugada.eleccion === 'nada' ? null : (jugada.eleccion === 'a') === r >= 50,
-    })
+    if (carta) lecturas.push({ carta, jugada, lugar: lugar(carta, jugada) })
   }
-  const total = lecturas.reduce((s, l) => s + l.puntos, 0)
-  const alAzar = lecturas.reduce((s, l) => s + puntos(50, l.real), 0)
-  const eligieron = lecturas.filter((l) => l.mayoria != null)
-  // Error hacia el lado propio: si elegiste A, cuánto de más le diste a A; si B, a B.
-  const propios = eligieron.map((l) => (l.jugada.eleccion === 'a' ? l.error : -l.error))
-  const sorpresa = lecturas.reduce<Lectura | null>(
-    (peor, l) => (!peor || Math.abs(l.error) > Math.abs(peor.error) ? l : peor),
-    null,
-  )
+  const cuenta = (l: Lugar) => lecturas.filter((x) => x.lugar === l).length
+  const temas = [...new Set(lecturas.map((l) => l.carta.tema))]
   return {
     lecturas,
-    total,
-    promedio: lecturas.length ? total / lecturas.length : 0,
-    alAzar: lecturas.length ? alAzar / lecturas.length : 0,
-    conLaMayoria: eligieron.filter((l) => l.mayoria).length,
-    eligio: eligieron.length,
-    sesgoPropio: propios.length >= 3 ? propios.reduce((s, x) => s + x, 0) / propios.length : null,
-    sorpresa: sorpresa && Math.abs(sorpresa.error) >= 10 ? sorpresa : null,
+    conLaMayoria: cuenta('mayoria'),
+    enLaMinoria: cuenta('minoria'),
+    parejas: cuenta('parejo'),
+    definidas: cuenta('mayoria') + cuenta('minoria'),
+    porTema: temas
+      .map((tema) => {
+        const del = lecturas.filter((l) => l.carta.tema === tema)
+        const mayoria = del.filter((l) => l.lugar === 'mayoria').length
+        return { tema, mayoria, definidas: mayoria + del.filter((l) => l.lugar === 'minoria').length }
+      })
+      .filter((t) => t.definidas > 0),
   }
 }
 
-/** Cómo leés a la Argentina, en palabras. */
-export function etiqueta(promedio: number): string {
-  if (promedio >= 85) return 'Leés a la Argentina como nadie'
-  if (promedio >= 75) return 'Tenés muy buen olfato'
-  if (promedio >= 65) return 'La conocés bastante'
-  if (promedio >= 55) return 'Más o menos: algunas te sorprendieron'
-  return 'La Argentina te sorprendió'
-}
-
-/** Porcentaje de partidas con un promedio menor al tuyo, a partir del histograma (tramos de 2 puntos). */
-export function percentil(promedio: number, histograma: number[]): number | null {
-  const total = histograma.reduce((s, n) => s + n, 0)
-  if (total < 100) return null
-  const tramo = Math.min(histograma.length - 1, Math.floor(promedio / 2))
-  const debajo = histograma.slice(0, tramo).reduce((s, n) => s + n, 0) + histograma[tramo] / 2
-  return Math.round((100 * debajo) / total)
+/** Qué tan mayoritario sos, en palabras. */
+export function perfil(conLaMayoria: number, definidas: number): { titulo: string; texto: string } {
+  if (definidas === 0) return { titulo: 'Sin datos', texto: 'No elegiste en ninguna carta con una mayoría clara.' }
+  const p = conLaMayoria / definidas
+  if (p >= 0.85) return { titulo: 'Sos la mayoría', texto: 'Casi siempre pensás lo mismo que la mayor parte del país.' }
+  if (p >= 0.65) return { titulo: 'Bien mayoritario', texto: 'En general coincidís con la mayoría, con algunas excepciones.' }
+  if (p >= 0.45) return { titulo: 'Mitad y mitad', texto: 'Tan seguido con la mayoría como en la minoría.' }
+  if (p >= 0.25) return { titulo: 'A contracorriente', texto: 'Más de una vez pensás distinto que la mayoría del país.' }
+  return { titulo: 'Minoría intensa', texto: 'Casi siempre elegís lo que eligen menos argentinos.' }
 }

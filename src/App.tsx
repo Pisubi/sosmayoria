@@ -17,7 +17,7 @@ import {
   type RondaGuardada,
 } from './lib/guardado'
 import { UNDER_16, type Participant } from './lib/participant'
-import { cargarEstado, collecting, enviarPartida, type Estado } from './lib/supabase'
+import { collecting, enviarPartida } from './lib/supabase'
 import type { Carta, Jugada, Tema } from './types'
 
 type Stage =
@@ -32,12 +32,6 @@ const porId = new Map(cartas.map((c) => [c.id, c]))
 function App() {
   const [stage, setStage] = useState<Stage>({ step: 'inicio' })
   const [guardada, setGuardada] = useState<RondaGuardada | null>(() => rondaGuardada())
-  const [estado, setEstado] = useState<Estado | null>(null)
-
-  useEffect(() => {
-    cargarEstado(orden).then(setEstado)
-  }, [])
-
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [stage.step])
@@ -73,7 +67,7 @@ function App() {
   function datos(ronda: RondaGuardada, resumen: Resumen, persona: Participant) {
     guardarPersona(persona)
     if (persona.age !== UNDER_16) {
-      enviarPartida(orden, ronda.jugadas, persona, (Date.now() - ronda.inicio) / 1000, resumen.promedio)
+      enviarPartida(orden, ronda.jugadas, persona, (Date.now() - ronda.inicio) / 1000)
     }
     setStage({ step: 'resultado', resumen })
   }
@@ -107,7 +101,6 @@ function App() {
           key={stage.ronda.semilla}
           cartas={stage.cartas}
           jugadas={stage.ronda.jugadas}
-          conteos={estado?.conteos ?? {}}
           onJugada={(j) => avance(stage.ronda, j)}
           onFin={(j) => fin(stage.ronda, j)}
         />
@@ -122,8 +115,6 @@ function App() {
       {stage.step === 'resultado' && (
         <Resultado
           resumen={stage.resumen}
-          conteos={estado?.conteos ?? {}}
-          histograma={estado?.histograma ?? null}
           onOtraRonda={() => jugar([])}
           onMethodology={metodologia}
         />

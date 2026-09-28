@@ -1,20 +1,22 @@
 import { describe, expect, it } from 'vitest'
-import { percentil, puntos, real, resumir, sortear } from '../src/engine/juego'
+import { lugar, mayoria, perfil, real, resumir, RONDA, sortear } from '../src/engine/juego'
 import type { Tema } from '../src/types'
 import { carta } from './fixture'
 
-describe('puntos', () => {
-  it('100 exacto, 2,5 menos por punto y nunca negativo', () => {
-    expect(puntos(60, 60)).toBe(100)
-    expect(puntos(50, 60)).toBe(75)
-    expect(puntos(70, 60)).toBe(75)
-    expect(puntos(0, 60)).toBe(0)
-  })
-})
-
-describe('real', () => {
+describe('real y mayoría', () => {
   it('reparte entre A y B dejando afuera el resto', () => {
     expect(real(carta('x', 45, 15))).toBeCloseTo(75)
+  })
+  it('dentro del margen de error la carta es pareja', () => {
+    expect(mayoria(carta('x', 50, 48))).toBe('parejo')
+    expect(mayoria(carta('x', 54, 46))).toBe('a')
+    expect(mayoria(carta('x', 30, 60))).toBe('b')
+  })
+  it('ubica tu elección', () => {
+    const c = carta('x', 70, 30)
+    expect(lugar(c, { carta: 'x', eleccion: 'a' })).toBe('mayoria')
+    expect(lugar(c, { carta: 'x', eleccion: 'b' })).toBe('minoria')
+    expect(lugar(c, { carta: 'x', eleccion: 'nada' })).toBe('nada')
   })
 })
 
@@ -24,14 +26,15 @@ describe('sortear', () => {
 
   it('no repite cartas y respeta el tamaño de la ronda', () => {
     const r = sortear(banco, 7)
-    expect(r).toHaveLength(15)
-    expect(new Set(r.map((c) => c.id)).size).toBe(15)
+    expect(r).toHaveLength(RONDA)
+    expect(new Set(r.map((c) => c.id)).size).toBe(RONDA)
   })
 
   it('prioriza las cartas no vistas de cada tema', () => {
+    // 16 sin ver (menos que una ronda): tienen que salir todas.
     const vistas = new Set(banco.slice(0, 24).map((c) => c.id))
     const r = sortear(banco, 3, vistas)
-    expect(r.filter((c) => !vistas.has(c.id))).toHaveLength(15)
+    expect(r.filter((c) => !vistas.has(c.id))).toHaveLength(16)
   })
 
   it('intercala temas: nunca tres seguidas del mismo', () => {
@@ -53,32 +56,28 @@ describe('sortear', () => {
 })
 
 describe('resumir', () => {
-  const banco = [carta('a', 70, 30), carta('b', 40, 60), carta('c', 50, 50), carta('d', 20, 80)]
+  const banco = [carta('a', 70, 30), carta('b', 40, 60), carta('c', 50, 49), carta('d', 20, 80, 'economia')]
 
-  it('suma puntos, cuenta la mayoría y mide el falso consenso', () => {
+  it('cuenta mayoría, minoría y parejas, y separa por tema', () => {
     const r = resumir(banco, [
-      { carta: 'a', eleccion: 'a', prediccion: 80 },
-      { carta: 'b', eleccion: 'a', prediccion: 55 },
-      { carta: 'c', eleccion: 'nada', prediccion: 50 },
-      { carta: 'd', eleccion: 'b', prediccion: 10 },
+      { carta: 'a', eleccion: 'a' },
+      { carta: 'b', eleccion: 'a' },
+      { carta: 'c', eleccion: 'b' },
+      { carta: 'd', eleccion: 'b' },
     ])
-    expect(r.total).toBe(75 + 63 + 100 + 75)
-    expect(r.eligio).toBe(3)
-    expect(r.conLaMayoria).toBe(2) // a con la mayoría, b en la minoría, d con la mayoría
-    // Sobreestimó a su lado: +10 en a, +15 en b y +10 en d (dijo 90% B y era 80%).
-    expect(r.sesgoPropio).toBeCloseTo(35 / 3)
-    expect(r.sorpresa?.carta.id).toBe('b')
+    expect(r.conLaMayoria).toBe(2)
+    expect(r.enLaMinoria).toBe(1)
+    expect(r.parejas).toBe(1)
+    expect(r.definidas).toBe(3)
+    expect(r.porTema).toEqual([
+      { tema: 'politica', mayoria: 1, definidas: 2 },
+      { tema: 'economia', mayoria: 1, definidas: 1 },
+    ])
   })
-})
 
-describe('percentil', () => {
-  it('requiere al menos 100 partidas', () => {
-    expect(percentil(70, Array(50).fill(1))).toBeNull()
-  })
-  it('ubica el promedio en el histograma', () => {
-    const h = Array(50).fill(0)
-    h[20] = 100 // todos sacaron 40–41
-    h[40] = 100 // todos sacaron 80–81
-    expect(percentil(60, h)).toBe(50)
+  it('el perfil depende de la proporción con la mayoría', () => {
+    expect(perfil(19, 20).titulo).toBe('Sos la mayoría')
+    expect(perfil(10, 20).titulo).toBe('Mitad y mitad')
+    expect(perfil(2, 20).titulo).toBe('Minoría intensa')
   })
 })

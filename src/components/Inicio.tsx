@@ -15,8 +15,8 @@ interface InicioProps {
 
 const PASOS = [
   { titulo: 'Elegí', texto: 'Una pregunta, dos opciones. Esto o aquello, de acuerdo o en desacuerdo. Si no querés decir, pasás.' },
-  { titulo: 'Adiviná', texto: '¿Cómo se reparte la Argentina? Mové la barra hasta el porcentaje que creés que eligió cada opción.' },
-  { titulo: 'Mirá el dato', texto: 'Te mostramos el dato real de una encuesta publicada, con su fuente. Cuanto más cerca, más puntos.' },
+  { titulo: 'Mayoría o minoría', texto: 'Al toque te decimos si pensás como la mayoría de los argentinos, según una encuesta nacional publicada.' },
+  { titulo: 'Tu resultado', texto: 'Al final: en cuántos temas pensás como la mayoría, dónde sos minoría y cómo te va en cada tema.' },
 ]
 
 const PREGUNTAS = [
@@ -25,12 +25,8 @@ const PREGUNTAS = [
     a: 'De encuestas publicadas por consultoras y universidades, con alcance nacional salvo que se aclare. Cada carta cita la encuestadora, la fecha, la muestra y el enlace. Cuando la encuesta tenía más opciones, se muestra cómo se reparten quienes eligieron una de las dos.',
   },
   {
-    q: '¿Y lo que eligen quienes juegan?',
-    a: 'Se suma, carta por carta, y se muestra aparte como "quienes jugaron" cuando ya son bastantes. No es una encuesta representativa: juega quien quiere. Por eso el puntaje siempre se calcula contra la encuesta publicada.',
-  },
-  {
-    q: '¿Cómo se calculan los puntos?',
-    a: 'Cien si clavás el porcentaje; 2,5 menos por cada punto de diferencia. Si le errás por 40 o más, cero.',
+    q: '¿Qué pasa si está muy parejo?',
+    a: 'Si la encuesta muestra una diferencia chica entre las dos opciones (dentro del margen de error), la carta cuenta como pareja: no estás ni con la mayoría ni en la minoría.',
   },
   {
     q: '¿Guardan lo que respondo?',
@@ -52,8 +48,8 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
             ¿Sabés qué piensa <em className="font-light text-naranja">la Argentina</em>?
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-marfil/75">
-            Elegí entre dos opciones y adiviná cómo se reparte el país. Después, el dato real. {RONDA} cartas, unos
-            tres minutos.
+            Elegí entre dos opciones y descubrí si pensás como la mayoría de los argentinos. {RONDA} cartas, un par
+            de minutos.
           </p>
 
           {disponibles.length > 1 && (

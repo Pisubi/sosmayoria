@@ -1,8 +1,8 @@
 /** Imagen para compartir el resultado (1080×1350, formato vertical de redes). */
 export interface Tarjeta {
-  promedio: number
-  etiqueta: string
-  cartas: number
+  mayoria: number
+  definidas: number
+  titulo: string
   url: string
 }
 
@@ -46,30 +46,32 @@ export async function renderShareImage(t: Tarjeta): Promise<Blob> {
   ctx.font = font(500, 30)
   ctx.fillText('¿Sabés qué piensa la Argentina?', 90, 200)
 
-  // Anillo con el puntaje
+  // Anillo: cuántas con la mayoría
   const cx = W / 2, cy = 560, r = 230
+  const frac = t.definidas ? t.mayoria / t.definidas : 0
   ctx.lineWidth = 44
-  ctx.strokeStyle = 'rgba(240,236,227,0.12)'
-  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke()
   ctx.strokeStyle = C.naranja
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI * 2); ctx.stroke()
+  ctx.strokeStyle = C.marfil
   ctx.lineCap = 'round'
   ctx.beginPath()
-  ctx.arc(cx, cy, r, -Math.PI / 2, -Math.PI / 2 + (Math.max(0, Math.min(100, t.promedio)) / 100) * Math.PI * 2)
+  ctx.arc(cx, cy, r, -Math.PI / 2, -Math.PI / 2 + frac * Math.PI * 2)
   ctx.stroke()
   ctx.textAlign = 'center'
   ctx.fillStyle = C.marfil
-  ctx.font = font(700, 180)
-  ctx.fillText(String(Math.round(t.promedio)), cx, cy + 60)
+  ctx.font = font(700, 170)
+  ctx.fillText(String(t.mayoria), cx, cy + 40)
   ctx.fillStyle = 'rgba(240,236,227,0.6)'
-  ctx.font = font(600, 30)
-  ctx.fillText('PUNTOS DE 100', cx, cy + 120)
+  ctx.font = font(600, 34)
+  ctx.fillText(`DE ${t.definidas}`, cx, cy + 105)
 
-  ctx.fillStyle = C.marfil
-  ctx.font = font(700, 60)
-  envolver(ctx, t.etiqueta, W - 180).slice(0, 2).forEach((l, i) => ctx.fillText(l, cx, 940 + i * 74))
-  ctx.fillStyle = 'rgba(240,236,227,0.7)'
-  ctx.font = font(500, 32)
-  ctx.fillText(`Adiviné qué piensa la Argentina en ${t.cartas} cartas`, cx, 1100)
+  ctx.fillStyle = 'rgba(240,236,227,0.75)'
+  ctx.font = font(500, 36)
+  ctx.fillText('Pienso como la mayoría de los argentinos en', cx, 900)
+  ctx.fillText(`${t.mayoria} de ${t.definidas} temas`, cx, 950)
+  ctx.fillStyle = C.naranja
+  ctx.font = font(700, 70)
+  envolver(ctx, t.titulo, W - 180).slice(0, 2).forEach((l, i) => ctx.fillText(l, cx, 1070 + i * 80))
 
   ctx.fillStyle = C.naranja
   ctx.font = font(700, 34)

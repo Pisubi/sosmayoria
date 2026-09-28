@@ -1,82 +1,48 @@
 import { useState } from 'react'
-import { deJugadores, etiqueta, percentil, type Resumen } from '../engine/juego'
+import { TEMAS } from '../data/cartas'
+import { perfil, type Lectura, type Lugar, type Resumen } from '../engine/juego'
 import { renderShareImage } from '../lib/compartir'
-import type { Conteo } from '../types'
+import { fecha } from '../lib/formato'
 import { Eyebrow } from './Eyebrow'
 import { Footer } from './Footer'
-import { fecha } from '../lib/formato'
-import { Reparto } from './Juego'
 
 interface ResultadoProps {
   resumen: Resumen
-  conteos: Record<string, Conteo>
-  histograma: number[] | null
   onOtraRonda: () => void
   onMethodology: () => void
 }
 
-export function Resultado({ resumen, conteos, histograma, onOtraRonda, onMethodology }: ResultadoProps) {
-  const { promedio, alAzar, lecturas, sesgoPropio, sorpresa } = resumen
-  const pct = histograma ? percentil(promedio, histograma) : null
-  const minoria = lecturas.filter((l) => l.mayoria === false)
-  const texto = `Saqué ${Math.round(promedio)} puntos en La Mayoría: ${etiqueta(promedio).toLowerCase()}. ¿Sabés qué piensa la Argentina?`
+const CHIP: Record<Lugar, { texto: string; clase: string }> = {
+  mayoria: { texto: 'Con la mayoría', clase: 'bg-azul/10 text-azul' },
+  minoria: { texto: 'En la minoría', clase: 'bg-naranja/15 text-naranja' },
+  parejo: { texto: 'Parejo', clase: 'bg-arena/60 text-azul' },
+  nada: { texto: 'No elegiste', clase: 'bg-linea text-azul/60' },
+}
+
+const nombreTema = (id: string) => TEMAS.find((t) => t.id === id)?.nombre ?? id
+
+export function Resultado({ resumen, onOtraRonda, onMethodology }: ResultadoProps) {
+  const { conLaMayoria, definidas, enLaMinoria, parejas, lecturas, porTema } = resumen
+  const p = perfil(conLaMayoria, definidas)
+  const minoria = lecturas.filter((l) => l.lugar === 'minoria')
+  const texto = `Pienso como la mayoría de los argentinos en ${conLaMayoria} de ${definidas} temas: ${p.titulo.toLowerCase()}. ¿Y vos?`
 
   return (
     <main>
       <section className="bg-noche text-marfil">
         <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20">
           <Eyebrow>Fin de la ronda</Eyebrow>
-          <div className="mt-6 grid items-center gap-8 sm:grid-cols-[auto_1fr]">
-            <Anillo valor={promedio} />
-            <div>
-              <h1 className="text-4xl leading-tight font-bold tracking-[-0.02em] sm:text-5xl">{etiqueta(promedio)}</h1>
-              <p className="mt-4 max-w-xl leading-7 text-marfil/75">
-                {Math.round(promedio)} puntos de 100 por carta, en {lecturas.length} cartas.{' '}
-                {pct != null
-                  ? `Leés a la Argentina mejor que el ${pct}% de quienes jugaron.`
-                  : `Diciendo 50% en todas habrías sacado ${Math.round(alAzar)}.`}
-              </p>
-            </div>
-          </div>
-
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            <Dato
-              titulo="Pensás como la mayoría"
-              valor={resumen.eligio ? `${resumen.conLaMayoria} de ${resumen.eligio}` : '—'}
-              texto={
-                resumen.eligio
-                  ? minoria.length === 0
-                    ? 'En todas elegiste lo mismo que la mayoría.'
-                    : `Estás en la minoría en ${minoria.length}: ${minoria
-                        .slice(0, 2)
-                        .map((l) => `«${l.carta.pregunta}»`)
-                        .join(' y ')}${minoria.length > 2 ? ' y otras' : ''}.`
-                  : 'No elegiste en ninguna carta.'
-              }
-            />
-            <Dato
-              titulo="Tu sesgo"
-              valor={sesgoPropio == null ? '—' : `${sesgoPropio > 0 ? '+' : ''}${Math.round(sesgoPropio)} pts`}
-              texto={
-                sesgoPropio == null
-                  ? 'Elegí en más cartas para calcularlo.'
-                  : sesgoPropio > 5
-                    ? 'Creés que hay más gente que piensa como vos de la que hay. Nos pasa a casi todos: se llama falso consenso.'
-                    : sesgoPropio < -5
-                      ? 'Subestimás a quienes piensan como vos: hay más de los que creés.'
-                      : 'Ni sobreestimás ni subestimás a quienes piensan como vos. Poco común.'
-              }
-            />
-            <Dato
-              titulo="Tu mayor sorpresa"
-              valor={sorpresa ? `${Math.round(Math.abs(sorpresa.error))} pts` : '—'}
-              texto={
-                sorpresa
-                  ? `«${sorpresa.carta.pregunta}»: dijiste ${sorpresa.jugada.prediccion}% para «${sorpresa.carta.a.texto}» y era ${Math.round(sorpresa.real)}%.`
-                  : 'Ninguna carta te sorprendió de verdad.'
-              }
-            />
-          </div>
+          <p className="mt-6 text-lg text-marfil/70">Pensás como la mayoría en</p>
+          <p className="mt-1 text-6xl font-bold tracking-[-0.02em] tabular-nums sm:text-7xl">
+            {conLaMayoria} <span className="text-3xl font-normal text-marfil/60 sm:text-4xl">de {definidas}</span>
+          </p>
+          <h1 className="mt-6 text-3xl font-bold text-naranja sm:text-4xl">{p.titulo}</h1>
+          <p className="mt-2 max-w-xl leading-7 text-marfil/75">{p.texto}</p>
+          <p className="mt-4 text-sm text-marfil/55">
+            En la minoría en {enLaMinoria}
+            {parejas > 0 && ` · ${parejas} ${parejas === 1 ? 'carta pareja' : 'cartas parejas'}, donde el país se parte al medio`}
+            .
+          </p>
 
           <div className="mt-10 flex flex-wrap gap-3">
             <button
@@ -86,39 +52,77 @@ export function Resultado({ resumen, conteos, histograma, onOtraRonda, onMethodo
             >
               Jugar otra ronda →
             </button>
-            <Compartir texto={texto} promedio={promedio} etiqueta={etiqueta(promedio)} lecturas={lecturas.length} />
+            <Compartir texto={texto} mayoria={conLaMayoria} definidas={definidas} titulo={p.titulo} />
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
-        <Eyebrow>Carta por carta</Eyebrow>
-        <ol className="mt-6 grid gap-4">
-          {lecturas.map((l) => {
-            const jug = deJugadores(conteos[l.carta.id])
-            return (
-              <li key={l.carta.id} className="rounded-2xl border border-azul/12 bg-papel p-5">
-                <div className="flex items-start justify-between gap-4">
-                  <p className="font-semibold">{l.carta.pregunta}</p>
-                  <p className="shrink-0 text-sm font-bold tabular-nums">+{l.puntos}</p>
-                </div>
-                <Reparto carta={l.carta} pctA={l.real} chico />
-                <p className="mt-2 text-xs text-azul/60">
-                  {l.carta.a.texto} {Math.round(l.real)}% · {l.carta.b.texto} {100 - Math.round(l.real)}% · dijiste{' '}
-                  {l.jugada.prediccion}%
-                  {l.jugada.eleccion !== 'nada' && ` · elegiste ${l.carta[l.jugada.eleccion].texto}`}
-                  {jug && ` · quienes jugaron: ${Math.round(jug.pct)}% «${l.carta.a.texto}»`}
-                </p>
-                <p className="mt-1 text-xs text-azul/50">
-                  {l.carta.ref.encuestadora}, {fecha(l.carta.ref.fecha)} ·{' '}
-                  <a href={l.carta.ref.url} target="_blank" rel="noreferrer" className="underline">
-                    fuente
-                  </a>
+      {minoria.length > 0 && (
+        <section className="mx-auto max-w-3xl px-4 pt-14 sm:px-6">
+          <Eyebrow>Donde sos minoría</Eyebrow>
+          <ul className="mt-6 grid gap-3">
+            {minoria.map((l) => (
+              <li key={l.carta.id} className="rounded-2xl border border-naranja/30 bg-papel p-5">
+                <p className="font-semibold">{l.carta.pregunta}</p>
+                <p className="mt-1 text-sm text-azul/65">
+                  Elegiste <span className="font-semibold text-azul">{eleccion(l)}</span>; la mayoría eligió{' '}
+                  <span className="font-semibold text-azul">{otra(l)}</span>.
                 </p>
               </li>
-            )
-          })}
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {porTema.length > 1 && (
+        <section className="mx-auto max-w-3xl px-4 pt-14 sm:px-6">
+          <Eyebrow>Por tema</Eyebrow>
+          <ul className="mt-6 grid gap-4">
+            {porTema.map((t) => (
+              <li key={t.tema}>
+                <div className="flex items-baseline justify-between gap-4 text-sm">
+                  <span className="font-semibold">{nombreTema(t.tema)}</span>
+                  <span className="text-azul/60 tabular-nums">
+                    con la mayoría en {t.mayoria} de {t.definidas}
+                  </span>
+                </div>
+                <div className="mt-2 flex gap-1">
+                  {Array.from({ length: t.definidas }, (_, i) => (
+                    <span key={i} className={`h-2 flex-1 rounded-full ${i < t.mayoria ? 'bg-azul' : 'bg-naranja'}`} />
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <section className="mx-auto max-w-3xl px-4 py-14 sm:px-6">
+        <details className="group">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-2xl border border-azul/12 px-5 py-4 font-semibold">
+            Ver carta por carta ({lecturas.length}), con sus fuentes
+            <span className="text-naranja transition-transform group-open:rotate-45">+</span>
+          </summary>
+        <ol className="mt-6 grid gap-3">
+          {lecturas.map((l) => (
+            <li key={l.carta.id} className="rounded-2xl border border-azul/12 bg-papel p-5">
+              <div className="flex items-start justify-between gap-4">
+                <p className="font-semibold">{l.carta.pregunta}</p>
+                <span className={`shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold ${CHIP[l.lugar].clase}`}>
+                  {CHIP[l.lugar].texto}
+                </span>
+              </div>
+              {l.jugada.eleccion !== 'nada' && <p className="mt-1 text-sm text-azul/65">Elegiste {eleccion(l)}.</p>}
+              <p className="mt-2 text-xs text-azul/50">
+                {l.carta.ref.encuestadora}, {fecha(l.carta.ref.fecha)} ·{' '}
+                <a href={l.carta.ref.url} target="_blank" rel="noreferrer" className="underline">
+                  fuente
+                </a>
+              </p>
+            </li>
+          ))}
         </ol>
+        </details>
       </section>
 
       <Footer onMethodology={onMethodology} />
@@ -126,49 +130,21 @@ export function Resultado({ resumen, conteos, histograma, onOtraRonda, onMethodo
   )
 }
 
-function Dato({ titulo, valor, texto }: { titulo: string; valor: string; texto: string }) {
-  return (
-    <div className="rounded-3xl border border-marfil/15 bg-marfil/[0.06] p-6">
-      <p className="text-xs font-semibold tracking-[0.1em] text-marfil/60 uppercase">{titulo}</p>
-      <p className="mt-2 text-3xl font-bold text-naranja tabular-nums">{valor}</p>
-      <p className="mt-2 text-sm leading-6 text-marfil/75">{texto}</p>
-    </div>
-  )
+function eleccion(l: Lectura): string {
+  return l.jugada.eleccion === 'nada' ? '' : `«${l.carta[l.jugada.eleccion].texto}»`
 }
 
-function Anillo({ valor }: { valor: number }) {
-  const r = 42
-  const c = 2 * Math.PI * r
-  return (
-    <div className="relative h-36 w-36 shrink-0">
-      <svg viewBox="0 0 100 100" className="h-full w-full -rotate-90" aria-hidden>
-        <circle cx="50" cy="50" r={r} fill="none" strokeWidth="9" className="stroke-marfil/15" />
-        <circle
-          cx="50"
-          cy="50"
-          r={r}
-          fill="none"
-          strokeWidth="9"
-          strokeLinecap="round"
-          className="stroke-naranja"
-          strokeDasharray={`${(Math.max(0, Math.min(100, valor)) / 100) * c} ${c}`}
-        />
-      </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-4xl font-bold tabular-nums">{Math.round(valor)}</span>
-        <span className="text-[10px] font-semibold tracking-[0.12em] text-marfil/60 uppercase">de 100</span>
-      </div>
-    </div>
-  )
+function otra(l: Lectura): string {
+  return l.jugada.eleccion === 'a' ? `«${l.carta.b.texto}»` : `«${l.carta.a.texto}»`
 }
 
-function Compartir({ texto, promedio, etiqueta, lecturas }: { texto: string; promedio: number; etiqueta: string; lecturas: number }) {
+function Compartir({ texto, mayoria, definidas, titulo }: { texto: string; mayoria: number; definidas: number; titulo: string }) {
   const [estado, setEstado] = useState<'listo' | 'copiado' | 'generando'>('listo')
   async function compartir() {
     const url = window.location.origin + window.location.pathname
     setEstado('generando')
     try {
-      const blob = await renderShareImage({ promedio, etiqueta, cartas: lecturas, url })
+      const blob = await renderShareImage({ mayoria, definidas, titulo, url })
       const file = new File([blob], 'la-mayoria.png', { type: 'image/png' })
       if (navigator.canShare?.({ files: [file] })) {
         try {

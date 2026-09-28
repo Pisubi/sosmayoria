@@ -42,18 +42,7 @@ export type Eleccion = 'a' | 'b' | 'nada'
 export interface Jugada {
   carta: string
   eleccion: Eleccion
-  /** Qué porcentaje cree que eligió A (0 a 100). */
-  prediccion: number
 }
 
-/** Lo que eligieron quienes jugaron cada carta (si el despliegue tiene Supabase). */
-export interface Conteo {
-  a: number
-  b: number
-  nada: number
-  /** Suma y cantidad de predicciones de quienes eligieron A, y de quienes eligieron B. */
-  predA: number
-  nA: number
-  predB: number
-  nB: number
-}
+/** Qué opción eligió la mayoría según la encuesta, o parejo si la diferencia entra en el margen de error. */
+export type Mayoria = 'a' | 'b' | 'parejo'

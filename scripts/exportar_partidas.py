@@ -19,23 +19,31 @@ EDUCATION = {0: '', 1: 'Sin estudios o primario incompleto', 2: 'Primario comple
              5: 'Terciario o universitario incompleto', 6: 'Terciario o universitario completo',
              7: 'Posgrado'}
 ELECCION = {1: 'A', 2: 'B', 3: 'no dice'}
+MARGEN = 3  # igual que MARGEN en src/engine/juego.ts
 
 
 def decodificar(hex_str, cartas):
-    """Lista de (carta, elección, predicción), o None si la fila no es válida (ver src/engine/codificacion.ts)."""
+    """Lista de (carta, elección), o None si la fila no es válida (ver src/engine/codificacion.ts)."""
     try:
         raw = bytes.fromhex(hex_str.removeprefix('\\x'))
     except ValueError:
         return None
-    if not raw or len(raw) % 3:
+    if not raw or len(raw) % 2:
         return None
     out = []
-    for k in range(0, len(raw), 3):
-        e, idx, p = raw[k] >> 6, ((raw[k] & 63) << 8) | raw[k + 1], raw[k + 2]
-        if e == 0 or idx >= len(cartas) or p > 100:
+    for k in range(0, len(raw), 2):
+        e, idx = raw[k] >> 6, ((raw[k] & 63) << 8) | raw[k + 1]
+        if e == 0 or idx >= len(cartas):
             return None
-        out.append((cartas[idx], ELECCION[e], p))
+        out.append((cartas[idx], ELECCION[e]))
     return out
+
+
+def mayoria(carta):
+    """Igual que mayoria() en src/engine/juego.ts: parejo si la diferencia entra en el margen."""
+    ref = carta['ref']
+    pct = 100 * ref['a'] / (ref['a'] + ref['b'])
+    return 'parejo' if abs(pct - 50) < MARGEN else ('A' if pct > 50 else 'B')
 
 
 def fetch_rows():
@@ -65,20 +73,20 @@ def main():
     invalid = n = 0
     with open('jugadas.csv', 'w', newline='', encoding='utf-8') as f:
         w = csv.writer(f)
-        w.writerow(['partida', 'fecha', 'edad', 'genero', 'educacion', 'segundos', 'promedio',
-                    'carta', 'pregunta', 'opcion_a', 'opcion_b', 'eleccion', 'prediccion_pct_a', 'real_pct_a'])
+        w.writerow(['partida', 'fecha', 'edad', 'genero', 'educacion', 'segundos', 'carta', 'tema',
+                    'pregunta', 'opcion_a', 'opcion_b', 'eleccion', 'mayoria_encuesta', 'con_la_mayoria'])
         for r in rows:
             jugadas = decodificar(r['jugadas'], cartas)
             if jugadas is None:
                 invalid += 1
                 continue
-            for c, e, p in jugadas:
-                ref = c['ref']
+            for c, e in jugadas:
+                m = mayoria(c)
                 w.writerow([r['id'], r['fecha'], AGE.get(int(r['edad']), ''), GENDER.get(int(r['genero']), ''),
-                            EDUCATION.get(int(r['educacion']), ''), r['segundos'], r['promedio'],
-                            c['id'], c['pregunta'], c['a']['texto'], c['b']['texto'],
+                            EDUCATION.get(int(r['educacion']), ''), r['segundos'], c['id'], c['tema'],
+                            c['pregunta'], c['a']['texto'], c['b']['texto'],
                             c['a']['texto'] if e == 'A' else c['b']['texto'] if e == 'B' else '',
-                            p, round(100 * ref['a'] / (ref['a'] + ref['b']), 1)])
+                            m, '' if e == 'no dice' or m == 'parejo' else ('sí' if e == m else 'no')])
                 n += 1
     print(f'jugadas.csv: {n} jugadas de {len(rows) - invalid} partidas' + (f' ({invalid} inválidas omitidas)' if invalid else ''))
 
