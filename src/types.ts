@@ -1,6 +1,5 @@
 export interface AxisPole {
   label: string
-  description: string
 }
 
 export interface Axis {

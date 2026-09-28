@@ -3,162 +3,79 @@ import type { Axis } from '../types'
 export const axes: Axis[] = [
   {
     id: 'economia',
-    name: 'Economía',
-    description:
-      'Qué tan activo debe ser el Estado regulando precios, mercados y empresas.',
-    poleA: {
-      label: 'Intervención estatal',
-      description:
-        'El Estado debe regular mercados, controlar precios y mantener empresas públicas en sectores clave.',
-    },
-    poleB: {
-      label: 'Libre mercado',
-      description:
-        'Los precios y la actividad económica deben regularse principalmente por la oferta y la demanda.',
-    },
+    name: 'Estado y mercado',
+    description: 'Cuánto debe intervenir el Estado en precios, empresas y mercados.',
+    poleA: { label: 'Estado regulador' },
+    poleB: { label: 'Libre mercado' },
   },
   {
     id: 'fiscal',
-    name: 'Fiscal',
-    description:
-      'Prioridad entre sostener el gasto público o equilibrar las cuentas del Estado.',
-    poleA: {
-      label: 'Gasto público',
-      description:
-        'Sostener el gasto social y los subsidios es prioritario, aunque implique déficit.',
-    },
-    poleB: {
-      label: 'Ajuste fiscal',
-      description:
-        'El equilibrio de las cuentas públicas debe primar, incluso recortando gasto y subsidios.',
-    },
+    name: 'Impuestos y gasto',
+    description: 'Tamaño del Estado: impuestos, gasto social y servicios públicos.',
+    poleA: { label: 'Estado de bienestar' },
+    poleB: { label: 'Estado mínimo' },
   },
   {
     id: 'comercio',
     name: 'Comercio exterior',
-    description:
-      'Postura frente a aranceles, importaciones y protección de la industria nacional.',
-    poleA: {
-      label: 'Proteccionismo',
-      description:
-        'Hay que proteger la industria local con aranceles y restricciones a las importaciones.',
-    },
-    poleB: {
-      label: 'Apertura comercial',
-      description:
-        'Bajar aranceles y firmar tratados de libre comercio beneficia a la economía y a los consumidores.',
-    },
-  },
-  {
-    id: 'moneda',
-    name: 'Moneda',
-    description:
-      'Rol de la moneda nacional y el Banco Central frente a la dolarización.',
-    poleA: {
-      label: 'Peso y Banco Central',
-      description:
-        'Conviene mantener una moneda y una política monetaria propias, manejadas por el Banco Central.',
-    },
-    poleB: {
-      label: 'Dolarización',
-      description:
-        'Argentina debería adoptar el dólar como moneda para terminar con la inflación.',
-    },
-  },
-  {
-    id: 'federalismo',
-    name: 'Estado y provincias',
-    description:
-      'Distribución del poder y los recursos entre la Nación y las provincias.',
-    poleA: {
-      label: 'Centralismo',
-      description:
-        'El Gobierno nacional debe coordinar de forma centralizada la distribución de recursos y decisiones.',
-    },
-    poleB: {
-      label: 'Federalismo',
-      description:
-        'Las provincias deben tener más autonomía y quedarse con más recursos propios.',
-    },
+    description: 'Aranceles, importaciones y tratados de libre comercio.',
+    poleA: { label: 'Protección industrial' },
+    poleB: { label: 'Apertura comercial' },
   },
   {
     id: 'trabajo',
     name: 'Trabajo',
-    description:
-      'Regulación del mercado laboral, sindicatos y protecciones al empleo.',
-    poleA: {
-      label: 'Derechos laborales',
-      description:
-        'Los sindicatos y las protecciones laborales actuales son necesarios y no deben debilitarse.',
-    },
-    poleB: {
-      label: 'Flexibilización laboral',
-      description:
-        'Las leyes laborales deben flexibilizarse para facilitar la contratación y bajar el empleo informal.',
-    },
+    description: 'Regulación laboral, sindicatos, salario mínimo e indemnizaciones.',
+    poleA: { label: 'Protección laboral' },
+    poleB: { label: 'Flexibilización' },
   },
   {
     id: 'seguridad',
     name: 'Seguridad',
-    description:
-      'Enfoque frente al delito: garantías procesales o mayor mano dura.',
-    poleA: {
-      label: 'Garantismo',
-      description:
-        'El debido proceso y las garantías individuales deben priorizarse frente al endurecimiento penal.',
-    },
-    poleB: {
-      label: 'Mano dura',
-      description:
-        'Hay que endurecer penas y dar más herramientas a las fuerzas de seguridad para combatir el delito.',
-    },
+    description: 'Cómo enfrentar el delito: garantías procesales o endurecimiento penal.',
+    poleA: { label: 'Garantismo' },
+    poleB: { label: 'Mano dura' },
   },
   {
-    id: 'agenda_social',
-    name: 'Agenda social',
-    description:
-      'Postura sobre derechos como el aborto, el matrimonio igualitario y la identidad de género.',
-    poleA: {
-      label: 'Conservadurismo social',
-      description:
-        'Hay que priorizar la protección de la familia tradicional y ser cautos con reformas recientes en derechos.',
-    },
-    poleB: {
-      label: 'Progresismo social',
-      description:
-        'Hay que sostener y ampliar derechos como el aborto legal, el matrimonio igualitario y la ESI.',
-    },
+    id: 'valores',
+    name: 'Valores',
+    description: 'Aborto, diversidad sexual, familia y educación sexual.',
+    poleA: { label: 'Progresismo' },
+    poleB: { label: 'Tradicionalismo' },
   },
   {
-    id: 'campo_energia',
-    name: 'Campo y energía',
-    description:
-      'Rol del Estado en la producción agropecuaria y energética.',
-    poleA: {
-      label: 'Regulación y retenciones',
-      description:
-        'El Estado debe regular precios e imponer retenciones para redistribuir la renta agropecuaria y energética.',
-    },
-    poleB: {
-      label: 'Desregulación',
-      description:
-        'Las retenciones y los controles de precios deben eliminarse para incentivar la producción y exportación.',
-    },
+    id: 'religion',
+    name: 'Religión y Estado',
+    description: 'Lugar de la fe y las instituciones religiosas en la vida pública.',
+    poleA: { label: 'Laicidad' },
+    poleB: { label: 'Fe en lo público' },
   },
   {
-    id: 'grieta',
-    name: 'Peronismo / Antiperonismo',
-    description:
-      'Identificación con la tradición peronista o con las tradiciones que históricamente se le han opuesto.',
-    poleA: {
-      label: 'Antiperonismo',
-      description:
-        'El peronismo, en su conjunto, resultó más perjudicial que beneficioso para el desarrollo del país.',
-    },
-    poleB: {
-      label: 'Peronismo',
-      description:
-        'El peronismo, con todas sus variantes, representa mejor los intereses de las mayorías populares.',
-    },
+    id: 'migracion',
+    name: 'Migración',
+    description: 'Requisitos de ingreso, regularización y acceso a servicios.',
+    poleA: { label: 'Apertura migratoria' },
+    poleB: { label: 'Control migratorio' },
+  },
+  {
+    id: 'soberania',
+    name: 'País y mundo',
+    description: 'Peso de los organismos y acuerdos internacionales frente al interés nacional.',
+    poleA: { label: 'Cooperación global' },
+    poleB: { label: 'Soberanía nacional' },
+  },
+  {
+    id: 'ambiente',
+    name: 'Ambiente',
+    description: 'Prioridad entre cuidado ambiental y crecimiento productivo.',
+    poleA: { label: 'Transición ecológica' },
+    poleB: { label: 'Desarrollo primero' },
+  },
+  {
+    id: 'poder',
+    name: 'Poder',
+    description: 'Controles institucionales frente a un Ejecutivo fuerte.',
+    poleA: { label: 'Contrapesos' },
+    poleB: { label: 'Liderazgo fuerte' },
   },
 ]

@@ -19,14 +19,14 @@ export const modeInfo: Record<
     label: 'Rápida',
     cta: 'Empezar versión rápida',
     questionCount: axes.length * QUESTIONS_PER_AXIS_QUICK,
-    minutes: 3,
+    minutes: 4,
     description: 'Una primera lectura de tu perfil, con una afirmación de cada polo por eje.',
   },
   completo: {
     label: 'Completa',
     cta: 'Empezar versión completa',
     questionCount: axes.length * QUESTIONS_PER_AXIS_FULL,
-    minutes: 6,
+    minutes: 7,
     description: 'Mayor precisión, con las cuatro afirmaciones de cada eje.',
   },
 }
