@@ -1,5 +1,5 @@
 {
- "version": "ar-2.0.0",
+ "version": "ar-3.0.0",
  "axes": [
   {
    "id": "ECO",
@@ -51,13 +51,25 @@
   },
   {
    "id": "SEG",
-   "name": "Seguridad y memoria",
-   "description": "Delito, fuerzas de seguridad y protesta; juicios de lesa humanidad y relato de los años 70.",
+   "name": "Seguridad",
+   "description": "Imputabilidad, uso de la fuerza y protesta.",
    "poleA": {
-    "label": "Garantismo / Memoria, Verdad y Justicia"
+    "label": "Garantista"
    },
    "poleB": {
-    "label": "Mano dura / revisionismo"
+    "label": "Mano dura"
+   },
+   "includeInMatching": true
+  },
+  {
+   "id": "MEM",
+   "name": "Memoria",
+   "description": "Juicios de lesa humanidad, domiciliarias y relato de los años 70.",
+   "poleA": {
+    "label": "Memoria, Verdad y Justicia"
+   },
+   "poleB": {
+    "label": "Revisionismo"
    },
    "includeInMatching": true
   },

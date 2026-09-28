@@ -82,27 +82,22 @@ export function Intro({ saved, onStart, onResume, onMethodology }: IntroProps) {
       </section>
 
       <section className="bg-arena">
-        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
-          <Eyebrow>Qué te preguntamos</Eyebrow>
-          <div className="mt-5 flex flex-wrap items-end justify-between gap-4">
-            <h2 className="text-3xl font-bold sm:text-4xl">Los temas</h2>
+        <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="max-w-xl text-sm leading-6 text-azul/75">
+              Las afirmaciones recorren estos temas. Ninguna respuesta es la correcta: el test
+              describe dónde estás, no dónde deberías estar.
+            </p>
             <TestTabs value={tab} onChange={setTab} />
           </div>
-          <p className="mt-4 max-w-xl leading-7 text-azul/75">
-            Ninguna respuesta es la correcta: el test describe dónde estás, no dónde deberías estar.
-          </p>
-          <ul className="mt-10 grid gap-x-10 border-t border-azul/14 sm:grid-cols-2">
+          <ul className="mt-6 flex flex-wrap gap-2">
             {test.axes.map((axis) => (
-              <li key={axis.id} className="border-b border-azul/14 py-5">
-                <p className="font-semibold">
-                  {axis.name}
-                  {!axis.includeInMatching && (
-                    <span className="ml-2 text-xs font-medium tracking-[0.12em] text-naranja uppercase">
-                      Aparte
-                    </span>
-                  )}
-                </p>
-                <p className="mt-1 text-sm leading-6 text-azul/75">{axis.description}</p>
+              <li
+                key={axis.id}
+                title={axis.description}
+                className="rounded-full border border-azul/20 px-3.5 py-1.5 text-sm text-azul/80"
+              >
+                {axis.name}
               </li>
             ))}
           </ul>

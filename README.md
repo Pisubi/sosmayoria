@@ -13,16 +13,16 @@ separados, identidad peronista reportada aparte, planos 2D, enlace para comparti
 
 | | Argentina | Internacional |
 |---|---|---|
-| Temas (ejes) | Economía (Estado, macroeconomía, trabajo y comercio), Valores, Instituciones, Estilo (pluralista/populista), Seguridad y memoria, Mundo, Territorio + Identidad (aparte) | Economía (incluye comercio), Libertades (incluye democracia), Valores (incluye religión), Nación, Guerra y paz, Migración, Ambiente, Estilo |
+| Temas (ejes) | Economía (Estado, macroeconomía, trabajo y comercio), Valores, Instituciones, Estilo (pluralista/populista), Seguridad, Memoria, Mundo, Territorio + Identidad (aparte) | Economía, Comercio, Libertades, Democracia, Valores, Religión, Nación, Guerra y paz, Migración, Ambiente, Estilo |
 | Afirmaciones por partida | 25 corta · 50 completa · 100 a fondo | 25 corta · 50 completa · 100 a fondo |
-| Banco del que se sortean | 182 (48 elegibles para el núcleo) | 176 (48 elegibles para el núcleo) |
+| Banco del que se sortean | 182 (54 elegibles para el núcleo) | 176 (66 elegibles para el núcleo) |
 | Catálogos | Tradiciones y espacios · Figuras históricas · Figuras actuales | Ideologías · Figuras históricas · Figuras actuales · Partidos |
 | Perfiles | 109 | 157 |
 
 ## Cómo se calcula
 
 - Cada partida sortea sus afirmaciones del banco y las muestra en orden aleatorio.
-  Las 25 de la corta son el **núcleo** (3 o 4 por tema, entre las elegibles) y pesan
+  Las 25 de la corta son el **núcleo** (2 a 4 por tema, entre las elegibles) y pesan
   el triple en su tema; la completa y la a fondo suman 25 y 75 de **detalle**.
   En la corta un sentido queda 2 a 1 por tema, alternado entre temas; en las otras
   el detalle compensa y cada tema queda equilibrado.

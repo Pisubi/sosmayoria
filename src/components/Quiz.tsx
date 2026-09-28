@@ -20,10 +20,6 @@ export function Quiz({ progress, onComplete }: QuizProps) {
     () => drawQuestions(test, variant, seed),
     [test, variant, seed],
   )
-  const axisName = useMemo(
-    () => Object.fromEntries(test.axes.map((a) => [a.id, a.name])),
-    [test],
-  )
   const [index, setIndex] = useState(() => Math.min(progress.index, questions.length - 1))
   const [answers, setAnswers] = useState<Record<string, Response>>(progress.answers)
 
@@ -49,7 +45,7 @@ export function Quiz({ progress, onComplete }: QuizProps) {
         Test {test.name} · Versión {variantLabel[variant].toLowerCase()}
       </p>
       <div className="flex items-center justify-between gap-4">
-        <Eyebrow>{axisName[question.primaryAxis]}</Eyebrow>
+        <Eyebrow>¿Qué opinás?</Eyebrow>
         <p className="text-sm text-azul/60 tabular-nums">
           {String(index + 1).padStart(2, '0')} / {questions.length}
         </p>

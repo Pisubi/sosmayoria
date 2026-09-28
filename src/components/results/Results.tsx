@@ -122,16 +122,25 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
         </div>
       </Section>
 
-      <Section
-        eyebrow="02 · Temas"
-        title="Tu posición tema por tema"
-        note="Escala de −100 a +100 desde la posición neutral, con la intensidad de tu postura. En naranja, el tema donde es más marcada."
-      >
-        <AxisBars axes={matchAxes} scores={scores} />
-      </Section>
+      <section className="mx-auto max-w-5xl px-4 sm:px-6">
+        <details className="group rounded-xl border border-azul/14 p-5 sm:p-6">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
+            <span>Tu posición tema por tema ({matchAxes.length})</span>
+            <span className="text-sm font-normal text-azul/60 group-open:hidden">Ver detalle ↓</span>
+            <span className="hidden text-sm font-normal text-azul/60 group-open:inline">Ocultar ↑</span>
+          </summary>
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-azul/70">
+            Escala de −100 a +100 desde la posición neutral, con la intensidad de tu postura. En
+            naranja, el tema donde es más marcada.
+          </p>
+          <div className="mt-8">
+            <AxisBars axes={matchAxes} scores={scores} />
+          </div>
+        </details>
+      </section>
 
       <Section
-        eyebrow="03 · Mapas"
+        eyebrow="02 · Mapas"
         title="Tu lugar en el mapa"
         note={`Tres cruces de dos temas. Los puntos son ${planeCatalogs.map((c) => c.name.toLowerCase()).join(' y ')}; se nombran los más cercanos a vos.`}
       >
@@ -150,7 +159,7 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
 
       {identityAxis && (
         <Section
-          eyebrow="04 · Identidad"
+          eyebrow="03 · Identidad"
           title={identityAxis.name}
           note={identityAxis.description}
         >

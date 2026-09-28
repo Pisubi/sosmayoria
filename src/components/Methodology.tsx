@@ -44,9 +44,9 @@ export function Methodology({ onBack }: MethodologyProps) {
           fondo, {VARIANT_SIZE.deep - VARIANT_SIZE.short}.
         </p>
         <p>
-          Cada tema tiene afirmaciones en los dos sentidos. En la corta, con tres por tema, un
-          sentido queda 2 a 1, alternado entre temas; en la completa y la a fondo, el detalle
-          compensa esa diferencia y cada tema queda equilibrado.
+          Cada tema tiene afirmaciones en los dos sentidos. En la corta, los temas con tres
+          afirmaciones quedan 2 a 1, alternando el sentido entre temas; en la completa y la a
+          fondo, el detalle compensa esa diferencia y cada tema queda equilibrado.
         </p>
       </Block>
 

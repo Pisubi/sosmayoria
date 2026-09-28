@@ -1,5 +1,5 @@
 {
- "version": "ar-3.0.0",
+ "version": "ar-4.0.0",
  "questions": [
   {
    "id": "AR-ECO-01",
@@ -952,20 +952,20 @@
   },
   {
    "id": "AR-SEG-02",
-   "text": "En los años 70 hubo una guerra en la que ambos bandos cometieron crímenes comparables.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": 1
-   },
-   "core": true
-  },
-  {
-   "id": "AR-SEG-03",
    "text": "Un protocolo que impida cortar calles es necesario aunque limite la protesta.",
    "primaryAxis": "SEG",
    "effects": {
     "SEG": 1,
     "INS": 0.2
+   },
+   "core": true
+  },
+  {
+   "id": "AR-SEG-03",
+   "text": "Las fuerzas de seguridad deberían poder usar sus armas con menos restricciones.",
+   "primaryAxis": "SEG",
+   "effects": {
+    "SEG": 1
    },
    "core": true
   },
@@ -981,15 +981,6 @@
   },
   {
    "id": "AR-SEG-05",
-   "text": "Los juicios por crímenes de lesa humanidad deben continuar hasta completarse.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": -1
-   },
-   "core": true
-  },
-  {
-   "id": "AR-SEG-06",
    "text": "Las cárceles deberían priorizar la reinserción antes que el castigo.",
    "primaryAxis": "SEG",
    "effects": {
@@ -998,63 +989,25 @@
    "core": true
   },
   {
-   "id": "AR-SEG-07",
-   "text": "Los condenados por lesa humanidad de edad avanzada deberían cumplir prisión domiciliaria.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": 1
-   }
-  },
-  {
-   "id": "AR-SEG-08",
-   "text": "El Estado debe sostener los sitios de memoria en ex centros clandestinos de detención.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": -1
-   }
-  },
-  {
-   "id": "AR-SEG-09",
-   "text": "Las fuerzas de seguridad deberían poder usar sus armas con menos restricciones.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": 1
-   }
-  },
-  {
-   "id": "AR-SEG-10",
+   "id": "AR-SEG-06",
    "text": "Garantizar el debido proceso es más importante que endurecer las penas.",
    "primaryAxis": "SEG",
    "effects": {
     "SEG": -1
-   }
+   },
+   "core": true
   },
   {
-   "id": "AR-SEG-11",
-   "text": "Las víctimas de las organizaciones armadas de los 70 deberían tener el mismo reconocimiento que las del terrorismo de Estado.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": 1
-   }
-  },
-  {
-   "id": "AR-SEG-12",
-   "text": "El 24 de marzo debe seguir siendo un feriado nacional por la memoria.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": -1
-   }
-  },
-  {
-   "id": "AR-SEG-13",
+   "id": "AR-SEG-07",
    "text": "Las Fuerzas Armadas deberían poder intervenir en la lucha contra el narcotráfico.",
    "primaryAxis": "SEG",
    "effects": {
-    "SEG": 1
+    "SEG": 1,
+    "MEM": 0.2
    }
   },
   {
-   "id": "AR-SEG-14",
+   "id": "AR-SEG-08",
    "text": "La protesta social es un derecho aunque afecte la circulación.",
    "primaryAxis": "SEG",
    "effects": {
@@ -1062,23 +1015,7 @@
    }
   },
   {
-   "id": "AR-SEG-15",
-   "text": "Las políticas de memoria se usaron con fines partidarios.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": 1
-   }
-  },
-  {
-   "id": "AR-SEG-16",
-   "text": "Los organismos de derechos humanos, como Abuelas de Plaza de Mayo, cumplen un rol fundamental.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": -1
-   }
-  },
-  {
-   "id": "AR-SEG-17",
+   "id": "AR-SEG-09",
    "text": "Las penas para los delitos violentos deberían ser mucho más duras.",
    "primaryAxis": "SEG",
    "effects": {
@@ -1086,7 +1023,7 @@
    }
   },
   {
-   "id": "AR-SEG-18",
+   "id": "AR-SEG-10",
    "text": "La inseguridad se combate sobre todo con educación y oportunidades.",
    "primaryAxis": "SEG",
    "effects": {
@@ -1094,23 +1031,7 @@
    }
   },
   {
-   "id": "AR-SEG-19",
-   "text": "Las Fuerzas Armadas deberían recuperar presupuesto y protagonismo público.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": 1
-   }
-  },
-  {
-   "id": "AR-SEG-20",
-   "text": "La última dictadura llevó adelante un plan sistemático de desaparición de personas que no admite relativizaciones.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": -1
-   }
-  },
-  {
-   "id": "AR-SEG-21",
+   "id": "AR-SEG-11",
    "text": "Los extranjeros que cometan delitos deberían ser expulsados del país.",
    "primaryAxis": "SEG",
    "effects": {
@@ -1118,7 +1039,7 @@
    }
   },
   {
-   "id": "AR-SEG-22",
+   "id": "AR-SEG-12",
    "text": "Los casos de violencia policial deberían investigarlos organismos independientes de las fuerzas de seguridad.",
    "primaryAxis": "SEG",
    "effects": {
@@ -1126,23 +1047,7 @@
    }
   },
   {
-   "id": "AR-SEG-23",
-   "text": "Los crímenes de las organizaciones guerrilleras de los 70 también deberían juzgarse como delitos de lesa humanidad.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": 1
-   }
-  },
-  {
-   "id": "AR-SEG-24",
-   "text": "Los archivos de las Fuerzas Armadas sobre la última dictadura deberían abrirse por completo.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": -1
-   }
-  },
-  {
-   "id": "AR-SEG-25",
+   "id": "AR-SEG-13",
    "text": "La prisión preventiva debería aplicarse con más frecuencia a los acusados de delitos graves.",
    "primaryAxis": "SEG",
    "effects": {
@@ -1150,7 +1055,7 @@
    }
   },
   {
-   "id": "AR-SEG-26",
+   "id": "AR-SEG-14",
    "text": "Las penas alternativas a la cárcel, como el trabajo comunitario, deberían usarse más para delitos leves.",
    "primaryAxis": "SEG",
    "effects": {
@@ -1158,23 +1063,7 @@
    }
   },
   {
-   "id": "AR-SEG-27",
-   "text": "Las reparaciones económicas a víctimas de la dictadura deberían auditarse para detectar posibles abusos.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": 1
-   }
-  },
-  {
-   "id": "AR-SEG-28",
-   "text": "Los civiles y empresarios que colaboraron con la dictadura también deben ser juzgados.",
-   "primaryAxis": "SEG",
-   "effects": {
-    "SEG": -1
-   }
-  },
-  {
-   "id": "AR-SEG-29",
+   "id": "AR-SEG-15",
    "text": "Las cámaras de reconocimiento facial en la vía pública son una herramienta valiosa contra el delito.",
    "primaryAxis": "SEG",
    "effects": {
@@ -1182,7 +1071,7 @@
    }
   },
   {
-   "id": "AR-SEG-30",
+   "id": "AR-SEG-16",
    "text": "La tenencia de armas por parte de civiles debería restringirse todavía más.",
    "primaryAxis": "SEG",
    "effects": {
@@ -1190,19 +1079,137 @@
    }
   },
   {
-   "id": "AR-SEG-31",
-   "text": "Las cifras oficiales de desaparecidos deberían basarse solo en los casos documentados.",
-   "primaryAxis": "SEG",
+   "id": "AR-MEM-01",
+   "text": "En los años 70 hubo una guerra en la que ambos bandos cometieron crímenes comparables.",
+   "primaryAxis": "MEM",
    "effects": {
-    "SEG": 1
+    "MEM": 1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-MEM-02",
+   "text": "Los condenados por lesa humanidad de edad avanzada deberían cumplir prisión domiciliaria.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": 1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-MEM-03",
+   "text": "Las víctimas de las organizaciones armadas de los 70 deberían tener el mismo reconocimiento que las del terrorismo de Estado.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": 1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-MEM-04",
+   "text": "Los juicios por crímenes de lesa humanidad deben continuar hasta completarse.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": -1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-MEM-05",
+   "text": "El Estado debe sostener los sitios de memoria en ex centros clandestinos de detención.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": -1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-MEM-06",
+   "text": "El 24 de marzo debe seguir siendo un feriado nacional por la memoria.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": -1
+   },
+   "core": true
+  },
+  {
+   "id": "AR-MEM-07",
+   "text": "Las políticas de memoria se usaron con fines partidarios.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": 1
    }
   },
   {
-   "id": "AR-SEG-32",
-   "text": "La búsqueda de los nietos apropiados debe seguir siendo una política de Estado.",
-   "primaryAxis": "SEG",
+   "id": "AR-MEM-08",
+   "text": "Los organismos de derechos humanos, como Abuelas de Plaza de Mayo, cumplen un rol fundamental.",
+   "primaryAxis": "MEM",
    "effects": {
-    "SEG": -1
+    "MEM": -1
+   }
+  },
+  {
+   "id": "AR-MEM-09",
+   "text": "Las Fuerzas Armadas deberían recuperar presupuesto y protagonismo público.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": 1
+   }
+  },
+  {
+   "id": "AR-MEM-10",
+   "text": "La última dictadura llevó adelante un plan sistemático de desaparición de personas que no admite relativizaciones.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": -1
+   }
+  },
+  {
+   "id": "AR-MEM-11",
+   "text": "Los crímenes de las organizaciones guerrilleras de los 70 también deberían juzgarse como delitos de lesa humanidad.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": 1
+   }
+  },
+  {
+   "id": "AR-MEM-12",
+   "text": "Los archivos de las Fuerzas Armadas sobre la última dictadura deberían abrirse por completo.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": -1
+   }
+  },
+  {
+   "id": "AR-MEM-13",
+   "text": "Las reparaciones económicas a víctimas de la dictadura deberían auditarse para detectar posibles abusos.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": 1
+   }
+  },
+  {
+   "id": "AR-MEM-14",
+   "text": "Los civiles y empresarios que colaboraron con la dictadura también deben ser juzgados.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": -1
+   }
+  },
+  {
+   "id": "AR-MEM-15",
+   "text": "Las cifras oficiales de desaparecidos deberían basarse solo en los casos documentados.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": 1
+   }
+  },
+  {
+   "id": "AR-MEM-16",
+   "text": "La búsqueda de los nietos apropiados debe seguir siendo una política de Estado.",
+   "primaryAxis": "MEM",
+   "effects": {
+    "MEM": -1
    }
   },
   {

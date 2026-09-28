@@ -21,13 +21,13 @@ export const tests: Record<TestId, TestDefinition> = {
     planes: [
       ['ECO', 'POP'],
       ['ECO', 'SOC'],
-      ['INS', 'SEG'],
+      ['INS', 'MEM'],
     ],
     draw: {
-      core: { ECO: 3, SOC: 3, INS: 3, POP: 3, SEG: 3, EXT: 3, FED: 3, IDN: 4 },
+      core: { ECO: 4, SOC: 3, INS: 3, POP: 3, SEG: 3, MEM: 2, EXT: 3, FED: 2, IDN: 2 },
       detail: {
-        full: { ECO: 5, SOC: 3, INS: 3, POP: 3, SEG: 3, EXT: 3, FED: 3, IDN: 2 },
-        deep: { ECO: 17, SOC: 9, INS: 9, POP: 9, SEG: 11, EXT: 9, FED: 9, IDN: 2 },
+        full: { ECO: 4, SOC: 3, INS: 3, POP: 3, SEG: 3, MEM: 2, EXT: 3, FED: 2, IDN: 2 },
+        deep: { ECO: 12, SOC: 9, INS: 9, POP: 9, SEG: 9, MEM: 8, EXT: 9, FED: 6, IDN: 4 },
       },
     },
   },
@@ -45,13 +45,13 @@ export const tests: Record<TestId, TestDefinition> = {
     planes: [
       ['ECO', 'AUT'],
       ['ECO', 'SOC'],
-      ['NAC', 'MIG'],
+      ['NAC', 'DEM'],
     ],
     draw: {
-      core: { ECO: 4, AUT: 3, SOC: 3, NAC: 3, MIL: 3, MIG: 3, ECOL: 3, POP: 3 },
+      core: { ECO: 3, COM: 2, AUT: 3, DEM: 2, SOC: 3, REL: 2, NAC: 2, MIL: 2, MIG: 2, ECOL: 2, POP: 2 },
       detail: {
-        full: { ECO: 4, AUT: 3, SOC: 3, NAC: 3, MIL: 3, MIG: 3, ECOL: 3, POP: 3 },
-        deep: { ECO: 12, AUT: 9, SOC: 9, NAC: 9, MIL: 9, MIG: 9, ECOL: 9, POP: 9 },
+        full: { ECO: 3, COM: 2, AUT: 3, DEM: 2, SOC: 3, REL: 2, NAC: 2, MIL: 2, MIG: 2, ECOL: 2, POP: 2 },
+        deep: { ECO: 7, COM: 6, AUT: 7, DEM: 6, SOC: 7, REL: 6, NAC: 8, MIL: 6, MIG: 8, ECOL: 6, POP: 8 },
       },
     },
   },

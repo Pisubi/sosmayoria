@@ -1,10 +1,10 @@
 {
- "version": "intl-2.0.0",
+ "version": "intl-3.0.0",
  "axes": [
   {
    "id": "ECO",
    "name": "Economía",
-   "description": "Estado o mercado, impuestos y redistribución, aranceles y libre comercio.",
+   "description": "Propiedad, redistribución, impuestos y regulación.",
    "poleA": {
     "label": "Igualdad / Estado"
    },
@@ -14,11 +14,23 @@
    "includeInMatching": true
   },
   {
+   "id": "COM",
+   "name": "Comercio",
+   "description": "Aranceles, inversión extranjera y globalización.",
+   "poleA": {
+    "label": "Proteccionismo"
+   },
+   "poleB": {
+    "label": "Libre comercio"
+   },
+   "includeInMatching": true
+  },
+  {
    "id": "AUT",
    "name": "Libertades",
-   "description": "Libertades civiles, pluralismo, elecciones y límites al poder.",
+   "description": "Libertades civiles frente a orden y autoridad.",
    "poleA": {
-    "label": "Libertades y pluralismo"
+    "label": "Libertades civiles"
    },
    "poleB": {
     "label": "Orden / autoridad"
@@ -26,14 +38,38 @@
    "includeInMatching": true
   },
   {
-   "id": "SOC",
-   "name": "Valores",
-   "description": "Aborto, diversidad, familia y el lugar de la religión en la vida pública.",
+   "id": "DEM",
+   "name": "Democracia",
+   "description": "Pluralismo, contrapesos y elecciones frente a poder concentrado.",
    "poleA": {
-    "label": "Progresismo / laicidad"
+    "label": "Pluralismo"
    },
    "poleB": {
-    "label": "Tradición / religión"
+    "label": "Autocracia"
+   },
+   "includeInMatching": true
+  },
+  {
+   "id": "SOC",
+   "name": "Valores",
+   "description": "Aborto, diversidad sexual, familia y roles de género.",
+   "poleA": {
+    "label": "Progresismo"
+   },
+   "poleB": {
+    "label": "Tradición"
+   },
+   "includeInMatching": true
+  },
+  {
+   "id": "REL",
+   "name": "Religión",
+   "description": "Lugar de la religión en las leyes y la vida pública.",
+   "poleA": {
+    "label": "Secularismo"
+   },
+   "poleB": {
+    "label": "Religión en política"
    },
    "includeInMatching": true
   },
