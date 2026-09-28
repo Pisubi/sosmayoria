@@ -13,9 +13,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 R2 = os.environ.get("BRUJULA_PENDING", "")
 IMG_DIR = os.path.join(ROOT, "public", "img", "profiles")
 MANIFEST = os.path.join(ROOT, "src", "data", "images.json")
-UA = {"User-Agent": "BrujulaBot/1.0 (proyecto educativo)"}
+UA = {"User-Agent": "BrujulaBot/1.0 (https://github.com/auparrino/compass; test político educativo)"}
 MAX_BYTES = 60 * 1024
-PAUSE = 0.4
+PAUSE = 1.0
 S = requests.Session(); S.headers.update(UA)
 
 FIGURES = {"ar_historicas", "ar_actuales", "intl_historicas", "intl_actuales"}
@@ -100,14 +100,23 @@ SYMBOLS = {
 FREE_RE = re.compile(r"^(cc0|cc[- ]by|public domain|pd|gfdl|attribution|no restrictions|copyrighted free use|free art)", re.I)
 
 
-def get(url, params, tries=3):
+def fetch(url, params=None, tries=8):
+    """GET con reintentos; ante 429 respeta Retry-After (Wikimedia limita el ritmo)."""
     for i in range(tries):
         try:
-            r = S.get(url, params={**params, "format": "json", "formatversion": 2}, timeout=30)
-            r.raise_for_status(); time.sleep(PAUSE); return r.json()
+            r = S.get(url, params=params, timeout=60)
+            if r.status_code == 429:
+                wait = int(r.headers.get("Retry-After", 0) or 0) or 15 * (i + 1)
+                print(f"429, espero {wait}s", flush=True); time.sleep(wait); continue
+            r.raise_for_status(); time.sleep(PAUSE); return r
         except requests.RequestException:
             if i == tries - 1: raise
-            time.sleep(2 * (i + 1))
+            time.sleep(3 * (i + 1))
+    raise RuntimeError(f"demasiados 429: {url}")
+
+
+def get(url, params):
+    return fetch(url, {**params, "format": "json", "formatversion": 2}).json()
 
 
 def load_profiles():
@@ -151,7 +160,7 @@ def page_images(lang, titles):
     return res
 
 
-def commons_info(fname, width=240):
+def commons_info(fname, width=250):
     d = get("https://commons.wikimedia.org/w/api.php", {"action": "query", "titles": "File:" + fname,
             "prop": "imageinfo", "iiprop": "url|extmetadata", "iiurlwidth": width})
     pg = d["query"]["pages"][0]
@@ -173,9 +182,10 @@ def commons_search(q):
 
 
 def download(info, fname):
-    for w in (240, 200, 160, 120):
-        if w != 240: info = commons_info(fname, w) or info
-        r = S.get(info["thumb"], timeout=60); r.raise_for_status(); time.sleep(PAUSE)
+    # Anchos estándar de Wikimedia: los demás se generan a pedido y se limitan con 429.
+    for w in (250, 120):
+        if w != 250: info = commons_info(fname, w) or info
+        r = fetch(info["thumb"])
         if len(r.content) <= MAX_BYTES: return r.content, info
     return None, info
 
@@ -197,11 +207,13 @@ def main(dry=False):
     for t, p in profiles:
         pid, kind = p["id"], kind_of(t, p)
         files, note = [], ""
+        if pid in manifest["images"].get(t, {}):
+            continue  # ya bajada: permite retomar tras un corte
         if kind == "symbol":
             spec = SYMBOLS.get(pid)
             if not spec: review.append((t, pid, kind, "", "", "sin símbolo claro")); continue
             files = list(spec.get("files", []))
-            if spec.get("search"): files += commons_search(spec["search"]); note = "REVISAR búsqueda"
+            if not files: review.append((t, pid, kind, "", "", "símbolo sin archivo fijo")); continue
         elif (t, pid) in cand:
             files, note = [cand[(t, pid)][0]], cand[(t, pid)][1]
         info = None
@@ -222,6 +234,7 @@ def main(dry=False):
             "author": info["author"], "license": info["license"], "licenseUrl": info["licenseUrl"], "sourceUrl": info["sourceUrl"]}
         review.append((t, pid, kind, note, info["file"], info["license"]))
         print(t, pid, info["file"], info["license"], len(data), flush=True)
+        if not dry: json.dump(manifest, open(MANIFEST, "w"), ensure_ascii=False, indent=2)
     with open(os.path.join(ROOT, "scripts", "review.tsv"), "w") as fh:
         for row in review: fh.write("\t".join(map(str, row)) + "\n")
     if not dry:

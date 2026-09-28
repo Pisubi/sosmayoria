@@ -2307,27 +2307,6 @@
    "basis": "ECO: Defendió las retenciones móviles y movilizó contra el campo en 2008 — La Nación · SOC: Sin agenda progresista en valores; sus prioridades son tierra, vivienda y trabajo — Ámbito · INS: Defensor del liderazgo de Néstor y Cristina Kirchner y de la movilización callejera en su apoyo (2008) — La Nación · POP: Retórica de confrontación pueblo contra oligarquía (conflicto del campo, 2008) — La Nación · SEG: Referente piquetero, defensor de la protesta y crítico de la represión — Ámbito · MEM: Alineado con el kirchnerismo en memoria y juicios — Página/12 · EXT: Alineamiento explícito con Irán y Venezuela; en 2026 se presentó como vocero de posiciones del gobierno iraní — Radio JAI 02/03/2026; Revista Noticias 2026 · FED: Kirchnerismo centralista en la distribución de planes y recursos — La Nación · IDN: Peronista kirchnerista; en 2026 enfrentado con La Cámpora pero dentro del peronismo — Zona Norte Diario 08/04/2026"
   },
   {
-   "id": "estela_de_carlotto",
-   "catalog": "ar_actuales",
-   "name": "Estela de Carlotto",
-   "era": "1977–",
-   "description": "Presidenta de Abuelas de Plaza de Mayo desde 1989 y referente del movimiento de derechos humanos por la restitución de nietos apropiados durante la dictadura.",
-   "coords": {
-    "ECO": -50,
-    "SOC": -50,
-    "INS": -10,
-    "POP": 0,
-    "SEG": -75,
-    "MEM": -100,
-    "EXT": -50,
-    "FED": null,
-    "IDN": -50
-   },
-   "confidence": "media",
-   "method": "seed-editorial",
-   "basis": "ECO: Crítica de los ajustes de Macri y Milei y cercana a los gobiernos kirchneristas, sin posiciones técnicas — Página/12 · SOC: Celebró la sanción de la IVE (2020): 'la vida de la mujer está por encima de todo' — El Destape 30/12/2020 · INS: Defiende la independencia judicial que sostuvo los juicios; 'Milei fue votado para que gobierne, no para que sea un rey' — Ámbito 2025 · POP: Referente de derechos humanos sin discurso populista propio — Página/12 · SEG: Defensora de garantías y crítica de la violencia institucional — Página/12 · MEM: Preside Abuelas desde 1989; impulsó los juicios, el Banco Nacional de Datos Genéticos y la búsqueda de nietos — abuelas.org.ar · EXT: Afinidad con los gobiernos kirchneristas y latinoamericanistas — Página/12 · FED: null: sin posiciones sobre coparticipación ni autonomía provincial — revisión de prensa · IDN: De familia radical y 'muy antiperonista' en su juventud; cercana al kirchnerismo desde 2003 — Caras y Caretas 06/10/2025"
-  },
-  {
    "id": "alfonsinismo",
    "catalog": "ar_tradiciones",
    "name": "Radicalismo alfonsinista",

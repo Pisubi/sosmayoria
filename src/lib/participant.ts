@@ -1,4 +1,4 @@
-/** Datos demográficos que se piden antes del test. El código 0 es "Prefiero no decir". */
+/** Datos demográficos que se piden al terminar el test, antes del resultado. El código 0 es "Prefiero no decir". */
 export interface Participant {
   age: number
   gender: number

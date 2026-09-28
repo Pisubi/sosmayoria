@@ -9,7 +9,8 @@ interface AxisBarsProps {
 
 export function AxisBars({ axes, scores }: AxisBarsProps) {
   const byAxis = new Map(scores.map((s) => [s.axisId, s]))
-  const determined = scores.filter((s) => s.score != null)
+  const shown = new Set(axes.map((a) => a.id))
+  const determined = scores.filter((s) => s.score != null && shown.has(s.axisId))
   const strongest = determined.reduce<AxisScore | null>(
     (best, s) => (!best || Math.abs(s.score!) > Math.abs(best.score!) ? s : best),
     null,

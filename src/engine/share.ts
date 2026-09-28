@@ -18,15 +18,19 @@ export function decodeResult(
   const params = new URLSearchParams(search)
   const testId = params.get('t') as TestId | null
   const raw = params.get('s')
-  if (!testId || !(testId in tests) || !raw) return null
+  if (!testId || !Object.hasOwn(tests, testId) || !raw) return null
 
   const test = tests[testId]
+  // Un enlace de otra versión mayor de los temas se leería mal: se descarta.
+  const version = params.get('v')
+  if (version && version.split('.')[0] !== test.version.split('.')[0]) return null
   const parts = raw.split('_')
   if (parts.length !== test.axes.length) return null
+  if (!parts.every((p) => p === 'x' || /^-?\d{1,3}$/.test(p))) return null
 
   const scores = test.axes.map((axis, i) => {
     const n = Number(parts[i])
-    const valid = parts[i] !== 'x' && Number.isFinite(n)
+    const valid = parts[i] !== 'x'
     return {
       axisId: axis.id,
       score: valid ? Math.max(-100, Math.min(100, Math.round(n))) : null,

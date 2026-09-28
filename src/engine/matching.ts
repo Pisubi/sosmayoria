@@ -36,9 +36,20 @@ export const MAX_STRETCH = 2
 const SCALE = 100
 
 /**
- * k = Σ u·p / Σ u² (acotado a [1, MAX_STRETCH]) sobre los temas con dato en ambos;
- * d = sqrt(Σ (k·u − p)² / |A|) sobre los temas A con puntaje tuyo, contando
- * max(MISSING_DIFF, |k·u|) donde el perfil no tiene dato; cercanía = 100 · (1 − d / SCALE).
+ * Prudencia con pocos temas: la distancia se promedia con un tema ficticio a PRIOR_DIFF de
+ * distancia. Con 9 temas casi no cambia nada (y nunca el orden, que se compara siempre sobre los
+ * mismos temas); con 1 o 2 temas impide que alguien quede "Muy cerca" de un perfil solo porque
+ * coincide en uno. Por la misma razón, el estiramiento k se usa entero recién desde
+ * STRETCH_FULL_AT temas comparados.
+ */
+const PRIOR_DIFF = 50
+const STRETCH_FULL_AT = 4
+
+/**
+ * k = Σ u·p / Σ u² (acotado a [1, MAX_STRETCH], y más cerca de 1 con menos de STRETCH_FULL_AT
+ * temas) sobre los temas con dato en ambos; ku = k·u recortado a ±100;
+ * d = sqrt((Σ (ku − p)² + PRIOR_DIFF²) / (|A| + 1)) sobre los temas A con puntaje tuyo, contando
+ * max(MISSING_DIFF, |ku|) donde el perfil no tiene dato; cercanía = 100 · (1 − d / SCALE).
  */
 /** Valor de un perfil tal como lo expresaría en el test alguien que piensa como él (ver Axis.poleBExpressed). */
 export function expressed(axis: Axis, value: number | null | undefined): number | null {
@@ -64,7 +75,8 @@ export function matchProfile(
   const both = pairs.filter((x) => x.p != null)
   const uu = both.reduce((s, x) => s + x.u * x.u, 0)
   const up = both.reduce((s, x) => s + x.u * (x.p as number), 0)
-  const k = uu > 0 ? Math.min(MAX_STRETCH, Math.max(1, up / uu)) : 1
+  const fit = uu > 0 ? Math.min(MAX_STRETCH, Math.max(1, up / uu)) : 1
+  const k = 1 + (fit - 1) * Math.min(1, both.length / STRETCH_FULL_AT)
   const stretch = (u: number) => Math.max(-100, Math.min(100, k * u))
 
   const diffs = both.map((x) => ({ axisId: x.axisId, diff: Math.abs(stretch(x.u) - (x.p as number)) }))
@@ -73,17 +85,20 @@ export function matchProfile(
     .reduce((s, x) => s + Math.max(MISSING_DIFF, Math.abs(stretch(x.u))) ** 2, 0)
 
   const d = diffs.length
-    ? Math.sqrt((diffs.reduce((sum, x) => sum + x.diff * x.diff, 0) + missingSq) / pairs.length)
+    ? Math.sqrt((diffs.reduce((sum, x) => sum + x.diff * x.diff, 0) + missingSq + PRIOR_DIFF ** 2) / (pairs.length + 1))
     : SCALE
   const sorted = [...diffs].sort((a, b) => a.diff - b.diff)
+  const agree = sorted.slice(0, Math.min(3, Math.ceil(sorted.length / 2))).map((x) => x.axisId)
 
   return {
     profile,
     similarity: Math.max(0, 100 * (1 - d / SCALE)),
     compared: diffs.map((x) => x.axisId),
     partial: diffs.length < PARTIAL_THRESHOLD * matchable.length,
-    agree: sorted.slice(0, 3).map((x) => x.axisId),
+    agree,
+    // Nunca el mismo tema en las dos listas.
     differ: sorted
+      .filter((x) => !agree.includes(x.axisId))
       .slice(-2)
       .reverse()
       .map((x) => x.axisId),

@@ -30,11 +30,11 @@ export function CatalogRanking({ testId, catalog, matches, axes }: CatalogRankin
             <dl className="mt-3 grid gap-1 text-sm sm:grid-cols-2 sm:gap-6">
               <div>
                 <dt className="inline font-semibold">Coincidís en: </dt>
-                <dd className="inline text-azul/75">{m.agree.map(name).join(', ')}</dd>
+                <dd className="inline text-azul/75">{m.agree.map(name).join(', ') || '—'}</dd>
               </div>
               <div>
                 <dt className="inline font-semibold">Diferís en: </dt>
-                <dd className="inline text-azul/75">{m.differ.map(name).join(', ')}</dd>
+                <dd className="inline text-azul/75">{m.differ.map(name).join(', ') || '—'}</dd>
               </div>
             </dl>
             <Meta match={m} />

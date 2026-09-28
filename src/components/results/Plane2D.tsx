@@ -1,4 +1,5 @@
 import type { Axis, AxisScore, Profile } from '../../types'
+import { expressed } from '../../engine/matching'
 
 interface Plane2DProps {
   xAxis: Axis
@@ -70,9 +71,10 @@ export function Plane2D({ xAxis, yAxis, scores, profiles, labelCount = 6 }: Plan
     x: scores.find((s) => s.axisId === xAxis.id)?.score ?? null,
     y: scores.find((s) => s.axisId === yAxis.id)?.score ?? null,
   }
+  // Como en el ranking: cada perfil se ubica donde quedaría en el test alguien que piensa como él.
   const points = profiles.flatMap((p) => {
-    const x = p.coords[xAxis.id]
-    const y = p.coords[yAxis.id]
+    const x = expressed(xAxis, p.coords[xAxis.id])
+    const y = expressed(yAxis, p.coords[yAxis.id])
     return x == null || y == null ? [] : [{ profile: p, x, y }]
   })
   const hasUser = u.x != null && u.y != null

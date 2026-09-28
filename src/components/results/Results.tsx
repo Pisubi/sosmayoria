@@ -61,7 +61,33 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
   )
   const acquiescent = Math.abs(data.acquiescence ?? 0) > ACQUIESCENCE_THRESHOLD
   const mixed = (data.consistency ?? 1) < CONSISTENCY_THRESHOLD
+  const determinedCount = test.axes.filter(
+    (a) => a.includeInMatching && scores.find((s) => s.axisId === a.id)?.score != null,
+  ).length
   const tooFew = matchAxes.filter((a) => scores.find((s) => s.axisId === a.id)?.score != null).length < 3
+
+  if (determinedCount === 0) {
+    return (
+      <main className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
+        <Eyebrow>Tu resultado · Test {test.name}</Eyebrow>
+        <h1 className="mt-6 text-4xl leading-[1.1] font-normal tracking-[-0.015em] sm:text-5xl">
+          No hay respuestas suficientes para compararte
+        </h1>
+        <p className="mt-6 leading-7 text-azul/75">
+          Respondiste "No sé" en casi todo, así que ningún tema quedó determinado. Probá de nuevo
+          respondiendo lo que te salga, aunque no estés seguro: siempre podés marcar una posición
+          intermedia.
+        </p>
+        <button
+          type="button"
+          onClick={onRestart}
+          className="mt-10 rounded-md bg-azul px-8 py-3.5 text-sm font-semibold text-marfil hover:bg-noche"
+        >
+          Volver a empezar
+        </button>
+      </main>
+    )
+  }
 
   return (
     <main>
@@ -79,9 +105,10 @@ export function Results({ data, onRestart, onMethodology }: ResultsProps) {
             <em className="font-light text-naranja">{top.profile.name}</em>
           </h1>
           <p className="mt-6 max-w-2xl leading-7 text-marfil/75 sm:text-lg sm:leading-8">
-            Coincidís sobre todo en {listOf(top.agree.map(axisName))}, y te diferenciás en{' '}
-            {listOf(top.differ.map(axisName))}. Abajo están tus cercanías con cada catálogo y tu
-            posición tema por tema.
+            {top.agree.length > 0 && <>Coincidís sobre todo en {listOf(top.agree.map(axisName))}</>}
+            {top.differ.length > 0 && <>, y te diferenciás en {listOf(top.differ.map(axisName))}</>}
+            {top.agree.length > 0 && '. '}
+            Abajo están tus cercanías con cada catálogo y tu posición tema por tema.
           </p>
 
           <div className="mt-12 grid gap-px overflow-hidden rounded-xl border border-marfil/20 bg-marfil/20 sm:grid-cols-2 lg:grid-cols-4">
@@ -245,7 +272,7 @@ function Highlight({
       <p className="mt-2 text-xs leading-5 text-marfil/60">
         {tied
           ? `Casi empatado con ${runnerUp.profile.name}`
-          : `Más cerca en ${listOf(match.agree.slice(0, 2).map(axisName))}`}
+          : match.agree.length > 0 && `Más cerca en ${listOf(match.agree.slice(0, 2).map(axisName))}`}
       </p>
     </div>
   )

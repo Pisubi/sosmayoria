@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { tests } from '../data/tests'
 import { drawQuestions, variantLabel } from '../engine/selection'
 import { saveProgress, type SavedProgress } from '../lib/progress'
@@ -24,19 +24,27 @@ export function Quiz({ progress, onComplete }: QuizProps) {
   const [answers, setAnswers] = useState<Record<string, Response>>(progress.answers)
 
   const question = questions[index]
+  // Pausa breve para que se vea la opción marcada antes de pasar a la siguiente.
+  const timer = useRef<number | undefined>(undefined)
+  useEffect(() => () => window.clearTimeout(timer.current), [])
 
   function handleAnswer(answer: Response) {
     const next = { ...answers, [question.id]: answer }
     setAnswers(next)
+    const last = index + 1 >= questions.length
+    // Se guarda antes de la pausa: una recarga en ese momento no pierde la respuesta.
+    saveProgress({ ...progress, index: last ? index : index + 1, answers: next })
 
-    window.setTimeout(() => {
-      if (index + 1 < questions.length) {
-        setIndex(index + 1)
-        saveProgress({ ...progress, index: index + 1, answers: next })
-      } else {
-        onComplete(questions, next)
-      }
+    window.clearTimeout(timer.current)
+    timer.current = window.setTimeout(() => {
+      if (last) onComplete(questions, next)
+      else setIndex(index + 1)
     }, 150)
+  }
+
+  function goBack() {
+    window.clearTimeout(timer.current)
+    setIndex((i) => Math.max(0, i - 1))
   }
 
   return (
@@ -67,14 +75,14 @@ export function Quiz({ progress, onComplete }: QuizProps) {
         <button
           type="button"
           disabled={index === 0}
-          onClick={() => setIndex((i) => Math.max(0, i - 1))}
+          onClick={goBack}
           className="font-medium text-azul/70 hover:text-azul disabled:opacity-30"
         >
           ← Anterior
         </button>
         <p className="text-right text-xs text-azul/50">
           {collecting
-            ? 'Tus respuestas se guardan de forma anónima, con fines estadísticos.'
+            ? 'Al terminar, tus respuestas se guardan de forma anónima, con fines estadísticos.'
             : 'Tus respuestas se guardan solo en este dispositivo.'}
         </p>
       </div>

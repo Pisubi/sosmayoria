@@ -14,27 +14,30 @@ export function scoreAxes(
   questions: Question[],
   answers: Record<string, Response>,
 ): AxisScore[] {
+  // En enteros (efecto ×10, respuesta ×2): la suma no depende del orden en que salieron las
+  // afirmaciones y da lo mismo que scripts/export_respuestas.py.
   const num: Record<string, number> = {}
   const den: Record<string, number> = {}
   const tot: Record<string, number> = {}
   for (const axis of axes) num[axis.id] = den[axis.id] = tot[axis.id] = 0
 
   for (const q of questions) {
-    for (const [axisId, e] of Object.entries(q.effects)) {
+    for (const [axisId, effect] of Object.entries(q.effects)) {
       if (!(axisId in tot)) continue
       const w = axisId === q.primaryAxis ? (q.weight ?? 1) : 1
-      tot[axisId] += w * Math.abs(e)
+      const e = Math.round(effect * 10)
+      tot[axisId] += w * Math.abs(e) * 2
       const r = answers[q.id]
       if (r == null) continue
-      num[axisId] += w * r * e
-      den[axisId] += w * Math.abs(e)
+      num[axisId] += w * Math.round(r * 2) * e
+      den[axisId] += w * Math.abs(e) * 2
     }
   }
 
   return axes.map((axis) => {
     const coverage = tot[axis.id] ? den[axis.id] / tot[axis.id] : 0
     const score =
-      den[axis.id] && coverage >= MIN_COVERAGE
+      den[axis.id] && den[axis.id] >= MIN_COVERAGE * tot[axis.id]
         ? Math.round((100 * num[axis.id]) / den[axis.id])
         : null
     return { axisId: axis.id, score, coverage }

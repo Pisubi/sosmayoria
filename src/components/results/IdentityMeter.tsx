@@ -29,8 +29,8 @@ export function IdentityMeter({ axis, score }: IdentityMeterProps) {
           : value === 0
             ? 'No te identificás con ninguno de los dos polos.'
             : `${Math.abs(value)} puntos hacia ${value < 0 ? axis.poleA.label.toLowerCase() : axis.poleB.label.toLowerCase()}.`}{' '}
-        Tu identidad no siempre coincide con tus posiciones: por eso se muestra aparte y no
-        entra en las comparaciones.
+        Tu identidad no siempre coincide con tus posiciones: por eso se muestra aparte, aunque
+        también cuenta en la cercanía (salvo con las figuras históricas).
       </p>
     </div>
   )

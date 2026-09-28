@@ -10,7 +10,7 @@ import { acquiescence, consistency, scoreAxes } from './engine/scoring'
 import { drawQuestions, newSeed, VARIANT_SIZE } from './engine/selection'
 import { decodeResult, encodeResult } from './engine/share'
 import type { Participant } from './lib/participant'
-import { clearProgress, loadProgress, saveProgress, type SavedProgress } from './lib/progress'
+import { clearProgress, drawnIds, loadProgress, saveProgress, type SavedProgress } from './lib/progress'
 import { collecting, submitResult } from './lib/submit'
 import type { Question, Response, TestId, Variant } from './types'
 
@@ -19,7 +19,7 @@ type Stage =
   | { step: 'datos'; data: ResultData; pending: PendingSubmission }
   | { step: 'quiz'; progress: SavedProgress }
   | { step: 'results'; data: ResultData }
-  | { step: 'metodologia' }
+  | { step: 'metodologia'; from: Stage }
 
 /** Lo que se envía a Supabase una vez completados los datos demográficos. */
 interface PendingSubmission {
@@ -29,7 +29,19 @@ interface PendingSubmission {
   seconds: number
 }
 
+// El último resultado propio, para que al recargar no se muestre como compartido
+// ni se pierdan los avisos y el conteo de respuestas.
+const LAST_RESULT = 'brujula:resultado'
+
 function initialStage(): Stage {
+  try {
+    const last = JSON.parse(sessionStorage.getItem(LAST_RESULT) ?? 'null') as { url: string; data: ResultData } | null
+    if (last && last.url === window.location.pathname + window.location.search) {
+      return { step: 'results', data: last.data }
+    }
+  } catch {
+    // Sin sessionStorage: se lee el enlace como compartido.
+  }
   const shared = decodeResult(window.location.search, tests)
   if (shared) return { step: 'results', data: { ...shared, shared: true } }
   return { step: 'intro' }
@@ -50,6 +62,13 @@ function App() {
     } catch {
       // En un iframe aislado puede no estar permitido; el test funciona igual.
     }
+    if (stage.step === 'results' && !stage.data.shared) {
+      try {
+        sessionStorage.setItem(LAST_RESULT, JSON.stringify({ url, data: stage.data }))
+      } catch {
+        // Ídem.
+      }
+    }
   }, [stage])
 
   function goHome() {
@@ -59,15 +78,31 @@ function App() {
 
   function start(testId: TestId, variant: Variant) {
     clearProgress()
+    const seed = newSeed()
     setStage({
       step: 'quiz',
-      progress: { testId, variant, seed: newSeed(), index: 0, answers: {}, startedAt: Date.now() },
+      progress: { testId, variant, seed, ids: drawnIds(testId, variant, seed), index: 0, answers: {}, startedAt: Date.now() },
     })
   }
 
-  function finish(progress: SavedProgress, questions: Question[], answers: Record<string, Response>) {
+  function backFrom(from: Stage) {
+    if (from.step === 'intro' || from.step === 'metodologia') return goHome()
+    // El test en curso se retoma desde lo guardado, que tiene las respuestas más recientes.
+    const progress = from.step === 'quiz' ? loadProgress() : null
+    setStage(progress ? { step: 'quiz', progress } : from)
+  }
+
+  function openMethodology() {
+    setStage((from) => (from.step === 'metodologia' ? from : { step: 'metodologia', from }))
+  }
+
+  function finish(progress: SavedProgress, questions: Question[], allAnswers: Record<string, Response>) {
     const { testId, variant, startedAt } = progress
     const test = tests[testId]
+    // Solo cuentan las afirmaciones de esta partida.
+    const answers = Object.fromEntries(
+      questions.filter((q) => q.id in allAnswers).map((q) => [q.id, allAnswers[q.id]]),
+    ) as Record<string, Response>
     const data: ResultData = {
       testId,
       scores: scoreAxes(test.axes, questions, answers),
@@ -83,8 +118,8 @@ function App() {
       return
     }
     // Hasta enviar los datos, el test terminado queda guardado: si se recarga, se retoma acá.
-    saveProgress({ ...progress, index: questions.length, answers })
-    const seconds = Math.round((Date.now() - (startedAt ?? Date.now())) / 1000)
+    const seconds = progress.seconds ?? Math.round((Date.now() - (startedAt ?? Date.now())) / 1000)
+    saveProgress({ ...progress, index: questions.length, answers, seconds })
     setStage({ step: 'datos', data, pending: { variant, questions, answers, seconds } })
   }
 
@@ -108,13 +143,13 @@ function App() {
 
   return (
     <>
-      <Header onHome={goHome} onMethodology={() => setStage({ step: 'metodologia' })} />
+      <Header onHome={goHome} onMethodology={openMethodology} />
       {stage.step === 'intro' && (
         <Intro
           saved={saved}
           onStart={start}
           onResume={resume}
-          onMethodology={() => setStage({ step: 'metodologia' })}
+          onMethodology={openMethodology}
         />
       )}
       {stage.step === 'datos' && (
@@ -133,10 +168,15 @@ function App() {
         <Results
           data={stage.data}
           onRestart={goHome}
-          onMethodology={() => setStage({ step: 'metodologia' })}
+          onMethodology={openMethodology}
         />
       )}
-      {stage.step === 'metodologia' && <Methodology onBack={goHome} />}
+      {stage.step === 'metodologia' && (
+        <Methodology
+          backLabel={stage.from.step === 'results' ? 'Volver al resultado' : stage.from.step === 'intro' ? 'Volver a los tests' : 'Volver'}
+          onBack={() => backFrom(stage.from)}
+        />
+      )}
     </>
   )
 }

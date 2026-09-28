@@ -36,13 +36,19 @@ def load(test):
 
 
 def decode(hex_str, questions):
-    """Devuelve {id: respuesta} de las afirmaciones preguntadas y el conjunto de las del núcleo."""
-    raw = bytes.fromhex(hex_str.removeprefix('\\x'))
+    """Devuelve {id: respuesta} de las afirmaciones preguntadas y el conjunto de las del núcleo,
+    o None si la fila no es válida (cualquiera con la clave pública puede insertar bytes)."""
+    try:
+        raw = bytes.fromhex(hex_str.removeprefix('\\x'))
+    except ValueError:
+        return None
+    if len(raw) != (len(questions) + 1) // 2:
+        return None
     asked, core = {}, set()
     for i, q in enumerate(questions):
-        if i // 2 >= len(raw):
-            break
         c = raw[i // 2] >> 4 if i % 2 == 0 else raw[i // 2] & 15
+        if (c & 7) == 7:
+            return None
         if c & 7:
             asked[q['id']] = VALUES[(c & 7) - 1]
             if c & CORE_BIT:
@@ -51,20 +57,24 @@ def decode(hex_str, questions):
 
 
 def scores(axes, questions, asked, core):
-    """Igual que scoreAxes en src/engine/scoring.ts: el núcleo pesa más solo en su eje principal."""
-    num = dict.fromkeys(axes, 0.0); den = dict.fromkeys(axes, 0.0); tot = dict.fromkeys(axes, 0.0)
+    """Igual que scoreAxes en src/engine/scoring.ts, en enteros (efecto ×10, respuesta ×2):
+    el núcleo pesa más solo en su eje principal."""
+    num = dict.fromkeys(axes, 0); den = dict.fromkeys(axes, 0); tot = dict.fromkeys(axes, 0)
     for q in questions:
         if q['id'] not in asked:
             continue
         r = asked[q['id']]
-        for axis, e in q['effects'].items():
+        for axis, effect in q['effects'].items():
+            if axis not in tot:
+                continue
             w = CORE_WEIGHT if q['id'] in core and axis == q['primaryAxis'] else 1
-            tot[axis] += w * abs(e)
+            e = round(effect * 10)
+            tot[axis] += w * abs(e) * 2
             if r is not None:
-                num[axis] += w * r * e
-                den[axis] += w * abs(e)
+                num[axis] += w * round(r * 2) * e
+                den[axis] += w * abs(e) * 2
     # math.floor(x + 0.5) redondea como Math.round de JavaScript (round de Python va al par).
-    return {a: math.floor(100 * num[a] / den[a] + 0.5) if den[a] and den[a] / tot[a] >= MIN_COVERAGE else ''
+    return {a: math.floor(100 * num[a] / den[a] + 0.5) if den[a] and den[a] >= MIN_COVERAGE * tot[a] else ''
             for a in axes}
 
 
@@ -99,17 +109,22 @@ def main():
             w = csv.writer(f)
             w.writerow(['id', 'fecha', 'variante', 'edad', 'genero', 'educacion', 'segundos',
                         *axes, *(q['id'] for q in questions)])
+            invalid = 0
             for r in mine:
-                asked, core = decode(r['respuestas'], questions)
+                decoded = decode(r['respuestas'], questions)
+                if decoded is None or int(r['variante']) not in VARIANTS:
+                    invalid += 1
+                    continue
+                asked, core = decoded
                 s = scores(axes, questions, asked, core)
                 # Celda vacía = no le tocó; NS = "No sé"; un * marca las del núcleo.
                 answers = ['' if q['id'] not in asked else
                            ('NS' if asked[q['id']] is None else str(asked[q['id']])) + ('*' if q['id'] in core else '')
                            for q in questions]
-                w.writerow([r['id'], r['fecha'], VARIANTS[int(r['variante'])], AGE[int(r['edad'])],
-                            GENDER[int(r['genero'])], EDUCATION[int(r['educacion'])], r['segundos'],
+                w.writerow([r['id'], r['fecha'], VARIANTS[int(r['variante'])], AGE.get(int(r['edad']), ''),
+                            GENDER.get(int(r['genero']), ''), EDUCATION.get(int(r['educacion']), ''), r['segundos'],
                             *(s[a] for a in axes), *answers])
-        print(f'{out}: {len(mine)} filas')
+        print(f'{out}: {len(mine) - invalid} filas' + (f' ({invalid} inválidas omitidas)' if invalid else ''))
 
 
 if __name__ == '__main__':

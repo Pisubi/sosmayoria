@@ -125,7 +125,7 @@ function ResumeBanner({
         <span className="font-semibold">
           {test.name}, versión {variantLabel[saved.variant].toLowerCase()}
         </span>{' '}
-        {saved.index >= total ? 'y falta ver tu resultado.' : `(${saved.index} de ${total}).`}
+        {saved.index >= total ? 'y falta ver tu resultado.' : `(${Object.keys(saved.answers).length} de ${total} respondidas).`}
       </p>
       <button
         type="button"

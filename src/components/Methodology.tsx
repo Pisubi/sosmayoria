@@ -8,6 +8,7 @@ import { Eyebrow } from './Eyebrow'
 
 interface MethodologyProps {
   onBack: () => void
+  backLabel?: string
 }
 
 const SOURCES = [
@@ -21,7 +22,7 @@ const SOURCES = [
   'Referencias de diseño: 8values (efectos multi-eje), 12axes (balance y catálogos), Wahl-O-Mat y Tu Voto (anclaje de perfiles).',
 ]
 
-export function Methodology({ onBack }: MethodologyProps) {
+export function Methodology({ onBack, backLabel = 'Volver a los tests' }: MethodologyProps) {
   const [tab, setTab] = useState<TestId>('intl')
   const test = tests[tab]
   const axisIds = test.axes.map((a) => a.id)
@@ -237,7 +238,7 @@ export function Methodology({ onBack }: MethodologyProps) {
         onClick={onBack}
         className="mt-12 rounded-md bg-azul px-8 py-3.5 text-sm font-semibold text-marfil hover:bg-noche"
       >
-        Volver a los tests
+        {backLabel}
       </button>
     </main>
   )
