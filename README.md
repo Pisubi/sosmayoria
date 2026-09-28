@@ -142,3 +142,8 @@ npm run lint     # oxlint
   datos demográficos, envío a Supabase y empaquetado de respuestas.
 - `tests/` — tests de la especificación: neutral = 0, todo de acuerdo ≈ 0,
   balance de polos, rangos, IDs y recall ≥ 80% con ruido σ = 0,25.
+- `tests/coherence.test.ts` — coherencia de los perfiles: órdenes indiscutibles
+  por tema (Milei más de mercado que Macri, Bolsonaro más de orden que Lula…),
+  cada figura cerca de su partido o ideología, la misma figura igual en los dos
+  tests, ningún perfil que "atraiga" a más del 15% de personas simuladas,
+  recall en la versión corta y estabilidad al jugar dos veces.

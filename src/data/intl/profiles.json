@@ -2551,18 +2551,18 @@
    "name": "Islamismo político",
    "description": "Familia de movimientos que propone que el Estado y el derecho se orienten por la sharía; abarca desde partidos electorales (Hermanos Musulmanes, Ennahda) hasta regímenes teocráticos.",
    "coords": {
-    "ECO": 0,
-    "AUT": 65,
+    "ECO": -20,
+    "AUT": 80,
     "SOC": 95,
-    "NAC": 25,
+    "NAC": 50,
     "MIL": 40,
     "MIG": null,
     "ECOL": null,
-    "POP": 50
+    "POP": 70
    },
    "confidence": "baja",
    "method": "seed-editorial",
-   "basis": "Qutb, al-Banna, Mawdudi; alta heterogeneidad interna; NAC mixto (umma transnacional vs. nacionalismo de Estado). Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: NAC pasa a positivo: aunque Qutb y al-Banna rechazan el nacionalismo étnico, la corriente defiende la protección cultural frente a Occidente, la primacía de la sharía sobre los tratados y el rechazo a organismos internacionales y tribunales de derechos humanos."
+   "basis": "Qutb, al-Banna, Mawdudi; alta heterogeneidad interna; NAC mixto (umma transnacional vs. nacionalismo de Estado). Valores CHES/GPS/V-Party citados de memoria (datos no descargables en esta sesión); verificar contra dataset. · Revisión 2026: NAC pasa a positivo: aunque Qutb y al-Banna rechazan el nacionalismo étnico, la corriente defiende la protección cultural frente a Occidente, la primacía de la sharía sobre los tratados y el rechazo a organismos internacionales y tribunales de derechos humanos. · AUT 80 por el Estado regido por la sharía que propone la corriente canónica (Qutb, Mawdudi) y ECO −20 por la economía islámica redistributiva (zakat, rechazo de la usura). NAC 50 y POP 70: rechazo a organismos internacionales y a tribunales de derechos humanos, y movilización de la umma contra las élites laicas."
   },
   {
    "id": "abraham_lincoln",
