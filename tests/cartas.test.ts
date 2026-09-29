@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { cartas, orden, todas, TEMAS } from '../src/data/cartas'
-import { brujula, CUPO, EJES, esExtrema, esIdeologica, RONDA, sortear } from '../src/engine/juego'
+import { brujula, CUPO, EJES, esExtrema, mideBrujula, RONDA, sortear } from '../src/engine/juego'
 import type { Carta, NombreEje } from '../src/types'
 import fotos from '../src/data/fotos.json'
 import guardado from './orden-cartas.json'
@@ -44,7 +44,7 @@ describe('banco de cartas', () => {
     for (let s = 0; s < 200; s++) {
       const r = sortear(cartas, s)
       for (const e of EJES) expect(r.filter((c) => c.eje?.[e]).length, `${e}, semilla ${s}`).toBeGreaterThanOrEqual(CUPO[e])
-      const ideologicas = r.filter(esIdeologica).length
+      const ideologicas = r.filter(mideBrujula).length
       expect(ideologicas).toBeLessThanOrEqual(19)
       expect(RONDA - ideologicas).toBeGreaterThanOrEqual(6)
       for (const e of EJES) expect(r.filter((c) => esExtrema(c) && c.eje?.[e]).length).toBeLessThanOrEqual(1)
@@ -86,7 +86,7 @@ describe('banco de cartas', () => {
       return (e: NombreEje) => pos.map((p) => p[e]).sort((a, b) => a - b)[100]
     }
 
-    it('ultraderecha pro mercado, aunque sea nacionalista en algunas cartas', () => {
+    it('pro mercado y tradicional, aunque sea nacionalista en algunas cartas', () => {
       // Defiende la industria nacional, los recursos y las áreas estratégicas, la ayuda a los pobres
       // y la obra pública, prefiere salarios a precios y no privatizaría YPF: sigue siendo más mercado.
       const m = mediana(
@@ -105,10 +105,9 @@ describe('banco de cartas', () => {
       )
       expect(m('economia')).toBeGreaterThan(0.7)
       expect(m('valores')).toBeGreaterThan(0.8)
-      expect(m('autoridad')).toBeGreaterThan(0.8)
     })
 
-    it('izquierda, aunque valore el esfuerzo y el empleo privado', () => {
+    it('más Estado y progresista, aunque valore el esfuerzo y el empleo privado', () => {
       const m = mediana(
         { economia: -1, valores: -1, autoridad: -1 },
         {
@@ -136,7 +135,7 @@ describe('banco de cartas', () => {
     const veces = new Map<string, number>()
     const n = 2000
     for (let s = 0; s < n; s++) for (const c of sortear(cartas, s)) veces.set(c.id, (veces.get(c.id) ?? 0) + 1)
-    for (const c of cartas.filter((x) => !x.nucleo && !esIdeologica(x))) {
+    for (const c of cartas.filter((x) => !x.nucleo && !mideBrujula(x))) {
       expect((veces.get(c.id) ?? 0) / n, c.id).toBeLessThan(0.2)
     }
   })

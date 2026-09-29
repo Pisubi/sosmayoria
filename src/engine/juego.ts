@@ -54,8 +54,11 @@ function mezclar<T>(items: T[], next: () => number): T[] {
   return out
 }
 
-/** Mínimo de cartas de cada escala por ronda, núcleo incluidas, para que la brújula tenga base. */
-export const CUPO: Record<NombreEje, number> = { economia: 8, valores: 6, autoridad: 5 }
+/**
+ * Mínimo de cartas de cada escala por ronda, núcleo incluidas, para que la brújula tenga base.
+ * Autoridad se sigue calculando pero no se muestra, así que no reserva lugar en la ronda.
+ */
+export const CUPO: Record<NombreEje, number> = { economia: 8, valores: 6, autoridad: 0 }
 
 /**
  * Sortea una ronda: las cartas núcleo siempre, repartidas en lugares al azar; después las
@@ -108,13 +111,13 @@ export function sortear(
       tomar(c)
     }
   }
-  // El resto, primero las que no miden ideología, en el orden sorteado (las no vistas antes) y como
-  // mucho dos por tema; si no alcanza, sin tope, y después cualquiera. Nada de turnos por tema: con
+  // El resto, primero las que no mueven la brújula que se ve, en el orden sorteado (las no vistas antes) y como
+  // mucho tres por tema; si no alcanza, sin tope, y después cualquiera. Nada de turnos por tema: con
   // turnos, las cartas de un tema chico (historia tiene dos) salían en casi todas las rondas.
   const porTema = new Map<Tema, number>()
   const pasadas: [(c: Carta) => boolean, number][] = [
-    [(c) => !esIdeologica(c), 2],
-    [(c) => !esIdeologica(c), Infinity],
+    [(c) => !mideBrujula(c), 3],
+    [(c) => !mideBrujula(c), Infinity],
     [() => true, Infinity],
   ]
   for (const [sirve, tope] of pasadas) {
@@ -209,10 +212,16 @@ export function perfil(conLaMayoria: number, definidas: number): { titulo: strin
   return { titulo: 'Minoría intensa', texto: 'Casi siempre elegís lo que eligen menos argentinos.' }
 }
 
-/** Las tres escalas de la brújula. La brújula dibuja economía × valores; autoridad va aparte. */
+/** Las tres escalas de la brújula. La brújula dibuja economía × valores; autoridad no se muestra. */
 export const EJES: readonly NombreEje[] = ['economia', 'valores', 'autoridad']
 
 export const esIdeologica = (c: Carta): boolean => EJES.some((e) => c.eje?.[e])
+
+/**
+ * Si la carta mueve una escala que se muestra (las que tienen cupo). Las de autoridad, que se
+ * calcula pero no se ve, se sortean como cualquier carta sin eje.
+ */
+export const mideBrujula = (c: Carta): boolean => EJES.some((e) => CUPO[e] > 0 && c.eje?.[e])
 
 /** Afirmación con la que acuerda menos de un cuarto del país (p. ej. "el marido tiene la última palabra"). */
 export const esExtrema = (c: Carta): boolean => esIdeologica(c) && c.tipo === 'afirmacion' && real(c) < 25

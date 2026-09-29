@@ -31,7 +31,8 @@ La de aprobación es `"volatil": true`: hay que actualizar su dato con la últim
 
 Las cartas con `eje` ubican a quien juega en tres escalas: `economia` (`-` más Estado, `+` más
 mercado), `valores` (`-` más progresistas, `+` más tradicionales) y `autoridad` (`-` más
-garantías y libertades civiles, `+` más orden). El valor dice cuánto y hacia dónde empuja elegir
+garantías y libertades civiles, `+` más orden). Autoridad se calcula pero no se muestra ni tiene
+cupo por ronda: la brújula que ve quien juega es economía × valores. El valor dice cuánto y hacia dónde empuja elegir
 A (B empuja al revés): `±1` si la carta mide bien la escala, `±0.5` si es un indicador débil o
 atado a un gobierno. La aprobación del gobierno no tiene eje: mide alineamiento, no ideología.
 
@@ -49,20 +50,22 @@ atado a un gobierno. La aprobación del gobierno no tiene eje: mide alineamiento
   lado que el 90% del país. No se satura en el borde (antes todo perfil marcado quedaba en ±1).
 - **Qué mide cada carta de economía.** Solo Estado contra mercado. Las que mezclan nacionalismo o
   soberanía (industria nacional, áreas y recursos estratégicos, apertura al mundo) o frases de
-  consenso (obra pública) pesan `±0.5`, porque también las sostiene buena parte de la derecha; las
+  consenso (obra pública) pesan `±0.5`, porque también las sostiene mucha gente pro mercado; las
   que no separan Estado de mercado (regular la IA, "igualdad de oportunidades") no tienen eje. Los
-  tests de `tests/cartas.test.ts` verifican que un perfil de ultraderecha con respuestas
-  nacionalistas y uno de izquierda que valora el esfuerzo queden lejos del centro en una ronda.
+  tests de `tests/cartas.test.ts` verifican que un perfil pro mercado con respuestas
+  nacionalistas y uno estatista que valora el esfuerzo queden lejos del centro en una ronda.
 - **Afirmaciones extremas** (menos del 25% de acuerdo, `esExtrema()`): como mucho una por escala
   en cada ronda, para que varias juntas no arrastren al centro a quien tiene posiciones firmes.
 - **Cupo por ronda.** Cada ronda trae al menos `CUPO` cartas de cada escala (núcleo incluidas);
-  el resto son cartas sin eje (fútbol, mate, creencias…), que no cuentan. Esas se toman en el orden
-  sorteado, como mucho dos por tema, así salen todas parecido (con turnos por tema, las dos de
+  el resto son cartas que no mueven la brújula que se ve (fútbol, mate, creencias… y las de
+  autoridad, que se calcula pero no se muestra). Esas se toman en el orden sorteado, como mucho
+  tres por tema, así salen todas parecido (con turnos por tema, las dos de
   historia salían en casi todas las rondas); después `intercalar()` separa los temas.
 - **Afirmaciones en equilibrio.** Al llenar el cupo de cada escala se alternan afirmaciones que se
   aceptan de un lado y del otro (por ejemplo, "hay que legalizar la marihuana" y "hay que derogar el
   matrimonio igualitario"), para que quien contesta "de acuerdo" a todo no quede corrido.
-- **Inseguridad** (núcleo, endurecer penas o reducir la desigualdad) cuenta solo para autoridad.
+- **Inseguridad** (núcleo, endurecer penas o reducir la desigualdad) cuenta solo para autoridad, así
+  que no mueve la brújula que se ve.
 - **Se afina con cada ronda.** Las respuestas de todas las rondas quedan en el navegador
   (`mayoria:respuestas:v1`) y la brújula usa todas. No se envían ni van en la imagen para
   historias.
