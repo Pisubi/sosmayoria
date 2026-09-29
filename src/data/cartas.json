@@ -3085,7 +3085,7 @@
     "roles-genero"
    ],
    "eje": {
-    "valores": 1
+    "valores": 0.5
    },
    "ref": {
     "a": 12,
@@ -3115,7 +3115,7 @@
     "roles-genero"
    ],
    "eje": {
-    "valores": 1
+    "valores": 0.5
    },
    "ref": {
     "a": 23.9,

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { cartas, orden, todas, TEMAS } from '../src/data/cartas'
-import { brujula, CUPO, EJES, esIdeologica, RONDA, sortear } from '../src/engine/juego'
+import { brujula, CUPO, EJES, esExtrema, esIdeologica, RONDA, sortear } from '../src/engine/juego'
 import fotos from '../src/data/fotos.json'
 import guardado from './orden-cartas.json'
 
@@ -46,9 +46,26 @@ describe('banco de cartas', () => {
       const ideologicas = r.filter(esIdeologica).length
       expect(ideologicas).toBeLessThanOrEqual(19)
       expect(RONDA - ideologicas).toBeGreaterThanOrEqual(6)
+      for (const e of EJES) expect(r.filter((c) => esExtrema(c) && c.eje?.[e]).length).toBeLessThanOrEqual(1)
       const b = brujula(r.map((carta) => ({ carta, eleccion: 'a' as const })))
       expect(b).not.toBeNull()
     }
+  })
+
+  it('alguien bien conservador queda arriba aunque le toquen varias afirmaciones extremas', () => {
+    // Rechaza lo que rechaza casi todo el país (incluidos muchos conservadores), pero elige el lado
+    // tradicional en aborto y matrimonio igualitario.
+    const de = (inicio: string) => cartas.find((c) => c.pregunta.startsWith(inicio))!
+    const r = [
+      { carta: de('Tiene que haber acceso al aborto'), eleccion: 'b' as const },
+      { carta: de('Las parejas del mismo sexo'), eleccion: 'b' as const },
+      { carta: de('En las decisiones importantes del hogar'), eleccion: 'b' as const },
+      { carta: de('Cuando falta trabajo'), eleccion: 'b' as const },
+      { carta: de('No me gustaría tener inmigrantes'), eleccion: 'b' as const },
+      { carta: de('«El cambio climático'), eleccion: 'b' as const },
+      ...cartas.filter((c) => c.eje?.economia).slice(0, 3).map((carta) => ({ carta, eleccion: 'a' as const })),
+    ]
+    expect(brujula(r)!.vos.valores).toBeGreaterThan(0.3)
   })
 
   it('las cartas sobre medidas de un gobierno son de 2025 en adelante y lo nombran', () => {

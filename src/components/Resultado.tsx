@@ -25,6 +25,7 @@ const CHIP: Record<Lugar, { texto: string; clase: string }> = {
 
 const nombreTema = (id: string) => TEMAS.find((t) => t.id === id)?.nombre ?? id
 const porId = new Map(cartas.map((c) => [c.id, c]))
+const URL_PUBLICA = 'https://sosmayoria.pisubi.com'
 
 export function Resultado({ resumen, historial, onOtraRonda, onMethodology }: ResultadoProps) {
   const { conLaMayoria, definidas, enLaMinoria, parejas, lecturas, porTema } = resumen
@@ -193,10 +194,8 @@ function otra(l: Lectura): string {
 function Compartir({ texto, tarjeta }: { texto: string; tarjeta: Omit<Tarjeta, 'url'> }) {
   const [estado, setEstado] = useState<'listo' | 'copiado' | 'generando'>('listo')
   async function compartir() {
-    // Abierta como archivo (file://) no hay dirección que mostrar; VITE_URL_PUBLICA la fija al publicar.
-    const url =
-      (import.meta.env.VITE_URL_PUBLICA as string | undefined) ??
-      (window.location.protocol.startsWith('http') ? window.location.origin + window.location.pathname : '')
+    // Siempre la dirección pública, aunque se juegue desde el archivo suelto o una vista previa.
+    const url = (import.meta.env.VITE_URL_PUBLICA as string | undefined) ?? URL_PUBLICA
     const mensaje = `${texto} ${url}`.trim()
     setEstado('generando')
     try {

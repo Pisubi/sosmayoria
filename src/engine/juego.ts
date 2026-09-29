@@ -81,11 +81,16 @@ export function sortear(
   ]
   // Como mucho una carta por grupo de cartas parecidas; las núcleo reservan el suyo primero.
   const grupos = new Set(nucleo.flatMap((c) => c.grupos ?? []))
-  const libre = (c: Carta) => !(c.grupos ?? []).some((g) => grupos.has(g))
+  // Como mucho una afirmación extrema por escala: sirven solo para los extremos, y varias juntas
+  // arrastran al centro a quien tiene posiciones firmes pero no extremas.
+  const extremas = new Set<NombreEje>()
+  const libre = (c: Carta) =>
+    !(c.grupos ?? []).some((g) => grupos.has(g)) && !(esExtrema(c) && EJES.some((e) => c.eje?.[e] && extremas.has(e)))
   const elegidas: Carta[] = []
   const total = Math.max(0, n - nucleo.length)
   const tomar = (c: Carta) => {
     for (const g of c.grupos ?? []) grupos.add(g)
+    if (esExtrema(c)) for (const e of EJES) if (c.eje?.[e]) extremas.add(e)
     elegidas.push(c)
     candidatas.splice(candidatas.indexOf(c), 1)
   }
@@ -199,6 +204,9 @@ export const EJES: readonly NombreEje[] = ['economia', 'valores', 'autoridad']
 
 export const esIdeologica = (c: Carta): boolean => EJES.some((e) => c.eje?.[e])
 
+/** Afirmación con la que acuerda menos de un cuarto del país (p. ej. "el marido tiene la última palabra"). */
+export const esExtrema = (c: Carta): boolean => esIdeologica(c) && c.tipo === 'afirmacion' && real(c) < 25
+
 /** Posición en cada escala, de -1 a 1; 0 es el argentino promedio según las encuestas. */
 export type Posicion = Record<NombreEje, number>
 
@@ -213,35 +221,76 @@ export interface Brujula {
 export const MINIMO_EJE = 3
 
 /**
- * Cuántos desvíos del promedio (z) equivalen al borde del gráfico. Alguien que siempre elige
- * el mismo lado de una escala queda cerca de 1,2 z; con 1,5 no toca el borde.
+ * Modelo de respuesta (tipo teoría de respuesta al ítem): cada persona tiene una posición θ en
+ * cada escala, y la chance de elegir el lado + de una carta es logística en θ − b. La dificultad b
+ * de cada carta sale de la encuesta: si el país tiene θ ~ N(0, 1), la proporción que eligió el
+ * lado + tiene que coincidir con la publicada. Así, rechazar una afirmación extrema (que rechaza
+ * casi todo el mundo) mueve poco, y aceptarla mueve mucho; el centro es el argentino promedio.
  */
-const ESCALA = 1.5
+const DISCRIMINACION = 1.7
+/** Previa N(0, σ²) de la posición: con pocas cartas acerca al promedio, sin aplastar a nadie. */
+const PREVIA = 1.5
+/** Posición θ que corresponde al borde del gráfico. */
+const ESCALA = 2
+const GRILLA = Array.from({ length: 161 }, (_, i) => -4 + i * 0.05)
+
+interface Item {
+  /** Discriminación (1,7 por el peso de la carta en la escala). */
+  a: number
+  /** Dificultad del lado +. */
+  b: number
+  /** Si eligió el lado + de la escala. */
+  mas: boolean
+}
+
+function dificultad(q: number, a: number): number {
+  return (-Math.log(q / (1 - q)) * Math.sqrt(1 + (Math.PI * a * a) / 8)) / a
+}
+
+/** Media de la posterior de θ en la grilla. */
+function posicion(items: Item[]): number {
+  let max = -Infinity
+  const log = GRILLA.map((t) => {
+    let l = -(t * t) / (2 * PREVIA * PREVIA)
+    for (const { a, b, mas } of items) {
+      const p = 1 / (1 + Math.exp(-a * (t - b)))
+      l += Math.log(mas ? p : 1 - p)
+    }
+    max = Math.max(max, l)
+    return l
+  })
+  let suma = 0
+  let total = 0
+  log.forEach((l, i) => {
+    const w = Math.exp(l - max)
+    suma += w * GRILLA[i]
+    total += w
+  })
+  return suma / total
+}
 
 /**
- * Ubica a quien juega en cada escala, comparando cada respuesta con lo que respondió el país:
- * elegir lo que eligió el 80% casi no mueve; elegir lo del 20% mueve mucho. Así el centro es el
- * argentino promedio, y las cartas de consenso no corren a todos para el mismo lado.
+ * Ubica a quien juega en cada escala comparando sus respuestas con lo que respondió el país
+ * (ver el modelo arriba). Las cartas pesan según su eje: ±1 las que miden bien, ±0,5 las débiles.
  */
 export function brujula(respuestas: { carta: Carta; eleccion: Eleccion }[]): Brujula | null {
-  const suma = { economia: 0, valores: 0, autoridad: 0 }
-  const pesos = { economia: 0, valores: 0, autoridad: 0 }
-  const cartas = { economia: 0, valores: 0, autoridad: 0 }
+  const items: Record<NombreEje, Item[]> = { economia: [], valores: [], autoridad: [] }
   for (const { carta, eleccion } of respuestas) {
     if (!carta.eje || eleccion === 'nada') continue
-    const p = Math.min(0.95, Math.max(0.05, real(carta) / 100))
-    const z = ((eleccion === 'a' ? 1 : 0) - p) / Math.sqrt(p * (1 - p))
+    const pA = Math.min(0.97, Math.max(0.03, real(carta) / 100))
     for (const e of EJES) {
       const w = carta.eje[e]
       if (!w) continue
-      suma[e] += w * z
-      pesos[e] += Math.abs(w)
-      cartas[e]++
+      const a = DISCRIMINACION * Math.abs(w)
+      // Lado + de la escala: A si el eje es positivo, B si es negativo.
+      const q = w > 0 ? pA : 1 - pA
+      items[e].push({ a, b: dificultad(q, a), mas: (eleccion === 'a') === w > 0 })
     }
   }
+  const cartas = { economia: items.economia.length, valores: items.valores.length, autoridad: items.autoridad.length }
   if (cartas.economia < MINIMO_EJE || cartas.valores < MINIMO_EJE) return null
   const pos = (e: NombreEje) =>
-    cartas[e] < MINIMO_EJE ? 0 : Math.max(-1, Math.min(1, suma[e] / pesos[e] / ESCALA))
+    cartas[e] < MINIMO_EJE ? 0 : Math.max(-1, Math.min(1, posicion(items[e]) / ESCALA))
   const base = Math.min(cartas.economia, cartas.valores)
   return {
     vos: { economia: pos('economia'), valores: pos('valores'), autoridad: pos('autoridad') },

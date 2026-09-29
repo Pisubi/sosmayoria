@@ -35,10 +35,14 @@ garantías y libertades civiles, `+` más orden). El valor dice cuánto y hacia 
 A (B empuja al revés): `±1` si la carta mide bien la escala, `±0.5` si es un indicador débil o
 atado a un gobierno. La aprobación del gobierno no tiene eje: mide alineamiento, no ideología.
 
-- **Relativa al país.** Cada respuesta se compara con la encuesta (`brujula()` en
-  `src/engine/juego.ts`): se suma `(elegiste A − % de A) / desvío`, así que elegir lo que eligió
-  el 80% casi no mueve y elegir lo del 20% mueve mucho. El centro es el argentino promedio y las
-  cartas de consenso no corren a todos para el mismo lado.
+- **Relativa al país.** `brujula()` (en `src/engine/juego.ts`) usa un modelo de respuesta al
+  ítem: la posición θ de cada escala sale de la media de la posterior, con una previa N(0, 1,5²),
+  y la dificultad de cada carta se fija para que, con el país en θ ~ N(0, 1), la proporción que
+  elige cada lado coincida con la encuesta. Elegir lo que eligió el 80% casi no mueve; elegir lo
+  del 20% mueve mucho; rechazar una afirmación extrema dice poco. El centro es el argentino
+  promedio.
+- **Afirmaciones extremas** (menos del 25% de acuerdo, `esExtrema()`): como mucho una por escala
+  en cada ronda, para que varias juntas no arrastren al centro a quien tiene posiciones firmes.
 - **Cupo por ronda.** Cada ronda trae al menos `CUPO` cartas de cada escala (núcleo incluidas);
   el resto son cartas sin eje (fútbol, mate, creencias…), que no cuentan.
 - **Se afina con cada ronda.** Las respuestas de todas las rondas quedan en el navegador
@@ -80,6 +84,19 @@ las respuestas anteriores del dispositivo). Si hay `VITE_SUPABASE_URL` y `VITE_S
   una fila por carta jugada, con la mayoría de la encuesta y si la persona coincidió, para
   analizar (por ejemplo, ponderando por edad, género y educación según el censo: la muestra no
   es representativa).
+
+## Publicar en sosmayoria.pisubi.com (Cloudflare Pages)
+
+El DNS de pisubi.com está en Cloudflare, así que el subdominio se configura solo.
+
+1. Cloudflare → Workers & Pages → Create → Pages → Connect to Git → `auparrino/Compass`.
+2. Rama de producción: la que se quiera publicar. Framework preset: Vite. Build command:
+   `npm run build`. Output: `dist`. Node sale de `.node-version` (22).
+3. Variables de entorno (Production): `VITE_SUPABASE_URL` y `VITE_SUPABASE_KEY` (la clave
+   publicable, nunca la secreta). Vite las mete en el build: si se cambian, hay que redesplegar.
+4. Custom domains → `sosmayoria.pisubi.com`. Cloudflare crea el CNAME y el certificado.
+
+Cada push a la rama de producción redespliega; las otras ramas generan vistas previas.
 
 ## Desarrollo
 
