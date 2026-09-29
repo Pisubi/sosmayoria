@@ -96,23 +96,33 @@ export function sortear(
   }
 
   const cuenta = (e: NombreEje) => [...nucleo, ...elegidas].filter((c) => c.eje?.[e]).length
+  // Afirmaciones redactadas hacia cada lado, en equilibrio: si en una escala casi todas se aceptan
+  // del lado progresista (o estatista), quien contesta "de acuerdo" a todo queda corrido hacia ahí.
+  const sentido = (c: Carta, e: NombreEje) => (c.tipo === 'afirmacion' ? Math.sign(c.eje?.[e] ?? 0) : 0)
+  const saldo = (e: NombreEje) => [...nucleo, ...elegidas].reduce((s, c) => s + sentido(c, e), 0)
   for (const e of EJES) {
-    for (const c of candidatas.filter((x) => x.eje?.[e])) {
-      if (cuenta(e) >= CUPO[e] || elegidas.length >= total) break
-      if (libre(c)) tomar(c)
+    while (cuenta(e) < CUPO[e] && elegidas.length < total) {
+      const opciones = candidatas.filter((x) => x.eje?.[e] && libre(x))
+      const c = opciones.find((x) => sentido(x, e) * saldo(e) <= 0) ?? opciones[0]
+      if (!c) break
+      tomar(c)
     }
   }
-  // El resto alternando temas por turnos: primero las que no miden ideología, después cualquiera.
-  for (const fuente of [candidatas.filter((c) => !esIdeologica(c)), [...candidatas]]) {
-    const colas = new Map<Tema, Carta[]>()
-    for (const c of fuente) colas.set(c.tema, [...(colas.get(c.tema) ?? []), c])
-    const turnos = mezclar([...colas.values()], next)
-    while (elegidas.length < total && turnos.some((cola) => cola.length > 0)) {
-      for (const cola of turnos) {
-        let c = cola.shift()
-        while (c && (!libre(c) || !candidatas.includes(c))) c = cola.shift()
-        if (c && elegidas.length < total) tomar(c)
-      }
+  // El resto, primero las que no miden ideología, en el orden sorteado (las no vistas antes) y como
+  // mucho dos por tema; si no alcanza, sin tope, y después cualquiera. Nada de turnos por tema: con
+  // turnos, las cartas de un tema chico (historia tiene dos) salían en casi todas las rondas.
+  const porTema = new Map<Tema, number>()
+  const pasadas: [(c: Carta) => boolean, number][] = [
+    [(c) => !esIdeologica(c), 2],
+    [(c) => !esIdeologica(c), Infinity],
+    [() => true, Infinity],
+  ]
+  for (const [sirve, tope] of pasadas) {
+    for (const c of candidatas.filter(sirve)) {
+      if (elegidas.length >= total) break
+      if (!libre(c) || (porTema.get(c.tema) ?? 0) >= tope) continue
+      porTema.set(c.tema, (porTema.get(c.tema) ?? 0) + 1)
+      tomar(c)
     }
   }
 

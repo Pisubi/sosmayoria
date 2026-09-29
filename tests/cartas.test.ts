@@ -118,7 +118,8 @@ describe('banco de cartas', () => {
           'que-deberia-priorizar-la-economia': 'b',
         },
       )
-      expect(m('economia')).toBeLessThan(-0.45)
+      // Contradice la carta núcleo de empleo (sale siempre) y la del esfuerzo: queda más cerca.
+      expect(m('economia')).toBeLessThan(-0.35)
       expect(m('valores')).toBeLessThan(-0.8)
     })
 
@@ -128,6 +129,31 @@ describe('banco de cartas', () => {
       expect(m('economia')).toBeLessThan(1)
       expect(m('valores')).toBeLessThan(-0.85)
     })
+  })
+
+  it('las cartas que no miden ideología salen parejo, sin importar el tema', () => {
+    // Antes se llenaba por turnos de tema: las dos de historia salían en casi todas las rondas.
+    const veces = new Map<string, number>()
+    const n = 2000
+    for (let s = 0; s < n; s++) for (const c of sortear(cartas, s)) veces.set(c.id, (veces.get(c.id) ?? 0) + 1)
+    for (const c of cartas.filter((x) => !x.nucleo && !esIdeologica(x))) {
+      expect((veces.get(c.id) ?? 0) / n, c.id).toBeLessThan(0.2)
+    }
+  })
+
+  it('contestar "de acuerdo" a todo no corre los valores hacia un lado', () => {
+    // Las afirmaciones de cada ronda se equilibran entre las que se aceptan del lado progresista y
+    // las que se aceptan del lado tradicional.
+    const n = 500
+    let suma = 0
+    for (let s = 0; s < n; s++) {
+      const r = sortear(cartas, s).map((carta) => ({
+        carta,
+        eleccion: carta.tipo === 'afirmacion' ? ('a' as const) : s % 2 ? ('a' as const) : ('b' as const),
+      }))
+      suma += brujula(r)!.vos.valores
+    }
+    expect(Math.abs(suma / n)).toBeLessThan(0.25)
   })
 
   it('las cartas sobre medidas de un gobierno son de 2025 en adelante y lo nombran', () => {

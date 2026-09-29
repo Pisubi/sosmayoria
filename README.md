@@ -56,7 +56,13 @@ atado a un gobierno. La aprobación del gobierno no tiene eje: mide alineamiento
 - **Afirmaciones extremas** (menos del 25% de acuerdo, `esExtrema()`): como mucho una por escala
   en cada ronda, para que varias juntas no arrastren al centro a quien tiene posiciones firmes.
 - **Cupo por ronda.** Cada ronda trae al menos `CUPO` cartas de cada escala (núcleo incluidas);
-  el resto son cartas sin eje (fútbol, mate, creencias…), que no cuentan.
+  el resto son cartas sin eje (fútbol, mate, creencias…), que no cuentan. Esas se toman en el orden
+  sorteado, como mucho dos por tema, así salen todas parecido (con turnos por tema, las dos de
+  historia salían en casi todas las rondas); después `intercalar()` separa los temas.
+- **Afirmaciones en equilibrio.** Al llenar el cupo de cada escala se alternan afirmaciones que se
+  aceptan de un lado y del otro (por ejemplo, "hay que legalizar la marihuana" y "hay que derogar el
+  matrimonio igualitario"), para que quien contesta "de acuerdo" a todo no quede corrido.
+- **Inseguridad** (núcleo, endurecer penas o reducir la desigualdad) cuenta solo para autoridad.
 - **Se afina con cada ronda.** Las respuestas de todas las rondas quedan en el navegador
   (`mayoria:respuestas:v1`) y la brújula usa todas. No se envían ni van en la imagen para
   historias.
