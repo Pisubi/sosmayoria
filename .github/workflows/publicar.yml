@@ -1,0 +1,30 @@
+# Publica en sosmayoria.pisubi.com: al actualizarse la rama `produccion`, corre lint, tests y build,
+# y si pasan empuja el código a Pisubi/sosmayoria (main), de donde Cloudflare Pages despliega.
+# Necesita el secreto SOSMAYORIA_DEPLOY_KEY (clave privada con permiso de escritura en ese repo).
+# El push no fuerza: si Pisubi/sosmayoria tiene commits que este repo no, falla en vez de pisarlos.
+name: Publicar en sosmayoria
+on:
+  push:
+    branches: [produccion]
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version-file: .node-version, cache: npm }
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - name: Push a Pisubi/sosmayoria
+        env:
+          DEPLOY_KEY: ${{ secrets.SOSMAYORIA_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$DEPLOY_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git remote add pisubi git@github.com:Pisubi/sosmayoria.git
+          git push pisubi HEAD:main
