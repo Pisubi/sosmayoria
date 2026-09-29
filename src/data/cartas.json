@@ -1372,7 +1372,10 @@
     "url": "https://zubancordoba.com/wp-content/uploads/2023/04/ABRIL-2023.pdf",
     "pregunta_original": "¿Podría decirme si está de acuerdo o en desacuerdo con las siguientes propuestas o ideas? Realizar más controles de precios para parar la inflación.",
     "nota": "Dato de abril de 2023, en contexto de inflación alta; puede haber cambiado. Resto = no sabe."
-   }
+   },
+   "grupos": [
+    "precios"
+   ]
   },
   {
    "id": "que-imagen-tenes-de-los-sindicatos",
@@ -3045,7 +3048,8 @@
    },
    "tema": "sociedad",
    "grupos": [
-    "igualdad-genero"
+    "igualdad-genero",
+    "varones"
    ],
    "eje": {
     "valores": 1
@@ -3317,6 +3321,720 @@
     "url": "https://cdn.atlasintel.org/91ddd8bd-88e6-46e2-9286-24f7304cc1cb.pdf",
     "pregunta_original": "¿Cree que los partidos políticos en Argentina representan bien a la sociedad?",
     "nota": "Latam Pulse Argentina junio 2025 (campo 27-30/06/2025), p. 70. A = representan muy bien (6,8) + razonablemente bien (19,3); B = representan poco (38,4) + no representan nada (31,3); resto = no sé. Hueco populismo/antielitismo; sin eje."
+   }
+  },
+  {
+   "id": "en-la-argentina-el-estado-gasta-mucho",
+   "tipo": "afirmacion",
+   "pregunta": "En la Argentina el Estado gasta mucho.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 64,
+    "b": 33,
+    "resto": 3,
+    "encuestadora": "Pulsar.UBA (Creencias Sociales 2024)",
+    "fecha": "2024-06",
+    "muestra": "1.250 casos, probabilística, telefónico CATI (1.000) + domiciliario (250), cuotas por género/edad/educación, junio 2024",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2024/09/Web-Informe-3-Estado-mercado-y-libertad-en-la-Argentina-Creencias-Sociales2024-Pulsar.UBA_.pdf",
+    "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con esta idea…? “Algunas personas sostienen que en Argentina el Estado gasta mucho”",
+    "nota": "Pág. 7. A = muy (41) + bastante de acuerdo (23); B = poco (19) + nada de acuerdo (14); resto = ns/nc (3). En 2023 era 80/18. Eje 0,5: es una percepción, no una propuesta."
+   }
+  },
+  {
+   "id": "hay-que-reducir-el-gasto-del-estado-en-p",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que reducir el gasto del Estado en planes sociales.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "planes"
+   ],
+   "eje": {
+    "economia": 1
+   },
+   "ref": {
+    "a": 60,
+    "b": 38,
+    "resto": 2,
+    "encuestadora": "Pulsar.UBA (Creencias Sociales 2024)",
+    "fecha": "2024-06",
+    "muestra": "1.250 casos, probabilística, telefónico CATI (1.000) + domiciliario (250), cuotas por género/edad/educación, junio 2024",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2024/09/Web-Informe-3-Estado-mercado-y-libertad-en-la-Argentina-Creencias-Sociales2024-Pulsar.UBA_.pdf",
+    "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo en reducir el gasto en…? Planes sociales",
+    "nota": "Pág. 11. A = muy (35) + bastante de acuerdo (25); B = poco (22) + nada de acuerdo (16); resto = ns/nc (2). En 2023 era 72/27. Frase general, no nombra al gobierno."
+   }
+  },
+  {
+   "id": "que-estado-preferis-uno-que-cobre-menos",
+   "tipo": "duelo",
+   "pregunta": "¿Qué Estado preferís: uno que cobre menos impuestos y dé menos servicios, o uno que cobre más impuestos y dé más servicios?",
+   "a": {
+    "texto": "Chico, con menos impuestos"
+   },
+   "b": {
+    "texto": "Grande, con más impuestos"
+   },
+   "tema": "economia",
+   "eje": {
+    "economia": 1
+   },
+   "ref": {
+    "a": 40,
+    "b": 32,
+    "resto": 28,
+    "encuestadora": "UdeSA (ESPOP)",
+    "fecha": "2025-11",
+    "muestra": "1.005 casos, online, adultos 18+, estratificada por 8 regiones con cuotas NSE/edad, ponderada por voto 2025 (12-20 nov 2025)",
+    "alcance": "nacional",
+    "url": "https://www.udesa.edu.ar/sites/default/files/2025-11/48.%20UdeSA%20ESPOP%20Noviembre%202025.pdf",
+    "pregunta_original": "Si tuvieras que elegir, que preferirías… “Un Estado que cobre menos impuestos, más pequeño que provea menos servicios y atienda menos asuntos” / “Un Estado que cobre más impuestos, más grande que provea más servicios y atienda más asuntos” / No sé / Prefiero no responder",
+    "nota": "Pág. 46 (gráfico derecho). Resto = no sé (19) + prefiero no responder (9, sin etiqueta en el gráfico, por diferencia; el texto extraído del PDF lo da como 9%). Sin mencionar impuestos la misma encuesta da 25% Estado chico / 54% grande (gráfico izquierdo): el costo fiscal da vuelta la preferencia. En sep-2025 (ESPOP 47, pág. 49) dio 37/31/32."
+   }
+  },
+  {
+   "id": "los-despidos-en-el-sector-publico-son-ne",
+   "tipo": "afirmacion",
+   "pregunta": "Los despidos en el sector público son necesarios para reducir el gasto del Estado.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 46,
+    "b": 43,
+    "resto": 11,
+    "encuestadora": "UdeSA (ESPOP)",
+    "fecha": "2025-07",
+    "muestra": "1.012 casos, online, adultos 18+, estratificada por 8 regiones con cuotas NSE/edad, ponderada por voto 2023 (11-21 jul 2025)",
+    "alcance": "nacional",
+    "url": "https://www.udesa.edu.ar/sites/default/files/2025-07/46.%20UdeSA%20ESPOP%20Julio%202025.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo o desacuerdo estás con cada una de las siguientes proposiciones? “Los despidos en el sector público son necesarios para reducir el gasto del Estado”",
+    "nota": "Pág. 42. A = muy (19) + algo de acuerdo (27); B = algo (16) + muy en desacuerdo (27); resto = no sé (7) + prefiero no responder (4, sin etiqueta, por diferencia). Eje 0,5: atado al ajuste del gobierno."
+   }
+  },
+  {
+   "id": "hay-que-recortar-los-subsidios-a-la-ener",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que recortar los subsidios a la energía.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "eje": {
+    "economia": 1
+   },
+   "ref": {
+    "a": 38,
+    "b": 47,
+    "resto": 15,
+    "encuestadora": "UdeSA (ESPOP)",
+    "fecha": "2025-07",
+    "muestra": "1.012 casos, online, adultos 18+, estratificada por 8 regiones con cuotas NSE/edad, ponderada por voto 2023 (11-21 jul 2025)",
+    "alcance": "nacional",
+    "url": "https://www.udesa.edu.ar/sites/default/files/2025-07/46.%20UdeSA%20ESPOP%20Julio%202025.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo o desacuerdo estás con cada una de las siguientes proposiciones? “Recorte de subsidios energéticos”",
+    "nota": "Pág. 42. A = muy (13) + algo de acuerdo (25); B = algo (20) + muy en desacuerdo (27); resto = no sé (10) + prefiero no responder (5, por diferencia). La proposición no nombra al gobierno. Ojo: en el mismo cuadro 'Suba de tarifas de servicios públicos' da 24/67."
+   }
+  },
+  {
+   "id": "hay-que-permitir-contratos-y-pagos-en-do",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que permitir contratos y pagos en dólares, como propone el gobierno de Milei.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "moneda"
+   ],
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 41,
+    "b": 38,
+    "resto": 21,
+    "encuestadora": "UdeSA (ESPOP)",
+    "fecha": "2025-03",
+    "muestra": "1.020 casos, online, adultos 18+, estratificada por 8 regiones con cuotas NSE/edad, ponderada por voto 2023 (11-20 mar 2025)",
+    "alcance": "nacional",
+    "url": "https://www.udesa.edu.ar/sites/default/files/2025-03/44.%20UdeSA%20ESPOP%20Marzo%202025.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo estás con las siguientes medidas tomadas/propuestas por el Ejecutivo Nacional o que fueron anunciadas en el discurso del presidente en el inicio de sesiones ordinarias del Congreso? “Proyecto de dolarización parcial que legaliza contratos y pagos en dólares”",
+    "nota": "Pág. 38. A = muy (20) + algo de acuerdo (21); B = algo (12) + muy en desacuerdo (26); resto = no sé (15) + prefiero no responder (6, por diferencia). Es una medida del gobierno → texto nombra al gobierno y eje 0,5. Relacionada con la carta 'Estuvo bien no dolarizar' (grupo moneda) pero mide libertad de contratar en dólares, no dolarización total."
+   }
+  },
+  {
+   "id": "la-cuota-sindical-tiene-que-ser-voluntar",
+   "tipo": "afirmacion",
+   "pregunta": "La cuota sindical tiene que ser voluntaria, como propone la reforma laboral del gobierno de Milei.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "reforma-laboral-2025"
+   ],
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 60,
+    "b": 29,
+    "resto": 11,
+    "encuestadora": "AtlasIntel / Bloomberg (Latam Pulse)",
+    "fecha": "2025-12",
+    "muestra": "5.139 casos, online (Atlas RDR), población adulta, ±1 p.p. (10-15 dic 2025)",
+    "alcance": "nacional",
+    "url": "https://cdn.atlasintel.org/a055f407-bdb6-4844-841f-742942a63b13.pdf",
+    "pregunta_original": "Ante el anuncio del Gobierno de impulsar una reforma laboral, ¿cuál es su posición respecto a las siguientes posibles medidas? Cuota sindical voluntaria",
+    "nota": "Pág. 39. A favor 60 / en contra 29 / no sé 12 (suma 101 por redondeo de la fuente; resto ajustado a 11). Eje 0,5: medida del gobierno; mide desregulación del mercado laboral más que Estado vs. mercado puro."
+   }
+  },
+  {
+   "id": "los-aumentos-de-sueldo-tienen-que-ser-po",
+   "tipo": "afirmacion",
+   "pregunta": "Los aumentos de sueldo tienen que ser por rendimiento, como propone la reforma laboral del gobierno de Milei.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "reforma-laboral-2025"
+   ],
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 51,
+    "b": 43,
+    "resto": 6,
+    "encuestadora": "AtlasIntel / Bloomberg (Latam Pulse)",
+    "fecha": "2026-02",
+    "muestra": "4.761 casos, online (Atlas RDR), población adulta, ±1 p.p. (19-24 feb 2026)",
+    "alcance": "nacional",
+    "url": "https://cdn.atlasintel.org/2e2fb9d7-71cb-48ca-bb5a-5fa8ab41f8a5.pdf",
+    "pregunta_original": "Ante el anuncio del Gobierno de impulsar una reforma laboral, ¿cuál es su posición respecto a las siguientes posibles medidas? Aumentos salariales por rendimiento",
+    "nota": "Pág. 66. A favor 51 / en contra 43 / no sé 7 (suma 101 por redondeo; resto ajustado a 6). En dic-2025 (pág. 39 del informe de diciembre) dio 55/39/6."
+   }
+  },
+  {
+   "id": "los-convenios-de-trabajo-deberian-negoci",
+   "tipo": "afirmacion",
+   "pregunta": "Los convenios de trabajo deberían negociarse por empresa y no por sector, como propone el gobierno de Milei.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "reforma-laboral-2025"
+   ],
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 43,
+    "b": 49,
+    "resto": 8,
+    "encuestadora": "AtlasIntel / Bloomberg (Latam Pulse)",
+    "fecha": "2026-02",
+    "muestra": "4.761 casos, online (Atlas RDR), población adulta, ±1 p.p. (19-24 feb 2026)",
+    "alcance": "nacional",
+    "url": "https://cdn.atlasintel.org/2e2fb9d7-71cb-48ca-bb5a-5fa8ab41f8a5.pdf",
+    "pregunta_original": "Ante el anuncio del Gobierno de impulsar una reforma laboral, ¿cuál es su posición respecto a las siguientes posibles medidas? Convenios de trabajo por empresa (no por sector)",
+    "nota": "Pág. 66. A favor 43 / en contra 49 / no sé 8. En dic-2025 dio 37/50/13."
+   }
+  },
+  {
+   "id": "el-estado-no-esta-para-ser-manejado-sino",
+   "tipo": "afirmacion",
+   "pregunta": "«El Estado no está para ser manejado sino para ser desmantelado.»",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "eje": {
+    "economia": 1
+   },
+   "ref": {
+    "a": 32.8,
+    "b": 59.8,
+    "resto": 7.4,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2024-05",
+    "muestra": "1.400 casos, CAWI, población general 16+, 17-19 may 2024, error ±2,62%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/05/DDD-Mayo.pdf",
+    "pregunta_original": "Luego de 5 meses de gobierno libertario, ¿qué tan de acuerdo o en desacuerdo está usted con: “El Estado no está para ser manejado sino para ser desmantelado”?",
+    "nota": "Gráfico de torta, p. 31 del PDF: Acuerdo / Desacuerdo / No sabe. Frase de Milei, pero mide la escala Estado-mercado, no una medida puntual. Frase del presidente; la pregunta se hizo a cinco meses de su asunción."
+   }
+  },
+  {
+   "id": "el-sector-privado-debe-definir-los-preci",
+   "tipo": "afirmacion",
+   "pregunta": "El sector privado debe definir los precios sin ninguna intervención del Estado.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "precios"
+   ],
+   "eje": {
+    "economia": 1
+   },
+   "ref": {
+    "a": 41.2,
+    "b": 56.2,
+    "resto": 2.6,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2024-11",
+    "muestra": "1.800 casos, online (70% CAWI, 30% mailing), población general 16+, 20-21 nov 2024, error ±2,31%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/12/DDD-Un-Ano-de-Polarizacion.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo está Ud. con la siguiente frase? “El sector privado debe definir los precios sin ninguna intervención estatal”",
+    "nota": "Barra apilada, p. 22 del PDF: Acuerdo / Desacuerdo / No sabe. (En ene-2024 la misma frase dio 42,3/56,4/1,2.)"
+   }
+  },
+  {
+   "id": "el-sector-privado-es-el-unico-que-puede",
+   "tipo": "afirmacion",
+   "pregunta": "El sector privado es el único que puede generar riqueza.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "eje": {
+    "economia": 1
+   },
+   "ref": {
+    "a": 42.7,
+    "b": 54.5,
+    "resto": 2.8,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2024-11",
+    "muestra": "1.800 casos, online (70% CAWI, 30% mailing), población general 16+, 20-21 nov 2024, error ±2,31%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/12/DDD-Un-Ano-de-Polarizacion.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo está Ud. con la siguiente frase? “El sector privado es el único que puede generar riqueza”",
+    "nota": "Barra apilada, p. 24 del PDF: Acuerdo / Desacuerdo / No sabe."
+   }
+  },
+  {
+   "id": "hay-que-eliminar-los-subsidios-y-los-pla",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que eliminar los subsidios y los planes sociales.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "planes"
+   ],
+   "eje": {
+    "economia": 1
+   },
+   "ref": {
+    "a": 44.7,
+    "b": 49.2,
+    "resto": 6.1,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2023-04",
+    "muestra": "1.300 casos, cuestionario domiciliario, muestreo probabilístico por conglomerados, población 16+, 11-16 abr 2023, error ±2,72%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2023/04/ABRIL-2023.pdf",
+    "pregunta_original": "¿Podría decirme si está de acuerdo o en desacuerdo con las siguientes propuestas o ideas? — Eliminar subsidios y planes sociales",
+    "nota": "Torta, p. 17 del PDF. (La p.1 trae una ficha vieja de 2022; la ficha de abril 2023 está en p.2.)"
+   }
+  },
+  {
+   "id": "hay-que-limitar-la-posibilidad-de-los-em",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que limitar la posibilidad de los empleados de hacer juicios laborales.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "reforma-laboral"
+   ],
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 24.2,
+    "b": 63.2,
+    "resto": 12.6,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2023-06",
+    "muestra": "1.300 casos, cuestionario domiciliario, muestreo probabilístico por conglomerados, población 16+, 26 may-1 jun 2023, error ±2,72%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2023/06/JUNIO23.pdf",
+    "pregunta_original": "Pensando en las políticas de shock a aplicar, ¿podría decirme si está de acuerdo o en desacuerdo con las siguientes medidas? — Reducir las posibilidades de juicios laborales de los empleados",
+    "nota": "Barras, p. 10 del PDF: Acuerdo / Desacuerdo / No sabe."
+   }
+  },
+  {
+   "id": "hay-que-eliminar-las-retenciones-al-camp",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que eliminar las retenciones al campo y los impuestos rurales.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "impuestos"
+   ],
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 35.4,
+    "b": 50.6,
+    "resto": 14.0,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2023-06",
+    "muestra": "1.300 casos, cuestionario domiciliario, muestreo probabilístico por conglomerados, población 16+, 26 may-1 jun 2023, error ±2,72%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2023/06/JUNIO23.pdf",
+    "pregunta_original": "Pensando en las políticas de shock a aplicar, ¿podría decirme si está de acuerdo o en desacuerdo con las siguientes medidas? — Eliminar las retenciones al campo e impuestos rurales",
+    "nota": "Barras, p. 8 del PDF."
+   }
+  },
+  {
+   "id": "hay-que-recortar-el-gasto-publico-en-cul",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que recortar el gasto público en cultura.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 25,
+    "b": 72,
+    "resto": 3,
+    "encuestadora": "Pulsar.UBA (Creencias Sociales 2024)",
+    "fecha": "2024-06",
+    "muestra": "1.250 casos, probabilística; CATI 1000 (70% celulares) + domiciliario 250, adultos 18+, 31 may-10 jun 2024, error ±2,8%",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2024/09/Web-Informe-3-Estado-mercado-y-libertad-en-la-Argentina-Creencias-Sociales2024-Pulsar.UBA_.pdf",
+    "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo en reducir el gasto en…? — Cultura",
+    "nota": "p. 14 del PDF. A = muy (11) + bastante (14); B = poco (29) + nada (43); Ns/Nc 3. (Ciencia y Tecnología dio 14/85: debajo del rango.)"
+   }
+  },
+  {
+   "id": "en-la-argentina-ya-se-hizo-lo-suficiente",
+   "tipo": "afirmacion",
+   "pregunta": "En la Argentina ya se hizo lo suficiente para darles a las mujeres los mismos derechos que a los hombres.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "igualdad-genero"
+   ],
+   "eje": {
+    "valores": 1
+   },
+   "ref": {
+    "a": 60,
+    "b": 33,
+    "resto": 7,
+    "encuestadora": "Ipsos (International Women's Day 2026, con Global Institute for Women's Leadership, King's College London)",
+    "fecha": "2026-01",
+    "muestra": "~500 casos en Argentina, online (Ipsos Global Advisor), 16-74 años; Ipsos la considera representativa de la población adulta menor de 75; campo 24/12/2025–9/1/2026",
+    "alcance": "nacional",
+    "url": "https://www.kcl.ac.uk/assets/news/iwd-2026-global-charts-final.pdf",
+    "pregunta_original": "When it comes to giving women equal rights with men, things have gone far enough in my country",
+    "nota": "p.6. A = somewhat/strongly agree; B = somewhat/strongly disagree; resto = no sabe. Mismo estudio que 'Se avanzó tanto… se discrimina a los varones' (p.15), pero es otro ítem."
+   }
+  },
+  {
+   "id": "a-los-varones-se-les-esta-exigiendo-dema",
+   "tipo": "afirmacion",
+   "pregunta": "A los varones se les está exigiendo demasiado para apoyar la igualdad de género.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "varones"
+   ],
+   "eje": {
+    "valores": 1
+   },
+   "ref": {
+    "a": 43,
+    "b": 45,
+    "resto": 12,
+    "encuestadora": "Ipsos (International Women's Day 2026, con Global Institute for Women's Leadership, King's College London)",
+    "fecha": "2026-01",
+    "muestra": "~500 casos en Argentina, online (Ipsos Global Advisor), 16-74 años; Ipsos la considera representativa de la población adulta menor de 75; campo 24/12/2025–9/1/2026",
+    "alcance": "nacional",
+    "url": "https://www.kcl.ac.uk/assets/news/iwd-2026-global-charts-final.pdf",
+    "pregunta_original": "Men are being expected to do too much to support equality",
+    "nota": "p.13. A = somewhat/strongly agree; B = somewhat/strongly disagree; resto = no sabe."
+   }
+  },
+  {
+   "id": "las-mujeres-son-naturalmente-mejores-que",
+   "tipo": "afirmacion",
+   "pregunta": "Las mujeres son naturalmente mejores que los varones para cuidar a los hijos.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "eje": {
+    "valores": 1
+   },
+   "ref": {
+    "a": 47,
+    "b": 22,
+    "resto": 31,
+    "encuestadora": "Ipsos (International Women's Day 2026, con Global Institute for Women's Leadership, King's College London)",
+    "fecha": "2026-01",
+    "muestra": "~500 casos en Argentina, online (Ipsos Global Advisor), 16-74 años; Ipsos la considera representativa de la población adulta menor de 75; campo 24/12/2025–9/1/2026",
+    "alcance": "nacional",
+    "url": "https://www.kcl.ac.uk/assets/news/iwd-2026-global-charts-final.pdf",
+    "pregunta_original": "To what extent do you personally agree or disagree with each of the following statements? Women are naturally better at childcare than men",
+    "nota": "p.46. A = strongly/somewhat agree; B = strongly/somewhat disagree; resto = ni acuerdo ni desacuerdo (26) + no sabe."
+   }
+  },
+  {
+   "id": "para-ser-una-persona-moral-y-tener-bueno",
+   "tipo": "afirmacion",
+   "pregunta": "Para ser una persona moral y tener buenos valores, hay que creer en Dios.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "eje": {
+    "valores": 1
+   },
+   "ref": {
+    "a": 44,
+    "b": 55,
+    "resto": 1,
+    "encuestadora": "Pew Research Center (Spring 2025 Global Attitudes Survey)",
+    "fecha": "2025-03",
+    "muestra": "Muestra probabilística nacional, cara a cara, adultos (Pew no publica el N de Argentina en el topline); campo multipaís 8/1–26/4/2025",
+    "alcance": "nacional",
+    "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2026/03/SR_26.03.05_morality-belief_topline.pdf",
+    "pregunta_original": "Q18. Please choose the statement that comes closer to your own views: It is not necessary to believe in God in order to be moral and have good values / It is necessary to believe in God in order to be moral and have good values",
+    "nota": "Topline p.3. Elección entre dos frases, pasada a afirmación. A = 'es necesario' 44; B = 'no es necesario' 55; resto = no sabe. Fecha = mes aproximado del campo; publicado el 5/3/2026."
+   }
+  },
+  {
+   "id": "la-biblia-deberia-tener-mucha-o-bastante",
+   "tipo": "afirmacion",
+   "pregunta": "La Biblia debería tener mucha o bastante influencia en las leyes de la Argentina.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "religion-y-nacion"
+   ],
+   "eje": {
+    "valores": 1
+   },
+   "ref": {
+    "a": 45,
+    "b": 53,
+    "resto": 2,
+    "encuestadora": "Pew Research Center (Spring 2024 Global Attitudes Survey)",
+    "fecha": "2024-04",
+    "muestra": "1.017 casos, cara a cara, adultos",
+    "alcance": "nacional",
+    "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/01/pg_2025.01.28_comp-rel-nat_topline.pdf",
+    "pregunta_original": "Q38. How much influence do you think [the Bible] should have on the laws of (survey country)?",
+    "nota": "A = mucha (31) + bastante (14); B = poca (22) + ninguna (30); resto = no sabe. Fecha = campo 2024 aproximado; informe 'Comparing Levels of Religious Nationalism', 28/1/2025."
+   }
+  },
+  {
+   "id": "para-ser-verdaderamente-argentino-es-imp",
+   "tipo": "afirmacion",
+   "pregunta": "Para ser verdaderamente argentino, es importante ser cristiano.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "cultura",
+   "grupos": [
+    "religion-y-nacion"
+   ],
+   "eje": {
+    "valores": 0.5
+   },
+   "ref": {
+    "a": 36,
+    "b": 62,
+    "resto": 2,
+    "encuestadora": "Pew Research Center (Spring 2024 Global Attitudes Survey)",
+    "fecha": "2024-04",
+    "muestra": "1.017 casos, cara a cara, adultos",
+    "alcance": "nacional",
+    "url": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/01/pg_2025.01.28_comp-rel-nat_topline.pdf",
+    "pregunta_original": "How important do you think it is to be a [Christian] to be truly (Argentine)?",
+    "nota": "A = muy (23) + algo importante (14), el topline redondea el total a 36; B = poco (25) + nada importante (37); resto = no sabe + redondeo. Eje 0,5: mezcla religión con identidad nacional."
+   }
+  },
+  {
+   "id": "hay-que-eliminar-la-educacion-sexual-int",
+   "tipo": "afirmacion",
+   "pregunta": "Hay que eliminar la Educación Sexual Integral (ESI) de las escuelas.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "eje": {
+    "valores": 1
+   },
+   "ref": {
+    "a": 20.2,
+    "b": 75.0,
+    "resto": 4.8,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2023-06",
+    "muestra": "1.300 casos, cuestionario domiciliario, muestreo probabilístico por conglomerados, población 16+, 26 may-1 jun 2023, error ±2,72%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2023/06/JUNIO23.pdf",
+    "pregunta_original": "Pensando en las políticas de shock a aplicar, ¿podría decirme si está de acuerdo o en desacuerdo con las siguientes medidas? — Eliminar la Educación Sexual Integral de las escuelas",
+    "nota": "Barras, p. 10 del PDF. Aquí la minoría es el extremo tradicional, no el progresista."
+   }
+  },
+  {
+   "id": "con-permiso-de-sus-padres-los-adolescent",
+   "tipo": "afirmacion",
+   "pregunta": "Con permiso de sus padres, los adolescentes trans deberían poder recibir tratamientos de afirmación de género (terapia y hormonas).",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "eje": {
+    "valores": -1
+   },
+   "ref": {
+    "a": 53,
+    "b": 34,
+    "resto": 13,
+    "encuestadora": "Ipsos (LGBT+ Pride 2026)",
+    "fecha": "2026-05",
+    "muestra": "~500 casos en Argentina, online (Global Advisor), 16-74 años, 24 abr-8 may 2026; Ipsos considera la muestra argentina representativa de la población adulta menor de 75",
+    "alcance": "nacional",
+    "url": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-07/ipsos-lgbt-plus-pride-surey-report-2026.pdf",
+    "pregunta_original": "How much do you agree or disagree with the following? With parental consent, transgender teenagers should be allowed to receive gender-affirming care (e.g., counselling and hormone replacement treatment)",
+    "nota": "p. 15 del PDF, fila Argentina: Agree 53% / Disagree 34%; resto = 100-87. A por encima del 45% (serie: 2025 56%, 2024 62%, 2023 65%)."
+   }
+  },
+  {
+   "id": "te-definis-como-feminista",
+   "tipo": "duelo",
+   "pregunta": "¿Te definís como feminista?",
+   "a": {
+    "texto": "Sí"
+   },
+   "b": {
+    "texto": "No"
+   },
+   "tema": "sociedad",
+   "eje": {
+    "valores": -0.5
+   },
+   "ref": {
+    "a": 34,
+    "b": 54,
+    "resto": 12,
+    "encuestadora": "Ipsos (International Women's Day 2026, con Global Institute for Women's Leadership, King's College London)",
+    "fecha": "2026-01",
+    "muestra": "~500 casos en Argentina, online (Ipsos Global Advisor), 16-74 años; Ipsos la considera representativa de la población adulta menor de 75; campo 24/12/2025–9/1/2026",
+    "alcance": "nacional",
+    "url": "https://www.kcl.ac.uk/assets/news/iwd-2026-global-charts-final.pdf",
+    "pregunta_original": "I define myself as a feminist (de acuerdo / en desacuerdo)",
+    "nota": "p.9. A = de acuerdo (algo o muy); B = en desacuerdo (algo o muy); resto = no sabe. Eje 0,5: rechazar la etiqueta no es rechazar la igualdad."
    }
   }
  ]
