@@ -64,6 +64,12 @@ atado a un gobierno. La aprobación del gobierno no tiene eje: mide alineamiento
 - **Afirmaciones en equilibrio.** Al llenar el cupo de cada escala se alternan afirmaciones que se
   aceptan de un lado y del otro (por ejemplo, "hay que legalizar la marihuana" y "hay que derogar el
   matrimonio igualitario"), para que quien contesta "de acuerdo" a todo no quede corrido.
+- **Sin cartas de consenso.** Una carta de economía o valores con 78% o más de un lado no cuenta
+  para la brújula (casi no distingue a nadie y, como las de consenso suelen ser estatistas o
+  progresistas, corrían a quien contesta "de acuerdo" a todo); queda como carta común. La excepción
+  son las afirmaciones extremas, que sirven para los bordes. Un test lo verifica.
+- **Primero cartas nuevas.** Al llenar el cupo se prefieren cartas que la persona no vio, y recién
+  entre ellas se busca el equilibrio de afirmaciones.
 - **Inseguridad** (núcleo, endurecer penas o reducir la desigualdad) cuenta solo para autoridad, así
   que no mueve la brújula que se ve.
 - **Se afina con cada ronda.** Las respuestas de todas las rondas quedan en el navegador

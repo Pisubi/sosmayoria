@@ -1,5 +1,5 @@
 {
- "version": "cartas-1.0.0",
+ "version": "cartas-1.1.0",
  "cartas": [
   {
    "id": "quien-es-el-mejor-jugador-de-la-historia",
@@ -1164,9 +1164,6 @@
    "grupos": [
     "apertura"
    ],
-   "eje": {
-    "economia": 0.5
-   },
    "ref": {
     "a": 14.2,
     "b": 60.5,
@@ -1177,7 +1174,7 @@
     "alcance": "nacional",
     "url": "https://zubancordoba.com/wp-content/uploads/2026/08/DATAZO-Soberania-nacional.pdf",
     "pregunta_original": "¿Con cuál de las siguientes ideas para el rumbo económico-internacional del país se siente más identificado/a? “Abrir la economía al mundo, sin restricciones” / “Abrirse al mundo pero cuidando los recursos estratégicos” / “El país debe reservar exclusivamente para sí la explotación de todos sus recursos”.",
-    "nota": "Resto = reservar exclusivamente los recursos para el país (24,5) + ninguna/no sabe (0,8). Eje 0,5: B junta a moderados y nacionalistas ('cuidando los recursos estratégicos'), no solo a quienes quieren más Estado."
+    "nota": "Resto = reservar exclusivamente los recursos para el país (24,5) + ninguna/no sabe (0,8). Eje 0,5: B junta a moderados y nacionalistas ('cuidando los recursos estratégicos'), no solo a quienes quieren más Estado. Sin eje desde la versión 1.1: carta de consenso (81% de un lado), casi no distingue posiciones."
    }
   },
   {
@@ -1276,7 +1273,8 @@
    },
    "tema": "economia",
    "grupos": [
-    "privatizaciones"
+    "privatizaciones",
+    "servicios"
    ],
    "eje": {
     "economia": 1
@@ -1331,9 +1329,6 @@
     "texto": "Genera más problemas"
    },
    "tema": "economia",
-   "eje": {
-    "economia": -1
-   },
    "ref": {
     "a": 77,
     "b": 20,
@@ -1344,13 +1339,13 @@
     "alcance": "nacional",
     "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
     "pregunta_original": "¿Cuál es su postura con respecto a la ayuda del Estado a los sectores más pobres? Es necesaria a pesar de no resolver todos los problemas / Genera más problemas que soluciones.",
-    "nota": "Resto = ns/nc."
+    "nota": "Resto = ns/nc. Sin eje desde la versión 1.1: carta de consenso (79% de un lado), casi no distingue posiciones."
    }
   },
   {
    "id": "hay-que-hacer-mas-controles-de-precios-p",
    "tipo": "afirmacion",
-   "pregunta": "Hay que hacer más controles de precios para frenar la inflación.",
+   "pregunta": "El Estado tiene que controlar los precios para evitar aumentos abusivos.",
    "a": {
     "texto": "De acuerdo"
    },
@@ -1358,20 +1353,17 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
-   "eje": {
-    "economia": -1
-   },
    "ref": {
-    "a": 76.2,
-    "b": 17.2,
-    "resto": 6.6,
-    "encuestadora": "Zuban Córdoba y Asoc.",
-    "fecha": "2023-04",
-    "muestra": "1.300 casos, domiciliario, nacional, mayores de 16 (11-16 abr 2023)",
+    "a": 70,
+    "b": 19,
+    "resto": 11,
+    "encuestadora": "UdeSA (ESPOP)",
+    "fecha": "2025-07",
+    "muestra": "1.012 casos, online, adultos 18+, estratificada por 8 regiones con cuotas NSE/edad, ponderada por voto 2023 (11-21 jul 2025)",
     "alcance": "nacional",
-    "url": "https://zubancordoba.com/wp-content/uploads/2023/04/ABRIL-2023.pdf",
-    "pregunta_original": "¿Podría decirme si está de acuerdo o en desacuerdo con las siguientes propuestas o ideas? Realizar más controles de precios para parar la inflación.",
-    "nota": "Dato de abril de 2023, en contexto de inflación alta; puede haber cambiado. Resto = no sabe."
+    "url": "https://www.udesa.edu.ar/sites/default/files/2025-07/46.%20UdeSA%20ESPOP%20Julio%202025.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo o desacuerdo estás con cada una de las siguientes proposiciones? “El control estatal debe evitar aumentos abusivos de precios”",
+    "nota": "Pág. 42. A = muy (47) + algo de acuerdo (23); B = algo (11) + muy en desacuerdo (8); resto = no sé (7) + prefiero no responder (4, por diferencia). Reemplaza el dato de Zuban Córdoba de abril de 2023 (76,2/17,2/6,6, \"más controles de precios para frenar la inflación\"). Sin eje desde la versión 1.1: carta de consenso (79% de un lado), casi no distingue posiciones."
    },
    "grupos": [
     "precios"
@@ -1388,9 +1380,6 @@
     "texto": "Mala"
    },
    "tema": "politica",
-   "eje": {
-    "economia": -0.5
-   },
    "ref": {
     "a": 15,
     "b": 78,
@@ -1401,7 +1390,7 @@
     "alcance": "nacional urbano",
     "url": "https://www.perfil.com/noticias/cordoba/encuesta-nacional-el-61-apoya-una-reforma-laboral-pero-el-43-respalda-la-propuesta-de-milei.phtml",
     "pregunta_original": "Imagen de los sindicatos.",
-    "nota": "Mala = muy mala (49) + mala (29); buena = valoraciones positivas (15). Resto calculado por diferencia (regular/ns)."
+    "nota": "Mala = muy mala (49) + mala (29); buena = valoraciones positivas (15). Resto calculado por diferencia (regular/ns). Sin eje desde la versión 1.1: carta de consenso (84% de un lado), casi no distingue posiciones."
    }
   },
   {
@@ -1715,9 +1704,6 @@
     "texto": "En desacuerdo"
    },
    "tema": "sociedad",
-   "eje": {
-    "valores": -1
-   },
    "ref": {
     "a": 77,
     "b": 21,
@@ -1728,7 +1714,7 @@
     "alcance": "nacional",
     "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
     "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con que se permita a las personas tomar decisiones sobre su propia muerte en situaciones médicas extremas?",
-    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Eutanasia. Muy 48 + bastante 29; poco 11 + nada 10 (serie interanual: 77/21/2)."
+    "nota": "Muy+bastante de acuerdo vs poco+nada de acuerdo; resto = ns/nc. Eutanasia. Muy 48 + bastante 29; poco 11 + nada 10 (serie interanual: 77/21/2). Sin eje desde la versión 1.1: carta de consenso (79% de un lado), casi no distingue posiciones."
    }
   },
   {
@@ -1856,9 +1842,6 @@
    "grupos": [
     "igualdad-genero"
    ],
-   "eje": {
-    "valores": -1
-   },
    "ref": {
     "a": 77,
     "b": 20,
@@ -1869,7 +1852,7 @@
     "alcance": "nacional",
     "url": "https://pulsar.uba.ar/wp-content/uploads/2025/10/Cuarto-informe-Creencias-Sociales-2025-1.pdf",
     "pregunta_original": "¿Con cuál de las siguientes frases está más de acuerdo? 'Es necesario seguir trabajando para lograr una mayor igualdad entre varones y mujeres' / 'Ya se ha hecho suficiente en materia de igualdad entre varones y mujeres'",
-    "nota": "Resto = ns/nc (3%)."
+    "nota": "Resto = ns/nc (3%). Sin eje desde la versión 1.1: carta de consenso (79% de un lado), casi no distingue posiciones."
    }
   },
   {
@@ -2634,9 +2617,6 @@
    "grupos": [
     "diversidad"
    ],
-   "eje": {
-    "valores": -1
-   },
    "ref": {
     "a": 65,
     "b": 18,
@@ -2647,7 +2627,7 @@
     "alcance": "nacional",
     "url": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-07/ipsos-lgbt-plus-pride-surey-report-2026.pdf",
     "pregunta_original": "When you think about the rights of same-sex couples, which comes closest to your personal opinion? Marry legally / some legal recognition but not marry / no recognition / not sure",
-    "nota": "De acuerdo = 'deberían poder casarse' 65. En desacuerdo = 'solo algún reconocimiento legal, no casarse' 8 + 'ningún reconocimiento' 10. Resto = no está seguro 18 (−1 por redondeo)."
+    "nota": "De acuerdo = 'deberían poder casarse' 65. En desacuerdo = 'solo algún reconocimiento legal, no casarse' 8 + 'ningún reconocimiento' 10. Resto = no está seguro 18 (−1 por redondeo). Sin eje desde la versión 1.1: carta de consenso (78% de un lado), casi no distingue posiciones."
    }
   },
   {
@@ -2741,9 +2721,6 @@
    "grupos": [
     "privatizaciones"
    ],
-   "eje": {
-    "economia": -0.5
-   },
    "ref": {
     "a": 79.1,
     "b": 17.6,
@@ -2754,7 +2731,7 @@
     "alcance": "nacional",
     "url": "https://zubancordoba.com/wp-content/uploads/2024/02/Informe_enero_2024.pdf",
     "pregunta_original": "¿Qué tan de acuerdo está Ud. con las siguientes afirmaciones? “Un Estado debe tener propiedad sobre ciertas áreas estratégicas para el país”",
-    "nota": "A = muy de acuerdo (42,4) + de acuerdo (36,7); B = desacuerdo (12,4) + muy en desacuerdo (5,2); resto = no sabe (3,2). Módulo 'Mercado & Estado', pág. 18 del PDF (verificado sobre el gráfico). No evalúa una medida de gobierno. Eje -0,5: 'áreas estratégicas' mezcla Estado con soberanía, que también sostiene mucha gente pro mercado."
+    "nota": "A = muy de acuerdo (42,4) + de acuerdo (36,7); B = desacuerdo (12,4) + muy en desacuerdo (5,2); resto = no sabe (3,2). Módulo 'Mercado & Estado', pág. 18 del PDF (verificado sobre el gráfico). No evalúa una medida de gobierno. Eje -0,5: 'áreas estratégicas' mezcla Estado con soberanía, que también sostiene mucha gente pro mercado. Sin eje desde la versión 1.1: carta de consenso (82% de un lado), casi no distingue posiciones."
    }
   },
   {
@@ -2769,7 +2746,8 @@
    },
    "tema": "economia",
    "grupos": [
-    "mercado"
+    "mercado",
+    "libre-mercado"
    ],
    "eje": {
     "economia": -1
@@ -2798,9 +2776,6 @@
     "texto": "En desacuerdo"
    },
    "tema": "economia",
-   "eje": {
-    "economia": -0.5
-   },
    "ref": {
     "a": 79.3,
     "b": 19.6,
@@ -2811,7 +2786,7 @@
     "alcance": "nacional",
     "url": "https://zubancordoba.com/wp-content/uploads/2025/03/DDD-Marzo-2025-corregido.pdf",
     "pregunta_original": "“La obra pública es una inversión, no un gasto” (de acuerdo / en desacuerdo / no sabe)",
-    "nota": "Respuesta dicotómica en la fuente; resto = no sabe. Pregunta incluida en el módulo sobre la inundación de Bahía Blanca (pág. 32 del PDF), pero la frase es general y no nombra a ningún gobierno. Eje -0,5: frase de consenso (ocho de cada diez), la comparten votantes de todo el arco."
+    "nota": "Respuesta dicotómica en la fuente; resto = no sabe. Pregunta incluida en el módulo sobre la inundación de Bahía Blanca (pág. 32 del PDF), pero la frase es general y no nombra a ningún gobierno. Eje -0,5: frase de consenso (ocho de cada diez), la comparten votantes de todo el arco. Sin eje desde la versión 1.1: carta de consenso (80% de un lado), casi no distingue posiciones."
    }
   },
   {
@@ -3168,9 +3143,6 @@
    "grupos": [
     "apertura"
    ],
-   "eje": {
-    "economia": -0.5
-   },
    "ref": {
     "a": 81.8,
     "b": 16.5,
@@ -3181,7 +3153,7 @@
     "alcance": "nacional",
     "url": "https://zubancordoba.com/wp-content/uploads/2026/08/DATAZO-Soberania-nacional.pdf",
     "pregunta_original": "Indique su nivel de acuerdo y desacuerdo de las siguientes frases: \"Los recursos naturales estratégicos (litio, tierras, agua) deben quedar mayoritariamente en manos de argentinos\"",
-    "nota": "Informe 'Soberanía nacional' (Datazo, campo 8-10/08/2026), lámina p. 5. Resto = no sabe. Del mismo informe salen dos cartas ya existentes (apertura al mundo / industria nacional); esta frase no está en el banco. Hueco extractivismo/litio. 'De acuerdo' = nacionalismo económico (más Estado)."
+    "nota": "Informe 'Soberanía nacional' (Datazo, campo 8-10/08/2026), lámina p. 5. Resto = no sabe. Del mismo informe salen dos cartas ya existentes (apertura al mundo / industria nacional); esta frase no está en el banco. Hueco extractivismo/litio. 'De acuerdo' = nacionalismo económico (más Estado). Sin eje desde la versión 1.1: carta de consenso (83% de un lado), casi no distingue posiciones."
    }
   },
   {
@@ -3348,7 +3320,10 @@
     "url": "https://pulsar.uba.ar/wp-content/uploads/2024/09/Web-Informe-3-Estado-mercado-y-libertad-en-la-Argentina-Creencias-Sociales2024-Pulsar.UBA_.pdf",
     "pregunta_original": "¿Usted está muy, bastante, poco o nada de acuerdo con esta idea…? “Algunas personas sostienen que en Argentina el Estado gasta mucho”",
     "nota": "Pág. 7. A = muy (41) + bastante de acuerdo (23); B = poco (19) + nada de acuerdo (14); resto = ns/nc (3). En 2023 era 80/18. Eje 0,5: es una percepción, no una propuesta."
-   }
+   },
+   "grupos": [
+    "gasto"
+   ]
   },
   {
    "id": "hay-que-reducir-el-gasto-del-estado-en-p",
@@ -3405,7 +3380,10 @@
     "url": "https://www.udesa.edu.ar/sites/default/files/2025-11/48.%20UdeSA%20ESPOP%20Noviembre%202025.pdf",
     "pregunta_original": "Si tuvieras que elegir, que preferirías… “Un Estado que cobre menos impuestos, más pequeño que provea menos servicios y atienda menos asuntos” / “Un Estado que cobre más impuestos, más grande que provea más servicios y atienda más asuntos” / No sé / Prefiero no responder",
     "nota": "Pág. 46 (gráfico derecho). Resto = no sé (19) + prefiero no responder (9, sin etiqueta en el gráfico, por diferencia; el texto extraído del PDF lo da como 9%). Sin mencionar impuestos la misma encuesta da 25% Estado chico / 54% grande (gráfico izquierdo): el costo fiscal da vuelta la preferencia. En sep-2025 (ESPOP 47, pág. 49) dio 37/31/32."
-   }
+   },
+   "grupos": [
+    "tamano-estado"
+   ]
   },
   {
    "id": "los-despidos-en-el-sector-publico-son-ne",
@@ -3663,7 +3641,10 @@
     "url": "https://zubancordoba.com/wp-content/uploads/2024/12/DDD-Un-Ano-de-Polarizacion.pdf",
     "pregunta_original": "¿Qué tan de acuerdo está Ud. con la siguiente frase? “El sector privado es el único que puede generar riqueza”",
     "nota": "Barra apilada, p. 24 del PDF: Acuerdo / Desacuerdo / No sabe."
-   }
+   },
+   "grupos": [
+    "riqueza"
+   ]
   },
   {
    "id": "hay-que-eliminar-los-subsidios-y-los-pla",
@@ -3981,7 +3962,10 @@
     "url": "https://zubancordoba.com/wp-content/uploads/2023/06/JUNIO23.pdf",
     "pregunta_original": "Pensando en las políticas de shock a aplicar, ¿podría decirme si está de acuerdo o en desacuerdo con las siguientes medidas? — Eliminar la Educación Sexual Integral de las escuelas",
     "nota": "Barras, p. 10 del PDF. Aquí la minoría es el extremo tradicional, no el progresista."
-   }
+   },
+   "grupos": [
+    "esi"
+   ]
   },
   {
    "id": "con-permiso-de-sus-padres-los-adolescent",
@@ -4035,6 +4019,531 @@
     "url": "https://www.kcl.ac.uk/assets/news/iwd-2026-global-charts-final.pdf",
     "pregunta_original": "I define myself as a feminist (de acuerdo / en desacuerdo)",
     "nota": "p.9. A = de acuerdo (algo o muy); B = en desacuerdo (algo o muy); resto = no sabe. Eje 0,5: rechazar la etiqueta no es rechazar la igualdad."
+   }
+  },
+  {
+   "id": "la-ideologia-de-genero-es-una-corriente",
+   "tipo": "afirmacion",
+   "pregunta": "La «ideología de género» es una corriente importada que no refleja los valores de los argentinos.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "eje": {
+    "valores": 1
+   },
+   "ref": {
+    "a": 40,
+    "b": 57,
+    "resto": 3,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-06",
+    "muestra": "1.323 casos, encuesta online autoadministrada, muestra probabilística estratificada por regiones, ponderada por sexo, edad y nivel educativo; mayores de 18; 5-25 jun 2026; ±2,7%",
+    "alcance": "nacional",
+    "url": "https://urgente24.com/actualidad/otra-encuesta-confirma-que-javier-milei-esta-perdiendo-la-batalla-cultural-y-la-gente-pide-mas-estado-n628281",
+    "pregunta_original": "La ideología de género es una corriente importada que no refleja los valores de los argentinos",
+    "nota": "A = muy + bastante de acuerdo; B = poco + nada de acuerdo; resto = no sabe. Leído del gráfico 'Grado de acuerdo con frases sobre valores sociales' (lámina QMonitor jul-2026 reproducida por Urgente24 y Perfil). 26+14 / 12+45 / 3."
+   }
+  },
+  {
+   "id": "la-educacion-sexual-en-las-escuelas-debe",
+   "tipo": "afirmacion",
+   "pregunta": "La educación sexual en las escuelas debería ser decidida por los padres, no por el Estado.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "esi"
+   ],
+   "eje": {
+    "valores": 1
+   },
+   "ref": {
+    "a": 31,
+    "b": 67,
+    "resto": 2,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-06",
+    "muestra": "1.323 casos, encuesta online autoadministrada, muestra probabilística estratificada por regiones, ponderada por sexo, edad y nivel educativo; mayores de 18; 5-25 jun 2026; ±2,7%",
+    "alcance": "nacional",
+    "url": "https://urgente24.com/actualidad/otra-encuesta-confirma-que-javier-milei-esta-perdiendo-la-batalla-cultural-y-la-gente-pide-mas-estado-n628281",
+    "pregunta_original": "La educación sexual en las escuelas debería ser decidida por los padres, no por el Estado",
+    "nota": "A = muy + bastante de acuerdo; B = poco + nada de acuerdo; resto = no sabe. Leído del gráfico 'Grado de acuerdo con frases sobre valores sociales' (lámina QMonitor jul-2026 reproducida por Urgente24 y Perfil). 18+13 / 19+48 / 2. Cercana (no idéntica) a 'Hay que eliminar la ESI'."
+   }
+  },
+  {
+   "id": "el-matrimonio-deberia-ser-solo-entre-un",
+   "tipo": "afirmacion",
+   "pregunta": "El matrimonio debería ser solo entre un hombre y una mujer.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "diversidad"
+   ],
+   "eje": {
+    "valores": 1
+   },
+   "ref": {
+    "a": 24,
+    "b": 74,
+    "resto": 3,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-06",
+    "muestra": "1.323 casos, encuesta online autoadministrada, muestra probabilística estratificada por regiones, ponderada por sexo, edad y nivel educativo; mayores de 18; 5-25 jun 2026; ±2,7%",
+    "alcance": "nacional",
+    "url": "https://urgente24.com/actualidad/otra-encuesta-confirma-que-javier-milei-esta-perdiendo-la-batalla-cultural-y-la-gente-pide-mas-estado-n628281",
+    "pregunta_original": "El matrimonio debería ser solo entre un hombre y una mujer",
+    "nota": "A = muy + bastante de acuerdo; B = poco + nada de acuerdo; resto = no sabe. Leído del gráfico 'Grado de acuerdo con frases sobre valores sociales' (lámina QMonitor jul-2026 reproducida por Urgente24 y Perfil). 16+8 / 13+61 / 3 (suma 101 por redondeo). Ojo: cercana a 'Las parejas del mismo sexo deberían poder casarse'."
+   }
+  },
+  {
+   "id": "la-politica-de-derechos-humanos-en-la-ar",
+   "tipo": "afirmacion",
+   "pregunta": "La política de derechos humanos en la Argentina está demasiado enfocada en el pasado y descuida el presente.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "historia",
+   "eje": {
+    "autoridad": 0.5
+   },
+   "ref": {
+    "a": 50,
+    "b": 47,
+    "resto": 2,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-06",
+    "muestra": "1.323 casos, encuesta online autoadministrada, muestra probabilística estratificada por regiones, ponderada por sexo, edad y nivel educativo; mayores de 18; 5-25 jun 2026; ±2,7%",
+    "alcance": "nacional",
+    "url": "https://www.perfil.com/noticias/politica/encuesta-la-argentina-quedo-partida-en-tres-bloques-ideologicos-y-un-30-tiene-la-llave-electoral.phtml",
+    "pregunta_original": "La política de derechos humanos en Argentina está demasiado enfocada en el pasado y descuida el presente",
+    "nota": "A = muy + bastante de acuerdo; B = poco + nada de acuerdo; resto = no sabe. Leído del gráfico 'Grado de acuerdo con frases sobre política internacional' (lámina QMonitor jul-2026 reproducida por Urgente24 y Perfil). 32+18 / 12+35 / 2 (imagen en Perfil)."
+   }
+  },
+  {
+   "id": "el-orden-social-es-mas-importante-que-ci",
+   "tipo": "afirmacion",
+   "pregunta": "El orden social es más importante que ciertos derechos individuales.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "politica",
+   "eje": {
+    "autoridad": 1
+   },
+   "ref": {
+    "a": 47,
+    "b": 50,
+    "resto": 3,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-06",
+    "muestra": "1.323 casos, encuesta online autoadministrada, muestra probabilística estratificada por regiones, ponderada por sexo, edad y nivel educativo; mayores de 18; 5-25 jun 2026; ±2,7%",
+    "alcance": "nacional",
+    "url": "https://urgente24.com/actualidad/otra-encuesta-confirma-que-javier-milei-esta-perdiendo-la-batalla-cultural-y-la-gente-pide-mas-estado-n628281",
+    "pregunta_original": "El orden social es más importante que ciertos derechos individuales",
+    "nota": "A = muy + bastante de acuerdo; B = poco + nada de acuerdo; resto = no sabe. Leído del gráfico 'Grado de acuerdo con frases sobre seguridad y orden' (lámina QMonitor jul-2026 reproducida por Urgente24 y Perfil). 23+24 / 22+28 / 3. Eje 'autoridad' como en las cartas QSocial existentes."
+   }
+  },
+  {
+   "id": "el-impuesto-a-las-ganancias-es-un-robo-d",
+   "tipo": "afirmacion",
+   "pregunta": "El impuesto a las Ganancias es un robo del Estado al trabajo de las personas.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "impuestos"
+   ],
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 62,
+    "b": 38,
+    "resto": 1,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-06",
+    "muestra": "1.323 casos, encuesta online autoadministrada, muestra probabilística estratificada por regiones, ponderada por sexo, edad y nivel educativo; mayores de 18; 5-25 jun 2026; ±2,7%",
+    "alcance": "nacional",
+    "url": "https://urgente24.com/actualidad/otra-encuesta-confirma-que-javier-milei-esta-perdiendo-la-batalla-cultural-y-la-gente-pide-mas-estado-n628281",
+    "pregunta_original": "El impuesto a las ganancias es un robo del Estado al trabajo de las personas",
+    "nota": "A = muy + bastante de acuerdo; B = poco + nada de acuerdo; resto = no sabe. Leído del gráfico 'Grado de acuerdo con frases sobre la libertad económica' (lámina QMonitor jul-2026 reproducida por Urgente24 y Perfil). 39+23 / 19+19 / 1."
+   }
+  },
+  {
+   "id": "la-herencia-y-la-propiedad-privada-son-d",
+   "tipo": "afirmacion",
+   "pregunta": "La herencia y la propiedad privada son derechos que el Estado nunca debería tocar.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 70,
+    "b": 29,
+    "resto": 2,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-06",
+    "muestra": "1.323 casos, encuesta online autoadministrada, muestra probabilística estratificada por regiones, ponderada por sexo, edad y nivel educativo; mayores de 18; 5-25 jun 2026; ±2,7%",
+    "alcance": "nacional",
+    "url": "https://urgente24.com/actualidad/otra-encuesta-confirma-que-javier-milei-esta-perdiendo-la-batalla-cultural-y-la-gente-pide-mas-estado-n628281",
+    "pregunta_original": "La herencia y la propiedad privada son derechos que el Estado nunca debería tocar",
+    "nota": "A = muy + bastante de acuerdo; B = poco + nada de acuerdo; resto = no sabe. Leído del gráfico 'Grado de acuerdo con frases sobre la libertad económica' (lámina QMonitor jul-2026 reproducida por Urgente24 y Perfil). 51+19 / 14+15 / 2."
+   }
+  },
+  {
+   "id": "el-mercado-libre-sin-intervencion-del-es",
+   "tipo": "afirmacion",
+   "pregunta": "El mercado libre, sin intervención del Estado, es la mejor forma de organizar la economía.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "libre-mercado"
+   ],
+   "eje": {
+    "economia": 1
+   },
+   "ref": {
+    "a": 37,
+    "b": 62,
+    "resto": 1,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-06",
+    "muestra": "1.323 casos, encuesta online autoadministrada, muestra probabilística estratificada por regiones, ponderada por sexo, edad y nivel educativo; mayores de 18; 5-25 jun 2026; ±2,7%",
+    "alcance": "nacional",
+    "url": "https://urgente24.com/actualidad/otra-encuesta-confirma-que-javier-milei-esta-perdiendo-la-batalla-cultural-y-la-gente-pide-mas-estado-n628281",
+    "pregunta_original": "El mercado libre, sin intervención del Estado, es la mejor forma de organizar la economía",
+    "nota": "A = muy + bastante de acuerdo; B = poco + nada de acuerdo; resto = no sabe. Leído del gráfico 'Grado de acuerdo con frases sobre la libertad económica' (lámina QMonitor jul-2026 reproducida por Urgente24 y Perfil). 15+22 / 15+47 / 1. Cercana a 'El libre mercado funciona solo para los ricos'."
+   }
+  },
+  {
+   "id": "el-exceso-de-gasto-publico-es-el-princip",
+   "tipo": "afirmacion",
+   "pregunta": "El exceso de gasto público es el principal problema de la economía argentina.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "gasto"
+   ],
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 44,
+    "b": 55,
+    "resto": 1,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-06",
+    "muestra": "1.323 casos, encuesta online autoadministrada, muestra probabilística estratificada por regiones, ponderada por sexo, edad y nivel educativo; mayores de 18; 5-25 jun 2026; ±2,7%",
+    "alcance": "nacional",
+    "url": "https://urgente24.com/actualidad/otra-encuesta-confirma-que-javier-milei-esta-perdiendo-la-batalla-cultural-y-la-gente-pide-mas-estado-n628281",
+    "pregunta_original": "El exceso de gasto público es el principal problema de la economía argentina",
+    "nota": "A = muy + bastante de acuerdo; B = poco + nada de acuerdo; resto = no sabe. Leído del gráfico 'Grado de acuerdo con frases sobre el rol del Estado' (lámina QMonitor jul-2026 reproducida por Urgente24 y Perfil). 24+20 / 18+37 / 1. Cercana a 'En la Argentina el Estado gasta mucho'."
+   }
+  },
+  {
+   "id": "gobierne-quien-gobierne-la-apertura-de-i",
+   "tipo": "duelo",
+   "pregunta": "Gobierne quien gobierne, la apertura de importaciones…",
+   "a": {
+    "texto": "Hay que mantenerla"
+   },
+   "b": {
+    "texto": "Hay que eliminarla"
+   },
+   "tema": "economia",
+   "grupos": [
+    "apertura"
+   ],
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 42,
+    "b": 50,
+    "resto": 8,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-06",
+    "muestra": "1.323 casos, encuesta online autoadministrada, muestra probabilística estratificada por regiones, ponderada por sexo, edad y nivel educativo; mayores de 18; 5-25 jun 2026; ±2,7%",
+    "alcance": "nacional",
+    "url": "https://urgente24.com/actualidad/otra-encuesta-confirma-que-javier-milei-esta-perdiendo-la-batalla-cultural-y-la-gente-pide-mas-estado-n628281",
+    "pregunta_original": "Independientemente de quién gobierne, ¿usted cree que cada una de estas medidas se deberían mantener o eliminar? — La apertura de importaciones",
+    "nota": "A = Mantener 42; B = Eliminar 50; resto = No sabe 8. Gráfico 'Opinión sobre qué medidas se deberían mantener o eliminar'."
+   }
+  },
+  {
+   "id": "gobierne-quien-gobierne-la-desregulacion",
+   "tipo": "duelo",
+   "pregunta": "Gobierne quien gobierne, la desregulación de la economía…",
+   "a": {
+    "texto": "Hay que mantenerla"
+   },
+   "b": {
+    "texto": "Hay que eliminarla"
+   },
+   "tema": "economia",
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 44,
+    "b": 48,
+    "resto": 8,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-06",
+    "muestra": "1.323 casos, encuesta online autoadministrada, muestra probabilística estratificada por regiones, ponderada por sexo, edad y nivel educativo; mayores de 18; 5-25 jun 2026; ±2,7%",
+    "alcance": "nacional",
+    "url": "https://urgente24.com/actualidad/otra-encuesta-confirma-que-javier-milei-esta-perdiendo-la-batalla-cultural-y-la-gente-pide-mas-estado-n628281",
+    "pregunta_original": "Independientemente de quién gobierne, ¿usted cree que cada una de estas medidas se deberían mantener o eliminar? — La desregulación de la economía",
+    "nota": "A = Mantener 44; B = Eliminar 48; resto = No sabe 8. Mismo gráfico."
+   }
+  },
+  {
+   "id": "gobierne-quien-gobierne-el-estado-sin-de",
+   "tipo": "duelo",
+   "pregunta": "Gobierne quien gobierne, el Estado sin déficit fiscal…",
+   "a": {
+    "texto": "Hay que mantenerlo"
+   },
+   "b": {
+    "texto": "Hay que eliminarlo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "fiscal"
+   ],
+   "eje": {
+    "economia": 1
+   },
+   "ref": {
+    "a": 61,
+    "b": 29,
+    "resto": 10,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-06",
+    "muestra": "1.323 casos, encuesta online autoadministrada, muestra probabilística estratificada por regiones, ponderada por sexo, edad y nivel educativo; mayores de 18; 5-25 jun 2026; ±2,7%",
+    "alcance": "nacional",
+    "url": "https://urgente24.com/actualidad/otra-encuesta-confirma-que-javier-milei-esta-perdiendo-la-batalla-cultural-y-la-gente-pide-mas-estado-n628281",
+    "pregunta_original": "Independientemente de quién gobierne, ¿usted cree que cada una de estas medidas se deberían mantener o eliminar? — Estado sin déficit fiscal",
+    "nota": "Lámina \"Opinión sobre qué medidas se deberían mantener o eliminar\". A = mantener; B = eliminar; resto = no sabe."
+   }
+  },
+  {
+   "id": "que-deberia-priorizar-el-gobierno-de-mil",
+   "tipo": "duelo",
+   "pregunta": "¿Qué debería priorizar el gobierno de Milei?",
+   "a": {
+    "texto": "El equilibrio fiscal"
+   },
+   "b": {
+    "texto": "El bienestar social, con déficit"
+   },
+   "tema": "economia",
+   "grupos": [
+    "fiscal"
+   ],
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 32,
+    "b": 45,
+    "resto": 24,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-02",
+    "muestra": "1.645 casos, nacional, febrero 2026 (QMonitor; modalidad no informada en las notas)",
+    "alcance": "nacional",
+    "url": "https://www.ambito.com/economia/se-deteriora-el-humor-social-la-motosierra-javier-milei-se-queda-combustible-popular-n6258486",
+    "pregunta_original": "'debería priorizar el bienestar social aunque aumente el déficit' / 'priorizar el equilibro fiscal aunque incremente el malestar social'",
+    "nota": "Solo prensa (sin lámina): A = equilibrio fiscal 32; B = bienestar social 45; resto = indecisos 24 (suma 101 por redondeo). Porcentajes en Ámbito / El Ancasti / El Diario de la Región (22-03-2026); N=1.645 de El Argentino Diario 17-03-2026 (mismo QMonitor feb-2026). Relacionada con 'Reducir el déficit fiscal es una buena política' (ZC 2024-09), pero es un trade-off distinto."
+   }
+  },
+  {
+   "id": "que-estado-preferis",
+   "tipo": "duelo",
+   "pregunta": "¿Qué Estado preferís?",
+   "a": {
+    "texto": "Un Estado mínimo"
+   },
+   "b": {
+    "texto": "Un Estado presente"
+   },
+   "tema": "economia",
+   "grupos": [
+    "tamano-estado"
+   ],
+   "eje": {
+    "economia": 1
+   },
+   "ref": {
+    "a": 51,
+    "b": 36,
+    "resto": 13,
+    "encuestadora": "QSocial",
+    "fecha": "2026-05",
+    "muestra": "1.829 casos, nacional, 7-28 may 2026 (modalidad no informada en la nota)",
+    "alcance": "nacional",
+    "url": "https://www.agenciacomunas.com.ar/encuesta-nacional-universidades-estado-seguridad-y-protesta-en-una-foto-sensible-del-clima-social/",
+    "pregunta_original": "Preferencia entre 'un Estado mínimo' y 'un Estado presente' (redacción exacta no publicada)",
+    "nota": "Solo prensa: 51 Estado mínimo / 36 Estado presente; resto = 100-87 (ns/nc no desglosado). Misma encuesta que la carta QSocial 2026-05 ya en el juego. OJO: cercana a la carta ESPOP 'Estado chico con menos impuestos / grande con más impuestos', pero sin el trade-off impositivo."
+   }
+  },
+  {
+   "id": "quien-genera-la-riqueza-en-la-argentina",
+   "tipo": "duelo",
+   "pregunta": "¿Quién genera la riqueza en la Argentina?",
+   "a": {
+    "texto": "El sector privado"
+   },
+   "b": {
+    "texto": "El Estado"
+   },
+   "tema": "economia",
+   "grupos": [
+    "riqueza"
+   ],
+   "eje": {
+    "economia": 1
+   },
+   "ref": {
+    "a": 51,
+    "b": 35,
+    "resto": 14,
+    "encuestadora": "QSocial",
+    "fecha": "2026-05",
+    "muestra": "1.829 casos, nacional, 7-28 may 2026 (modalidad no informada en la nota)",
+    "alcance": "nacional",
+    "url": "https://www.agenciacomunas.com.ar/encuesta-nacional-universidades-estado-seguridad-y-protesta-en-una-foto-sensible-del-clima-social/",
+    "pregunta_original": "Quién es el principal motor de la generación de riqueza en la Argentina: el sector privado / el Estado (redacción exacta no publicada)",
+    "nota": "Solo prensa: 'El 51% considera que el principal motor es el sector privado, el 35% señala al Estado y el 14% no sabe.' OJO: tema cercano a la afirmación extrema 'El sector privado es el único que puede generar riqueza' (ZC 2024-11); esta es la versión moderada/dueto."
+   }
+  },
+  {
+   "id": "las-empresas-privadas-gestionan-mejor-qu",
+   "tipo": "afirmacion",
+   "pregunta": "Las empresas privadas gestionan mejor que el Estado los servicios públicos.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "servicios"
+   ],
+   "eje": {
+    "economia": 1
+   },
+   "ref": {
+    "a": 37,
+    "b": 61,
+    "resto": 3,
+    "encuestadora": "QSocial Big Data (QMonitor)",
+    "fecha": "2026-06",
+    "muestra": "1.323 casos, encuesta online autoadministrada (muestra estratificada por regiones, ponderada por sexo, edad y nivel educativo), mayores de 18, 5-25 jun 2026, ±2,7%",
+    "alcance": "nacional",
+    "url": "https://urgente24.com/actualidad/otra-encuesta-confirma-que-javier-milei-esta-perdiendo-la-batalla-cultural-y-la-gente-pide-mas-estado-n628281",
+    "pregunta_original": "Para cada frase, indique si está muy, bastante, poco o nada de acuerdo: 'Las empresas privadas gestionan mejor que el Estado los servicios públicos'",
+    "nota": "Lámina 'Grado de acuerdo con frases sobre el rol del Estado': muy 17 + bastante 20 = 37; poco 21 + nada 40 = 61; no sabe 3 (suma 101 por redondeo). El texto de Urgente24 confirma '61% tampoco consideró que las empresas privadas gestionen mejor'. Misma encuesta que las cartas QSocial jun-2026 de nuevas_valores2.json (no repetida allí)."
+   }
+  },
+  {
+   "id": "estuvo-bien-que-el-gobierno-de-milei-eli",
+   "tipo": "afirmacion",
+   "pregunta": "Estuvo bien que el gobierno de Milei eliminara el cepo de US$200 para comprar dólares.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "moneda"
+   ],
+   "eje": {
+    "economia": 0.5
+   },
+   "ref": {
+    "a": 54.2,
+    "b": 29.1,
+    "resto": 16.6,
+    "encuestadora": "AtlasIntel / Bloomberg (Latam Pulse)",
+    "fecha": "2025-05",
+    "muestra": "2.031 casos, reclutamiento digital aleatorio (Atlas RDR), población adulta, 21-26 may 2025, ±2 p.p.",
+    "alcance": "nacional",
+    "url": "https://cdn.atlasintel.org/00c0d02b-c1be-4b22-9bd7-fc2559bddafd.pdf",
+    "pregunta_original": "¿Tienes una opinión positiva o negativa sobre la decisión del gobierno de eliminar el límite de US$ 200 por mes para la compra de dólares en los bancos?",
+    "nota": "p. 65: A = muy positiva 33,2 + positiva 21,0; B = muy negativa 15,1 + negativa 14,0; resto = ni positiva ni negativa 16,6. Ficha p. 6. Borderline: lado estatista 29% bruto / 35% entre quienes eligen."
+   }
+  },
+  {
+   "id": "el-capitalismo-de-libre-empresa-es-el-un",
+   "tipo": "afirmacion",
+   "pregunta": "«El capitalismo de libre empresa es el único sistema que puede terminar con la pobreza» (Milei en Davos).",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "libre-mercado"
+   ],
+   "eje": {
+    "economia": 1
+   },
+   "ref": {
+    "a": 42.0,
+    "b": 56.3,
+    "resto": 1.6,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2024-01",
+    "muestra": "1.500 casos, CAWI, población general +16, República Argentina, 25-26 ene 2024, ±2,53%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2024/02/Informe_enero_2024.pdf",
+    "pregunta_original": "¿Qué tan de acuerdo está Ud con las siguientes frases mencionadas por el presidente Milei, recientemente en Davos? 'El capitalismo de libre empresa es el único sistema que puede terminar con la pobreza'",
+    "nota": "p. 16 (torta superior): A = muy de acuerdo 27,9 + de acuerdo 14,1; B = desacuerdo 11,2 + muy en desacuerdo 45,1; resto = no sabe 1,6. Misma lámina que la carta del cambio climático ya existente (tema sociedad). Ficha p. 2."
    }
   }
  ]

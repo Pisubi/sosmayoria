@@ -106,7 +106,10 @@ export function sortear(
   for (const e of EJES) {
     while (cuenta(e) < CUPO[e] && elegidas.length < total) {
       const opciones = candidatas.filter((x) => x.eje?.[e] && libre(x))
-      const c = opciones.find((x) => sentido(x, e) * saldo(e) <= 0) ?? opciones[0]
+      // Primero que no se repitan cartas ya vistas; después, el equilibrio.
+      const nuevas = opciones.filter((x) => !vistas.has(x.id))
+      const equilibra = (x: Carta) => sentido(x, e) * saldo(e) <= 0
+      const c = nuevas.find(equilibra) ?? nuevas[0] ?? opciones.find(equilibra) ?? opciones[0]
       if (!c) break
       tomar(c)
     }

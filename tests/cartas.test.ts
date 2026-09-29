@@ -55,11 +55,11 @@ describe('banco de cartas', () => {
 
   it('alguien bien conservador queda arriba aunque le toquen varias afirmaciones extremas', () => {
     // Rechaza lo que rechaza casi todo el país (incluidos muchos conservadores), pero elige el lado
-    // tradicional en aborto y matrimonio igualitario.
+    // tradicional en aborto y en que el matrimonio sea solo entre un hombre y una mujer.
     const de = (inicio: string) => cartas.find((c) => c.pregunta.startsWith(inicio))!
     const r = [
       { carta: de('Tiene que haber acceso al aborto'), eleccion: 'b' as const },
-      { carta: de('Las parejas del mismo sexo'), eleccion: 'b' as const },
+      { carta: de('El matrimonio debería ser solo entre'), eleccion: 'a' as const },
       { carta: de('En las decisiones importantes del hogar'), eleccion: 'b' as const },
       { carta: de('Cuando falta trabajo'), eleccion: 'b' as const },
       { carta: de('No me gustaría tener inmigrantes'), eleccion: 'b' as const },
@@ -128,6 +128,15 @@ describe('banco de cartas', () => {
       expect(m('economia')).toBeLessThan(1)
       expect(m('valores')).toBeLessThan(-0.85)
     })
+  })
+
+  it('las cartas de consenso no cuentan para la brújula, salvo las afirmaciones extremas', () => {
+    // Con 78% o más de un lado casi no distinguen posiciones; las extremas (menos del 25% de acuerdo)
+    // se quedan porque sirven para los bordes y salen como mucho una por escala.
+    for (const c of cartas.filter((x) => x.eje?.economia || x.eje?.valores)) {
+      const p = (100 * c.ref.a) / (c.ref.a + c.ref.b)
+      if (Math.max(p, 100 - p) >= 78) expect(esExtrema(c), c.id).toBe(true)
+    }
   })
 
   it('las cartas que no miden ideología salen parejo, sin importar el tema', () => {
