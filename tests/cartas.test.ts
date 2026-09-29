@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { cartas, orden, todas, TEMAS } from '../src/data/cartas'
 import { brujula, CUPO, EJES, esExtrema, esIdeologica, RONDA, sortear } from '../src/engine/juego'
+import type { Carta, NombreEje } from '../src/types'
 import fotos from '../src/data/fotos.json'
 import guardado from './orden-cartas.json'
 
@@ -66,6 +67,67 @@ describe('banco de cartas', () => {
       ...cartas.filter((c) => c.eje?.economia).slice(0, 3).map((carta) => ({ carta, eleccion: 'a' as const })),
     ]
     expect(brujula(r)!.vos.valores).toBeGreaterThan(0.3)
+  })
+
+  describe('perfiles marcados quedan lejos del centro en una sola ronda', () => {
+    type Signo = Record<NombreEje, 1 | -1>
+    /** Elige el lado de su signo en la escala de más peso de cada carta, salvo las excepciones. */
+    const jugar = (signo: Signo, excepciones: Record<string, 'a' | 'b'>) => (carta: Carta) => {
+      if (excepciones[carta.id]) return excepciones[carta.id]
+      if (!carta.eje) return carta.ref.a > carta.ref.b ? 'a' : 'b'
+      const [e, w] = Object.entries(carta.eje).sort(([, x], [, y]) => Math.abs(y) - Math.abs(x))[0]
+      return w * signo[e as NombreEje] > 0 ? 'a' : 'b'
+    }
+    const mediana = (signo: Signo, excepciones: Record<string, 'a' | 'b'>) => {
+      const elegir = jugar(signo, excepciones)
+      const pos = Array.from({ length: 200 }, (_, s) =>
+        brujula(sortear(cartas, s).map((carta) => ({ carta, eleccion: elegir(carta) })))!.vos,
+      )
+      return (e: NombreEje) => pos.map((p) => p[e]).sort((a, b) => a - b)[100]
+    }
+
+    it('ultraderecha pro mercado, aunque sea nacionalista en algunas cartas', () => {
+      // Defiende la industria nacional, los recursos y las áreas estratégicas, la ayuda a los pobres
+      // y la obra pública, prefiere salarios a precios y no privatizaría YPF: sigue siendo más mercado.
+      const m = mediana(
+        { economia: 1, valores: 1, autoridad: 1 },
+        {
+          'es-mas-importante-proteger-la-produccion': 'a',
+          'los-recursos-naturales-estrategicos-liti': 'a',
+          'el-estado-tiene-que-ser-dueno-de-algunas': 'a',
+          'como-deberia-abrirse-la-economia-argenti': 'b',
+          'que-deberia-priorizar-la-economia': 'a',
+          'la-ayuda-del-estado-a-los-sectores-mas-p': 'a',
+          'la-obra-publica-es-una-inversion-no-un-g': 'a',
+          'hay-que-privatizar-ypf': 'b',
+          'hay-que-permitir-jornadas-laborales-de-1': 'b',
+        },
+      )
+      expect(m('economia')).toBeGreaterThan(0.7)
+      expect(m('valores')).toBeGreaterThan(0.8)
+      expect(m('autoridad')).toBeGreaterThan(0.8)
+    })
+
+    it('izquierda, aunque valore el esfuerzo y el empleo privado', () => {
+      const m = mediana(
+        { economia: -1, valores: -1, autoridad: -1 },
+        {
+          'una-sociedad-justa-es-aquella-en-la-que': 'a',
+          'que-es-mejor-para-un-pais-que-el-empleo': 'a',
+          'la-argentina-necesita-una-reforma-labora': 'a',
+          'que-deberia-priorizar-la-economia': 'b',
+        },
+      )
+      expect(m('economia')).toBeLessThan(-0.45)
+      expect(m('valores')).toBeLessThan(-0.8)
+    })
+
+    it('siempre del mismo lado se acerca al borde sin saturar', () => {
+      const m = mediana({ economia: 1, valores: -1, autoridad: 1 }, {})
+      expect(m('economia')).toBeGreaterThan(0.9)
+      expect(m('economia')).toBeLessThan(1)
+      expect(m('valores')).toBeLessThan(-0.85)
+    })
   })
 
   it('las cartas sobre medidas de un gobierno son de 2025 en adelante y lo nombran', () => {

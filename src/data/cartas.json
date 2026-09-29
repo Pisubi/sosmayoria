@@ -1165,7 +1165,7 @@
     "apertura"
    ],
    "eje": {
-    "economia": 1
+    "economia": 0.5
    },
    "ref": {
     "a": 14.2,
@@ -1177,7 +1177,7 @@
     "alcance": "nacional",
     "url": "https://zubancordoba.com/wp-content/uploads/2026/08/DATAZO-Soberania-nacional.pdf",
     "pregunta_original": "¿Con cuál de las siguientes ideas para el rumbo económico-internacional del país se siente más identificado/a? “Abrir la economía al mundo, sin restricciones” / “Abrirse al mundo pero cuidando los recursos estratégicos” / “El país debe reservar exclusivamente para sí la explotación de todos sus recursos”.",
-    "nota": "Resto = reservar exclusivamente los recursos para el país (24,5) + ninguna/no sabe (0,8)."
+    "nota": "Resto = reservar exclusivamente los recursos para el país (24,5) + ninguna/no sabe (0,8). Eje 0,5: B junta a moderados y nacionalistas ('cuidando los recursos estratégicos'), no solo a quienes quieren más Estado."
    }
   },
   {
@@ -1195,7 +1195,7 @@
     "apertura"
    ],
    "eje": {
-    "economia": -1
+    "economia": -0.5
    },
    "ref": {
     "a": 74.1,
@@ -1207,7 +1207,7 @@
     "alcance": "nacional",
     "url": "https://zubancordoba.com/wp-content/uploads/2026/08/DATAZO-Soberania-nacional.pdf",
     "pregunta_original": "Indique su nivel de acuerdo y desacuerdo: “Es más importante proteger la producción y la industria nacional”.",
-    "nota": "Resto = no sabe."
+    "nota": "Resto = no sabe. Eje -0,5: mezcla Estado con nacionalismo económico, que también sostiene buena parte de la derecha."
    }
   },
   {
@@ -2740,7 +2740,7 @@
     "privatizaciones"
    ],
    "eje": {
-    "economia": -1
+    "economia": -0.5
    },
    "ref": {
     "a": 79.1,
@@ -2752,7 +2752,7 @@
     "alcance": "nacional",
     "url": "https://zubancordoba.com/wp-content/uploads/2024/02/Informe_enero_2024.pdf",
     "pregunta_original": "¿Qué tan de acuerdo está Ud. con las siguientes afirmaciones? “Un Estado debe tener propiedad sobre ciertas áreas estratégicas para el país”",
-    "nota": "A = muy de acuerdo (42,4) + de acuerdo (36,7); B = desacuerdo (12,4) + muy en desacuerdo (5,2); resto = no sabe (3,2). Módulo 'Mercado & Estado', pág. 18 del PDF (verificado sobre el gráfico). No evalúa una medida de gobierno."
+    "nota": "A = muy de acuerdo (42,4) + de acuerdo (36,7); B = desacuerdo (12,4) + muy en desacuerdo (5,2); resto = no sabe (3,2). Módulo 'Mercado & Estado', pág. 18 del PDF (verificado sobre el gráfico). No evalúa una medida de gobierno. Eje -0,5: 'áreas estratégicas' mezcla Estado con soberanía, que también sostiene buena parte de la derecha."
    }
   },
   {
@@ -2797,7 +2797,7 @@
    },
    "tema": "economia",
    "eje": {
-    "economia": -1
+    "economia": -0.5
    },
    "ref": {
     "a": 79.3,
@@ -2809,7 +2809,7 @@
     "alcance": "nacional",
     "url": "https://zubancordoba.com/wp-content/uploads/2025/03/DDD-Marzo-2025-corregido.pdf",
     "pregunta_original": "“La obra pública es una inversión, no un gasto” (de acuerdo / en desacuerdo / no sabe)",
-    "nota": "Respuesta dicotómica en la fuente; resto = no sabe. Pregunta incluida en el módulo sobre la inundación de Bahía Blanca (pág. 32 del PDF), pero la frase es general y no nombra a ningún gobierno."
+    "nota": "Respuesta dicotómica en la fuente; resto = no sabe. Pregunta incluida en el módulo sobre la inundación de Bahía Blanca (pág. 32 del PDF), pero la frase es general y no nombra a ningún gobierno. Eje -0,5: frase de consenso (ocho de cada diez), la comparten votantes de todo el arco."
    }
   },
   {
@@ -2826,9 +2826,6 @@
    "grupos": [
     "mercado"
    ],
-   "eje": {
-    "economia": -0.5
-   },
    "ref": {
     "a": 67.8,
     "b": 29.2,
@@ -2839,7 +2836,7 @@
     "alcance": "nacional",
     "url": "https://zubancordoba.com/wp-content/uploads/2025/02/DDD-Febrero-2025-2.pdf",
     "pregunta_original": "Para Ud., en la Argentina de hoy… “El Estado debería garantizar la igualdad de oportunidades de los ciudadanos” / “El Estado no debería intervenir en la 'libre competencia'”",
-    "nota": "Pregunta de dos frases enfrentadas; resto = no sabe (3). B abreviada a 4 palabras: el original es 'no debería intervenir en la libre competencia'. Eje 0.5: 'igualdad de oportunidades' también la sostienen liberales de mercado (indicador débil). Pág. 8 del PDF."
+    "nota": "Pregunta de dos frases enfrentadas; resto = no sabe (3). B abreviada a 4 palabras: el original es 'no debería intervenir en la libre competencia'. Sin eje: 'igualdad de oportunidades' también la sostienen liberales de mercado, así que no separa Estado de mercado. Pág. 8 del PDF."
    }
   },
   {
@@ -2853,9 +2850,6 @@
     "texto": "En desacuerdo"
    },
    "tema": "sociedad",
-   "eje": {
-    "economia": -0.5
-   },
    "ref": {
     "a": 76.5,
     "b": 14.9,
@@ -2866,7 +2860,7 @@
     "alcance": "nacional",
     "url": "https://zubancordoba.com/wp-content/uploads/2025/08/VDD-AGOSTO_ok.pdf",
     "pregunta_original": "¿Cree que la IA debería estar regulada por el Estado en Argentina? Sí, con regulaciones estrictas de uso / Sí, con algún tipo de regulación / No, debe autorregularse / No sabe",
-    "nota": "A = 'sí, con regulaciones estrictas' (40,5) + 'sí, con algún tipo de regulación' (36); B = 'no, debe autorregularse' (14,9); resto = no sabe (8,6). Pág. 22 del PDF. Eje 0.5: regulación sectorial, indicador parcial de Estado vs mercado."
+    "nota": "A = 'sí, con regulaciones estrictas' (40,5) + 'sí, con algún tipo de regulación' (36); B = 'no, debe autorregularse' (14,9); resto = no sabe (8,6). Pág. 22 del PDF. Sin eje: el apoyo a regular la IA es transversal (lo quieren ocho de cada diez) y no separa Estado de mercado."
    }
   },
   {

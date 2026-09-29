@@ -41,6 +41,18 @@ atado a un gobierno. La aprobación del gobierno no tiene eje: mide alineamiento
   elige cada lado coincida con la encuesta. Elegir lo que eligió el 80% casi no mueve; elegir lo
   del 20% mueve mucho; rechazar una afirmación extrema dice poco. El centro es el argentino
   promedio.
+- **Lapso del 10%.** El modelo admite que cualquiera elige a veces el lado contrario a su posición
+  por motivos ajenos a la escala (consenso, nacionalismo, coyuntura). Sin eso, una sola respuesta
+  así en una carta de consenso le ponía techo a toda la escala: alguien muy pro mercado que
+  defendía la industria nacional quedaba cerca del centro.
+- **Escala en percentiles.** La posición que se dibuja es `2·Φ(θ) − 1`: 0,8 es estar más hacia ese
+  lado que el 90% del país. No se satura en el borde (antes todo perfil marcado quedaba en ±1).
+- **Qué mide cada carta de economía.** Solo Estado contra mercado. Las que mezclan nacionalismo o
+  soberanía (industria nacional, áreas y recursos estratégicos, apertura al mundo) o frases de
+  consenso (obra pública) pesan `±0.5`, porque también las sostiene buena parte de la derecha; las
+  que no separan Estado de mercado (regular la IA, "igualdad de oportunidades") no tienen eje. Los
+  tests de `tests/cartas.test.ts` verifican que un perfil de ultraderecha con respuestas
+  nacionalistas y uno de izquierda que valora el esfuerzo queden lejos del centro en una ronda.
 - **Afirmaciones extremas** (menos del 25% de acuerdo, `esExtrema()`): como mucho una por escala
   en cada ronda, para que varias juntas no arrastren al centro a quien tiene posiciones firmes.
 - **Cupo por ronda.** Cada ronda trae al menos `CUPO` cartas de cada escala (núcleo incluidas);

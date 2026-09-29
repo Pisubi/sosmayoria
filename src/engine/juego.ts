@@ -55,7 +55,7 @@ function mezclar<T>(items: T[], next: () => number): T[] {
 }
 
 /** Mínimo de cartas de cada escala por ronda, núcleo incluidas, para que la brújula tenga base. */
-export const CUPO: Record<NombreEje, number> = { economia: 7, valores: 6, autoridad: 5 }
+export const CUPO: Record<NombreEje, number> = { economia: 8, valores: 6, autoridad: 5 }
 
 /**
  * Sortea una ronda: las cartas núcleo siempre, repartidas en lugares al azar; después las
@@ -228,10 +228,15 @@ export const MINIMO_EJE = 3
  * casi todo el mundo) mueve poco, y aceptarla mueve mucho; el centro es el argentino promedio.
  */
 const DISCRIMINACION = 1.7
+/**
+ * Chance de elegir el lado contrario a la propia posición por motivos ajenos a la escala (una
+ * carta de consenso, nacionalismo, la coyuntura). Sin esto, una sola respuesta "fuera de libreto"
+ * en una carta que elige el 80% le pone techo a toda la escala: alguien muy pro mercado que dice
+ * que hay que proteger la industria nacional quedaba cerca del centro.
+ */
+const LAPSO = 0.1
 /** Previa N(0, σ²) de la posición: con pocas cartas acerca al promedio, sin aplastar a nadie. */
 const PREVIA = 1.5
-/** Posición θ que corresponde al borde del gráfico. */
-const ESCALA = 2
 const GRILLA = Array.from({ length: 161 }, (_, i) => -4 + i * 0.05)
 
 interface Item {
@@ -243,8 +248,10 @@ interface Item {
   mas: boolean
 }
 
+/** Dificultad para que, con θ ~ N(0, 1) y el lapso, elija el lado + una proporción q del país. */
 function dificultad(q: number, a: number): number {
-  return (-Math.log(q / (1 - q)) * Math.sqrt(1 + (Math.PI * a * a) / 8)) / a
+  const sinLapso = Math.min(0.97, Math.max(0.03, (q - LAPSO) / (1 - 2 * LAPSO)))
+  return (-Math.log(sinLapso / (1 - sinLapso)) * Math.sqrt(1 + (Math.PI * a * a) / 8)) / a
 }
 
 /** Media de la posterior de θ en la grilla. */
@@ -253,7 +260,7 @@ function posicion(items: Item[]): number {
   const log = GRILLA.map((t) => {
     let l = -(t * t) / (2 * PREVIA * PREVIA)
     for (const { a, b, mas } of items) {
-      const p = 1 / (1 + Math.exp(-a * (t - b)))
+      const p = LAPSO + (1 - 2 * LAPSO) / (1 + Math.exp(-a * (t - b)))
       l += Math.log(mas ? p : 1 - p)
     }
     max = Math.max(max, l)
@@ -269,15 +276,25 @@ function posicion(items: Item[]): number {
   return suma / total
 }
 
+/** Función de distribución normal estándar (Abramowitz y Stegun 26.2.17, error < 1e-7). */
+function normal(x: number): number {
+  const t = 1 / (1 + 0.2316419 * Math.abs(x))
+  const d = 0.3989423 * Math.exp((-x * x) / 2)
+  const p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))))
+  return x > 0 ? 1 - p : p
+}
+
 /**
  * Ubica a quien juega en cada escala comparando sus respuestas con lo que respondió el país
  * (ver el modelo arriba). Las cartas pesan según su eje: ±1 las que miden bien, ±0,5 las débiles.
+ * La posición va de -1 a 1 según el percentil en el país: 0,8 es estar más hacia el lado + que el
+ * 90% de los argentinos. Así no se satura en el borde ni aplasta a quien tiene posiciones firmes.
  */
 export function brujula(respuestas: { carta: Carta; eleccion: Eleccion }[]): Brujula | null {
   const items: Record<NombreEje, Item[]> = { economia: [], valores: [], autoridad: [] }
   for (const { carta, eleccion } of respuestas) {
     if (!carta.eje || eleccion === 'nada') continue
-    const pA = Math.min(0.97, Math.max(0.03, real(carta) / 100))
+    const pA = real(carta) / 100
     for (const e of EJES) {
       const w = carta.eje[e]
       if (!w) continue
@@ -289,8 +306,7 @@ export function brujula(respuestas: { carta: Carta; eleccion: Eleccion }[]): Bru
   }
   const cartas = { economia: items.economia.length, valores: items.valores.length, autoridad: items.autoridad.length }
   if (cartas.economia < MINIMO_EJE || cartas.valores < MINIMO_EJE) return null
-  const pos = (e: NombreEje) =>
-    cartas[e] < MINIMO_EJE ? 0 : Math.max(-1, Math.min(1, posicion(items[e]) / ESCALA))
+  const pos = (e: NombreEje) => (cartas[e] < MINIMO_EJE ? 0 : 2 * normal(posicion(items[e])) - 1)
   const base = Math.min(cartas.economia, cartas.valores)
   return {
     vos: { economia: pos('economia'), valores: pos('valores'), autoridad: pos('autoridad') },
