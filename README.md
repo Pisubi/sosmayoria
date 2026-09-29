@@ -31,7 +31,8 @@ La de aprobación es `"volatil": true`: hay que actualizar su dato con la últim
 
 Las cartas con `eje` ubican a quien juega en tres escalas: `economia` (`-` más Estado, `+` más
 mercado), `valores` (`-` más progresistas, `+` más tradicionales) y `autoridad` (`-` más
-garantías y libertades civiles, `+` más orden). El valor dice cuánto y hacia dónde empuja elegir
+garantías y libertades civiles, `+` más orden). Autoridad se calcula pero no se muestra ni tiene
+cupo por ronda: la brújula que ve quien juega es economía × valores. El valor dice cuánto y hacia dónde empuja elegir
 A (B empuja al revés): `±1` si la carta mide bien la escala, `±0.5` si es un indicador débil o
 atado a un gobierno. La aprobación del gobierno no tiene eje: mide alineamiento, no ideología.
 

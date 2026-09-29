@@ -54,8 +54,11 @@ function mezclar<T>(items: T[], next: () => number): T[] {
   return out
 }
 
-/** Mínimo de cartas de cada escala por ronda, núcleo incluidas, para que la brújula tenga base. */
-export const CUPO: Record<NombreEje, number> = { economia: 7, valores: 6, autoridad: 5 }
+/**
+ * Mínimo de cartas de cada escala por ronda, núcleo incluidas, para que la brújula tenga base.
+ * Autoridad se sigue calculando pero no se muestra, así que no reserva lugar en la ronda.
+ */
+export const CUPO: Record<NombreEje, number> = { economia: 7, valores: 6, autoridad: 0 }
 
 /**
  * Sortea una ronda: las cartas núcleo siempre, repartidas en lugares al azar; después las
@@ -199,7 +202,7 @@ export function perfil(conLaMayoria: number, definidas: number): { titulo: strin
   return { titulo: 'Minoría intensa', texto: 'Casi siempre elegís lo que eligen menos argentinos.' }
 }
 
-/** Las tres escalas de la brújula. La brújula dibuja economía × valores; autoridad va aparte. */
+/** Las tres escalas de la brújula. La brújula dibuja economía × valores; autoridad no se muestra. */
 export const EJES: readonly NombreEje[] = ['economia', 'valores', 'autoridad']
 
 export const esIdeologica = (c: Carta): boolean => EJES.some((e) => c.eje?.[e])
