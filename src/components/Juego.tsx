@@ -87,10 +87,10 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
                   elegida
                     ? 'bg-azul text-papel'
                     : revelada
-                      ? 'bg-papel text-azul/45 !shadow-none'
+                      ? 'bg-marfil text-azul/45 !shadow-none'
                       : lado === 'a'
-                        ? 'bg-papel hover:-translate-y-0.5 hover:bg-arena active:translate-x-1 active:translate-y-1 active:shadow-none'
-                        : 'bg-papel hover:-translate-y-0.5 hover:bg-arena active:translate-x-1 active:translate-y-1 active:shadow-none'
+                        ? 'bg-marfil hover:-translate-y-0.5 hover:bg-arena active:translate-x-1 active:translate-y-1 active:shadow-none'
+                        : 'bg-marfil hover:-translate-y-0.5 hover:bg-arena active:translate-x-1 active:translate-y-1 active:shadow-none'
                 }`}
               >
                 {(carta.a.foto || carta.b.foto) && <Foto id={op.foto} nombre={op.texto} size={80} />}
