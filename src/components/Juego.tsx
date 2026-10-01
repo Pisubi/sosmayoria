@@ -59,7 +59,7 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
           Carta <span className="font-black tabular-nums">{index + 1}</span> de{' '}
           <span className="tabular-nums">{cartas.length}</span>
         </p>
-        <p className="etiqueta !bg-ciruela">{carta.tipo === 'afirmacion' ? '¿Estás de acuerdo?' : '¿Qué elegís?'}</p>
+        <p className="etiqueta">{carta.tipo === 'afirmacion' ? '¿Estás de acuerdo?' : '¿Qué elegís?'}</p>
       </div>
       <div className="mt-3">
         <ProgressBar current={index + 1} total={cartas.length} />
@@ -87,10 +87,10 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
                   elegida
                     ? 'bg-azul text-papel'
                     : revelada
-                      ? 'bg-arena text-azul/50 !shadow-none'
+                      ? 'bg-papel text-azul/45 !shadow-none'
                       : lado === 'a'
                         ? 'bg-papel hover:-translate-y-0.5 hover:bg-arena active:translate-x-1 active:translate-y-1 active:shadow-none'
-                        : 'bg-ciruela text-papel hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none'
+                        : 'bg-papel hover:-translate-y-0.5 hover:bg-arena active:translate-x-1 active:translate-y-1 active:shadow-none'
                 }`}
               >
                 {(carta.a.foto || carta.b.foto) && <Foto id={op.foto} nombre={op.texto} size={80} />}
