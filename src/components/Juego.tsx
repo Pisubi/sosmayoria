@@ -16,7 +16,7 @@ interface JuegoProps {
 const PAUSA = 1400
 
 const MENSAJE: Record<Lugar, { texto: string; clase: string }> = {
-  mayoria: { texto: 'Estás con la mayoría', clase: 'bg-ciruela text-papel' },
+  mayoria: { texto: 'Estás con la mayoría', clase: 'bg-azul text-papel' },
   minoria: { texto: 'Estás en la minoría', clase: 'bg-naranja text-azul' },
   parejo: { texto: 'Está parejo: el país se parte al medio', clase: 'bg-arena text-azul' },
   nada: { texto: 'Pasaste esta', clase: 'bg-papel text-azul' },

@@ -18,7 +18,7 @@ export function ProgressBar({ current, total }: ProgressBarProps) {
       {Array.from({ length: segments }, (_, i) => (
         <span key={i} className="relative flex-1 overflow-hidden bg-arena">
           <span
-            className="absolute inset-y-0 left-0 bg-naranja transition-[width] duration-300"
+            className="absolute inset-y-0 left-0 bg-azul transition-[width] duration-300"
             style={{ width: `${Math.max(0, Math.min(1, filled - i)) * 100}%` }}
           />
         </span>

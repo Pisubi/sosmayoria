@@ -17,7 +17,7 @@ interface ResultadoProps {
 }
 
 const CHIP: Record<Lugar, { texto: string; clase: string }> = {
-  mayoria: { texto: 'Con la mayoría', clase: 'bg-ciruela text-papel' },
+  mayoria: { texto: 'Con la mayoría', clase: 'bg-azul text-papel' },
   minoria: { texto: 'En la minoría', clase: 'bg-naranja text-azul' },
   parejo: { texto: 'Parejo', clase: 'bg-arena text-azul' },
   nada: { texto: 'No elegiste', clase: 'bg-papel text-azul' },
@@ -139,7 +139,7 @@ export function Resultado({ resumen, historial, onOtraRonda, onMethodology }: Re
                 </div>
                 <div className="mt-2 flex gap-[3px] border-[3px] border-azul bg-azul">
                   {Array.from({ length: t.definidas }, (_, i) => (
-                    <span key={i} className={`h-4 flex-1 ${i < t.mayoria ? 'bg-ciruela' : 'bg-naranja'}`} />
+                    <span key={i} className={`h-4 flex-1 ${i < t.mayoria ? 'bg-papel' : 'bg-naranja'}`} />
                   ))}
                 </div>
               </li>
