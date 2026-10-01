@@ -1,20 +1,23 @@
 interface EyebrowProps {
   children: React.ReactNode
+  /** Sobre fondo tinta la etiqueta va en naranja. */
+  oscuro?: boolean
 }
 
-export function Eyebrow({ children }: EyebrowProps) {
+/** Etiqueta de sección: bloque relleno con el rótulo, según el manual de marca. */
+export function Eyebrow({ children, oscuro }: EyebrowProps) {
   return (
-    <p className="flex items-center gap-3 text-xs font-medium tracking-[0.12em] text-naranja uppercase">
-      <span aria-hidden className="h-0.5 w-7 bg-naranja" />
-      {children}
+    <p>
+      <span className={`etiqueta ${oscuro ? '!bg-naranja !text-azul' : ''}`}>{children}</span>
     </p>
   )
 }
 
+/** Índice: cuadrado naranja con número, solo para pasos reales. */
 export function Index({ n }: { n: number }) {
   return (
-    <span className="font-semibold text-naranja tabular-nums">
-      {String(n).padStart(2, '0')}
+    <span className="inline-flex size-9 items-center justify-center border-[3px] border-azul bg-naranja font-black text-azul tabular-nums">
+      {n}
     </span>
   )
 }

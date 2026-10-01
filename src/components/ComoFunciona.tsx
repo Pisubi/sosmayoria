@@ -13,7 +13,7 @@ export function ComoFunciona({ onBack, backLabel = 'Volver' }: { onBack: () => v
   return (
     <main className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
       <Eyebrow>Cómo funciona</Eyebrow>
-      <h1 className="mt-6 text-4xl font-bold tracking-[-0.015em]">Un juego, no una encuesta</h1>
+      <h1 className="mt-6 text-4xl sm:text-5xl">Un juego, no una encuesta</h1>
 
       <Bloque titulo="El dato real">
         Cada carta tiene detrás una encuesta publicada: consultora o universidad, fecha, muestra y
@@ -54,14 +54,14 @@ export function ComoFunciona({ onBack, backLabel = 'Volver' }: { onBack: () => v
       <Bloque titulo={`Las ${cartas.length} cartas y sus fuentes (${version})`}>
         {TEMAS.filter((t) => cartas.some((c) => c.tema === t.id)).map((t) => (
           <div key={t.id} className="mt-6">
-            <p className="font-semibold text-azul">{t.nombre}</p>
+            <p className="font-black uppercase">{t.nombre}</p>
             <ul className="mt-2 grid gap-2 text-sm">
               {cartas
                 .filter((c) => c.tema === t.id)
                 .map((c) => (
-                  <li key={c.id} className="rounded-xl bg-papel px-4 py-3">
+                  <li key={c.id} className="caja-sm bg-papel px-4 py-3">
                     <p className="font-medium text-azul">{c.pregunta}</p>
-                    <p className="mt-1 text-xs text-azul/60">
+                    <p className="mt-1 text-xs text-azul/75">
                       {mayoria(c) === 'parejo' ? 'Parejo' : `Mayoría: ${c[mayoria(c) as 'a' | 'b'].texto}`} —{' '}
                       {c.ref.encuestadora}, {fecha(c.ref.fecha)}
                       {c.ref.alcance !== 'nacional' && ` (${c.ref.alcance})`} ·{' '}
@@ -78,7 +78,7 @@ export function ComoFunciona({ onBack, backLabel = 'Volver' }: { onBack: () => v
 
       {fotos.length > 0 && (
         <Bloque titulo="Créditos de las fotos">
-          <ul className="mt-2 grid gap-1 text-xs text-azul/60">
+          <ul className="mt-2 grid gap-1 text-xs text-azul/75">
             {fotos.map(([id, f]) => (
               <li key={id}>
                 {id}: {f.author} · {f.license} ·{' '}
@@ -94,7 +94,7 @@ export function ComoFunciona({ onBack, backLabel = 'Volver' }: { onBack: () => v
       <button
         type="button"
         onClick={onBack}
-        className="mt-12 rounded-md bg-azul px-8 py-3.5 text-sm font-semibold text-marfil hover:bg-noche"
+        className="caja mt-12 bg-naranja px-8 py-3.5 text-sm font-black tracking-wide uppercase hover:-translate-y-0.5"
       >
         {backLabel}
       </button>
@@ -105,8 +105,8 @@ export function ComoFunciona({ onBack, backLabel = 'Volver' }: { onBack: () => v
 function Bloque({ titulo, children }: { titulo: string; children: React.ReactNode }) {
   return (
     <section className="mt-10">
-      <h2 className="text-xl font-bold">{titulo}</h2>
-      <div className="mt-3 leading-7 text-azul/75">{children}</div>
+      <h2 className="text-2xl">{titulo}</h2>
+      <div className="mt-3 leading-7">{children}</div>
     </section>
   )
 }

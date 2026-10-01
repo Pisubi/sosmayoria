@@ -21,7 +21,7 @@ export function Foto({ id, nombre, size = 64 }: FotoProps) {
       <span
         aria-hidden
         style={{ ...style, fontSize: size * 0.36 }}
-        className="inline-flex shrink-0 items-center justify-center rounded-full bg-linea font-semibold text-azul/70"
+        className="inline-flex shrink-0 items-center justify-center border-[3px] border-azul bg-arena font-black text-azul"
       >
         {iniciales}
       </span>
@@ -35,7 +35,7 @@ export function Foto({ id, nombre, size = 64 }: FotoProps) {
       loading="lazy"
       title={`${foto.author} · ${foto.license} (Wikimedia Commons)`}
       style={style}
-      className={`shrink-0 ${photo ? 'rounded-full object-cover' : 'rounded-md bg-marfil object-contain p-1'}`}
+      className={`shrink-0 ${photo ? 'border-[3px] border-azul object-cover' : 'border-[3px] border-azul bg-papel object-contain p-1'}`}
     />
   )
 }

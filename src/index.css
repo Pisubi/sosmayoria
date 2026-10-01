@@ -1,19 +1,33 @@
 @import 'tailwindcss';
 
+/* Identidad Pisubí v2.0: paleta Propuesta + estilo brutalista suave. */
 @theme {
-  --font-sans: 'Montserrat', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Archivo', system-ui, 'Segoe UI', Roboto, sans-serif;
 
-  --color-azul: #1e3a47;
-  --color-naranja: #c8602a;
-  --color-arena: #cac4b0;
-  --color-marfil: #f0ece3;
-  --color-noche: #0f2230;
-  --color-dato: #3d6b84;
-  --color-linea: #e4e0d4;
-  /* Acuerdo y desacuerdo en las respuestas: tonos apagados que conviven con la paleta. */
-  --color-acuerdo: #3f7a5e;
-  --color-desacuerdo: #b0533a;
-  --color-papel: #f7f4ee;
+  /* Tinta: texto, bordes y sombras. */
+  --color-azul: #2c204b;
+  --color-noche: #2c204b;
+  --color-tinta2: #463a6e;
+  /* Naranja: relleno y señal; sobre claro nunca va como texto. */
+  --color-naranja: #e37a29;
+  --color-naranjaclaro: #f2a86b;
+  /* Papel: fondo de página. Papel claro: fondo de placa. */
+  --color-marfil: #e8eaaf;
+  --color-papel: #f3f4d6;
+  /* Pista: neutro de gráficos. */
+  --color-arena: #d3d4a6;
+  --color-linea: #d3d4a6;
+  --color-frambuesa: #b54960;
+  --color-ciruela: #6c2b6f;
+  --color-ciruelaclaro: #b48ab6;
+  --color-lavanda: #b9b3cc;
+  --color-dato: #6c2b6f;
+  --color-acuerdo: #6c2b6f;
+  --color-desacuerdo: #b54960;
+
+  --shadow-dura: 6px 6px 0 #2c204b;
+  --shadow-dura-sm: 4px 4px 0 #2c204b;
+  --shadow-dura-naranja: 6px 6px 0 #e37a29;
 }
 
 html,
@@ -25,8 +39,45 @@ body,
 body {
   margin: 0;
   font-family: var(--font-sans);
-  font-weight: 300;
+  font-weight: 400;
   background: var(--color-marfil);
   color: var(--color-azul);
   -webkit-font-smoothing: antialiased;
+}
+
+/* Titulares: Archivo Black, mayúscula, un solo color, sin cursivas. */
+h1,
+h2,
+h3 {
+  font-family: var(--font-sans);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.012em;
+  line-height: 1;
+}
+
+em {
+  font-style: normal;
+}
+
+@utility caja {
+  border: 3px solid var(--color-azul);
+  box-shadow: var(--shadow-dura);
+}
+
+@utility caja-sm {
+  border: 3px solid var(--color-azul);
+  box-shadow: var(--shadow-dura-sm);
+}
+
+/* Etiqueta: bloque relleno, mayúscula, tracking abierto. */
+@utility etiqueta {
+  display: inline-block;
+  background: var(--color-azul);
+  color: var(--color-papel);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
 }

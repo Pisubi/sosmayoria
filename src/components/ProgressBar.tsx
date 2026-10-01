@@ -3,7 +3,7 @@ interface ProgressBarProps {
   total: number
 }
 
-/** Barra segmentada: un tramo cada pocas afirmaciones, para que el avance se sienta. */
+/** Barra segmentada: borde de 3 px, divisiones de 3 px, sin esquinas redondeadas. */
 export function ProgressBar({ current, total }: ProgressBarProps) {
   const segments = Math.min(total, 20)
   const filled = (current / total) * segments
@@ -13,12 +13,12 @@ export function ProgressBar({ current, total }: ProgressBarProps) {
       aria-valuemin={1}
       aria-valuemax={total}
       aria-valuenow={current}
-      className="flex w-full gap-1"
+      className="flex h-5 w-full gap-[3px] border-[3px] border-azul bg-azul"
     >
       {Array.from({ length: segments }, (_, i) => (
-        <span key={i} className="relative h-1.5 flex-1 overflow-hidden rounded-full bg-linea">
+        <span key={i} className="relative flex-1 overflow-hidden bg-arena">
           <span
-            className="absolute inset-y-0 left-0 rounded-full bg-azul transition-[width] duration-300"
+            className="absolute inset-y-0 left-0 bg-naranja transition-[width] duration-300"
             style={{ width: `${Math.max(0, Math.min(1, filled - i)) * 100}%` }}
           />
         </span>

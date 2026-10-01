@@ -41,20 +41,20 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
 
   return (
     <main>
-      <section className="bg-noche text-marfil">
-        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-24">
-          <Eyebrow>Un juego sobre la opinión pública</Eyebrow>
-          <h1 className="mt-6 max-w-3xl text-5xl leading-[1.02] font-bold tracking-[-0.025em] sm:text-7xl">
-            ¿Sabés qué piensa <em className="font-light text-naranja">la Argentina</em>?
+      <section className="bg-naranja text-azul">
+        <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20">
+          <Eyebrow oscuro>Un juego sobre la opinión pública</Eyebrow>
+          <h1 className="mt-6 max-w-3xl text-5xl leading-[0.95] sm:text-7xl">
+            ¿Sabés qué piensa la Argentina?
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 text-marfil/75">
+          <p className="mt-6 max-w-xl text-lg leading-8 font-medium">
             Elegí entre dos opciones y descubrí si pensás como la mayoría de los argentinos. {RONDA} cartas, un par
             de minutos.
           </p>
 
           {disponibles.length > 1 && (
             <div className="mt-8">
-              <p className="text-sm text-marfil/60">Temas (si no elegís ninguno, van mezclados):</p>
+              <p className="text-sm font-bold">Temas (si no elegís ninguno, van mezclados):</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {disponibles.map((t) => (
                   <button
@@ -62,8 +62,8 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
                     type="button"
                     aria-pressed={temas.includes(t.id)}
                     onClick={() => toggle(t.id)}
-                    className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
-                      temas.includes(t.id) ? 'border-naranja bg-naranja text-marfil' : 'border-marfil/30 hover:border-marfil'
+                    className={`caja-sm px-4 py-2 text-sm font-bold transition-transform hover:-translate-y-0.5 ${
+                      temas.includes(t.id) ? 'bg-azul text-papel' : 'bg-papel'
                     }`}
                   >
                     {t.nombre}
@@ -78,7 +78,7 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
               type="button"
               disabled={cartas.length === 0}
               onClick={() => onJugar(temas)}
-              className="rounded-md bg-naranja px-10 py-4 text-base font-semibold text-marfil hover:bg-marfil hover:text-azul disabled:opacity-40"
+              className="caja bg-papel px-10 py-4 text-base font-black tracking-wide uppercase transition-transform hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none disabled:opacity-40"
             >
               Jugar →
             </button>
@@ -86,13 +86,13 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
               <button
                 type="button"
                 onClick={() => onRetomar(guardada)}
-                className="rounded-md border border-marfil/40 px-6 py-4 text-sm font-semibold hover:bg-marfil hover:text-azul"
+                className="caja-sm bg-naranja px-6 py-4 text-sm font-bold hover:-translate-y-0.5"
               >
                 Seguir la ronda ({guardada.jugadas.length} de {guardada.cartas.length})
               </button>
             )}
           </div>
-          <p className="mt-6 text-sm text-marfil/50">{cartas.length} cartas con datos de encuestas publicadas.</p>
+          <p className="mt-6 text-sm font-bold">{cartas.length} cartas con datos de encuestas publicadas.</p>
         </div>
       </section>
 
@@ -100,10 +100,10 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
         <Eyebrow>Cómo se juega</Eyebrow>
         <ol className="mt-6 grid gap-4 md:grid-cols-3">
           {PASOS.map((p, i) => (
-            <li key={p.titulo} className="rounded-3xl border border-azul/12 bg-papel p-6">
+            <li key={p.titulo} className="caja bg-papel p-6">
               <Index n={i + 1} />
-              <p className="mt-3 text-lg font-bold">{p.titulo}</p>
-              <p className="mt-2 text-sm leading-6 text-azul/70">{p.texto}</p>
+              <p className="mt-4 text-xl font-black uppercase">{p.titulo}</p>
+              <p className="mt-2 text-sm leading-6 ">{p.texto}</p>
             </li>
           ))}
         </ol>
@@ -111,14 +111,14 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
 
       <section className="mx-auto max-w-3xl px-4 pb-16 sm:px-6 sm:pb-20">
         <Eyebrow>Preguntas frecuentes</Eyebrow>
-        <div className="mt-6 divide-y divide-azul/12 border-y border-azul/12">
+        <div className="mt-6 divide-y-[3px] divide-azul border-y-[3px] border-azul">
           {PREGUNTAS.map((item) => (
             <details key={item.q} className="group py-4">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold">
                 {item.q}
-                <span className="text-naranja transition-transform group-open:rotate-45">+</span>
+                <span className="text-2xl leading-none font-black transition-transform group-open:rotate-45">+</span>
               </summary>
-              <p className="mt-3 text-sm leading-6 text-azul/75">{item.a}</p>
+              <p className="mt-3 text-sm leading-6 ">{item.a}</p>
             </details>
           ))}
         </div>

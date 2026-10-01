@@ -16,10 +16,10 @@ interface JuegoProps {
 const PAUSA = 1400
 
 const MENSAJE: Record<Lugar, { texto: string; clase: string }> = {
-  mayoria: { texto: 'Estás con la mayoría', clase: 'bg-azul text-marfil' },
-  minoria: { texto: 'Estás en la minoría', clase: 'bg-naranja text-marfil' },
+  mayoria: { texto: 'Estás con la mayoría', clase: 'bg-ciruela text-papel' },
+  minoria: { texto: 'Estás en la minoría', clase: 'bg-naranja text-azul' },
   parejo: { texto: 'Está parejo: el país se parte al medio', clase: 'bg-arena text-azul' },
-  nada: { texto: 'Pasaste esta', clase: 'bg-linea text-azul' },
+  nada: { texto: 'Pasaste esta', clase: 'bg-papel text-azul' },
 }
 
 export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProps) {
@@ -56,10 +56,10 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
     <main className="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12">
       <div className="flex items-baseline justify-between gap-4 text-sm">
         <p>
-          Carta <span className="font-semibold tabular-nums">{index + 1}</span> de{' '}
+          Carta <span className="font-black tabular-nums">{index + 1}</span> de{' '}
           <span className="tabular-nums">{cartas.length}</span>
         </p>
-        <p className="text-azul/60">{carta.tipo === 'afirmacion' ? '¿Estás de acuerdo?' : '¿Qué elegís?'}</p>
+        <p className="etiqueta">{carta.tipo === 'afirmacion' ? '¿Estás de acuerdo?' : '¿Qué elegís?'}</p>
       </div>
       <div className="mt-3">
         <ProgressBar current={index + 1} total={cartas.length} />
@@ -67,9 +67,9 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
 
       <article
         key={carta.id}
-        className="relative mt-6 overflow-hidden rounded-2xl border border-azul/12 bg-papel p-5 shadow-[0_1px_0_rgb(30_58_71/0.06),0_12px_32px_-18px_rgb(30_58_71/0.35)] sm:p-8"
+        className="caja relative mt-6 bg-papel p-5 sm:p-8"
       >
-        <h1 className="text-2xl leading-snug font-semibold tracking-[-0.01em] sm:text-3xl sm:leading-tight">
+        <h1 className="text-2xl leading-[1.05] sm:text-4xl">
           {carta.pregunta}
         </h1>
 
@@ -83,14 +83,14 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
                 type="button"
                 disabled={Boolean(revelada)}
                 onClick={() => elegir(lado)}
-                className={`flex min-h-24 flex-col items-center justify-center gap-3 rounded-2xl border-2 px-3 py-5 text-center text-base font-semibold transition-all sm:text-lg ${
+                className={`caja-sm flex min-h-24 flex-col items-center justify-center gap-3 px-3 py-5 text-center text-base font-extrabold transition-transform sm:text-lg ${
                   elegida
-                    ? 'border-azul bg-azul text-marfil'
+                    ? 'bg-azul text-papel'
                     : revelada
-                      ? 'border-azul/10 text-azul/40'
+                      ? 'bg-arena text-azul/50 !shadow-none'
                       : lado === 'a'
-                        ? 'border-azul/20 hover:-translate-y-0.5 hover:border-azul hover:bg-azul/5'
-                        : 'border-naranja/30 hover:-translate-y-0.5 hover:border-naranja hover:bg-naranja/5'
+                        ? 'bg-papel hover:-translate-y-0.5 hover:bg-arena active:translate-x-1 active:translate-y-1 active:shadow-none'
+                        : 'bg-naranja hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none'
                 }`}
               >
                 {(carta.a.foto || carta.b.foto) && <Foto id={op.foto} nombre={op.texto} size={80} />}
@@ -104,10 +104,10 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
           <button
             type="button"
             onClick={() => seguir()}
-            className={`mt-6 w-full rounded-xl px-4 py-4 text-center text-lg font-bold ${MENSAJE[resultado].clase}`}
+            className={`caja-sm mt-6 w-full px-4 py-4 text-center text-lg font-black uppercase ${MENSAJE[resultado].clase}`}
           >
             {MENSAJE[resultado].texto}
-            <span className="mt-1 block text-xs font-normal opacity-75">
+            <span className="mt-1 block text-xs font-medium normal-case">
               Según {carta.ref.encuestadora}, {fecha(carta.ref.fecha)}
               {!carta.ref.alcance.startsWith('nacional') && ` · ${carta.ref.alcance}`} · tocá para seguir
             </span>
@@ -116,7 +116,7 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
           <button
             type="button"
             onClick={() => elegir('nada')}
-            className="mt-4 rounded-lg px-3 py-2 text-sm font-medium text-azul/60 hover:bg-linea hover:text-azul"
+            className="mt-5 px-1 py-2 text-sm font-bold underline decoration-[3px] underline-offset-4 hover:bg-arena"
           >
             Prefiero no decir
           </button>

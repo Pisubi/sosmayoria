@@ -18,10 +18,10 @@ const H = 1920
 /** Zonas que tapa la interfaz de las historias. */
 const ARRIBA = 250
 const ABAJO = 330
-const C = { noche: '#0f2230', marfil: '#f0ece3', naranja: '#c8602a', azul: '#1e3a47', arena: '#cac4b0' }
+const C = { noche: '#2c204b', marfil: '#f3f4d6', naranja: '#e37a29', azul: '#2c204b', arena: '#d3d4a6' }
 
 type Ctx = CanvasRenderingContext2D
-const font = (peso: number, px: number) => `${peso} ${px}px Montserrat, system-ui, sans-serif`
+const font = (peso: number, px: number) => `${peso} ${px}px Archivo, system-ui, sans-serif`
 
 function envolver(ctx: Ctx, texto: string, ancho: number): string[] {
   const lineas: string[] = []
@@ -37,14 +37,13 @@ function envolver(ctx: Ctx, texto: string, ancho: number): string[] {
   return lineas
 }
 
-function redondeado(ctx: Ctx, x: number, y: number, w: number, h: number, r: number) {
-  ctx.beginPath()
-  ctx.moveTo(x + r, y)
-  ctx.arcTo(x + w, y, x + w, y + h, r)
-  ctx.arcTo(x + w, y + h, x, y + h, r)
-  ctx.arcTo(x, y + h, x, y, r)
-  ctx.arcTo(x, y, x + w, y, r)
-  ctx.closePath()
+/** Caja de la marca: borde de tinta y sombra dura, sin esquinas redondeadas. */
+function caja(ctx: Ctx, x: number, y: number, w: number, h: number, fondo: string, borde = 6, sombra = 14) {
+  ctx.fillStyle = C.azul
+  ctx.fillRect(x + sombra, y + sombra, w, h)
+  ctx.fillRect(x, y, w, h)
+  ctx.fillStyle = fondo
+  ctx.fillRect(x + borde, y + borde, w - borde * 2, h - borde * 2)
 }
 
 /** Texto centrado que se achica hasta entrar en el ancho. */
@@ -65,53 +64,40 @@ function sitio(url: string): string {
 /** Botón de llamado a jugar, apoyado sobre el margen de abajo. */
 function llamado(ctx: Ctx, t: Tarjeta, fondo: string, color: string, texto: string) {
   const y = H - ABAJO - 150
-  ctx.fillStyle = fondo
-  redondeado(ctx, 70, y, W - 140, 130, 65)
-  ctx.fill()
+  caja(ctx, 70, y, W - 140, 130, fondo)
   ctx.fillStyle = color
   ctx.textAlign = 'center'
   if (t.url) {
-    ajustado(ctx, texto, W / 2, y + 62, W - 220, 700, 44)
-    ctx.globalAlpha = 0.75
-    ajustado(ctx, sitio(t.url), W / 2, y + 106, W - 220, 500, 30)
-    ctx.globalAlpha = 1
-  } else ajustado(ctx, texto, W / 2, y + 80, W - 220, 700, 44)
+    ajustado(ctx, texto, W / 2, y + 62, W - 220, 900, 44)
+    ajustado(ctx, sitio(t.url), W / 2, y + 106, W - 220, 600, 30)
+  } else ajustado(ctx, texto, W / 2, y + 80, W - 220, 900, 44)
   ctx.textAlign = 'left'
 }
 
 /** Insignia estilo resumen anual: el perfil como identidad para mostrar. */
 function insignia(ctx: Ctx, t: Tarjeta) {
-  const g = ctx.createLinearGradient(0, 0, 0, H)
-  g.addColorStop(0, C.naranja)
-  g.addColorStop(0.55, '#7a3b1f')
-  g.addColorStop(1, C.noche)
-  ctx.fillStyle = g
+  ctx.fillStyle = C.naranja
   ctx.fillRect(0, 0, W, H)
   ctx.textAlign = 'center'
-  ctx.fillStyle = C.marfil
-  ctx.font = font(600, 36)
-  ctx.globalAlpha = 0.8
+  ctx.fillStyle = C.azul
+  ctx.font = font(800, 36)
   ctx.fillText('MI RESULTADO EN LA MAYORÍA', W / 2, ARRIBA + 60)
-  ctx.globalAlpha = 1
-  ctx.font = font(700, 90)
+  ctx.font = font(900, 100)
   ctx.fillText('SOY', W / 2, ARRIBA + 250)
 
-  // Insignia inclinada con el perfil
+  // Caja con el perfil
   ctx.save()
   ctx.translate(W / 2, ARRIBA + 460)
-  ctx.rotate(-0.06)
+  caja(ctx, -470, -150, 940, 300, C.azul)
   ctx.fillStyle = C.marfil
-  redondeado(ctx, -470, -150, 940, 300, 150)
-  ctx.fill()
-  ctx.fillStyle = C.noche
-  ctx.font = font(700, 110)
+  ctx.font = font(900, 110)
   const lineas = envolver(ctx, t.titulo.toUpperCase(), 820).slice(0, 2)
-  lineas.forEach((l, i) => ajustado(ctx, l, 0, (lineas.length === 1 ? 38 : -12) + i * 104, 840, 700, lineas.length === 1 ? 110 : 90))
+  lineas.forEach((l, i) => ajustado(ctx, l, 0, (lineas.length === 1 ? 38 : -12) + i * 104, 840, 900, lineas.length === 1 ? 110 : 90))
   ctx.restore()
 
   let y = ARRIBA + 720
-  ctx.fillStyle = C.marfil
-  ctx.font = font(500, 42)
+  ctx.fillStyle = C.azul
+  ctx.font = font(600, 42)
   envolver(ctx, t.texto, W - 200)
     .slice(0, 2)
     .forEach((l) => {
@@ -120,17 +106,15 @@ function insignia(ctx: Ctx, t: Tarjeta) {
     })
   y += 50
   const dato = (titulo: string, valor: string, yy: number) => {
-    ctx.globalAlpha = 0.7
-    ctx.font = font(600, 30)
+    ctx.font = font(800, 30)
     ctx.fillText(titulo, W / 2, yy)
-    ctx.globalAlpha = 1
-    ctx.font = font(700, 64)
+    ctx.font = font(900, 64)
     ctx.fillText(valor, W / 2, yy + 76)
   }
   dato('CON LA MAYORÍA', `${t.mayoria} de ${t.definidas}`, y)
   if (t.temaDistinto) dato('DONDE MÁS ME DIFERENCIO', t.temaDistinto, y + 160)
   ctx.textAlign = 'left'
-  llamado(ctx, t, C.marfil, C.noche, '¿Y vos qué sos? Jugá →')
+  llamado(ctx, t, C.marfil, C.azul, '¿Y vos qué sos? Jugá →')
 }
 
 export async function renderShareImage(t: Tarjeta): Promise<Blob> {
