@@ -31,7 +31,8 @@ La de aprobación es `"volatil": true`: hay que actualizar su dato con la últim
 
 Las cartas con `eje` ubican a quien juega en tres escalas: `economia` (`-` más Estado, `+` más
 mercado), `valores` (`-` más progresistas, `+` más tradicionales) y `autoridad` (`-` más
-garantías y libertades civiles, `+` más orden). El valor dice cuánto y hacia dónde empuja elegir
+garantías y libertades civiles, `+` más orden). Autoridad se calcula pero no se muestra ni tiene
+cupo por ronda: la brújula que ve quien juega es economía × valores. El valor dice cuánto y hacia dónde empuja elegir
 A (B empuja al revés): `±1` si la carta mide bien la escala, `±0.5` si es un indicador débil o
 atado a un gobierno. La aprobación del gobierno no tiene eje: mide alineamiento, no ideología.
 
@@ -41,10 +42,36 @@ atado a un gobierno. La aprobación del gobierno no tiene eje: mide alineamiento
   elige cada lado coincida con la encuesta. Elegir lo que eligió el 80% casi no mueve; elegir lo
   del 20% mueve mucho; rechazar una afirmación extrema dice poco. El centro es el argentino
   promedio.
+- **Lapso del 10%.** El modelo admite que cualquiera elige a veces el lado contrario a su posición
+  por motivos ajenos a la escala (consenso, nacionalismo, coyuntura). Sin eso, una sola respuesta
+  así en una carta de consenso le ponía techo a toda la escala: alguien muy pro mercado que
+  defendía la industria nacional quedaba cerca del centro.
+- **Escala en percentiles.** La posición que se dibuja es `2·Φ(θ) − 1`: 0,8 es estar más hacia ese
+  lado que el 90% del país. No se satura en el borde (antes todo perfil marcado quedaba en ±1).
+- **Qué mide cada carta de economía.** Solo Estado contra mercado. Las que mezclan nacionalismo o
+  soberanía (industria nacional, áreas y recursos estratégicos, apertura al mundo) o frases de
+  consenso (obra pública) pesan `±0.5`, porque también las sostiene mucha gente pro mercado; las
+  que no separan Estado de mercado (regular la IA, "igualdad de oportunidades") no tienen eje. Los
+  tests de `tests/cartas.test.ts` verifican que un perfil pro mercado con respuestas
+  nacionalistas y uno estatista que valora el esfuerzo queden lejos del centro en una ronda.
 - **Afirmaciones extremas** (menos del 25% de acuerdo, `esExtrema()`): como mucho una por escala
   en cada ronda, para que varias juntas no arrastren al centro a quien tiene posiciones firmes.
 - **Cupo por ronda.** Cada ronda trae al menos `CUPO` cartas de cada escala (núcleo incluidas);
-  el resto son cartas sin eje (fútbol, mate, creencias…), que no cuentan.
+  el resto son cartas que no mueven la brújula que se ve (fútbol, mate, creencias… y las de
+  autoridad, que se calcula pero no se muestra). Esas se toman en el orden sorteado, como mucho
+  tres por tema, así salen todas parecido (con turnos por tema, las dos de
+  historia salían en casi todas las rondas); después `intercalar()` separa los temas.
+- **Afirmaciones en equilibrio.** Al llenar el cupo de cada escala se alternan afirmaciones que se
+  aceptan de un lado y del otro (por ejemplo, "hay que legalizar la marihuana" y "hay que derogar el
+  matrimonio igualitario"), para que quien contesta "de acuerdo" a todo no quede corrido.
+- **Sin cartas de consenso.** Una carta de economía o valores con 78% o más de un lado no cuenta
+  para la brújula (casi no distingue a nadie y, como las de consenso suelen ser estatistas o
+  progresistas, corrían a quien contesta "de acuerdo" a todo); queda como carta común. La excepción
+  son las afirmaciones extremas, que sirven para los bordes. Un test lo verifica.
+- **Primero cartas nuevas.** Al llenar el cupo se prefieren cartas que la persona no vio, y recién
+  entre ellas se busca el equilibrio de afirmaciones.
+- **Inseguridad** (núcleo, endurecer penas o reducir la desigualdad) cuenta solo para autoridad, así
+  que no mueve la brújula que se ve.
 - **Se afina con cada ronda.** Las respuestas de todas las rondas quedan en el navegador
   (`mayoria:respuestas:v1`) y la brújula usa todas. No se envían ni van en la imagen para
   historias.

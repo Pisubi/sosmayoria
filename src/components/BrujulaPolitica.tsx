@@ -4,10 +4,10 @@ import type { Brujula } from '../engine/juego'
 const ALCANCE = 42
 
 /**
- * Economía × valores, con el argentino promedio en el centro, y abajo la escala de autoridad.
+ * Economía × valores, con el argentino promedio en el centro.
  */
 export function BrujulaPolitica({ b }: { b: Brujula }) {
-  const { economia, valores, autoridad } = b.vos
+  const { economia, valores } = b.vos
   return (
     <figure className="mx-auto w-full max-w-md">
       <div
@@ -52,26 +52,6 @@ export function BrujulaPolitica({ b }: { b: Brujula }) {
         </span>
       </figcaption>
 
-      {b.cartas.autoridad > 0 && (
-        <div className="mt-6">
-          <div className="flex justify-between text-[11px] font-extrabold tracking-wide uppercase sm:text-xs">
-            <span>Más garantías</span>
-            <span>Autoridad</span>
-            <span>Más orden</span>
-          </div>
-          <div
-            className="relative mt-2 h-5 border-[3px] border-azul bg-arena"
-            role="img"
-            aria-label={`Autoridad ${pct(autoridad)} (negativo, más garantías; positivo, más orden). Cero es el promedio del país.`}
-          >
-            <span className="absolute inset-y-0 left-1/2 w-[3px] bg-azul" />
-            <span
-              className="absolute top-1/2 size-6 -translate-x-1/2 -translate-y-1/2 rounded-full border-[3px] border-azul bg-naranja"
-              style={{ left: `${50 + autoridad * ALCANCE}%` }}
-            />
-          </div>
-        </div>
-      )}
     </figure>
   )
 }

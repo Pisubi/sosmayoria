@@ -54,8 +54,11 @@ function mezclar<T>(items: T[], next: () => number): T[] {
   return out
 }
 
-/** Mínimo de cartas de cada escala por ronda, núcleo incluidas, para que la brújula tenga base. */
-export const CUPO: Record<NombreEje, number> = { economia: 7, valores: 6, autoridad: 5 }
+/**
+ * Mínimo de cartas de cada escala por ronda, núcleo incluidas, para que la brújula tenga base.
+ * Autoridad se sigue calculando pero no se muestra, así que no reserva lugar en la ronda.
+ */
+export const CUPO: Record<NombreEje, number> = { economia: 8, valores: 6, autoridad: 0 }
 
 /**
  * Sortea una ronda: las cartas núcleo siempre, repartidas en lugares al azar; después las
@@ -96,23 +99,36 @@ export function sortear(
   }
 
   const cuenta = (e: NombreEje) => [...nucleo, ...elegidas].filter((c) => c.eje?.[e]).length
+  // Afirmaciones redactadas hacia cada lado, en equilibrio: si en una escala casi todas se aceptan
+  // del lado progresista (o estatista), quien contesta "de acuerdo" a todo queda corrido hacia ahí.
+  const sentido = (c: Carta, e: NombreEje) => (c.tipo === 'afirmacion' ? Math.sign(c.eje?.[e] ?? 0) : 0)
+  const saldo = (e: NombreEje) => [...nucleo, ...elegidas].reduce((s, c) => s + sentido(c, e), 0)
   for (const e of EJES) {
-    for (const c of candidatas.filter((x) => x.eje?.[e])) {
-      if (cuenta(e) >= CUPO[e] || elegidas.length >= total) break
-      if (libre(c)) tomar(c)
+    while (cuenta(e) < CUPO[e] && elegidas.length < total) {
+      const opciones = candidatas.filter((x) => x.eje?.[e] && libre(x))
+      // Primero que no se repitan cartas ya vistas; después, el equilibrio.
+      const nuevas = opciones.filter((x) => !vistas.has(x.id))
+      const equilibra = (x: Carta) => sentido(x, e) * saldo(e) <= 0
+      const c = nuevas.find(equilibra) ?? nuevas[0] ?? opciones.find(equilibra) ?? opciones[0]
+      if (!c) break
+      tomar(c)
     }
   }
-  // El resto alternando temas por turnos: primero las que no miden ideología, después cualquiera.
-  for (const fuente of [candidatas.filter((c) => !esIdeologica(c)), [...candidatas]]) {
-    const colas = new Map<Tema, Carta[]>()
-    for (const c of fuente) colas.set(c.tema, [...(colas.get(c.tema) ?? []), c])
-    const turnos = mezclar([...colas.values()], next)
-    while (elegidas.length < total && turnos.some((cola) => cola.length > 0)) {
-      for (const cola of turnos) {
-        let c = cola.shift()
-        while (c && (!libre(c) || !candidatas.includes(c))) c = cola.shift()
-        if (c && elegidas.length < total) tomar(c)
-      }
+  // El resto, primero las que no mueven la brújula que se ve, en el orden sorteado (las no vistas antes) y como
+  // mucho tres por tema; si no alcanza, sin tope, y después cualquiera. Nada de turnos por tema: con
+  // turnos, las cartas de un tema chico (historia tiene dos) salían en casi todas las rondas.
+  const porTema = new Map<Tema, number>()
+  const pasadas: [(c: Carta) => boolean, number][] = [
+    [(c) => !mideBrujula(c), 3],
+    [(c) => !mideBrujula(c), Infinity],
+    [() => true, Infinity],
+  ]
+  for (const [sirve, tope] of pasadas) {
+    for (const c of candidatas.filter(sirve)) {
+      if (elegidas.length >= total) break
+      if (!libre(c) || (porTema.get(c.tema) ?? 0) >= tope) continue
+      porTema.set(c.tema, (porTema.get(c.tema) ?? 0) + 1)
+      tomar(c)
     }
   }
 
@@ -199,10 +215,16 @@ export function perfil(conLaMayoria: number, definidas: number): { titulo: strin
   return { titulo: 'Minoría intensa', texto: 'Casi siempre elegís lo que eligen menos argentinos.' }
 }
 
-/** Las tres escalas de la brújula. La brújula dibuja economía × valores; autoridad va aparte. */
+/** Las tres escalas de la brújula. La brújula dibuja economía × valores; autoridad no se muestra. */
 export const EJES: readonly NombreEje[] = ['economia', 'valores', 'autoridad']
 
 export const esIdeologica = (c: Carta): boolean => EJES.some((e) => c.eje?.[e])
+
+/**
+ * Si la carta mueve una escala que se muestra (las que tienen cupo). Las de autoridad, que se
+ * calcula pero no se ve, se sortean como cualquier carta sin eje.
+ */
+export const mideBrujula = (c: Carta): boolean => EJES.some((e) => CUPO[e] > 0 && c.eje?.[e])
 
 /** Afirmación con la que acuerda menos de un cuarto del país (p. ej. "el marido tiene la última palabra"). */
 export const esExtrema = (c: Carta): boolean => esIdeologica(c) && c.tipo === 'afirmacion' && real(c) < 25
@@ -228,10 +250,15 @@ export const MINIMO_EJE = 3
  * casi todo el mundo) mueve poco, y aceptarla mueve mucho; el centro es el argentino promedio.
  */
 const DISCRIMINACION = 1.7
+/**
+ * Chance de elegir el lado contrario a la propia posición por motivos ajenos a la escala (una
+ * carta de consenso, nacionalismo, la coyuntura). Sin esto, una sola respuesta "fuera de libreto"
+ * en una carta que elige el 80% le pone techo a toda la escala: alguien muy pro mercado que dice
+ * que hay que proteger la industria nacional quedaba cerca del centro.
+ */
+const LAPSO = 0.1
 /** Previa N(0, σ²) de la posición: con pocas cartas acerca al promedio, sin aplastar a nadie. */
 const PREVIA = 1.5
-/** Posición θ que corresponde al borde del gráfico. */
-const ESCALA = 2
 const GRILLA = Array.from({ length: 161 }, (_, i) => -4 + i * 0.05)
 
 interface Item {
@@ -243,8 +270,10 @@ interface Item {
   mas: boolean
 }
 
+/** Dificultad para que, con θ ~ N(0, 1) y el lapso, elija el lado + una proporción q del país. */
 function dificultad(q: number, a: number): number {
-  return (-Math.log(q / (1 - q)) * Math.sqrt(1 + (Math.PI * a * a) / 8)) / a
+  const sinLapso = Math.min(0.97, Math.max(0.03, (q - LAPSO) / (1 - 2 * LAPSO)))
+  return (-Math.log(sinLapso / (1 - sinLapso)) * Math.sqrt(1 + (Math.PI * a * a) / 8)) / a
 }
 
 /** Media de la posterior de θ en la grilla. */
@@ -253,7 +282,7 @@ function posicion(items: Item[]): number {
   const log = GRILLA.map((t) => {
     let l = -(t * t) / (2 * PREVIA * PREVIA)
     for (const { a, b, mas } of items) {
-      const p = 1 / (1 + Math.exp(-a * (t - b)))
+      const p = LAPSO + (1 - 2 * LAPSO) / (1 + Math.exp(-a * (t - b)))
       l += Math.log(mas ? p : 1 - p)
     }
     max = Math.max(max, l)
@@ -269,15 +298,25 @@ function posicion(items: Item[]): number {
   return suma / total
 }
 
+/** Función de distribución normal estándar (Abramowitz y Stegun 26.2.17, error < 1e-7). */
+function normal(x: number): number {
+  const t = 1 / (1 + 0.2316419 * Math.abs(x))
+  const d = 0.3989423 * Math.exp((-x * x) / 2)
+  const p = d * t * (0.3193815 + t * (-0.3565638 + t * (1.781478 + t * (-1.821256 + t * 1.330274))))
+  return x > 0 ? 1 - p : p
+}
+
 /**
  * Ubica a quien juega en cada escala comparando sus respuestas con lo que respondió el país
  * (ver el modelo arriba). Las cartas pesan según su eje: ±1 las que miden bien, ±0,5 las débiles.
+ * La posición va de -1 a 1 según el percentil en el país: 0,8 es estar más hacia el lado + que el
+ * 90% de los argentinos. Así no se satura en el borde ni aplasta a quien tiene posiciones firmes.
  */
 export function brujula(respuestas: { carta: Carta; eleccion: Eleccion }[]): Brujula | null {
   const items: Record<NombreEje, Item[]> = { economia: [], valores: [], autoridad: [] }
   for (const { carta, eleccion } of respuestas) {
     if (!carta.eje || eleccion === 'nada') continue
-    const pA = Math.min(0.97, Math.max(0.03, real(carta) / 100))
+    const pA = real(carta) / 100
     for (const e of EJES) {
       const w = carta.eje[e]
       if (!w) continue
@@ -289,8 +328,7 @@ export function brujula(respuestas: { carta: Carta; eleccion: Eleccion }[]): Bru
   }
   const cartas = { economia: items.economia.length, valores: items.valores.length, autoridad: items.autoridad.length }
   if (cartas.economia < MINIMO_EJE || cartas.valores < MINIMO_EJE) return null
-  const pos = (e: NombreEje) =>
-    cartas[e] < MINIMO_EJE ? 0 : Math.max(-1, Math.min(1, posicion(items[e]) / ESCALA))
+  const pos = (e: NombreEje) => (cartas[e] < MINIMO_EJE ? 0 : 2 * normal(posicion(items[e])) - 1)
   const base = Math.min(cartas.economia, cartas.valores)
   return {
     vos: { economia: pos('economia'), valores: pos('valores'), autoridad: pos('autoridad') },

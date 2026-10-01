@@ -157,8 +157,9 @@ describe('brújula política', () => {
       return brujula(r)!.vos
     })
     const media = (e: 'economia' | 'valores') => pos.reduce((s, p) => s + p[e], 0) / pos.length
-    expect(Math.abs(media('economia'))).toBeLessThan(0.03)
-    expect(Math.abs(media('valores'))).toBeLessThan(0.03)
+    // La escala es el percentil en el país (va de -1 a 1): 0,05 es menos de 3 puntos de percentil.
+    expect(Math.abs(media('economia'))).toBeLessThan(0.05)
+    expect(Math.abs(media('valores'))).toBeLessThan(0.05)
   })
 
   it('elegir lo de pocos mueve más que elegir lo de muchos', () => {
