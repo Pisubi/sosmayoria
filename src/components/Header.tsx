@@ -11,7 +11,7 @@ export function Header({ onHome, onMethodology }: HeaderProps) {
       <div className="mx-auto max-w-5xl px-4 pt-4 sm:px-6">
         <div className="flex items-center justify-between gap-4 border-b-[3px] border-azul pb-3">
           <button type="button" onClick={onHome} className="flex items-center gap-3 text-left">
-            <Logo className="text-2xl" />
+            <Logo className="text-[2rem]" />
             <span className="etiqueta hidden sm:inline-block">La Mayoría</span>
           </button>
           <nav className="flex items-center gap-5 text-sm font-bold">

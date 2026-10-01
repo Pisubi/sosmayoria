@@ -9,7 +9,7 @@ export function Footer({ onMethodology }: FooterProps) {
     <footer className="bg-marfil">
       <div className="mx-auto max-w-5xl px-4 pb-10 sm:px-6">
         <div className="border-t-[3px] border-azul pt-8 text-sm leading-6">
-          <Logo className="text-xl" />
+          <Logo className="text-3xl" />
           <p className="mt-4 max-w-2xl text-azul/80">
             La Mayoría es un juego. La mayoría de cada carta sale de una encuesta publicada,
             citada con su fuente; lo que eligen quienes juegan no es una encuesta

@@ -1,17 +1,21 @@
-/** Firma Pisubí: signo (punto con acento) + nombre en Archivo Black. El naranja del signo es fijo. */
+/**
+ * Firma Pisubí completa (archivo maestro pisubi-logo-positivo / negativo).
+ * Se usa en tinta sobre papel y en papel claro sobre tinta; sobre naranja no va.
+ */
 export function Logo({ claro, className = '' }: { claro?: boolean; className?: string }) {
   return (
-    <span
-      className={`inline-flex items-center gap-1.5 leading-none ${claro ? 'text-papel' : 'text-azul'} ${className}`}
+    <svg
+      viewBox="-40 -815 3791 867"
+      role="img"
       aria-label="Pisubí"
+      className={`h-[1em] w-auto ${className}`}
     >
-      <svg viewBox="0 0 20 28" className="h-[1.05em] w-auto" aria-hidden>
-        <path d="M6 1h13l-4 8H2z" fill="#E37A29" />
-        <circle cx="8" cy="20" r="6.5" fill="#E37A29" />
-      </svg>
-      <span aria-hidden className="font-black tracking-[-0.03em]">
-        Pisubí
-      </span>
-    </span>
+      <g fill={claro ? '#F3F4D6' : '#2C204B'}>
+        <path d="M1106 -462V-449Q1106 -385 1078.0 -333.0Q1050 -281 1000.0 -251.5Q950 -222 886 -222H721V0H500V-688H886Q950 -688 1000.0 -658.5Q1050 -629 1078.0 -577.5Q1106 -526 1106 -462ZM721 -383H812Q847 -383 864.5 -401.0Q882 -419 882 -450V-458Q882 -490 864.5 -507.5Q847 -525 812 -525H721Z"/><path d="M1207 0V-528H1406V0Z"/><path d="M2029 -370H1844Q1844 -399 1818 -411Q1800 -421 1773 -421Q1701 -421 1701 -387Q1701 -368 1726.0 -360.0Q1751 -352 1808 -343Q1878 -333 1925.0 -319.5Q1972 -306 2007.0 -271.5Q2042 -237 2042 -175Q2042 -74 1966.5 -31.0Q1891 12 1769 12Q1699 12 1637.0 -7.5Q1575 -27 1536.0 -68.0Q1497 -109 1497 -172H1682V-168Q1683 -134 1710.5 -120.5Q1738 -107 1769 -107Q1852 -107 1852 -146Q1852 -166 1826.0 -175.0Q1800 -184 1741 -194Q1670 -206 1624.5 -220.0Q1579 -234 1545.0 -267.5Q1511 -301 1511 -361Q1511 -458 1584.5 -499.0Q1658 -540 1776 -540Q1882 -540 1955.5 -498.5Q2029 -457 2029 -370Z"/><path d="M2511 0 2498 -80Q2467 -37 2416.5 -12.5Q2366 12 2310 12Q2218 12 2172.0 -39.0Q2126 -90 2126 -186V-528H2325V-210Q2325 -176 2342.5 -155.5Q2360 -135 2392 -135Q2429 -135 2452.0 -159.0Q2475 -183 2475 -218V-528H2674V0Z"/><path d="M3135 -540Q3242 -540 3300.0 -470.5Q3358 -401 3358 -265Q3358 -128 3300.0 -58.0Q3242 12 3135 12Q3025 12 2967 -75L2950 0H2788V-725H2987V-479Q3044 -540 3135 -540ZM2985 -280V-247Q2985 -197 3007.0 -166.0Q3029 -135 3073 -135Q3159 -135 3159 -237V-290Q3159 -393 3073 -393Q3029 -393 3007.0 -361.5Q2985 -330 2985 -280Z"/><path d="M3453 0V-528H3652V0Z"/>
+      </g>
+      <g fill="#E37A29">
+        <circle cx="120" cy="-101" r="120"/><path d="M19 -258L165 -258L305 -406L150 -406Z"/><circle cx="1306.5" cy="-669" r="106"/><path d="M3439 -582L3599 -582L3752 -735L3566 -735Z"/>
+      </g>
+    </svg>
   )
 }
