@@ -3,10 +3,10 @@ interface ProgressBarProps {
   total: number
 }
 
-/** Barra segmentada: borde de 3 px, divisiones de 3 px, sin esquinas redondeadas. */
+/** Un casillero por carta, que se llena entero. Barra segmentada: borde de 3 px, divisiones de 3 px, sin esquinas redondeadas. */
 export function ProgressBar({ current, total }: ProgressBarProps) {
-  const segments = Math.min(total, 20)
-  const filled = (current / total) * segments
+  const segments = total
+  const filled = current
   return (
     <div
       role="progressbar"
