@@ -63,7 +63,7 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
                     aria-pressed={temas.includes(t.id)}
                     onClick={() => toggle(t.id)}
                     className={`caja-sm px-4 py-2 text-sm font-bold transition-transform hover:-translate-y-0.5 ${
-                      temas.includes(t.id) ? 'bg-ciruela text-papel' : 'bg-papel text-azul'
+                      temas.includes(t.id) ? 'bg-naranja text-azul' : 'bg-papel text-azul'
                     }`}
                   >
                     {t.nombre}
@@ -86,7 +86,7 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
               <button
                 type="button"
                 onClick={() => onRetomar(guardada)}
-                className="caja-sm !border-papel !shadow-[4px_4px_0_#e37a29] bg-ciruela text-papel px-6 py-4 text-sm font-bold hover:-translate-y-0.5"
+                className="caja-sm !border-papel !shadow-[4px_4px_0_#e37a29] bg-papel text-azul px-6 py-4 text-sm font-bold hover:-translate-y-0.5"
               >
                 Seguir la ronda ({guardada.jugadas.length} de {guardada.cartas.length})
               </button>
@@ -100,7 +100,7 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
         <Eyebrow>Cómo se juega</Eyebrow>
         <ol className="mt-6 grid gap-5 md:grid-cols-3">
           {PASOS.map((p, i) => (
-            <li key={p.titulo} className={`caja p-6 ${i === 1 ? 'bg-ciruela text-papel' : 'bg-papel'}`}>
+            <li key={p.titulo} className="caja bg-papel p-6">
               <Index n={i + 1} />
               <p className="mt-4 text-xl font-black uppercase">{p.titulo}</p>
               <p className="mt-2 text-sm leading-6 ">{p.texto}</p>
