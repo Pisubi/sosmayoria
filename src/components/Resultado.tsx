@@ -139,7 +139,7 @@ export function Resultado({ resumen, historial, onOtraRonda, onMethodology }: Re
                 </div>
                 <div className="mt-2 flex gap-[3px] border-[3px] border-azul bg-azul">
                   {Array.from({ length: t.definidas }, (_, i) => (
-                    <span key={i} className={`h-4 flex-1 ${i < t.mayoria ? 'bg-papel' : 'bg-naranja'}`} />
+                    <span key={i} className={`h-4 flex-1 ${i < t.mayoria ? 'bg-azul' : 'bg-naranja'}`} />
                   ))}
                 </div>
               </li>
