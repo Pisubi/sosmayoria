@@ -42,14 +42,14 @@ export function Resultado({ resumen, historial, onOtraRonda, onMethodology }: Re
 
   return (
     <main>
-      <section className="bg-naranja text-azul">
+      <section className="bg-azul text-papel">
         <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20">
           <Eyebrow oscuro>Fin de la ronda</Eyebrow>
-          <p className="mt-6 text-lg font-bold">Pensás como la mayoría en</p>
+          <p className="mt-6 text-lg font-bold text-papel">Pensás como la mayoría en</p>
           <p className="mt-1 text-7xl font-black tracking-[-0.03em] tabular-nums sm:text-9xl">
             {conLaMayoria} <span className="text-3xl font-black sm:text-4xl">de {definidas}</span>
           </p>
-          <h1 className="caja mt-6 inline-block bg-azul px-4 py-3 text-3xl text-papel sm:text-4xl">{p.titulo}</h1>
+          <h1 className="caja mt-6 inline-block !border-papel !shadow-[6px_6px_0_#e37a29] bg-ciruela px-4 py-3 text-3xl text-papel sm:text-4xl">{p.titulo}</h1>
           <p className="mt-2 max-w-xl leading-7 font-medium">{p.texto}</p>
           <p className="mt-4 text-sm font-bold">
             En la minoría en {enLaMinoria}
@@ -61,7 +61,7 @@ export function Resultado({ resumen, historial, onOtraRonda, onMethodology }: Re
             <button
               type="button"
               onClick={onOtraRonda}
-              className="caja bg-papel px-8 py-3.5 text-sm font-black tracking-wide uppercase hover:-translate-y-0.5"
+              className="caja !border-papel !shadow-[6px_6px_0_#e37a29] bg-naranja px-8 py-3.5 text-sm font-black tracking-wide text-azul uppercase hover:-translate-y-0.5"
             >
               Jugar otra ronda →
             </button>
@@ -229,7 +229,7 @@ function Compartir({ texto, tarjeta }: { texto: string; tarjeta: Omit<Tarjeta, '
       type="button"
       onClick={compartir}
       disabled={estado === 'generando'}
-      className="caja bg-azul px-8 py-3.5 text-sm font-black tracking-wide text-papel uppercase hover:-translate-y-0.5 disabled:opacity-60"
+      className="caja !border-papel !shadow-[6px_6px_0_#e37a29] bg-papel px-8 py-3.5 text-sm font-black tracking-wide text-azul uppercase hover:-translate-y-0.5 disabled:opacity-60"
     >
       {estado === 'generando' ? 'Generando…' : estado === 'copiado' ? 'Imagen descargada y texto copiado' : 'Compartir en historias'}
     </button>

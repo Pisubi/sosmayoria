@@ -41,13 +41,13 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
 
   return (
     <main>
-      <section className="bg-naranja text-azul">
+      <section className="bg-azul text-papel">
         <div className="mx-auto max-w-5xl px-4 py-14 sm:px-6 sm:py-20">
           <Eyebrow oscuro>Un juego sobre la opinión pública</Eyebrow>
           <h1 className="mt-6 max-w-3xl text-5xl leading-[0.95] sm:text-7xl">
             ¿Sabés qué piensa la Argentina?
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-8 font-medium">
+          <p className="mt-6 max-w-xl text-lg leading-8 font-medium text-papel/90">
             Elegí entre dos opciones y descubrí si pensás como la mayoría de los argentinos. {RONDA} cartas, un par
             de minutos.
           </p>
@@ -63,7 +63,7 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
                     aria-pressed={temas.includes(t.id)}
                     onClick={() => toggle(t.id)}
                     className={`caja-sm px-4 py-2 text-sm font-bold transition-transform hover:-translate-y-0.5 ${
-                      temas.includes(t.id) ? 'bg-azul text-papel' : 'bg-papel'
+                      temas.includes(t.id) ? 'bg-ciruela text-papel' : 'bg-papel text-azul'
                     }`}
                   >
                     {t.nombre}
@@ -78,7 +78,7 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
               type="button"
               disabled={cartas.length === 0}
               onClick={() => onJugar(temas)}
-              className="caja bg-papel px-10 py-4 text-base font-black tracking-wide uppercase transition-transform hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none disabled:opacity-40"
+              className="caja !border-papel !shadow-[6px_6px_0_#e37a29] bg-naranja text-azul px-10 py-4 text-base font-black tracking-wide uppercase transition-transform hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none disabled:opacity-40"
             >
               Jugar →
             </button>
@@ -86,7 +86,7 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
               <button
                 type="button"
                 onClick={() => onRetomar(guardada)}
-                className="caja-sm bg-naranja px-6 py-4 text-sm font-bold hover:-translate-y-0.5"
+                className="caja-sm !border-papel !shadow-[4px_4px_0_#e37a29] bg-ciruela text-papel px-6 py-4 text-sm font-bold hover:-translate-y-0.5"
               >
                 Seguir la ronda ({guardada.jugadas.length} de {guardada.cartas.length})
               </button>
@@ -98,9 +98,9 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
 
       <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
         <Eyebrow>Cómo se juega</Eyebrow>
-        <ol className="mt-6 grid gap-4 md:grid-cols-3">
+        <ol className="mt-6 grid gap-5 md:grid-cols-3">
           {PASOS.map((p, i) => (
-            <li key={p.titulo} className="caja bg-papel p-6">
+            <li key={p.titulo} className={`caja p-6 ${i === 1 ? 'bg-ciruela text-papel' : 'bg-papel'}`}>
               <Index n={i + 1} />
               <p className="mt-4 text-xl font-black uppercase">{p.titulo}</p>
               <p className="mt-2 text-sm leading-6 ">{p.texto}</p>
