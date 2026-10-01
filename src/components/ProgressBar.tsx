@@ -13,7 +13,7 @@ export function ProgressBar({ current, total }: ProgressBarProps) {
       aria-valuemin={1}
       aria-valuemax={total}
       aria-valuenow={current}
-      className="flex h-5 w-full gap-[3px] border-[3px] border-azul bg-azul"
+      className="flex h-5 w-full gap-[3px] border-[3px] border-azul bg-naranja"
     >
       {Array.from({ length: segments }, (_, i) => (
         <span key={i} className="relative flex-1 overflow-hidden bg-arena">
