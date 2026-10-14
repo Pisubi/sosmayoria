@@ -338,7 +338,7 @@ export function brujula(respuestas: { carta: Carta; eleccion: Eleccion }[]): Bru
 }
 
 /** Por debajo de esto (en valor absoluto) una escala cuenta como centro. */
-export const CENTRO = 0.15
+export const CENTRO = 0.25
 
 const PALABRAS: Record<NombreEje, [string, string, string]> = {
   economia: ['más Estado', 'centro en economía', 'más mercado'],
