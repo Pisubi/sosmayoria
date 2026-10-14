@@ -1,5 +1,5 @@
 {
- "version": "cartas-1.1.0",
+ "version": "cartas-1.2.0",
  "cartas": [
   {
    "id": "quien-es-el-mejor-jugador-de-la-historia",
@@ -2787,7 +2787,10 @@
     "url": "https://zubancordoba.com/wp-content/uploads/2025/03/DDD-Marzo-2025-corregido.pdf",
     "pregunta_original": "“La obra pública es una inversión, no un gasto” (de acuerdo / en desacuerdo / no sabe)",
     "nota": "Respuesta dicotómica en la fuente; resto = no sabe. Pregunta incluida en el módulo sobre la inundación de Bahía Blanca (pág. 32 del PDF), pero la frase es general y no nombra a ningún gobierno. Eje -0,5: frase de consenso (ocho de cada diez), la comparten votantes de todo el arco. Sin eje desde la versión 1.1: carta de consenso (80% de un lado), casi no distingue posiciones."
-   }
+   },
+   "grupos": [
+    "obra-publica"
+   ]
   },
   {
    "id": "en-la-argentina-de-hoy-el-estado-deberia",
@@ -3127,7 +3130,10 @@
     "url": "https://zubancordoba.com/wp-content/uploads/2024/12/DDD-Un-Ano-de-Polarizacion.pdf",
     "pregunta_original": "¿Qué tan de acuerdo está Ud con las siguientes frases mencionadas por el Presidente Milei en Davos? \"El cambio climático es un invento del socialismo\"",
     "nota": "Informe Nacional Diciembre 2024 (campo 20-21/11/2024), lámina p. 18. Resto = no sabe. La pregunta atribuía la frase a Milei, por eso la carta la atribuye. En ene-2024: 18,8 / 77,0 / 4,2. Hueco ambiente; eje débil (0.5) porque el negacionismo climático es transversal a lo económico."
-   }
+   },
+   "grupos": [
+    "clima"
+   ]
   },
   {
    "id": "los-recursos-naturales-estrategicos-liti",
@@ -4544,6 +4550,447 @@
     "url": "https://zubancordoba.com/wp-content/uploads/2024/02/Informe_enero_2024.pdf",
     "pregunta_original": "¿Qué tan de acuerdo está Ud con las siguientes frases mencionadas por el presidente Milei, recientemente en Davos? 'El capitalismo de libre empresa es el único sistema que puede terminar con la pobreza'",
     "nota": "p. 16 (torta superior): A = muy de acuerdo 27,9 + de acuerdo 14,1; B = desacuerdo 11,2 + muy en desacuerdo 45,1; resto = no sabe 1,6. Misma lámina que la carta del cambio climático ya existente (tema sociedad). Ficha p. 2."
+   }
+  },
+  {
+   "id": "la-desigualdad-de-genero-sigue-siendo-un",
+   "tipo": "afirmacion",
+   "pregunta": "La desigualdad de género sigue siendo un problema importante en la Argentina.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "igualdad-genero"
+   ],
+   "eje": {
+    "valores": -1
+   },
+   "ref": {
+    "a": 61,
+    "b": 31.3,
+    "resto": 7.7,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2026-02",
+    "muestra": "1.500 casos, mayores de 16 años; campo 23-26 feb 2026; ±2,53%",
+    "alcance": "nacional",
+    "url": "https://www.perfil.com/noticias/actualidad/encuesta-de-zuban-cordoba-mas-del-70-cree-que-las-tareas-de-cuidado-recaen-principalmente-en-las-mujeres.phtml",
+    "pregunta_original": "La desigualdad de género continúa siendo un problema importante en Argentina",
+    "nota": "De acuerdo 61 / en desacuerdo 31,3; resto por diferencia. Confirmado también en Letra P."
+   }
+  },
+  {
+   "id": "las-cosas-funcionarian-mejor-si-mas-muje",
+   "tipo": "afirmacion",
+   "pregunta": "Las cosas funcionarían mejor si más mujeres ocuparan puestos de responsabilidad en el gobierno y las empresas.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "eje": {
+    "valores": -0.5
+   },
+   "ref": {
+    "a": 58,
+    "b": 28,
+    "resto": 14,
+    "encuestadora": "Ipsos (Día Internacional de la Mujer 2026, con GIWL King's College London)",
+    "fecha": "2026-01",
+    "muestra": "~500 casos en Argentina, online (Ipsos Global Advisor), 16-74 años, ponderado por perfil demográfico; campo 24 dic 2025 - 9 ene 2026",
+    "alcance": "nacional",
+    "url": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Ipsos_IWD%202026_Global%20Report_ESP.pdf",
+    "pregunta_original": "Las cosas funcionarían mejor si más mujeres tuvieran puestos con responsabilidades en el gobierno y las empresas.",
+    "nota": "Algo + totalmente de acuerdo 58; algo + totalmente en desacuerdo 28; resto por diferencia."
+   }
+  },
+  {
+   "id": "que-la-mujer-gane-mas-que-su-marido-no-l",
+   "tipo": "afirmacion",
+   "pregunta": "Que la mujer gane más que su marido no le trae problemas al matrimonio.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "roles-genero"
+   ],
+   "eje": {
+    "valores": -0.5
+   },
+   "ref": {
+    "a": 40,
+    "b": 24,
+    "resto": 36,
+    "encuestadora": "Ipsos (Día Internacional de la Mujer 2026, con GIWL King's College London)",
+    "fecha": "2026-01",
+    "muestra": "~500 casos en Argentina, online (Ipsos Global Advisor), 16-74 años, ponderado por perfil demográfico; campo 24 dic 2025 - 9 ene 2026",
+    "alcance": "nacional",
+    "url": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-03/Ipsos_IWD%202026_Global%20Report_ESP.pdf",
+    "pregunta_original": "Causa problemas en el matrimonio si una mujer gana más que su esposo",
+    "nota": "Redacción invertida: en la original, de acuerdo 24, ni de acuerdo ni en desacuerdo 26, en desacuerdo 40. A = desacuerdo original; B = acuerdo original; resto = neutral + no sabe."
+   }
+  },
+  {
+   "id": "las-personas-trans-deberian-poder-usar-l",
+   "tipo": "afirmacion",
+   "pregunta": "Las personas trans deberían poder usar los baños públicos del género con el que se identifican.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "identidad-genero"
+   ],
+   "eje": {
+    "valores": -1
+   },
+   "ref": {
+    "a": 50,
+    "b": 40,
+    "resto": 10,
+    "encuestadora": "Ipsos (LGBT+ Pride 2026)",
+    "fecha": "2026-05",
+    "muestra": "~500 casos en Argentina, online (Global Advisor), 16-74 años, ponderado; campo 24 abr - 8 may 2026",
+    "alcance": "nacional",
+    "url": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-07/Ipsos%20Pride%20Report%202026_ESP.pdf",
+    "pregunta_original": "A las personas transgénero se les debe permitir usar instalaciones de un solo sexo (por ejemplo, baños públicos) que correspondan al género con el que se identifican",
+    "nota": "Tabla por país: Argentina 50 de acuerdo / 40 en desacuerdo; resto por diferencia. Serie AR: 50 (2025), 56 (2024), 57 (2021)."
+   }
+  },
+  {
+   "id": "los-documentos-oficiales-deberian-tener",
+   "tipo": "afirmacion",
+   "pregunta": "Los documentos oficiales deberían tener una opción distinta a «hombre» y «mujer».",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "identidad-genero"
+   ],
+   "eje": {
+    "valores": -1
+   },
+   "ref": {
+    "a": 54,
+    "b": 38,
+    "resto": 8,
+    "encuestadora": "Ipsos (LGBT+ Pride 2026)",
+    "fecha": "2026-05",
+    "muestra": "~500 casos en Argentina, online (Global Advisor), 16-74 años, ponderado; campo 24 abr - 8 may 2026",
+    "alcance": "nacional",
+    "url": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-07/Ipsos%20Pride%20Report%202026_ESP.pdf",
+    "pregunta_original": "Los documentos emitidos por el gobierno, como los pasaportes, deben incluir una opción distinta a \"hombre\" y \"mujer\" para las personas que no se identifican como ninguno de los dos",
+    "nota": "Argentina 54 / 38; resto por diferencia."
+   }
+  },
+  {
+   "id": "las-obras-sociales-y-prepagas-deberian-c",
+   "tipo": "afirmacion",
+   "pregunta": "Las obras sociales y prepagas deberían cubrir la transición de género como cualquier tratamiento médico.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "identidad-genero"
+   ],
+   "eje": {
+    "valores": -1
+   },
+   "ref": {
+    "a": 49,
+    "b": 39,
+    "resto": 12,
+    "encuestadora": "Ipsos (LGBT+ Pride 2026)",
+    "fecha": "2026-05",
+    "muestra": "~500 casos en Argentina, online (Global Advisor), 16-74 años, ponderado; campo 24 abr - 8 may 2026",
+    "alcance": "nacional",
+    "url": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-07/Ipsos%20Pride%20Report%202026_ESP.pdf",
+    "pregunta_original": "Los sistemas de seguro de salud deben cubrir los costos de la transición de género de la misma manera que los costos de otros procedimientos médicos",
+    "nota": "Argentina 49 / 39; resto por diferencia. 'Obras sociales y prepagas' traduce 'sistemas de seguro de salud'."
+   }
+  },
+  {
+   "id": "el-cambio-climatico-se-debe-mas-a-la-act",
+   "tipo": "afirmacion",
+   "pregunta": "El cambio climático se debe más a la actividad humana que a ciclos naturales de la Tierra.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "clima"
+   ],
+   "eje": {
+    "valores": -0.5
+   },
+   "ref": {
+    "a": 59,
+    "b": 40,
+    "resto": 1,
+    "encuestadora": "Pulsar.UBA (Creencias Sociales 2024)",
+    "fecha": "2024-06",
+    "muestra": "1.250 casos, mayores de 18; telefónica CATI 1.000 + domiciliaria 250, probabilística, cuotas por sexo, edad y nivel educativo; campo 31 may - 10 jun 2024; ±2,8%",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2025/05/Los-argentinos-y-la-ciencia-CREENCIAS-2024-2.pdf",
+    "pregunta_original": "El cambio climático es causado por ciclos naturales de la tierra más que por las actividades humanas",
+    "nota": "Redacción invertida de una comparación ('más X que Y'): muy + bastante de acuerdo con la original 40 (B); poco + nada 59 (A); ns/nc 1."
+   }
+  },
+  {
+   "id": "la-argentina-no-tiene-que-cerrarle-las-f",
+   "tipo": "afirmacion",
+   "pregunta": "La Argentina no tiene que cerrarle las fronteras a los refugiados.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "refugiados"
+   ],
+   "eje": {
+    "valores": -0.5
+   },
+   "ref": {
+    "a": 54,
+    "b": 34,
+    "resto": 12,
+    "encuestadora": "Ipsos (Actitudes hacia los refugiados 2026, con ACNUR)",
+    "fecha": "2026-05",
+    "muestra": "~500 casos en Argentina, online (Global Advisor), 16-74 años; campo 24 abr - 8 may 2026",
+    "alcance": "nacional",
+    "url": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-07/ipsos-global-attitudes-towards-refugees-report-2026.pdf",
+    "pregunta_original": "We must close our borders to refugees entirely – we can't accept any at this time",
+    "nota": "Redacción invertida: de acuerdo con cerrar totalmente las fronteras 34 (B), en desacuerdo 54 (A); resto por diferencia. Gráfico de la p. 12."
+   }
+  },
+  {
+   "id": "los-refugiados-hacen-un-aporte-positivo",
+   "tipo": "afirmacion",
+   "pregunta": "Los refugiados hacen un aporte positivo a la Argentina.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "refugiados"
+   ],
+   "eje": {
+    "valores": -0.5
+   },
+   "ref": {
+    "a": 43,
+    "b": 34,
+    "resto": 23,
+    "encuestadora": "Ipsos (Actitudes hacia los refugiados 2026, con ACNUR)",
+    "fecha": "2026-05",
+    "muestra": "~500 casos en Argentina, online (Global Advisor), 16-74 años; campo 24 abr - 8 may 2026",
+    "alcance": "nacional",
+    "url": "https://www.ipsos.com/sites/default/files/ct/news/documents/2026-07/ipsos-global-attitudes-towards-refugees-report-2026.pdf",
+    "pregunta_original": "Refugees make a positive contribution to my country",
+    "nota": "Argentina: de acuerdo 43 / en desacuerdo 34 (tabla de la p. 14); resto por diferencia."
+   }
+  },
+  {
+   "id": "no-me-molestaria-tener-como-vecinos-a-pe",
+   "tipo": "afirmacion",
+   "pregunta": "No me molestaría tener como vecinos a personas que estuvieron presas.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "sociedad",
+   "grupos": [
+    "vecinos"
+   ],
+   "eje": {
+    "valores": -0.5
+   },
+   "ref": {
+    "a": 56,
+    "b": 43,
+    "resto": 1,
+    "encuestadora": "Pulsar.UBA (Creencias Sociales 2026)",
+    "fecha": "2026-06",
+    "muestra": "1.252 casos, mayores de 18; telefónica CATI 1.000 + domiciliaria 252, probabilística, cuotas por sexo, edad y nivel educativo; campo 27 may - 10 jun 2026; ±2,8%",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/08/El-ascenso-del-nigunismo-Primer-Informe-Creencias-Sociales-2026.pdf",
+    "pregunta_original": "No me gustaría tener a estas personas como vecinos… Personas que fueron a la cárcel",
+    "nota": "Redacción invertida: poco + nada de acuerdo con 'no me gustaría' 56 (A); muy + bastante 43 (B). Gráfico de la p. 19."
+   }
+  },
+  {
+   "id": "el-estado-no-deberia-financiar-a-ninguna",
+   "tipo": "afirmacion",
+   "pregunta": "El Estado no debería financiar a ninguna religión.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "cultura",
+   "eje": {
+    "valores": -0.5
+   },
+   "ref": {
+    "a": 59.7,
+    "b": 33.9,
+    "resto": 6.4,
+    "encuestadora": "CEIL-CONICET (2ª Encuesta Nacional sobre Creencias y Actitudes Religiosas)",
+    "fecha": "2019-09",
+    "muestra": "2.421 casos, presencial, muestra probabilística polietápica nacional (89 localidades); ±2%",
+    "alcance": "nacional urbano",
+    "url": "https://www.ceil-conicet.gov.ar/wp-content/uploads/2019/11/ii25-2encuestacreencias.pdf",
+    "pregunta_original": "¿Cuál de las siguientes frases refleja mejor su opinión sobre el financiamiento a las religiones por parte del Estado?",
+    "nota": "A = 'el Estado no debe financiar a las confesiones religiosas' 59,7; B = 'debe financiar a todas' 27,5 + 'solo a la Iglesia Católica' 6,4; resto = no sabe. P. 55. No hay medición nacional posterior."
+   }
+  },
+  {
+   "id": "paralizar-las-obras-publicas-es-criminal",
+   "tipo": "afirmacion",
+   "pregunta": "Paralizar las obras públicas es criminal.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "obra-publica"
+   ],
+   "eje": {
+    "economia": -0.5
+   },
+   "ref": {
+    "a": 59.4,
+    "b": 38.1,
+    "resto": 2.5,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2025-03",
+    "muestra": "1.600 casos; mixto 70% CAWI + 30% mailing; ponderado por edad, género y zona; mayores de 16 años; campo 12-14 mar 2025; ±2,45%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2025/03/DDD-Marzo-2025-corregido.pdf",
+    "pregunta_original": "PARALIZAR LAS OBRAS PUBLICAS ES CRIMINAL",
+    "nota": "De acuerdo / en desacuerdo / no sabe. Módulo relevado tras la inundación de Bahía Blanca."
+   }
+  },
+  {
+   "id": "el-estado-nacional-deberia-hacer-mas-obr",
+   "tipo": "afirmacion",
+   "pregunta": "El Estado nacional debería hacer más obras para prevenir desastres naturales en todo el país.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "obra-publica"
+   ],
+   "eje": {
+    "economia": -0.5
+   },
+   "ref": {
+    "a": 72.3,
+    "b": 26.2,
+    "resto": 1.5,
+    "encuestadora": "Zuban Córdoba y Asociados",
+    "fecha": "2025-03",
+    "muestra": "1.600 casos; mixto 70% CAWI + 30% mailing; ponderado por edad, género y zona; mayores de 16 años; campo 12-14 mar 2025; ±2,45%",
+    "alcance": "nacional",
+    "url": "https://zubancordoba.com/wp-content/uploads/2025/03/DDD-Marzo-2025-corregido.pdf",
+    "pregunta_original": "EL ESTADO NACIONAL DEBERÍA HACER MÁS OBRAS PARA PREVENIR EL IMPACTO DE DESASTRES NATURALES EN TODO EL PAÍS",
+    "nota": "De acuerdo / en desacuerdo / no sabe. Relevada tras la inundación de Bahía Blanca: peso débil."
+   }
+  },
+  {
+   "id": "prefiero-un-pais-donde-el-estado-tenga-u",
+   "tipo": "afirmacion",
+   "pregunta": "Prefiero un país donde el Estado tenga un rol activo para reducir las diferencias económicas.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "grupos": [
+    "tamano-estado"
+   ],
+   "eje": {
+    "economia": -1
+   },
+   "ref": {
+    "a": 57,
+    "b": 41,
+    "resto": 2,
+    "encuestadora": "Pulsar.UBA (Creencias Sociales 2026)",
+    "fecha": "2026-06",
+    "muestra": "1.252 casos, mayores de 18; telefónica CATI 1.000 + domiciliaria 252, probabilística, cuotas por sexo, edad y nivel educativo; campo 27 may - 10 jun 2026; ±2,8%",
+    "alcance": "nacional",
+    "url": "https://pulsar.uba.ar/wp-content/uploads/2026/10/Creencias-2026_informe-2-escrito-2.pdf",
+    "pregunta_original": "¿En qué tipo de país le gustaría vivir? 'Uno donde el Estado tenga un rol activo para reducir las diferencias económicas entre las personas' / 'Uno donde el Estado no intervenga y las diferencias económicas dependan del esfuerzo de cada uno'",
+    "nota": "Dos opciones: A = rol activo 57; B = que no intervenga 41; ns/nc 2."
+   }
+  },
+  {
+   "id": "los-diputados-tenian-que-aprobar-la-ley",
+   "tipo": "afirmacion",
+   "pregunta": "Los diputados tenían que aprobar la ley de financiamiento universitario de 2025.",
+   "a": {
+    "texto": "De acuerdo"
+   },
+   "b": {
+    "texto": "En desacuerdo"
+   },
+   "tema": "economia",
+   "eje": {
+    "economia": -0.5
+   },
+   "ref": {
+    "a": 64.3,
+    "b": 22.8,
+    "resto": 12.9,
+    "encuestadora": "Proyección Consultores",
+    "fecha": "2025-09",
+    "muestra": "1.297 casos; online (CAWI) con reclutamiento geolocalizado; ajustado por sexo, edad, educación y región; mayores de 16; campo 13-16 sep 2025; ±2,72%",
+    "alcance": "nacional",
+    "url": "https://www.lanacion.com.ar/politica/una-encuesta-nacional-revelo-que-el-89-de-los-argentinos-tiene-una-opinion-positiva-de-la-nid17092025/",
+    "pregunta_original": "¿Qué deberían hacer los diputados con el presupuesto para las universidades?",
+    "nota": "A = 'debería aprobarse' 64,3; B = 'debe ser rechazado' 22,8; resto = no se pronunció."
    }
   }
  ]

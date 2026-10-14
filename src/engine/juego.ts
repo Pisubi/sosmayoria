@@ -1,7 +1,10 @@
 import type { Carta, Eleccion, Jugada, Mayoria, NombreEje, Tema } from '../types'
 
-/** Cartas por ronda. */
-export const RONDA = 25
+/** Cartas por ronda según el largo de la partida. La corta es la que se ofrece por defecto. */
+export const LARGOS = { corta: 15, larga: 25 } as const
+export type Largo = keyof typeof LARGOS
+/** La ronda larga: el cupo de cada escala está pensado para ella. */
+export const RONDA = LARGOS.larga
 
 /**
  * Si entre quienes eligieron A o B la diferencia con 50% es menor que esto (en puntos),
@@ -60,6 +63,9 @@ function mezclar<T>(items: T[], next: () => number): T[] {
  */
 export const CUPO: Record<NombreEje, number> = { economia: 8, valores: 6, autoridad: 0 }
 
+/** Cupo de una escala en una ronda de n cartas: proporcional al de la ronda larga. */
+export const cupo = (e: NombreEje, n: number = RONDA): number => Math.round((CUPO[e] * n) / RONDA)
+
 /**
  * Sortea una ronda: las cartas núcleo siempre, repartidas en lugares al azar; después las
  * ideológicas necesarias para el cupo de cada escala; y el resto, primero las que no miden
@@ -71,7 +77,7 @@ export function sortear(
   seed: number,
   vistas: ReadonlySet<string> = new Set(),
   temas?: ReadonlySet<Tema>,
-  n = RONDA,
+  n: number = RONDA,
 ): Carta[] {
   const next = random(seed)
   const nucleo = cartas.filter((c) => c.nucleo && !c.retirada)
@@ -104,7 +110,7 @@ export function sortear(
   const sentido = (c: Carta, e: NombreEje) => (c.tipo === 'afirmacion' ? Math.sign(c.eje?.[e] ?? 0) : 0)
   const saldo = (e: NombreEje) => [...nucleo, ...elegidas].reduce((s, c) => s + sentido(c, e), 0)
   for (const e of EJES) {
-    while (cuenta(e) < CUPO[e] && elegidas.length < total) {
+    while (cuenta(e) < cupo(e, n) && elegidas.length < total) {
       const opciones = candidatas.filter((x) => x.eje?.[e] && libre(x))
       // Primero que no se repitan cartas ya vistas; después, el equilibrio.
       const nuevas = opciones.filter((x) => !vistas.has(x.id))
@@ -338,7 +344,7 @@ export function brujula(respuestas: { carta: Carta; eleccion: Eleccion }[]): Bru
 }
 
 /** Por debajo de esto (en valor absoluto) una escala cuenta como centro. */
-export const CENTRO = 0.15
+export const CENTRO = 0.25
 
 const PALABRAS: Record<NombreEje, [string, string, string]> = {
   economia: ['más Estado', 'centro en economía', 'más mercado'],

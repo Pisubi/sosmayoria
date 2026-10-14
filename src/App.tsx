@@ -6,7 +6,7 @@ import { Juego } from './components/Juego'
 import { ParticipantForm } from './components/ParticipantForm'
 import { Resultado } from './components/Resultado'
 import { cartas, orden } from './data/cartas'
-import { nuevaSemilla, resumir, sortear, type Resumen } from './engine/juego'
+import { LARGOS, nuevaSemilla, resumir, sortear, type Largo, type Resumen } from './engine/juego'
 import {
   cartasVistas,
   guardarPersona,
@@ -34,13 +34,16 @@ const porId = new Map(cartas.map((c) => [c.id, c]))
 function App() {
   const [stage, setStage] = useState<Stage>({ step: 'inicio' })
   const [guardada, setGuardada] = useState<RondaGuardada | null>(() => rondaGuardada())
+  // Partida corta por defecto; "otra ronda" repite el largo de la última.
+  const [largo, setLargo] = useState<Largo>('corta')
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [stage.step])
 
-  function jugar(temas: Tema[]) {
+  function jugar(temas: Tema[], cuanto: Largo = largo) {
+    setLargo(cuanto)
     const semilla = nuevaSemilla()
-    const elegidas = sortear(cartas, semilla, cartasVistas(), new Set(temas))
+    const elegidas = sortear(cartas, semilla, cartasVistas(), new Set(temas), LARGOS[cuanto])
     const ronda: RondaGuardada = { semilla, cartas: elegidas.map((c) => c.id), jugadas: [], temas, inicio: Date.now() }
     guardarRonda(ronda)
     setStage({ step: 'juego', ronda, cartas: elegidas })
@@ -49,7 +52,7 @@ function App() {
   function retomar(ronda: RondaGuardada) {
     const elegidas = ronda.cartas.map((id) => porId.get(id)).filter((c): c is Carta => Boolean(c))
     // Si cambió el banco y faltan cartas, se empieza de nuevo.
-    if (elegidas.length !== ronda.cartas.length) return jugar(ronda.temas)
+    if (elegidas.length !== ronda.cartas.length) return jugar(ronda.temas, ronda.cartas.length < LARGOS.larga ? 'corta' : 'larga')
     setStage({ step: 'juego', ronda, cartas: elegidas })
   }
 

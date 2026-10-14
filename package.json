@@ -9,7 +9,8 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "test": "vitest run",
-    "archivo": "node scripts/un-archivo.mjs"
+    "archivo": "node scripts/un-archivo.mjs",
+    "simular": "rolldown scripts/simular-brujula.ts --format esm --platform node -o node_modules/.cache/simular.mjs && node node_modules/.cache/simular.mjs"
   },
   "dependencies": {
     "react": "^19.2.8",

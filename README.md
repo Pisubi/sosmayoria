@@ -9,7 +9,7 @@ No es una encuesta, pero junta opinión: lo que elige cada persona se guarda de 
 
 ## Cómo se juega
 
-- Rondas de 25 cartas sorteadas del banco (encuestas nacionales de la Argentina, o regionales
+- Partidas cortas de 15 cartas (por defecto) o largas de 25, sorteadas del banco (encuestas nacionales de la Argentina, o regionales
   amplias —AMBA, grandes ciudades, varias regiones— con al menos 500 casos), alternando temas (política, economía, sociedad, historia, cultura, vida
   cotidiana) y priorizando las que la persona todavía no vio.
 - Cada carta: elegís A, B o "prefiero no decir" y aparece "Estás con la mayoría", "Estás en la
@@ -137,3 +137,11 @@ npm run build
 
 Vite, React, TypeScript y Tailwind. Las fotos de figuras (`public/img`, `src/data/fotos.json`)
 son de Wikimedia Commons, con autor y licencia.
+
+## Verificar la brújula
+
+`tests/arquetipos.ts` tiene siete perfiles definidos solo por su lugar en las escalas (por ejemplo
+"Estado, progresista, garantías" o "mercado, tradicional, orden"), con su respuesta en cada carta
+con eje, y `tests/arquetipos.test.ts` exige que la brújula ubique a cada uno donde corresponde. Al agregar una
+carta con eje hay que sumarle su fila. `npm run simular -- 20000 1,3,5` juega millones de partidas
+sintéticas sobre el motor real; la última auditoría está en `docs/auditoria-brujula.md`.

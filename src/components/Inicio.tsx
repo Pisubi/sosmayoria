@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { cartas, TEMAS } from '../data/cartas'
-import { RONDA } from '../engine/juego'
+import { LARGOS, type Largo } from '../engine/juego'
 import type { RondaGuardada } from '../lib/guardado'
 import type { Tema } from '../types'
 import { Eyebrow, Index } from './Eyebrow'
@@ -8,7 +8,7 @@ import { Footer } from './Footer'
 
 interface InicioProps {
   guardada: RondaGuardada | null
-  onJugar: (temas: Tema[]) => void
+  onJugar: (temas: Tema[], largo: Largo) => void
   onRetomar: (r: RondaGuardada) => void
   onMethodology: () => void
 }
@@ -36,6 +36,7 @@ const PREGUNTAS = [
 
 export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioProps) {
   const [temas, setTemas] = useState<Tema[]>([])
+  const [largo, setLargo] = useState<Largo>('corta')
   const disponibles = TEMAS.filter((t) => cartas.some((c) => c.tema === t.id))
   const toggle = (t: Tema) => setTemas((ts) => (ts.includes(t) ? ts.filter((x) => x !== t) : [...ts, t]))
 
@@ -48,9 +49,28 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
             ¿Sabés qué piensa la Argentina?
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 font-medium text-papel/90">
-            Elegí entre dos opciones y descubrí si pensás como la mayoría de los argentinos. {RONDA} cartas, un par
-            de minutos.
+            Elegí entre dos opciones y descubrí si pensás como la mayoría de los argentinos. {LARGOS.corta} cartas,
+            un minuto.
           </p>
+
+          <div className="mt-8">
+            <p className="text-sm font-bold">Partida:</p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {(Object.keys(LARGOS) as Largo[]).map((l) => (
+                <button
+                  key={l}
+                  type="button"
+                  aria-pressed={largo === l}
+                  onClick={() => setLargo(l)}
+                  className={`caja-sm px-4 py-2 text-sm font-bold transition-transform hover:-translate-y-0.5 ${
+                    largo === l ? 'bg-naranja text-azul' : 'bg-papel text-azul'
+                  }`}
+                >
+                  {l === 'corta' ? 'Corta' : 'Larga'} · {LARGOS[l]} cartas
+                </button>
+              ))}
+            </div>
+          </div>
 
           {disponibles.length > 1 && (
             <div className="mt-8">
@@ -77,7 +97,7 @@ export function Inicio({ guardada, onJugar, onRetomar, onMethodology }: InicioPr
             <button
               type="button"
               disabled={cartas.length === 0}
-              onClick={() => onJugar(temas)}
+              onClick={() => onJugar(temas, largo)}
               className="caja !border-papel !shadow-[6px_6px_0_#e37a29] bg-naranja text-azul px-10 py-4 text-base font-black tracking-wide uppercase transition-transform hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none disabled:opacity-40"
             >
               Jugar →
