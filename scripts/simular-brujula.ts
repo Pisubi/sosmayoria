@@ -2,7 +2,7 @@
  * Simulación masiva de la brújula política: juega rondas reales (sortear) con jugadores sintéticos
  * y mide dónde los ubica brujula().
  *
- *   npm run simular -- [secuencias=2000] [rondas=1,3]
+ *   npm run simular -- [secuencias=2000] [rondas=1,3] [cartas por ronda=25]
  *
  * Cada secuencia juega, con las mismas rondas, ~33 jugadores: una persona al azar del país según el
  * modelo (para medir cuánto recupera su posición real), cinco perfiles perfectamente coherentes
@@ -15,7 +15,7 @@ import { isMainThread, parentPort, Worker, workerData } from 'node:worker_thread
 import { cpus } from 'node:os'
 import { fileURLToPath } from 'node:url'
 import { cartas } from '../src/data/cartas'
-import { brujula, CENTRO, EJES, mayoria, random, real, sortear } from '../src/engine/juego'
+import { brujula, CENTRO, EJES, mayoria, random, real, RONDA, sortear } from '../src/engine/juego'
 import type { Carta, Eleccion, NombreEje } from '../src/types'
 import { ARQUETIPOS, respuestaDe } from '../tests/arquetipos'
 
@@ -51,11 +51,11 @@ function pA(c: Carta, th: Record<NombreEje, number>): number {
 }
 
 // ---------- Rondas reales (sortear) ----------
-function secuencia(seed: number, n: number): Carta[][] {
+function secuencia(seed: number, n: number, largo: number): Carta[][] {
   const vistas = new Set<string>()
   const out: Carta[][] = []
   for (let k = 0; k < n; k++) {
-    const r = sortear(cartas, seed * 7 + k, vistas)
+    const r = sortear(cartas, seed * 7 + k, vistas, undefined, largo)
     r.forEach((c) => vistas.add(c.id))
     out.push(r)
   }
@@ -82,15 +82,15 @@ function jugar(acc: Acc, rondas: Carta[][], estr: Estrategia, rnd: () => number,
   extra?.(b.vos)
 }
 
-function trabajo(tarea: { desde: number; hasta: number; rondas: number }) {
-  const { desde, hasta, rondas } = tarea
+function trabajo(tarea: { desde: number; hasta: number; rondas: number; largo: number }) {
+  const { desde, hasta, rondas, largo } = tarea
   const res: Record<string, Acc> = {}
   const acc = (k: string) => (res[k] ??= nuevoAcc())
   // Recuperación: correlación θ verdadero vs estimado
   const rec = { n: 0, sxy: { economia: 0, valores: 0, autoridad: 0 }, sxx: { economia: 0, valores: 0, autoridad: 0 }, syy: { economia: 0, valores: 0, autoridad: 0 }, sx: { economia: 0, valores: 0, autoridad: 0 }, sy: { economia: 0, valores: 0, autoridad: 0 }, acierto: { economia: 0, valores: 0, autoridad: 0 }, cuadrante: 0 }
   const elegA = new Map<string, [number, number]>()
   for (let s = desde; s < hasta; s++) {
-    const seq = secuencia(s, rondas)
+    const seq = secuencia(s, rondas, largo)
     const rnd = random(s * 13 + rondas)
     const gauss = () => { const u = 1 - rnd(), v = rnd(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v) }
     // 1) Población IRT θ ~ N(0,1)
@@ -142,11 +142,12 @@ function trabajo(tarea: { desde: number; hasta: number; rondas: number }) {
 if (isMainThread) {
   const N = Number(process.argv[2] ?? 2000)
   const RONDAS = (process.argv[3] ?? '1,3').split(',').map(Number)
+  const LARGO = Number(process.argv[4] ?? RONDA)
   const nw = cpus().length
   const out: Record<string, unknown> = {}
   for (const rondas of RONDAS) {
     const partes = await Promise.all(Array.from({ length: nw }, (_, w) => new Promise<ReturnType<typeof trabajo>>((ok, ko) => {
-      const wk = new Worker(fileURLToPath(import.meta.url), { workerData: { desde: 1 + Math.floor((w * N) / nw), hasta: 1 + Math.floor(((w + 1) * N) / nw), rondas } })
+      const wk = new Worker(fileURLToPath(import.meta.url), { workerData: { desde: 1 + Math.floor((w * N) / nw), hasta: 1 + Math.floor(((w + 1) * N) / nw), rondas, largo: LARGO } })
       wk.on('message', ok); wk.on('error', ko)
     })))
     const res: Record<string, Acc> = {}

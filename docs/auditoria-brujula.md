@@ -120,11 +120,22 @@ calcular la brújula promedio de quienes aprueban y de quienes desaprueban al go
   Malvinas de 2021, lectura y cine de 2022. Historia sigue con muy pocas cartas.
 - **Sin tests de interfaz**: un Playwright de una ronda completa cubriría guardar y retomar.
 
-## Cambios de este commit
+## Partida corta
+
+Desde esta versión la partida por defecto es corta: 15 cartas, con el cupo de cada escala
+proporcional al de la larga (5 de economía y 4 de valores, núcleo incluidas, más 6 que no cuentan
+para la brújula). En 10.000 secuencias, con 10% de respuestas al revés, los perfiles marcados caen
+en su lado en el 89–96% de los casos después de una ronda corta, contra 93–99% con una larga. A las
+tres rondas cortas, el 97–100%. La correlación entre posición real y estimada en una ronda baja de
+0,74 / 0,70 a 0,66 / 0,64 (economía / valores), y la brújula sale con precisión "aproximada":
+alcanza para un primer resultado y se afina jugando más.
+
+## Cambios
 
 - `CENTRO` de 0,15 a 0,25 (`src/engine/juego.ts`).
 - `tests/arquetipos.ts` y `tests/arquetipos.test.ts`: siete perfiles definidos por las tres escalas,
   con su respuesta en las 101 cartas con eje. El test exige que en economía y valores cada perfil
   marcado caiga en su lado en el 95% de 60 secuencias de tres rondas, y nunca en el opuesto. Además
   falla si se agrega una carta con eje sin la respuesta de cada perfil.
-- `scripts/simular-brujula.ts` y `npm run simular`.
+- `scripts/simular-brujula.ts` y `npm run simular` (el tercer argumento es el largo de la ronda).
+- Partida corta (15 cartas) por defecto y larga (25) a elección, con cupo proporcional.

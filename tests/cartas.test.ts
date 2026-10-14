@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { cartas, orden, todas, TEMAS } from '../src/data/cartas'
-import { brujula, CUPO, EJES, esExtrema, mideBrujula, RONDA, sortear } from '../src/engine/juego'
+import { brujula, CUPO, cupo, EJES, esExtrema, LARGOS, mideBrujula, RONDA, sortear } from '../src/engine/juego'
 import type { Carta, NombreEje } from '../src/types'
 import fotos from '../src/data/fotos.json'
 import guardado from './orden-cartas.json'
@@ -38,6 +38,16 @@ describe('banco de cartas', () => {
       }
     }
     expect(todas.find((c) => c.id.startsWith('aprobas-la-gestion'))?.eje).toBeUndefined()
+  })
+
+  it('la partida corta trae su cupo proporcional y alcanza para ubicar la brújula', () => {
+    for (let s = 0; s < 200; s++) {
+      const r = sortear(cartas, s, new Set(), undefined, LARGOS.corta)
+      expect(r).toHaveLength(LARGOS.corta)
+      for (const e of EJES) expect(r.filter((c) => c.eje?.[e]).length, `${e}, semilla ${s}`).toBeGreaterThanOrEqual(cupo(e, LARGOS.corta))
+      expect(LARGOS.corta - r.filter(mideBrujula).length).toBeGreaterThanOrEqual(5)
+      expect(brujula(r.map((carta) => ({ carta, eleccion: 'a' as const })))).not.toBeNull()
+    }
   })
 
   it('cada ronda real trae el cupo de cada escala y deja lugar para las otras cartas', () => {

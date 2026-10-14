@@ -9,7 +9,7 @@ No es una encuesta, pero junta opinión: lo que elige cada persona se guarda de 
 
 ## Cómo se juega
 
-- Rondas de 25 cartas sorteadas del banco (encuestas nacionales de la Argentina, o regionales
+- Partidas cortas de 15 cartas (por defecto) o largas de 25, sorteadas del banco (encuestas nacionales de la Argentina, o regionales
   amplias —AMBA, grandes ciudades, varias regiones— con al menos 500 casos), alternando temas (política, economía, sociedad, historia, cultura, vida
   cotidiana) y priorizando las que la persona todavía no vio.
 - Cada carta: elegís A, B o "prefiero no decir" y aparece "Estás con la mayoría", "Estás en la
