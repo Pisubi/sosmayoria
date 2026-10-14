@@ -121,6 +121,21 @@ const TABLA: Record<string, string> = {
   'las-empresas-privadas-gestionan-mejor-qu': 'abbabba',
   'estuvo-bien-que-el-gobierno-de-milei-eli': 'aababaa',
   'el-capitalismo-de-libre-empresa-es-el-un': 'abbabba',
+  'la-desigualdad-de-genero-sigue-siendo-un': 'baaabaa',
+  'las-cosas-funcionarian-mejor-si-mas-muje': 'baaabaa',
+  'que-la-mujer-gane-mas-que-su-marido-no-l': 'baaabaa',
+  'las-personas-trans-deberian-poder-usar-l': 'baabbaa',
+  'los-documentos-oficiales-deberian-tener': 'baaabaa',
+  'las-obras-sociales-y-prepagas-deberian-c': 'baabbaa',
+  'el-cambio-climatico-se-debe-mas-a-la-act': 'baaabaa',
+  'la-argentina-no-tiene-que-cerrarle-las-f': 'baaabaa',
+  'los-refugiados-hacen-un-aporte-positivo': 'baaabaa',
+  'no-me-molestaria-tener-como-vecinos-a-pe': 'baaabaa',
+  'el-estado-no-deberia-financiar-a-ninguna': 'baaabaa',
+  'paralizar-las-obras-publicas-es-criminal': 'baabaab',
+  'el-estado-nacional-deberia-hacer-mas-obr': 'baaaaab',
+  'prefiero-un-pais-donde-el-estado-tenga-u': 'baabaab',
+  'los-diputados-tenian-que-aprobar-la-ley': 'baabaab',
 }
 
 export function respuestaDe(arquetipo: number, carta: string): Eleccion | undefined {

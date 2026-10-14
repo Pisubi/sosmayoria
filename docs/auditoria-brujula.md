@@ -33,35 +33,48 @@ juega con 33 jugadores sintéticos. Se corrieron 20.000 secuencias para 1, 3 y 5
 
 ## Problemas
 
-### 1. Sesgo de aquiescencia: las afirmaciones quedaron casi todas de un lado (grave)
+### 1. Sesgo de aquiescencia: las afirmaciones quedaron casi todas de un lado (atenuado)
 
 Al sacar de la brújula las cartas de consenso (ayuda a los pobres, Estado dueño de áreas
 estratégicas, obra pública, controles de precios, matrimonio igualitario, eutanasia…) se fueron
-casi todas las afirmaciones cuyo "de acuerdo" empuja hacia el Estado o lo progresista:
+casi todas las afirmaciones cuyo "de acuerdo" empuja hacia el Estado o lo progresista. En esta
+rama se sumaron 15 cartas nuevas, todas verificadas contra su fuente: 11 progresistas en valores
+y 4 del lado del Estado en economía.
 
-| Afirmaciones con eje | "De acuerdo" empuja a + | "De acuerdo" empuja a − |
+| Afirmaciones con eje | "De acuerdo" empuja a + | "De acuerdo" empuja a − (antes → ahora) |
 |---|---|---|
-| Economía | 31 (mercado) | **3** (Estado) |
-| Valores | 17 (tradicional) | 7 (progresista) |
+| Economía | 31 (mercado) | 3 → **7** (Estado) |
+| Valores | 17 (tradicional) | 7 → **18** (progresista) |
 | Autoridad | 9 (orden) | 2 (garantías) |
 
-`sortear` equilibra dentro de cada ronda, pero como prioriza las cartas no vistas, las pocas del
-lado del Estado se agotan en la primera ronda. Resultado, para quien contesta "de acuerdo" a casi
-todo (un sesgo real y frecuente en encuestas):
+`sortear` equilibra dentro de cada ronda, pero como prioriza las cartas no vistas, las del lado
+escaso se agotan en las primeras rondas. Para quien contesta "de acuerdo" a casi todo (un sesgo
+real y frecuente en encuestas), ronda larga, 10.000 secuencias:
 
 | Todo de acuerdo | 1 ronda | 3 rondas | 5 rondas |
 |---|---|---|---|
-| Economía | +0,12 | +0,41 (72% "más mercado") | **+0,92 (100%)** |
-| Valores | +0,02 | +0,48 (89% "tradicional") | **+0,88 (100%)** |
+| Economía, antes → ahora | +0,12 → +0,20 | +0,41 → +0,32 | **+0,92 → +0,69** |
+| Valores, antes → ahora | +0,02 → +0,03 | +0,48 → +0,43 | **+0,88 → +0,52** |
+| Todo en desacuerdo, valores | +0,13 → +0,22 | −0,11 → +0,03 | −0,43 → **+0,01** |
 
-Con "todo en desacuerdo" pasa lo inverso: −0,79 en economía a las cinco rondas, el 100% "más
-Estado". **Propuesta**: sumar 10 a 15 afirmaciones del lado del Estado y 6 a 8 del lado
-progresista, que no sean de consenso (entre 30% y 70% de acuerdo). Por ejemplo: "El Estado debería
-fijar el precio de los alimentos básicos", "Hay que volver a cobrar el impuesto a la riqueza",
-"Las universidades públicas necesitan más presupuesto", "La ESI tiene que ser obligatoria en todas
-las escuelas", "Hay que ampliar la ley de cupo laboral trans". También sirve pasar a duelo (esto o
-aquello) algunas de las 31 afirmaciones de mercado. Mientras tanto, se puede hacer que `sortear`
-repita una carta vista del lado escaso antes que romper el equilibrio.
+En valores las cartas ya están equilibradas en cantidad, pero el sesgo sigue. La causa es que casi
+todas las afirmaciones progresistas las acepta la mayoría (55–75%) y las tradicionales, una
+minoría (20–46%). Decir "de acuerdo" con una afirmación minoritaria mueve mucho más que decirlo
+con una mayoritaria. Para terminar de corregirlo hacen falta **afirmaciones progresistas que
+acepte una minoría** (como "Hay que legalizar la marihuana", 37%) y **más afirmaciones del lado
+del Estado**: quedan 31 contra 7. Otra salida es pasar a duelo (esto o aquello) algunas de las 31
+afirmaciones de mercado.
+
+Un efecto secundario: como las cartas progresistas nuevas las acepta la mayoría, quien elige
+siempre lo mayoritario queda ahora más progresista que antes (ver el punto 3).
+
+**Lo que no se encontró**: encuestas nacionales recientes, con números publicados, sobre aborto
+(posteriores a la carta actual), ESI obligatoria, Ley Micaela, cupo y paridad, lenguaje
+inclusivo, despenalización del autocultivo, retenciones, alquileres, control de precios de
+alimentos, aranceles, CONICET o Banco Nación redactadas del lado del Estado. Se descartaron
+también las de consenso (78% o más), las autoseleccionadas, las que solo encuestaban a jóvenes y
+dos con números confirmados pero sin ficha técnica publicada: paritarias y universidad gratuita
+(Alaska + Trespuntozero, 2025).
 
 ### 2. El centro era muy angosto (corregido)
 
@@ -81,7 +94,8 @@ Los perfiles marcados pierden como mucho 2 puntos.
 
 ### 3. Elegir siempre lo de la mayoría no es el promedio
 
-Quien elige siempre lo mayoritario no queda en 0: en valores cae en −0,15 a −0,18 (un tercio de las
+Quien elige siempre lo mayoritario no queda en 0: en valores caía en −0,15 a −0,18 (un tercio de
+las veces "progresista"), y con las cartas nuevas cae en −0,31 a −0,40 (del 58% al 85% de las
 veces "progresista"). En economía depende de las cartas que le toquen y llega hasta +0,66. Un
 perfil perfectamente coherente en θ = 0 da −0,41 en valores. No es un error del modelo: el argentino
 promedio a veces elige el lado minoritario, que en valores suele ser el tradicional extremo (pena
@@ -139,3 +153,12 @@ alcanza para un primer resultado y se afina jugando más.
   falla si se agrega una carta con eje sin la respuesta de cada perfil.
 - `scripts/simular-brujula.ts` y `npm run simular` (el tercer argumento es el largo de la ronda).
 - Partida corta (15 cartas) por defecto y larga (25) a elección, con cupo proporcional.
+- 15 cartas nuevas (`cartas-1.2.0`), al final del banco. Valores (de acuerdo = progresista): la
+  desigualdad de género sigue siendo un problema; más mujeres en puestos de responsabilidad; que la
+  mujer gane más no trae problemas; baños, documentos y cobertura de la transición para personas
+  trans; el cambio climático por la actividad humana; no cerrarle las fronteras a los refugiados y
+  su aporte; vecinos que estuvieron presos; el Estado no debería financiar religiones. Economía
+  (de acuerdo = Estado): paralizar la obra pública es criminal; más obras contra desastres; un
+  Estado con rol activo para reducir las diferencias económicas; aprobar el financiamiento
+  universitario de 2025. Tras sumarlas, los perfiles marcados siguen en su lado en el 95–100% de
+  los casos (10% de ruido, una ronda larga) y la calibración contra las encuestas no cambia.
