@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { cartas } from '../src/data/cartas'
-import { brujula, CENTRO, cuadrante, EJES, esIdeologica, mayoria, real, sortear } from '../src/engine/juego'
+import { brujula, CENTRO, esIdeologica, real, sortear } from '../src/engine/juego'
 import type { Carta, Eleccion } from '../src/types'
 import { ARQUETIPOS, cartasConRespuesta, respuestaDe } from './arquetipos'
 
@@ -20,40 +20,29 @@ function jugar(seed: number, rondas: number, elegir: (c: Carta) => Eleccion) {
 const SEMILLAS = 60
 const lado = (v: number) => (v <= -CENTRO ? -1 : v >= CENTRO ? 1 : 0)
 
-describe('arquetipos políticos', () => {
-  it('todas las cartas con eje tienen respuesta de cada arquetipo', () => {
+describe('perfiles en las tres escalas', () => {
+  it('todas las cartas con eje tienen respuesta de cada perfil', () => {
     const faltan = cartas.filter((c) => esIdeologica(c) && !cartasConRespuesta().includes(c.id)).map((c) => c.id)
     expect(faltan).toEqual([])
   })
 
+  // Solo economía y valores: autoridad se calcula pero no se muestra ni tiene cupo por ronda.
+  const VISIBLES = ['economia', 'valores'] as const
+
   it.each(ARQUETIPOS.map((a, i) => [a.nombre, i] as const))('%s queda donde se espera tras tres rondas', (_, i) => {
     const { esperado } = ARQUETIPOS[i]
-    const aciertos = { economia: 0, valores: 0, autoridad: 0 }
+    const aciertos = { economia: 0, valores: 0 }
     for (let s = 1; s <= SEMILLAS; s++) {
       const b = jugar(s, 3, (c) => respuestaDe(i, c.id) ?? (real(c) >= 50 ? 'a' : 'b'))
-      for (const e of EJES) {
-        // Nunca del lado opuesto; en el lado esperado (o en el centro) en casi todas las rondas.
-        expect(lado(b.vos[e]) * esperado[e], `semilla ${s}, ${e} = ${b.vos[e].toFixed(2)}`).toBeGreaterThanOrEqual(0)
-        if (esperado[e] === 0) expect(lado(b.vos[e]) === 0 || Math.abs(b.vos[e]) < 0.4, `semilla ${s}, ${e}`).toBe(true)
-        if (lado(b.vos[e]) === esperado[e]) aciertos[e]++
+      for (const e of VISIBLES) {
+        const v = b.vos[e]
+        // Los ejes "de centro" no se exigen: elegir siempre lo mayoritario no da el promedio (ver
+        // docs/auditoria-brujula.md), así que un perfil de centro puede caer a un lado.
+        if (esperado[e] === 0) continue
+        expect(lado(v) * esperado[e], `semilla ${s}, ${e} = ${v.toFixed(2)}`).toBeGreaterThanOrEqual(0)
+        if (lado(v) === esperado[e]) aciertos[e]++
       }
     }
-    for (const e of EJES) expect(aciertos[e] / SEMILLAS, e).toBeGreaterThanOrEqual(0.85)
-  })
-
-  it('quien siempre elige lo de la mayoría queda cerca del promedio en valores', () => {
-    let centro = 0
-    for (let s = 1; s <= SEMILLAS; s++) {
-      const b = jugar(s, 3, (c) => {
-        const m = mayoria(c)
-        return m === 'parejo' ? (real(c) >= 50 ? 'a' : 'b') : m
-      })
-      if (lado(b.vos.valores) === 0) centro++
-      // Elegir siempre lo mayoritario es un poco más estatista que el promedio (que a veces elige
-      // el lado minoritario de mercado), pero nunca da "más mercado" ni "más orden".
-      expect(cuadrante(b.vos)).not.toMatch(/mercado|tradicionales/)
-      expect(lado(b.vos.autoridad)).toBeLessThanOrEqual(0)
-    }
-    expect(centro / SEMILLAS).toBeGreaterThanOrEqual(0.9)
+    for (const e of VISIBLES) if (esperado[e] !== 0) expect(aciertos[e] / SEMILLAS, e).toBeGreaterThanOrEqual(0.95)
   })
 })

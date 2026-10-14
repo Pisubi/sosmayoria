@@ -140,8 +140,8 @@ son de Wikimedia Commons, con autor y licencia.
 
 ## Verificar la brújula
 
-`tests/arquetipos.ts` tiene siete votantes típicos (libertario, kirchnerista, izquierda, PRO,
-peronista conservador, radical, liberal) con su respuesta en cada carta con eje, y
-`tests/arquetipos.test.ts` exige que la brújula ubique a cada uno donde corresponde. Al agregar una
-carta con eje hay que sumarle su fila. `npm run simular -- 40000 1,3,5` juega millones de partidas
+`tests/arquetipos.ts` tiene siete perfiles definidos solo por su lugar en las escalas (por ejemplo
+"Estado, progresista, garantías" o "mercado, tradicional, orden"), con su respuesta en cada carta
+con eje, y `tests/arquetipos.test.ts` exige que la brújula ubique a cada uno donde corresponde. Al agregar una
+carta con eje hay que sumarle su fila. `npm run simular -- 20000 1,3,5` juega millones de partidas
 sintéticas sobre el motor real; la última auditoría está en `docs/auditoria-brujula.md`.

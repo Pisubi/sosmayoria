@@ -20,14 +20,21 @@ import type { Carta, Eleccion, NombreEje } from '../src/types'
 import { ARQUETIPOS, respuestaDe } from '../tests/arquetipos'
 
 const ARQ = ARQUETIPOS.map((a, i) => ({ ...a, id: String(i) }))
+// Mismo modelo que brujula(): discriminación, lapso y dificultad (ver src/engine/juego.ts).
 const D = 1.7
-const dif = (q: number, a: number) => (-Math.log(q / (1 - q)) * Math.sqrt(1 + (Math.PI * a * a) / 8)) / a
+const LAPSO = 0.1
+const dif = (q: number, a: number) => {
+  const s = Math.min(0.97, Math.max(0.03, (q - LAPSO) / (1 - 2 * LAPSO)))
+  return (-Math.log(s / (1 - s)) * Math.sqrt(1 + (Math.PI * a * a) / 8)) / a
+}
 const sig = (x: number) => 1 / (1 + Math.exp(-x))
+/** Percentil en el país, llevado a -1…1, como muestra la brújula. */
+const pantalla = (t: number) => { let s = 0.5; for (let k = 0, term = t; k < 60; k++) { s += term / (2 * k + 1) / Math.sqrt(2 * Math.PI); term *= (-t * t) / (2 * (k + 1)) } return 2 * s - 1 }
 
 /** P(elegir A) para alguien en θ bajo el mismo modelo que usa la brújula (carta multi-eje: producto de logits sumados). */
 function pA(c: Carta, th: Record<NombreEje, number>): number {
   if (!c.eje) return real(c) / 100
-  const p = Math.min(0.97, Math.max(0.03, real(c) / 100))
+  const p = real(c) / 100
   let logit = 0
   let n = 0
   for (const e of EJES) {
@@ -35,7 +42,7 @@ function pA(c: Carta, th: Record<NombreEje, number>): number {
     if (!w) continue
     const a = D * Math.abs(w)
     const q = w > 0 ? p : 1 - p
-    const pMas = sig(a * (th[e] - dif(q, a)))
+    const pMas = LAPSO + (1 - 2 * LAPSO) * sig(a * (th[e] - dif(q, a)))
     const pa = w > 0 ? pMas : 1 - pMas
     logit += Math.log(pa / (1 - pa))
     n++
@@ -98,7 +105,7 @@ function trabajo(tarea: { desde: number; hasta: number; rondas: number }) {
       for (const e of EJES) {
         const x = th[e], y = v[e]
         rec.sx[e] += x; rec.sy[e] += y; rec.sxx[e] += x * x; rec.syy[e] += y * y; rec.sxy[e] += x * y
-        const verdadero = x / 2 <= -CENTRO ? 0 : x / 2 >= CENTRO ? 2 : 1
+        const verdadero = pantalla(x) <= -CENTRO ? 0 : pantalla(x) >= CENTRO ? 2 : 1
         const est = y <= -CENTRO ? 0 : y >= CENTRO ? 2 : 1
         if (verdadero === est) rec.acierto[e]++
         else if (e !== 'autoridad') ok = false

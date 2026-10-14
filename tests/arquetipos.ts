@@ -1,23 +1,24 @@
 import type { Eleccion, NombreEje } from '../src/types'
 
 /**
- * Siete votantes "conscientes": qué respondería cada uno en cada carta ideológica (y en la de
- * aprobación), decidido carta por carta según la postura típica, no con el modelo de la brújula.
- * Sirven para verificar que la brújula ubica a cada uno donde se espera (tests y
- * scripts/simular-brujula.ts). Si se agrega una carta con eje, hay que sumarle su fila.
+ * Siete perfiles coherentes, definidos solo por su lugar en las tres escalas (no son partidos ni
+ * votantes de nadie). Para cada carta con eje se decidió a mano qué elegiría alguien con esa
+ * combinación, sin usar el modelo de la brújula, para verificar que la brújula lo ubica donde
+ * corresponde (tests y scripts/simular-brujula.ts). Los de intensidad moderada rechazan las
+ * afirmaciones extremas de su propio lado. Si se agrega una carta con eje, hay que sumarle su fila.
  * esperado: -1 / 0 / 1 = lado - de la escala, centro, lado +.
  */
 export const ARQUETIPOS = [
-  { nombre: 'Libertario mileísta', esperado: { economia: 1, valores: 1, autoridad: 1 } },
-  { nombre: 'Kirchnerista', esperado: { economia: -1, valores: -1, autoridad: -1 } },
-  { nombre: 'Izquierda trotskista', esperado: { economia: -1, valores: -1, autoridad: -1 } },
-  { nombre: 'Centroderecha (PRO)', esperado: { economia: 1, valores: 0, autoridad: 1 } },
-  { nombre: 'Peronista conservador', esperado: { economia: -1, valores: 1, autoridad: 1 } },
-  { nombre: 'Radical progresista', esperado: { economia: 0, valores: -1, autoridad: -1 } },
-  { nombre: 'Liberal en lo económico y lo civil', esperado: { economia: 1, valores: -1, autoridad: -1 } },
+  { nombre: 'Mercado, tradicional, orden', esperado: { economia: 1, valores: 1, autoridad: 1 } },
+  { nombre: 'Estado, progresista, garantías', esperado: { economia: -1, valores: -1, autoridad: -1 } },
+  { nombre: 'Estado, progresista, garantías (al extremo)', esperado: { economia: -1, valores: -1, autoridad: -1 } },
+  { nombre: 'Mercado moderado, centro en valores, orden', esperado: { economia: 1, valores: 0, autoridad: 1 } },
+  { nombre: 'Estado, tradicional, orden', esperado: { economia: -1, valores: 1, autoridad: 1 } },
+  { nombre: 'Centro en economía, progresista, garantías', esperado: { economia: 0, valores: -1, autoridad: -1 } },
+  { nombre: 'Mercado, progresista, garantías', esperado: { economia: 1, valores: -1, autoridad: -1 } },
 ] as const satisfies readonly { nombre: string; esperado: Record<NombreEje, -1 | 0 | 1> }[]
 
-/** Una letra por arquetipo, en el orden de ARQUETIPOS. */
+/** Una letra por perfil, en el orden de ARQUETIPOS. */
 const TABLA: Record<string, string> = {
   'que-deberia-priorizar-la-economia': 'baababb',
   'la-argentina-necesita-una-reforma-labora': 'abbabaa',
@@ -77,6 +78,49 @@ const TABLA: Record<string, string> = {
   'el-cambio-climatico-es-un-invento-del-so': 'abbbbbb',
   'los-recursos-naturales-estrategicos-liti': 'baaaaab',
   'estas-a-favor-del-acuerdo-de-libre-comer': 'abbabaa',
+  'en-la-argentina-el-estado-gasta-mucho': 'aababaa',
+  'hay-que-reducir-el-gasto-del-estado-en-p': 'abbabaa',
+  'que-estado-preferis-uno-que-cobre-menos': 'abbabaa',
+  'los-despidos-en-el-sector-publico-son-ne': 'abbabaa',
+  'hay-que-recortar-los-subsidios-a-la-ener': 'abbabba',
+  'hay-que-permitir-contratos-y-pagos-en-do': 'abbabaa',
+  'la-cuota-sindical-tiene-que-ser-voluntar': 'abbabaa',
+  'los-aumentos-de-sueldo-tienen-que-ser-po': 'abbabaa',
+  'los-convenios-de-trabajo-deberian-negoci': 'abbabba',
+  'el-estado-no-esta-para-ser-manejado-sino': 'abbbbba',
+  'el-sector-privado-debe-definir-los-preci': 'abbbbba',
+  'el-sector-privado-es-el-unico-que-puede': 'abbbbba',
+  'hay-que-eliminar-los-subsidios-y-los-pla': 'abbbbba',
+  'hay-que-limitar-la-posibilidad-de-los-em': 'abbabba',
+  'hay-que-eliminar-las-retenciones-al-camp': 'abbabba',
+  'hay-que-recortar-el-gasto-publico-en-cul': 'abbbbba',
+  'en-la-argentina-ya-se-hizo-lo-suficiente': 'abbaabb',
+  'a-los-varones-se-les-esta-exigiendo-dema': 'abbbabb',
+  'las-mujeres-son-naturalmente-mejores-que': 'abbaabb',
+  'para-ser-una-persona-moral-y-tener-bueno': 'abbbabb',
+  'la-biblia-deberia-tener-mucha-o-bastante': 'abbbabb',
+  'para-ser-verdaderamente-argentino-es-imp': 'abbbabb',
+  'hay-que-eliminar-la-educacion-sexual-int': 'abbbabb',
+  'con-permiso-de-sus-padres-los-adolescent': 'baaabaa',
+  'te-definis-como-feminista': 'baabbaa',
+  'la-ideologia-de-genero-es-una-corriente': 'abbbabb',
+  'la-educacion-sexual-en-las-escuelas-debe': 'abbbabb',
+  'el-matrimonio-deberia-ser-solo-entre-un': 'abbbabb',
+  'la-politica-de-derechos-humanos-en-la-ar': 'abbaabb',
+  'el-orden-social-es-mas-importante-que-ci': 'abbaabb',
+  'el-impuesto-a-las-ganancias-es-un-robo-d': 'abbabaa',
+  'la-herencia-y-la-propiedad-privada-son-d': 'abbabaa',
+  'el-mercado-libre-sin-intervencion-del-es': 'abbabba',
+  'el-exceso-de-gasto-publico-es-el-princip': 'abbabba',
+  'gobierne-quien-gobierne-la-apertura-de-i': 'abbabba',
+  'gobierne-quien-gobierne-la-desregulacion': 'abbabba',
+  'gobierne-quien-gobierne-el-estado-sin-de': 'abbabaa',
+  'que-deberia-priorizar-el-gobierno-de-mil': 'abbabba',
+  'que-estado-preferis': 'abbabaa',
+  'quien-genera-la-riqueza-en-la-argentina': 'abbabaa',
+  'las-empresas-privadas-gestionan-mejor-qu': 'abbabba',
+  'estuvo-bien-que-el-gobierno-de-milei-eli': 'aababaa',
+  'el-capitalismo-de-libre-empresa-es-el-un': 'abbabba',
 }
 
 export function respuestaDe(arquetipo: number, carta: string): Eleccion | undefined {
