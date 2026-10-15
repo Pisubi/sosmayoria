@@ -40,6 +40,17 @@ describe('banco de cartas', () => {
     expect(todas.find((c) => c.id.startsWith('aprobas-la-gestion'))?.eje).toBeUndefined()
   })
 
+  it('dos partidas cortas seguidas solo repiten la carta del gobierno', () => {
+    for (let s = 0; s < 200; s++) {
+      const r1 = sortear(cartas, s * 2, new Set(), undefined, LARGOS.corta)
+      const ids = new Set(r1.map((c) => c.id))
+      const r2 = sortear(cartas, s * 2 + 1, ids, undefined, LARGOS.corta, ids)
+      const repetidas = r2.filter((c) => ids.has(c.id))
+      expect(repetidas.map((c) => c.id), `semilla ${s}`).toEqual(cartas.filter((c) => c.nucleo && c.volatil).map((c) => c.id))
+      expect(brujula(r2.map((carta) => ({ carta, eleccion: 'a' as const })))).not.toBeNull()
+    }
+  })
+
   it('la partida corta trae su cupo proporcional y alcanza para ubicar la brújula', () => {
     for (let s = 0; s < 200; s++) {
       const r = sortear(cartas, s, new Set(), undefined, LARGOS.corta)

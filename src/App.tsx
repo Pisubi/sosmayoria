@@ -11,6 +11,7 @@ import {
   cartasVistas,
   guardarPersona,
   guardarRonda,
+  historial,
   marcarVistas,
   personaGuardada,
   rondaGuardada,
@@ -43,7 +44,8 @@ function App() {
   function jugar(temas: Tema[], cuanto: Largo = largo) {
     setLargo(cuanto)
     const semilla = nuevaSemilla()
-    const elegidas = sortear(cartas, semilla, cartasVistas(), new Set(temas), LARGOS[cuanto])
+    const respondidas = new Set(Object.keys(historial().respuestas))
+    const elegidas = sortear(cartas, semilla, cartasVistas(), new Set(temas), LARGOS[cuanto], respondidas)
     const ronda: RondaGuardada = { semilla, cartas: elegidas.map((c) => c.id), jugadas: [], temas, inicio: Date.now() }
     guardarRonda(ronda)
     setStage({ step: 'juego', ronda, cartas: elegidas })

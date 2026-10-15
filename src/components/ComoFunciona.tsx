@@ -33,12 +33,13 @@ export function ComoFunciona({ onBack, backLabel = 'Volver' }: { onBack: () => v
         mayoría clara en las que elegiste.
       </Bloque>
 
-      <Bloque titulo="Las cartas que siempre salen">
-        En cada ronda hay cinco cartas fijas, mezcladas entre las demás: el rol del Estado en la
-        economía, el aborto legal, la seguridad, los juicios por la última dictadura y la
+      <Bloque titulo="Las cartas que salen primero">
+        Hay cinco cartas que salen en tu primera ronda, mezcladas entre las demás: el rol del Estado
+        en la economía, el aborto legal, la seguridad, los juicios por la última dictadura y la
         aprobación del gobierno. Son las que más distinguen las posturas políticas en la Argentina
-        y permiten analizar las respuestas de cada carta según la orientación de quien juega. La
-        del gobierno se actualiza con la última medición disponible.
+        y permiten analizar las respuestas de cada carta según la orientación de quien juega. Una
+        vez que las contestás no vuelven a salir, salvo la del gobierno, que sale en todas las
+        rondas y se actualiza con la última medición disponible.
       </Bloque>
 
       <Bloque titulo="La brújula política">

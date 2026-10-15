@@ -93,6 +93,16 @@ describe('cartas núcleo', () => {
     expect(r.filter((c) => c.nucleo)).toHaveLength(5)
     expect(r.filter((c) => !c.nucleo).every((c) => c.tema === 'cultura')).toBe(true)
   })
+
+  it('las ya contestadas no vuelven, salvo las volátiles', () => {
+    const conVolatil = banco.map((c) => (c.id === 'n0' ? { ...c, volatil: true } : c))
+    const respondidas = new Set(['n0', 'n1', 'n2'])
+    for (let s = 0; s < 50; s++) {
+      const r = sortear(conVolatil, s, new Set(), undefined, 15, respondidas)
+      expect(r).toHaveLength(15)
+      expect(r.filter((c) => c.nucleo).map((c) => c.id).sort()).toEqual(['n0', 'n3', 'n4'])
+    }
+  })
 })
 
 describe('cartas parecidas', () => {

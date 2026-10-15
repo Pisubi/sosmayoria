@@ -21,11 +21,14 @@ No es una encuesta, pero junta opinión: lo que elige cada persona se guarda de 
 
 ## Cartas núcleo
 
-Cinco cartas (`"nucleo": true`) salen en todas las rondas, en lugares al azar repartidos entre
-las demás: Estado o mercado en el empleo, aborto legal, penas o desigualdad frente a la
-inseguridad, juicios por la dictadura y aprobación del gobierno. Dan un perfil político de
-cada partida para cruzar con el resto de las cartas (la exportación las trae como columnas).
-La de aprobación es `"volatil": true`: hay que actualizar su dato con la última medición.
+Cinco cartas (`"nucleo": true`) salen en lugares al azar repartidos entre las demás hasta que la
+persona las contesta: Estado o mercado en el empleo, aborto legal, penas o desigualdad frente a
+la inseguridad, juicios por la dictadura y aprobación del gobierno. Dan un perfil político para
+cruzar con el resto de las cartas (la exportación las trae como columnas). Una vez contestadas
+(según el historial del navegador) no vuelven, para que las rondas siguientes no se sientan
+iguales; por eso en Supabase solo la primera partida de cada dispositivo las trae completas. La
+de aprobación es `"volatil": true`: sale siempre y hay que actualizar su dato con la última
+medición.
 
 ## Brújula política
 

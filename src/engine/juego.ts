@@ -67,10 +67,11 @@ export const CUPO: Record<NombreEje, number> = { economia: 8, valores: 6, autori
 export const cupo = (e: NombreEje, n: number = RONDA): number => Math.round((CUPO[e] * n) / RONDA)
 
 /**
- * Sortea una ronda: las cartas núcleo siempre, repartidas en lugares al azar; después las
- * ideológicas necesarias para el cupo de cada escala; y el resto, primero las que no miden
- * ideología (las "divertidas"). Nunca dos cartas del mismo grupo de parecidas, siempre
- * priorizando las que todavía no vio, y con los temas intercalados.
+ * Sortea una ronda: las cartas núcleo que todavía no contestó (y las volátiles, como la
+ * aprobación del gobierno, siempre), repartidas en lugares al azar; después las ideológicas
+ * necesarias para el cupo de cada escala; y el resto, primero las que no miden ideología (las
+ * "divertidas"). Nunca dos cartas del mismo grupo de parecidas, siempre priorizando las que
+ * todavía no vio, y con los temas intercalados.
  */
 export function sortear(
   cartas: Carta[],
@@ -78,9 +79,12 @@ export function sortear(
   vistas: ReadonlySet<string> = new Set(),
   temas?: ReadonlySet<Tema>,
   n: number = RONDA,
+  respondidas: ReadonlySet<string> = new Set(),
 ): Carta[] {
   const next = random(seed)
-  const nucleo = cartas.filter((c) => c.nucleo && !c.retirada)
+  // Una núcleo ya contestada no vuelve: en la partida corta, cinco fijas de quince hacían sentir
+  // que todas las rondas eran iguales. Su respuesta sigue en el historial para la brújula.
+  const nucleo = cartas.filter((c) => c.nucleo && !c.retirada && (c.volatil || !respondidas.has(c.id)))
   const activas = cartas.filter(
     (c) => !c.retirada && !c.nucleo && (!temas || temas.size === 0 || temas.has(c.tema)),
   )
