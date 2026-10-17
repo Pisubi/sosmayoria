@@ -31,7 +31,13 @@ const ICONO = {
 const CONTACTO = [
   { texto: 'pisubi.com', href: 'https://pisubi.com', icono: ICONO.web },
   { texto: 'contacto@pisubi.com', href: 'mailto:contacto@pisubi.com', icono: ICONO.mail },
-  { texto: 'Instagram @pisubi.consultora', href: 'https://www.instagram.com/pisubi.consultora/', icono: ICONO.instagram },
+  {
+    texto: '@pisubi.consultora',
+    // El ícono dice que es Instagram; el lector de pantalla lo necesita en palabras.
+    nombre: 'Instagram @pisubi.consultora',
+    href: 'https://www.instagram.com/pisubi.consultora/',
+    icono: ICONO.instagram,
+  },
 ]
 
 export function Footer({ onMethodology }: FooterProps) {
@@ -67,6 +73,7 @@ export function Footer({ onMethodology }: FooterProps) {
                   href={c.href}
                   target={c.href.startsWith('http') ? '_blank' : undefined}
                   rel="noopener"
+                  aria-label={'nombre' in c ? c.nombre : undefined}
                   className="group inline-flex items-center gap-3 font-bold text-papel"
                 >
                   <svg viewBox="0 0 36 36" fill="none" aria-hidden className="size-9 shrink-0 transition-transform group-hover:-translate-y-0.5">
