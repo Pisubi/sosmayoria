@@ -61,7 +61,7 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
   const pcts = { a: pctA, b: 100 - pctA }
 
   return (
-    <main className="mx-auto max-w-2xl px-4 py-4 sm:px-6 sm:py-12">
+    <main className="mx-auto max-w-3xl px-4 py-4 sm:px-6 sm:pt-3 sm:pb-6">
       <div className="flex items-baseline justify-between gap-4 text-sm">
         <p>
           Carta <span className="font-black tabular-nums">{index + 1}</span> de{' '}
@@ -75,12 +75,12 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
 
       <article
         key={carta.id}
-        className="caja relative mt-4 bg-papel p-4 sm:p-8"
+        className="caja relative mt-4 bg-papel p-4 sm:p-6"
       >
         <p className="etiqueta mb-3 !bg-ciruela">
           Encuesta {carta.ref.encuestadora} · {fecha(carta.ref.fecha)}
         </p>
-        <h1 className="text-xl leading-[1.05] sm:text-4xl">
+        <h1 className="text-xl leading-[1.05] sm:text-3xl">
           {carta.pregunta}
         </h1>
 
@@ -116,33 +116,35 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
 
         {resultado && revelada ? (
           <>
-            <div
-              role="status"
-              className={`caja-sm mt-4 w-full px-3 py-2.5 text-center text-base font-black uppercase sm:text-lg ${MENSAJE[resultado].clase}`}
-            >
-              {MENSAJE[resultado].texto}
-              <span className="block text-sm font-extrabold normal-case sm:text-base">
-                {revelada.eleccion === 'nada'
-                  ? `${pcts.a}% eligió «${carta.a.texto}» y ${pcts.b}% «${carta.b.texto}»`
-                  : `${resultado === 'minoria' ? 'Solo el' : 'El'} ${pcts[revelada.eleccion]}% eligió lo mismo que vos`}
-              </span>
+            <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-stretch">
+              <div
+                role="status"
+                className={`caja-sm w-full px-3 py-2.5 text-center text-base font-black uppercase sm:text-lg ${MENSAJE[resultado].clase}`}
+              >
+                {MENSAJE[resultado].texto}
+                <span className="block text-sm font-extrabold normal-case sm:text-base">
+                  {revelada.eleccion === 'nada'
+                    ? `${pcts.a}% eligió «${carta.a.texto}» y ${pcts.b}% «${carta.b.texto}»`
+                    : `${resultado === 'minoria' ? 'Solo el' : 'El'} ${pcts[revelada.eleccion]}% eligió lo mismo que vos`}
+                </span>
+              </div>
+              <button
+                key={carta.id}
+                ref={proxima}
+                type="button"
+                onClick={() => seguir()}
+                className="caja-sm relative w-full shrink-0 overflow-hidden bg-naranja px-4 py-3 whitespace-nowrap sm:w-auto sm:px-8 text-sm font-black tracking-wide text-azul uppercase transition-transform hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none"
+              >
+                {jugadas.length >= cartas.length ? 'Ver mi resultado →' : 'Próxima pregunta →'}
+                {/* Cuánto falta para que pase sola. */}
+                <span
+                  aria-hidden
+                  className="absolute bottom-0 left-0 h-1 w-full origin-left bg-azul"
+                  style={{ animation: `llenar ${PAUSA}ms linear forwards` }}
+                />
+              </button>
             </div>
             <Encuesta carta={carta} />
-            <button
-              key={carta.id}
-              ref={proxima}
-              type="button"
-              onClick={() => seguir()}
-              className="caja-sm relative mt-3 w-full overflow-hidden bg-naranja px-4 py-3 text-sm font-black tracking-wide text-azul uppercase transition-transform hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none"
-            >
-              {jugadas.length >= cartas.length ? 'Ver mi resultado →' : 'Próxima pregunta →'}
-              {/* Cuánto falta para que pase sola. */}
-              <span
-                aria-hidden
-                className="absolute bottom-0 left-0 h-1 w-full origin-left bg-azul"
-                style={{ animation: `llenar ${PAUSA}ms linear forwards` }}
-              />
-            </button>
           </>
         ) : (
           <button
