@@ -24,6 +24,12 @@ export function mayoria(carta: Carta): Mayoria {
   return pct > 50 ? 'a' : 'b'
 }
 
+/** Qué porcentaje (0 a 100) eligió lo mismo que vos, entre quienes eligieron A o B. */
+export function respaldo(carta: Carta, eleccion: 'a' | 'b'): number {
+  const pct = real(carta)
+  return eleccion === 'a' ? pct : 100 - pct
+}
+
 /** Cómo quedó tu elección frente a la encuesta: con la mayoría, en la minoría, parejo o sin elegir. */
 export type Lugar = 'mayoria' | 'minoria' | 'parejo' | 'nada'
 
@@ -345,6 +351,17 @@ export function brujula(respuestas: { carta: Carta; eleccion: Eleccion }[]): Bru
     cartas,
     precision: base >= 16 ? 'muy buena' : base >= 8 ? 'buena' : 'aproximada',
   }
+}
+
+/** La brújula con tus respuestas de todas las rondas (las de cartas que ya no están se ignoran). */
+export function brujulaDe(respuestas: Record<string, 'a' | 'b'>, cartas: Carta[]): Brujula | null {
+  const porId = new Map(cartas.map((c) => [c.id, c]))
+  return brujula(
+    Object.entries(respuestas).flatMap(([id, eleccion]) => {
+      const carta = porId.get(id)
+      return carta ? [{ carta, eleccion }] : []
+    }),
+  )
 }
 
 /** Por debajo de esto (en valor absoluto) una escala cuenta como centro. */

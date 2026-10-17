@@ -8,6 +8,7 @@ import {
   perfil,
   random,
   real,
+  respaldo,
   resumir,
   RONDA,
   sortear,
@@ -30,6 +31,14 @@ describe('real y mayoría', () => {
     expect(lugar(c, { carta: 'x', eleccion: 'a' })).toBe('mayoria')
     expect(lugar(c, { carta: 'x', eleccion: 'b' })).toBe('minoria')
     expect(lugar(c, { carta: 'x', eleccion: 'nada' })).toBe('nada')
+  })
+})
+
+describe('respaldo', () => {
+  it('es el porcentaje que eligió lo mismo, entre quienes eligieron A o B', () => {
+    const c = carta('x', 45, 15)
+    expect(respaldo(c, 'a')).toBeCloseTo(75)
+    expect(respaldo(c, 'b')).toBeCloseTo(25)
   })
 })
 

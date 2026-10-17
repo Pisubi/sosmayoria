@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { lugar, type Lugar } from '../engine/juego'
+import { lugar, respaldo, type Lugar } from '../engine/juego'
 import { fecha } from '../lib/formato'
 import type { Carta, Eleccion, Jugada } from '../types'
 import { Foto } from './Foto'
@@ -12,8 +12,8 @@ interface JuegoProps {
   onFin: (jugadas: Jugada[]) => void
 }
 
-/** Cuánto se muestra el "con la mayoría / en la minoría" antes de pasar sola a la siguiente. */
-const PAUSA = 1400
+/** Cuánto se muestra el resultado y la encuesta antes de pasar sola a la siguiente. */
+const PAUSA = 3200
 
 const MENSAJE: Record<Lugar, { texto: string; clase: string }> = {
   mayoria: { texto: 'Estás con la mayoría', clase: 'bg-azul text-papel' },
@@ -51,6 +51,9 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
   }
 
   const resultado = revelada ? lugar(carta, revelada) : null
+  // Porcentajes entre quienes eligieron A o B, redondeados para que sumen 100.
+  const pctA = Math.round(respaldo(carta, 'a'))
+  const pcts = { a: pctA, b: 100 - pctA }
 
   return (
     <main className="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12">
@@ -69,6 +72,9 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
         key={carta.id}
         className="caja relative mt-6 bg-papel p-5 sm:p-8"
       >
+        <p className="etiqueta mb-4 !bg-ciruela">
+          Encuesta {carta.ref.encuestadora} · {fecha(carta.ref.fecha)}
+        </p>
         <h1 className="text-2xl leading-[1.05] sm:text-4xl">
           {carta.pregunta}
         </h1>
@@ -95,23 +101,29 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
               >
                 {(carta.a.foto || carta.b.foto) && <Foto id={op.foto} nombre={op.texto} size={80} />}
                 {op.texto}
+                {revelada && <span className="text-4xl font-black tabular-nums">{pcts[lado]}%</span>}
               </button>
             )
           })}
         </div>
 
-        {resultado ? (
-          <button
-            type="button"
-            onClick={() => seguir()}
-            className={`caja-sm mt-6 w-full px-4 py-4 text-center text-lg font-black uppercase ${MENSAJE[resultado].clase}`}
-          >
-            {MENSAJE[resultado].texto}
-            <span className="mt-1 block text-xs font-medium normal-case">
-              Según {carta.ref.encuestadora}, {fecha(carta.ref.fecha)}
-              {!carta.ref.alcance.startsWith('nacional') && ` · ${carta.ref.alcance}`} · tocá para seguir
-            </span>
-          </button>
+        {resultado && revelada ? (
+          <>
+            <button
+              type="button"
+              onClick={() => seguir()}
+              className={`caja-sm mt-6 w-full px-4 py-4 text-center text-lg font-black uppercase ${MENSAJE[resultado].clase}`}
+            >
+              {MENSAJE[resultado].texto}
+              <span className="mt-1 block text-base font-extrabold normal-case">
+                {revelada.eleccion === 'nada'
+                  ? `${pcts.a}% eligió «${carta.a.texto}» y ${pcts.b}% «${carta.b.texto}»`
+                  : `${resultado === 'minoria' ? 'Solo el' : 'El'} ${pcts[revelada.eleccion]}% eligió lo mismo que vos`}
+              </span>
+              <span className="mt-1 block text-xs font-medium normal-case">tocá para seguir</span>
+            </button>
+            <Encuesta carta={carta} />
+          </>
         ) : (
           <button
             type="button"
@@ -123,5 +135,28 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
         )}
       </article>
     </main>
+  )
+}
+
+/** La fuente del dato, a la vista: encuestadora, fecha, muestra, alcance, pregunta original y enlace. */
+function Encuesta({ carta }: { carta: Carta }) {
+  const { encuestadora, alcance, muestra, pregunta_original, url } = carta.ref
+  const casos = muestra && /casos/.test(muestra) ? muestra.split(',')[0] : null
+  return (
+    <div className="caja-sm mt-4 border-l-[12px] border-l-ciruela bg-marfil px-4 py-3 text-sm">
+      <p className="font-black uppercase">
+        Encuesta de {encuestadora}, {fecha(carta.ref.fecha)}
+      </p>
+      <p className="mt-0.5 font-semibold">{[casos, alcance].filter(Boolean).join(' · ')}</p>
+      {pregunta_original && <p className="mt-2 font-medium">Preguntó: «{pregunta_original}»</p>}
+      <a
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-2 inline-block font-black underline decoration-[3px] underline-offset-4 hover:bg-arena"
+      >
+        Ver la encuesta ↗
+      </a>
+    </div>
   )
 }

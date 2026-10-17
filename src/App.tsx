@@ -6,7 +6,7 @@ import { Juego } from './components/Juego'
 import { ParticipantForm } from './components/ParticipantForm'
 import { Resultado } from './components/Resultado'
 import { cartas, orden } from './data/cartas'
-import { LARGOS, nuevaSemilla, resumir, sortear, type Largo, type Resumen } from './engine/juego'
+import { LARGOS, brujulaDe, nuevaSemilla, resumir, sortear, type Largo, type Resumen } from './engine/juego'
 import {
   cartasVistas,
   guardarPersona,
@@ -75,7 +75,8 @@ function App() {
   function datos(ronda: RondaGuardada, resumen: Resumen, historial: Historial, persona: Participant) {
     guardarPersona(persona)
     if (persona.age !== UNDER_16) {
-      enviarPartida(orden, ronda.jugadas, persona, (Date.now() - ronda.inicio) / 1000)
+      const segundos = (Date.now() - ronda.inicio) / 1000
+      enviarPartida(orden, ronda.jugadas, persona, segundos, brujulaDe(historial.respuestas, cartas))
     }
     setStage({ step: 'resultado', resumen, historial })
   }
