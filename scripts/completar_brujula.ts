@@ -76,10 +76,9 @@ console.log(
   `${filas.length} partidas sin posición; ${calculadas.length} con respuestas suficientes. ` +
     `Promedio de esas: economía ${media('economia')}, valores ${media('valores')}.`,
 )
-if (PROBAR) process.exit(0)
-
+// Sin process.exit: en Windows, cortar con conexiones de fetch cerrándose hace fallar a Node.
 let hechas = 0
-for (let i = 0; i < calculadas.length; i += 20) {
+for (let i = 0; !PROBAR && i < calculadas.length; i += 20) {
   await Promise.all(
     calculadas.slice(i, i + 20).map(async ({ id, ...pos }) => {
       const res = await fetch(`${URL}/rest/v1/partidas?id=eq.${id}&economia=is.null`, {
@@ -92,4 +91,4 @@ for (let i = 0; i < calculadas.length; i += 20) {
     }),
   )
 }
-console.log(`Listo: ${hechas} partidas completadas.`)
+if (!PROBAR) console.log(`Listo: ${hechas} partidas completadas.`)
