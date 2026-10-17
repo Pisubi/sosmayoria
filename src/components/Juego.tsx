@@ -12,9 +12,6 @@ interface JuegoProps {
   onFin: (jugadas: Jugada[]) => void
 }
 
-/** Cuánto se muestra el resultado y la encuesta antes de pasar sola a la siguiente. */
-const PAUSA = 3200
-
 const MENSAJE: Record<Lugar, { texto: string; clase: string }> = {
   mayoria: { texto: 'Estás con la mayoría', clase: 'bg-azul text-papel' },
   minoria: { texto: 'Estás en la minoría', clase: 'bg-naranja text-azul' },
@@ -22,11 +19,19 @@ const MENSAJE: Record<Lugar, { texto: string; clase: string }> = {
   nada: { texto: 'Pasaste esta', clase: 'bg-papel text-azul' },
 }
 
+/** Cuánto se muestra el resultado y la encuesta antes de pasar sola a la siguiente. */
+const PAUSA = 3200
+
 export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProps) {
   const [jugadas, setJugadas] = useState<Jugada[]>(iniciales)
   const [revelada, setRevelada] = useState<Jugada | null>(null)
   const timer = useRef<number | undefined>(undefined)
+  const proxima = useRef<HTMLButtonElement>(null)
   useEffect(() => () => window.clearTimeout(timer.current), [])
+  // En pantallas muy bajas, que el botón para seguir quede a la vista.
+  useEffect(() => {
+    if (revelada) proxima.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+  }, [revelada])
 
   const index = revelada ? jugadas.length - 1 : Math.min(jugadas.length, cartas.length - 1)
   const carta = cartas[index]
@@ -56,7 +61,7 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
   const pcts = { a: pctA, b: 100 - pctA }
 
   return (
-    <main className="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12">
+    <main className="mx-auto max-w-3xl px-4 py-4 sm:px-6 sm:pt-3 sm:pb-6">
       <div className="flex items-baseline justify-between gap-4 text-sm">
         <p>
           Carta <span className="font-black tabular-nums">{index + 1}</span> de{' '}
@@ -70,16 +75,16 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
 
       <article
         key={carta.id}
-        className="caja relative mt-6 bg-papel p-5 sm:p-8"
+        className="caja relative mt-4 bg-papel p-4 sm:p-6"
       >
-        <p className="etiqueta mb-4 !bg-ciruela">
+        <p className="etiqueta mb-3 !bg-ciruela">
           Encuesta {carta.ref.encuestadora} · {fecha(carta.ref.fecha)}
         </p>
-        <h1 className="text-2xl leading-[1.05] sm:text-4xl">
+        <h1 className="text-xl leading-[1.05] sm:text-3xl">
           {carta.pregunta}
         </h1>
 
-        <div className="mt-8 grid grid-cols-2 gap-3">
+        <div className={`grid grid-cols-2 gap-3 ${revelada ? 'mt-4' : 'mt-8'}`}>
           {(['a', 'b'] as const).map((lado) => {
             const op = carta[lado]
             const elegida = revelada?.eleccion === lado
@@ -89,7 +94,9 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
                 type="button"
                 disabled={Boolean(revelada)}
                 onClick={() => elegir(lado)}
-                className={`caja-sm flex min-h-24 flex-col items-center justify-center gap-3 px-3 py-5 text-center text-base font-extrabold transition-transform sm:text-lg ${
+                className={`caja-sm flex flex-col items-center justify-center px-3 text-center text-base font-extrabold transition-transform sm:text-lg ${
+                  revelada ? 'gap-0.5 py-2' : 'min-h-24 gap-3 py-5'
+                } ${
                   elegida
                     ? 'bg-azul text-papel'
                     : revelada
@@ -99,9 +106,9 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
                         : 'bg-marfil hover:-translate-y-0.5 hover:bg-arena active:translate-x-1 active:translate-y-1 active:shadow-none'
                 }`}
               >
-                {(carta.a.foto || carta.b.foto) && <Foto id={op.foto} nombre={op.texto} size={80} />}
+                {(carta.a.foto || carta.b.foto) && <Foto id={op.foto} nombre={op.texto} size={revelada ? 40 : 80} />}
                 {op.texto}
-                {revelada && <span className="text-4xl font-black tabular-nums">{pcts[lado]}%</span>}
+                {revelada && <span className="text-3xl leading-none font-black tabular-nums sm:text-4xl">{pcts[lado]}%</span>}
               </button>
             )
           })}
@@ -109,19 +116,34 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
 
         {resultado && revelada ? (
           <>
-            <button
-              type="button"
-              onClick={() => seguir()}
-              className={`caja-sm mt-6 w-full px-4 py-4 text-center text-lg font-black uppercase ${MENSAJE[resultado].clase}`}
-            >
-              {MENSAJE[resultado].texto}
-              <span className="mt-1 block text-base font-extrabold normal-case">
-                {revelada.eleccion === 'nada'
-                  ? `${pcts.a}% eligió «${carta.a.texto}» y ${pcts.b}% «${carta.b.texto}»`
-                  : `${resultado === 'minoria' ? 'Solo el' : 'El'} ${pcts[revelada.eleccion]}% eligió lo mismo que vos`}
-              </span>
-              <span className="mt-1 block text-xs font-medium normal-case">tocá para seguir</span>
-            </button>
+            <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-stretch">
+              <div
+                role="status"
+                className={`caja-sm w-full px-3 py-2.5 text-center text-base font-black uppercase sm:text-lg ${MENSAJE[resultado].clase}`}
+              >
+                {MENSAJE[resultado].texto}
+                <span className="block text-sm font-extrabold normal-case sm:text-base">
+                  {revelada.eleccion === 'nada'
+                    ? `${pcts.a}% eligió «${carta.a.texto}» y ${pcts.b}% «${carta.b.texto}»`
+                    : `${resultado === 'minoria' ? 'Solo el' : 'El'} ${pcts[revelada.eleccion]}% eligió lo mismo que vos`}
+                </span>
+              </div>
+              <button
+                key={carta.id}
+                ref={proxima}
+                type="button"
+                onClick={() => seguir()}
+                className="caja-sm relative w-full shrink-0 overflow-hidden bg-naranja px-4 py-3 whitespace-nowrap sm:w-auto sm:px-8 text-sm font-black tracking-wide text-azul uppercase transition-transform hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 active:shadow-none"
+              >
+                {jugadas.length >= cartas.length ? 'Ver mi resultado →' : 'Próxima pregunta →'}
+                {/* Cuánto falta para que pase sola. */}
+                <span
+                  aria-hidden
+                  className="absolute bottom-0 left-0 h-1 w-full origin-left bg-azul"
+                  style={{ animation: `llenar ${PAUSA}ms linear forwards` }}
+                />
+              </button>
+            </div>
             <Encuesta carta={carta} />
           </>
         ) : (
@@ -138,25 +160,38 @@ export function Juego({ cartas, jugadas: iniciales, onJugada, onFin }: JuegoProp
   )
 }
 
-/** La fuente del dato, a la vista: encuestadora, fecha, muestra, alcance, pregunta original y enlace. */
+const normalizar = (t: string) =>
+  t
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[^a-zñ ]/g, '')
+    .trim()
+
+/**
+ * La fuente del dato, a la vista (encuestadora y fecha van arriba de la pregunta): muestra, alcance,
+ * enlace y la pregunta original si dice otra cosa que la carta.
+ */
 function Encuesta({ carta }: { carta: Carta }) {
-  const { encuestadora, alcance, muestra, pregunta_original, url } = carta.ref
-  const casos = muestra && /casos/.test(muestra) ? muestra.split(',')[0] : null
+  const { alcance, muestra, pregunta_original, url } = carta.ref
+  const casos = muestra?.match(/(más de |~)?[\d.]+ casos/)?.[0] ?? null
+  const original =
+    pregunta_original && !normalizar(pregunta_original).includes(normalizar(carta.pregunta))
+      ? pregunta_original
+      : null
   return (
-    <div className="caja-sm mt-4 border-l-[12px] border-l-ciruela bg-marfil px-4 py-3 text-sm">
-      <p className="font-black uppercase">
-        Encuesta de {encuestadora}, {fecha(carta.ref.fecha)}
+    <div className="mt-3 border-l-[6px] border-ciruela bg-marfil px-3 py-2 text-xs leading-snug sm:text-sm">
+      <p>
+        <span className="font-black">{[casos, alcance].filter(Boolean).join(' · ')}</span> ·{' '}
+        <a
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          className="font-black whitespace-nowrap underline decoration-2 underline-offset-2 hover:bg-arena"
+        >
+          Ver la encuesta ↗
+        </a>
       </p>
-      <p className="mt-0.5 font-semibold">{[casos, alcance].filter(Boolean).join(' · ')}</p>
-      {pregunta_original && <p className="mt-2 font-medium">Preguntó: «{pregunta_original}»</p>}
-      <a
-        href={url}
-        target="_blank"
-        rel="noreferrer"
-        className="mt-2 inline-block font-black underline decoration-[3px] underline-offset-4 hover:bg-arena"
-      >
-        Ver la encuesta ↗
-      </a>
+      {original && <p className="mt-1 line-clamp-2 font-medium">Preguntó: «{original}»</p>}
     </div>
   )
 }

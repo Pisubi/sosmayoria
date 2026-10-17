@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "archivo": "node scripts/un-archivo.mjs",
-    "simular": "rolldown scripts/simular-brujula.ts --format esm --platform node -o node_modules/.cache/simular.mjs && node node_modules/.cache/simular.mjs"
+    "simular": "rolldown scripts/simular-brujula.ts --format esm --platform node -o node_modules/.cache/simular.mjs && node node_modules/.cache/simular.mjs",
+    "completar-brujula": "rolldown scripts/completar_brujula.ts --format esm --platform node -o node_modules/.cache/completar.mjs && node node_modules/.cache/completar.mjs"
   },
   "dependencies": {
     "react": "^19.2.8",

@@ -14,8 +14,8 @@ No es una encuesta, pero junta opinión: lo que elige cada persona se guarda de 
   cotidiana) y priorizando las que la persona todavía no vio.
 - Cada carta: elegís A, B o "prefiero no decir" y aparece "Estás con la mayoría", "Estás en la
   minoría" o "Está parejo", con el porcentaje de cada opción (entre quienes eligieron A o B) y la
-  encuesta a la vista (encuestadora, fecha, muestra, pregunta original y enlace); después pasa
-  sola a la siguiente.
+  encuesta a la vista (encuestadora, fecha, muestra, pregunta original y enlace). Pasa sola a
+  los 3,2 segundos, o antes con "Próxima pregunta".
 - Una carta es pareja si la opción más elegida no supera el 50% por más de 3 puntos (entre
   quienes eligieron A o B): las encuestas tienen márgenes de error de 2 a 4 puntos.
 - Al final: en cuántas cartas (con mayoría clara) pensás como la mayoría, un perfil (de "Sos la
@@ -50,6 +50,9 @@ atado a un gobierno. La aprobación del gobierno no tiene eje: mide alineamiento
 - **Promedio de quienes jugaron.** Cada partida guardada lleva la posición de la brújula (con todas
   las rondas del dispositivo) y la función `promedio()` de Supabase devuelve solo el promedio, que
   se dibuja como un rombo. Cada ronda cuenta una vez, así que quien juega más pesa más.
+  Las partidas guardadas antes no traían posición: `npm run completar-brujula` (con
+  `SUPABASE_URL` y `SUPABASE_SECRET_KEY`; `-- --probar` calcula sin escribir) se la calcula con
+  las respuestas de esa ronda y la guarda, para que también cuenten.
 - **Lapso del 10%.** El modelo admite que cualquiera elige a veces el lado contrario a su posición
   por motivos ajenos a la escala (consenso, nacionalismo, coyuntura). Sin eso, una sola respuesta
   así en una carta de consenso le ponía techo a toda la escala: alguien muy pro mercado que

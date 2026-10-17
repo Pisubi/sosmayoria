@@ -81,3 +81,13 @@ em {
   text-transform: uppercase;
   padding: 0.25rem 0.6rem;
 }
+
+/* Barra del botón "Próxima pregunta": se llena mientras corre el tiempo hasta que pasa sola. */
+@keyframes llenar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
