@@ -13,7 +13,9 @@ No es una encuesta, pero junta opinión: lo que elige cada persona se guarda de 
   amplias —AMBA, grandes ciudades, varias regiones— con al menos 500 casos), alternando temas (política, economía, sociedad, historia, cultura, vida
   cotidiana) y priorizando las que la persona todavía no vio.
 - Cada carta: elegís A, B o "prefiero no decir" y aparece "Estás con la mayoría", "Estás en la
-  minoría" o "Está parejo"; después pasa sola a la siguiente. No se muestran porcentajes.
+  minoría" o "Está parejo", con el porcentaje de cada opción (entre quienes eligieron A o B) y la
+  encuesta a la vista (encuestadora, fecha, muestra, pregunta original y enlace); después pasa
+  sola a la siguiente.
 - Una carta es pareja si la opción más elegida no supera el 50% por más de 3 puntos (entre
   quienes eligieron A o B): las encuestas tienen márgenes de error de 2 a 4 puntos.
 - Al final: en cuántas cartas (con mayoría clara) pensás como la mayoría, un perfil (de "Sos la
@@ -43,8 +45,11 @@ atado a un gobierno. La aprobación del gobierno no tiene eje: mide alineamiento
   ítem: la posición θ de cada escala sale de la media de la posterior, con una previa N(0, 1,5²),
   y la dificultad de cada carta se fija para que, con el país en θ ~ N(0, 1), la proporción que
   elige cada lado coincida con la encuesta. Elegir lo que eligió el 80% casi no mueve; elegir lo
-  del 20% mueve mucho; rechazar una afirmación extrema dice poco. El centro es el argentino
-  promedio.
+  del 20% mueve mucho; rechazar una afirmación extrema dice poco. El cruce de los ejes es el
+  argentino promedio según las encuestas.
+- **Promedio de quienes jugaron.** Cada partida guardada lleva la posición de la brújula (con todas
+  las rondas del dispositivo) y la función `promedio()` de Supabase devuelve solo el promedio, que
+  se dibuja como un rombo. Cada ronda cuenta una vez, así que quien juega más pesa más.
 - **Lapso del 10%.** El modelo admite que cualquiera elige a veces el lado contrario a su posición
   por motivos ajenos a la escala (consenso, nacionalismo, coyuntura). Sin eso, una sola respuesta
   así en una carta de consenso le ponía techo a toda la escala: alguien muy pro mercado que
@@ -76,8 +81,8 @@ atado a un gobierno. La aprobación del gobierno no tiene eje: mide alineamiento
 - **Inseguridad** (núcleo, endurecer penas o reducir la desigualdad) cuenta solo para autoridad, así
   que no mueve la brújula que se ve.
 - **Se afina con cada ronda.** Las respuestas de todas las rondas quedan en el navegador
-  (`mayoria:respuestas:v1`) y la brújula usa todas. No se envían ni van en la imagen para
-  historias.
+  (`mayoria:respuestas:v1`) y la brújula usa todas. El historial no se envía ni va en la
+  imagen para historias: con la partida va solo la posición resultante.
 - **Cartas sobre medidas de un gobierno:** de 2025 en adelante y nombrándolo; las de 2024 se
   retiraron.
 
@@ -103,10 +108,11 @@ carta que se quiera sacar se marca `"retirada": true`.
 
 Antes de cada resultado se piden edad, género y nivel educativo (opcionales; quedan marcadas
 las respuestas anteriores del dispositivo). Si hay `VITE_SUPABASE_URL` y `VITE_SUPABASE_KEY`
-(ver `.env.example`), cada ronda terminada se guarda en una fila anónima de unos 90 bytes:
+(ver `.env.example`), cada ronda terminada se guarda en una fila anónima de unos 100 bytes:
 
-- `supabase/schema.sql` crea `partidas`, en la que la clave pública solo puede insertar. La app
-  no lee nada de la base.
+- `supabase/schema.sql` crea `partidas`, en la que la clave pública solo puede insertar. Lo único
+  que la app lee es `promedio()`: el promedio de la brújula, sin filas sueltas. Hay que volver a
+  correr el esquema para sumar las columnas de la brújula y la función.
 - Las jugadas van empaquetadas en 2 bytes por carta (ver `src/engine/codificacion.ts`); el
   esquema trae una consulta de ejemplo para contar elecciones por carta en el SQL Editor.
 - Menores de 16: juegan, pero no se guarda nada.

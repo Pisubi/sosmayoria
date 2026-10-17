@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { cartas, TEMAS } from '../data/cartas'
-import { brujula, cuadrante, perfil, temaDistinto, type Lectura, type Lugar, type Resumen } from '../engine/juego'
+import { brujulaDe, cuadrante, perfil, respaldo, temaDistinto, type Lectura, type Lugar, type Resumen } from '../engine/juego'
 import { renderShareImage, type Tarjeta } from '../lib/compartir'
 import { borrarHistorial, type Historial } from '../lib/guardado'
 import { fecha } from '../lib/formato'
+import { leerPromedio, type Promedio } from '../lib/supabase'
 import { BrujulaPolitica } from './BrujulaPolitica'
 import { Eyebrow } from './Eyebrow'
 import { Footer } from './Footer'
@@ -24,7 +25,6 @@ const CHIP: Record<Lugar, { texto: string; clase: string }> = {
 }
 
 const nombreTema = (id: string) => TEMAS.find((t) => t.id === id)?.nombre ?? id
-const porId = new Map(cartas.map((c) => [c.id, c]))
 const URL_PUBLICA = 'https://sosmayoria.pisubi.com'
 
 export function Resultado({ resumen, historial, onOtraRonda, onMethodology }: ResultadoProps) {
@@ -32,11 +32,15 @@ export function Resultado({ resumen, historial, onOtraRonda, onMethodology }: Re
   const p = perfil(conLaMayoria, definidas)
   const minoria = lecturas.filter((l) => l.lugar === 'minoria')
   const [conHistorial, setConHistorial] = useState(true)
-  const respuestas = Object.entries(historial.respuestas).flatMap(([id, eleccion]) => {
-    const carta = porId.get(id)
-    return carta ? [{ carta, eleccion }] : []
-  })
-  const b = conHistorial ? brujula(respuestas) : null
+  const b = conHistorial ? brujulaDe(historial.respuestas, cartas) : null
+  const [promedio, setPromedio] = useState<Promedio | null>(null)
+  useEffect(() => {
+    let vigente = true
+    leerPromedio().then((p) => vigente && setPromedio(p))
+    return () => {
+      vigente = false
+    }
+  }, [])
   const distinto = temaDistinto(porTema)
   const texto = `Pienso como la mayoría de los argentinos en ${conLaMayoria} de ${definidas} temas: ${p.titulo.toLowerCase()}. ¿Y vos?`
 
@@ -87,12 +91,13 @@ export function Resultado({ resumen, historial, onOtraRonda, onMethodology }: Re
             Comparado con el argentino promedio.
           </p>
           <div className="mt-6">
-            <BrujulaPolitica b={b} />
+            <BrujulaPolitica b={b} promedio={promedio} />
           </div>
           <p className="mx-auto mt-5 max-w-md text-xs leading-5 text-azul/80">
             Precisión {b.precision}: {b.cartas.economia} respuestas sobre economía y {b.cartas.valores} sobre valores
-            {historial.rondas > 1 ? `, sumando tus ${historial.rondas} rondas` : ''}. El centro es lo que respondió el
-            país en las encuestas: elegir lo que eligió casi todo el mundo te mueve poco; elegir lo de pocos, mucho.
+            {historial.rondas > 1 ? `, sumando tus ${historial.rondas} rondas` : ''}. El cruce de los ejes es lo que
+            respondió el país en las encuestas: elegir lo que eligió casi todo el mundo te mueve poco; elegir lo de pocos,
+            mucho.{promedio && ' El rombo es el promedio de todas las partidas jugadas hasta ahora.'}
             {b.precision !== 'muy buena' && ' Cada ronda nueva la afina.'}{' '}
             <button
               type="button"
@@ -116,8 +121,8 @@ export function Resultado({ resumen, historial, onOtraRonda, onMethodology }: Re
               <li key={l.carta.id} className="caja-sm border-l-[12px] border-l-naranja bg-papel p-5">
                 <p className="font-semibold">{l.carta.pregunta}</p>
                 <p className="mt-1 text-sm text-azul/85">
-                  Elegiste <span className="font-semibold text-azul">{eleccion(l)}</span>; la mayoría eligió{' '}
-                  <span className="font-semibold text-azul">{otra(l)}</span>.
+                  Elegiste <span className="font-semibold text-azul">{eleccion(l)}</span>, como el {apoyo(l)}%; el{' '}
+                  {100 - apoyo(l)}% eligió <span className="font-semibold text-azul">{otra(l)}</span>.
                 </p>
               </li>
             ))}
@@ -163,7 +168,11 @@ export function Resultado({ resumen, historial, onOtraRonda, onMethodology }: Re
                   {CHIP[l.lugar].texto}
                 </span>
               </div>
-              {l.jugada.eleccion !== 'nada' && <p className="mt-1 text-sm text-azul/85">Elegiste {eleccion(l)}.</p>}
+              <p className="mt-1 text-sm text-azul/85">
+                {l.jugada.eleccion !== 'nada'
+                  ? `Elegiste ${eleccion(l)}, como el ${apoyo(l)}%.`
+                  : `${l.carta.a.texto}: ${apoyo(l)}% · ${l.carta.b.texto}: ${100 - apoyo(l)}%.`}
+              </p>
               <p className="mt-2 text-xs text-azul/75">
                 {l.carta.ref.encuestadora}, {fecha(l.carta.ref.fecha)}
                 {!l.carta.ref.alcance.startsWith('nacional') && ` (${l.carta.ref.alcance})`} ·{' '}
@@ -184,6 +193,11 @@ export function Resultado({ resumen, historial, onOtraRonda, onMethodology }: Re
 
 function eleccion(l: Lectura): string {
   return l.jugada.eleccion === 'nada' ? '' : `«${l.carta[l.jugada.eleccion].texto}»`
+}
+
+/** Porcentaje (redondeado) que eligió lo mismo que vos; con "no dice", el de A. */
+function apoyo(l: Lectura): number {
+  return Math.round(respaldo(l.carta, l.jugada.eleccion === 'nada' ? 'a' : l.jugada.eleccion))
 }
 
 function otra(l: Lectura): string {

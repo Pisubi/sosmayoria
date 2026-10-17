@@ -4,10 +4,34 @@ interface FooterProps {
   onMethodology: () => void
 }
 
+/** Íconos Pisubí: contorno en papel y trazo en naranja, sobre la tinta del pie. */
+const ICONO = {
+  web: (
+    <>
+      <circle cx="18" cy="18" r="14" className="stroke-papel" strokeWidth="3" />
+      <ellipse cx="18" cy="18" rx="5" ry="12" className="stroke-naranja" strokeWidth="2.2" />
+      <path d="M5 18h26" className="stroke-naranja" strokeWidth="2.2" />
+    </>
+  ),
+  mail: (
+    <>
+      <rect x="3.5" y="7.5" width="29" height="21" rx="4" className="stroke-papel" strokeWidth="3" />
+      <path d="M9 14l9 7 9-7" className="stroke-naranja" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+    </>
+  ),
+  instagram: (
+    <>
+      <rect x="3.5" y="3.5" width="29" height="29" rx="7" className="stroke-papel" strokeWidth="3" />
+      <circle cx="17.5" cy="19" r="7" className="stroke-naranja" strokeWidth="3.5" />
+      <circle cx="26" cy="9.5" r="2" className="fill-naranja" />
+    </>
+  ),
+}
+
 const CONTACTO = [
-  { texto: 'pisubi.com', href: 'https://pisubi.com' },
-  { texto: 'contacto@pisubi.com', href: 'mailto:contacto@pisubi.com' },
-  { texto: 'Instagram @pisubi.consultora', href: 'https://www.instagram.com/pisubi.consultora/' },
+  { texto: 'pisubi.com', href: 'https://pisubi.com', icono: ICONO.web },
+  { texto: 'contacto@pisubi.com', href: 'mailto:contacto@pisubi.com', icono: ICONO.mail },
+  { texto: 'Instagram @pisubi.consultora', href: 'https://www.instagram.com/pisubi.consultora/', icono: ICONO.instagram },
 ]
 
 export function Footer({ onMethodology }: FooterProps) {
@@ -43,9 +67,14 @@ export function Footer({ onMethodology }: FooterProps) {
                   href={c.href}
                   target={c.href.startsWith('http') ? '_blank' : undefined}
                   rel="noopener"
-                  className="font-bold text-papel hover:underline hover:decoration-naranja hover:decoration-[3px] hover:underline-offset-4"
+                  className="group inline-flex items-center gap-3 font-bold text-papel"
                 >
-                  {c.texto}
+                  <svg viewBox="0 0 36 36" fill="none" aria-hidden className="size-9 shrink-0 transition-transform group-hover:-translate-y-0.5">
+                    {c.icono}
+                  </svg>
+                  <span className="group-hover:underline group-hover:decoration-naranja group-hover:decoration-[3px] group-hover:underline-offset-4">
+                    {c.texto}
+                  </span>
                 </a>
               </li>
             ))}
